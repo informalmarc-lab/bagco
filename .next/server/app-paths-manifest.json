@@ -1,0 +1,6 @@
+{
+  "/page": "app/page.js",
+  "/catalog/page": "app/catalog/page.js",
+  "/api/catalog/custom/route": "app/api/catalog/custom/route.js",
+  "/gallery/page": "app/gallery/page.js"
+}
