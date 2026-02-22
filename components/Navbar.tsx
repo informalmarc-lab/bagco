@@ -11,7 +11,8 @@ export default function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link href="/" className="text-3xl font-extrabold bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent hover:from-primary-700 hover:to-primary-800 transition-all">
+          <Link href="/" className="text-3xl font-extrabold bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent hover:from-primary-700 hover:to-primary-800 transition-all flex items-center gap-2">
+            <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center text-white text-xl font-black shadow-lg">B</div>
             Bagco
           </Link>
 
