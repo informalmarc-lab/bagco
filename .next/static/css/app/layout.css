@@ -1188,6 +1188,9 @@ video {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
+.font-black {
+  font-weight: 900;
+}
 .font-bold {
   font-weight: 700;
 }
@@ -1202,9 +1205,6 @@ video {
 }
 .font-semibold {
   font-weight: 600;
-}
-.font-black {
-  font-weight: 900;
 }
 .uppercase {
   text-transform: uppercase;
