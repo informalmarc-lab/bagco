@@ -30,6 +30,10 @@ waitForPort = 5000
 outputType = "webview"
 
 [[ports]]
+localPort = 3000
+externalPort = 3000
+
+[[ports]]
 localPort = 5000
 externalPort = 80
 
@@ -38,3 +42,8 @@ deploymentTarget = "autoscale"
 run = ["npm", "run", "start"]
 build = ["npm", "run", "build"]
 publicDir = "public"
+
+[userenv]
+
+[userenv.shared]
+DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1475270117947342900/bhXHtbtVkQSQ0HoynBEjwfe6P9N2JNbJvyg14Ovw2NettYcZVRq-7resSwowh58XajcF"
