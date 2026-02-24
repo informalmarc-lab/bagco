@@ -17,7 +17,6 @@ const BULLETS = [
   'Pinch-Bottom with Gusset or Flat-Bottom Styles',
   '4 Week Lead Time',
   '$50 Art/Plate Fee Applies to Initial Order and/or Re-Orders Requiring Changes',
-  'Additional Art/Plate Fees May Apply for Back and/or Gusset Printing',
   'FREE FREIGHT to Commercial Address for Orders of 8 Cases or More',
   'Orders Under 8 Total Cases Billed Standard UPS Shipping Rates',
 ]
@@ -114,11 +113,14 @@ export default function CustomGallery() {
   useEffect(() => {
     fetch('/api/catalog/custom')
       .then((res) => res.json())
-      .then((data) =>
-        setImages(
-          data || { '1-color': [], '2-color': [], '3-color': [] }
-        )
-      )
+      .then((data) => {
+        // Ensure we always have arrays even if folder is empty
+        setImages({
+          '1-color': data['1-color'] || [],
+          '2-color': data['2-color'] || [],
+          '3-color': data['3-color'] || [],
+        })
+      })
       .catch(() => setImages({ '1-color': [], '2-color': [], '3-color': [] }))
       .finally(() => setLoading(false))
   }, [])
@@ -174,7 +176,7 @@ export default function CustomGallery() {
               <h3 className="text-lg font-semibold mb-4 text-gray-800">Bag Size / Case Qty</h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
                 {info.sizes.map((s) => (
-                  <div key={s.id} className="bg-white p-3 rounded border border-gray-200 text-sm">
+                  <div key={s.id} className="bg-primary-50 p-3 rounded border border-gray-200 text-sm">
                     <span className="font-semibold text-gray-800">{s.id}</span>
                     <span className="text-gray-600"> ({s.dims}) {s.qty}</span>
                   </div>
@@ -188,7 +190,7 @@ export default function CustomGallery() {
               href="/contact"
               className="inline-block bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors"
             >
-              Contact us for pricing
+              Contact Us for Pricing
             </Link>
           </div>
         </div>
@@ -197,7 +199,7 @@ export default function CustomGallery() {
   }
 
   return (
-    <div className="bg-white">
+    <div className="bg-primary-50">
       <section className="bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
         <div className="container mx-auto px-4 relative z-10">
@@ -222,7 +224,13 @@ export default function CustomGallery() {
         </div>
       </section>
 
-      {loading ? null : (
+      {loading ? (
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <p className="text-center text-gray-600 text-lg">Loading custom catalog...</p>
+          </div>
+        </section>
+      ) : (
         <>
           {renderSection('1-color')}
           {renderSection('2-color')}
@@ -230,9 +238,9 @@ export default function CustomGallery() {
         </>
       )}
 
-      <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-16 bg-gradient-to-br from-gray-50 to-primary-100">
         <div className="container mx-auto px-4 max-w-4xl">
-          <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+          <div className="bg-primary-50 rounded-2xl shadow-xl p-8 md:p-12">
             <h2 className="text-3xl font-bold mb-4 text-gray-800">
               10 Modern Bag-Making Machines and Full-Color Flexographic Printing
             </h2>
@@ -249,7 +257,7 @@ export default function CustomGallery() {
             href="/contact"
             className="inline-block bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-700 transition-colors shadow-lg hover:shadow-xl"
           >
-            Request a Quote
+            Email Us for Pricing
           </Link>
         </div>
       </section>

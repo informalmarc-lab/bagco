@@ -1,196 +1,88 @@
-'use client'
+import { Metadata } from 'next'
+import {
+  contactAddress,
+  contactEmail,
+  contactPhone,
+  contactPhoneHref,
+  pricingMailto,
+  subjectTemplate,
+} from '@/components/siteConfig'
 
-import { useState } from 'react'
+export const metadata: Metadata = {
+  title: 'Contact',
+  description:
+    'Contact Bag Supply Co for factory-direct paper bag pricing. Email-only inquiry flow for independent pharmacies and retail businesses.',
+}
+
+const checklist = [
+  'Bag size',
+  'Quantity',
+  'Number of print colors',
+  'Timeline',
+  'Shipping city and state',
+]
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    bagType: '',
-    quantity: '',
-    message: '',
-  })
-
-  const [submitted, setSubmitted] = useState(false)
-  const [sending, setSending] = useState(false)
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }))
-  }
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (sending) return
-    setSending(true)
-
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      })
-
-      if (!res.ok) throw new Error('Failed to send')
-
-      setSubmitted(true)
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        company: '',
-        bagType: '',
-        quantity: '',
-        message: '',
-      })
-
-      // Keep the thank-you visible briefly
-      setTimeout(() => setSubmitted(false), 3000)
-    } catch (err) {
-      console.error('Send error:', err)
-      alert('Failed to send message. Please try again.')
-    } finally {
-      setSending(false)
-    }
-  }
-
   return (
-    <div className="bg-white">
-      {/* Header */}
-      <section className="bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <h1 className="text-5xl md:text-6xl font-extrabold">Contact Us</h1>
-          <p className="text-xl md:text-2xl mt-4 text-primary-100">Get in touch for quotes and custom orders</p>
-        </div>
-      </section>
+    <div className="section-container py-14 md:py-20">
+      <div className="max-w-4xl">
+        <h1 className="text-4xl font-black tracking-tight text-slate-900 md:text-5xl">Contact Bag Supply Co</h1>
+        <p className="mt-4 text-lg text-slate-700">
+          Email is the fastest way to get pricing and production timelines.
+        </p>
+      </div>
 
-      {/* Contact Section */}
-      <section className="py-20 bg-gradient-to-b from-white to-gray-50">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Contact Info (left) */}
-            <div className="bg-white rounded-2xl shadow-xl p-8">
-              <h2 className="text-3xl font-extrabold mb-6 text-gray-800">Get in Touch</h2>
-              <p className="text-gray-700 mb-8 text-lg leading-relaxed">
-                Have questions about our paper bags or need a custom quote? Fill out the form and we'll get back to you as soon as possible.
-              </p>
+      <div className="mt-10 grid gap-8 md:grid-cols-2">
+        <section className="rounded-xl border border-slate-200 bg-white p-6">
+          <h2 className="text-2xl font-black text-slate-900">Email Us for Pricing</h2>
+          <a
+            href={pricingMailto}
+            className="mt-4 inline-flex rounded-md bg-slate-900 px-5 py-3 font-bold text-white hover:bg-slate-700"
+          >
+            {contactEmail}
+          </a>
+          <p className="mt-4 text-slate-700">Suggested subject line:</p>
+          <p className="mt-1 rounded bg-amber-50 px-3 py-2 font-semibold text-slate-900">{subjectTemplate}</p>
+          <p className="mt-5 text-slate-700">Include the following in your email:</p>
+          <ul className="mt-3 space-y-2">
+            {checklist.map((item) => (
+              <li key={item} className="rounded border border-amber-200 bg-amber-50 px-3 py-2 font-medium text-slate-800">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </section>
 
-              <div className="space-y-6">
-                {/* Email */}
-                <div className="flex items-start p-4 bg-gradient-to-br from-primary-50 to-primary-100 rounded-xl transition-transform duration-200">
-                  <div className="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mr-4 shadow-lg flex-shrink-0">
-                    <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-gray-800 mb-1 text-lg">Email</h3>
-                    <p className="text-gray-700">
-                      <a href="mailto:info@bagco.com" className="hover:text-primary-600 font-semibold underline">info@bagco.com</a>
-                    </p>
-                  </div>
-                </div>
-
-                {/* Phone */}
-                <div className="flex items-start p-4 bg-gradient-to-br from-primary-50 to-primary-100 rounded-xl transition-transform duration-200">
-                  <div className="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mr-4 shadow-lg flex-shrink-0">
-                    <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-gray-800 mb-1 text-lg">Phone</h3>
-                    <p className="text-gray-700">
-                      <a href="tel:+12525161944" className="hover:text-primary-600 font-semibold underline">(252) 516-1944</a>
-                    </p>
-                  </div>
-                </div>
-
-                {/* Mailing Address */}
-                <div className="flex items-start p-4 bg-gradient-to-br from-primary-50 to-primary-100 rounded-xl transition-transform duration-200">
-                  <div className="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mr-4 shadow-lg flex-shrink-0">
-                    <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-gray-800 mb-1 text-lg">Mailing Address</h3>
-                    <p className="text-gray-700 leading-relaxed">
-                      912 Houston Drive<br />
-                      Monroe, North Carolina 28110
-                    </p>
-                  </div>
-                </div>
-              </div>
+        <section className="rounded-xl border border-slate-200 bg-white p-6">
+          <h2 className="text-2xl font-black text-slate-900">Direct Contact</h2>
+          <dl className="mt-5 space-y-4 text-slate-700">
+            <div>
+              <dt className="text-sm font-bold uppercase tracking-wide text-slate-500">Email</dt>
+              <dd>
+                <a href={pricingMailto} className="font-semibold underline">
+                  {contactEmail}
+                </a>
+              </dd>
             </div>
-
-            {/* Contact Form (right) */}
-            <div className="bg-white rounded-2xl shadow-xl p-8">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">Name *</label>
-                  <input id="name" name="name" value={formData.name} onChange={handleChange} required className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500" />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">Email *</label>
-                  <input id="email" name="email" type="email" value={formData.email} onChange={handleChange} required className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500" />
-                </div>
-
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">Phone</label>
-                  <input id="phone" name="phone" value={formData.phone} onChange={handleChange} className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500" />
-                </div>
-
-                <div>
-                  <label htmlFor="company" className="block text-sm font-semibold text-gray-700 mb-2">Company</label>
-                  <input id="company" name="company" value={formData.company} onChange={handleChange} className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500" />
-                </div>
-
-                <div>
-                  <label htmlFor="bagType" className="block text-sm font-semibold text-gray-700 mb-2">Bag Type Interest</label>
-                  <select id="bagType" name="bagType" value={formData.bagType} onChange={handleChange} className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl">
-                    <option value="">Select a type</option>
-                    <option value="custom">Custom Printed Bags</option>
-                    <option value="dispensary">Dispensary Bags</option>
-                    <option value="faith">Faith & Religion Bags</option>
-                    <option value="holiday">Holiday Bags</option>
-                    <option value="pharmacy">Pharmacy Bags</option>
-                    <option value="pride">Pride Bags</option>
-                    <option value="usa">USA Bags</option>
-                    <option value="veterinary">Veterinary Bags</option>
-                    <option value="winery">Winery Bags</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="quantity" className="block text-sm font-semibold text-gray-700 mb-2">Estimated Quantity</label>
-                  <input id="quantity" name="quantity" value={formData.quantity} onChange={handleChange} placeholder="e.g., 1000, 5000, 10000+" className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl" />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">Message *</label>
-                  <textarea id="message" name="message" value={formData.message} onChange={handleChange} required rows={5} className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl"></textarea>
-                </div>
-
-                {submitted && <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-xl font-semibold">Thank you! Your message has been sent. We'll get back to you soon.</div>}
-
-                <button
-                  type="submit"
-                  disabled={sending}
-                  className={`w-full px-6 py-4 rounded-xl font-bold text-lg text-white shadow-lg transform transition ${sending ? 'bg-gray-400 cursor-not-allowed' : 'bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800'}`}
-                >
-                  {sending ? 'Sending...' : 'Send Message'}
-                </button>
-              </form>
+            <div>
+              <dt className="text-sm font-bold uppercase tracking-wide text-slate-500">Phone</dt>
+              <dd>
+                <a href={contactPhoneHref} className="font-semibold underline">
+                  {contactPhone}
+                </a>
+              </dd>
             </div>
-          </div>
-        </div>
-      </section>
+            <div>
+              <dt className="text-sm font-bold uppercase tracking-wide text-slate-500">Location</dt>
+              <dd>
+                {contactAddress[0]}
+                <br />
+                {contactAddress[1]}
+              </dd>
+            </div>
+          </dl>
+        </section>
+      </div>
     </div>
   )
 }

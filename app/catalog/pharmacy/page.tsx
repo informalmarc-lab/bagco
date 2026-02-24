@@ -135,7 +135,7 @@ export default function PharmacyCatalog() {
             <h3 className="text-xl font-semibold mb-4 text-gray-800">Available Sizes:</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
               {info.sizes.map((size) => (
-                <div key={size.id} className="bg-white p-3 rounded border border-gray-200">
+                <div key={size.id} className="bg-primary-50 p-3 rounded border border-gray-200">
                   <p className="font-semibold text-gray-800">#{size.id}</p>
                   <p className="text-sm text-gray-600">{size.dims}</p>
                   <p className="text-sm text-gray-600">{size.qty}</p>
@@ -157,7 +157,7 @@ export default function PharmacyCatalog() {
   }
 
   return (
-    <div className="bg-white">
+    <div className="bg-primary-50">
       <section className="bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
         <div className="container mx-auto px-4 relative z-10">
@@ -169,7 +169,13 @@ export default function PharmacyCatalog() {
         </div>
       </section>
 
-      {loading ? null : (
+      {loading ? (
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <p className="text-center text-gray-600 text-lg">Loading pharmacy catalog...</p>
+          </div>
+        </section>
+      ) : (
         <>
           {renderSection('ty')}
           {renderSection('gs')}
@@ -180,7 +186,7 @@ export default function PharmacyCatalog() {
       <section className="py-16 bg-gradient-to-br from-primary-50 to-primary-100">
         <div className="container mx-auto px-4 text-center">
           <Link href="/contact" className="inline-block bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-700 transition-colors shadow-lg hover:shadow-xl">
-            Request a Quote
+            Email Us for Pricing
           </Link>
         </div>
       </section>

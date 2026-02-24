@@ -2,45 +2,51 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
+import { contactEmail, pricingMailto } from '@/components/siteConfig'
+
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/pharmacy-bags', label: 'Pharmacy Bags' },
+  { href: '/custom-printing', label: 'Custom Printing' },
+  { href: '/industries', label: 'Industries' },
+  { href: '/manufacturing', label: 'Manufacturing' },
+  { href: '/contact', label: 'Contact' },
+]
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="bg-white/95 backdrop-blur-sm shadow-lg sticky top-0 z-50 border-b border-gray-100">
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-20">
-          {/* Logo */}
-          <Link href="/" className="text-3xl font-extrabold bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent hover:from-primary-700 hover:to-primary-800 transition-all flex items-center gap-2">
-            <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center text-white text-xl font-black shadow-lg">B</div>
-            Bagco
+    <nav className="sticky top-0 z-50 border-b border-amber-200 bg-[rgba(255,252,245,0.95)] backdrop-blur">
+      <div className="section-container">
+        <div className="flex min-h-20 flex-wrap items-center justify-between gap-3 py-3">
+          <Link
+            href="/"
+            className="flex items-center gap-3 text-2xl font-black tracking-tight text-slate-900"
+          >
+            <span className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-slate-900 text-lg font-black text-amber-50">
+              B
+            </span>
+            <span>Bag Supply Co</span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
-            <Link href="/" className="text-gray-700 hover:text-primary-600 font-semibold px-4 py-2 rounded-lg transition-colors hover:bg-primary-50">
-              Home
-            </Link>
-            <Link href="/about" className="text-gray-700 hover:text-primary-600 font-semibold px-4 py-2 rounded-lg transition-colors hover:bg-primary-50">
-              About
-            </Link>
-            <Link href="/catalog" className="text-gray-700 hover:text-primary-600 font-semibold px-4 py-2 rounded-lg transition-colors hover:bg-primary-50">
-              Catalog
-            </Link>
-            <Link href="/gallery" className="text-gray-700 hover:text-primary-600 font-semibold px-4 py-2 rounded-lg transition-colors hover:bg-primary-50">
-              Gallery
-            </Link>
-            <Link 
-              href="/contact" 
-              className="bg-gradient-to-r from-primary-600 to-primary-700 text-white px-6 py-2 rounded-xl font-semibold hover:from-primary-700 hover:to-primary-800 transition-all shadow-lg hover:shadow-xl ml-2"
+          <div className="hidden items-center gap-2 md:flex">
+            <a
+              href={pricingMailto}
+              className="rounded-md border border-amber-900/20 bg-amber-50 px-3 py-2 text-sm font-bold text-slate-900 hover:bg-amber-100"
             >
-              Contact
-            </Link>
+              {contactEmail}
+            </a>
+            <a
+              href={pricingMailto}
+              className="rounded-md bg-slate-900 px-4 py-2 text-sm font-bold text-white hover:bg-slate-700"
+            >
+              Email Us for Pricing
+            </a>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-700 hover:text-primary-600"
+            className="text-slate-700 hover:text-slate-900 md:hidden"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -54,45 +60,45 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
+        <div className="hidden border-t border-amber-200 py-3 md:flex md:items-center md:justify-between">
+          <div className="flex flex-wrap items-center gap-1">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="rounded px-3 py-2 text-sm font-bold text-slate-700 hover:bg-amber-100 hover:text-slate-900"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+
         {isOpen && (
-          <div className="md:hidden pb-4">
-            <div className="flex flex-col space-y-4 pt-4">
-              <Link 
-                href="/" 
-                className="text-gray-700 hover:text-primary-600 font-medium transition-colors"
-                onClick={() => setIsOpen(false)}
+          <div className="border-t border-amber-200 pb-5 md:hidden">
+            <div className="flex flex-col gap-2 pt-4">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="rounded px-1 py-2 font-semibold text-slate-700"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <a
+                href={pricingMailto}
+                className="mt-2 rounded-md border border-amber-900/20 bg-amber-50 px-3 py-2 font-bold text-slate-900"
               >
-                Home
-              </Link>
-              <Link 
-                href="/about" 
-                className="text-gray-700 hover:text-primary-600 font-medium transition-colors"
-                onClick={() => setIsOpen(false)}
+                {contactEmail}
+              </a>
+              <a
+                href={pricingMailto}
+                className="rounded-md bg-slate-900 px-4 py-3 text-center font-bold text-white"
               >
-                About
-              </Link>
-              <Link 
-                href="/catalog" 
-                className="text-gray-700 hover:text-primary-600 font-medium transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Catalog
-              </Link>
-              <Link 
-                href="/gallery" 
-                className="text-gray-700 hover:text-primary-600 font-medium transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Gallery
-              </Link>
-              <Link 
-                href="/contact" 
-                className="bg-primary-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-primary-700 transition-colors inline-block text-center"
-                onClick={() => setIsOpen(false)}
-              >
-                Contact
-              </Link>
+                Email Us for Pricing
+              </a>
             </div>
           </div>
         )}

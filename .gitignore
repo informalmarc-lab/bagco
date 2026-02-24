@@ -1,1 +1,7 @@
-node_modules/\n.next/\nnext-env.d.ts
+node_modules/
+.next/
+out/
+.local/
+*.log
+*.zip
+*.tar.gz
