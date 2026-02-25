@@ -1,0 +1,14 @@
+dispensary|dispensary-bags
+winery|winery-bags
+bakery|bakery-bags
+grocery|grocery-bags
+seasonal|seasonal-bags
+college|college-university-bags
+magazine-comics|magazine-comic-bags
+minicases|minicases
+usa|mini-cases-products-usa-design-19
+usa|mini-cases-products-usa-design-20
+usa|mini-cases-products-usa-design-21
+usa|mini-cases-products-usa-design-22
+usa|mini-cases-products-usa-design-23
+usa|mini-cases-products-usa-design-24

@@ -1,0 +1,12 @@
+node_modules/
+.next/
+.local/
+
+*.log
+*.zip
+*.tar.gz
+*.tgz
+*.tsbuildinfo
+
+bagco-host-ready/
+vps-ready/
