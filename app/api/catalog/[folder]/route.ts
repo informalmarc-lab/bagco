@@ -4,7 +4,7 @@ import fs from 'fs'
 import { isBlockedImageFile } from '@/lib/imageFilters'
 
 const IMAGE_EXT = ['.jpg', '.jpeg', '.png', '.gif', '.webp']
-const BLOCKED_FOLDERS = new Set(['api'])
+const BLOCKED_FOLDERS = new Set(['api', 'grocery'])
 
 function getImagesRecursive(root: string, folder: string, current = root): { src: string; name: string }[] {
   const images: { src: string; name: string }[] = []

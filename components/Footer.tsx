@@ -51,18 +51,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/custom-printing" className="text-slate-400 transition-colors hover:text-white">
-                  Custom Printing
+                <Link href="/generic-bag-quote" className="text-slate-400 transition-colors hover:text-white">
+                  Quote Tool
                 </Link>
               </li>
               <li>
                 <Link href="/catalog" className="text-slate-400 transition-colors hover:text-white">
                   Catalogs
-                </Link>
-              </li>
-              <li>
-                <Link href="/industries" className="text-slate-400 transition-colors hover:text-white">
-                  Industries
                 </Link>
               </li>
               <li>
@@ -74,7 +69,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="mb-5 text-lg font-bold text-white">SEO Pages</h4>
+            <h4 className="mb-5 text-lg font-bold text-white">Resources</h4>
             <ul className="space-y-2">
               <li>
                 <Link href="/catalog/pharmacy" className="text-slate-400 transition-colors hover:text-white">
@@ -92,28 +87,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/custom-pharmacy-paper-bags" className="text-slate-400 transition-colors hover:text-white">
-                  Custom Pharmacy Paper Bags
+                <Link href="/pharmacy-bags" className="text-slate-400 transition-colors hover:text-white">
+                  Pharmacy Programs
                 </Link>
               </li>
               <li>
-                <Link href="/pharmacy-paper-bags-wholesale" className="text-slate-400 transition-colors hover:text-white">
-                  Pharmacy Paper Bags Wholesale
-                </Link>
-              </li>
-              <li>
-                <Link href="/independent-pharmacy-packaging" className="text-slate-400 transition-colors hover:text-white">
-                  Independent Pharmacy Packaging
-                </Link>
-              </li>
-              <li>
-                <Link href="/custom-retail-paper-bags" className="text-slate-400 transition-colors hover:text-white">
-                  Custom Retail Paper Bags
-                </Link>
-              </li>
-              <li>
-                <Link href="/made-in-usa-paper-bags" className="text-slate-400 transition-colors hover:text-white">
-                  Made in USA Paper Bags
+                <Link href="/custom-printing" className="text-slate-400 transition-colors hover:text-white">
+                  Custom Printing
                 </Link>
               </li>
             </ul>

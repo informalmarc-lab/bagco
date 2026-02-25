@@ -7,6 +7,7 @@ import {
   pricingMailto,
   subjectTemplate,
 } from '@/components/siteConfig'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -83,6 +84,12 @@ export default function ContactPage() {
             </div>
           </dl>
         </section>
+      </div>
+
+      <div className="mt-8">
+        <Link href="/generic-bag-quote" className="btn-secondary">
+          Open Generic Bag Quote Tool
+        </Link>
       </div>
     </div>
   )

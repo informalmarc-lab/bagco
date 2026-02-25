@@ -11,7 +11,6 @@ const collections = [
   { name: 'Holiday Bags', slug: 'holiday' },
   { name: 'Bakery Bags', slug: 'bakery' },
   { name: 'College & University Bags', slug: 'college' },
-  { name: 'Grocery Bags', slug: 'grocery' },
   { name: 'Dispensary Store Bags', slug: 'magazine-comics' },
   { name: 'Mini Cases', slug: 'minicases' },
   { name: 'Seasonal Bags', slug: 'seasonal' },
@@ -23,6 +22,24 @@ const customProducts = [
   { id: 1, name: 'Full-Custom, 1-Color Bags', price: '95.56' },
   { id: 2, name: 'Full-Custom, 2-Color Bags', price: '95.56' },
   { id: 3, name: 'Full-Custom, 3-Color Bags', price: '119.46' },
+]
+
+const coreCatalogs = [
+  {
+    title: 'Pharmacy Catalog',
+    href: '/catalog/pharmacy',
+    description: 'GS, Thank You, and Plastic GS programs with pricing tables and images.',
+  },
+  {
+    title: 'Veterinary Catalog',
+    href: '/catalog/veterinary',
+    description: 'VB1, VB2, and VB6 designs with matching styles and case details.',
+  },
+  {
+    title: 'Custom 1/2/3 Color Catalog',
+    href: '/catalog/custom',
+    description: 'Full-custom printing programs organized by one, two, and three colors.',
+  },
 ]
 
 export default function Catalog() {
@@ -61,20 +78,26 @@ export default function Catalog() {
             <Link href="/catalog/pharmacy" className="btn-secondary">Pharmacy Catalog</Link>
             <Link href="/catalog/veterinary" className="btn-secondary">Veterinary Catalog</Link>
             <Link href="/catalog/custom" className="btn-secondary">Custom 1/2/3 Color</Link>
+            <Link href="/generic-bag-quote" className="btn-primary">Build a Quote</Link>
           </div>
         </div>
       </section>
 
       <section className="section-container py-14">
-        <h2 className="section-title heading-serif">All Collections</h2>
-        <div className="mt-6 flex flex-wrap gap-3">
-          {collections.map((c) => (
+        <h2 className="section-title heading-serif">Core Catalogs</h2>
+        <p className="mt-3 max-w-3xl text-slate-700">
+          Start here for pharmacy, veterinary, and custom print programs.
+        </p>
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
+          {coreCatalogs.map((catalog) => (
             <Link
-              key={c.slug}
-              href={`/catalog/${c.slug}`}
-              className="rounded-md border border-slate-900/20 bg-white px-4 py-2 font-semibold text-slate-800 hover:bg-amber-50"
+              key={catalog.href}
+              href={catalog.href}
+              className="surface-card rounded-xl p-5 hover:shadow-md"
             >
-              {c.name}
+              <h3 className="text-lg font-black text-slate-900">{catalog.title}</h3>
+              <p className="mt-2 text-sm text-slate-700">{catalog.description}</p>
+              <p className="mt-4 text-sm font-bold underline">Open catalog</p>
             </Link>
           ))}
         </div>
@@ -115,6 +138,24 @@ export default function Catalog() {
       </section>
 
       <section className="section-container pt-8">
+        <h2 className="section-title heading-serif">Specialty Collections</h2>
+        <p className="mt-3 max-w-3xl text-slate-700">
+          Additional themed and seasonal bag collections.
+        </p>
+        <div className="mt-5 flex flex-wrap gap-3">
+          {collections.map((c) => (
+            <Link
+              key={c.slug}
+              href={`/catalog/${c.slug}`}
+              className="rounded-md border border-slate-900/20 bg-white px-4 py-2 text-sm font-semibold text-slate-800 hover:bg-amber-50"
+            >
+              {c.name}
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="section-container pt-10">
         <div className="rounded-2xl bg-[linear-gradient(135deg,#0f172a,#1e293b)] p-8 text-white md:p-10">
           <h2 className="heading-serif text-3xl font-black md:text-4xl">Need Help Choosing a Catalog?</h2>
           <p className="mt-3 max-w-2xl text-slate-200">

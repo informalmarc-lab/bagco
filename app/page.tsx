@@ -9,20 +9,27 @@ export const metadata: Metadata = {
     'Factory direct paper bag manufacturing for independent pharmacies. Low minimums, custom printing, and nationwide shipping from Union County, North Carolina.',
 }
 
-const industries = [
-  { name: 'Independent Pharmacies', featured: true },
-  { name: 'Veterinary Clinics' },
-  { name: 'Retail Stores' },
-  { name: 'Boutiques' },
-  { name: 'Restaurants' },
-  { name: 'Specialty Shops and Chains' },
-]
-
-const printCaps = [
-  '1-color, 2-color, and 3-color printing',
-  'Multiple pharmacy-ready sizes',
-  'Custom logo placement and proofing',
-  'Stock and full-custom programs',
+const quickPaths = [
+  {
+    title: 'Pharmacy Catalog',
+    href: '/catalog/pharmacy',
+    description: 'GS, TY, and plastic pharmacy bag programs.',
+  },
+  {
+    title: 'Veterinary Catalog',
+    href: '/catalog/veterinary',
+    description: 'VB1, VB2, and VB6 veterinary bag designs.',
+  },
+  {
+    title: 'Custom Printing Catalog',
+    href: '/catalog/custom',
+    description: 'Full-custom one, two, and three-color programs.',
+  },
+  {
+    title: 'Generic Quote Tool',
+    href: '/generic-bag-quote',
+    description: 'Build an estimate with case pricing and shipping eligibility.',
+  },
 ]
 
 const factoryPhotos = [
@@ -78,8 +85,8 @@ export default function Home() {
                 <a href={pricingMailto} className="btn-primary">
                   Email Us for Pricing
                 </a>
-                <Link href="/custom-printing" className="btn-secondary">
-                  View Printing Options
+                <Link href="/generic-bag-quote" className="btn-secondary">
+                  Build a Quote
                 </Link>
               </div>
               <div className="mt-7 flex flex-wrap gap-3">
@@ -133,49 +140,20 @@ export default function Home() {
 
       <section className="border-y border-amber-200 bg-amber-50/55 py-16 md:py-20">
         <div className="section-container">
-          <h2 className="section-title heading-serif">Printing Capabilities</h2>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {printCaps.map((cap) => (
-              <div key={cap} className="surface-card rounded-lg p-5 font-semibold text-slate-800">
-                {cap}
-              </div>
+          <h2 className="section-title heading-serif">Programs and Catalogs</h2>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            {quickPaths.map((path) => (
+              <Link key={path.href} href={path.href} className="surface-card rounded-lg p-5 hover:shadow-md">
+                <h3 className="text-lg font-black text-slate-900">{path.title}</h3>
+                <p className="mt-2 text-sm text-slate-700">{path.description}</p>
+                <p className="mt-4 text-sm font-bold underline">Open</p>
+              </Link>
             ))}
           </div>
-          <p className="mt-6 text-lg font-semibold text-slate-800">Email us for detailed pricing and production timelines.</p>
+          <p className="mt-6 text-lg font-semibold text-slate-800">Need fast pricing? Email your size, quantity, and print colors.</p>
           <a href={pricingMailto} className="btn-primary mt-4">
             Email Us for Pricing
           </a>
-        </div>
-      </section>
-
-      <section className="section-container py-16 md:py-20">
-        <h2 className="section-title heading-serif">Industries We Serve</h2>
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {industries.map((industry) => (
-            <div
-              key={industry.name}
-              className={`rounded-lg border p-5 ${
-                industry.featured
-                  ? 'border-slate-900 bg-slate-900 text-white'
-                  : 'border-slate-200 bg-white text-slate-800'
-              }`}
-            >
-              <p className={`text-lg ${industry.featured ? 'font-black' : 'font-semibold'}`}>
-                {industry.featured ? 'INDEPENDENT PHARMACIES' : industry.name}
-              </p>
-            </div>
-          ))}
-        </div>
-        <div className="mt-8 flex flex-wrap gap-3">
-          <Link href="/catalog/pharmacy" className="btn-secondary">
-            Pharmacy Catalog
-          </Link>
-          <Link href="/catalog/veterinary" className="btn-secondary">
-            Veterinary Catalog
-          </Link>
-          <Link href="/catalog/custom" className="btn-secondary">
-            Custom 1/2/3 Color Catalog
-          </Link>
         </div>
       </section>
 

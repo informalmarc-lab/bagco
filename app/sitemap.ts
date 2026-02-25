@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/industries',
     '/manufacturing',
     '/contact',
+    '/generic-bag-quote',
     '/custom-pharmacy-paper-bags',
     '/pharmacy-paper-bags-wholesale',
     '/independent-pharmacy-packaging',

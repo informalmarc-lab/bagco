@@ -7,6 +7,7 @@ import { notFound } from 'next/navigation'
 import { isBlockedImageFile } from '@/lib/imageFilters'
 
 const RESERVED = new Set(['custom', 'pharmacy', 'veterinary'])
+const BLOCKED_CATALOGS = new Set(['grocery'])
 const IMAGE_EXT = new Set(['.jpg', '.jpeg', '.png', '.gif', '.webp'])
 const HIDDEN_PREFIX = '.'
 
@@ -26,10 +27,6 @@ const LABELS: Record<string, { title: string; description: string }> = {
   faith: {
     title: 'Faith & Religious Bags',
     description: 'Faith and religious-themed paper bag design collection.',
-  },
-  grocery: {
-    title: 'Grocery Bags',
-    description: 'Paper grocery bag options for retail and checkout use cases.',
   },
   holiday: {
     title: 'Holiday Bags',
@@ -98,7 +95,12 @@ function getImageList(dirPath: string, slug: string): { src: string; name: strin
 }
 
 function isCatalogDirectory(basePath: string, folderName: string): boolean {
-  if (!folderName || folderName.startsWith(HIDDEN_PREFIX) || RESERVED.has(folderName)) {
+  if (
+    !folderName ||
+    folderName.startsWith(HIDDEN_PREFIX) ||
+    RESERVED.has(folderName) ||
+    BLOCKED_CATALOGS.has(folderName)
+  ) {
     return false
   }
 

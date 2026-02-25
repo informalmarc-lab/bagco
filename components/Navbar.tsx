@@ -3,14 +3,13 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
-import { contactEmail, pricingMailto } from '@/components/siteConfig'
+import { pricingMailto } from '@/components/siteConfig'
 
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/pharmacy-bags', label: 'Pharmacy Bags' },
   { href: '/catalog', label: 'Catalogs' },
-  { href: '/custom-printing', label: 'Custom Printing' },
-  { href: '/industries', label: 'Industries' },
+  { href: '/generic-bag-quote', label: 'Quote Tool' },
   { href: '/contact', label: 'Contact' },
 ]
 
@@ -34,12 +33,6 @@ export default function Navbar() {
           </Link>
 
           <div className="hidden items-center gap-2 md:flex">
-            <a
-              href={pricingMailto}
-              className="rounded-md border border-amber-900/20 bg-amber-50 px-3 py-2 text-sm font-bold text-slate-900 hover:bg-amber-100"
-            >
-              {contactEmail}
-            </a>
             <a
               href={pricingMailto}
               className="btn-primary px-4 py-2 text-sm"
@@ -100,13 +93,7 @@ export default function Navbar() {
               ))}
               <a
                 href={pricingMailto}
-                className="mt-2 rounded-md border border-amber-900/20 bg-amber-50 px-3 py-2 font-bold text-slate-900"
-              >
-                {contactEmail}
-              </a>
-              <a
-                href={pricingMailto}
-                className="btn-primary w-full text-center"
+                className="btn-primary mt-2 w-full text-center"
               >
                 Email Us for Pricing
               </a>

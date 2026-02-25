@@ -7,6 +7,7 @@ const BLOCKED_NAME_SNIPPETS = [
   'a592ac04a4_image-asset',
   'd9beeed5f9_image-asset',
   'a0996dabff_image-asset',
+  '33fe92fe76_image-asset_8ba91d7c',
 ]
 
 export function isBlockedImageFile(fileName: string): boolean {
