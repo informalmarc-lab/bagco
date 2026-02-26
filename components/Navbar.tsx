@@ -21,14 +21,14 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-slate-700 bg-[rgba(2,6,23,0.9)] backdrop-blur-xl">
+    <nav className="sticky top-0 z-50 border-b border-amber-200/80 bg-[rgba(255,251,244,0.92)] backdrop-blur-xl">
       <div className="section-container">
         <div className="flex min-h-20 flex-wrap items-center justify-between gap-3 py-3">
           <Link
             href="/"
-            className="flex items-center gap-3 text-2xl font-black tracking-tight text-slate-100"
+            className="flex items-center gap-3 text-2xl font-black tracking-tight text-slate-900"
           >
-            <span className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-amber-300 text-lg font-black text-slate-950 shadow-md">
+            <span className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-slate-900 text-lg font-black text-amber-100 shadow-md">
               BC
             </span>
             <span className="hidden sm:inline">Bag Co</span>
@@ -36,16 +36,16 @@ export default function Navbar() {
           </Link>
 
           <div className="hidden items-center gap-2 md:flex print-hide">
-            <Link href="/generic-bag-quote" className="rounded-md bg-amber-300 px-4 py-2 text-sm font-black text-slate-950 hover:bg-amber-200">
+            <Link href="/generic-bag-quote" className="btn-primary px-4 py-2 text-sm">
               Request a Custom Quote
             </Link>
-            <Link href="/contact" className="rounded-md border border-slate-400/60 bg-white/10 px-4 py-2 text-sm font-black text-white hover:bg-white/20">
+            <Link href="/contact" className="btn-secondary px-4 py-2 text-sm">
               Speak With Our Team
             </Link>
           </div>
 
           <button
-            className="text-slate-300 hover:text-white md:hidden"
+            className="text-slate-700 hover:text-slate-900 md:hidden"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -59,7 +59,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        <div className="hidden border-t border-slate-700 py-3 md:flex md:items-center md:justify-between">
+        <div className="hidden border-t border-amber-200 py-3 md:flex md:items-center md:justify-between">
           <div className="flex flex-wrap items-center gap-1">
             {navLinks.map((link) => (
               <Link
@@ -67,8 +67,8 @@ export default function Navbar() {
                 href={link.href}
                 className={`rounded-md px-3 py-2 text-sm font-bold transition-colors ${
                   isActive(link.href)
-                    ? 'bg-amber-300 text-slate-950'
-                    : 'text-slate-200 hover:bg-white/10 hover:text-white'
+                    ? 'bg-slate-900 text-amber-50'
+                    : 'text-slate-700 hover:bg-amber-100 hover:text-slate-900'
                 }`}
               >
                 {link.label}
@@ -78,7 +78,7 @@ export default function Navbar() {
         </div>
 
         {isOpen && (
-          <div className="border-t border-slate-700 pb-5 md:hidden">
+          <div className="border-t border-amber-200 pb-5 md:hidden">
             <div className="flex flex-col gap-2 pt-4">
               {navLinks.map((link) => (
                 <Link
@@ -86,18 +86,18 @@ export default function Navbar() {
                   href={link.href}
                   className={`rounded-md px-2 py-2 font-semibold ${
                     isActive(link.href)
-                      ? 'bg-amber-300 text-slate-950'
-                      : 'text-slate-200'
+                      ? 'bg-slate-900 text-amber-50'
+                      : 'text-slate-700'
                   }`}
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}
                 </Link>
               ))}
-              <Link href="/generic-bag-quote" className="mt-2 rounded-md bg-amber-300 px-4 py-3 text-center font-black text-slate-950">
+              <Link href="/generic-bag-quote" className="btn-primary mt-2 text-center">
                 Request a Custom Quote
               </Link>
-              <Link href="/contact" className="rounded-md border border-slate-400/60 bg-white/10 px-4 py-3 text-center font-black text-white">
+              <Link href="/contact" className="btn-secondary text-center">
                 Speak With Our Team
               </Link>
             </div>

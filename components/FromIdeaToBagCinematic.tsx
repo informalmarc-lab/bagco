@@ -8,25 +8,25 @@ const STEPS = [
     title: 'Consultation',
     copy:
       'We align on store type, branding goals, packaging format, and reorder cadence so your program is operationally realistic from day one.',
-    image: '/gallery/imported/cardinalbag/pharmacy-bags/72a10283ba_GSP-Hero-Rec.jpg',
+    image: '/catalog/pharmacy/gs/GS-22-FRONT.webp',
   },
   {
     title: 'Design Visualization',
     copy:
       'You receive structured design and sizing guidance for custom dispensary bags, pharmacy packaging bags, and custom retail bags.',
-    image: '/gallery/imported/cardinalbag/pharmacy-bags/79824fe814_PRODUCT-PHOTO---Pharmacy-v2-banner.jpg',
+    image: '/catalog/custom/2-color/CBC-22-FC2C.webp',
   },
   {
     title: 'Production',
     copy:
       'Your order moves through a controlled production schedule built for consistency, repeat quality, and dependable turnaround.',
-    image: '/gallery/imported/cardinalbag/veterinary/065ddcba20_DSC_2449.jpg',
+    image: '/catalog/veterinary/vb1/VB1-22-FRONT.webp',
   },
   {
     title: 'Finished Bag Reveal',
     copy:
       'The final result is professional branded paper bags that elevate trust at checkout and create repeat brand visibility after every sale.',
-    image: '/gallery/imported/cardinalbag/veterinary/15b131caac_IMG_8482.JPG',
+    image: '/catalog/custom/3-color/CBC-22-FC3C.webp',
   },
 ]
 
@@ -120,4 +120,3 @@ export default function FromIdeaToBagCinematic() {
     </section>
   )
 }
-

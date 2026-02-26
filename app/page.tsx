@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import FromIdeaToBagCinematic from '@/components/FromIdeaToBagCinematic'
 import QuickQuoteForm from '@/components/QuickQuoteForm'
@@ -15,6 +16,13 @@ export const metadata: Metadata = {
     'pharmacy packaging bags',
   ],
 }
+
+const clarityPoints = [
+  'Who we serve: regulated retail businesses and growth-focused storefronts.',
+  'What we provide: branded paper bags and wholesale custom packaging programs.',
+  'Why we are reliable: local support model with repeatable process and communication.',
+  'Next step: request a custom quote or speak with our team directly.',
+]
 
 const authorityMetrics = [
   { label: 'Production Capacity', value: 'Scaled for Multi-Location Programs' },
@@ -122,11 +130,11 @@ const objections = [
 
 const testimonials = [
   'BagCo always delivers quality. The bags are durable, well-made, and exactly what we needed for our shop. Customer service is top-notch too!',
-  'I’ve tried multiple bag suppliers, but BagCo is hands down the best. Fast shipping, great customization options, and the material feels premium.',
+  "I've tried multiple bag suppliers, but BagCo is hands down the best. Fast shipping, great customization options, and the material feels premium.",
   'Perfect for our business needs. We ordered custom-printed bags, and they look fantastic. Highly recommend BagCo for anyone in retail.',
   'Reliable, professional, and consistent. Every order has arrived on time and exactly as requested. BagCo makes running our business easier.',
   'Great quality bags at a reasonable price. BagCo exceeded our expectations and made the ordering process simple and smooth.',
-  'BagCo has become a dependable part of our operation. The ordering process is straightforward, turnaround times are consistent, and the finished bags present our brand exactly the way we want it. It’s rare to find a supplier that delivers this level of reliability every time.',
+  "BagCo has become a dependable part of our operation. The ordering process is straightforward, turnaround times are consistent, and the finished bags present our brand exactly the way we want it. It's rare to find a supplier that delivers this level of reliability every time.",
 ]
 
 const faqItems = [
@@ -170,48 +178,55 @@ export default function Home() {
     <div className="pb-16">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <section className="relative overflow-hidden border-b border-slate-700 bg-[linear-gradient(125deg,#020617_0%,#0f172a_45%,#1e293b_100%)] text-slate-100">
+      <section className="relative overflow-hidden border-b border-amber-200 bg-[linear-gradient(120deg,#fffdf8_0%,#f5e8d3_55%,#eadbc5_100%)]">
         <div className="section-container py-16 md:py-24">
-          <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
+          <div className="grid gap-8 lg:grid-cols-[1.08fr_0.92fr]">
             <div>
-              <p className="inline-flex rounded-full border border-slate-500/60 bg-white/5 px-4 py-2 text-xs font-black uppercase tracking-[0.12em] text-slate-200">
-                Retail Packaging and Branding Partner
-              </p>
-              <h1 className="heading-serif mt-6 text-4xl font-black leading-tight text-white md:text-6xl">
+              <p className="kicker">Retail Packaging and Branding Partner</p>
+              <h1 className="heading-serif mt-6 text-4xl font-black leading-tight text-slate-900 md:text-6xl">
                 Packaging Built to Make Retail Businesses Look Established and Operate Reliably
               </h1>
-              <p className="mt-5 max-w-3xl text-lg text-slate-300 md:text-xl">
+              <p className="mt-5 max-w-3xl text-lg text-slate-700 md:text-xl">
                 We support dispensaries, smoke shops, pharmacies, and retail stores with structured, scalable packaging programs designed for brand visibility and supply stability.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Link href="/generic-bag-quote" className="btn-primary bg-amber-300 text-slate-950 hover:bg-amber-200">
+                <Link href="/generic-bag-quote" className="btn-primary">
                   Request a Custom Quote
                 </Link>
-                <Link href="/contact" className="btn-secondary border-slate-400/70 bg-white/10 text-white hover:bg-white/20">
+                <Link href="/contact" className="btn-secondary">
                   Speak With Our Team
                 </Link>
               </div>
-              <p className="mt-4 text-sm text-slate-300">
-                No complicated intake process. Share your goals and get a structured recommendation quickly.
+              <p className="mt-3 text-sm text-slate-600">
+                No long intake process. Send your requirements and get a structured recommendation quickly.
               </p>
             </div>
 
-            <div className="rounded-2xl border border-slate-600/60 bg-slate-900/65 p-6">
-              <h2 className="text-lg font-black text-white">What You Know in 5 Seconds</h2>
-              <ul className="mt-4 space-y-3 text-sm text-slate-200">
-                <li className="rounded-lg border border-slate-600/50 bg-slate-800/60 p-3">
-                  Who we serve: regulated retail businesses and growth-focused storefronts.
-                </li>
-                <li className="rounded-lg border border-slate-600/50 bg-slate-800/60 p-3">
-                  What we provide: branded paper bags and wholesale custom packaging programs.
-                </li>
-                <li className="rounded-lg border border-slate-600/50 bg-slate-800/60 p-3">
-                  Why we are reliable: local support model with repeatable process and communication.
-                </li>
-                <li className="rounded-lg border border-slate-600/50 bg-slate-800/60 p-3">
-                  Next step: request a custom quote or speak with our team directly.
-                </li>
-              </ul>
+            <div className="rounded-2xl border border-amber-300 bg-white/90 p-5 shadow-[0_20px_40px_rgba(15,23,42,0.1)]">
+              <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                <h2 className="text-lg font-black text-slate-900">What You Know in 5 Seconds</h2>
+                <div className="mt-4 grid gap-3">
+                  {clarityPoints.map((item, idx) => (
+                    <div key={item} className="flex items-start gap-3 rounded-lg border border-slate-200 bg-white p-3">
+                      <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-amber-200 text-xs font-black text-slate-900">
+                        {idx + 1}
+                      </span>
+                      <p className="text-sm font-semibold text-slate-700">{item}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="mt-4 overflow-hidden rounded-xl border border-slate-200 bg-slate-100">
+                <div className="relative h-48">
+                  <Image
+                    src="/catalog/pharmacy/gs/GS-22-FRONT.webp"
+                    alt="Professional branded pharmacy bag"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -259,15 +274,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-slate-800 bg-slate-950 py-16 text-slate-100 md:py-20">
+      <section className="border-y border-amber-200 bg-amber-50/40 py-16 md:py-20">
         <div className="section-container">
-          <h2 className="heading-serif text-4xl font-black">Built for Retail Operations</h2>
-          <p className="mt-3 max-w-3xl text-slate-300">
+          <h2 className="heading-serif text-4xl font-black text-slate-900">Built for Retail Operations</h2>
+          <p className="mt-3 max-w-3xl text-slate-700">
             Packaging is not a side task. It impacts customer perception, repeat behavior, store credibility, and operational consistency.
           </p>
           <div className="mt-6 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
             {outcomes.map((item) => (
-              <div key={item} className="rounded-lg border border-slate-700 bg-slate-900/70 px-4 py-3 text-sm font-semibold">
+              <div key={item} className="surface-card rounded-lg px-4 py-3 text-sm font-semibold text-slate-800">
                 {item}
               </div>
             ))}
@@ -288,17 +303,17 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-slate-700 bg-[linear-gradient(130deg,#0f172a,#1e293b)] py-16 text-slate-100 md:py-20">
+      <section className="border-y border-amber-200 bg-[linear-gradient(130deg,#f8f3e8,#efe5d3)] py-16 md:py-20">
         <div className="section-container">
-          <h2 className="heading-serif text-4xl font-black">Automated Reorder Program</h2>
-          <p className="mt-3 max-w-3xl text-slate-300">
+          <h2 className="heading-serif text-4xl font-black text-slate-900">Automated Reorder Program</h2>
+          <p className="mt-3 max-w-3xl text-slate-700">
             Clients can automate reorders on a fixed schedule. Production, shipment, and invoicing run automatically to prevent shortages and remove manual reorder work.
           </p>
           <ul className="mt-6 grid gap-3 md:grid-cols-2">
-            <li className="rounded-lg border border-slate-600 bg-slate-900/55 p-4">Set weekly or monthly reorder cadence aligned to your actual volume.</li>
-            <li className="rounded-lg border border-slate-600 bg-slate-900/55 p-4">Automatic production and shipment workflow for predictable replenishment.</li>
-            <li className="rounded-lg border border-slate-600 bg-slate-900/55 p-4">Automated invoices and cleaner purchasing process for your team.</li>
-            <li className="rounded-lg border border-slate-600 bg-slate-900/55 p-4">Program rules can be customized per store, location, and demand profile.</li>
+            <li className="surface-card rounded-lg p-4">Set weekly or monthly reorder cadence aligned to your actual volume.</li>
+            <li className="surface-card rounded-lg p-4">Automatic production and shipment workflow for predictable replenishment.</li>
+            <li className="surface-card rounded-lg p-4">Automated invoices and cleaner purchasing process for your team.</li>
+            <li className="surface-card rounded-lg p-4">Program rules can be customized per store, location, and demand profile.</li>
           </ul>
         </div>
       </section>
@@ -346,9 +361,9 @@ export default function Home() {
               <li>Large distributors can feel transactional and slow to adapt.</li>
             </ul>
           </div>
-          <div className="rounded-xl border border-slate-800 bg-slate-900 p-5 text-slate-100">
-            <h3 className="text-xl font-black text-white">Bag Supply Co Model</h3>
-            <ul className="mt-3 space-y-2 text-slate-200">
+          <div className="rounded-xl border border-slate-200 bg-[linear-gradient(135deg,#f5e8d3,#efe0c8)] p-5">
+            <h3 className="text-xl font-black text-slate-900">Bag Supply Co Model</h3>
+            <ul className="mt-3 space-y-2 text-slate-800">
               <li>Accessible team with direct communication.</li>
               <li>Consistent, relationship-driven support.</li>
               <li>Operational focus designed for repeat retail execution.</li>
@@ -398,16 +413,16 @@ export default function Home() {
 
       <section className="section-container pb-8 pt-4">
         <div className="grid gap-6 lg:grid-cols-[1fr_1.1fr]">
-          <div className="rounded-2xl bg-[linear-gradient(135deg,#0f172a,#1e293b)] p-8 text-white">
-            <h2 className="heading-serif text-3xl font-black md:text-4xl">Built for Retail Businesses Ready to Scale</h2>
-            <p className="mt-4 text-slate-200">
+          <div className="rounded-2xl bg-[linear-gradient(135deg,#f5e8d3,#e9dbc4)] p-8">
+            <h2 className="heading-serif text-3xl font-black text-slate-900 md:text-4xl">Built for Retail Businesses Ready to Scale</h2>
+            <p className="mt-4 text-slate-700">
               If you need a packaging partner that protects brand standards and supply reliability, request your custom program today.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Link href="/generic-bag-quote" className="rounded-md bg-amber-200 px-5 py-3 font-black text-slate-950 hover:bg-amber-300">
+              <Link href="/generic-bag-quote" className="btn-primary">
                 Request a Custom Quote
               </Link>
-              <Link href="/contact" className="rounded-md border border-white/25 bg-white/10 px-5 py-3 font-black text-white hover:bg-white/20">
+              <Link href="/contact" className="btn-secondary">
                 Speak With Our Team
               </Link>
             </div>
