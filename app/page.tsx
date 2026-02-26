@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import FromIdeaToBagCinematic from '@/components/FromIdeaToBagCinematic'
+import HomeScrollMotion from '@/components/HomeScrollMotion'
 import QuickQuoteForm from '@/components/QuickQuoteForm'
 
 export const metadata: Metadata = {
@@ -204,8 +205,9 @@ export default function Home() {
   }
 
   return (
-    <div className="pb-16">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+    <HomeScrollMotion>
+      <div className="pb-16">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className="relative overflow-hidden border-b border-amber-200 bg-[linear-gradient(120deg,#fffdf8_0%,#f5e8d3_55%,#eadbc5_100%)]">
         <div className="section-container py-16 md:py-24">
@@ -495,6 +497,7 @@ export default function Home() {
           <QuickQuoteForm />
         </div>
       </section>
-    </div>
+      </div>
+    </HomeScrollMotion>
   )
 }

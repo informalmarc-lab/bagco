@@ -83,7 +83,8 @@ export default function FromIdeaToBagCinematic() {
       <div className="mt-10 grid gap-8">
         {STEPS.map((step, index) => {
           const isVisible = !!visibleSteps[index]
-          const parallax = (scrollY * 0.022 + index * 10) * (index % 2 === 0 ? 1 : -1)
+          const rawParallax = (scrollY * 0.018 + index * 8) * (index % 2 === 0 ? 1 : -1)
+          const parallax = Math.max(-24, Math.min(24, rawParallax))
           return (
             <article
               key={step.title}
@@ -98,10 +99,10 @@ export default function FromIdeaToBagCinematic() {
                 <p className="mt-3 text-slate-700">{step.copy}</p>
               </div>
               <div className={`${index % 2 === 1 ? 'md:order-1' : ''}`}>
-                <div className="idea-media relative h-56 overflow-hidden rounded-xl border border-slate-200 bg-slate-100 md:h-64">
+                <div className="idea-media relative h-56 overflow-hidden rounded-xl border border-slate-200 bg-amber-50/40 md:h-64">
                   <div
-                    className="idea-media-inner absolute inset-0"
-                    style={{ transform: `translate3d(0, ${parallax}px, 0)` }}
+                    className="idea-media-inner absolute -inset-y-10 inset-x-0"
+                    style={{ transform: `translate3d(0, ${parallax}px, 0) scale(1.08)` }}
                   >
                     <Image
                       src={step.image}

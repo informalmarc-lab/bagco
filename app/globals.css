@@ -145,11 +145,17 @@ select {
   will-change: transform;
 }
 
+.home-scroll-motion {
+  will-change: transform;
+  transition: transform 80ms linear;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal-up,
   .idea-step,
   .idea-step-visible,
-  .idea-media-inner {
+  .idea-media-inner,
+  .home-scroll-motion {
     animation: none !important;
     transition: none !important;
     transform: none !important;
