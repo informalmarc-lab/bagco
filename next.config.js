@@ -2,6 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   allowedDevOrigins: ['*'],
+  images: {
+    unoptimized: true,
+  },
   async redirects() {
     return [
       {
