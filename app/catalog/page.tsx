@@ -78,6 +78,7 @@ export default function Catalog() {
             <Link href="/catalog/pharmacy" className="btn-secondary">Pharmacy Catalog</Link>
             <Link href="/catalog/veterinary" className="btn-secondary">Veterinary Catalog</Link>
             <Link href="/catalog/custom" className="btn-secondary">Custom 1/2/3 Color</Link>
+            <Link href="/catalog/legacy" className="btn-secondary">All Old Catalogs</Link>
             <Link href="/generic-bag-quote" className="btn-primary">Build a Quote</Link>
           </div>
         </div>
@@ -101,6 +102,9 @@ export default function Catalog() {
             </Link>
           ))}
         </div>
+        <Link href="/catalog/legacy" className="btn-secondary mt-6">
+          Open Full Legacy Catalog Directory
+        </Link>
       </section>
 
       <section className="section-container py-10 md:py-14">

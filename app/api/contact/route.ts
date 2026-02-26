@@ -5,23 +5,28 @@ const WEBHOOK_URL = process.env.DISCORD_WEBHOOK || ''
 export async function POST(req: Request) {
   try {
     const data = await req.json()
+    const name = String(data?.name || '').trim()
+    const email = String(data?.email || '').trim()
+    const message = String(data?.message || '').trim()
 
-    // Simple validation
-    if (!data?.name || !data?.email || !data?.message) {
+    if (!name || !email || !message) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
     }
 
-    // Post to Discord webhook
+    if (!WEBHOOK_URL) {
+      return NextResponse.json({ error: 'Contact form endpoint is not configured yet.' }, { status: 503 })
+    }
+
     const payload = {
       content: `**New Contact Form Submission**
 **Type:** ${data.submissionType || 'Contact Form'}
-**Name:** ${data.name}
-**Email:** ${data.email}
+**Name:** ${name}
+**Email:** ${email}
 **Phone:** ${data.phone || 'N/A'}
 **Company:** ${data.company || 'N/A'}
 **Bag Type:** ${data.bagType || 'N/A'}
 **Quantity:** ${data.quantity || 'N/A'}
-**Message:** ${data.message}`,
+**Message:** ${message}`,
     }
 
     const discordRes = await fetch(WEBHOOK_URL, {

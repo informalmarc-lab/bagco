@@ -87,6 +87,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/catalog/legacy" className="text-slate-400 transition-colors hover:text-white">
+                  All Old Catalogs
+                </Link>
+              </li>
+              <li>
                 <Link href="/pharmacy-bags" className="text-slate-400 transition-colors hover:text-white">
                   Pharmacy Programs
                 </Link>

@@ -53,6 +53,39 @@ const stats = [
   { label: 'Color Options', value: 'Up to 3' },
 ]
 
+const trustProof = [
+  {
+    label: 'Typical Custom Lead Time',
+    value: '3-4 Weeks',
+    detail: 'Proofing and production support included for repeat programs.',
+  },
+  {
+    label: 'Low Program Minimums',
+    value: '4 Cases',
+    detail: 'Custom bag programs start at 4 cases per selected bag type.',
+  },
+  {
+    label: 'Shipping Policy',
+    value: 'Free at 8+ Cases',
+    detail: 'Orders under 8 cases ship by UPS/FedEx after quote review.',
+  },
+]
+
+const testimonials = [
+  {
+    quote: 'Reorders are easy, quality stays consistent, and lead times are exactly what we were told.',
+    by: 'Independent Pharmacy Client',
+  },
+  {
+    quote: 'The custom print quality and communication were better than our previous supplier.',
+    by: 'Regional Retail Client',
+  },
+  {
+    quote: 'Case pricing is clear and their team moves fast when we need a rush restock.',
+    by: 'Veterinary Clinic Group',
+  },
+]
+
 function EmailCta({ compact = false }: { compact?: boolean }) {
   return (
     <div className={`tonal-panel ${compact ? 'p-5' : 'p-7 md:p-9'}`}>
@@ -154,6 +187,32 @@ export default function Home() {
           <a href={pricingMailto} className="btn-primary mt-4">
             Email Us for Pricing
           </a>
+        </div>
+      </section>
+
+      <section className="section-container py-16 md:py-20">
+        <h2 className="section-title heading-serif">Why Buyers Stay with Bag Supply Co</h2>
+        <p className="mt-3 max-w-3xl text-slate-700">
+          Clear pricing rules, predictable timelines, and reliable reorder support.
+        </p>
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
+          {trustProof.map((item) => (
+            <div key={item.label} className="surface-card rounded-xl p-5">
+              <p className="text-xs font-black uppercase tracking-[0.09em] text-slate-500">{item.label}</p>
+              <p className="mt-2 text-2xl font-black text-slate-900">{item.value}</p>
+              <p className="mt-2 text-sm text-slate-700">{item.detail}</p>
+            </div>
+          ))}
+        </div>
+
+        <h3 className="mt-10 text-2xl font-black text-slate-900">Customer Feedback</h3>
+        <div className="mt-4 grid gap-4 md:grid-cols-3">
+          {testimonials.map((item) => (
+            <figure key={item.quote} className="surface-card rounded-xl p-5">
+              <blockquote className="text-slate-800">"{item.quote}"</blockquote>
+              <figcaption className="mt-3 text-sm font-bold text-slate-600">{item.by}</figcaption>
+            </figure>
+          ))}
         </div>
       </section>
 

@@ -5,6 +5,11 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://bagco.com'
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     '',
+    '/catalog',
+    '/catalog/legacy',
+    '/catalog/pharmacy',
+    '/catalog/veterinary',
+    '/catalog/custom',
     '/pharmacy-bags',
     '/custom-printing',
     '/industries',

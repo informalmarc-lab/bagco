@@ -41,6 +41,26 @@ const catalogs = [
   },
 ]
 
+const trustProof = [
+  {
+    label: 'Custom Lead Time',
+    value: '3-4 Weeks',
+  },
+  {
+    label: 'Custom Program Minimum',
+    value: '4 Cases Per Selected Type',
+  },
+  {
+    label: 'Shipping Rule',
+    value: 'Free Shipping at 8+ Cases',
+  },
+]
+
+const testimonials = [
+  'Our pharmacy reorders monthly and the bag quality has stayed consistent.',
+  'They gave clear case pricing and helped us pick the right size mix on the first order.',
+]
+
 export default function PharmacyBagsPage() {
   return (
     <div className="section-container py-14 md:py-20">
@@ -77,6 +97,25 @@ export default function PharmacyBagsPage() {
             <div key={item} className="surface-card rounded-lg p-4 font-medium text-slate-800">
               {item}
             </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-10">
+        <h2 className="section-title heading-serif">Proof and Policies</h2>
+        <div className="mt-5 grid gap-3 md:grid-cols-3">
+          {trustProof.map((item) => (
+            <div key={item.label} className="surface-card rounded-lg p-4">
+              <p className="text-xs font-black uppercase tracking-[0.09em] text-slate-500">{item.label}</p>
+              <p className="mt-2 font-black text-slate-900">{item.value}</p>
+            </div>
+          ))}
+        </div>
+        <div className="mt-5 grid gap-3 md:grid-cols-2">
+          {testimonials.map((quote) => (
+            <p key={quote} className="surface-card rounded-lg p-4 text-slate-800">
+              "{quote}"
+            </p>
           ))}
         </div>
       </div>
