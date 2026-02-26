@@ -1,97 +1,79 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'About',
+  title: 'About Bag Supply Co',
   description:
-    'Learn about Bagco in Monroe, North Carolina and our custom printed, pharmacy, and specialty paper bag manufacturing services.',
+    'Learn how Bag Supply Co supports retail, pharmacy, food, and event clients with structured packaging programs built for operational consistency.',
 }
 
-export default function About() {
+const principles = [
+  {
+    title: 'Operational Consistency',
+    copy: 'We run structured packaging programs that support repeat orders, predictable lead times, and clear communication.',
+  },
+  {
+    title: 'Brand-First Presentation',
+    copy: 'Our bag programs are built to protect brand standards and deliver a professional customer-facing finish.',
+  },
+  {
+    title: 'Partnership Approach',
+    copy: 'We work as a long-term packaging partner, not a one-off vendor, with support for recurring and one-time programs.',
+  },
+]
+
+const capabilities = [
+  'Custom retail bags and custom dispensary bags',
+  'Branded paper bags for pharmacy and food service operations',
+  'Wedding and event packaging programs for hospitality teams',
+  'Wholesale custom packaging for recurring B2B accounts',
+  'Net 30 terms and automated recurring reorder support',
+]
+
+export default function AboutPage() {
   return (
-    <div className="bg-primary-50">
-      {/* Header */}
-      <section className="bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <h1 className="text-5xl md:text-6xl font-extrabold">About Bagco</h1>
-          <p className="text-xl md:text-2xl mt-4 text-primary-100">Your trusted partner in paper bags — custom printed, pharmacy, and more</p>
+    <div className="pb-16">
+      <section className="border-b border-amber-200 bg-[linear-gradient(120deg,#fffdf8_0%,#f5e8d3_55%,#e8d6ba_100%)]">
+        <div className="section-container py-14 md:py-20">
+          <p className="kicker">About Bag Supply Co</p>
+          <h1 className="heading-serif mt-5 text-4xl font-black text-slate-900 md:text-6xl">
+            A Packaging Partner Built for Serious Operations
+          </h1>
+          <p className="mt-4 max-w-3xl text-lg text-slate-700">
+            Bag Supply Co supports retail, pharmacy, food, and event clients with premium bag programs focused on brand presentation, operational reliability, and long-term scale.
+          </p>
         </div>
       </section>
 
-      {/* Main Content */}
-      <section className="py-20 bg-gradient-to-b from-primary-50 to-gray-50">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="bg-primary-50 rounded-2xl shadow-xl p-8 md:p-12">
-            <h2 className="text-4xl font-extrabold mb-6 text-gray-800">Our Story</h2>
-            <p className="text-gray-700 mb-6 text-lg leading-relaxed">
-              Bagco is based in Monroe, North Carolina. Owner Marc Castella and our team 
-              provide high-quality paper bags for businesses of all kinds—custom printed bags, pharmacy bags, 
-              dispensary bags, veterinary bags, winery bags, holiday and pride bags, and more.
-            </p>
-            <p className="text-gray-700 mb-6 text-lg leading-relaxed">
-              We work with our in-house designers to create the perfect bag for your business. Already have a logo? 
-              We're happy to work with your existing branding to create paper bags that reflect your brand.
-            </p>
+      <section className="section-container py-14">
+        <h2 className="section-title heading-serif">How We Operate</h2>
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
+          {principles.map((item) => (
+            <article key={item.title} className="surface-card rounded-xl p-5">
+              <h3 className="text-xl font-black text-slate-900">{item.title}</h3>
+              <p className="mt-3 text-slate-700">{item.copy}</p>
+            </article>
+          ))}
+        </div>
+      </section>
 
-            <h2 className="text-4xl font-extrabold mb-6 mt-12 text-gray-800">Our Mission</h2>
-            <p className="text-gray-700 mb-6 text-lg leading-relaxed">
-              To provide quality paper bag and packaging solutions for retail, pharmacy, dispensary, faith, 
-              veterinary, winery, and specialty businesses—with great design and customer service.
-            </p>
-
-            <h2 className="text-4xl font-extrabold mb-6 mt-12 text-gray-800">Why Choose Us</h2>
-            <ul className="list-none space-y-4 text-lg">
-              <li className="flex items-start">
-                <svg className="w-6 h-6 text-primary-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-gray-700">In-house design support — we work with your logo and branding</span>
+      <section className="border-y border-slate-200 bg-white py-14">
+        <div className="section-container">
+          <h2 className="section-title heading-serif">Core Capabilities</h2>
+          <ul className="mt-6 grid gap-3 md:grid-cols-2">
+            {capabilities.map((item) => (
+              <li key={item} className="surface-card rounded-lg p-4 text-sm font-semibold text-slate-800">
+                {item}
               </li>
-              <li className="flex items-start">
-                <svg className="w-6 h-6 text-primary-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-gray-700">Custom printed bags in 1-, 2-, and 3-color options</span>
-              </li>
-              <li className="flex items-start">
-                <svg className="w-6 h-6 text-primary-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-gray-700">Pharmacy bags, dispensary bags, veterinary, winery, holiday & pride bags</span>
-              </li>
-              <li className="flex items-start">
-                <svg className="w-6 h-6 text-primary-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-gray-700">High-quality materials and construction (no handles on our bags)</span>
-              </li>
-              <li className="flex items-start">
-                <svg className="w-6 h-6 text-primary-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-gray-700">Flexible order quantities</span>
-              </li>
-              <li className="flex items-start">
-                <svg className="w-6 h-6 text-primary-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-gray-700">Dedicated customer service</span>
-              </li>
-            </ul>
-
-            <div className="mt-12 p-8 bg-gradient-to-br from-primary-50 to-primary-100 rounded-2xl shadow-lg">
-              <h3 className="text-3xl font-extrabold mb-4 text-gray-800">Get in Touch</h3>
-              <p className="text-gray-700 mb-6 text-lg">
-                Interested in learning more about our paper bag manufacturing services? 
-                We'd love to discuss how we can help meet your packaging needs.
-              </p>
-              <a 
-                href="/contact" 
-                className="inline-block bg-gradient-to-r from-primary-600 to-primary-700 text-white px-8 py-4 rounded-xl font-bold hover:from-primary-700 hover:to-primary-800 transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
-              >
-                Contact Us Today
-              </a>
-            </div>
+            ))}
+          </ul>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link href="/generic-bag-quote" className="btn-primary">
+              Request a Custom Quote
+            </Link>
+            <Link href="/contact" className="btn-secondary">
+              Speak With Our Team
+            </Link>
           </div>
         </div>
       </section>
