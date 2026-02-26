@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import IndustrySolutionsSection from '@/components/IndustrySolutionsSection'
 
 export const metadata: Metadata = {
   title: 'Industries We Serve',
   description:
-    'Industry-specific packaging programs for dispensaries, smoke shops, pharmacies, and retail stores focused on branding and operational reliability.',
+    'Industry-specific packaging programs for regulated retail, events, hospitality, boutiques, and food service operations.',
 }
 
-const segments = [
+const regulatedSegments = [
   {
     title: 'Dispensaries',
     href: '/industries/dispensaries',
@@ -21,7 +22,7 @@ const segments = [
   {
     title: 'Pharmacies',
     href: '/industries/pharmacies',
-    copy: 'Clean, professional pharmacy packaging bags for high-volume daily operations and dependable reorder cycles.',
+    copy: 'Clean pharmacy packaging bags for high-volume daily operations and dependable reorder cycles.',
   },
   {
     title: 'Retail Stores',
@@ -37,26 +38,28 @@ export default function IndustriesPage() {
         <div className="section-container py-14 md:py-20">
           <p className="kicker">Industry Programs</p>
           <h1 className="heading-serif mt-5 text-4xl font-black text-slate-900 md:text-6xl">
-            Packaging Programs Built for Regulated Retail
+            Packaging Programs Built for Real Operations
           </h1>
           <p className="mt-4 max-w-3xl text-lg text-slate-700">
-            Bag Supply Co supports operationally demanding sectors with professional packaging systems designed for brand trust and supply consistency.
+            Bag Supply Co supports regulated retail, premium storefronts, events, hospitality, and food service teams with structured packaging supply and professional brand presentation.
           </p>
         </div>
       </section>
 
       <section className="section-container py-14">
-        <div className="grid gap-4 md:grid-cols-2">
-          {segments.map((segment) => (
+        <h2 className="section-title heading-serif">Regulated Retail Programs</h2>
+        <div className="mt-6 grid gap-4 md:grid-cols-2">
+          {regulatedSegments.map((segment) => (
             <Link key={segment.title} href={segment.href} className="surface-card rounded-xl p-6 hover:shadow-md">
-              <h2 className="text-2xl font-black text-slate-900">{segment.title}</h2>
+              <h3 className="text-2xl font-black text-slate-900">{segment.title}</h3>
               <p className="mt-3 text-slate-700">{segment.copy}</p>
               <p className="mt-4 text-sm font-black uppercase tracking-[0.08em] text-amber-800">Open Industry Page</p>
             </Link>
           ))}
         </div>
       </section>
+
+      <IndustrySolutionsSection />
     </div>
   )
 }
-

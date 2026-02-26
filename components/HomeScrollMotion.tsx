@@ -17,7 +17,7 @@ export default function HomeScrollMotion({
     const onScroll = () => {
       if (rafId) return
       rafId = window.requestAnimationFrame(() => {
-        const nextOffset = Math.min(180, Math.max(0, window.scrollY * 0.08))
+        const nextOffset = Math.min(280, Math.max(0, window.scrollY * 0.14))
         setOffset(nextOffset)
         rafId = 0
       })
@@ -34,7 +34,7 @@ export default function HomeScrollMotion({
   return (
     <div
       className="home-scroll-motion"
-      style={{ transform: `translate3d(0, ${offset}px, 0)` }}
+      style={{ transform: `translate3d(0, ${offset * -1}px, 0)` }}
     >
       {children}
     </div>

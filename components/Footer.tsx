@@ -59,8 +59,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/weddings-events" className="text-slate-400 transition-colors hover:text-white">
-                  Weddings & Events
+                <Link href="/shipping" className="text-slate-400 transition-colors hover:text-white">
+                  Shipping Policy
                 </Link>
               </li>
               <li>
@@ -110,8 +110,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/weddings-events" className="text-slate-400 transition-colors hover:text-white">
-                  Event Packaging
+                <Link href="/industries#industry-solutions" className="text-slate-400 transition-colors hover:text-white">
+                  Events & Hospitality
                 </Link>
               </li>
             </ul>

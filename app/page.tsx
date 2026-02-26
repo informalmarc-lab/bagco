@@ -73,9 +73,19 @@ const segments = [
     copy: 'Custom retail bags that reinforce brand value and scale with store growth.',
   },
   {
-    title: 'Weddings & Events',
-    href: '/weddings-events',
-    copy: 'Elegant custom event packaging for weddings, favors, gifting, and premium hosted experiences.',
+    title: 'Retail & Boutiques',
+    href: '/industries#industry-solutions',
+    copy: 'Premium bag programs for apparel, footwear, jewelry, and gift-focused storefronts.',
+  },
+  {
+    title: 'Events & Hospitality',
+    href: '/industries#industry-solutions',
+    copy: 'Elegant packaging programs for weddings, corporate events, hotels, and hospitality operations.',
+  },
+  {
+    title: 'Food & Beverage',
+    href: '/industries#industry-solutions',
+    copy: 'Durable carry-out bag programs for cafes, bakeries, and fast-paced food service locations.',
   },
 ]
 
@@ -302,40 +312,6 @@ export default function Home() {
               <p className="mt-4 text-sm font-black uppercase tracking-[0.08em] text-amber-800">View Industry Program</p>
             </Link>
           ))}
-        </div>
-      </section>
-
-      <section id="weddings-events" className="border-y border-slate-200 bg-[linear-gradient(135deg,#faf7f2,#f4f0e9)] py-16 md:py-20">
-        <div className="section-container">
-          <p className="kicker">Custom Wedding & Event Packaging</p>
-          <h2 className="heading-serif mt-5 text-4xl font-black text-slate-900 md:text-5xl">
-            Elegant Packaging for Weddings, Parties, and Premium Events
-          </h2>
-          <p className="mt-4 max-w-3xl text-lg text-slate-700">
-            We provide high-quality custom event bags for gift packaging, wedding favors, welcome kits, and branded special-event distribution with the same structured reliability we deliver to retail programs.
-          </p>
-          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            <div className="surface-card rounded-xl p-5">
-              <h3 className="text-lg font-black text-slate-900">Gift & Favor Bags</h3>
-              <p className="mt-2 text-sm text-slate-700">Premium presentation for wedding gifts, guest favors, and curated event bundles.</p>
-            </div>
-            <div className="surface-card rounded-xl p-5">
-              <h3 className="text-lg font-black text-slate-900">Event Branding</h3>
-              <p className="mt-2 text-sm text-slate-700">Custom logos, initials, and event marks for polished and memorable guest-facing packaging.</p>
-            </div>
-            <div className="surface-card rounded-xl p-5">
-              <h3 className="text-lg font-black text-slate-900">Scheduling Support</h3>
-              <p className="mt-2 text-sm text-slate-700">Production timelines coordinated around event dates and venue delivery windows.</p>
-            </div>
-            <div className="surface-card rounded-xl p-5">
-              <h3 className="text-lg font-black text-slate-900">Bulk Event Orders</h3>
-              <p className="mt-2 text-sm text-slate-700">Scalable order planning for large guest lists, recurring events, and multi-date programs.</p>
-            </div>
-          </div>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/weddings-events" className="btn-secondary">View Wedding & Event Packaging</Link>
-            <Link href="/generic-bag-quote" className="btn-primary">Request Event Quote</Link>
-          </div>
         </div>
       </section>
 

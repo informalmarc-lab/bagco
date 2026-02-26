@@ -4,7 +4,7 @@ import GenericQuoteTool from '@/components/GenericQuoteTool'
 export const metadata: Metadata = {
   title: 'Generic Bag Quote',
   description:
-    'Build an estimated generic bag quote with case-level pricing and free-shipping eligibility messaging.',
+    'Build an estimated generic bag quote with case-level pricing and shipping policy messaging based on case count and zone.',
 }
 
 export default function GenericBagQuotePage() {

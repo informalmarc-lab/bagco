@@ -13,11 +13,6 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/shipping',
-        destination: '/contact',
-        permanent: true,
-      },
-      {
         source: '/gallery',
         destination: '/custom-printing',
         permanent: true,

@@ -172,11 +172,11 @@ export default function GenericQuoteTool() {
   const selectedLines = allLines.filter((line) => line.cases > 0)
   const totalCases = selectedLines.reduce((sum, line) => sum + line.cases, 0)
   const subtotal = selectedLines.reduce((sum, line) => sum + line.lineTotal, 0)
-  const qualifiesFreeShipping = totalCases >= 8
+  const usesFuelSurchargeOnly = totalCases >= 8
   const selectedLineCount = selectedLines.length
-  const shippingMessage = qualifiesFreeShipping
-    ? 'Qualifies for free shipping (8 or more total cases).'
-    : 'Under 8 cases: standard UPS/FedEx shipping will be calculated after quote submission.'
+  const shippingMessage = usesFuelSurchargeOnly
+    ? '8+ cases: Fuel Surcharge (FSC) only applies. FSC is 5%, 7.5%, or 10% based on UPS zone.'
+    : 'Under 8 cases: ships UPS Ground and freight is added to invoice.'
 
   const customMinErrors = selectedLines.filter((line) => line.isCustom && line.cases < 4)
 
@@ -265,10 +265,10 @@ export default function GenericQuoteTool() {
           <div className="tonal-panel">
             <h2 className="text-2xl font-black text-slate-900">Quote Rules</h2>
             <p className="mt-3 text-slate-700">This is an estimate only and not an exact quote or final invoice.</p>
-            <p className="mt-2 text-slate-700">Free shipping applies at 8 or more total cases.</p>
-            <p className="mt-2 text-slate-700">
-              Under 8 cases: standard UPS or FedEx shipping applies, and we will calculate shipping after you submit your quote request.
-            </p>
+            <p className="mt-2 text-slate-700">Under 8 total cases: ships UPS Ground and freight is added to invoice.</p>
+            <p className="mt-2 text-slate-700">8 or more total cases: Fuel Surcharge (FSC) only is applied.</p>
+            <p className="mt-2 text-slate-700">FSC groups: Zone 2-3 = 5%, Zone 4-6 = 7.5%, Zone 7-8 = 10% of order total.</p>
+            <p className="mt-2 text-slate-700">Large LTL orders use a flat FSC per pallet. We provide LTL pallet rates after review.</p>
             <p className="mt-2 text-slate-700">Custom bags require a minimum of 4 cases per selected bag type.</p>
           </div>
         </section>
@@ -522,7 +522,9 @@ export default function GenericQuoteTool() {
 
           <div className="quote-pdf-notes">
             <p>Custom bags require a minimum of 4 cases per selected bag type.</p>
-            <p>Under 8 total cases, standard UPS/FedEx shipping is calculated after quote submission.</p>
+            <p>Under 8 total cases, orders ship UPS Ground and freight is added to invoice.</p>
+            <p>At 8+ total cases, Fuel Surcharge (FSC) only applies: Zone 2-3 (5%), Zone 4-6 (7.5%), Zone 7-8 (10%).</p>
+            <p>LTL orders use a flat FSC per pallet, confirmed after team review.</p>
             <p>Final totals and freight are confirmed after our team reviews the request.</p>
           </div>
         </div>
