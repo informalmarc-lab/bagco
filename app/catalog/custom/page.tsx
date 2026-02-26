@@ -29,22 +29,32 @@ const CUSTOM_SECTIONS = {
     title: 'Full-Custom, 1-Color Bags',
     tagline: 'High-value option',
     bullets: ['Includes custom printing in 1 stock color', ...BULLETS],
-    sizes: null,
+    sizes: [
+      { id: '#21', dims: '3.5" x 1.5" x 10"', qty: '3,000 per case', price: '$95.56' },
+      { id: '#22', dims: '4.5" x 2.25" x 11"', qty: '3,000 per case', price: '$95.56' },
+      { id: '#23', dims: '5" x 2" x 10"', qty: '3,000 per case', price: '$95.56' },
+      { id: '#25', dims: '6" x 4" x 11"', qty: '2,000 per case', price: '$95.56' },
+      { id: '#26', dims: '7" x 4" x 14"', qty: '1,000 per case', price: '$95.56' },
+      { id: '#28', dims: '8" x 5" x 17"', qty: '500 per case', price: '$95.56' },
+      { id: '#12', dims: '7" x 10"', qty: '3,000 per case', price: '$95.56' },
+      { id: '#14', dims: '9" x 11"', qty: '2,000 per case', price: '$95.56' },
+      { id: '#15', dims: '8.5" x 3.5" x 14.5"', qty: '1,000 per case', price: '$95.56' },
+    ],
   },
   '2-color': {
     title: 'Full-Custom, 2-Color Bags',
     tagline: 'Most popular option',
     bullets: ['Includes custom printing in 2 stock colors', ...BULLETS],
     sizes: [
-      { id: '#21', dims: '3.5" x 1.5" x 10"', qty: '3,000 per case' },
-      { id: '#22', dims: '4.5" x 2.25" x 11"', qty: '3,000 per case' },
-      { id: '#23', dims: '5" x 2" x 10"', qty: '3,000 per case' },
-      { id: '#25', dims: '6" x 4" x 11"', qty: '2,000 per case' },
-      { id: '#26', dims: '7" x 4" x 14"', qty: '1,000 per case' },
-      { id: '#28', dims: '8" x 5" x 17"', qty: '500 per case' },
-      { id: '#12', dims: '7" x 10"', qty: '3,000 per case' },
-      { id: '#14', dims: '9" x 11"', qty: '2,000 per case' },
-      { id: '#15', dims: '8.5" x 3.5" x 14.5"', qty: '1,000 per case' },
+      { id: '#21', dims: '3.5" x 1.5" x 10"', qty: '3,000 per case', price: '$95.56' },
+      { id: '#22', dims: '4.5" x 2.25" x 11"', qty: '3,000 per case', price: '$119.80' },
+      { id: '#23', dims: '5" x 2" x 10"', qty: '3,000 per case', price: '$117.39' },
+      { id: '#25', dims: '6" x 4" x 11"', qty: '2,000 per case', price: '$133.08' },
+      { id: '#26', dims: '7" x 4" x 14"', qty: '1,000 per case', price: '$102.29' },
+      { id: '#28', dims: '8" x 5" x 17"', qty: '500 per case', price: '$112.10' },
+      { id: '#12', dims: '7" x 10"', qty: '3,000 per case', price: '$115.35' },
+      { id: '#14', dims: '9" x 11"', qty: '2,000 per case', price: '$99.68' },
+      { id: '#15', dims: '8.5" x 3.5" x 14.5"', qty: '1,000 per case', price: '$95.78' },
     ],
   },
   '3-color': {
@@ -52,15 +62,15 @@ const CUSTOM_SECTIONS = {
     tagline: 'Premium visual option',
     bullets: ['Includes custom printing in 3 stock colors', ...BULLETS],
     sizes: [
-      { id: '#21', dims: '3.5" x 1.5" x 10"', qty: '3,000 per case' },
-      { id: '#22', dims: '4.5" x 2.25" x 11"', qty: '3,000 per case' },
-      { id: '#23', dims: '5" x 2" x 10"', qty: '3,000 per case' },
-      { id: '#25', dims: '6" x 4" x 11"', qty: '2,000 per case' },
-      { id: '#26', dims: '7" x 4" x 14"', qty: '1,000 per case' },
-      { id: '#28', dims: '8" x 5" x 17"', qty: '500 per case' },
-      { id: '#12', dims: '7" x 10"', qty: '3,000 per case' },
-      { id: '#14', dims: '9" x 11"', qty: '2,000 per case' },
-      { id: '#15', dims: '8.5" x 3.5" x 14.5"', qty: '1,000 per case' },
+      { id: '#21', dims: '3.5" x 1.5" x 10"', qty: '3,000 per case', price: '$119.46' },
+      { id: '#22', dims: '4.5" x 2.25" x 11"', qty: '3,000 per case', price: '$149.76' },
+      { id: '#23', dims: '5" x 2" x 10"', qty: '3,000 per case', price: '$146.76' },
+      { id: '#25', dims: '6" x 4" x 11"', qty: '2,000 per case', price: '$166.36' },
+      { id: '#26', dims: '7" x 4" x 14"', qty: '1,000 per case', price: '$127.86' },
+      { id: '#28', dims: '8" x 5" x 17"', qty: '500 per case', price: '$140.12' },
+      { id: '#12', dims: '7" x 10"', qty: '3,000 per case', price: '$144.18' },
+      { id: '#14', dims: '9" x 11"', qty: '2,000 per case', price: '$124.61' },
+      { id: '#15', dims: '8.5" x 3.5" x 14.5"', qty: '1,000 per case', price: '$119.71' },
     ],
   },
 } as const
@@ -167,6 +177,7 @@ export default function CustomGallery() {
                   <div key={s.id} className="surface-card rounded-lg p-3 text-sm">
                     <span className="font-black text-slate-900">{s.id}</span>
                     <span className="text-slate-700"> ({s.dims}) {s.qty}</span>
+                    <p className="mt-1 font-black text-slate-900">{s.price} per case</p>
                   </div>
                 ))}
               </div>
@@ -174,8 +185,8 @@ export default function CustomGallery() {
           )}
 
           <div className="mt-6">
-            <Link href="/contact" className="btn-primary">
-              Contact Us for Pricing
+            <Link href="/generic-bag-quote" className="btn-primary">
+              Request Custom Quote
             </Link>
           </div>
         </div>

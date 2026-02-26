@@ -1,68 +1,62 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { contactEmail, pricingMailto } from '@/components/siteConfig'
 
 export const metadata: Metadata = {
-  title: 'Industries',
+  title: 'Industries We Serve',
   description:
-    'Paper bag manufacturing for independent pharmacies, retail stores, boutiques, restaurants, and specialty businesses.',
+    'Industry-specific packaging programs for dispensaries, smoke shops, pharmacies, and retail stores focused on branding and operational reliability.',
 }
 
-const industries = [
-  'Independent Pharmacies',
-  'Veterinary Clinics',
-  'Retail stores',
-  'Boutiques',
-  'Small businesses',
-  'Restaurants',
-  'Specialty shops and chains',
+const segments = [
+  {
+    title: 'Dispensaries',
+    href: '/industries/dispensaries',
+    copy: 'Custom dispensary bags built for discretion, compliance-aware presentation, and repeat customer trust.',
+  },
+  {
+    title: 'Smoke Shops',
+    href: '/industries/smoke-shops',
+    copy: 'Packaging systems that strengthen shelf identity, local visibility, and recurring brand recognition.',
+  },
+  {
+    title: 'Pharmacies',
+    href: '/industries/pharmacies',
+    copy: 'Clean, professional pharmacy packaging bags for high-volume daily operations and dependable reorder cycles.',
+  },
+  {
+    title: 'Retail Stores',
+    href: '/industries/retail-stores',
+    copy: 'Custom retail bags that reinforce brand standards while supporting scalable store operations.',
+  },
 ]
 
 export default function IndustriesPage() {
   return (
-    <div className="section-container py-14 md:py-20">
-      <div className="max-w-4xl">
-        <p className="kicker">Who We Build For</p>
-        <h1 className="heading-serif mt-5 text-4xl font-black text-slate-900 md:text-5xl">Industries We Serve</h1>
-        <p className="mt-4 text-lg text-slate-700">
-          Pharmacies are our core market. We also manufacture custom and stock paper bags for a broad set of retail and business uses.
-        </p>
-      </div>
+    <div className="pb-16">
+      <section className="border-b border-amber-200 bg-[linear-gradient(120deg,#fffdf8_0%,#f5e8d3_55%,#e8d6ba_100%)]">
+        <div className="section-container py-14 md:py-20">
+          <p className="kicker">Industry Programs</p>
+          <h1 className="heading-serif mt-5 text-4xl font-black text-slate-900 md:text-6xl">
+            Packaging Programs Built for Regulated Retail
+          </h1>
+          <p className="mt-4 max-w-3xl text-lg text-slate-700">
+            Bag Supply Co supports operationally demanding sectors with professional packaging systems designed for brand trust and supply consistency.
+          </p>
+        </div>
+      </section>
 
-      <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {industries.map((industry, idx) => (
-          <div
-            key={industry}
-            className={`rounded-lg border p-5 ${
-              idx === 0 ? 'border-slate-900 bg-slate-900 text-white' : 'border-slate-200 bg-white text-slate-800 shadow-sm'
-            }`}
-          >
-            <p className={`text-lg ${idx === 0 ? 'font-black uppercase' : 'font-semibold'}`}>{industry}</p>
-          </div>
-        ))}
-      </div>
-
-      <div className="mt-10 tonal-panel">
-        <h2 className="text-2xl font-black text-slate-900">Email Us for Pricing</h2>
-        <p className="mt-3 text-slate-700">
-          Include your industry, bag size, quantity, and desired print colors to receive program options.
-        </p>
-        <a href={pricingMailto} className="btn-primary mt-4">
-          {contactEmail}
-        </a>
-      </div>
-
-      <div className="mt-8 flex flex-wrap gap-4 text-sm font-semibold text-slate-700">
-        <Link href="/custom-retail-paper-bags" className="rounded-md bg-white px-3 py-2 underline">
-          Custom retail paper bags
-        </Link>
-        <Link href="/independent-pharmacy-packaging" className="rounded-md bg-white px-3 py-2 underline">
-          Independent pharmacy packaging
-        </Link>
-        <Link href="/catalog/veterinary" className="rounded-md bg-white px-3 py-2 underline">
-          Veterinary bag catalog
-        </Link>
-      </div>
+      <section className="section-container py-14">
+        <div className="grid gap-4 md:grid-cols-2">
+          {segments.map((segment) => (
+            <Link key={segment.title} href={segment.href} className="surface-card rounded-xl p-6 hover:shadow-md">
+              <h2 className="text-2xl font-black text-slate-900">{segment.title}</h2>
+              <p className="mt-3 text-slate-700">{segment.copy}</p>
+              <p className="mt-4 text-sm font-black uppercase tracking-[0.08em] text-amber-800">Open Industry Page</p>
+            </Link>
+          ))}
+        </div>
+      </section>
     </div>
   )
 }
+

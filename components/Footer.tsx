@@ -5,7 +5,6 @@ import {
   contactPhone,
   contactPhoneHref,
   pricingMailto,
-  subjectTemplate,
 } from '@/components/siteConfig'
 
 export default function Footer() {
@@ -13,19 +12,18 @@ export default function Footer() {
     <footer className="mt-16 border-t border-amber-200/80 bg-slate-950 text-slate-300">
       <div className="section-container py-14">
         <div className="mb-10 rounded-2xl border border-slate-700/70 bg-[linear-gradient(135deg,#0f172a,#1e293b)] p-6 md:p-8">
-          <p className="kicker border-white/20 bg-white/10 text-amber-100">Factory Direct Support</p>
-          <h2 className="mt-3 text-2xl font-black text-white md:text-3xl">Email Us for Pricing</h2>
+          <p className="kicker border-white/20 bg-white/10 text-amber-100">Operational Partnership</p>
+          <h2 className="mt-3 text-2xl font-black text-white md:text-3xl">Built for Serious Retail Operations</h2>
           <p className="mt-2 max-w-3xl text-slate-300">
-            Send bag size, quantity, number of print colors, and your timeline. We will reply with direct factory pricing and lead times.
+            Structured support for dispensaries, smoke shops, pharmacies, and retail stores that need reliable packaging supply and professional brand presentation.
           </p>
           <div className="mt-4 flex flex-wrap items-center gap-3">
-            <a
-              href={pricingMailto}
-              className="rounded-md bg-amber-200 px-4 py-2 font-bold text-slate-950 hover:bg-amber-300"
-            >
-              {contactEmail}
-            </a>
-            <span className="text-sm text-slate-300">Suggested subject: {subjectTemplate}</span>
+            <Link href="/generic-bag-quote" className="rounded-md bg-amber-200 px-4 py-2 font-bold text-slate-950 hover:bg-amber-300">
+              Request a Custom Quote
+            </Link>
+            <Link href="/contact" className="rounded-md border border-white/25 bg-white/10 px-4 py-2 font-bold text-white hover:bg-white/20">
+              Speak With Our Team
+            </Link>
           </div>
         </div>
 
@@ -46,8 +44,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/pharmacy-bags" className="text-slate-400 transition-colors hover:text-white">
-                  Pharmacy Bags
+                <Link href="/industries" className="text-slate-400 transition-colors hover:text-white">
+                  Industries
                 </Link>
               </li>
               <li>
@@ -58,6 +56,11 @@ export default function Footer() {
               <li>
                 <Link href="/catalog" className="text-slate-400 transition-colors hover:text-white">
                   Catalogs
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy-policy" className="text-slate-400 transition-colors hover:text-white">
+                  Privacy Policy
                 </Link>
               </li>
               <li>
@@ -92,13 +95,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/pharmacy-bags" className="text-slate-400 transition-colors hover:text-white">
-                  Pharmacy Programs
+                <Link href="/industries/dispensaries" className="text-slate-400 transition-colors hover:text-white">
+                  Dispensary Programs
                 </Link>
               </li>
               <li>
-                <Link href="/custom-printing" className="text-slate-400 transition-colors hover:text-white">
-                  Custom Printing
+                <Link href="/industries/pharmacies" className="text-slate-400 transition-colors hover:text-white">
+                  Pharmacy Programs
                 </Link>
               </li>
             </ul>
@@ -122,13 +125,19 @@ export default function Footer() {
                 <br />
                 {contactAddress[1]}
               </li>
+              <li>
+                Mon-Fri: 8:00 AM - 5:00 PM ET
+              </li>
+              <li>
+                Service Area: United States
+              </li>
               <li className="pt-2">
-                <a
-                  href={pricingMailto}
+                <Link
+                  href="/privacy-policy"
                   className="inline-block rounded-md bg-white px-4 py-2 font-bold text-slate-900 hover:bg-amber-50"
                 >
-                  Email Us for Pricing
-                </a>
+                  Privacy Policy
+                </Link>
               </li>
             </ul>
           </div>

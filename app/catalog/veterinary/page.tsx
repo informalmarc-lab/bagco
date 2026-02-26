@@ -11,27 +11,27 @@ const VET_DESIGNS = {
     title: 'Veterinary Bag Design #VB1',
     description: 'Stock veterinary bag design #VB1 in three quantity/size options.',
     sizes: [
-      { name: 'Pinch bottom #22', dims: '4.5" x 2.25" x 11"', qty: '3,000 per case' },
-      { name: 'Flat pinch bottom #12', dims: '7" x 10"', qty: '3,000 per case' },
-      { name: 'Square bottom #25', dims: '6" x 4" x 11"', qty: '1,000 per case' },
+      { name: 'Pinch bottom #22', dims: '4.5" x 2.25" x 11"', qty: '3,000 per case', price: '$119.81' },
+      { name: 'Flat pinch bottom #12', dims: '7" x 10"', qty: '3,000 per case', price: '$115.35' },
+      { name: 'Square bottom #25', dims: '6" x 4" x 11"', qty: '1,000 per case', price: '$65.91' },
     ],
   },
   vb2: {
     title: 'Veterinary Bag Design #VB2',
     description: 'Stock veterinary bag design #VB2 in three quantity/size options.',
     sizes: [
-      { name: 'Pinch bottom #22', dims: '4.5" x 2.25" x 11"', qty: '3,000 per case' },
-      { name: 'Flat pinch bottom #12', dims: '7" x 10"', qty: '3,000 per case' },
-      { name: 'Square bottom #25', dims: '6" x 4" x 11"', qty: '1,000 per case' },
+      { name: 'Pinch bottom #22', dims: '4.5" x 2.25" x 11"', qty: '3,000 per case', price: '$119.81' },
+      { name: 'Flat pinch bottom #12', dims: '7" x 10"', qty: '3,000 per case', price: '$115.35' },
+      { name: 'Square bottom #25', dims: '6" x 4" x 11"', qty: '1,000 per case', price: '$65.91' },
     ],
   },
   vb6: {
     title: 'Veterinary Bag Design #VB6',
     description: 'Stock veterinary bag design #VB6 in three quantity/size options.',
     sizes: [
-      { name: 'Pinch bottom #22', dims: '4.5" x 2.25" x 11"', qty: '3,000 per case' },
-      { name: 'Flat pinch bottom #12', dims: '7" x 10"', qty: '3,000 per case' },
-      { name: 'Square bottom #25', dims: '6" x 4" x 11"', qty: '1,000 per case' },
+      { name: 'Pinch bottom #22', dims: '4.5" x 2.25" x 11"', qty: '3,000 per case', price: '$119.81' },
+      { name: 'Flat pinch bottom #12', dims: '7" x 10"', qty: '3,000 per case', price: '$115.35' },
+      { name: 'Square bottom #25', dims: '6" x 4" x 11"', qty: '1,000 per case', price: '$65.91' },
     ],
   },
 }
@@ -128,12 +128,13 @@ export default function VeterinaryCatalog() {
                   <p className="font-black text-slate-900">{s.name}</p>
                   <p className="text-sm text-slate-700">{s.dims}</p>
                   <p className="text-sm text-slate-700">{s.qty}</p>
+                  <p className="mt-1 text-sm font-black text-slate-900">{s.price} per case</p>
                 </div>
               ))}
             </div>
             <div className="mt-6">
-              <Link href="/contact" className="btn-primary">
-                Contact Us for Pricing
+              <Link href="/generic-bag-quote" className="btn-primary">
+                Request Custom Quote
               </Link>
             </div>
           </div>

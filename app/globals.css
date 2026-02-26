@@ -124,6 +124,38 @@ select {
   }
 }
 
+.idea-step {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 560ms ease, transform 620ms ease;
+}
+
+.idea-step-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.idea-media {
+  position: relative;
+}
+
+.idea-media-inner {
+  transition: transform 380ms ease-out;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-up,
+  .idea-step,
+  .idea-step-visible,
+  .idea-media-inner {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
 .theme-dark body {
   color: #e2e8f0;
   background:

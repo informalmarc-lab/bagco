@@ -23,18 +23,17 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://bagco.com'
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Bag Supply Co | Factory Direct Paper Bag Manufacturing',
+    default: 'Bag Supply Co | Retail Packaging and Branding Partner',
     template: '%s | Bag Supply Co',
   },
   description:
-    'Bag Supply Co manufactures custom and stock paper bags for independent pharmacies and retail businesses from Union County, North Carolina.',
+    'Bag Supply Co is a retail packaging and branding partner serving dispensaries, smoke shops, pharmacies, and retail stores with structured, reliable supply programs.',
   keywords: [
-    'custom pharmacy paper bags',
-    'pharmacy paper bags wholesale',
-    'independent pharmacy packaging',
-    'custom retail paper bags',
-    'made in usa paper bags',
-    'paper bag manufacturer',
+    'custom retail bags',
+    'custom dispensary bags',
+    'branded paper bags',
+    'wholesale custom packaging',
+    'pharmacy packaging bags',
   ],
   alternates: {
     canonical: '/',
@@ -42,17 +41,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: siteUrl,
-    title: 'Bag Supply Co | Factory Direct Paper Bag Manufacturing',
+    title: 'Bag Supply Co | Retail Packaging and Branding Partner',
     description:
-      'Factory direct custom and stock paper bags for independent pharmacies and retail businesses.',
+      'Packaging programs for dispensaries, smoke shops, pharmacies, and retail stores focused on brand visibility and operational reliability.',
     siteName: 'Bag Supply Co',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Bag Supply Co | Pharmacy Paper Bags Manufacturer',
+    title: 'Bag Supply Co | Retail Packaging Partner',
     description:
-      'Factory direct pharmacy and retail paper bag manufacturing with low minimums.',
+      'Custom retail bags and branded packaging programs built for regulated retail operations.',
   },
   category: 'business',
 }
@@ -67,7 +66,7 @@ export default function RootLayout({
     '@type': 'LocalBusiness',
     name: 'Bag Supply Co',
     description:
-      'Factory direct custom and stock paper bag manufacturing for pharmacies and retail.',
+      'Retail packaging and branding partner for dispensaries, smoke shops, pharmacies, and retail stores.',
     telephone: '+1-252-516-1944',
     email: 'info@bagco.com',
     url: siteUrl,
