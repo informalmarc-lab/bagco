@@ -4,7 +4,8 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Pharmacy Packaging Bags Programs',
   description:
-    'Professional pharmacy packaging bags for independent and multi-location pharmacies requiring trust, clean presentation, and reliability.',
+    'Professional pharmacy packaging bags and branded paper bags for independent and multi-location pharmacies requiring trust and reliable operations.',
+  keywords: ['pharmacy packaging bags', 'branded paper bags', 'wholesale custom packaging'],
 }
 
 export default function PharmaciesIndustryPage() {
@@ -38,4 +39,3 @@ export default function PharmaciesIndustryPage() {
     </div>
   )
 }
-

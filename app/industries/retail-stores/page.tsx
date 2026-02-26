@@ -4,7 +4,8 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Custom Retail Bags Programs',
   description:
-    'Custom retail bags and wholesale custom packaging systems built to improve customer experience, brand consistency, and scalable operations.',
+    'Custom retail bags, branded paper bags, and wholesale custom packaging systems built to improve customer experience and scalable operations.',
+  keywords: ['custom retail bags', 'branded paper bags', 'wholesale custom packaging'],
 }
 
 export default function RetailStoresIndustryPage() {
@@ -38,4 +39,3 @@ export default function RetailStoresIndustryPage() {
     </div>
   )
 }
-

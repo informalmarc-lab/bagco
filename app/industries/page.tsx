@@ -5,7 +5,14 @@ import IndustrySolutionsSection from '@/components/IndustrySolutionsSection'
 export const metadata: Metadata = {
   title: 'Industries We Serve',
   description:
-    'Industry-specific packaging programs for regulated retail, events, hospitality, boutiques, and food service operations.',
+    'Industry-specific packaging programs for custom retail bags, branded paper bags, wholesale custom packaging, and pharmacy packaging bags across retail, events, and food service.',
+  keywords: [
+    'custom retail bags',
+    'custom dispensary bags',
+    'branded paper bags',
+    'wholesale custom packaging',
+    'pharmacy packaging bags',
+  ],
 }
 
 const regulatedSegments = [

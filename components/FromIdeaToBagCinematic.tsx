@@ -7,14 +7,14 @@ const STEPS = [
   {
     title: 'Consultation',
     copy:
-      'We align on store type, branding goals, packaging format, and reorder cadence so your program is operationally realistic from day one.',
+      'We align on industry, volume, timeline, and branding goals so your program is operationally realistic from day one.',
     image: '/catalog/pharmacy/gs/GS-22-FRONT.webp',
   },
   {
     title: 'Design Visualization',
     copy:
-      'You receive structured design and sizing guidance for custom dispensary bags, pharmacy packaging bags, and custom retail bags.',
-    image: '/catalog/custom/2-color/CBC-22-FC2C.webp',
+      'You receive layout and sizing guidance for custom retail bags, hospitality programs, and wedding-event packaging.',
+    image: '/catalog/winery/3cf46738b6_CBC_WFC_11_82500eb0.jpg',
   },
   {
     title: 'Production',
@@ -25,7 +25,7 @@ const STEPS = [
   {
     title: 'Finished Bag Reveal',
     copy:
-      'The final result is professional branded paper bags that elevate trust at checkout and create repeat brand visibility after every sale.',
+      'The final result is professional branded paper bags that elevate trust in both retail checkout and premium event guest experiences.',
     image: '/catalog/custom/3-color/CBC-22-FC3C.webp',
   },
 ]
@@ -80,7 +80,7 @@ export default function FromIdeaToBagCinematic() {
         </div>
       </div>
 
-      <div className="mt-10 grid gap-8">
+      <div className="relative mt-10 grid gap-8 md:before:absolute md:before:bottom-0 md:before:left-5 md:before:top-2 md:before:w-px md:before:bg-slate-300">
         {STEPS.map((step, index) => {
           const isVisible = !!visibleSteps[index]
           const rawParallax = (scrollY * 0.014 + index * 6) * (index % 2 === 0 ? 1 : -1)
@@ -89,10 +89,11 @@ export default function FromIdeaToBagCinematic() {
             <article
               key={step.title}
               data-cinematic-step={index}
-              className={`idea-step grid gap-6 rounded-2xl border border-slate-200 bg-white p-5 md:grid-cols-[1.05fr_1fr] md:p-7 ${
+              className={`idea-step relative grid gap-6 rounded-2xl border border-slate-200 bg-white p-5 md:ml-10 md:grid-cols-[1.05fr_1fr] md:p-7 ${
                 isVisible ? 'idea-step-visible' : ''
               }`}
             >
+              <span className="absolute -left-8 top-6 hidden h-4 w-4 rounded-full border-2 border-slate-900 bg-amber-200 md:block" />
               <div className={`${index % 2 === 1 ? 'md:order-2' : ''}`}>
                 <p className="text-xs font-black uppercase tracking-[0.12em] text-amber-800">Step {index + 1}</p>
                 <h3 className="mt-2 text-2xl font-black text-slate-900">{step.title}</h3>

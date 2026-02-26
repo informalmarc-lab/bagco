@@ -3,12 +3,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import FromIdeaToBagCinematic from '@/components/FromIdeaToBagCinematic'
 import HomeScrollMotion from '@/components/HomeScrollMotion'
+import IndustrySolutionsSection from '@/components/IndustrySolutionsSection'
 import QuickQuoteForm from '@/components/QuickQuoteForm'
 
 export const metadata: Metadata = {
   title: 'Retail Packaging and Branding Partner for Regulated Retail',
   description:
-    'Bag Supply Co delivers custom retail bags, custom dispensary bags, branded paper bags, and wholesale custom packaging programs with reliable turnaround for pharmacies, smoke shops, dispensaries, and retail stores.',
+    'Bag Supply Co delivers custom retail bags, custom dispensary bags, branded paper bags, and wholesale custom packaging programs with reliable turnaround for pharmacies, smoke shops, retailers, and wedding-event teams.',
   keywords: [
     'custom retail bags',
     'custom dispensary bags',
@@ -228,7 +229,7 @@ export default function Home() {
                 Packaging Built to Make Retail Businesses Look Established and Operate Reliably
               </h1>
               <p className="mt-5 max-w-3xl text-lg text-slate-700 md:text-xl">
-                We support dispensaries, smoke shops, pharmacies, and retail stores with structured, scalable packaging programs designed for brand visibility and supply stability.
+                We support dispensaries, smoke shops, pharmacies, retailers, food service, and event teams with structured, scalable packaging programs designed for brand visibility and supply stability.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link href="/generic-bag-quote" className="btn-primary">
@@ -312,6 +313,38 @@ export default function Home() {
               <p className="mt-4 text-sm font-black uppercase tracking-[0.08em] text-amber-800">View Industry Program</p>
             </Link>
           ))}
+        </div>
+      </section>
+
+      <IndustrySolutionsSection />
+
+      <section className="border-y border-slate-200 bg-[linear-gradient(135deg,#faf7f2,#f4f0e9)] py-16 md:py-20">
+        <div className="section-container">
+          <p className="kicker">Custom Wedding & Event Packaging</p>
+          <h2 className="heading-serif mt-5 text-4xl font-black text-slate-900 md:text-5xl">
+            Premium Event Packaging with the Same Operational Reliability as Retail Programs
+          </h2>
+          <p className="mt-4 max-w-3xl text-lg text-slate-700">
+            We support weddings, private events, hospitality teams, and corporate activations with polished custom bag programs for guest gifting, favors, and branded distribution.
+          </p>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            <div className="surface-card rounded-xl p-5">
+              <h3 className="text-lg font-black text-slate-900">Gift & Favor Bags</h3>
+              <p className="mt-2 text-sm text-slate-700">Custom packaging for wedding favors, welcome kits, and premium guest handoffs.</p>
+            </div>
+            <div className="surface-card rounded-xl p-5">
+              <h3 className="text-lg font-black text-slate-900">Event Branding</h3>
+              <p className="mt-2 text-sm text-slate-700">Branded bags for planners, venues, and event operators that need consistent presentation quality.</p>
+            </div>
+            <div className="surface-card rounded-xl p-5">
+              <h3 className="text-lg font-black text-slate-900">Schedule-Aligned Production</h3>
+              <p className="mt-2 text-sm text-slate-700">Production timelines matched to event dates to reduce last-minute packaging risk.</p>
+            </div>
+          </div>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link href="/weddings-events" className="btn-secondary">View Event Packaging</Link>
+            <Link href="/generic-bag-quote" className="btn-primary">Request Event Quote</Link>
+          </div>
         </div>
       </section>
 

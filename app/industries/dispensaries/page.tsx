@@ -4,7 +4,8 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Custom Dispensary Bags',
   description:
-    'Custom dispensary bags designed for professional branding, discretion, and consistent retail operations.',
+    'Custom dispensary bags and branded paper bags designed for professional branding, discretion, and consistent retail operations.',
+  keywords: ['custom dispensary bags', 'branded paper bags', 'wholesale custom packaging'],
 }
 
 export default function DispensariesIndustryPage() {
@@ -38,4 +39,3 @@ export default function DispensariesIndustryPage() {
     </div>
   )
 }
-

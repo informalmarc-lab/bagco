@@ -4,7 +4,8 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Smoke Shop Packaging Programs',
   description:
-    'Branded paper bags and packaging systems for smoke shops focused on recognition, consistency, and operational scale.',
+    'Branded paper bags and wholesale custom packaging systems for smoke shops focused on recognition, consistency, and operational scale.',
+  keywords: ['branded paper bags', 'custom retail bags', 'wholesale custom packaging'],
 }
 
 export default function SmokeShopsIndustryPage() {
@@ -38,4 +39,3 @@ export default function SmokeShopsIndustryPage() {
     </div>
   )
 }
-

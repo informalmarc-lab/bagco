@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: '%s | Bag Supply Co',
   },
   description:
-    'Bag Supply Co is a retail packaging and branding partner serving dispensaries, smoke shops, pharmacies, and retail stores with structured, reliable supply programs.',
+    'Bag Supply Co is a retail packaging and branding partner serving dispensaries, smoke shops, pharmacies, retail stores, food service teams, and event operators with structured, reliable supply programs.',
   keywords: [
     'custom retail bags',
     'custom dispensary bags',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     title: 'Bag Supply Co | Retail Packaging and Branding Partner',
     description:
-      'Packaging programs for dispensaries, smoke shops, pharmacies, and retail stores focused on brand visibility and operational reliability.',
+      'Packaging programs for dispensaries, smoke shops, pharmacies, retailers, food service teams, and event operators focused on brand visibility and operational reliability.',
     siteName: 'Bag Supply Co',
     locale: 'en_US',
   },
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Bag Supply Co | Retail Packaging Partner',
     description:
-      'Custom retail bags and branded packaging programs built for regulated retail operations.',
+      'Custom retail bags and branded packaging programs built for regulated retail, food service, and event operations.',
   },
   category: 'business',
 }
@@ -65,7 +65,7 @@ export default function RootLayout({
     '@type': 'LocalBusiness',
     name: 'Bag Supply Co',
     description:
-      'Retail packaging and branding partner for dispensaries, smoke shops, pharmacies, and retail stores.',
+      'Retail packaging and branding partner for dispensaries, smoke shops, pharmacies, retailers, food service teams, and event operators.',
     telephone: '+1-252-516-1944',
     email: 'info@bagco.com',
     url: siteUrl,

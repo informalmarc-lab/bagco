@@ -158,7 +158,7 @@ export default function IndustrySolutionsSection() {
         ref={panelRef}
         className="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_14px_30px_rgba(15,23,42,0.1)] md:p-8"
       >
-        <div key={active.id} className="reveal-up">
+        <div key={active.id} className="industry-panel reveal-up">
           <div className="flex flex-wrap items-center gap-3">
             <p className="kicker m-0">{active.title}</p>
             <p className="text-sm font-semibold text-slate-600">{active.examples}</p>

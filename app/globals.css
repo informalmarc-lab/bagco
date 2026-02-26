@@ -125,6 +125,17 @@ select {
   }
 }
 
+@keyframes panelReveal {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .idea-step {
   opacity: 0;
   transform: translateY(32px);
@@ -148,6 +159,10 @@ select {
 .home-scroll-motion {
   will-change: transform;
   transition: transform 80ms linear;
+}
+
+.industry-panel {
+  animation: panelReveal 280ms ease-out both;
 }
 
 @media (prefers-reduced-motion: reduce) {
