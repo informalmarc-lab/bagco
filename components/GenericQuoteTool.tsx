@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
 type QuoteVariant = {
   id: string
@@ -140,6 +140,19 @@ function money(value: number): string {
 
 export default function GenericQuoteTool() {
   const [casesById, setCasesById] = useState<Record<string, number>>({})
+  const [generatedAt, setGeneratedAt] = useState('')
+  const [quoteId, setQuoteId] = useState('')
+  const [customer, setCustomer] = useState({
+    name: '',
+    company: '',
+    email: '',
+    phone: '',
+  })
+
+  useEffect(() => {
+    setGeneratedAt(new Date().toLocaleString())
+    setQuoteId(`BAGCO-${Date.now().toString().slice(-8)}`)
+  }, [])
 
   const allLines = useMemo(() => {
     return CATEGORIES.flatMap((category) =>
@@ -160,10 +173,10 @@ export default function GenericQuoteTool() {
   const totalCases = selectedLines.reduce((sum, line) => sum + line.cases, 0)
   const subtotal = selectedLines.reduce((sum, line) => sum + line.lineTotal, 0)
   const qualifiesFreeShipping = totalCases >= 8
+  const selectedLineCount = selectedLines.length
   const shippingMessage = qualifiesFreeShipping
     ? 'Qualifies for free shipping (8 or more total cases).'
     : 'Under 8 cases: standard UPS/FedEx shipping will be calculated after quote submission.'
-  const generatedAt = new Date().toLocaleString()
 
   const customMinErrors = selectedLines.filter((line) => line.isCustom && line.cases < 4)
 
@@ -178,6 +191,14 @@ export default function GenericQuoteTool() {
     return [
       'Generic Bag Quote Request',
       '',
+      `Quote ID: ${quoteId || 'Pending'}`,
+      `Generated: ${generatedAt || 'Pending'}`,
+      '',
+      `Name: ${customer.name || 'N/A'}`,
+      `Company: ${customer.company || 'N/A'}`,
+      `Email: ${customer.email || 'N/A'}`,
+      `Phone: ${customer.phone || 'N/A'}`,
+      '',
       ...lines,
       '',
       `Total Cases: ${totalCases}`,
@@ -186,7 +207,7 @@ export default function GenericQuoteTool() {
       '',
       'Note: This is an estimated quote and not a final invoice.',
     ].join('\n')
-  }, [selectedLines, shippingMessage, totalCases, subtotal])
+  }, [selectedLines, shippingMessage, totalCases, subtotal, quoteId, generatedAt, customer])
 
   const mailtoHref =
     selectedLines.length > 0
@@ -199,7 +220,19 @@ export default function GenericQuoteTool() {
     setCasesById((prev) => ({ ...prev, [id]: safeValue }))
   }
 
-  const resetQuote = () => setCasesById({})
+  const updateCustomer = (key: 'name' | 'company' | 'email' | 'phone', value: string) => {
+    setCustomer((prev) => ({ ...prev, [key]: value }))
+  }
+
+  const resetQuote = () => {
+    setCasesById({})
+    setCustomer({
+      name: '',
+      company: '',
+      email: '',
+      phone: '',
+    })
+  }
 
   return (
     <div className="quote-print pb-16">
@@ -237,6 +270,53 @@ export default function GenericQuoteTool() {
               Under 8 cases: standard UPS or FedEx shipping applies, and we will calculate shipping after you submit your quote request.
             </p>
             <p className="mt-2 text-slate-700">Custom bags require a minimum of 4 cases per selected bag type.</p>
+          </div>
+        </section>
+
+        <section className="section-container pb-8 print-hide">
+          <div className="tonal-panel">
+            <h2 className="text-2xl font-black text-slate-900">Customer Details for PDF</h2>
+            <p className="mt-2 text-slate-700">
+              Add customer info so your saved PDF quote is complete and ready to send.
+            </p>
+            <div className="mt-5 grid gap-4 md:grid-cols-2">
+              <label className="grid gap-1 text-sm font-semibold text-slate-800">
+                Customer Name
+                <input
+                  type="text"
+                  value={customer.name}
+                  onChange={(e) => updateCustomer('name', e.target.value)}
+                  className="rounded-md border border-slate-300 px-3 py-2"
+                />
+              </label>
+              <label className="grid gap-1 text-sm font-semibold text-slate-800">
+                Company Name
+                <input
+                  type="text"
+                  value={customer.company}
+                  onChange={(e) => updateCustomer('company', e.target.value)}
+                  className="rounded-md border border-slate-300 px-3 py-2"
+                />
+              </label>
+              <label className="grid gap-1 text-sm font-semibold text-slate-800">
+                Email
+                <input
+                  type="email"
+                  value={customer.email}
+                  onChange={(e) => updateCustomer('email', e.target.value)}
+                  className="rounded-md border border-slate-300 px-3 py-2"
+                />
+              </label>
+              <label className="grid gap-1 text-sm font-semibold text-slate-800">
+                Phone
+                <input
+                  type="tel"
+                  value={customer.phone}
+                  onChange={(e) => updateCustomer('phone', e.target.value)}
+                  className="rounded-md border border-slate-300 px-3 py-2"
+                />
+              </label>
+            </div>
           </div>
         </section>
 
@@ -333,47 +413,85 @@ export default function GenericQuoteTool() {
 
       <section className="quote-pdf-only">
         <div className="quote-pdf-sheet">
+          <div className="quote-pdf-brandbar">
+            <p className="quote-pdf-brand">BAG CO</p>
+            <p className="quote-pdf-doclabel">Generic Bag Quote</p>
+          </div>
+
           <div className="quote-pdf-header">
             <div>
-              <p className="quote-pdf-eyebrow">Bag Supply Co</p>
-              <h1>Generic Bag Quote Estimate</h1>
-              <p className="quote-pdf-subtitle">Factory-direct paper bag pricing estimate</p>
+              <h1>Quote Estimate</h1>
+              <p className="quote-pdf-subtitle">Factory-direct paper bag pricing</p>
             </div>
             <div className="quote-pdf-meta">
-              <p><strong>Date:</strong> {generatedAt}</p>
+              <p><strong>Quote ID:</strong> {quoteId || 'Pending'}</p>
+              <p><strong>Date & Time:</strong> {generatedAt || 'Pending'}</p>
+              <p><strong>Prepared By:</strong> Bag Co</p>
               <p><strong>Email:</strong> info@bagco.com</p>
               <p><strong>Phone:</strong> (252) 516-1944</p>
             </div>
           </div>
 
-          <p className="quote-pdf-note">
-            This is an estimated quote only and not a final invoice.
-          </p>
+          <div className="quote-pdf-client">
+            <div>
+              <p className="quote-pdf-label">Customer Name</p>
+              <p>{customer.name || 'Not provided'}</p>
+            </div>
+            <div>
+              <p className="quote-pdf-label">Company</p>
+              <p>{customer.company || 'Not provided'}</p>
+            </div>
+            <div>
+              <p className="quote-pdf-label">Email</p>
+              <p>{customer.email || 'Not provided'}</p>
+            </div>
+            <div>
+              <p className="quote-pdf-label">Phone</p>
+              <p>{customer.phone || 'Not provided'}</p>
+            </div>
+          </div>
+
+          <div className="quote-pdf-summary">
+            <div>
+              <p className="quote-pdf-label">Line Items</p>
+              <strong>{selectedLineCount}</strong>
+            </div>
+            <div>
+              <p className="quote-pdf-label">Total Cases</p>
+              <strong>{totalCases}</strong>
+            </div>
+            <div>
+              <p className="quote-pdf-label">Subtotal</p>
+              <strong>{money(subtotal)}</strong>
+            </div>
+          </div>
 
           <table className="quote-print-table">
             <thead>
               <tr>
+                <th>#</th>
                 <th>Category</th>
                 <th>Bag</th>
                 <th>Qty / Case</th>
-                <th>Price / Case</th>
                 <th>Cases</th>
+                <th>Price / Case</th>
                 <th>Line Total</th>
               </tr>
             </thead>
             <tbody>
               {selectedLines.length === 0 ? (
                 <tr>
-                  <td colSpan={6}>No line items selected.</td>
+                  <td colSpan={7}>No line items selected.</td>
                 </tr>
               ) : (
-                selectedLines.map((line) => (
+                selectedLines.map((line, index) => (
                   <tr key={line.id}>
+                    <td>{index + 1}</td>
                     <td>{line.categoryTitle}</td>
                     <td>{line.label}</td>
                     <td>{line.quantityPerCase}</td>
-                    <td>{money(line.pricePerCase)}</td>
                     <td>{line.cases}</td>
+                    <td>{money(line.pricePerCase)}</td>
                     <td>{money(line.lineTotal)}</td>
                   </tr>
                 ))
@@ -381,20 +499,26 @@ export default function GenericQuoteTool() {
             </tbody>
           </table>
 
-          <div className="quote-pdf-totals">
-            <div>
-              <span>Subtotal (No Shipping)</span>
-              <strong>{money(subtotal)}</strong>
+          <div className="quote-pdf-totalbar">
+            <div className="quote-pdf-totalrows">
+              <p>
+                <span>Subtotal (No Shipping)</span>
+                <strong>{money(subtotal)}</strong>
+              </p>
+              <p>
+                <span>Total Cases</span>
+                <strong>{totalCases}</strong>
+              </p>
             </div>
-            <div>
-              <span>Total Cases</span>
-              <strong>{totalCases}</strong>
-            </div>
-            <div>
-              <span>Shipping Status</span>
+            <div className="quote-pdf-shipping">
+              <p className="quote-pdf-label">Shipping Status</p>
               <strong>{shippingMessage}</strong>
             </div>
           </div>
+
+          <p className="quote-pdf-note">
+            This is an estimated quote only and not a final invoice.
+          </p>
 
           <div className="quote-pdf-notes">
             <p>Custom bags require a minimum of 4 cases per selected bag type.</p>

@@ -233,63 +233,124 @@ select {
 
 .quote-pdf-sheet {
   margin: 1.5rem auto;
-  max-width: 1080px;
-  border: 1px solid #cbd5e1;
+  max-width: 1040px;
+  border: 1px solid #94a3b8;
   border-radius: 16px;
   background: #fff;
   color: #0f172a;
-  padding: 2rem;
+  padding: 0;
   box-shadow: 0 12px 30px rgba(15, 23, 42, 0.14);
+}
+
+.quote-pdf-brandbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #0f172a;
+  color: #f8fafc;
+  border-radius: 15px 15px 0 0;
+  padding: 0.85rem 1.2rem;
+}
+
+.quote-pdf-brand {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.quote-pdf-doclabel {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #cbd5e1;
 }
 
 .quote-pdf-header {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 1.25rem;
+  gap: 1rem;
   border-bottom: 2px solid #e2e8f0;
-  padding-bottom: 1rem;
-}
-
-.quote-pdf-eyebrow {
-  margin: 0;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
-  color: #475569;
+  padding: 1.1rem 1.2rem 0.95rem;
 }
 
 .quote-pdf-header h1 {
-  margin: 0.35rem 0 0;
-  font-size: 1.7rem;
+  margin: 0;
+  font-size: 1.5rem;
   line-height: 1.2;
 }
 
 .quote-pdf-subtitle {
-  margin: 0.45rem 0 0;
+  margin: 0.35rem 0 0;
   color: #475569;
   font-size: 0.92rem;
 }
 
 .quote-pdf-meta {
-  font-size: 0.9rem;
-  line-height: 1.45;
+  font-size: 0.82rem;
+  line-height: 1.5;
   color: #334155;
+  min-width: 280px;
 }
 
-.quote-pdf-note {
-  margin: 1rem 0 0;
-  border-left: 4px solid #f59e0b;
-  padding: 0.45rem 0 0.45rem 0.65rem;
-  color: #334155;
-  font-size: 0.95rem;
+.quote-pdf-client {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.7rem;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 0.95rem 1.2rem;
+}
+
+.quote-pdf-client > div {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.5rem 0.55rem;
+  background: #f8fafc;
+  font-size: 0.82rem;
+  min-height: 56px;
+}
+
+.quote-pdf-label {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.66rem;
+  font-weight: 800;
+  color: #64748b;
+}
+
+.quote-pdf-client p {
+  margin: 0.2rem 0 0;
+}
+
+.quote-pdf-summary {
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-bottom: 1px solid #e2e8f0;
+  padding: 0.95rem 1.2rem;
+}
+
+.quote-pdf-summary > div {
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 0.55rem 0.6rem;
+  background: #fff;
+}
+
+.quote-pdf-summary strong {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 1.12rem;
 }
 
 .quote-print-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 1.1rem;
+  margin-top: 0;
   font-size: 0.88rem;
 }
 
@@ -306,36 +367,55 @@ select {
   vertical-align: top;
 }
 
-.quote-pdf-totals {
-  margin-top: 1rem;
-  display: grid;
-  gap: 0.6rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.quote-pdf-totals > div {
-  border: 1px solid #cbd5e1;
-  border-radius: 10px;
-  padding: 0.65rem 0.75rem;
+.quote-print-table tbody tr:nth-child(even) {
   background: #f8fafc;
 }
 
-.quote-pdf-totals span {
-  display: block;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-  color: #475569;
+.quote-pdf-totalbar {
+  display: grid;
+  grid-template-columns: 1.1fr 1.4fr;
+  gap: 0.85rem;
+  padding: 0.95rem 1.2rem 0.3rem;
 }
 
-.quote-pdf-totals strong {
+.quote-pdf-totalrows p {
+  margin: 0 0 0.45rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px dashed #cbd5e1;
+  padding-bottom: 0.35rem;
+  font-size: 0.92rem;
+}
+
+.quote-pdf-totalrows span {
+  color: #334155;
+}
+
+.quote-pdf-shipping {
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 0.55rem 0.65rem;
+  background: #fffbeb;
+}
+
+.quote-pdf-shipping strong {
   display: block;
-  margin-top: 0.35rem;
-  line-height: 1.35;
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.quote-pdf-note {
+  margin: 0.7rem 1.2rem 0;
+  border-left: 4px solid #f59e0b;
+  padding: 0.45rem 0 0.45rem 0.65rem;
+  color: #334155;
+  font-size: 0.88rem;
 }
 
 .quote-pdf-notes {
-  margin-top: 1rem;
+  margin: 0.7rem 1.2rem 1.1rem;
   border-top: 1px solid #e2e8f0;
   padding-top: 0.75rem;
   color: #334155;
@@ -385,12 +465,12 @@ select {
     border-radius: 0 !important;
     box-shadow: none !important;
     border: 1px solid #cbd5e1 !important;
-    padding: 0.3in !important;
     break-inside: avoid;
     page-break-inside: avoid;
   }
 
-  .quote-pdf-totals > div {
+  .quote-pdf-summary > div,
+  .quote-pdf-shipping {
     background: #fff !important;
     border: 1px solid #cbd5e1 !important;
   }
