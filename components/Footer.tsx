@@ -59,6 +59,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/weddings-events" className="text-slate-400 transition-colors hover:text-white">
+                  Weddings & Events
+                </Link>
+              </li>
+              <li>
                 <Link href="/privacy-policy" className="text-slate-400 transition-colors hover:text-white">
                   Privacy Policy
                 </Link>
@@ -102,6 +107,11 @@ export default function Footer() {
               <li>
                 <Link href="/industries/pharmacies" className="text-slate-400 transition-colors hover:text-white">
                   Pharmacy Programs
+                </Link>
+              </li>
+              <li>
+                <Link href="/weddings-events" className="text-slate-400 transition-colors hover:text-white">
+                  Event Packaging
                 </Link>
               </li>
             </ul>

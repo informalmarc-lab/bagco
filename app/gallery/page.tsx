@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 type GalleryImage = { src: string; folder: string; name: string }
 
-export default function Gallery() {
+export default function GalleryPage() {
   const [images, setImages] = useState<GalleryImage[]>([])
   const [loading, setLoading] = useState(true)
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null)
@@ -14,124 +14,115 @@ export default function Gallery() {
   useEffect(() => {
     fetch('/api/gallery')
       .then((res) => res.json())
-      .then((data) => {
-        const allImages = data.images || []
-        // Randomize images on each load
-        const shuffled = [...allImages].sort(() => Math.random() - 0.5)
-        setImages(shuffled)
-      })
+      .then((data) => setImages(data.images || []))
       .catch(() => setImages([]))
       .finally(() => setLoading(false))
   }, [])
 
   useEffect(() => {
-    // Handle ESC key to close modal
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && selectedImage) {
+    const onEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
         setSelectedImage(null)
         document.body.style.overflow = 'unset'
       }
     }
+
     if (selectedImage) {
-      window.addEventListener('keydown', handleEscape)
+      document.body.style.overflow = 'hidden'
+      window.addEventListener('keydown', onEscape)
     }
+
     return () => {
-      window.removeEventListener('keydown', handleEscape)
       document.body.style.overflow = 'unset'
+      window.removeEventListener('keydown', onEscape)
     }
   }, [selectedImage])
 
-  const handleImageClick = (img: GalleryImage) => {
-    setSelectedImage(img)
-    document.body.style.overflow = 'hidden' // Prevent background scrolling
-  }
-
-  const handleCloseModal = () => {
-    setSelectedImage(null)
-    document.body.style.overflow = 'unset' // Restore scrolling
-  }
-
-  const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (e.target === e.currentTarget) {
-      handleCloseModal()
-    }
-  }
-
   return (
-    <div className="bg-primary-50">
-      {/* Header */}
-      <section className="bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <h1 className="text-5xl md:text-6xl font-extrabold">Gallery</h1>
-          <p className="text-xl md:text-2xl mt-4 text-primary-100">
-            Explore our paper bag designs and manufacturing capabilities
+    <div className="pb-16">
+      <section className="border-b border-amber-200 bg-[linear-gradient(120deg,#fffdf8_0%,#f5e8d3_55%,#e8d6ba_100%)]">
+        <div className="section-container py-14 md:py-20">
+          <p className="kicker">Portfolio Gallery</p>
+          <h1 className="heading-serif mt-5 text-4xl font-black text-slate-900 md:text-6xl">Professional Bag Programs in Production</h1>
+          <p className="mt-4 max-w-3xl text-lg text-slate-700">
+            Preview quality, style range, and finishing standards across pharmacy, retail, and custom programs.
           </p>
         </div>
       </section>
 
-      {/* Gallery Grid */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          {loading ? (
-            <p className="text-center text-gray-600 text-lg">Loading gallery images...</p>
-          ) : images.length > 0 ? (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-              {images.map((img, idx) => (
-                <div
-                  key={img.src + idx}
-                  onClick={() => handleImageClick(img)}
-                  className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 bg-gray-100 cursor-pointer transform hover:scale-105"
-                >
-                  <div className="aspect-square relative">
-                    <Image
-                      src={img.src}
-                      alt={img.name}
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-500"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                    />
-                  </div>
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
+      <section className="section-container py-14">
+        {loading ? (
+          <p className="text-center text-lg font-semibold text-slate-600">Loading gallery images...</p>
+        ) : images.length === 0 ? (
+          <p className="text-center text-lg font-semibold text-slate-600">No gallery images available yet.</p>
+        ) : (
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {images.map((img, idx) => (
+              <button
+                key={`${img.src}-${idx}`}
+                type="button"
+                onClick={() => setSelectedImage(img)}
+                className="surface-card group overflow-hidden rounded-xl text-left"
+                aria-label={`Open ${img.name}`}
+              >
+                <div className="relative aspect-square overflow-hidden">
+                  <Image
+                    src={img.src}
+                    alt={img.name}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 33vw, 25vw"
+                  />
                 </div>
-              ))}
-            </div>
-          ) : (
-            <p className="text-center text-gray-600 text-lg">No images found in this section yet.</p>
-          )}
+                <div className="border-t border-slate-200/80 px-3 py-2">
+                  <p className="truncate text-xs font-bold uppercase tracking-[0.08em] text-slate-600">{img.folder}</p>
+                </div>
+              </button>
+            ))}
+          </div>
+        )}
+      </section>
+
+      <section className="section-container">
+        <div className="rounded-2xl bg-[linear-gradient(135deg,#0f172a,#1e293b)] p-8 text-white md:p-10">
+          <h2 className="heading-serif text-3xl font-black md:text-4xl">Need Samples or Program Guidance?</h2>
+          <p className="mt-3 max-w-2xl text-slate-200">
+            Share your use case and volume target. We will recommend the right catalog and quote path.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link href="/contact" className="rounded-md bg-amber-200 px-6 py-3 font-black text-slate-950 hover:bg-amber-300">
+              Contact Us
+            </Link>
+            <Link href="/generic-bag-quote" className="rounded-md border border-white/30 bg-white/10 px-6 py-3 font-bold text-white hover:bg-white/20">
+              Request a Quote
+            </Link>
+          </div>
         </div>
       </section>
 
-      <section className="py-16 bg-gradient-to-br from-primary-50 to-primary-100">
-        <div className="container mx-auto px-4 text-center">
-          <Link href="/contact" className="inline-block bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-700 transition-colors shadow-lg hover:shadow-xl">
-            Contact Us for More Samples
-          </Link>
-        </div>
-      </section>
-
-      {/* Zoom Modal */}
       {selectedImage && (
         <div
-          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
-          onClick={handleBackdropClick}
+          className="fixed inset-0 z-[60] flex items-center justify-center bg-slate-950/90 p-4"
+          onClick={(event) => {
+            if (event.target === event.currentTarget) {
+              setSelectedImage(null)
+            }
+          }}
         >
           <button
-            onClick={handleCloseModal}
-            className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-10"
-            aria-label="Close"
+            type="button"
+            className="absolute right-4 top-4 rounded-md bg-white/10 px-3 py-2 text-sm font-bold text-white hover:bg-white/20"
+            onClick={() => setSelectedImage(null)}
           >
-            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
+            Close
           </button>
-          <div className="relative max-w-7xl max-h-full w-full h-full flex items-center justify-center">
+          <div className="relative h-[86vh] w-full max-w-6xl overflow-hidden rounded-xl border border-white/20 bg-black/40">
             <Image
               src={selectedImage.src}
               alt={selectedImage.name}
-              width={1200}
-              height={1200}
-              className="max-w-full max-h-full object-contain"
+              fill
+              className="object-contain"
+              sizes="100vw"
               unoptimized
             />
           </div>

@@ -18,9 +18,9 @@ const advantages = [
 ]
 
 const photos = [
-  '/gallery/imported/cardinalbag/pharmacy-bags/72a10283ba_GSP-Hero-Rec.jpg',
-  '/gallery/imported/cardinalbag/pharmacy-bags/79824fe814_PRODUCT-PHOTO---Pharmacy-v2-banner.jpg',
-  '/gallery/imported/cardinalbag/veterinary/15b131caac_IMG_8482.JPG',
+  '/catalog/pharmacy/gs/GS-22-FRONT.webp',
+  '/catalog/custom/2-color/CBC-22-FC2C.webp',
+  '/catalog/veterinary/vb1/VB1-22-FRONT.webp',
 ]
 
 export default function ManufacturingPage() {

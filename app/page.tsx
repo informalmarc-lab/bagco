@@ -71,6 +71,11 @@ const segments = [
     href: '/industries/retail-stores',
     copy: 'Custom retail bags that reinforce brand value and scale with store growth.',
   },
+  {
+    title: 'Weddings & Events',
+    href: '/weddings-events',
+    copy: 'Elegant custom event packaging for weddings, favors, gifting, and premium hosted experiences.',
+  },
 ]
 
 const outcomes = [
@@ -129,12 +134,36 @@ const objections = [
 ]
 
 const testimonials = [
-  'BagCo always delivers quality. The bags are durable, well-made, and exactly what we needed for our shop. Customer service is top-notch too!',
-  "I've tried multiple bag suppliers, but BagCo is hands down the best. Fast shipping, great customization options, and the material feels premium.",
-  'Perfect for our business needs. We ordered custom-printed bags, and they look fantastic. Highly recommend BagCo for anyone in retail.',
-  'Reliable, professional, and consistent. Every order has arrived on time and exactly as requested. BagCo makes running our business easier.',
-  'Great quality bags at a reasonable price. BagCo exceeded our expectations and made the ordering process simple and smooth.',
-  "BagCo has become a dependable part of our operation. The ordering process is straightforward, turnaround times are consistent, and the finished bags present our brand exactly the way we want it. It's rare to find a supplier that delivers this level of reliability every time.",
+  {
+    label: 'Dispensary',
+    quote:
+      'BagCo always delivers quality. The bags are durable, well-made, and exactly what we needed for our shop. Customer service is top-notch too!',
+  },
+  {
+    label: 'Retail',
+    quote:
+      "I've tried multiple bag suppliers, but BagCo is hands down the best. Fast shipping, great customization options, and the material feels premium.",
+  },
+  {
+    label: 'Retail',
+    quote:
+      'Perfect for our business needs. We ordered custom-printed bags, and they look fantastic. Highly recommend BagCo for anyone in retail.',
+  },
+  {
+    label: 'Pharmacy',
+    quote:
+      'Reliable, professional, and consistent. Every order has arrived on time and exactly as requested. BagCo makes running our business easier.',
+  },
+  {
+    label: 'Wedding',
+    quote:
+      'Great quality bags at a reasonable price. BagCo exceeded our expectations and made the ordering process simple and smooth.',
+  },
+  {
+    label: 'Event',
+    quote:
+      "BagCo has become a dependable part of our operation. The ordering process is straightforward, turnaround times are consistent, and the finished bags present our brand exactly the way we want it. It's rare to find a supplier that delivers this level of reliability every time.",
+  },
 ]
 
 const faqItems = [
@@ -263,7 +292,7 @@ export default function Home() {
 
       <section className="section-container py-16 md:py-20">
         <h2 className="section-title heading-serif">Who We Serve</h2>
-        <div className="mt-6 grid gap-4 md:grid-cols-2">
+        <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {segments.map((segment) => (
             <Link key={segment.title} href={segment.href} className="surface-card rounded-xl p-5 hover:shadow-md">
               <h3 className="text-2xl font-black text-slate-900">{segment.title}</h3>
@@ -271,6 +300,40 @@ export default function Home() {
               <p className="mt-4 text-sm font-black uppercase tracking-[0.08em] text-amber-800">View Industry Program</p>
             </Link>
           ))}
+        </div>
+      </section>
+
+      <section id="weddings-events" className="border-y border-slate-200 bg-[linear-gradient(135deg,#faf7f2,#f4f0e9)] py-16 md:py-20">
+        <div className="section-container">
+          <p className="kicker">Custom Wedding & Event Packaging</p>
+          <h2 className="heading-serif mt-5 text-4xl font-black text-slate-900 md:text-5xl">
+            Elegant Packaging for Weddings, Parties, and Premium Events
+          </h2>
+          <p className="mt-4 max-w-3xl text-lg text-slate-700">
+            We provide high-quality custom event bags for gift packaging, wedding favors, welcome kits, and branded special-event distribution with the same structured reliability we deliver to retail programs.
+          </p>
+          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            <div className="surface-card rounded-xl p-5">
+              <h3 className="text-lg font-black text-slate-900">Gift & Favor Bags</h3>
+              <p className="mt-2 text-sm text-slate-700">Premium presentation for wedding gifts, guest favors, and curated event bundles.</p>
+            </div>
+            <div className="surface-card rounded-xl p-5">
+              <h3 className="text-lg font-black text-slate-900">Event Branding</h3>
+              <p className="mt-2 text-sm text-slate-700">Custom logos, initials, and event marks for polished and memorable guest-facing packaging.</p>
+            </div>
+            <div className="surface-card rounded-xl p-5">
+              <h3 className="text-lg font-black text-slate-900">Scheduling Support</h3>
+              <p className="mt-2 text-sm text-slate-700">Production timelines coordinated around event dates and venue delivery windows.</p>
+            </div>
+            <div className="surface-card rounded-xl p-5">
+              <h3 className="text-lg font-black text-slate-900">Bulk Event Orders</h3>
+              <p className="mt-2 text-sm text-slate-700">Scalable order planning for large guest lists, recurring events, and multi-date programs.</p>
+            </div>
+          </div>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link href="/weddings-events" className="btn-secondary">View Wedding & Event Packaging</Link>
+            <Link href="/generic-bag-quote" className="btn-primary">Request Event Quote</Link>
+          </div>
         </div>
       </section>
 
@@ -389,9 +452,11 @@ export default function Home() {
       <section className="section-container py-16 md:py-20">
         <h2 className="section-title heading-serif">Client Testimonials</h2>
         <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {testimonials.map((quote) => (
-            <blockquote key={quote} className="surface-card rounded-xl p-5 text-slate-800">
-              "{quote}"
+          {testimonials.map((item) => (
+            <blockquote key={item.quote} className="surface-card rounded-xl p-5 text-slate-800">
+              <p className="mb-3 text-lg text-amber-800">"</p>
+              <p>{item.quote}</p>
+              <footer className="mt-4 text-xs font-black uppercase tracking-[0.1em] text-slate-500">{item.label}</footer>
             </blockquote>
           ))}
         </div>
@@ -433,4 +498,3 @@ export default function Home() {
     </div>
   )
 }
-
