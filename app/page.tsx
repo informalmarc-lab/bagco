@@ -7,9 +7,9 @@ import IndustrySolutionsSection from '@/components/IndustrySolutionsSection'
 import QuickQuoteForm from '@/components/QuickQuoteForm'
 
 export const metadata: Metadata = {
-  title: 'Retail Packaging and Branding Partner for Regulated Retail',
+  title: 'Custom Retail Bags & Branded Paper Bags | Bag Supply Co',
   description:
-    'Bag Supply Co delivers custom retail bags, custom dispensary bags, branded paper bags, and wholesale custom packaging programs with reliable turnaround for pharmacies, veterinary clinics, smoke shops, and retail teams.',
+    'Bag Supply Co provides custom retail bags, custom dispensary bags, and branded paper bags for pharmacies, smoke shops, veterinary clinics, and retail stores.',
   keywords: [
     'custom retail bags',
     'custom dispensary bags',
@@ -226,7 +226,7 @@ export default function Home() {
             <div>
               <p className="kicker">Retail Packaging and Branding Partner</p>
               <h1 className="heading-serif mt-6 text-4xl font-black leading-tight text-slate-900 md:text-6xl">
-                Packaging Built to Make Retail Businesses Look Established and Operate Reliably
+                Custom Retail Bags and Branded Paper Bags for Regulated Retail
               </h1>
               <p className="mt-5 max-w-3xl text-lg text-slate-700 md:text-xl">
                 We support dispensaries, smoke shops, pharmacies, veterinary clinics, retailers, and food service teams with structured, scalable packaging programs designed for brand visibility and supply stability.
