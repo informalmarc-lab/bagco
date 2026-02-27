@@ -4,7 +4,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'About Bag Supply Co',
   description:
-    'Learn how Bag Supply Co supports retail, pharmacy, food, and event clients with structured packaging programs built for operational consistency.',
+    'Learn how Bag Supply Co supports retail, pharmacy, veterinary, and food service clients with structured packaging programs built for operational consistency.',
 }
 
 const principles = [
@@ -25,7 +25,7 @@ const principles = [
 const capabilities = [
   'Custom retail bags and custom dispensary bags',
   'Branded paper bags for pharmacy and food service operations',
-  'Wedding and event packaging programs for hospitality teams',
+  'Veterinary bag programs for clinics and animal-care teams',
   'Wholesale custom packaging for recurring B2B accounts',
   'Net 30 terms and automated recurring reorder support',
 ]
@@ -40,7 +40,7 @@ export default function AboutPage() {
             A Packaging Partner Built for Serious Operations
           </h1>
           <p className="mt-4 max-w-3xl text-lg text-slate-700">
-            Bag Supply Co supports retail, pharmacy, food, and event clients with premium bag programs focused on brand presentation, operational reliability, and long-term scale.
+            Bag Supply Co supports retail, pharmacy, veterinary, and food service clients with premium bag programs focused on brand presentation, operational reliability, and long-term scale.
           </p>
         </div>
       </section>

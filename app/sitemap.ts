@@ -33,7 +33,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '/industries/smoke-shops', priority: 0.8, changeFrequency: 'monthly' },
     { route: '/industries/pharmacies', priority: 0.82, changeFrequency: 'monthly' },
     { route: '/industries/retail-stores', priority: 0.8, changeFrequency: 'monthly' },
-    { route: '/weddings-events', priority: 0.82, changeFrequency: 'monthly' },
     { route: '/manufacturing', priority: 0.75, changeFrequency: 'monthly' },
     { route: '/shipping', priority: 0.72, changeFrequency: 'monthly' },
     { route: '/contact', priority: 0.95, changeFrequency: 'weekly' },

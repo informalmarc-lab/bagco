@@ -115,8 +115,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/industries#industry-solutions" className="text-slate-400 transition-colors hover:text-white">
-                  Events & Hospitality
+                <Link href="/catalog/veterinary" className="text-slate-400 transition-colors hover:text-white">
+                  Veterinary Programs
                 </Link>
               </li>
             </ul>

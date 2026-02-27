@@ -9,7 +9,7 @@ import QuickQuoteForm from '@/components/QuickQuoteForm'
 export const metadata: Metadata = {
   title: 'Retail Packaging and Branding Partner for Regulated Retail',
   description:
-    'Bag Supply Co delivers custom retail bags, custom dispensary bags, branded paper bags, and wholesale custom packaging programs with reliable turnaround for pharmacies, smoke shops, retailers, and wedding-event teams.',
+    'Bag Supply Co delivers custom retail bags, custom dispensary bags, branded paper bags, and wholesale custom packaging programs with reliable turnaround for pharmacies, veterinary clinics, smoke shops, and retail teams.',
   keywords: [
     'custom retail bags',
     'custom dispensary bags',
@@ -167,12 +167,12 @@ const testimonials = [
       'Reliable, professional, and consistent. Every order has arrived on time and exactly as requested. BagCo makes running our business easier.',
   },
   {
-    label: 'Wedding',
+    label: 'Veterinary',
     quote:
       'Great quality bags at a reasonable price. BagCo exceeded our expectations and made the ordering process simple and smooth.',
   },
   {
-    label: 'Event',
+    label: 'Pharmacy',
     quote:
       "BagCo has become a dependable part of our operation. The ordering process is straightforward, turnaround times are consistent, and the finished bags present our brand exactly the way we want it. It's rare to find a supplier that delivers this level of reliability every time.",
   },
@@ -229,7 +229,7 @@ export default function Home() {
                 Packaging Built to Make Retail Businesses Look Established and Operate Reliably
               </h1>
               <p className="mt-5 max-w-3xl text-lg text-slate-700 md:text-xl">
-                We support dispensaries, smoke shops, pharmacies, retailers, food service, and event teams with structured, scalable packaging programs designed for brand visibility and supply stability.
+                We support dispensaries, smoke shops, pharmacies, veterinary clinics, retailers, and food service teams with structured, scalable packaging programs designed for brand visibility and supply stability.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link href="/generic-bag-quote" className="btn-primary">
@@ -318,32 +318,33 @@ export default function Home() {
 
       <IndustrySolutionsSection />
 
-      <section className="border-y border-slate-200 bg-[linear-gradient(135deg,#faf7f2,#f4f0e9)] py-16 md:py-20">
+      <section className="border-y border-slate-200 bg-[linear-gradient(135deg,#f7fafc,#edf2f7)] py-16 md:py-20">
         <div className="section-container">
-          <p className="kicker">Custom Wedding & Event Packaging</p>
+          <p className="kicker">Pharmacy & Veterinary Programs</p>
           <h2 className="heading-serif mt-5 text-4xl font-black text-slate-900 md:text-5xl">
-            Premium Event Packaging with the Same Operational Reliability as Retail Programs
+            Structured Packaging Programs for Pharmacies and Veterinary Clinics
           </h2>
           <p className="mt-4 max-w-3xl text-lg text-slate-700">
-            We support weddings, private events, hospitality teams, and corporate activations with polished custom bag programs for guest gifting, favors, and branded distribution.
+            We support pharmacies and animal-care teams with reliable bag supply, clean presentation quality, and repeatable reorder programs built for daily operational volume.
           </p>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             <div className="surface-card rounded-xl p-5">
-              <h3 className="text-lg font-black text-slate-900">Gift & Favor Bags</h3>
-              <p className="mt-2 text-sm text-slate-700">Custom packaging for wedding favors, welcome kits, and premium guest handoffs.</p>
+              <h3 className="text-lg font-black text-slate-900">Pharmacy Bag Programs</h3>
+              <p className="mt-2 text-sm text-slate-700">GS and TY pharmacy programs with structured sizing and case options for repeat script volume.</p>
             </div>
             <div className="surface-card rounded-xl p-5">
-              <h3 className="text-lg font-black text-slate-900">Event Branding</h3>
-              <p className="mt-2 text-sm text-slate-700">Branded bags for planners, venues, and event operators that need consistent presentation quality.</p>
+              <h3 className="text-lg font-black text-slate-900">Veterinary Programs</h3>
+              <p className="mt-2 text-sm text-slate-700">VB design programs aligned for veterinary clinics and pet-care operations needing dependable supply.</p>
             </div>
             <div className="surface-card rounded-xl p-5">
-              <h3 className="text-lg font-black text-slate-900">Schedule-Aligned Production</h3>
-              <p className="mt-2 text-sm text-slate-700">Production timelines matched to event dates to reduce last-minute packaging risk.</p>
+              <h3 className="text-lg font-black text-slate-900">Custom Print Options</h3>
+              <p className="mt-2 text-sm text-slate-700">One, two, and three-color print programs to keep pharmacy and clinic branding consistent.</p>
             </div>
           </div>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/weddings-events" className="btn-secondary">View Event Packaging</Link>
-            <Link href="/generic-bag-quote" className="btn-primary">Request Event Quote</Link>
+            <Link href="/catalog/pharmacy" className="btn-secondary">View Pharmacy Catalog</Link>
+            <Link href="/catalog/veterinary" className="btn-secondary">View Veterinary Catalog</Link>
+            <Link href="/generic-bag-quote" className="btn-primary">Request Quote</Link>
           </div>
         </div>
       </section>

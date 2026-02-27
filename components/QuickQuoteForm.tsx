@@ -71,7 +71,7 @@ export default function QuickQuoteForm() {
     <form onSubmit={onSubmit} className="surface-card rounded-2xl p-6 md:p-8">
       <h3 className="text-2xl font-black text-slate-900">Request a Custom Quote</h3>
       <p className="mt-2 text-sm text-slate-700">
-        Frictionless intake for retail, food, hospitality, and event teams. We respond with a structured program recommendation.
+        Frictionless intake for retail, food service, pharmacy, and veterinary teams. We respond with a structured program recommendation.
       </p>
 
       <div className="mt-5 grid gap-3 md:grid-cols-2">
@@ -110,11 +110,11 @@ export default function QuickQuoteForm() {
           <option>Dispensary</option>
           <option>Smoke Shop</option>
           <option>Pharmacy</option>
+          <option>Veterinary Clinic</option>
           <option>Retail Store</option>
           <option>Retail Boutique</option>
           <option>Food & Beverage</option>
-          <option>Events & Hospitality</option>
-          <option>Wedding Client</option>
+          <option>Multi-Location Retail</option>
         </select>
         <textarea
           placeholder="Packaging goals or requirements"

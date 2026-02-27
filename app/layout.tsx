@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: '%s | Bag Supply Co',
   },
   description:
-    'Bag Supply Co is a retail packaging and branding partner serving dispensaries, smoke shops, pharmacies, retail stores, food service teams, and event operators with structured, reliable supply programs.',
+    'Bag Supply Co is a retail packaging and branding partner serving dispensaries, smoke shops, pharmacies, veterinary clinics, retail stores, and food service teams with structured, reliable supply programs.',
   keywords: [
     'custom retail bags',
     'custom dispensary bags',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     title: 'Bag Supply Co | Retail Packaging and Branding Partner',
     description:
-      'Packaging programs for dispensaries, smoke shops, pharmacies, retailers, food service teams, and event operators focused on brand visibility and operational reliability.',
+      'Packaging programs for dispensaries, smoke shops, pharmacies, veterinary clinics, retailers, and food service teams focused on brand visibility and operational reliability.',
     siteName: 'Bag Supply Co',
     locale: 'en_US',
     images: [
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Bag Supply Co | Retail Packaging Partner',
     description:
-      'Custom retail bags and branded packaging programs built for regulated retail, food service, and event operations.',
+      'Custom retail bags and branded packaging programs built for regulated retail, pharmacy, veterinary, and food service operations.',
     images: [ogImage],
   },
   category: 'business',
@@ -76,7 +76,7 @@ export default function RootLayout({
     '@type': 'LocalBusiness',
     name: 'Bag Supply Co',
     description:
-      'Retail packaging and branding partner for dispensaries, smoke shops, pharmacies, retailers, food service teams, and event operators.',
+      'Retail packaging and branding partner for dispensaries, smoke shops, pharmacies, veterinary clinics, retailers, and food service teams.',
     telephone: '+1-252-516-1944',
     email: 'info@bagco.com',
     url: siteUrl,
@@ -106,7 +106,7 @@ export default function RootLayout({
   const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: 'Custom Retail and Event Packaging Programs',
+    name: 'Custom Retail and Pharmacy Packaging Programs',
     provider: {
       '@type': 'Organization',
       name: 'Bag Supply Co',

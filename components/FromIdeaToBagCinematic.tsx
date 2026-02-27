@@ -13,7 +13,7 @@ const STEPS = [
   {
     title: 'Design Visualization',
     copy:
-      'You receive layout and sizing guidance for custom retail bags, hospitality programs, and wedding-event packaging.',
+      'You receive layout and sizing guidance for custom retail, pharmacy, and veterinary bag programs.',
     image: '/catalog/winery/3cf46738b6_CBC_WFC_11_82500eb0.jpg',
   },
   {
@@ -25,7 +25,7 @@ const STEPS = [
   {
     title: 'Finished Bag Reveal',
     copy:
-      'The final result is professional branded paper bags that elevate trust in both retail checkout and premium event guest experiences.',
+      'The final result is professional branded paper bags that elevate trust at checkout and strengthen repeat brand recognition.',
     image: '/catalog/custom/3-color/CBC-22-FC3C.webp',
   },
 ]
