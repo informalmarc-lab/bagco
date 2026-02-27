@@ -5,7 +5,7 @@ import IndustrySolutionsSection from '@/components/IndustrySolutionsSection'
 export const metadata: Metadata = {
   title: 'Industries We Serve',
   description:
-    'Industry-specific packaging programs for custom retail bags, branded paper bags, wholesale custom packaging, and pharmacy packaging bags across retail, events, and food service.',
+    'Industry-specific packaging programs for custom retail bags, branded paper bags, wholesale custom packaging, and pharmacy packaging bags across retail, veterinary, and food service.',
   keywords: [
     'custom retail bags',
     'custom dispensary bags',
@@ -44,6 +44,15 @@ const regulatedSegments = [
     ],
   },
   {
+    title: 'Veterinary',
+    href: '/catalog/veterinary',
+    copy: 'Reliable veterinary bag programs for clinics and animal care operations with repeat supply needs.',
+    catalogs: [
+      { label: 'Veterinary Catalog', href: '/catalog/veterinary' },
+      { label: 'Custom 1/2/3 Color', href: '/catalog/custom' },
+    ],
+  },
+  {
     title: 'Retail Stores',
     href: '/industries/retail-stores',
     copy: 'Custom retail bags that reinforce brand standards while supporting scalable store operations.',
@@ -64,7 +73,7 @@ export default function IndustriesPage() {
             Packaging Programs Built for Real Operations
           </h1>
           <p className="mt-4 max-w-3xl text-lg text-slate-700">
-            Bag Supply Co supports regulated retail, premium storefronts, events, hospitality, and food service teams with structured packaging supply and professional brand presentation.
+            Bag Supply Co supports regulated retail, veterinary, premium storefronts, and food service teams with structured packaging supply and professional brand presentation.
           </p>
         </div>
       </section>

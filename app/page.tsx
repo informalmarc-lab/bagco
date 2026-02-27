@@ -79,9 +79,9 @@ const segments = [
     copy: 'Premium bag programs for apparel, footwear, jewelry, and gift-focused storefronts.',
   },
   {
-    title: 'Events & Hospitality',
-    href: '/industries#industry-solutions',
-    copy: 'Elegant packaging programs for weddings, corporate events, hotels, and hospitality operations.',
+    title: 'Veterinary',
+    href: '/catalog/veterinary',
+    copy: 'Reliable veterinary bag programs for clinics and animal care operations with repeat supply needs.',
   },
   {
     title: 'Food & Beverage',
