@@ -11,6 +11,7 @@ type IndustryPanel = {
   why: string[]
   problems: string[]
   benefits: string[]
+  catalogs: { label: string; href: string }[]
 }
 
 const INDUSTRIES: IndustryPanel[] = [
@@ -34,6 +35,11 @@ const INDUSTRIES: IndustryPanel[] = [
       'Cleaner checkout presentation that supports higher perceived value.',
       'More predictable operations with structured reorder cycles.',
     ],
+    catalogs: [
+      { label: 'Custom 1/2/3 Color', href: '/catalog/custom' },
+      { label: 'USA Catalog', href: '/catalog/usa' },
+      { label: 'Seasonal Catalog', href: '/catalog/seasonal' },
+    ],
   },
   {
     id: 'events-hospitality',
@@ -55,6 +61,11 @@ const INDUSTRIES: IndustryPanel[] = [
       'Stronger brand cohesion for planners, venues, and hosted events.',
       'Reliable order planning for one-time and recurring event programs.',
     ],
+    catalogs: [
+      { label: 'Winery Catalog', href: '/catalog/winery' },
+      { label: 'Holiday Catalog', href: '/catalog/holiday' },
+      { label: 'Custom 1/2/3 Color', href: '/catalog/custom' },
+    ],
   },
   {
     id: 'food-beverage',
@@ -75,6 +86,11 @@ const INDUSTRIES: IndustryPanel[] = [
       'Free advertising through every takeout and delivery handoff.',
       'Smoother operations with planned replenishment.',
       'More professional presentation that supports customer trust.',
+    ],
+    catalogs: [
+      { label: 'Bakery Catalog', href: '/catalog/bakery' },
+      { label: 'Custom 1/2/3 Color', href: '/catalog/custom' },
+      { label: 'USA Catalog', href: '/catalog/usa' },
     ],
   },
 ]
@@ -188,6 +204,21 @@ export default function IndustrySolutionsSection() {
                   <li key={item}>{item}</li>
                 ))}
               </ul>
+            </div>
+          </div>
+
+          <div className="mt-6">
+            <p className="text-xs font-black uppercase tracking-[0.08em] text-slate-600">Related Catalogs</p>
+            <div className="mt-2 flex flex-wrap gap-2">
+              {active.catalogs.map((catalog) => (
+                <Link
+                  key={catalog.href}
+                  href={catalog.href}
+                  className="rounded-md border border-slate-300 bg-white px-3 py-1.5 text-xs font-bold text-slate-800 hover:bg-amber-50"
+                >
+                  {catalog.label}
+                </Link>
+              ))}
             </div>
           </div>
 
