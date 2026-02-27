@@ -42,29 +42,55 @@ const INDUSTRIES: IndustryPanel[] = [
     ],
   },
   {
-    id: 'events-hospitality',
-    title: 'Events & Hospitality',
-    subtitle: 'Elegant packaging for hosted experiences and client-facing events',
-    examples: 'Wedding planners, party supply companies, corporate events, hotels, resorts',
+    id: 'pharmacies',
+    title: 'Pharmacies',
+    subtitle: 'Reliable packaging programs for regulated daily-volume operations',
+    examples: 'Independent pharmacies, multi-location groups, clinic-adjacent retail',
     why: [
-      'Event packaging must look polished and consistent across every guest touchpoint.',
-      'Timeline-sensitive production keeps event schedules on track.',
-      'Brand-matched bags reinforce premium service quality.',
+      'Pharmacies need consistent bag quality for trust-first customer presentation.',
+      'Reliable case supply prevents front-counter interruptions and reorder stress.',
+      'Professional branded paper bags reinforce store credibility in regulated settings.',
     ],
     problems: [
-      'Late or inconsistent packaging creates day-of execution risk.',
-      'Unprofessional presentation weakens guest perception.',
-      'Mismatch between event branding and bag design causes visual inconsistency.',
+      'Inconsistent packaging disrupts daily script handoff workflows.',
+      'Poor-quality bags weaken customer confidence at checkout.',
+      'Unclear replenishment cycles create avoidable stock pressure.',
     ],
     benefits: [
-      'Premium feel for guest gifting, welcome kits, and sponsor distribution.',
-      'Stronger brand cohesion for planners, venues, and hosted events.',
-      'Reliable order planning for one-time and recurring event programs.',
+      'Cleaner customer experience and stronger trust signals.',
+      'Operational stability through predictable reorder planning.',
+      'Professional pharmacy branding beyond the counter.',
     ],
     catalogs: [
-      { label: 'Winery Catalog', href: '/catalog/winery' },
-      { label: 'Holiday Catalog', href: '/catalog/holiday' },
+      { label: 'Pharmacy Catalog', href: '/catalog/pharmacy' },
       { label: 'Custom 1/2/3 Color', href: '/catalog/custom' },
+      { label: 'Veterinary Catalog', href: '/catalog/veterinary' },
+    ],
+  },
+  {
+    id: 'veterinary',
+    title: 'Veterinary',
+    subtitle: 'Structured bag programs for veterinary and pet-care operations',
+    examples: 'Veterinary clinics, pet hospitals, animal care groups',
+    why: [
+      'Veterinary operations need durable, consistent packaging for meds and take-home items.',
+      'Branded bags strengthen clinic professionalism and client trust.',
+      'Reliable reorder cadence prevents stock interruptions in busy practices.',
+    ],
+    problems: [
+      'Low-quality bags fail in day-to-day clinic workflows.',
+      'Irregular supply creates front-desk friction and order delays.',
+      'Unbranded packaging weakens brand recognition across repeat clients.',
+    ],
+    benefits: [
+      'More professional client handoff experience.',
+      'Operational ease with repeatable replenishment.',
+      'Consistent brand visibility for recurring pet-owner traffic.',
+    ],
+    catalogs: [
+      { label: 'Veterinary Catalog', href: '/catalog/veterinary' },
+      { label: 'Custom 1/2/3 Color', href: '/catalog/custom' },
+      { label: 'Pharmacy Catalog', href: '/catalog/pharmacy' },
     ],
   },
   {
@@ -96,11 +122,21 @@ const INDUSTRIES: IndustryPanel[] = [
 ]
 
 function Icon({ id }: { id: string }) {
-  if (id === 'events-hospitality') {
+  if (id === 'pharmacies') {
     return (
       <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8">
-        <path d="M12 4v16M4 12h16" />
-        <path d="M7 7h10v10H7z" />
+        <path d="M12 5v14M5 12h14" />
+        <rect x="4" y="4" width="16" height="16" rx="2" />
+      </svg>
+    )
+  }
+  if (id === 'veterinary') {
+    return (
+      <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8">
+        <circle cx="7.5" cy="9" r="1.2" />
+        <circle cx="12" cy="7.5" r="1.2" />
+        <circle cx="16.5" cy="9" r="1.2" />
+        <path d="M8.2 15.4c0-2.1 1.7-3.8 3.8-3.8s3.8 1.7 3.8 3.8c0 1.7-1.3 2.8-3.8 2.8s-3.8-1.1-3.8-2.8z" />
       </svg>
     )
   }
