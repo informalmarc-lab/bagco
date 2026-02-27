@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { contactPhone, contactPhoneHref } from '@/components/siteConfig'
+import { contactPhone, contactTextHref } from '@/components/siteConfig'
 
 export default function LeadDock() {
   return (
@@ -7,8 +7,8 @@ export default function LeadDock() {
       <div className="lead-dock-inner">
         <p className="lead-dock-copy">Need pricing fast? Get a structured quote today.</p>
         <div className="lead-dock-actions">
-          <a href={contactPhoneHref} className="lead-dock-btn lead-dock-btn-secondary">
-            Call {contactPhone}
+          <a href={contactTextHref} className="lead-dock-btn lead-dock-btn-secondary">
+            Text {contactPhone}
           </a>
           <Link href="/generic-bag-quote" className="lead-dock-btn lead-dock-btn-primary">
             Request Quote
