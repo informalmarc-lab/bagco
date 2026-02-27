@@ -14,6 +14,7 @@ export default function QuickQuoteForm() {
     industry: 'Dispensary',
     quantity: '',
     message: '',
+    website: '',
   })
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -40,6 +41,8 @@ export default function QuickQuoteForm() {
           bagType: form.industry,
           quantity: form.quantity,
           message: details,
+          website: form.website,
+          sourcePage: typeof window !== 'undefined' ? window.location.pathname : '/',
         }),
       })
 
@@ -56,6 +59,7 @@ export default function QuickQuoteForm() {
         industry: 'Dispensary',
         quantity: '',
         message: '',
+        website: '',
       })
     } catch (err) {
       setState('error')
@@ -118,6 +122,15 @@ export default function QuickQuoteForm() {
           onChange={(e) => setForm((prev) => ({ ...prev, message: e.target.value }))}
           rows={4}
           className="rounded-md border border-slate-300 px-3 py-2 text-sm md:col-span-2"
+        />
+        <input
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={form.website}
+          onChange={(e) => setForm((prev) => ({ ...prev, website: e.target.value }))}
+          className="hidden"
+          aria-hidden="true"
         />
       </div>
 

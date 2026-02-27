@@ -4,6 +4,7 @@ import Script from 'next/script'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import LeadDock from '@/components/LeadDock'
 
 const manrope = Manrope({
   subsets: ['latin'],
@@ -17,7 +18,8 @@ const sourceSerif = Source_Serif_4({
   display: 'swap',
 })
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://bagco.com'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.bagsupplyco.com'
+const ogImage = `${siteUrl}/catalog/pharmacy/gs/GS-22-FRONT.webp`
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -45,12 +47,21 @@ export const metadata: Metadata = {
       'Packaging programs for dispensaries, smoke shops, pharmacies, retailers, food service teams, and event operators focused on brand visibility and operational reliability.',
     siteName: 'Bag Supply Co',
     locale: 'en_US',
+    images: [
+      {
+        url: ogImage,
+        width: 1200,
+        height: 630,
+        alt: 'Bag Supply Co branded packaging programs',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Bag Supply Co | Retail Packaging Partner',
     description:
       'Custom retail bags and branded packaging programs built for regulated retail, food service, and event operations.',
+    images: [ogImage],
   },
   category: 'business',
 }
@@ -80,6 +91,32 @@ export default function RootLayout({
     areaServed: 'US',
   }
 
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Bag Supply Co',
+    url: siteUrl,
+    potentialAction: {
+      '@type': 'ContactAction',
+      target: `${siteUrl}/contact`,
+      name: 'Request a custom quote',
+    },
+  }
+
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Custom Retail and Event Packaging Programs',
+    provider: {
+      '@type': 'Organization',
+      name: 'Bag Supply Co',
+      url: siteUrl,
+    },
+    areaServed: 'US',
+    serviceType:
+      'Custom retail bags, custom dispensary bags, branded paper bags, wholesale custom packaging, pharmacy packaging bags',
+  }
+
   return (
     <html lang="en">
       <body className={`${manrope.variable} ${sourceSerif.variable}`}>
@@ -87,10 +124,19 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        />
         <Navbar />
         <main className="min-h-screen site-surface">
           {children}
         </main>
+        <LeadDock />
         <Footer />
         <Script id="tawk-to" strategy="afterInteractive">
           {`

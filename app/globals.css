@@ -165,6 +165,99 @@ select {
   animation: panelReveal 280ms ease-out both;
 }
 
+.lead-dock {
+  position: fixed;
+  bottom: 0.8rem;
+  left: 50%;
+  z-index: 55;
+  width: min(94vw, 860px);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.lead-dock-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.25);
+  color: #f8fafc;
+  padding: 0.7rem 0.8rem;
+  pointer-events: auto;
+}
+
+.lead-dock-copy {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #e2e8f0;
+}
+
+.lead-dock-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.lead-dock-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 0.5rem 0.72rem;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.lead-dock-btn-primary {
+  background: #fbbf24;
+  color: #111827;
+}
+
+.lead-dock-btn-primary:hover {
+  background: #f59e0b;
+}
+
+.lead-dock-btn-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #f8fafc;
+}
+
+.lead-dock-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .lead-dock {
+    bottom: 0.45rem;
+    width: 95vw;
+  }
+
+  .lead-dock-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .lead-dock-copy {
+    font-size: 0.75rem;
+    text-align: center;
+  }
+
+  .lead-dock-actions {
+    width: 100%;
+  }
+
+  .lead-dock-btn {
+    flex: 1;
+    padding: 0.55rem 0.6rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal-up,
   .idea-step,

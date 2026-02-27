@@ -12,6 +12,7 @@ const initialForm = {
   bagType: '',
   quantity: '',
   message: '',
+  website: '',
 }
 
 export default function ContactForm() {
@@ -31,6 +32,7 @@ export default function ContactForm() {
         body: JSON.stringify({
           ...form,
           submissionType: 'Contact Form',
+          sourcePage: typeof window !== 'undefined' ? window.location.pathname : '/contact',
         }),
       })
 
@@ -126,6 +128,16 @@ export default function ContactForm() {
           />
         </label>
 
+        <input
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={form.website}
+          onChange={(e) => setForm((prev) => ({ ...prev, website: e.target.value }))}
+          className="hidden"
+          aria-hidden="true"
+        />
+
         <div className="flex flex-wrap items-center gap-3">
           <button
             type="submit"
@@ -145,4 +157,3 @@ export default function ContactForm() {
     </section>
   )
 }
-
