@@ -5,6 +5,7 @@ import FromIdeaToBagCinematic from '@/components/FromIdeaToBagCinematic'
 import HomeScrollMotion from '@/components/HomeScrollMotion'
 import IndustrySolutionsSection from '@/components/IndustrySolutionsSection'
 import QuickQuoteForm from '@/components/QuickQuoteForm'
+import { contactTextHref } from '@/components/siteConfig'
 
 export const metadata: Metadata = {
   title: 'Custom Retail Bags & Branded Paper Bags | Bag Supply Co',
@@ -23,7 +24,7 @@ const clarityPoints = [
   'Who we serve: regulated retail businesses and growth-focused storefronts.',
   'What we provide: branded paper bags and wholesale custom packaging programs.',
   'Why we are reliable: local support model with repeatable process and communication.',
-  'Next step: request a custom quote or speak with our team directly.',
+  'Next step: request a custom quote or text our team directly.',
 ]
 
 const authorityMetrics = [
@@ -235,9 +236,9 @@ export default function Home() {
                 <Link href="/generic-bag-quote" className="btn-primary">
                   Request a Custom Quote
                 </Link>
-                <Link href="/contact" className="btn-secondary">
-                  Speak With Our Team
-                </Link>
+                <a href={contactTextHref} className="btn-secondary">
+                  Text Our Team
+                </a>
               </div>
               <p className="mt-3 text-sm text-slate-600">
                 No long intake process. Send your requirements and get a structured recommendation quickly.
@@ -499,9 +500,9 @@ export default function Home() {
               <Link href="/generic-bag-quote" className="btn-primary">
                 Request a Custom Quote
               </Link>
-              <Link href="/contact" className="btn-secondary">
-                Speak With Our Team
-              </Link>
+              <a href={contactTextHref} className="btn-secondary">
+                Text Our Team
+              </a>
             </div>
           </div>
           <QuickQuoteForm />

@@ -3,7 +3,7 @@ import {
   contactAddress,
   contactEmail,
   contactPhone,
-  contactPhoneHref,
+  contactTextHref,
   pricingMailto,
 } from '@/components/siteConfig'
 
@@ -21,9 +21,9 @@ export default function Footer() {
             <Link href="/generic-bag-quote" className="rounded-md bg-amber-200 px-4 py-2 font-bold text-slate-950 hover:bg-amber-300">
               Request a Custom Quote
             </Link>
-            <Link href="/contact" className="rounded-md border border-white/25 bg-white/10 px-4 py-2 font-bold text-white hover:bg-white/20">
-              Speak With Our Team
-            </Link>
+            <a href={contactTextHref} className="rounded-md border border-white/25 bg-white/10 px-4 py-2 font-bold text-white hover:bg-white/20">
+              Text Our Team
+            </a>
           </div>
         </div>
 
@@ -61,6 +61,11 @@ export default function Footer() {
               <li>
                 <Link href="/catalog" className="text-slate-400 transition-colors hover:text-white">
                   Catalogs
+                </Link>
+              </li>
+              <li>
+                <Link href="/payments" className="text-slate-400 transition-colors hover:text-white">
+                  Payments
                 </Link>
               </li>
               <li>
@@ -131,8 +136,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href={contactPhoneHref} className="transition-colors hover:text-white">
-                  {contactPhone}
+                <a href={contactTextHref} className="transition-colors hover:text-white">
+                  Text: {contactPhone}
                 </a>
               </li>
               <li>

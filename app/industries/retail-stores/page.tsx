@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { contactTextHref } from '@/components/siteConfig'
 
 export const metadata: Metadata = {
   title: 'Custom Retail Bags Programs',
@@ -34,7 +35,7 @@ export default function RetailStoresIndustryPage() {
 
       <div className="mt-8 flex flex-wrap gap-3">
         <Link href="/generic-bag-quote" className="btn-primary">Request a Custom Quote</Link>
-        <Link href="/contact" className="btn-secondary">Speak With Our Team</Link>
+        <a href={contactTextHref} className="btn-secondary">Text Our Team</a>
       </div>
     </div>
   )

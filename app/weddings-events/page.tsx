@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { contactTextHref } from '@/components/siteConfig'
 
 export const metadata: Metadata = {
   title: 'Pharmacy and Veterinary Packaging Programs',
@@ -46,9 +47,9 @@ export default function WeddingsEventsPage() {
             <Link href="/generic-bag-quote" className="btn-primary">
               Request a Custom Quote
             </Link>
-            <Link href="/contact" className="btn-secondary">
-              Speak With Our Team
-            </Link>
+            <a href={contactTextHref} className="btn-secondary">
+              Text Our Team
+            </a>
           </div>
           <p className="mt-3 text-sm text-slate-600">
             Share your volume, sizing, and branding goals. We return a structured program recommendation.

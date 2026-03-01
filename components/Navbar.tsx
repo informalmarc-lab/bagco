@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
+import { contactTextHref } from '@/components/siteConfig'
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -11,6 +12,7 @@ const navLinks = [
   { href: '/industries/pharmacies', label: 'Pharmacies' },
   { href: '/catalog/veterinary', label: 'Veterinary' },
   { href: '/catalog', label: 'Catalogs' },
+  { href: '/payments', label: 'Payments' },
   { href: '/shipping', label: 'Shipping' },
   { href: '/generic-bag-quote', label: 'Quote Tool' },
   { href: '/contact', label: 'Contact' },
@@ -43,9 +45,9 @@ export default function Navbar() {
             <Link href="/generic-bag-quote" className="btn-primary px-4 py-2 text-sm">
               Request a Custom Quote
             </Link>
-            <Link href="/contact" className="btn-secondary px-4 py-2 text-sm">
-              Speak With Our Team
-            </Link>
+            <a href={contactTextHref} className="btn-secondary px-4 py-2 text-sm">
+              Text Our Team
+            </a>
           </div>
 
           <button
@@ -101,9 +103,9 @@ export default function Navbar() {
               <Link href="/generic-bag-quote" className="btn-primary mt-2 text-center">
                 Request a Custom Quote
               </Link>
-              <Link href="/contact" className="btn-secondary text-center">
-                Speak With Our Team
-              </Link>
+              <a href={contactTextHref} className="btn-secondary text-center">
+                Text Our Team
+              </a>
             </div>
           </div>
         )}
