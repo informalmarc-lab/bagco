@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import AppleStory from '@/components/AppleStory'
 import QuickQuoteForm from '@/components/QuickQuoteForm'
@@ -34,10 +34,11 @@ const valueProps = [
 ]
 
 const socialProof = [
-  { label: 'Retail Locations Supported', value: '500+' },
-  { label: 'Bags Shipped Across Programs', value: '10M+' },
-  { label: 'Case-Based Program Coverage', value: 'US Nationwide' },
-  { label: 'Typical Program Lead Window', value: '3-4 Weeks' },
+  { label: 'Retail Clients', value: '500+' },
+  { label: 'Bags Shipped', value: '10M+' },
+  { label: 'Coverage', value: 'Ships Across the US' },
+  { label: 'Terms', value: 'Net 30 Available' },
+  { label: 'Lead Window', value: '3-4 Weeks' },
 ]
 
 const pricingAnchors = [
@@ -74,6 +75,7 @@ const testimonials = [
     person: 'R. Patel',
     location: 'Charlotte, NC',
     role: 'Independent Pharmacy Owner',
+    business: 'Oakview Pharmacy',
   },
   {
     quote:
@@ -81,6 +83,7 @@ const testimonials = [
     person: 'J. Monroe',
     location: 'Tampa, FL',
     role: 'Retail Operations Manager',
+    business: 'Monroe Wellness Dispensary',
   },
   {
     quote:
@@ -88,6 +91,7 @@ const testimonials = [
     person: 'A. Kim',
     location: 'Raleigh, NC',
     role: 'Veterinary Practice Manager',
+    business: 'Northgate Veterinary Clinic',
   },
 ]
 
@@ -144,7 +148,7 @@ export default function Home() {
                 Bag Supply Co helps pharmacies, retail stores, veterinary clinics, and dispensaries manage packaging with cleaner branding, clearer lead times, and repeatable replenishment.
               </p>
               <p className="mt-4 text-sm font-semibold text-slate-700">
-                Fast response: <a href={contactTextHref} className="underline">{contactPhone}</a>
+                Questions? Text us: <a href={contactTextHref} className="underline">{contactPhone}</a>
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link href="/generic-bag-quote" className="btn-primary">
@@ -174,21 +178,10 @@ export default function Home() {
       </section>
 
       <section className="section-container pt-8">
-        <div className="grid gap-3 md:grid-cols-3">
-          {valueProps.map((item) => (
-            <article key={item.title} className="tonal-panel">
-              <h2 className="text-xl font-black text-slate-950">{item.title}</h2>
-              <p className="mt-2 text-sm muted-text">{item.copy}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="section-container pt-8">
         <div className="tonal-panel">
           <p className="kicker">Social Proof</p>
           <h2 className="section-title mt-4">Trusted by High-Volume Packaging Teams</h2>
-          <div className="mt-6 grid gap-3 md:grid-cols-4">
+          <div className="mt-6 grid gap-3 md:grid-cols-5">
             {socialProof.map((item) => (
               <article key={item.label} className="surface-card rounded-2xl p-4">
                 <p className="text-xs font-black uppercase tracking-[0.1em] text-slate-500">{item.label}</p>
@@ -196,6 +189,17 @@ export default function Home() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="section-container pt-8">
+        <div className="grid gap-3 md:grid-cols-3">
+          {valueProps.map((item) => (
+            <article key={item.title} className="tonal-panel">
+              <h2 className="text-xl font-black text-slate-950">{item.title}</h2>
+              <p className="mt-2 text-sm muted-text">{item.copy}</p>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -246,7 +250,7 @@ export default function Home() {
                 <article key={item.quote} className="surface-card rounded-2xl p-4">
                   <p className="text-sm text-slate-800">"{item.quote}"</p>
                   <p className="mt-3 text-xs font-black uppercase tracking-[0.1em] text-slate-500">
-                    {item.person} • {item.role} • {item.location}
+                    {item.person} | {item.business} | {item.role} | {item.location}
                   </p>
                 </article>
               ))}
@@ -292,4 +296,3 @@ export default function Home() {
     </div>
   )
 }
-

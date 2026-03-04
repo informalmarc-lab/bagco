@@ -5,8 +5,14 @@ import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import { contactTextHref } from '@/components/siteConfig'
 
+const industryLinks = [
+  { href: '/industries/dispensaries', label: 'Dispensaries' },
+  { href: '/industries/smoke-shops', label: 'Smoke Shops' },
+  { href: '/industries/pharmacies', label: 'Pharmacies' },
+  { href: '/industries/retail-stores', label: 'Retail Stores' },
+]
+
 const navLinks = [
-  { href: '/industries', label: 'Programs' },
   { href: '/catalog', label: 'Catalogs' },
   { href: '/generic-bag-quote', label: 'Quote Tool' },
   { href: '/contact', label: 'Contact' },
@@ -41,6 +47,25 @@ export default function Navbar() {
             >
               Home
             </Link>
+            <div className="group relative">
+              <Link
+                href="/industries"
+                className={`nav-chip ${pathname.startsWith('/industries') ? 'nav-chip-active' : ''}`}
+              >
+                Industries
+              </Link>
+              <div className="pointer-events-none absolute left-0 top-[calc(100%+8px)] z-30 w-56 rounded-xl border border-slate-200 bg-white p-2 opacity-0 shadow-[0_14px_30px_rgba(15,23,42,0.14)] transition-all group-hover:pointer-events-auto group-hover:opacity-100">
+                {industryLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="block rounded-lg px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -88,6 +113,29 @@ export default function Navbar() {
                 >
                   Home
                 </Link>
+                <Link
+                  href="/industries"
+                  className={`rounded-lg px-3 py-2 text-sm font-semibold ${
+                    pathname.startsWith('/industries') ? 'bg-slate-900 text-white' : 'text-slate-700 hover:bg-slate-100'
+                  }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  Industries
+                </Link>
+                <div className="grid gap-1 border-l border-slate-200 pl-3">
+                  {industryLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className={`rounded-lg px-3 py-2 text-sm font-semibold ${
+                        isActive(link.href) ? 'bg-slate-900 text-white' : 'text-slate-600 hover:bg-slate-100'
+                      }`}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
