@@ -1,147 +1,76 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
-import { contactEmail, pricingMailto } from '@/components/siteConfig'
 
 export const metadata: Metadata = {
   title: 'Pharmacy Bags',
   description:
-    'Factory-direct pharmacy paper bags for independent pharmacies. Stock programs, custom logo printing, low minimums, and nationwide shipping.',
+    'Factory-direct pharmacy and veterinary bag programs with stock and custom options, low minimums, and predictable supply.',
 }
 
-const features = [
-  'Prescription take-home bags in common pharmacy sizes',
-  'Stock bag programs with same-day shipping availability',
-  'Custom logo printing in 1, 2, and 3 colors',
-  '3 to 4 week turnaround on custom production',
-  'Local pickup available in North Carolina',
+const highlights = [
+  'Stock GS/TY pharmacy programs with common sizes',
+  'Veterinary VB programs for clinic workflows',
+  'Custom print options for brand consistency',
+  'Case-based planning and recurring reorder support',
 ]
 
-const factoryHighlights = [
-  'Direct factory pricing from Union County, NC',
-  'Low minimum order programs',
-  'Consistent quality controls and repeat ordering support',
-  'Nationwide distribution with local pickup options',
-]
-
-const catalogs = [
+const catalogLinks = [
   {
-    title: 'Pharmacy Bags Catalog',
+    title: 'Pharmacy Catalog',
     href: '/catalog/pharmacy',
-    description: 'TY, GS, and Plastic GS designs with size and case count details.',
+    copy: 'GS, TY, and plastic programs with case-level details.',
   },
   {
-    title: 'Veterinary Bags Catalog',
+    title: 'Veterinary Catalog',
     href: '/catalog/veterinary',
-    description: 'VB1, VB2, and VB6 veterinary designs plus real custom examples.',
+    copy: 'VB1, VB2, and VB6 programs plus custom examples.',
   },
   {
-    title: 'Custom 1/2/3 Color Catalog',
+    title: 'Custom Catalog',
     href: '/catalog/custom',
-    description: 'Full-custom one-color, two-color, and three-color bag programs.',
+    copy: '1-color, 2-color, and 3-color print options.',
   },
-]
-
-const trustProof = [
-  {
-    label: 'Custom Lead Time',
-    value: '3-4 Weeks',
-  },
-  {
-    label: 'Custom Program Minimum',
-    value: '4 Cases Per Selected Type',
-  },
-  {
-    label: 'Shipping Rule',
-    value: 'Free Shipping at 8+ Cases',
-  },
-]
-
-const testimonials = [
-  'Our pharmacy reorders monthly and the bag quality has stayed consistent.',
-  'They gave clear case pricing and helped us pick the right size mix on the first order.',
 ]
 
 export default function PharmacyBagsPage() {
   return (
-    <div className="section-container py-14 md:py-20">
-      <div className="max-w-4xl">
-        <p className="kicker">Core Program</p>
-        <h1 className="heading-serif mt-5 text-4xl font-black text-slate-900 md:text-5xl">Pharmacy and Veterinary Bag Programs</h1>
-        <p className="mt-4 text-lg text-slate-700">
-          Bag Supply Co manufactures for independent pharmacies and veterinary clinics with reliable supply, consistent print quality, and repeat ordering support.
-        </p>
-      </div>
-
-      <div className="mt-8 grid gap-3">
-        {features.map((feature) => (
-          <p key={feature} className="surface-card rounded-lg p-4 font-medium text-slate-800">
-            {feature}
+    <div className="pb-16">
+      <section className="page-hero">
+        <div className="page-hero-inner">
+          <p className="kicker">Core Program</p>
+          <h1 className="heading-display mt-5 text-4xl md:text-6xl">Pharmacy and Veterinary Bag Programs</h1>
+          <p className="mt-5 max-w-3xl text-lg muted-text">
+            Reliable stock and custom bag supply for healthcare-adjacent operations that need clear case planning.
           </p>
-        ))}
-      </div>
+        </div>
+      </section>
 
-      <div className="mt-10 tonal-panel">
-        <h2 className="text-2xl font-black text-slate-900">Email Us for Pricing</h2>
-        <p className="mt-3 text-slate-700">
-          Email your bag size, quantity, and print color count. We will reply with production timelines and pricing.
-        </p>
-        <a href={pricingMailto} className="btn-primary mt-4">
-          {contactEmail}
-        </a>
-      </div>
-
-      <div className="mt-10">
-        <h2 className="section-title heading-serif">Factory Direct Advantage</h2>
-        <div className="mt-5 grid gap-3 md:grid-cols-2">
-          {factoryHighlights.map((item) => (
-            <div key={item} className="surface-card rounded-lg p-4 font-medium text-slate-800">
-              {item}
-            </div>
+      <section className="section-container py-12">
+        <div className="grid gap-3 md:grid-cols-2">
+          {highlights.map((item) => (
+            <p key={item} className="tonal-panel text-sm font-semibold text-slate-800">{item}</p>
           ))}
         </div>
-      </div>
+      </section>
 
-      <div className="mt-10">
-        <h2 className="section-title heading-serif">Proof and Policies</h2>
-        <div className="mt-5 grid gap-3 md:grid-cols-3">
-          {trustProof.map((item) => (
-            <div key={item.label} className="surface-card rounded-lg p-4">
-              <p className="text-xs font-black uppercase tracking-[0.09em] text-slate-500">{item.label}</p>
-              <p className="mt-2 font-black text-slate-900">{item.value}</p>
-            </div>
-          ))}
-        </div>
-        <div className="mt-5 grid gap-3 md:grid-cols-2">
-          {testimonials.map((quote) => (
-            <p key={quote} className="surface-card rounded-lg p-4 text-slate-800">
-              "{quote}"
-            </p>
-          ))}
-        </div>
-      </div>
-
-      <div className="mt-10">
-        <h2 className="section-title heading-serif">Browse Catalogs</h2>
-        <p className="mt-3 text-slate-700">Use the matching catalog below for pharmacy, veterinary, or full-custom programs.</p>
-        <div className="mt-5 grid gap-4 md:grid-cols-3">
-          {catalogs.map((catalog) => (
-            <Link key={catalog.href} href={catalog.href} className="surface-card rounded-xl p-5 hover:shadow-md">
-              <h3 className="text-lg font-black text-slate-900">{catalog.title}</h3>
-              <p className="mt-2 text-sm text-slate-700">{catalog.description}</p>
-              <p className="mt-4 text-sm font-bold underline">Open catalog</p>
+      <section className="section-container pb-2">
+        <h2 className="section-title">Browse Programs</h2>
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
+          {catalogLinks.map((catalog) => (
+            <Link key={catalog.href} href={catalog.href} className="tonal-panel hover:translate-y-[-2px] transition-transform">
+              <h3 className="text-2xl font-black text-slate-950">{catalog.title}</h3>
+              <p className="mt-2 text-sm muted-text">{catalog.copy}</p>
+              <p className="mt-5 text-sm font-black uppercase tracking-[0.08em] text-blue-700">Open Catalog</p>
             </Link>
           ))}
         </div>
-      </div>
 
-      <div className="mt-8 flex flex-wrap gap-4 text-sm font-semibold text-slate-700">
-        <Link href="/custom-printing" className="rounded-md bg-white px-3 py-2 underline">
-          Explore custom printing
-        </Link>
-        <Link href="/catalog" className="rounded-md bg-white px-3 py-2 underline">
-          View all catalogs
-        </Link>
-      </div>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <Link href="/generic-bag-quote" className="btn-primary">Build Quote</Link>
+          <Link href="/custom-printing" className="btn-secondary">Custom Printing</Link>
+        </div>
+      </section>
     </div>
   )
 }
+

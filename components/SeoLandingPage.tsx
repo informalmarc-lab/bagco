@@ -10,39 +10,53 @@ type SeoLandingPageProps = {
 
 export default function SeoLandingPage({ h1, intro, bullets, links }: SeoLandingPageProps) {
   return (
-    <div className="section-container py-14 md:py-20">
-      <div className="max-w-4xl">
-        <p className="kicker">SEO Landing Page</p>
-        <h1 className="heading-serif mt-5 text-4xl font-black text-slate-900 md:text-5xl">{h1}</h1>
-        <p className="mt-4 text-lg text-slate-700">{intro}</p>
-      </div>
-
-      <div className="mt-8 grid gap-3 md:grid-cols-2">
-        {bullets.map((bullet) => (
-          <div key={bullet} className="surface-card rounded-lg p-4 text-slate-800">
-            {bullet}
+    <div className="pb-16">
+      <section className="page-hero">
+        <div className="page-hero-inner">
+          <div className="max-w-4xl">
+            <p className="kicker">Specialized Resource</p>
+            <h1 className="heading-display mt-5 text-4xl md:text-6xl">{h1}</h1>
+            <p className="mt-4 max-w-3xl text-lg muted-text">{intro}</p>
           </div>
-        ))}
-      </div>
+        </div>
+      </section>
 
-      <div className="mt-9 tonal-panel">
-        <h2 className="text-2xl font-black text-slate-900">Talk to Our Team</h2>
-        <p className="mt-3 text-slate-700">
-          Email your bag size, quantity, color count, and timeline to receive production options.
-        </p>
-        <a href={pricingMailto} className="btn-primary mt-4">
-          {contactEmail}
-        </a>
-        <p className="mt-4 font-semibold text-slate-900">Email us for pricing.</p>
-      </div>
+      <section className="section-container py-12">
+        <div className="grid gap-3 md:grid-cols-2">
+          {bullets.map((bullet) => (
+            <div key={bullet} className="surface-card rounded-2xl p-4 text-sm font-semibold text-slate-800">
+              {bullet}
+            </div>
+          ))}
+        </div>
+      </section>
 
-      <div className="mt-8 flex flex-wrap gap-4 text-sm font-semibold text-slate-700">
-        {links.map((link) => (
-          <Link key={link.href} href={link.href} className="rounded-md bg-white px-3 py-2 underline">
-            {link.label}
-          </Link>
-        ))}
-      </div>
+      <section className="section-container">
+        <div className="tonal-panel">
+          <h2 className="section-title text-2xl md:text-3xl">Talk to Our Team</h2>
+          <p className="mt-3 muted-text">
+            Email your bag size, quantity, color count, and timeline to receive production options.
+          </p>
+          <div className="mt-5 flex flex-wrap gap-3">
+            <a href={pricingMailto} className="btn-primary">
+              {contactEmail}
+            </a>
+            <Link href="/generic-bag-quote" className="btn-secondary">
+              Use Quote Tool
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-container pt-8">
+        <div className="flex flex-wrap gap-2 text-sm font-semibold text-slate-700">
+          {links.map((link) => (
+            <Link key={link.href} href={link.href} className="rounded-xl border border-slate-300 bg-white px-3 py-2 hover:bg-slate-50">
+              {link.label}
+            </Link>
+          ))}
+        </div>
+      </section>
     </div>
   )
 }

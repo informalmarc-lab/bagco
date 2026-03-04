@@ -1,204 +1,76 @@
-import type { Metadata } from 'next'
-import Image from 'next/image'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
-import FromIdeaToBagCinematic from '@/components/FromIdeaToBagCinematic'
-import HomeScrollMotion from '@/components/HomeScrollMotion'
-import IndustrySolutionsSection from '@/components/IndustrySolutionsSection'
+import AppleStory from '@/components/AppleStory'
 import QuickQuoteForm from '@/components/QuickQuoteForm'
+import IndustrySolutionsSection from '@/components/IndustrySolutionsSection'
 import { contactTextHref } from '@/components/siteConfig'
 
 export const metadata: Metadata = {
-  title: 'Custom Retail Bags & Branded Paper Bags | Bag Supply Co',
+  title: 'Custom Paper Bag Manufacturer for Retail, Pharmacy, and Veterinary',
   description:
-    'Bag Supply Co provides custom retail bags, custom dispensary bags, and branded paper bags for pharmacies, smoke shops, veterinary clinics, and retail stores.',
+    'Bag Supply Co delivers custom retail bags, pharmacy packaging bags, and veterinary paper bag programs with predictable lead times and recurring reorder support.',
   keywords: [
     'custom retail bags',
-    'custom dispensary bags',
-    'branded paper bags',
-    'wholesale custom packaging',
     'pharmacy packaging bags',
+    'veterinary paper bags',
+    'wholesale custom packaging',
+    'paper bag manufacturer',
   ],
 }
 
-const clarityPoints = [
-  'Who we serve: regulated retail businesses and growth-focused storefronts.',
-  'What we provide: branded paper bags and wholesale custom packaging programs.',
-  'Why we are reliable: local support model with repeatable process and communication.',
-  'Next step: request a custom quote or text our team directly.',
-]
-
-const authorityMetrics = [
-  { label: 'Production Capacity', value: 'Scaled for Multi-Location Programs' },
-  { label: 'Industries Served', value: 'Dispensary, Smoke Shop, Pharmacy, Retail' },
-  { label: 'Volume Support', value: 'Startup to High-Volume Recurring Accounts' },
-  { label: 'Typical Turnaround', value: 'Structured and Predictable by Program' },
-  { label: 'Operational Model', value: 'Local Supply, Direct Communication, Clear Process' },
-]
-
-const problems = [
+const trustPoints = [
   {
-    title: 'Generic Packaging Weakens Brand Perception',
-    copy:
-      'Unbranded bags make established businesses look temporary and interchangeable in competitive retail environments.',
+    label: 'Programs',
+    value: 'Stock + Custom 1/2/3 Color',
+    copy: 'Choose speed with stock options or build brand consistency with custom print runs.',
   },
   {
-    title: 'Inconsistent Supply Disrupts Operations',
-    copy:
-      'Missed deliveries and unclear reorder cycles create avoidable inventory stress and checkout bottlenecks.',
+    label: 'Industries',
+    value: 'Retail, Pharmacy, Veterinary, Dispensary',
+    copy: 'Packaging systems tailored to regulated and high-frequency checkout environments.',
   },
   {
-    title: 'Poor Presentation Reduces Customer Trust',
-    copy:
-      'In regulated retail, presentation quality directly affects credibility, repeat visits, and customer confidence.',
+    label: 'Order Model',
+    value: 'One-Time + Recurring Reorders',
+    copy: 'Scale from first program launch to stable recurring replenishment.',
   },
 ]
 
-const segments = [
+const painVsOutcome = [
   {
-    title: 'Dispensaries',
-    href: '/industries/dispensaries',
-    copy: 'Discreet, compliant-ready custom dispensary bags with professional branded presentation.',
+    pain: 'Unclear restock timing creates checkout risk',
+    outcome: 'Structured replenishment keeps supply predictable',
   },
   {
-    title: 'Smoke Shops',
-    href: '/industries/smoke-shops',
-    copy: 'Branded paper bags designed for recognition, repeat traffic, and stronger local identity.',
+    pain: 'Generic packaging weakens brand perception',
+    outcome: 'Custom print options strengthen customer recall',
   },
   {
-    title: 'Pharmacies',
-    href: '/industries/pharmacies',
-    copy: 'Clean pharmacy packaging bags that support trust, consistency, and daily script volume.',
-  },
-  {
-    title: 'Retail Stores',
-    href: '/industries/retail-stores',
-    copy: 'Custom retail bags that reinforce brand value and scale with store growth.',
-  },
-  {
-    title: 'Retail & Boutiques',
-    href: '/industries#industry-solutions',
-    copy: 'Premium bag programs for apparel, footwear, jewelry, and gift-focused storefronts.',
-  },
-  {
-    title: 'Veterinary',
-    href: '/catalog/veterinary',
-    copy: 'Reliable veterinary bag programs for clinics and animal care operations with repeat supply needs.',
-  },
-  {
-    title: 'Food & Beverage',
-    href: '/industries#industry-solutions',
-    copy: 'Durable carry-out bag programs for cafes, bakeries, and fast-paced food service locations.',
+    pain: 'Multiple vendors create communication drag',
+    outcome: 'Single packaging partner with direct support',
   },
 ]
 
-const outcomes = [
-  'Improves customer perception at point-of-sale',
-  'Increases brand recognition outside the store',
-  'Supports repeat business with consistent brand presentation',
-  'Strengthens store credibility in regulated markets',
-  'Stabilizes packaging operations and inventory planning',
-  'Protects revenue consistency by preventing supply gaps',
-]
-
-const processSteps = [
+const faqs = [
   {
-    title: 'Consultation',
-    copy: 'We define your retail goals, usage volume, and brand requirements.',
-  },
-  {
-    title: 'Custom Design & Sizing',
-    copy: 'We align graphics and bag formats to fit your customer experience.',
-  },
-  {
-    title: 'Production',
-    copy: 'Orders run through a controlled schedule built for quality and repeatability.',
-  },
-  {
-    title: 'Delivery or Local Pickup',
-    copy: 'You receive dependable fulfillment with a clear communication channel.',
-  },
-]
-
-const objections = [
-  {
-    q: 'Do we have to place massive minimum orders?',
-    a: 'No. Programs are structured around practical case volumes and scalable growth.',
-  },
-  {
-    q: 'Can we customize design and bag format?',
-    a: 'Yes. We support custom sizing, branding, and print guidance for regulated retail operations.',
-  },
-  {
-    q: 'Is design support available?',
-    a: 'Yes. We guide format, print layout, and brand presentation before production.',
-  },
-  {
-    q: 'How reliable is turnaround?',
-    a: 'Turnarounds are structured and communicated upfront to support real operational planning.',
-  },
-  {
-    q: 'Do you support Net 30?',
-    a: 'Yes. Net 30 terms are available for all clients, including recurring and one-time programs.',
-  },
-  {
-    q: 'Can reorders be automated?',
-    a: 'Yes. Automated recurring reorder schedules remove manual tracking and reduce shortage risk.',
-  },
-]
-
-const testimonials = [
-  {
-    label: 'Dispensary',
-    quote:
-      'BagCo always delivers quality. The bags are durable, well-made, and exactly what we needed for our shop. Customer service is top-notch too!',
-  },
-  {
-    label: 'Retail',
-    quote:
-      "I've tried multiple bag suppliers, but BagCo is hands down the best. Fast shipping, great customization options, and the material feels premium.",
-  },
-  {
-    label: 'Retail',
-    quote:
-      'Perfect for our business needs. We ordered custom-printed bags, and they look fantastic. Highly recommend BagCo for anyone in retail.',
-  },
-  {
-    label: 'Pharmacy',
-    quote:
-      'Reliable, professional, and consistent. Every order has arrived on time and exactly as requested. BagCo makes running our business easier.',
-  },
-  {
-    label: 'Veterinary',
-    quote:
-      'Great quality bags at a reasonable price. BagCo exceeded our expectations and made the ordering process simple and smooth.',
-  },
-  {
-    label: 'Pharmacy',
-    quote:
-      "BagCo has become a dependable part of our operation. The ordering process is straightforward, turnaround times are consistent, and the finished bags present our brand exactly the way we want it. It's rare to find a supplier that delivers this level of reliability every time.",
-  },
-]
-
-const faqItems = [
-  {
-    question: 'Do you provide custom retail bags and custom dispensary bags?',
+    question: 'Can I order stock bags and custom printed bags from the same supplier?',
     answer:
-      'Yes. Bag Supply Co builds custom retail bags and custom dispensary bags with branding and format guidance for regulated retail environments.',
+      'Yes. We support both stock and custom programs so teams can move fast now and standardize branding over time.',
   },
   {
-    question: 'Do you offer recurring reorder automation?',
+    question: 'Do you support pharmacy and veterinary operations specifically?',
     answer:
-      'Yes. Automated reorder programs can be scheduled by week or month, with automatic production and invoicing workflows.',
+      'Yes. We run dedicated pharmacy and veterinary catalogs with established sizes, case counts, and recurring-order support.',
   },
   {
-    question: 'Are Net 30 terms available?',
+    question: 'Is there a way to estimate pricing before contacting sales?',
     answer:
-      'Yes. Net 30 terms are available to all retail clients for one-time and recurring orders.',
+      'Yes. Use our quote tool to build a case-based estimate, then send it to our team for review and final freight details.',
   },
   {
-    question: 'What packaging categories do you support?',
+    question: 'Do you offer recurring reorder programs?',
     answer:
-      'We support branded paper bags, pharmacy packaging bags, and wholesale custom packaging programs for retail operators.',
+      'Yes. We help set practical reorder cadence so packaging does not become a manual weekly fire drill.',
   },
 ]
 
@@ -206,7 +78,7 @@ export default function Home() {
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: faqItems.map((item) => ({
+    mainEntity: faqs.map((item) => ({
       '@type': 'Question',
       name: item.question,
       acceptedAnswer: {
@@ -217,298 +89,107 @@ export default function Home() {
   }
 
   return (
-    <HomeScrollMotion>
-      <div className="pb-16">
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+    <div className="pb-20">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <section className="relative overflow-hidden border-b border-amber-200 bg-[linear-gradient(120deg,#fffdf8_0%,#f5e8d3_55%,#eadbc5_100%)]">
-        <div className="section-container py-16 md:py-24">
-          <div className="grid gap-8 lg:grid-cols-[1.08fr_0.92fr]">
+      <section className="page-hero">
+        <div className="page-hero-inner">
+          <div className="split-panel items-start">
             <div>
-              <p className="kicker">Retail Packaging and Branding Partner</p>
-              <h1 className="heading-serif mt-6 text-4xl font-black leading-tight text-slate-900 md:text-6xl">
-                Custom Retail Bags and Branded Paper Bags for Regulated Retail
+              <p className="kicker">Custom and Stock Paper Bag Programs</p>
+              <h1 className="heading-display mt-5">
+                Modern Packaging Programs for Teams That Need Reliability
               </h1>
-              <p className="mt-5 max-w-3xl text-lg text-slate-700 md:text-xl">
-                We support dispensaries, smoke shops, pharmacies, veterinary clinics, retailers, and food service teams with structured, scalable packaging programs designed for brand visibility and supply stability.
+              <p className="mt-5 max-w-3xl text-lg muted-text">
+                Bag Supply Co helps pharmacies, retail stores, veterinary clinics, and dispensaries manage packaging with cleaner branding, clearer lead times, and repeatable replenishment.
               </p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-7 flex flex-wrap gap-3">
                 <Link href="/generic-bag-quote" className="btn-primary">
-                  Request a Custom Quote
+                  Build a Quote
                 </Link>
-                <a href={contactTextHref} className="btn-secondary">
+                <Link href="/catalog" className="btn-secondary">
+                  Explore Catalogs
+                </Link>
+                <a href={contactTextHref} className="btn-quiet">
                   Text Our Team
                 </a>
               </div>
-              <p className="mt-3 text-sm text-slate-600">
-                No long intake process. Send your requirements and get a structured recommendation quickly.
-              </p>
             </div>
 
-            <div className="rounded-2xl border border-amber-300 bg-white/90 p-5 shadow-[0_20px_40px_rgba(15,23,42,0.1)]">
-              <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-                <h2 className="text-lg font-black text-slate-900">What You Know in 5 Seconds</h2>
-                <div className="mt-4 grid gap-3">
-                  {clarityPoints.map((item, idx) => (
-                    <div key={item} className="flex items-start gap-3 rounded-lg border border-slate-200 bg-white p-3">
-                      <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-amber-200 text-xs font-black text-slate-900">
-                        {idx + 1}
-                      </span>
-                      <p className="text-sm font-semibold text-slate-700">{item}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="mt-4 overflow-hidden rounded-xl border border-slate-200 bg-slate-100">
-                <div className="relative h-48">
-                  <Image
-                    src="/catalog/pharmacy/gs/GS-22-FRONT.webp"
-                    alt="Professional branded pharmacy bag"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 40vw"
-                  />
-                </div>
+            <div className="hero-panel">
+              <p className="text-xs font-black uppercase tracking-[0.12em] text-blue-700">What you get</p>
+              <div className="mt-4 grid gap-3">
+                {trustPoints.map((item) => (
+                  <div key={item.label} className="surface-card rounded-2xl p-4">
+                    <p className="text-xs font-black uppercase tracking-[0.1em] text-slate-500">{item.label}</p>
+                    <p className="mt-1 text-lg font-black text-slate-950">{item.value}</p>
+                    <p className="mt-1 text-sm muted-text">{item.copy}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section-container py-14 md:py-18">
-        <h2 className="section-title heading-serif">Authority and Operational Strength</h2>
-        <div className="mt-6 grid gap-4 md:grid-cols-3">
-          {authorityMetrics.map((item) => (
-            <div key={item.label} className="surface-card rounded-xl p-5">
-              <p className="text-xs font-black uppercase tracking-[0.1em] text-slate-500">{item.label}</p>
-              <p className="mt-2 font-black text-slate-900">{item.value}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      <AppleStory />
 
-      <section className="border-y border-amber-200 bg-amber-50/45 py-14 md:py-18">
-        <div className="section-container">
-          <h2 className="section-title heading-serif">The Retail Problem</h2>
-          <div className="mt-6 grid gap-4 md:grid-cols-3">
-            {problems.map((item) => (
-              <div key={item.title} className="surface-card rounded-xl p-5">
-                <h3 className="text-xl font-black text-slate-900">{item.title}</h3>
-                <p className="mt-2 text-slate-700">{item.copy}</p>
-              </div>
+      <section className="section-container py-8 md:py-14">
+        <div className="tonal-panel">
+          <h2 className="section-title">From Packaging Friction to Operational Clarity</h2>
+          <div className="mt-6 grid gap-3 md:grid-cols-3">
+            {painVsOutcome.map((item) => (
+              <article key={item.pain} className="surface-card rounded-2xl p-4">
+                <p className="text-xs font-black uppercase tracking-[0.1em] text-slate-500">Before</p>
+                <p className="mt-2 text-sm font-semibold text-slate-700">{item.pain}</p>
+                <p className="mt-4 text-xs font-black uppercase tracking-[0.1em] text-blue-700">After</p>
+                <p className="mt-2 text-sm font-semibold text-slate-900">{item.outcome}</p>
+              </article>
             ))}
           </div>
-          <div className="mt-6 rounded-xl border border-slate-900/15 bg-slate-900 p-5 text-slate-100">
-            Bag Supply Co solves this with structured packaging operations, professional design execution, and dependable replenishment.
-          </div>
-        </div>
-      </section>
-
-      <section className="section-container py-16 md:py-20">
-        <h2 className="section-title heading-serif">Who We Serve</h2>
-        <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {segments.map((segment) => (
-            <Link key={segment.title} href={segment.href} className="surface-card rounded-xl p-5 hover:shadow-md">
-              <h3 className="text-2xl font-black text-slate-900">{segment.title}</h3>
-              <p className="mt-2 text-slate-700">{segment.copy}</p>
-              <p className="mt-4 text-sm font-black uppercase tracking-[0.08em] text-amber-800">View Industry Program</p>
-            </Link>
-          ))}
         </div>
       </section>
 
       <IndustrySolutionsSection />
 
-      <section className="border-y border-slate-200 bg-[linear-gradient(135deg,#f7fafc,#edf2f7)] py-16 md:py-20">
-        <div className="section-container">
-          <p className="kicker">Pharmacy & Veterinary Programs</p>
-          <h2 className="heading-serif mt-5 text-4xl font-black text-slate-900 md:text-5xl">
-            Structured Packaging Programs for Pharmacies and Veterinary Clinics
-          </h2>
-          <p className="mt-4 max-w-3xl text-lg text-slate-700">
-            We support pharmacies and animal-care teams with reliable bag supply, clean presentation quality, and repeatable reorder programs built for daily operational volume.
-          </p>
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-            <div className="surface-card rounded-xl p-5">
-              <h3 className="text-lg font-black text-slate-900">Pharmacy Bag Programs</h3>
-              <p className="mt-2 text-sm text-slate-700">GS and TY pharmacy programs with structured sizing and case options for repeat script volume.</p>
-            </div>
-            <div className="surface-card rounded-xl p-5">
-              <h3 className="text-lg font-black text-slate-900">Veterinary Programs</h3>
-              <p className="mt-2 text-sm text-slate-700">VB design programs aligned for veterinary clinics and pet-care operations needing dependable supply.</p>
-            </div>
-            <div className="surface-card rounded-xl p-5">
-              <h3 className="text-lg font-black text-slate-900">Custom Print Options</h3>
-              <p className="mt-2 text-sm text-slate-700">One, two, and three-color print programs to keep pharmacy and clinic branding consistent.</p>
+      <section className="section-container py-10 md:py-16">
+        <div className="split-panel items-start">
+          <div className="tonal-panel">
+            <p className="kicker">FAQ</p>
+            <h2 className="section-title mt-4">Answers Before You Reach Out</h2>
+            <div className="mt-6 grid gap-3">
+              {faqs.map((item) => (
+                <article key={item.question} className="surface-card rounded-2xl p-4">
+                  <h3 className="text-lg font-black text-slate-950">{item.question}</h3>
+                  <p className="mt-2 text-sm muted-text">{item.answer}</p>
+                </article>
+              ))}
             </div>
           </div>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/catalog/pharmacy" className="btn-secondary">View Pharmacy Catalog</Link>
-            <Link href="/catalog/veterinary" className="btn-secondary">View Veterinary Catalog</Link>
-            <Link href="/generic-bag-quote" className="btn-primary">Request Quote</Link>
-          </div>
-        </div>
-      </section>
 
-      <section className="border-y border-amber-200 bg-amber-50/40 py-16 md:py-20">
-        <div className="section-container">
-          <h2 className="heading-serif text-4xl font-black text-slate-900">Built for Retail Operations</h2>
-          <p className="mt-3 max-w-3xl text-slate-700">
-            Packaging is not a side task. It impacts customer perception, repeat behavior, store credibility, and operational consistency.
-          </p>
-          <div className="mt-6 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
-            {outcomes.map((item) => (
-              <div key={item} className="surface-card rounded-lg px-4 py-3 text-sm font-semibold text-slate-800">
-                {item}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-container py-16 md:py-20">
-        <h2 className="section-title heading-serif">Our Process: Simple. Structured. Reliable.</h2>
-        <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {processSteps.map((step, idx) => (
-            <div key={step.title} className="surface-card rounded-xl p-5">
-              <p className="text-xs font-black uppercase tracking-[0.1em] text-amber-800">Step {idx + 1}</p>
-              <h3 className="mt-2 text-xl font-black text-slate-900">{step.title}</h3>
-              <p className="mt-2 text-sm text-slate-700">{step.copy}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="border-y border-amber-200 bg-[linear-gradient(130deg,#f8f3e8,#efe5d3)] py-16 md:py-20">
-        <div className="section-container">
-          <h2 className="heading-serif text-4xl font-black text-slate-900">Automated Reorder Program</h2>
-          <p className="mt-3 max-w-3xl text-slate-700">
-            Clients can automate reorders on a fixed schedule. Production, shipment, and invoicing run automatically to prevent shortages and remove manual reorder work.
-          </p>
-          <ul className="mt-6 grid gap-3 md:grid-cols-2">
-            <li className="surface-card rounded-lg p-4">Set weekly or monthly reorder cadence aligned to your actual volume.</li>
-            <li className="surface-card rounded-lg p-4">Automatic production and shipment workflow for predictable replenishment.</li>
-            <li className="surface-card rounded-lg p-4">Automated invoices and cleaner purchasing process for your team.</li>
-            <li className="surface-card rounded-lg p-4">Program rules can be customized per store, location, and demand profile.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section className="section-container py-16 md:py-20">
-        <h2 className="section-title heading-serif">Net 30 Terms</h2>
-        <div className="mt-6 rounded-2xl border border-slate-300 bg-white p-6">
-          <p className="text-lg text-slate-800">
-            Net 30 is offered to all retail clients. Invoices are due 30 days from invoice date and apply to both one-time and recurring programs.
-          </p>
-          <p className="mt-3 text-slate-700">
-            This supports professional B2B operations and long-term supply relationships without unnecessary cash-flow friction.
-          </p>
-        </div>
-      </section>
-
-      <section className="border-y border-amber-200 bg-amber-50/50 py-16 md:py-20">
-        <div className="section-container">
-          <h2 className="section-title heading-serif">Supply Stability and Infrastructure</h2>
-          <div className="mt-6 grid gap-4 md:grid-cols-3">
-            <div className="surface-card rounded-xl p-5">
-              <h3 className="text-xl font-black text-slate-900">Prevent Lost Revenue</h3>
-              <p className="mt-2 text-slate-700">Consistent supply keeps checkout operations moving and protects conversion at the point of sale.</p>
-            </div>
-            <div className="surface-card rounded-xl p-5">
-              <h3 className="text-xl font-black text-slate-900">Protect Brand Reputation</h3>
-              <p className="mt-2 text-slate-700">Reliable packaging quality keeps customer-facing presentation strong across all locations.</p>
-            </div>
-            <div className="surface-card rounded-xl p-5">
-              <h3 className="text-xl font-black text-slate-900">Reduce Operational Stress</h3>
-              <p className="mt-2 text-slate-700">Structured reorder programs reduce emergencies and support long-term business growth planning.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-container py-16 md:py-20">
-        <h2 className="section-title heading-serif">Why Bag Supply Co Is Different</h2>
-        <div className="mt-6 grid gap-4 md:grid-cols-2">
-          <div className="surface-card rounded-xl p-5">
-            <h3 className="text-xl font-black text-slate-900">Common Supplier Problems</h3>
-            <ul className="mt-3 space-y-2 text-slate-700">
-              <li>Overseas suppliers often introduce delay risk and communication gaps.</li>
-              <li>Generic printers usually provide output, not an operational partnership.</li>
-              <li>Large distributors can feel transactional and slow to adapt.</li>
-            </ul>
-          </div>
-          <div className="rounded-xl border border-slate-200 bg-[linear-gradient(135deg,#f5e8d3,#efe0c8)] p-5">
-            <h3 className="text-xl font-black text-slate-900">Bag Supply Co Model</h3>
-            <ul className="mt-3 space-y-2 text-slate-800">
-              <li>Accessible team with direct communication.</li>
-              <li>Consistent, relationship-driven support.</li>
-              <li>Operational focus designed for repeat retail execution.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-y border-slate-200 bg-white py-16 md:py-20">
-        <div className="section-container">
-          <h2 className="section-title heading-serif">Objection Handling</h2>
-          <div className="mt-6 grid gap-4 md:grid-cols-2">
-            {objections.map((item) => (
-              <div key={item.q} className="surface-card rounded-xl p-5">
-                <h3 className="text-lg font-black text-slate-900">{item.q}</h3>
-                <p className="mt-2 text-slate-700">{item.a}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-container py-16 md:py-20">
-        <h2 className="section-title heading-serif">Client Testimonials</h2>
-        <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {testimonials.map((item) => (
-            <blockquote key={item.quote} className="surface-card rounded-xl p-5 text-slate-800">
-              <p className="mb-3 text-lg text-amber-800">"</p>
-              <p>{item.quote}</p>
-              <footer className="mt-4 text-xs font-black uppercase tracking-[0.1em] text-slate-500">{item.label}</footer>
-            </blockquote>
-          ))}
-        </div>
-      </section>
-
-      <FromIdeaToBagCinematic />
-
-      <section className="section-container py-16 md:py-20">
-        <h2 className="section-title heading-serif">FAQ</h2>
-        <div className="mt-6 grid gap-4">
-          {faqItems.map((item) => (
-            <div key={item.question} className="surface-card rounded-xl p-5">
-              <h3 className="text-xl font-black text-slate-900">{item.question}</h3>
-              <p className="mt-2 text-slate-700">{item.answer}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="section-container pb-8 pt-4">
-        <div className="grid gap-6 lg:grid-cols-[1fr_1.1fr]">
-          <div className="rounded-2xl bg-[linear-gradient(135deg,#f5e8d3,#e9dbc4)] p-8">
-            <h2 className="heading-serif text-3xl font-black text-slate-900 md:text-4xl">Built for Retail Businesses Ready to Scale</h2>
-            <p className="mt-4 text-slate-700">
-              If you need a packaging partner that protects brand standards and supply reliability, request your custom program today.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Link href="/generic-bag-quote" className="btn-primary">
-                Request a Custom Quote
-              </Link>
-              <a href={contactTextHref} className="btn-secondary">
-                Text Our Team
-              </a>
-            </div>
-          </div>
           <QuickQuoteForm />
         </div>
       </section>
-      </div>
-    </HomeScrollMotion>
+
+      <section className="section-container pt-2">
+        <div className="tonal-panel">
+          <p className="kicker">Social Media</p>
+          <h2 className="section-title mt-4">Follow Bag Supply Co</h2>
+          <p className="mt-3 muted-text">
+            See updates, product highlights, and recent packaging work on Facebook.
+          </p>
+          <a
+            href="https://www.facebook.com/profile.php?id=61586254914821"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary mt-5"
+          >
+            Visit Our Facebook
+          </a>
+        </div>
+      </section>
+    </div>
   )
 }
+
+

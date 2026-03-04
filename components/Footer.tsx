@@ -9,153 +9,81 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="mt-16 border-t border-amber-200/80 bg-slate-950 text-slate-300">
-      <div className="section-container py-14">
-        <div className="mb-10 rounded-2xl border border-slate-700/70 bg-[linear-gradient(135deg,#0f172a,#1e293b)] p-6 md:p-8">
-          <p className="kicker border-white/20 bg-white/10 text-amber-100">Operational Partnership</p>
-          <h2 className="mt-3 text-2xl font-black text-white md:text-3xl">Built for Serious Retail Operations</h2>
-          <p className="mt-2 max-w-3xl text-slate-300">
-            Structured support for dispensaries, smoke shops, pharmacies, and retail stores that need reliable packaging supply and professional brand presentation.
+    <footer className="mt-24 border-t border-slate-200 bg-slate-950 text-slate-300">
+      <div className="section-container py-16">
+        <div className="rounded-3xl border border-slate-700 bg-[linear-gradient(135deg,#111827,#1f2937_55%,#0b1220)] p-8 md:p-10">
+          <p className="inline-flex rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.12em] text-slate-200">
+            Ready to standardize packaging?
           </p>
-          <div className="mt-4 flex flex-wrap items-center gap-3">
-            <Link href="/generic-bag-quote" className="rounded-md bg-amber-200 px-4 py-2 font-bold text-slate-950 hover:bg-amber-300">
-              Request a Custom Quote
+          <h2 className="mt-4 max-w-3xl text-3xl font-black text-white md:text-4xl">
+            Build a predictable packaging program in one call.
+          </h2>
+          <p className="mt-3 max-w-3xl text-slate-300">
+            We help teams choose the right catalog, lock in repeat supply, and ship with a clear schedule.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link href="/generic-bag-quote" className="btn-primary">
+              Open Quote Tool
             </Link>
-            <a href={contactTextHref} className="rounded-md border border-white/25 bg-white/10 px-4 py-2 font-bold text-white hover:bg-white/20">
-              Text Our Team
+            <a href={contactTextHref} className="btn-quiet border-white/30 text-white hover:bg-white/15">
+              Text {contactPhone}
             </a>
           </div>
         </div>
 
-        <div className="grid gap-10 md:grid-cols-4">
+        <div className="mt-12 grid gap-10 md:grid-cols-4">
           <div>
-            <h3 className="text-2xl font-black text-white heading-serif">Bag Supply Co</h3>
-            <p className="mt-3 leading-relaxed text-slate-400">
-              Factory direct manufacturer of custom and stock paper bags for independent pharmacies, retailers, and specialty businesses.
+            <h3 className="text-xl font-black text-white">Bag Supply Co</h3>
+            <p className="mt-3 text-sm leading-relaxed text-slate-400">
+              Factory-direct paper bag manufacturing and structured replenishment for retail, pharmacy, and veterinary operations.
             </p>
           </div>
 
           <div>
-            <h4 className="mb-5 text-lg font-bold text-white">Navigation</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/" className="text-slate-400 transition-colors hover:text-white">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="text-slate-400 transition-colors hover:text-white">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="/industries" className="text-slate-400 transition-colors hover:text-white">
-                  Industries
-                </Link>
-              </li>
-              <li>
-                <Link href="/generic-bag-quote" className="text-slate-400 transition-colors hover:text-white">
-                  Quote Tool
-                </Link>
-              </li>
-              <li>
-                <Link href="/catalog" className="text-slate-400 transition-colors hover:text-white">
-                  Catalogs
-                </Link>
-              </li>
-              <li>
-                <Link href="/payments" className="text-slate-400 transition-colors hover:text-white">
-                  Payments
-                </Link>
-              </li>
-              <li>
-                <Link href="/shipping" className="text-slate-400 transition-colors hover:text-white">
-                  Shipping Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="/privacy-policy" className="text-slate-400 transition-colors hover:text-white">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-slate-400 transition-colors hover:text-white">
-                  Contact
-                </Link>
-              </li>
+            <h4 className="text-sm font-black uppercase tracking-[0.1em] text-slate-400">Company</h4>
+            <ul className="mt-3 space-y-2 text-sm">
+              <li><Link href="/about" className="hover:text-white">About</Link></li>
+              <li><Link href="/industries" className="hover:text-white">Industries</Link></li>
+              <li><Link href="/manufacturing" className="hover:text-white">Manufacturing</Link></li>
+              <li><Link href="/shipping" className="hover:text-white">Shipping</Link></li>
+              <li><Link href="/payments" className="hover:text-white">Payments</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="mb-5 text-lg font-bold text-white">Resources</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/catalog/pharmacy" className="text-slate-400 transition-colors hover:text-white">
-                  Pharmacy Catalog
-                </Link>
-              </li>
-              <li>
-                <Link href="/catalog/veterinary" className="text-slate-400 transition-colors hover:text-white">
-                  Veterinary Catalog
-                </Link>
-              </li>
-              <li>
-                <Link href="/catalog/custom" className="text-slate-400 transition-colors hover:text-white">
-                  Custom 1/2/3 Color Catalog
-                </Link>
-              </li>
-              <li>
-                <Link href="/catalog/legacy" className="text-slate-400 transition-colors hover:text-white">
-                  All Old Catalogs
-                </Link>
-              </li>
-              <li>
-                <Link href="/industries/dispensaries" className="text-slate-400 transition-colors hover:text-white">
-                  Dispensary Programs
-                </Link>
-              </li>
-              <li>
-                <Link href="/industries/pharmacies" className="text-slate-400 transition-colors hover:text-white">
-                  Pharmacy Programs
-                </Link>
-              </li>
-              <li>
-                <Link href="/catalog/veterinary" className="text-slate-400 transition-colors hover:text-white">
-                  Veterinary Programs
-                </Link>
-              </li>
+            <h4 className="text-sm font-black uppercase tracking-[0.1em] text-slate-400">Catalogs</h4>
+            <ul className="mt-3 space-y-2 text-sm">
+              <li><Link href="/catalog/pharmacy" className="hover:text-white">Pharmacy</Link></li>
+              <li><Link href="/catalog/veterinary" className="hover:text-white">Veterinary</Link></li>
+              <li><Link href="/catalog/custom" className="hover:text-white">Custom 1/2/3 Color</Link></li>
+              <li><Link href="/catalog/legacy" className="hover:text-white">Legacy Collections</Link></li>
+              <li><Link href="/gallery" className="hover:text-white">Gallery</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="mb-5 text-lg font-bold text-white">Contact</h4>
-            <ul className="space-y-3 text-slate-400">
+            <h4 className="text-sm font-black uppercase tracking-[0.1em] text-slate-400">Contact</h4>
+            <ul className="mt-3 space-y-2 text-sm">
               <li>
-                <a href={pricingMailto} className="font-bold text-amber-200 underline decoration-amber-200/50 hover:text-amber-100">
+                <a href={pricingMailto} className="font-semibold text-slate-100 hover:text-white">
                   {contactEmail}
                 </a>
               </li>
+              <li><a href={contactTextHref} className="hover:text-white">Text {contactPhone}</a></li>
               <li>
-                <a href={contactTextHref} className="transition-colors hover:text-white">
-                  Text: {contactPhone}
+                <a
+                  href="https://www.facebook.com/profile.php?id=61586254914821"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white"
+                >
+                  Facebook
                 </a>
               </li>
+              <li>{contactAddress[0]}</li>
+              <li>{contactAddress[1]}</li>
               <li>
-                {contactAddress[0]}
-                <br />
-                {contactAddress[1]}
-              </li>
-              <li>
-                Mon-Fri: 8:00 AM - 5:00 PM ET
-              </li>
-              <li>
-                Service Area: United States
-              </li>
-              <li className="pt-2">
-                <Link
-                  href="/privacy-policy"
-                  className="inline-block rounded-md bg-white px-4 py-2 font-bold text-slate-900 hover:bg-amber-50"
-                >
+                <Link href="/privacy-policy" className="inline-flex rounded-md border border-slate-600 px-3 py-1.5 text-xs font-semibold hover:bg-slate-800">
                   Privacy Policy
                 </Link>
               </li>
@@ -163,8 +91,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-slate-800 pt-8 text-center">
-          <p className="text-slate-500">&copy; {new Date().getFullYear()} Bag Supply Co. All rights reserved.</p>
+        <div className="mt-12 border-t border-slate-800 pt-6 text-xs text-slate-500">
+          <p>&copy; {new Date().getFullYear()} Bag Supply Co. All rights reserved.</p>
         </div>
       </div>
     </footer>

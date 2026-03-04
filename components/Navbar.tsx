@@ -6,15 +6,13 @@ import { useState } from 'react'
 import { contactTextHref } from '@/components/siteConfig'
 
 const navLinks = [
-  { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/industries', label: 'Industries' },
-  { href: '/industries/pharmacies', label: 'Pharmacies' },
-  { href: '/catalog/veterinary', label: 'Veterinary' },
   { href: '/catalog', label: 'Catalogs' },
-  { href: '/payments', label: 'Payments' },
+  { href: '/gallery', label: 'Gallery' },
+  { href: '/manufacturing', label: 'Manufacturing' },
   { href: '/shipping', label: 'Shipping' },
-  { href: '/generic-bag-quote', label: 'Quote Tool' },
+  { href: '/payments', label: 'Payments' },
   { href: '/contact', label: 'Contact' },
 ]
 
@@ -27,35 +25,54 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-amber-200/80 bg-[rgba(255,251,244,0.92)] backdrop-blur-xl">
+    <header className="print-hide sticky top-0 z-50 border-b border-white/35 bg-[rgba(250,252,255,0.78)] backdrop-blur-xl">
       <div className="section-container">
-        <div className="flex min-h-20 flex-wrap items-center justify-between gap-3 py-3">
-          <Link
-            href="/"
-            className="flex items-center gap-3 text-2xl font-black tracking-tight text-slate-900"
-          >
-            <span className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-slate-900 text-lg font-black text-amber-100 shadow-md">
-              BC
+        <nav className="flex min-h-[74px] items-center justify-between gap-4">
+          <Link href="/" className="inline-flex items-center gap-3">
+            <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-900 text-sm font-black text-white shadow-lg">
+              BS
             </span>
-            <span className="hidden sm:inline">Bag Co</span>
-            <span className="sm:hidden">BagCo</span>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.14em] text-slate-500">Bag Supply Co</p>
+              <p className="text-sm font-semibold text-slate-800">Packaging Partner</p>
+            </div>
           </Link>
 
-          <div className="hidden items-center gap-2 md:flex print-hide">
-            <Link href="/generic-bag-quote" className="btn-primary px-4 py-2 text-sm">
-              Request a Custom Quote
+          <div className="hidden items-center gap-1 lg:flex">
+            <Link
+              href="/"
+              className={`nav-chip ${pathname === '/' ? 'nav-chip-active' : ''}`}
+            >
+              Home
             </Link>
-            <a href={contactTextHref} className="btn-secondary px-4 py-2 text-sm">
-              Text Our Team
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`nav-chip ${isActive(link.href) ? 'nav-chip-active' : ''}`}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+
+          <div className="hidden items-center gap-2 lg:flex">
+            <a href={contactTextHref} className="btn-quiet">
+              Text Team
             </a>
+            <Link href="/generic-bag-quote" className="btn-primary">
+              Quote Tool
+            </Link>
           </div>
 
           <button
-            className="text-slate-700 hover:text-slate-900 md:hidden"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-300 bg-white text-slate-900 lg:hidden"
+            onClick={() => setIsOpen((prev) => !prev)}
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
+            aria-label="Toggle navigation menu"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {isOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               ) : (
@@ -63,53 +80,46 @@ export default function Navbar() {
               )}
             </svg>
           </button>
-        </div>
-
-        <div className="hidden border-t border-amber-200 py-3 md:flex md:items-center md:justify-between">
-          <div className="flex flex-wrap items-center gap-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`rounded-md px-3 py-2 text-sm font-bold transition-colors ${
-                  isActive(link.href)
-                    ? 'bg-slate-900 text-amber-50'
-                    : 'text-slate-700 hover:bg-amber-100 hover:text-slate-900'
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-        </div>
+        </nav>
 
         {isOpen && (
-          <div className="border-t border-amber-200 pb-5 md:hidden">
-            <div className="flex flex-col gap-2 pt-4">
-              {navLinks.map((link) => (
+          <div id="mobile-menu" className="pb-4 lg:hidden">
+            <div className="rounded-2xl border border-slate-200 bg-white p-3 shadow-[0_16px_40px_rgba(15,23,42,0.08)]">
+              <div className="grid gap-1">
                 <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`rounded-md px-2 py-2 font-semibold ${
-                    isActive(link.href)
-                      ? 'bg-slate-900 text-amber-50'
-                      : 'text-slate-700'
+                  href="/"
+                  className={`rounded-lg px-3 py-2 text-sm font-semibold ${
+                    pathname === '/' ? 'bg-slate-900 text-white' : 'text-slate-700 hover:bg-slate-100'
                   }`}
                   onClick={() => setIsOpen(false)}
                 >
-                  {link.label}
+                  Home
                 </Link>
-              ))}
-              <Link href="/generic-bag-quote" className="btn-primary mt-2 text-center">
-                Request a Custom Quote
-              </Link>
-              <a href={contactTextHref} className="btn-secondary text-center">
-                Text Our Team
-              </a>
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`rounded-lg px-3 py-2 text-sm font-semibold ${
+                      isActive(link.href) ? 'bg-slate-900 text-white' : 'text-slate-700 hover:bg-slate-100'
+                    }`}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+              <div className="mt-3 grid gap-2 sm:grid-cols-2">
+                <a href={contactTextHref} className="btn-quiet justify-center">
+                  Text Team
+                </a>
+                <Link href="/generic-bag-quote" className="btn-primary justify-center" onClick={() => setIsOpen(false)}>
+                  Quote Tool
+                </Link>
+              </div>
             </div>
           </div>
         )}
       </div>
-    </nav>
+    </header>
   )
 }

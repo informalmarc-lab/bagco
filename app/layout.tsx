@@ -24,15 +24,16 @@ const ogImage = `${siteUrl}/catalog/pharmacy/gs/GS-22-FRONT.webp`
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Bag Supply Co | Retail Packaging and Branding Partner',
+    default: 'Bag Supply Co | Custom Paper Bag Manufacturing and Packaging Programs',
     template: '%s | Bag Supply Co',
   },
   description:
-    'Bag Supply Co is a retail packaging and branding partner serving dispensaries, smoke shops, pharmacies, veterinary clinics, retail stores, and food service teams with structured, reliable supply programs.',
+    'Bag Supply Co manufactures custom and stock paper bags for pharmacies, veterinary clinics, dispensaries, smoke shops, and retail operations with structured reorder support and predictable delivery.',
   keywords: [
     'custom retail bags',
     'custom dispensary bags',
     'branded paper bags',
+    'paper bag manufacturer',
     'wholesale custom packaging',
     'pharmacy packaging bags',
   ],
@@ -42,9 +43,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: siteUrl,
-    title: 'Bag Supply Co | Retail Packaging and Branding Partner',
+    title: 'Bag Supply Co | Custom Paper Bag Manufacturing',
     description:
-      'Packaging programs for dispensaries, smoke shops, pharmacies, veterinary clinics, retailers, and food service teams focused on brand visibility and operational reliability.',
+      'Custom and stock paper bag programs for regulated retail and healthcare-adjacent operations with reliable replenishment.',
     siteName: 'Bag Supply Co',
     locale: 'en_US',
     images: [
@@ -58,9 +59,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Bag Supply Co | Retail Packaging Partner',
+    title: 'Bag Supply Co | Paper Bag Manufacturer',
     description:
-      'Custom retail bags and branded packaging programs built for regulated retail, pharmacy, veterinary, and food service operations.',
+      'Custom retail, pharmacy, and veterinary bag programs with clear lead times and repeat supply support.',
     images: [ogImage],
   },
   category: 'business',
@@ -73,10 +74,10 @@ export default function RootLayout({
 }) {
   const localBusinessSchema = {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
+    '@type': 'Organization',
     name: 'Bag Supply Co',
     description:
-      'Retail packaging and branding partner for dispensaries, smoke shops, pharmacies, veterinary clinics, retailers, and food service teams.',
+      'Custom paper bag manufacturing and packaging programs for pharmacies, retail stores, veterinary clinics, and dispensaries.',
     telephone: '+1-252-516-1944',
     email: 'info@bagco.com',
     url: siteUrl,
@@ -88,6 +89,7 @@ export default function RootLayout({
       postalCode: '28110',
       addressCountry: 'US',
     },
+    logo: `${siteUrl}/catalog/pharmacy/gs/GS-22-FRONT.webp`,
     areaServed: 'US',
   }
 
@@ -96,25 +98,20 @@ export default function RootLayout({
     '@type': 'WebSite',
     name: 'Bag Supply Co',
     url: siteUrl,
-    potentialAction: {
-      '@type': 'ContactAction',
-      target: `${siteUrl}/contact`,
-      name: 'Request a custom quote',
-    },
+    inLanguage: 'en-US',
   }
 
   const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: 'Custom Retail and Pharmacy Packaging Programs',
+    name: 'Custom Paper Bag Manufacturing and Reorder Programs',
     provider: {
       '@type': 'Organization',
       name: 'Bag Supply Co',
       url: siteUrl,
     },
     areaServed: 'US',
-    serviceType:
-      'Custom retail bags, custom dispensary bags, branded paper bags, wholesale custom packaging, pharmacy packaging bags',
+    serviceType: 'Custom printed paper bags and stock bag catalog programs',
   }
 
   return (
@@ -133,9 +130,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
         />
         <Navbar />
-        <main className="min-h-screen site-surface">
-          {children}
-        </main>
+        <main className="min-h-screen site-surface">{children}</main>
         <LeadDock />
         <Footer />
         <Script id="tawk-to" strategy="afterInteractive">

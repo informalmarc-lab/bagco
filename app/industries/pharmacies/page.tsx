@@ -1,42 +1,48 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import { contactTextHref } from '@/components/siteConfig'
 
 export const metadata: Metadata = {
-  title: 'Pharmacy Packaging Bags Programs',
+  title: 'Pharmacy Packaging Programs',
   description:
-    'Professional pharmacy packaging bags and branded paper bags for independent and multi-location pharmacies requiring trust and reliable operations.',
-  keywords: ['pharmacy packaging bags', 'branded paper bags', 'wholesale custom packaging'],
+    'Pharmacy packaging programs with dependable sizing, case-level planning, and repeat reorder support.',
 }
+
+const pillars = [
+  'Pharmacy-first bag sizes and catalog structure',
+  'Reliable case availability for script volume',
+  'Custom print options for trust-focused presentation',
+]
 
 export default function PharmaciesIndustryPage() {
   return (
-    <div className="section-container py-14 md:py-20">
-      <p className="kicker">Industry Focus</p>
-      <h1 className="heading-serif mt-5 text-4xl font-black text-slate-900 md:text-5xl">Pharmacy Packaging Programs</h1>
-      <p className="mt-4 max-w-3xl text-lg text-slate-700">
-        We deliver pharmacy packaging bags that help stores project trust, maintain clean presentation standards, and keep supply stable across recurring demand.
-      </p>
+    <div className="pb-16">
+      <section className="page-hero">
+        <div className="page-hero-inner">
+          <p className="kicker">Industry Focus</p>
+          <h1 className="heading-display mt-5 text-4xl md:text-6xl">Pharmacy Packaging Programs</h1>
+          <p className="mt-5 max-w-3xl text-lg muted-text">
+            Keep pharmacy operations smooth with clear case planning, stable replenishment, and professional checkout presentation.
+          </p>
+        </div>
+      </section>
 
-      <div className="mt-8 grid gap-4 md:grid-cols-3">
-        <div className="surface-card rounded-xl p-5">
-          <h2 className="text-xl font-black text-slate-900">Trust-First Presentation</h2>
-          <p className="mt-2 text-slate-700">Professional packaging supports confidence in sensitive retail transactions.</p>
+      <section className="section-container py-12">
+        <div className="grid gap-4 md:grid-cols-3">
+          {pillars.map((item) => (
+            <article key={item} className="tonal-panel">
+              <p className="text-base font-semibold text-slate-900">{item}</p>
+            </article>
+          ))}
         </div>
-        <div className="surface-card rounded-xl p-5">
-          <h2 className="text-xl font-black text-slate-900">Daily Volume Ready</h2>
-          <p className="mt-2 text-slate-700">Sizing and case programs align with repeat, high-frequency pharmacy operations.</p>
-        </div>
-        <div className="surface-card rounded-xl p-5">
-          <h2 className="text-xl font-black text-slate-900">Operationally Reliable</h2>
-          <p className="mt-2 text-slate-700">Automated reorder and Net 30 terms support long-term B2B pharmacy partnerships.</p>
-        </div>
-      </div>
 
-      <div className="mt-8 flex flex-wrap gap-3">
-        <Link href="/generic-bag-quote" className="btn-primary">Request a Custom Quote</Link>
-        <a href={contactTextHref} className="btn-secondary">Text Our Team</a>
-      </div>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <Link href="/catalog/pharmacy" className="btn-secondary">View Pharmacy Catalog</Link>
+          <Link href="/generic-bag-quote" className="btn-primary">Build Quote</Link>
+          <a href={contactTextHref} className="btn-quiet">Text Our Team</a>
+        </div>
+      </section>
     </div>
   )
 }
+

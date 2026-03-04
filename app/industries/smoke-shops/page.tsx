@@ -1,42 +1,48 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import { contactTextHref } from '@/components/siteConfig'
 
 export const metadata: Metadata = {
   title: 'Smoke Shop Packaging Programs',
   description:
-    'Branded paper bags and wholesale custom packaging systems for smoke shops focused on recognition, consistency, and operational scale.',
-  keywords: ['branded paper bags', 'custom retail bags', 'wholesale custom packaging'],
+    'Packaging programs for smoke shops focused on stronger brand presence and reliable inventory planning.',
 }
+
+const pillars = [
+  'Brand-forward carryout packaging',
+  'Catalog and custom print flexibility',
+  'Reorder support for growing store demand',
+]
 
 export default function SmokeShopsIndustryPage() {
   return (
-    <div className="section-container py-14 md:py-20">
-      <p className="kicker">Industry Focus</p>
-      <h1 className="heading-serif mt-5 text-4xl font-black text-slate-900 md:text-5xl">Smoke Shop Packaging Programs</h1>
-      <p className="mt-4 max-w-3xl text-lg text-slate-700">
-        We help smoke shops implement branded packaging that strengthens identity, increases repeat recognition, and supports store-level operational consistency.
-      </p>
+    <div className="pb-16">
+      <section className="page-hero">
+        <div className="page-hero-inner">
+          <p className="kicker">Industry Focus</p>
+          <h1 className="heading-display mt-5 text-4xl md:text-6xl">Smoke Shop Packaging Programs</h1>
+          <p className="mt-5 max-w-3xl text-lg muted-text">
+            Use packaging as a visibility channel while keeping your daily operations simple and predictable.
+          </p>
+        </div>
+      </section>
 
-      <div className="mt-8 grid gap-4 md:grid-cols-3">
-        <div className="surface-card rounded-xl p-5">
-          <h2 className="text-xl font-black text-slate-900">Brand Identity at Checkout</h2>
-          <p className="mt-2 text-slate-700">Custom retail bags make your store visually consistent and memorable.</p>
+      <section className="section-container py-12">
+        <div className="grid gap-4 md:grid-cols-3">
+          {pillars.map((item) => (
+            <article key={item} className="tonal-panel">
+              <p className="text-base font-semibold text-slate-900">{item}</p>
+            </article>
+          ))}
         </div>
-        <div className="surface-card rounded-xl p-5">
-          <h2 className="text-xl font-black text-slate-900">Visibility in Local Market</h2>
-          <p className="mt-2 text-slate-700">Every carry-out bag extends your brand into surrounding neighborhoods.</p>
-        </div>
-        <div className="surface-card rounded-xl p-5">
-          <h2 className="text-xl font-black text-slate-900">Reliable Supply Program</h2>
-          <p className="mt-2 text-slate-700">Structured reorder support keeps packaging consistent as volume grows.</p>
-        </div>
-      </div>
 
-      <div className="mt-8 flex flex-wrap gap-3">
-        <Link href="/generic-bag-quote" className="btn-primary">Request a Custom Quote</Link>
-        <a href={contactTextHref} className="btn-secondary">Text Our Team</a>
-      </div>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <Link href="/catalog/magazine-comics" className="btn-secondary">View Smoke Shop Catalogs</Link>
+          <Link href="/generic-bag-quote" className="btn-primary">Build Quote</Link>
+          <a href={contactTextHref} className="btn-quiet">Text Our Team</a>
+        </div>
+      </section>
     </div>
   )
 }
+

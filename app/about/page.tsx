@@ -1,78 +1,80 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import { contactTextHref } from '@/components/siteConfig'
 
 export const metadata: Metadata = {
-  title: 'About Bag Supply Co',
+  title: 'About',
   description:
-    'Learn how Bag Supply Co supports retail, pharmacy, veterinary, and food service clients with structured packaging programs built for operational consistency.',
+    'Learn how Bag Supply Co supports pharmacies, retail stores, and veterinary teams with modern packaging programs and reliable replenishment.',
 }
 
 const principles = [
   {
-    title: 'Operational Consistency',
-    copy: 'We run structured packaging programs that support repeat orders, predictable lead times, and clear communication.',
+    title: 'Operational Clarity',
+    copy: 'You get clear catalog options, case-level guidance, and direct communication from quote through delivery.',
   },
   {
-    title: 'Brand-First Presentation',
-    copy: 'Our bag programs are built to protect brand standards and deliver a professional customer-facing finish.',
+    title: 'Brand Consistency',
+    copy: 'Stock and custom programs are built to keep customer-facing packaging aligned with your brand standards.',
   },
   {
-    title: 'Partnership Approach',
-    copy: 'We work as a long-term packaging partner, not a one-off vendor, with support for recurring and one-time programs.',
+    title: 'Long-Term Support',
+    copy: 'We focus on repeat supply and stable reorder rhythms, not one-off transactions.',
   },
 ]
 
-const capabilities = [
-  'Custom retail bags and custom dispensary bags',
-  'Branded paper bags for pharmacy and food service operations',
-  'Veterinary bag programs for clinics and animal-care teams',
-  'Wholesale custom packaging for recurring B2B accounts',
-  'Net 30 terms and automated recurring reorder support',
+const capabilityList = [
+  'Stock pharmacy and veterinary catalog programs',
+  'Custom 1-color, 2-color, and 3-color printing',
+  'Case-based quote workflow for faster decisions',
+  'Recurring reorder support for scaling operations',
+  'Net terms options for qualified clients',
 ]
 
 export default function AboutPage() {
   return (
     <div className="pb-16">
-      <section className="border-b border-amber-200 bg-[linear-gradient(120deg,#fffdf8_0%,#f5e8d3_55%,#e8d6ba_100%)]">
-        <div className="section-container py-14 md:py-20">
+      <section className="page-hero">
+        <div className="page-hero-inner">
           <p className="kicker">About Bag Supply Co</p>
-          <h1 className="heading-serif mt-5 text-4xl font-black text-slate-900 md:text-6xl">
-            A Packaging Partner Built for Serious Operations
+          <h1 className="heading-display mt-5 text-4xl md:text-6xl">
+            A Packaging Partner Built Around Repeatable Execution
           </h1>
-          <p className="mt-4 max-w-3xl text-lg text-slate-700">
-            Bag Supply Co supports retail, pharmacy, veterinary, and food service clients with premium bag programs focused on brand presentation, operational reliability, and long-term scale.
+          <p className="mt-5 max-w-3xl text-lg muted-text">
+            We work with operational teams that need packaging to stay reliable, understandable, and scalable as demand grows.
           </p>
         </div>
       </section>
 
-      <section className="section-container py-14">
-        <h2 className="section-title heading-serif">How We Operate</h2>
-        <div className="mt-6 grid gap-4 md:grid-cols-3">
+      <section className="section-container py-12">
+        <div className="grid gap-4 md:grid-cols-3">
           {principles.map((item) => (
-            <article key={item.title} className="surface-card rounded-xl p-5">
-              <h3 className="text-xl font-black text-slate-900">{item.title}</h3>
-              <p className="mt-3 text-slate-700">{item.copy}</p>
+            <article key={item.title} className="tonal-panel">
+              <h2 className="text-2xl font-black text-slate-950">{item.title}</h2>
+              <p className="mt-3 muted-text">{item.copy}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="border-y border-slate-200 bg-white py-14">
-        <div className="section-container">
-          <h2 className="section-title heading-serif">Core Capabilities</h2>
-          <ul className="mt-6 grid gap-3 md:grid-cols-2">
-            {capabilities.map((item) => (
-              <li key={item} className="surface-card rounded-lg p-4 text-sm font-semibold text-slate-800">
+      <section className="section-container py-3">
+        <div className="tonal-panel">
+          <h2 className="section-title">What We Deliver</h2>
+          <div className="mt-6 grid gap-3 md:grid-cols-2">
+            {capabilityList.map((item) => (
+              <p key={item} className="surface-card rounded-2xl p-4 text-sm font-semibold text-slate-800">
                 {item}
-              </li>
+              </p>
             ))}
-          </ul>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/generic-bag-quote" className="btn-primary">
-              Request a Custom Quote
+          </div>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <Link href="/catalog" className="btn-secondary">
+              Browse Catalogs
             </Link>
-            <a href={contactTextHref} className="btn-secondary">
+            <Link href="/generic-bag-quote" className="btn-primary">
+              Open Quote Tool
+            </Link>
+            <a href={contactTextHref} className="btn-quiet">
               Text Our Team
             </a>
           </div>
@@ -81,3 +83,5 @@ export default function AboutPage() {
     </div>
   )
 }
+
+

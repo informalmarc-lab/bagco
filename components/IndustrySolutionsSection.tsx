@@ -167,10 +167,10 @@ export default function IndustrySolutionsSection() {
   return (
     <section id="industry-solutions" className="section-container py-14 md:py-20">
       <p className="kicker">Industry Solutions</p>
-      <h2 className="heading-serif mt-5 text-4xl font-black text-slate-900 md:text-5xl">
+      <h2 className="heading-display mt-5 text-3xl md:text-5xl">
         Packaging Programs by Business Type
       </h2>
-      <p className="mt-4 max-w-3xl text-lg text-slate-700">
+      <p className="mt-4 max-w-3xl text-lg muted-text">
         Select an industry to see why teams choose Bag Supply Co, what problems we solve, and how packaging improves business outcomes.
       </p>
 
@@ -189,16 +189,16 @@ export default function IndustrySolutionsSection() {
               }}
               className={`surface-card rounded-xl p-5 text-left transition-all duration-300 ${
                 isActive
-                  ? 'border-slate-900/30 shadow-[0_16px_35px_rgba(15,23,42,0.14)]'
-                  : 'hover:-translate-y-0.5 hover:border-slate-900/25 hover:shadow-[0_12px_28px_rgba(15,23,42,0.12)]'
+                  ? 'border-blue-300 shadow-[0_16px_35px_rgba(37,99,235,0.15)]'
+                  : 'hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-[0_12px_28px_rgba(15,23,42,0.1)]'
               }`}
             >
-              <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-slate-900 text-amber-100">
+              <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 text-blue-100">
                 <Icon id={industry.id} />
               </div>
               <h3 className="mt-4 text-xl font-black text-slate-900">{industry.title}</h3>
-              <p className="mt-2 text-sm text-slate-700">{industry.subtitle}</p>
-              <p className="mt-3 text-xs font-bold uppercase tracking-[0.09em] text-amber-800">
+              <p className="mt-2 text-sm muted-text">{industry.subtitle}</p>
+              <p className="mt-3 text-xs font-bold uppercase tracking-[0.09em] text-blue-800">
                 {isActive ? 'Selected' : 'Click to expand'}
               </p>
             </button>
@@ -208,34 +208,34 @@ export default function IndustrySolutionsSection() {
 
       <div
         ref={panelRef}
-        className="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_14px_30px_rgba(15,23,42,0.1)] md:p-8"
+        className="mt-6 overflow-hidden rounded-3xl border border-slate-200 bg-white/92 p-6 shadow-[0_14px_30px_rgba(15,23,42,0.1)] md:p-8"
       >
         <div key={active.id} className="industry-panel reveal-up">
           <div className="flex flex-wrap items-center gap-3">
             <p className="kicker m-0">{active.title}</p>
-            <p className="text-sm font-semibold text-slate-600">{active.examples}</p>
+            <p className="text-sm font-semibold muted-text">{active.examples}</p>
           </div>
 
           <div className="mt-6 grid gap-4 lg:grid-cols-3">
-            <div className="rounded-xl border border-slate-200 bg-slate-50/70 p-4">
+            <div className="rounded-2xl border border-slate-200 bg-slate-50/70 p-4">
               <h4 className="text-sm font-black uppercase tracking-[0.08em] text-slate-600">Why Bag Supply Co</h4>
-              <ul className="mt-3 space-y-2 text-sm text-slate-700">
+              <ul className="mt-3 space-y-2 text-sm muted-text">
                 {active.why.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
             </div>
-            <div className="rounded-xl border border-slate-200 bg-slate-50/70 p-4">
+            <div className="rounded-2xl border border-slate-200 bg-slate-50/70 p-4">
               <h4 className="text-sm font-black uppercase tracking-[0.08em] text-slate-600">Problems We Solve</h4>
-              <ul className="mt-3 space-y-2 text-sm text-slate-700">
+              <ul className="mt-3 space-y-2 text-sm muted-text">
                 {active.problems.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
             </div>
-            <div className="rounded-xl border border-slate-200 bg-slate-50/70 p-4">
+            <div className="rounded-2xl border border-slate-200 bg-slate-50/70 p-4">
               <h4 className="text-sm font-black uppercase tracking-[0.08em] text-slate-600">Business Benefits</h4>
-              <ul className="mt-3 space-y-2 text-sm text-slate-700">
+              <ul className="mt-3 space-y-2 text-sm muted-text">
                 {active.benefits.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
@@ -250,7 +250,7 @@ export default function IndustrySolutionsSection() {
                 <Link
                   key={catalog.href}
                   href={catalog.href}
-                  className="rounded-md border border-slate-300 bg-white px-3 py-1.5 text-xs font-bold text-slate-800 hover:bg-amber-50"
+                  className="rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-xs font-bold text-slate-800 hover:bg-slate-50"
                 >
                   {catalog.label}
                 </Link>

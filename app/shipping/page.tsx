@@ -1,64 +1,63 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Shipping Policy',
   description:
-    'Bag Supply Co shipping and fuel surcharge policy for orders under and over 8 cases, including UPS zone-based FSC rules and LTL guidance.',
+    'Shipping and fuel surcharge policy for Bag Supply Co orders by case volume and zone group.',
 }
+
+const rules = [
+  'Orders under 8 cases ship UPS Ground and freight is added to invoice.',
+  'Orders at 8+ cases use Fuel Surcharge (FSC) only based on zone group.',
+  'Large LTL orders use pallet-based FSC and are confirmed after review.',
+]
+
+const zones = [
+  { label: 'UPS Zones 2-3', value: '5.0% FSC' },
+  { label: 'UPS Zones 4-6', value: '7.5% FSC' },
+  { label: 'UPS Zones 7-8', value: '10.0% FSC' },
+]
 
 export default function ShippingPage() {
   return (
     <div className="pb-16">
-      <section className="border-b border-amber-200 bg-[linear-gradient(120deg,#fffdf8_0%,#f5e8d3_55%,#e8d6ba_100%)]">
-        <div className="section-container py-14 md:py-20">
+      <section className="page-hero">
+        <div className="page-hero-inner">
           <p className="kicker">Shipping Policy</p>
-          <h1 className="heading-serif mt-5 text-4xl font-black text-slate-900 md:text-6xl">
-            Freight and Fuel Surcharge Policy
-          </h1>
-          <p className="mt-4 max-w-3xl text-lg text-slate-700">
-            Shipping is handled by case volume and destination zone. This policy applies to bag orders and quote estimates.
+          <h1 className="heading-display mt-5 text-4xl md:text-6xl">Freight and FSC Rules</h1>
+          <p className="mt-5 max-w-3xl text-lg muted-text">
+            Shipping is calculated by case volume and destination zone. Use these rules when planning quote totals.
           </p>
         </div>
       </section>
 
-      <section className="section-container py-14">
-        <div className="grid gap-4 md:grid-cols-2">
-          <div className="surface-card rounded-xl p-6">
-            <h2 className="text-2xl font-black text-slate-900">Order Size Rules</h2>
-            <ol className="mt-4 space-y-3 text-slate-700">
-              <li>1. Orders under 8 total cases ship UPS Ground. Freight is added to the invoice.</li>
-              <li>2. Orders at 8 total cases or more are charged Fuel Surcharge (FSC) only.</li>
-              <li>3. FSC is calculated as a percentage of total order value based on UPS zone group.</li>
-            </ol>
-          </div>
-
-          <div className="surface-card rounded-xl p-6">
-            <h2 className="text-2xl font-black text-slate-900">Fuel Surcharge Groups</h2>
-            <div className="mt-4 space-y-3 text-slate-700">
-              <p><strong>Group 1 (UPS Zones 2-3):</strong> 5.0% of total order</p>
-              <p><strong>Group 2 (UPS Zones 4-6):</strong> 7.5% of total order</p>
-              <p><strong>Group 3 (UPS Zones 7-8):</strong> 10.0% of total order</p>
-            </div>
-          </div>
+      <section className="section-container py-12">
+        <div className="grid gap-4 md:grid-cols-3">
+          {rules.map((rule) => (
+            <article key={rule} className="tonal-panel">
+              <p className="text-sm font-semibold text-slate-800">{rule}</p>
+            </article>
+          ))}
         </div>
 
-        <div className="mt-5 rounded-xl border border-slate-200 bg-slate-900 p-6 text-slate-100">
-          <h2 className="text-2xl font-black text-white">LTL Shipping</h2>
-          <p className="mt-3">
-            Large orders shipping via LTL use a flat-rate FSC per pallet. Contact Bag Supply Co directly for current LTL pallet rates.
-          </p>
-        </div>
-
-        <div className="mt-8 flex flex-wrap gap-3">
-          <Link href="/generic-bag-quote" className="btn-primary">
-            Request a Quote
-          </Link>
-          <Link href="/contact" className="btn-secondary">
-            Contact Our Team
-          </Link>
+        <div className="mt-6 tonal-panel">
+          <h2 className="section-title text-2xl md:text-3xl">Fuel Surcharge Groups</h2>
+          <div className="mt-5 grid gap-3 md:grid-cols-3">
+            {zones.map((zone) => (
+              <div key={zone.label} className="surface-card rounded-2xl p-4">
+                <p className="text-xs font-black uppercase tracking-[0.1em] text-slate-500">{zone.label}</p>
+                <p className="mt-2 text-lg font-black text-slate-950">{zone.value}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link href="/generic-bag-quote" className="btn-primary">Build Quote</Link>
+            <Link href="/contact" className="btn-secondary">Contact Team</Link>
+          </div>
         </div>
       </section>
     </div>
   )
 }
+

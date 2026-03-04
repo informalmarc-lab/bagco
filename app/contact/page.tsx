@@ -1,4 +1,6 @@
-import { Metadata } from 'next'
+﻿import { Metadata } from 'next'
+import Link from 'next/link'
+import ContactForm from '@/components/ContactForm'
 import {
   contactAddress,
   contactEmail,
@@ -6,68 +8,63 @@ import {
   contactPhoneHref,
   pricingMailto,
 } from '@/components/siteConfig'
-import Link from 'next/link'
-import ContactForm from '@/components/ContactForm'
 
 export const metadata: Metadata = {
   title: 'Contact',
   description:
-    'Contact Bag Supply Co for factory-direct paper bag pricing. Submit the form or reach out directly by email and phone.',
+    'Contact Bag Supply Co for catalog guidance, quote requests, and production timeline support.',
 }
 
 export default function ContactPage() {
   return (
-    <div className="section-container py-14 md:py-20">
-      <div className="max-w-4xl">
-        <p className="kicker">Get a Quote</p>
-        <h1 className="heading-serif mt-5 text-4xl font-black tracking-tight text-slate-900 md:text-5xl">Contact Bag Supply Co</h1>
-        <p className="mt-4 text-lg text-slate-700">
-          Submit your quote request form and our team will follow up with pricing and production timelines.
-        </p>
-      </div>
+    <div className="pb-16">
+      <section className="page-hero">
+        <div className="page-hero-inner">
+          <p className="kicker">Contact</p>
+          <h1 className="heading-display mt-5 text-4xl md:text-6xl">Talk to the Packaging Team</h1>
+          <p className="mt-5 max-w-3xl text-lg muted-text">
+            Submit your request with bag type, volume target, and timeline. We’ll return a structured recommendation.
+          </p>
+        </div>
+      </section>
 
-      <div className="mt-10 grid gap-8 md:grid-cols-2">
-        <ContactForm />
+      <section className="section-container py-12">
+        <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+          <ContactForm />
 
-        <section className="surface-card rounded-xl p-6">
-          <h2 className="text-2xl font-black text-slate-900">Direct Contact</h2>
-          <dl className="mt-5 space-y-4 text-slate-700">
-            <div>
-              <dt className="text-sm font-bold uppercase tracking-wide text-slate-500">Email</dt>
-              <dd>
-                <a href={pricingMailto} className="font-semibold underline">
-                  {contactEmail}
-                </a>
-              </dd>
-            </div>
-            <div>
-              <dt className="text-sm font-bold uppercase tracking-wide text-slate-500">Phone</dt>
-              <dd>
-                <a href={contactPhoneHref} className="font-semibold underline">
-                  {contactPhone}
-                </a>
-              </dd>
-            </div>
-            <div>
-              <dt className="text-sm font-bold uppercase tracking-wide text-slate-500">Location</dt>
-              <dd>
-                {contactAddress[0]}
-                <br />
-                {contactAddress[1]}
-              </dd>
-            </div>
-          </dl>
-          <a href={pricingMailto} className="btn-secondary mt-6">
-            Email Us Directly
-          </a>
-        </section>
-      </div>
+          <aside className="tonal-panel">
+            <h2 className="text-2xl font-black text-slate-950">Direct Contact</h2>
+            <dl className="mt-5 space-y-4 text-sm text-slate-700">
+              <div>
+                <dt className="text-xs font-black uppercase tracking-[0.11em] text-slate-500">Email</dt>
+                <dd className="mt-1">
+                  <a href={pricingMailto} className="font-semibold text-slate-900 underline">{contactEmail}</a>
+                </dd>
+              </div>
+              <div>
+                <dt className="text-xs font-black uppercase tracking-[0.11em] text-slate-500">Phone</dt>
+                <dd className="mt-1">
+                  <a href={contactPhoneHref} className="font-semibold text-slate-900 underline">{contactPhone}</a>
+                </dd>
+              </div>
+              <div>
+                <dt className="text-xs font-black uppercase tracking-[0.11em] text-slate-500">Address</dt>
+                <dd className="mt-1">
+                  {contactAddress[0]}
+                  <br />
+                  {contactAddress[1]}
+                </dd>
+              </div>
+            </dl>
 
-      <div className="mt-8">
-        <Link href="/generic-bag-quote" className="btn-secondary">
-          Open Generic Bag Quote Tool
-        </Link>
-      </div>
+            <div className="mt-6 grid gap-2 sm:grid-cols-2">
+              <a href={pricingMailto} className="btn-secondary justify-center">Email Team</a>
+              <Link href="/generic-bag-quote" className="btn-primary justify-center">Quote Tool</Link>
+            </div>
+          </aside>
+        </div>
+      </section>
     </div>
   )
 }
+

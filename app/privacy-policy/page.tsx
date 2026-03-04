@@ -1,33 +1,49 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
-  description: 'Privacy policy for Bag Supply Co website inquiries, quote requests, and communication handling.',
+  description:
+    'Privacy policy for Bag Supply Co quote requests, contact submissions, and communication handling.',
 }
+
+const sections = [
+  {
+    title: 'Information We Collect',
+    copy: 'Name, company, email, phone, and request details submitted through quote and contact forms.',
+  },
+  {
+    title: 'How We Use Information',
+    copy: 'To prepare pricing, coordinate production, provide support updates, and maintain business communication.',
+  },
+  {
+    title: 'Data Handling',
+    copy: 'Submitted information is used for service operations and is not sold to third parties.',
+  },
+]
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="section-container py-14 md:py-20">
-      <p className="kicker">Legal</p>
-      <h1 className="heading-serif mt-5 text-4xl font-black text-slate-900 md:text-5xl">Privacy Policy</h1>
-      <p className="mt-4 text-slate-700">
-        We collect contact details you submit through quote and contact forms to respond to your requests, provide operational updates, and support business communication.
-      </p>
+    <div className="pb-16">
+      <section className="page-hero">
+        <div className="page-hero-inner">
+          <p className="kicker">Legal</p>
+          <h1 className="heading-display mt-5 text-4xl md:text-6xl">Privacy Policy</h1>
+          <p className="mt-5 max-w-3xl text-lg muted-text">
+            This policy explains how Bag Supply Co handles website form submissions and communication data.
+          </p>
+        </div>
+      </section>
 
-      <div className="mt-8 grid gap-4">
-        <section className="surface-card rounded-xl p-5">
-          <h2 className="text-2xl font-black text-slate-900">Information We Collect</h2>
-          <p className="mt-2 text-slate-700">Name, company, email, phone, and order-related details submitted through our website forms.</p>
-        </section>
-        <section className="surface-card rounded-xl p-5">
-          <h2 className="text-2xl font-black text-slate-900">How We Use Information</h2>
-          <p className="mt-2 text-slate-700">To prepare quotes, coordinate packaging programs, and maintain communication for active or potential client relationships.</p>
-        </section>
-        <section className="surface-card rounded-xl p-5">
-          <h2 className="text-2xl font-black text-slate-900">Data Handling</h2>
-          <p className="mt-2 text-slate-700">We do not sell submitted information. Data is used solely for business operations, support, and service follow-up.</p>
-        </section>
-      </div>
+      <section className="section-container py-12">
+        <div className="grid gap-4">
+          {sections.map((item) => (
+            <article key={item.title} className="tonal-panel">
+              <h2 className="text-2xl font-black text-slate-950">{item.title}</h2>
+              <p className="mt-3 muted-text">{item.copy}</p>
+            </article>
+          ))}
+        </div>
+      </section>
     </div>
   )
 }

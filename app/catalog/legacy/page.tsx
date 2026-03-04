@@ -1,28 +1,16 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'All Legacy Catalogs',
+  title: 'Legacy Catalog Directory',
   description:
-    'Complete legacy catalog directory including pharmacy, veterinary, custom, and specialty bag collections.',
+    'Complete directory of legacy and specialty paper bag catalog collections.',
 }
 
-const primaryCatalogs = [
-  {
-    title: 'Pharmacy Catalog',
-    href: '/catalog/pharmacy',
-    description: 'GS, TY, and Plastic GS bag programs.',
-  },
-  {
-    title: 'Veterinary Catalog',
-    href: '/catalog/veterinary',
-    description: 'VB1, VB2, and VB6 veterinary bag designs.',
-  },
-  {
-    title: 'Custom 1/2/3 Color Catalog',
-    href: '/catalog/custom',
-    description: 'Full-custom one-color, two-color, and three-color programs.',
-  },
+const primary = [
+  { title: 'Pharmacy Catalog', href: '/catalog/pharmacy' },
+  { title: 'Veterinary Catalog', href: '/catalog/veterinary' },
+  { title: 'Custom Print Catalog', href: '/catalog/custom' },
 ]
 
 const legacyCollections = [
@@ -42,42 +30,35 @@ const legacyCollections = [
 export default function LegacyCatalogPage() {
   return (
     <div className="pb-16">
-      <section className="relative overflow-hidden border-b border-amber-200 bg-[linear-gradient(120deg,#fffdf8_0%,#f5e8d3_55%,#e8d6ba_100%)]">
-        <div className="section-container py-14 md:py-20">
+      <section className="page-hero">
+        <div className="page-hero-inner">
           <p className="kicker">Catalog Directory</p>
-          <h1 className="heading-serif mt-5 text-4xl font-black text-slate-900 md:text-6xl">All Legacy Catalogs</h1>
-          <p className="mt-4 max-w-3xl text-lg text-slate-700">
-            Use this page to access every old catalog collection in one place.
+          <h1 className="heading-display mt-5 text-4xl md:text-6xl">Legacy Catalogs</h1>
+          <p className="mt-5 max-w-3xl text-lg muted-text">
+            Access every catalog collection in one place, including specialty and seasonal programs.
           </p>
-          <Link href="/catalog" className="btn-secondary mt-6">
-            Back to Catalog Hub
-          </Link>
+          <Link href="/catalog" className="btn-secondary mt-6">Back to Catalog Hub</Link>
         </div>
       </section>
 
-      <section className="section-container py-14">
-        <h2 className="section-title heading-serif">Primary Catalogs</h2>
+      <section className="section-container py-12">
+        <h2 className="section-title">Primary Catalogs</h2>
         <div className="mt-6 grid gap-4 md:grid-cols-3">
-          {primaryCatalogs.map((catalog) => (
-            <Link key={catalog.href} href={catalog.href} className="surface-card rounded-xl p-5 hover:shadow-md">
-              <h3 className="text-lg font-black text-slate-900">{catalog.title}</h3>
-              <p className="mt-2 text-sm text-slate-700">{catalog.description}</p>
-              <p className="mt-4 text-sm font-bold underline">Open catalog</p>
+          {primary.map((item) => (
+            <Link key={item.href} href={item.href} className="tonal-panel hover:translate-y-[-2px] transition-transform">
+              <h3 className="text-xl font-black text-slate-950">{item.title}</h3>
+              <p className="mt-4 text-sm font-black uppercase tracking-[0.08em] text-blue-700">Open</p>
             </Link>
           ))}
         </div>
       </section>
 
       <section className="section-container">
-        <h2 className="section-title heading-serif">Legacy Specialty Collections</h2>
+        <h2 className="section-title">Specialty Collections</h2>
         <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {legacyCollections.map((catalog) => (
-            <Link
-              key={catalog.href}
-              href={catalog.href}
-              className="surface-card rounded-lg px-4 py-3 font-semibold text-slate-800 hover:shadow-sm"
-            >
-              {catalog.title}
+          {legacyCollections.map((item) => (
+            <Link key={item.href} href={item.href} className="surface-card rounded-2xl px-4 py-3 text-sm font-semibold text-slate-800 hover:bg-slate-50">
+              {item.title}
             </Link>
           ))}
         </div>

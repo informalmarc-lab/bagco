@@ -1,24 +1,33 @@
-import Link from 'next/link'
+﻿import Link from 'next/link'
 import { contactEmail, pricingMailto } from '@/components/siteConfig'
 
 export default function RequestSamplePage() {
   return (
-    <div className="section-container py-14 md:py-20">
-      <div className="max-w-3xl rounded-xl border border-slate-200 bg-white p-8">
-        <h1 className="text-4xl font-black text-slate-900">Sample Requests by Email</h1>
-        <p className="mt-4 text-slate-700">
-          We handle sample requests through email so we can confirm size, print colors, and timing in one thread.
-        </p>
-        <a href={pricingMailto} className="mt-6 inline-flex rounded-md bg-slate-900 px-5 py-3 font-bold text-white hover:bg-slate-700">
-          Email {contactEmail}
-        </a>
-        <p className="mt-3 text-sm text-slate-600">
-          Include your bag type, target size, quantity, and shipping city/state.
-        </p>
-        <Link href="/contact" className="mt-6 inline-block text-sm font-semibold underline">
-          Go to Contact Page
-        </Link>
-      </div>
+    <div className="pb-16">
+      <section className="page-hero">
+        <div className="page-hero-inner">
+          <p className="kicker">Samples</p>
+          <h1 className="heading-display mt-5 text-4xl md:text-6xl">Request Samples by Email</h1>
+          <p className="mt-5 max-w-3xl text-lg muted-text">
+            We handle sample requests directly through email so we can confirm the right size, print path, and shipping details.
+          </p>
+          <a href={pricingMailto} className="btn-primary mt-6">Email {contactEmail}</a>
+        </div>
+      </section>
+
+      <section className="section-container py-12">
+        <div className="tonal-panel">
+          <h2 className="section-title text-2xl md:text-3xl">Include These Details</h2>
+          <div className="mt-5 grid gap-3 md:grid-cols-2">
+            <p className="surface-card rounded-2xl p-4 text-sm font-semibold text-slate-800">Bag type and preferred size</p>
+            <p className="surface-card rounded-2xl p-4 text-sm font-semibold text-slate-800">Expected quantity and timeline</p>
+            <p className="surface-card rounded-2xl p-4 text-sm font-semibold text-slate-800">Shipping city and state</p>
+            <p className="surface-card rounded-2xl p-4 text-sm font-semibold text-slate-800">Any print or branding requirements</p>
+          </div>
+          <Link href="/contact" className="btn-secondary mt-6">Go to Contact Form</Link>
+        </div>
+      </section>
     </div>
   )
 }
+

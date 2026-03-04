@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
@@ -6,10 +6,16 @@ import Link from 'next/link'
 
 type PharmacyImage = { src: string; name: string; type: 'ty' | 'gs' | 'plastic-gs' }
 
+type PharmacyPayload = {
+  ty: PharmacyImage[]
+  gs: PharmacyImage[]
+  'plastic-gs': PharmacyImage[]
+}
+
 const PRODUCT_INFO = {
   ty: {
     title: 'Pharmacy Bags - TY Design',
-    description: 'Full case of TY pharmacy bag designs in multiple quantity/size options.',
+    description: 'Traditional thank-you design for pharmacy operations.',
     sizes: [
       { id: '21', dims: '3.5" x 1.5" x 10"', qty: '3,000 per case', price: '$95.56' },
       { id: '22', dims: '4.5" x 2.25" x 11"', qty: '3,000 per case', price: '$119.81' },
@@ -24,7 +30,7 @@ const PRODUCT_INFO = {
   },
   gs: {
     title: 'Pharmacy Bags - GS Design',
-    description: 'Our classic stock GS pharmacy bag program in multiple quantity/size options.',
+    description: 'Stock GS design with common pharmacy bag dimensions.',
     sizes: [
       { id: '21', dims: '3.5" x 1.5" x 10"', qty: '3,000 per case', price: '$95.56' },
       { id: '22', dims: '4.5" x 2.25" x 11"', qty: '3,000 per case', price: '$119.81' },
@@ -38,8 +44,8 @@ const PRODUCT_INFO = {
     ],
   },
   'plastic-gs': {
-    title: 'Pharmacy Bags - Plastic GS Design',
-    description: 'Plastic GS pharmacy bag options in three quantity/size options.',
+    title: 'Plastic Pharmacy Bags - GS Design',
+    description: 'Plastic GS alternatives for larger or specialty carryout needs.',
     sizes: [
       { id: '32', dims: '9" x 5.5" x 18"', qty: '1,000 per case', price: '$70.84' },
       { id: '35', dims: '12" x 7" x 23"', qty: '1,000 per case', price: '$90.84' },
@@ -48,42 +54,10 @@ const PRODUCT_INFO = {
   },
 }
 
-export default function PharmacyCatalog() {
-  const [images, setImages] = useState<{ ty: PharmacyImage[]; gs: PharmacyImage[]; 'plastic-gs': PharmacyImage[] }>({
-    ty: [],
-    gs: [],
-    'plastic-gs': [],
-  })
+export default function PharmacyCatalogPage() {
+  const [images, setImages] = useState<PharmacyPayload>({ ty: [], gs: [], 'plastic-gs': [] })
   const [loading, setLoading] = useState(true)
-  const [selectedImage, setSelectedImage] = useState<PharmacyImage | null>(null)
-
-  const handleImageClick = (img: PharmacyImage) => {
-    setSelectedImage(img)
-    document.body.style.overflow = 'hidden'
-  }
-
-  const handleCloseModal = () => {
-    setSelectedImage(null)
-    document.body.style.overflow = 'unset'
-  }
-
-  const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (e.target === e.currentTarget) handleCloseModal()
-  }
-
-  useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && selectedImage) {
-        setSelectedImage(null)
-        document.body.style.overflow = 'unset'
-      }
-    }
-    if (selectedImage) window.addEventListener('keydown', handleEscape)
-    return () => {
-      window.removeEventListener('keydown', handleEscape)
-      document.body.style.overflow = 'unset'
-    }
-  }, [selectedImage])
+  const [selected, setSelected] = useState<PharmacyImage | null>(null)
 
   useEffect(() => {
     fetch('/api/catalog/pharmacy')
@@ -93,25 +67,42 @@ export default function PharmacyCatalog() {
       .finally(() => setLoading(false))
   }, [])
 
+  useEffect(() => {
+    const onEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setSelected(null)
+    }
+
+    if (selected) {
+      document.body.style.overflow = 'hidden'
+      window.addEventListener('keydown', onEscape)
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset'
+      window.removeEventListener('keydown', onEscape)
+    }
+  }, [selected])
+
   const renderSection = (type: 'ty' | 'gs' | 'plastic-gs') => {
     const info = PRODUCT_INFO[type]
-    const typeImages = images[type]
+    const list = images[type]
 
     return (
-      <section key={type} className="border-b border-amber-200 py-12 last:border-b-0">
-        <div className="section-container">
-          <h2 className="heading-serif text-3xl font-black text-slate-900">{info.title}</h2>
-          <p className="mt-2 text-slate-700">{info.description}</p>
+      <section key={type} className="section-container py-10 md:py-14">
+        <div className="tonal-panel">
+          <h2 className="text-3xl font-black tracking-[-0.03em] text-slate-950">{info.title}</h2>
+          <p className="mt-2 muted-text">{info.description}</p>
 
-          {typeImages.length > 0 && (
-            <div className="mt-6 grid gap-4 md:grid-cols-3 lg:grid-cols-4">
-              {typeImages.map((img, idx) => (
-                <div
-                  key={img.src + idx}
-                  onClick={() => handleImageClick(img)}
-                  className="surface-card cursor-pointer overflow-hidden rounded-lg"
+          {list.length > 0 && (
+            <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {list.map((img) => (
+                <button
+                  key={img.src}
+                  type="button"
+                  onClick={() => setSelected(img)}
+                  className="surface-card overflow-hidden rounded-2xl"
                 >
-                  <div className="relative aspect-square">
+                  <div className="relative aspect-square bg-slate-100">
                     <Image
                       src={img.src}
                       alt={img.name}
@@ -120,28 +111,20 @@ export default function PharmacyCatalog() {
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                     />
                   </div>
-                </div>
+                </button>
               ))}
             </div>
           )}
 
-          <div className="tonal-panel mt-8">
-            <h3 className="text-xl font-black text-slate-900">Available Sizes</h3>
-            <div className="mt-4 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
-              {info.sizes.map((size) => (
-                <div key={size.id} className="surface-card rounded-lg p-3">
-                  <p className="font-black text-slate-900">#{size.id}</p>
-                  <p className="text-sm text-slate-700">{size.dims}</p>
-                  <p className="text-sm text-slate-700">{size.qty}</p>
-                  <p className="mt-1 text-sm font-black text-slate-900">{size.price} per case</p>
-                </div>
-              ))}
-            </div>
-            <div className="mt-6">
-              <Link href="/generic-bag-quote" className="btn-primary">
-                Request Custom Quote
-              </Link>
-            </div>
+          <div className="mt-8 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+            {info.sizes.map((size) => (
+              <div key={size.id} className="surface-card rounded-2xl p-4 text-sm">
+                <p className="font-black text-slate-950">#{size.id}</p>
+                <p className="mt-1 text-slate-700">{size.dims}</p>
+                <p className="text-slate-700">{size.qty}</p>
+                <p className="mt-2 font-black text-slate-950">{size.price} / case</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -150,20 +133,20 @@ export default function PharmacyCatalog() {
 
   return (
     <div className="pb-16">
-      <section className="relative overflow-hidden border-b border-amber-200 bg-[linear-gradient(120deg,#fffdf8_0%,#f5e8d3_55%,#e8d6ba_100%)]">
-        <div className="section-container py-14 md:py-20">
-          <Link href="/catalog" className="rounded-md bg-white px-3 py-2 text-sm font-bold text-slate-700 hover:bg-amber-50">
-            {'<- Back to Catalog'}
-          </Link>
-          <p className="kicker mt-6">Catalog</p>
-          <h1 className="heading-serif mt-5 text-4xl font-black text-slate-900 md:text-6xl">Pharmacy Bags Catalog</h1>
-          <p className="mt-4 max-w-3xl text-lg text-slate-700">TY design, GS design, and Plastic GS design collections.</p>
+      <section className="page-hero">
+        <div className="page-hero-inner">
+          <Link href="/catalog" className="btn-secondary">Back to Catalog</Link>
+          <p className="kicker mt-6">Pharmacy Catalog</p>
+          <h1 className="heading-display mt-5 text-4xl md:text-6xl">Pharmacy Bag Programs</h1>
+          <p className="mt-5 max-w-3xl text-lg muted-text">
+            TY, GS, and plastic GS options with clear size and case details.
+          </p>
         </div>
       </section>
 
       {loading ? (
-        <section className="section-container py-16">
-          <p className="text-center text-lg text-slate-600">Loading pharmacy catalog...</p>
+        <section className="section-container py-12">
+          <p className="tonal-panel text-center muted-text">Loading pharmacy catalog...</p>
         </section>
       ) : (
         <>
@@ -173,47 +156,36 @@ export default function PharmacyCatalog() {
         </>
       )}
 
-      <section className="section-container pt-10">
-        <div className="rounded-2xl bg-[linear-gradient(135deg,#0f172a,#1e293b)] p-8 text-white md:p-10">
-          <h2 className="heading-serif text-3xl font-black md:text-4xl">Need a Veterinary Program Instead?</h2>
-          <p className="mt-3 text-slate-200">Browse VB1, VB2, and VB6 designs in the veterinary catalog.</p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/catalog/veterinary" className="rounded-md bg-amber-200 px-5 py-3 font-bold text-slate-950 hover:bg-amber-300">
-              Open Veterinary Catalog
-            </Link>
-            <Link href="/contact" className="rounded-md border border-white/25 bg-white/10 px-5 py-3 font-bold text-white hover:bg-white/20">
-              Email Us for Pricing
-            </Link>
+      <section className="section-container pt-2">
+        <div className="tonal-panel">
+          <h2 className="section-title">Need a veterinary program instead?</h2>
+          <div className="mt-5 flex flex-wrap gap-3">
+            <Link href="/catalog/veterinary" className="btn-secondary">Open Veterinary Catalog</Link>
+            <Link href="/generic-bag-quote" className="btn-primary">Build Quote</Link>
           </div>
         </div>
       </section>
 
-      {selectedImage && (
+      {selected && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
-          onClick={handleBackdropClick}
+          className="fixed inset-0 z-[70] flex items-center justify-center bg-slate-950/85 p-4"
+          onClick={(event) => {
+            if (event.target === event.currentTarget) setSelected(null)
+          }}
         >
           <button
-            onClick={handleCloseModal}
-            className="absolute right-4 top-4 z-10 text-white hover:text-gray-300"
-            aria-label="Close"
+            type="button"
+            className="absolute right-4 top-4 rounded-lg border border-white/25 bg-white/10 px-3 py-2 text-sm font-bold text-white"
+            onClick={() => setSelected(null)}
           >
-            <svg className="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
+            Close
           </button>
-          <div className="relative flex h-full w-full max-h-full max-w-7xl items-center justify-center">
-            <Image
-              src={selectedImage.src}
-              alt={selectedImage.name}
-              width={1200}
-              height={1200}
-              className="max-h-full max-w-full object-contain"
-              unoptimized
-            />
+          <div className="relative h-[86vh] w-full max-w-6xl overflow-hidden rounded-2xl border border-white/20 bg-black/30">
+            <Image src={selected.src} alt={selected.name} fill className="object-contain" sizes="100vw" unoptimized />
           </div>
         </div>
       )}
     </div>
   )
 }
+

@@ -1,4 +1,4 @@
-import fs from 'fs'
+﻿import fs from 'fs'
 import path from 'path'
 import type { Metadata } from 'next'
 import Image from 'next/image'
@@ -39,7 +39,7 @@ const LABELS: Record<string, { title: string; description: string }> = {
   minicases: {
     title: 'Mini Cases',
     description:
-      'Mini cases are typically cheaper per order and come in smaller case counts, usually 500 or 1,000 bags per case. Email info@bagco.com for current options and pricing.',
+      'Mini cases are often lower-commitment options with smaller case counts. Contact us for current availability and pricing.',
   },
   pride: {
     title: 'Pride Bags',
@@ -130,10 +130,12 @@ export async function generateMetadata({
   const { folder } = await params
   const catalogRoot = path.join(process.cwd(), 'public', 'catalog')
   if (!isCatalogDirectory(catalogRoot, folder)) return {}
+
   const copy = LABELS[folder]
   const title = copy?.title || `${titleFromSlug(folder)} Bags`
   const description =
-    copy?.description || `Browse ${titleFromSlug(folder)} bag designs and request pricing from Bagco.`
+    copy?.description || `Browse ${titleFromSlug(folder)} bag designs and request pricing from Bag Supply Co.`
+
   return { title, description }
 }
 
@@ -155,22 +157,20 @@ export default async function CatalogFolderPage({
 
   return (
     <div className="pb-16">
-      <section className="relative overflow-hidden border-b border-amber-200 bg-[linear-gradient(120deg,#fffdf8_0%,#f5e8d3_55%,#e8d6ba_100%)]">
-        <div className="section-container py-14 md:py-20">
-          <Link href="/catalog" className="rounded-md bg-white px-3 py-2 text-sm font-bold text-slate-700 hover:bg-amber-50">
-            {'<- Back to Catalog'}
-          </Link>
-          <p className="kicker mt-6">Catalog</p>
-          <h1 className="heading-serif mt-5 text-4xl font-black text-slate-900 md:text-6xl">{pageTitle}</h1>
-          <p className="mt-4 max-w-3xl text-lg text-slate-700">{description}</p>
+      <section className="page-hero">
+        <div className="page-hero-inner">
+          <Link href="/catalog" className="btn-secondary">Back to Catalog</Link>
+          <p className="kicker mt-6">Specialty Collection</p>
+          <h1 className="heading-display mt-5 text-4xl md:text-6xl">{pageTitle}</h1>
+          <p className="mt-5 max-w-3xl text-lg muted-text">{description}</p>
         </div>
       </section>
 
-      <section className="section-container py-16">
+      <section className="section-container py-12">
         {images.length > 0 ? (
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {images.map((img) => (
-              <div key={img.src} className="surface-card overflow-hidden rounded-xl">
+              <div key={img.src} className="surface-card overflow-hidden rounded-2xl">
                 <div className="relative aspect-square bg-slate-100">
                   <Image
                     src={img.src}
@@ -184,20 +184,22 @@ export default async function CatalogFolderPage({
             ))}
           </div>
         ) : (
-          <p className="text-center text-lg text-slate-600">No images found in this catalog section yet.</p>
+          <p className="tonal-panel text-center muted-text">No images found in this catalog section yet.</p>
         )}
       </section>
 
-      <section className="section-container pt-8">
-        <div className="rounded-2xl bg-[linear-gradient(135deg,#0f172a,#1e293b)] p-8 text-center text-white md:p-10">
-          <Link
-            href={`/contact?collection=${folder}`}
-            className="inline-flex rounded-md bg-amber-200 px-8 py-4 font-black text-slate-950 hover:bg-amber-300"
-          >
-            Email Us for Pricing for {pageTitle}
+      <section className="section-container pt-2">
+        <div className="tonal-panel">
+          <h2 className="section-title">Need Pricing for This Collection?</h2>
+          <p className="mt-3 muted-text">
+            Tell us your quantity target, preferred bag size, and delivery location for a structured quote.
+          </p>
+          <Link href={`/contact?collection=${folder}`} className="btn-primary mt-6">
+            Request Pricing for {pageTitle}
           </Link>
         </div>
       </section>
     </div>
   )
 }
+
