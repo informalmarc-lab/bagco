@@ -6,13 +6,9 @@ import { useState } from 'react'
 import { contactTextHref } from '@/components/siteConfig'
 
 const navLinks = [
-  { href: '/about', label: 'About' },
-  { href: '/industries', label: 'Industries' },
+  { href: '/industries', label: 'Programs' },
   { href: '/catalog', label: 'Catalogs' },
-  { href: '/gallery', label: 'Gallery' },
-  { href: '/manufacturing', label: 'Manufacturing' },
-  { href: '/shipping', label: 'Shipping' },
-  { href: '/payments', label: 'Payments' },
+  { href: '/generic-bag-quote', label: 'Quote Tool' },
   { href: '/contact', label: 'Contact' },
 ]
 
@@ -58,11 +54,8 @@ export default function Navbar() {
 
           <div className="hidden items-center gap-2 lg:flex">
             <a href={contactTextHref} className="btn-quiet">
-              Text Team
+              Text (252) 516-1944
             </a>
-            <Link href="/generic-bag-quote" className="btn-primary">
-              Quote Tool
-            </Link>
           </div>
 
           <button
@@ -110,10 +103,10 @@ export default function Navbar() {
               </div>
               <div className="mt-3 grid gap-2 sm:grid-cols-2">
                 <a href={contactTextHref} className="btn-quiet justify-center">
-                  Text Team
+                  Text (252) 516-1944
                 </a>
-                <Link href="/generic-bag-quote" className="btn-primary justify-center" onClick={() => setIsOpen(false)}>
-                  Quote Tool
+                <Link href="/about" className="btn-secondary justify-center" onClick={() => setIsOpen(false)}>
+                  About
                 </Link>
               </div>
             </div>

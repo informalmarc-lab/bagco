@@ -25,7 +25,7 @@ const STEPS: StoryStep[] = [
       'Bag format and case sizing recommendations',
       'Order rhythm planning for clean replenishment',
     ],
-    image: '/catalog/pharmacy/gs/GS-22-FRONT.webp',
+    image: '/catalog/dispensary/ff68982bbb_2321-ds_e56d8aab.jpg',
   },
   {
     id: 'design',
@@ -51,7 +51,7 @@ const STEPS: StoryStep[] = [
       'Reliable quality checkpoints',
       'Consistent execution across reorders',
     ],
-    image: '/catalog/veterinary/vb1/VB1-22-FRONT.webp',
+    image: '/catalog/veterinary/vb2/VB2-22-FRONT.webp',
   },
   {
     id: 'replenish',
@@ -64,7 +64,7 @@ const STEPS: StoryStep[] = [
       'Net terms options for clients',
       'Stable supply for multi-location teams',
     ],
-    image: '/catalog/pharmacy/ty/TY-25-FRONT.webp',
+    image: '/catalog/usa/fcd8fc3bbc_CBC-MCUS020_854414f5.jpg',
   },
 ]
 

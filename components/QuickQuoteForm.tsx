@@ -135,7 +135,7 @@ export default function QuickQuoteForm() {
       </div>
 
       <div className="mt-4 flex flex-wrap items-center gap-3">
-        <button type="submit" className="btn-primary" disabled={state === 'submitting'}>
+        <button type="submit" className="btn-primary w-full justify-center sm:w-auto" disabled={state === 'submitting'}>
           {state === 'submitting' ? 'Submitting...' : 'Request a Custom Quote'}
         </button>
         {state === 'success' && <p className="text-sm font-semibold text-emerald-700">Quote request sent.</p>}
