@@ -168,9 +168,9 @@ export default function PharmacyCatalogPage() {
 
       <section className="section-container pt-3">
         <div className="tonal-panel">
-          <h2 className="section-title">Ready to order? Get a quote ?</h2>
+          <h2 className="section-title">Ready to order? Get a quote.</h2>
           <p className="mt-3 muted-text">Use the quote tool to build a pharmacy case estimate instantly.</p>
-          <Link href="/generic-bag-quote" className="btn-primary mt-5">Get a Quote ?</Link>
+          <Link href="/generic-bag-quote" className="btn-primary mt-5">Get a Quote</Link>
         </div>
       </section>
 

@@ -2,7 +2,13 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { INDUSTRY_LABELS, getAllCatalogProducts, getCatalogProductBySlug, money } from '@/lib/catalogProducts'
+import {
+  INDUSTRY_LABELS,
+  getAllCatalogProducts,
+  getCatalogProductBySlug,
+  getLeadTimeShort,
+  money,
+} from '@/lib/catalogProducts'
 
 export async function generateStaticParams() {
   return getAllCatalogProducts().map((product) => ({ slug: product.slug }))
@@ -100,7 +106,7 @@ export default async function CatalogProductDetailPage({
               </p>
               <p>
                 <span className="font-semibold text-[#1E4D2B]">Lead Time:</span>{' '}
-                {product.availability === 'stock' ? 'Stock: ships in 3-5 days' : 'Custom: 3-4 weeks'}
+                {getLeadTimeShort(product.availability)}
               </p>
             </div>
 
@@ -127,12 +133,12 @@ export default async function CatalogProductDetailPage({
 
       <section className="section-container pt-1">
         <div className="tonal-panel">
-          <h2 className="section-title">Ready to order? Get a quote ?</h2>
+          <h2 className="section-title">Ready to order? Get a quote.</h2>
           <p className="mt-3 muted-text">
             Use this SKU in the quote tool to lock in pricing and lead-time options.
           </p>
           <Link href={`/generic-bag-quote?sku=${encodeURIComponent(product.sku)}`} className="btn-primary mt-5">
-            Get a Quote ?
+            Get a Quote
           </Link>
         </div>
       </section>

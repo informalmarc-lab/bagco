@@ -6,6 +6,7 @@ import {
   INDUSTRY_LABELS,
   INDUSTRY_ORDER,
   getAllCatalogProducts,
+  getLeadTimeShort,
   money,
   type CatalogIndustryKey,
 } from '@/lib/catalogProducts'
@@ -30,7 +31,7 @@ type ShareState = {
   customer: CustomerInfo
 }
 
-const LEAD_TIME_MESSAGE = 'Stock: ships in 3-5 days | Custom: 3-4 weeks'
+const LEAD_TIME_MESSAGE = 'Generic stock ships same day for orders placed before 1 PM ET | Custom print: 3-4 weeks'
 
 function parseIndustryValue(value: string): CatalogIndustryKey | '' {
   return INDUSTRY_ORDER.includes(value as CatalogIndustryKey) ? (value as CatalogIndustryKey) : ''
@@ -179,9 +180,7 @@ export default function GenericQuoteTool() {
     const lineText = quoteLines.map((line) => {
       return `${line.product.name} | SKU ${line.product.sku} | Cases: ${line.cases} | Price/Case: ${money(
         line.product.startingPrice,
-      )} | Line Total: ${money(line.lineTotal)} | Lead Time: ${
-        line.product.availability === 'stock' ? '3-5 days' : '3-4 weeks'
-      }`
+      )} | Line Total: ${money(line.lineTotal)} | Lead Time: ${getLeadTimeShort(line.product.availability)}`
     })
 
     return [
@@ -369,9 +368,7 @@ export default function GenericQuoteTool() {
                 <p className="mt-1 text-sm text-[#5F4D33]">
                   <span className="font-semibold text-[#1E4D2B]">From:</span> {money(previewProduct.startingPrice)}/case
                 </p>
-                <p className="mt-3 text-sm font-semibold text-[#5F4D33]">
-                  Lead time: {previewProduct.availability === 'stock' ? 'Stock ships in 3-5 days' : 'Custom runs 3-4 weeks'}
-                </p>
+                <p className="mt-3 text-sm font-semibold text-[#5F4D33]">Lead time: {getLeadTimeShort(previewProduct.availability)}</p>
               </div>
             </div>
           )}
@@ -415,7 +412,7 @@ export default function GenericQuoteTool() {
                       </td>
                       <td className="px-2 py-2 font-semibold text-[#1E4D2B]">{money(line.lineTotal)}</td>
                       <td className="px-2 py-2">
-                        {line.product.availability === 'stock' ? '3-5 days' : '3-4 weeks'}
+                        {getLeadTimeShort(line.product.availability)}
                       </td>
                       <td className="rounded-r-xl px-2 py-2">
                         <button type="button" className="rounded-lg border border-[#C4935A66] px-2 py-1 text-xs font-semibold" onClick={() => removeLine(line.slug)}>

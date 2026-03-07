@@ -6,6 +6,7 @@ import {
   INDUSTRY_LABELS,
   getAllCatalogProducts,
   getCatalogProductBySlug,
+  getLeadTimeShort,
   money,
   type CatalogIndustryKey,
 } from '@/lib/catalogProducts'
@@ -106,7 +107,7 @@ export default async function ProductDetailPage({
               </p>
               <p>
                 <span className="font-semibold text-[#1E4D2B]">Price Range:</span>{' '}
-                From {money(product.startingPrice)}/case (final range depends on size, case volume, and print tier)
+                From {money(product.startingPrice)}/case (final range depends on size, case volume, and artwork complexity)
               </p>
               <p>
                 <span className="font-semibold text-[#1E4D2B]">Color Options:</span>{' '}
@@ -114,7 +115,7 @@ export default async function ProductDetailPage({
               </p>
               <p>
                 <span className="font-semibold text-[#1E4D2B]">Lead Time:</span>{' '}
-                {product.availability === 'stock' ? 'Stock ships in 3-5 days' : 'Custom runs in 3-4 weeks'}
+                {getLeadTimeShort(product.availability)}
               </p>
             </div>
 

@@ -171,9 +171,9 @@ export default function CustomCatalogPage() {
 
       <section className="section-container pt-3">
         <div className="tonal-panel">
-          <h2 className="section-title">Ready to order? Get a quote ?</h2>
-          <p className="mt-3 muted-text">Start with your preferred print tier and submit a case-level estimate.</p>
-          <Link href="/generic-bag-quote" className="btn-primary mt-5">Get a Quote ?</Link>
+          <h2 className="section-title">Ready to order? Get a quote.</h2>
+          <p className="mt-3 muted-text">Start with your preferred color count and submit a case-level estimate.</p>
+          <Link href="/generic-bag-quote" className="btn-primary mt-5">Get a Quote</Link>
         </div>
       </section>
 

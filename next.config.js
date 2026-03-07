@@ -4,6 +4,12 @@ const nextConfig = {
   allowedDevOrigins: ['*'],
   images: {
     unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.shopify.com',
+      },
+    ],
   },
 }
 

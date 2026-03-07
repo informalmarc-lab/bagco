@@ -347,7 +347,7 @@ export default function AdminQuoteBuilder({ initialQuote, nextDocNumber }: Admin
 
       <section className="rounded-2xl border border-[#C4935A66] border-t-4 border-t-[#1E4D2B] bg-white p-5 shadow-[0_12px_28px_rgba(30,77,43,0.1)]">
         <h2 className="text-xl font-black text-[#1E4D2B]">Internal Notes</h2>
-        <p className="mt-2 text-xs font-semibold uppercase tracking-[0.08em] text-[#B5813A]">Internal use only â€” will not appear on PDF</p>
+        <p className="mt-2 text-xs font-semibold uppercase tracking-[0.08em] text-[#B5813A]">Internal use only - will not appear on PDF</p>
         <textarea className="mt-3 min-h-[100px] w-full rounded-lg border border-[#C4935A66] px-3 py-2" value={payload.internalNotes} onChange={(e) => setPayload((p) => ({ ...p, internalNotes: e.target.value }))} />
       </section>
 

@@ -23,8 +23,9 @@ body {
   font-family: var(--font-sans), sans-serif;
   color: rgb(var(--foreground-rgb));
   background:
-    radial-gradient(1200px 420px at 90% -80px, rgba(196, 147, 90, 0.2), transparent 60%),
-    radial-gradient(900px 340px at -80px 280px, rgba(181, 129, 58, 0.14), transparent 58%),
+    radial-gradient(1200px 520px at 92% -120px, rgba(196, 147, 90, 0.26), transparent 60%),
+    radial-gradient(980px 420px at -100px 300px, rgba(181, 129, 58, 0.18), transparent 60%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.85), rgba(250, 246, 240, 0.96)),
     rgb(var(--background-rgb));
   min-height: 100vh;
 }
@@ -63,6 +64,13 @@ select {
     border: 1px solid rgba(var(--kraft-rgb), 0.35);
     box-shadow: var(--shadow-soft);
     backdrop-filter: blur(8px);
+    transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+  }
+
+  .surface-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(var(--accent-rgb), 0.45);
+    box-shadow: 0 18px 38px rgba(30, 77, 43, 0.16);
   }
 
   .section-container {
@@ -104,11 +112,14 @@ select {
     border: 1px solid rgb(var(--brand-rgb));
     background: rgb(var(--brand-rgb));
     box-shadow: 0 10px 24px rgba(30, 77, 43, 0.28);
+    transform: translateY(0);
   }
 
   .btn-primary:hover {
     border-color: rgb(var(--accent-rgb));
     background: rgb(var(--accent-rgb));
+    transform: translateY(-1px);
+    box-shadow: 0 14px 28px rgba(30, 77, 43, 0.3);
   }
 
   .btn-secondary {
@@ -120,6 +131,7 @@ select {
   .btn-secondary:hover {
     background: rgb(var(--brand-rgb));
     color: #fff;
+    transform: translateY(-1px);
   }
 
   .btn-quiet {
@@ -153,7 +165,8 @@ select {
   .tonal-panel {
     @apply rounded-3xl p-6 md:p-8;
     border: 1px solid rgba(var(--kraft-rgb), 0.45);
-    background: rgba(255, 255, 255, 0.92);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(250, 246, 240, 0.92));
     box-shadow: var(--shadow-soft);
   }
 

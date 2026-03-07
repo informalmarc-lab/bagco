@@ -82,7 +82,7 @@ export default function Footer() {
                 </a>
               </li>
               <li className="text-xs text-[#F4E8D8CC]">See our latest bag designs and client features.</li>
-              <li className="text-xs text-[#F4E8D8]">ðŸ“¸ Tag us @bagsupplyco for a feature</li>
+              <li className="text-xs text-[#F4E8D8]">Tag us @bagsupplyco for a feature</li>
               <li>{contactAddress[0]}</li>
               <li>{contactAddress[1]}</li>
               <li>

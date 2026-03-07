@@ -202,12 +202,12 @@ export default async function CatalogFolderPage({
 
       <section className="section-container pt-3">
         <div className="tonal-panel">
-          <h2 className="section-title">Ready to order? Get a quote ?</h2>
+          <h2 className="section-title">Ready to order? Get a quote.</h2>
           <p className="mt-3 muted-text">
             Start your quote with this collection pre-selected and submit in minutes.
           </p>
           <Link href="/generic-bag-quote" className="btn-primary mt-5">
-            Get a Quote ?
+            Get a Quote
           </Link>
         </div>
       </section>

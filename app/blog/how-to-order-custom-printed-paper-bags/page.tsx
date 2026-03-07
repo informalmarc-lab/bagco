@@ -28,7 +28,7 @@ const sections: BlogPostSection[] = [
   {
     heading: 'Step 3: Select Print Tier and Brand Direction',
     paragraphs: [
-      'Custom paper bag programs typically run as 1-color, 2-color, or 3-color print tiers. One color is usually the simplest entry point. Two color often provides strong brand visibility with moderate complexity. Three color can deliver higher visual impact when brand detail is critical.',
+      'Custom paper bag programs typically run as 1-color, 2-color, or 3-color options. One color is usually the simplest entry point. Two color often provides strong brand visibility with moderate complexity. Three color can deliver higher visual impact when brand detail is critical.',
       'Define logo placement, required text, and print constraints clearly before proofing starts. If multiple internal teams are involved, designate one owner for final brand decisions so approval does not stall between departments.'
     ]
   },

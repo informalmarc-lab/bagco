@@ -165,9 +165,9 @@ export default function VeterinaryCatalogPage() {
 
       <section className="section-container pt-3">
         <div className="tonal-panel">
-          <h2 className="section-title">Ready to order? Get a quote ?</h2>
+          <h2 className="section-title">Ready to order? Get a quote.</h2>
           <p className="mt-3 muted-text">Build your veterinary case estimate and send it to our team in minutes.</p>
-          <Link href="/generic-bag-quote" className="btn-primary mt-5">Get a Quote ?</Link>
+          <Link href="/generic-bag-quote" className="btn-primary mt-5">Get a Quote</Link>
         </div>
       </section>
 

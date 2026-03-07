@@ -66,12 +66,12 @@ export default function LegacyCatalogPage() {
 
       <section className="section-container pt-6">
         <div className="tonal-panel">
-          <h2 className="section-title">Ready to order? Get a quote ?</h2>
+          <h2 className="section-title">Ready to order? Get a quote.</h2>
           <p className="mt-3 muted-text">
             Build your estimate and send your requirements directly to our team.
           </p>
           <Link href="/generic-bag-quote" className="btn-primary mt-5">
-            Get a Quote ?
+            Get a Quote
           </Link>
         </div>
       </section>

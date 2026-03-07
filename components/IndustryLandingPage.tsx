@@ -50,7 +50,7 @@ export default function IndustryLandingPage({
           <div className="mt-5 flex flex-wrap gap-2 text-xs font-black uppercase tracking-[0.08em] text-[#5F4D33]">
             <span className="rounded-full bg-white px-3 py-1.5">Transparent Case Pricing</span>
             <span className="rounded-full bg-white px-3 py-1.5">Instant Quote Tool</span>
-            <span className="rounded-full bg-white px-3 py-1.5">Stock 3-5 Days</span>
+            <span className="rounded-full bg-white px-3 py-1.5">Generic Same Day (Before 1 PM ET)</span>
             <span className="rounded-full bg-white px-3 py-1.5">Custom 3-4 Weeks</span>
             <span className="rounded-full bg-white px-3 py-1.5">Net 30 Available</span>
             <span className="rounded-full bg-white px-3 py-1.5">Ships Across The US</span>
@@ -143,7 +143,7 @@ export default function IndustryLandingPage({
               {bottomCatalogLabel}
             </Link>
             <Link href="/generic-bag-quote" className="btn-primary">
-              Get a Quote ?
+              Get a Quote
             </Link>
           </div>
         </div>

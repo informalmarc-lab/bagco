@@ -23,7 +23,7 @@ export default function ContactPage() {
           <p className="kicker">Contact</p>
           <h1 className="heading-display mt-5 text-4xl md:text-6xl">Talk to the Packaging Team</h1>
           <p className="mt-5 max-w-3xl text-lg muted-text">
-            Submit your request with bag type, volume target, and timeline. We’ll return a structured recommendation.
+            Submit your request with bag type, volume target, and timeline. We'll return a structured recommendation.
           </p>
         </div>
       </section>

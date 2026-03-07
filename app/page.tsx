@@ -108,7 +108,7 @@ const faqs = [
   {
     question: 'How fast can stock and custom orders ship?',
     answer:
-      'Stock programs generally ship in 3-5 days. Custom print programs typically run 3-4 weeks after proof approval.',
+      'Generic stock orders placed before 1 PM ET typically ship same day. Custom print programs typically run 3-4 weeks after proof approval.',
   },
 ]
 
@@ -168,7 +168,7 @@ export default function Home() {
                 Stock and custom bag programs for pharmacies, dispensaries, vet clinics, and retail with pricing you can see before you call.
               </p>
               <div className="mt-5 flex flex-wrap gap-2 text-xs font-black uppercase tracking-[0.08em] text-[#5F4D33]">
-                <span className="rounded-full bg-white px-3 py-1.5">Stock Ships 3-5 Days</span>
+                <span className="rounded-full bg-white px-3 py-1.5">Generic Ships Same Day (Before 1 PM ET)</span>
                 <span className="rounded-full bg-white px-3 py-1.5">Custom 3-4 Weeks</span>
                 <span className="rounded-full bg-white px-3 py-1.5">Net 30 Available</span>
                 <span className="rounded-full bg-white px-3 py-1.5">Ships Across The US</span>
@@ -199,7 +199,7 @@ export default function Home() {
               </div>
               <div className="mt-4 grid gap-2 text-sm font-semibold text-[#5F4D33]">
                 <p className="surface-card rounded-xl px-3 py-2">Stock bags from {money(65.91)}/case</p>
-                <p className="surface-card rounded-xl px-3 py-2">Custom print lead time: 3-4 weeks</p>
+                <p className="surface-card rounded-xl px-3 py-2">Generic lead time: same day before 1 PM ET</p>
               </div>
             </div>
           </div>
@@ -228,7 +228,7 @@ export default function Home() {
         <div className="rounded-3xl bg-[#1E4D2B] px-6 py-8 text-white shadow-[0_22px_50px_rgba(30,77,43,0.36)] md:px-10">
           <h2 className="text-3xl font-black tracking-[-0.03em]">See pricing before you call.</h2>
           <p className="mt-3 max-w-3xl text-base text-[#F4E8D8] md:text-lg">
-            Most bag suppliers make you wait for a quote. We show case-level pricing upfront â€” build your own estimate in under 2 minutes.
+            Most bag suppliers make you wait for a quote. We show case-level pricing upfront so you can build your estimate in under 2 minutes.
           </p>
           <Link href="/generic-bag-quote" className="btn-primary mt-6">
             Build Your Quote {String.fromCharCode(8594)}

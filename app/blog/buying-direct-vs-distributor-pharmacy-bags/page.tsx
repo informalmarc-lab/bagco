@@ -21,7 +21,7 @@ const sections: BlogPostSection[] = [
   {
     heading: 'Cost Comparison Beyond a Single Invoice',
     paragraphs: [
-      'Most pharmacies compare price at the case level first, but long-term cost is shaped by repeat ordering behavior. Direct purchasing often provides better visibility into how size mix, print tier, and case commitment affect price over time. That transparency helps teams forecast annual spend with fewer surprises.',
+      'Most pharmacies compare price at the case level first, but long-term cost is shaped by repeat ordering behavior. Direct purchasing often provides better visibility into how size mix, color count, and case commitment affect price over time. That transparency helps teams forecast annual spend with fewer surprises.',
       'Distributor pricing may be competitive for smaller mixed orders, but high-repeat programs should compare total annual cost across core SKUs. The right question is not which model has the lowest one-time quote. The right question is which model supports lower total spend across your full reorder cycle without creating stock risk.'
     ]
   },
