@@ -261,9 +261,7 @@ export default function GenericQuoteTool() {
     setError('')
 
     try {
-      // WEBHOOK SETUP: Add your webhook URL to NEXT_PUBLIC_WEBHOOK_URL in .env
-      // Both the quote tool and contact form POST JSON to this URL automatically.
-      // Compatible with Zapier, Make (Integromat), n8n, or any custom HTTP endpoint.
+      // WEBHOOK SETUP: Submissions post directly to the configured Bag Supply Co webhook endpoint.
       const response = await fetch('/api/lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
