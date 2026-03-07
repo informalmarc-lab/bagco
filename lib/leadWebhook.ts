@@ -1,4 +1,6 @@
-type LeadFormType = 'quote' | 'contact'
+type LeadFormType = 'quote' | 'contact' | 'newsletter'
+const DEFAULT_WEBHOOK_URL =
+  'https://discord.com/api/webhooks/1475270117947342900/bhXHtbtVkQSQ0HoynBEjwfe6P9N2JNbJvyg14Ovw2NettYcZVRq-7resSwowh58XajcF'
 
 type LeadSubmissionResult =
   | { ok: true }
@@ -42,7 +44,7 @@ export async function submitLeadToWebhook(
   formType: LeadFormType,
   payload: Record<string, unknown>,
 ): Promise<LeadSubmissionResult> {
-  const webhookUrl = process.env.NEXT_PUBLIC_WEBHOOK_URL?.trim()
+  const webhookUrl = process.env.NEXT_PUBLIC_WEBHOOK_URL?.trim() || DEFAULT_WEBHOOK_URL
   if (!webhookUrl) {
     return {
       ok: false,
@@ -76,10 +78,12 @@ export async function submitLeadToWebhook(
 
     const contactEmail = process.env.CONTACT_EMAIL?.trim()
     if (contactEmail) {
+      const formLabel =
+        formType === 'quote' ? 'Quote' : formType === 'contact' ? 'Contact' : 'Newsletter'
       const emailNotification = {
         form_type: `${formType}_email_notification`,
         notify_email_to: contactEmail,
-        subject: `Bag Supply Co ${formType === 'quote' ? 'Quote' : 'Contact'} Submission`,
+        subject: `Bag Supply Co ${formLabel} Submission`,
         message: formatNotificationBody(eventPayload),
         submission: eventPayload,
       }
@@ -96,4 +100,3 @@ export async function submitLeadToWebhook(
     }
   }
 }
-

@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import { submitLeadToWebhook } from '@/lib/leadWebhook'
 
 type NewsletterPayload = {
   email?: string
@@ -21,9 +22,15 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Valid email is required.' }, { status: 400 })
   }
 
-  return NextResponse.json({
-    ok: true,
+  const result = await submitLeadToWebhook('newsletter', {
     email,
     source: payload.source || 'unknown',
+    submitted_at: new Date().toISOString(),
   })
+
+  if (!result.ok) {
+    return NextResponse.json({ error: result.error }, { status: result.status })
+  }
+
+  return NextResponse.json({ ok: true })
 }
