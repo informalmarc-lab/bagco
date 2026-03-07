@@ -32,6 +32,7 @@ const deliveryPoints = [
   'Blind shipping and drop shipping support for distributor accounts',
   'Recurring replenishment support for multi-location teams',
 ]
+const HERO_IMAGE = '/catalog/pharmacy/gs/GS-22-FRONT.webp'
 
 const faqItems = [
   {
@@ -158,9 +159,8 @@ export default function Home() {
 
             <div className="hero-panel overflow-hidden">
               <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-[#C4935A66] bg-[#FAF6F0]">
-                {/* TODO: swap this with the final approved hero product asset if needed */}
                 <Image
-                  src={featuredProducts[0]?.image || '/catalog/custom/2-color/CBC-25-FC2C.webp'}
+                  src={HERO_IMAGE}
                   alt="Bag Supply Co product showcase"
                   fill
                   className="object-cover"
