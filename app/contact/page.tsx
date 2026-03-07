@@ -3,10 +3,9 @@ import Link from 'next/link'
 import ContactForm from '@/components/ContactForm'
 import {
   contactAddress,
-  contactEmail,
   contactPhone,
   contactPhoneHref,
-  pricingMailto,
+  contactTextHref,
 } from '@/components/siteConfig'
 
 export const metadata: Metadata = {
@@ -36,9 +35,9 @@ export default function ContactPage() {
             <h2 className="text-2xl font-black text-[#1E4D2B]">Direct Contact</h2>
             <dl className="mt-5 space-y-4 text-sm text-[#5F4D33]">
               <div>
-                <dt className="text-xs font-black uppercase tracking-[0.11em] text-[#7A6548]">Email</dt>
+                <dt className="text-xs font-black uppercase tracking-[0.11em] text-[#7A6548]">Text</dt>
                 <dd className="mt-1">
-                  <a href={pricingMailto} className="font-semibold text-[#1E4D2B] underline">{contactEmail}</a>
+                  <a href={contactTextHref} className="font-semibold text-[#1E4D2B] underline">{contactPhone}</a>
                 </dd>
               </div>
               <div>
@@ -58,7 +57,7 @@ export default function ContactPage() {
             </dl>
 
             <div className="mt-6 grid gap-2 sm:grid-cols-2">
-              <a href={pricingMailto} className="btn-secondary justify-center">Email Team</a>
+              <a href={contactTextHref} className="btn-secondary justify-center">Text Us</a>
               <Link href="/generic-bag-quote" className="btn-primary justify-center">Build a Quote</Link>
             </div>
           </aside>
@@ -67,5 +66,3 @@ export default function ContactPage() {
     </div>
   )
 }
-
-

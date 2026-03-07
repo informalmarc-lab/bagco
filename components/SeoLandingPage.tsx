@@ -1,5 +1,4 @@
-﻿import Link from 'next/link'
-import { contactEmail, pricingMailto } from '@/components/siteConfig'
+import Link from 'next/link'
 
 type SeoLandingPageProps = {
   h1: string
@@ -35,12 +34,12 @@ export default function SeoLandingPage({ h1, intro, bullets, links }: SeoLanding
         <div className="tonal-panel">
           <h2 className="section-title text-2xl md:text-3xl">Talk to Our Team</h2>
           <p className="mt-3 muted-text">
-            Email your bag size, quantity, color count, and timeline to receive production options.
+            Share your bag size, quantity, color count, and timeline to receive production options.
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
-            <a href={pricingMailto} className="btn-primary">
-              {contactEmail}
-            </a>
+            <Link href="/contact" className="btn-primary">
+              Contact Team
+            </Link>
             <Link href="/generic-bag-quote" className="btn-secondary">
               Build a Quote
             </Link>
@@ -60,5 +59,3 @@ export default function SeoLandingPage({ h1, intro, bullets, links }: SeoLanding
     </div>
   )
 }
-
-

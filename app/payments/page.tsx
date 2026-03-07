@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { contactEmail } from '@/components/siteConfig'
+import { contactPhone, contactTextHref } from '@/components/siteConfig'
 
 export const metadata: Metadata = {
   title: 'Payments',
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const methods = [
   {
     title: 'Credit Card',
-    copy: `Email ${contactEmail} and our team will provide payment setup for your invoice.`,
+    copy: `Text ${contactPhone} and our team will provide payment setup for your invoice.`,
   },
   {
     title: 'Check',
@@ -35,7 +35,7 @@ export default function PaymentsPage() {
           <p className="mt-5 max-w-3xl text-lg muted-text">
             Use this page for accepted methods, payment flow, and billing support.
           </p>
-          <a href={`mailto:${contactEmail}`} className="btn-primary mt-6">Email Billing</a>
+          <a href={contactTextHref} className="btn-primary mt-6">Text Billing</a>
         </div>
       </section>
 
@@ -68,5 +68,3 @@ export default function PaymentsPage() {
     </div>
   )
 }
-
-

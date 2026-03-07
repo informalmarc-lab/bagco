@@ -1,6 +1,6 @@
-﻿import type { Metadata } from 'next'
+import type { Metadata } from 'next'
 import Link from 'next/link'
-import { contactEmail, pricingMailto } from '@/components/siteConfig'
+import { contactTextHref } from '@/components/siteConfig'
 
 export const metadata: Metadata = {
   title: 'Custom Printing',
@@ -39,18 +39,15 @@ export default function CustomPrintingPage() {
         <div className="mt-6 tonal-panel">
           <h2 className="section-title text-2xl md:text-3xl">Next Step</h2>
           <p className="mt-3 muted-text">
-            Send your artwork or logo files with target bag size and quantity for a structured production recommendation.
+            Use the quote builder to send your logo, target bag size, and quantity for a structured production recommendation.
           </p>
-          <a href={pricingMailto} className="btn-primary mt-5">Email {contactEmail}</a>
           <div className="mt-5 flex flex-wrap gap-3">
+            <Link href="/generic-bag-quote" className="btn-primary">Build a Quote</Link>
             <Link href="/catalog/custom" className="btn-secondary">Open Custom Catalog</Link>
-            <Link href="/generic-bag-quote" className="btn-quiet">Build a Quote</Link>
+            <a href={contactTextHref} className="btn-quiet">Text Our Team</a>
           </div>
         </div>
       </section>
     </div>
   )
 }
-
-
-

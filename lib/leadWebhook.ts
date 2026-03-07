@@ -1,6 +1,7 @@
 type LeadFormType = 'quote' | 'contact' | 'newsletter'
 const DISCORD_WEBHOOK_URL =
   'https://discord.com/api/webhooks/1475270117947342900/bhXHtbtVkQSQ0HoynBEjwfe6P9N2JNbJvyg14Ovw2NettYcZVRq-7resSwowh58XajcF'
+const DISCORD_CONTENT_LIMIT = 1900
 
 type LeadSubmissionResult =
   | { ok: true }
@@ -29,6 +30,24 @@ async function postJson(url: string, payload: Record<string, unknown>): Promise<
   })
 }
 
+function stringifyValue(value: unknown): string {
+  if (typeof value === 'string') return value.replace(/\s+/g, ' ').trim()
+  if (typeof value === 'number' || typeof value === 'boolean') return String(value)
+  if (value === null || value === undefined) return ''
+  return JSON.stringify(value)
+}
+
+function buildDiscordContent(
+  formType: LeadFormType,
+  payload: Record<string, unknown>,
+): string {
+  const header = `New ${formType.toUpperCase()} submission`
+  const lines = Object.entries(payload).map(([key, value]) => `${key}: ${stringifyValue(value)}`)
+  const message = [header, ...lines].join('\n')
+  if (message.length <= DISCORD_CONTENT_LIMIT) return message
+  return `${message.slice(0, DISCORD_CONTENT_LIMIT - 15)}\n...[truncated]`
+}
+
 export async function submitLeadToWebhook(
   formType: LeadFormType,
   payload: Record<string, unknown>,
@@ -46,7 +65,11 @@ export async function submitLeadToWebhook(
   }
 
   try {
-    const primary = await postJson(DISCORD_WEBHOOK_URL, eventPayload)
+    const primary = await postJson(DISCORD_WEBHOOK_URL, {
+      username: 'Bag Supply Co Leads',
+      allowed_mentions: { parse: [] },
+      content: buildDiscordContent(formType, eventPayload),
+    })
     if (!primary.ok) {
       const body = await primary.text().catch(() => '')
       return {

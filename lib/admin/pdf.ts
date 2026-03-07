@@ -69,7 +69,7 @@ export async function generateQuotePdf(record: AdminQuoteRecord): Promise<Uint8A
   y -= 12
   page.drawText('Phone: (252) 516-1944', { x: MARGIN, y, size: 9, font: fontRegular, color: BLACK })
   y -= 12
-  page.drawText('hello@bagsupplyco.com', { x: MARGIN, y, size: 9, font: fontRegular, color: BLACK })
+  page.drawText('Website: bagsupplyco.com', { x: MARGIN, y, size: 9, font: fontRegular, color: BLACK })
 
   const headerRightX = PAGE_WIDTH - MARGIN - 190
   page.drawText(record.docType, { x: headerRightX, y: PAGE_HEIGHT - MARGIN, size: 30, font: fontBold, color: GREEN })
@@ -276,7 +276,7 @@ export async function generateQuotePdf(record: AdminQuoteRecord): Promise<Uint8A
     thickness: 1,
     color: GRAY,
   })
-  page.drawText('bagsupplyco.com  |  (252) 516-1944  |  hello@bagsupplyco.com', {
+  page.drawText('bagsupplyco.com  |  (252) 516-1944', {
     x: MARGIN + 75,
     y: footerY,
     size: 8,

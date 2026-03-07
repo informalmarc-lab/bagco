@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import {
   contactAddress,
-  contactEmail,
   contactPhone,
   contactTextHref,
 } from '@/components/siteConfig'
@@ -65,11 +64,7 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-black uppercase tracking-[0.1em] text-[#C4935A]">Contact</h4>
             <ul className="mt-3 space-y-2 text-sm">
-              <li>
-                <a href={`mailto:${contactEmail}`} className="font-semibold text-[#F4E8D8] hover:text-white">
-                  {contactEmail}
-                </a>
-              </li>
+              <li><Link href="/contact" className="font-semibold text-[#F4E8D8] hover:text-white">Contact Form</Link></li>
               <li><a href={contactTextHref} className="text-[#B5813A] hover:text-white">Text {contactPhone}</a></li>
               <li>
                 <a

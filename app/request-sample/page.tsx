@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { contactEmail, pricingMailto } from '@/components/siteConfig'
+import { contactTextHref } from '@/components/siteConfig'
 
 export default function RequestSamplePage() {
   return (
@@ -7,11 +7,14 @@ export default function RequestSamplePage() {
       <section className="page-hero">
         <div className="page-hero-inner">
           <p className="kicker">Samples</p>
-          <h1 className="heading-display mt-5 text-4xl md:text-6xl">Request Samples by Email</h1>
+          <h1 className="heading-display mt-5 text-4xl md:text-6xl">Request Samples</h1>
           <p className="mt-5 max-w-3xl text-lg muted-text">
-            We handle sample requests directly through email so we can confirm the right size, print path, and shipping details.
+            Use the contact form or quote builder so our team can confirm the right size, print path, and shipping details.
           </p>
-          <a href={pricingMailto} className="btn-primary mt-6">Email {contactEmail}</a>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link href="/contact" className="btn-primary">Contact Form</Link>
+            <a href={contactTextHref} className="btn-secondary">Text Us</a>
+          </div>
         </div>
       </section>
 
@@ -30,5 +33,3 @@ export default function RequestSamplePage() {
     </div>
   )
 }
-
-

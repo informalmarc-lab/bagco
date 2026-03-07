@@ -76,7 +76,6 @@ export default function RootLayout({
     description:
       'Custom paper bag manufacturing and packaging programs for pharmacies, retail stores, veterinary clinics, and dispensaries.',
     telephone: '+1-252-516-1944',
-    email: 'info@bagco.com',
     url: siteUrl,
     address: {
       '@type': 'PostalAddress',
