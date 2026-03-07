@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import BlogPostTemplate, { type BlogPostInternalLink, type BlogPostSection } from '@/components/BlogPostTemplate'
 
 export const metadata: Metadata = {
@@ -58,7 +58,7 @@ const sections: BlogPostSection[] = [
 const internalLinks: BlogPostInternalLink[] = [
   { href: '/industries/pharmacies', label: 'Pharmacy Industry Program' },
   { href: '/catalog/pharmacy', label: 'Pharmacy Catalog Pricing' },
-  { href: '/generic-bag-quote', label: 'Request a Direct Quote' }
+  { href: '/generic-bag-quote', label: 'Build a Quote' }
 ]
 
 export default function BuyingDirectVsDistributorPharmacyBagsPage() {
@@ -72,3 +72,4 @@ export default function BuyingDirectVsDistributorPharmacyBagsPage() {
     />
   )
 }
+

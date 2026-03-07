@@ -337,22 +337,31 @@ select {
   padding: 0.45rem 0.5rem;
 }
 
-.mobile-text-order {
+.mobile-sticky-cta {
   display: none;
 }
 
-.mobile-text-order-link {
+.mobile-sticky-cta-link {
   display: inline-flex;
-  width: 100%;
   align-items: center;
   justify-content: center;
-  border: 1px solid #b5813a;
-  background: #1e4d2b;
-  color: #faf6f0;
+  border-radius: 10px;
   font-size: 0.85rem;
   font-weight: 800;
   letter-spacing: 0.01em;
-  padding: 0.8rem 0.9rem;
+  padding: 0.78rem 0.9rem;
+}
+
+.mobile-sticky-cta-primary {
+  border: 1px solid #1e4d2b;
+  background: #1e4d2b;
+  color: #faf6f0;
+}
+
+.mobile-sticky-cta-secondary {
+  border: 1px solid #b5813a;
+  background: #b5813a;
+  color: #fff;
 }
 
 .lead-dock-copy {
@@ -403,18 +412,24 @@ select {
     display: none;
   }
 
-  .mobile-text-order {
+  .mobile-sticky-cta {
     position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    left: 0.6rem;
+    right: 0.6rem;
+    bottom: 0.55rem;
     z-index: 65;
-    display: block;
-    box-shadow: 0 -12px 24px rgba(30, 77, 43, 0.22);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    border: 1px solid rgba(196, 147, 90, 0.45);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 0.45rem;
+    box-shadow: 0 8px 24px rgba(30, 77, 43, 0.24);
   }
 
   .site-surface {
-    padding-bottom: 3.6rem;
+    padding-bottom: 5rem;
   }
 
   .lead-dock {

@@ -26,6 +26,44 @@
         "description":  "Full Case of Stock Pharmacy Bag in \"GS\" design. These classic Pharmacy bags have been our most popular item for many years. They are perfect for any pharmacy and come in a range of Eight Quantity/Size options.",
         "collections":  [
 
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "#21 (3.5\" x 1.5\" x 10\") 3,000 per case",
+                                "price":  95.56
+                            },
+                            {
+                                "label":  "#22 (4.5\" x 2.25\" x 11\") 3,000 per case",
+                                "price":  119.81
+                            },
+                            {
+                                "label":  "#23 (5\" x 2\" x 10\") 3,000 per case",
+                                "price":  117.42
+                            },
+                            {
+                                "label":  "#25 (6\" x 4\" x 11\") 1,000 per case",
+                                "price":  65.91
+                            },
+                            {
+                                "label":  "#26 (7\" x 4\" x 14\") 1,000 per case",
+                                "price":  102.29
+                            },
+                            {
+                                "label":  "#28 (8\" x 5\" x 17\") 500 per case",
+                                "price":  112.1
+                            },
+                            {
+                                "label":  "#12 (7\" x 10\") 3,000 per case",
+                                "price":  115.35
+                            },
+                            {
+                                "label":  "#14 (9\" x 11\") 2,000 per case",
+                                "price":  99.69
+                            },
+                            {
+                                "label":  "#15 (8.5\" x 3.5\" x 14.5\") 1,000 per case",
+                                "price":  95.78
+                            }
                         ]
     },
     {
@@ -49,6 +87,20 @@
         "description":  "Full Case of Plastic Pharmacy Bags in our stock \"GS\" design. These classic Pharmacy bags have been a very popular item for many years. They are perfect for any pharmacy and come in a range of Three Quantity/Size options.",
         "collections":  [
 
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "#32 (9\" x 5.5\" x 18\") 1,000 per case",
+                                "price":  70.84
+                            },
+                            {
+                                "label":  "#35 (12\" x 7\" x 23\") 1,000 per case",
+                                "price":  90.84
+                            },
+                            {
+                                "label":  "#30 (12\" x 7\" x 25\") 500 per case",
+                                "price":  116.03
+                            }
                         ]
     },
     {
@@ -78,6 +130,44 @@
         "description":  "Full Case of Pharmacy \"Thank You\" Bag design #TY in eight Quantity/Size options.",
         "collections":  [
 
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "#21 (3.5\" x 1.5\" x 10\") 3,000 per case",
+                                "price":  95.56
+                            },
+                            {
+                                "label":  "#22 (4.5\" x 2.25\" x 11\") 3,000 per case",
+                                "price":  119.81
+                            },
+                            {
+                                "label":  "#23 (5\" x 2\" x 10\") 3,000 per case",
+                                "price":  117.41
+                            },
+                            {
+                                "label":  "#25 (6\" x 4\" x 11\") 1,000 per case",
+                                "price":  65.91
+                            },
+                            {
+                                "label":  "#26 (7\" x 4\" x 14\") 1,000 per case",
+                                "price":  102.29
+                            },
+                            {
+                                "label":  "#28 (8\" x 5\" x 17\") 500 per case",
+                                "price":  112.1
+                            },
+                            {
+                                "label":  "#12 (7\" x 10\") 3,000 per case",
+                                "price":  115.35
+                            },
+                            {
+                                "label":  "#14 (9\" x 11\") 2,000 per case",
+                                "price":  99.69
+                            },
+                            {
+                                "label":  "#15 (8.5\" x 3.5\" x 14.5\") 1,000 per case",
+                                "price":  95.78
+                            }
                         ]
     },
     {
@@ -101,6 +191,20 @@
         "description":  "The cat\u0027s out of the bag! Our stock paper bags are the purr-fect match for every Veterinarian\u0027s office! Now available in three Quantity/Size options. Pinch bottom #22 - 4.5 x 2.25 x 11” - 3,000 qty Flat Pinch bottom #12 - 7 x 10” - 3,000 qty Square bottom #25 - 6 x 4 x 11” - 1,000 qty",
         "collections":  [
 
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom #22 (4.5 x 2.25 x 11\") 3000 per case",
+                                "price":  119.81
+                            },
+                            {
+                                "label":  "Flat Pinch bottom #12 (7 x 10) 3000 per case",
+                                "price":  115.35
+                            },
+                            {
+                                "label":  "Square bottom #25 (6 x 4 x 11\") 1000 per case",
+                                "price":  65.91
+                            }
                         ]
     },
     {
@@ -124,6 +228,20 @@
         "description":  "Full Case of Veterinary Bags design #VB2 in three Quantity/Size options. Perfect for every Vet or Pet Store, these adorable bags will leave paw prints all over the hearts of your customers. Pinch bottom #22 - 4.5 x 2.25 x 11” - 3,000 qty Flat Pinch bottom #12 - 7 x 10” - 3,000 qty Square bottom #25 - 6 x 4 x 11” - 1,000 qty",
         "collections":  [
 
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch Bottom #22 (4.5 x 2.25 x 11\") 3,000 per case",
+                                "price":  119.81
+                            },
+                            {
+                                "label":  "Flat Pinch bottom #12 (7 x 10\") 3,000 per case",
+                                "price":  115.35
+                            },
+                            {
+                                "label":  "Square Bottom #25 (6 x 4 x 11\") 1,000 per case",
+                                "price":  65.91
+                            }
                         ]
     },
     {
@@ -147,6 +265,20 @@
         "description":  "Full Case of Veterinary Bags design #VB6 in three Quantity/Size options. Perfect for every Vet or Pet Store, these adorable bags will leave paw prints all over the hearts of your customers. Pinch bottom #22 - 4.5 x 2.25 x 11” - 3,000 qty Flat Pinch bottom #12 - 7 x 10” - 3,000 qty Square bottom #25 - 6 x 4 x 11” - 1,000 qty",
         "collections":  [
 
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom #22 (4.5 x 2.25 x 11\") 3,000 per case",
+                                "price":  119.81
+                            },
+                            {
+                                "label":  "Flat Pinch bottom #12 (7 x 10\") 3,000 per case",
+                                "price":  115.35
+                            },
+                            {
+                                "label":  "Square bottom #25 (6 x 4 x 11\") 1,000 per case",
+                                "price":  65.91
+                            }
                         ]
     },
     {
@@ -171,6 +303,24 @@
         "description":  "Looking for the perfect exit bag for your dispensary? Our stock paper bags will keep your products discreet and professional! Now available in four Quantity/Size options. Small Pinch bottom #21-DS - 3.5 x 1.5 x 10\" - 1,000 qty Large Pinch bottom #12-DS - 7 x 10\" - 1,000 qty Large Pinch bottom #23-DS - 5 x 2 x 10\" - 1,000 qty Large Square Bottom #25-DS - 6 x 3.5 x 11\" - 500 qty",
         "collections":  [
 
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "#21-DS (3.5\" x 1.5\" x 10\") 1000 qty",
+                                "price":  36
+                            },
+                            {
+                                "label":  "#12-DS (7\" x 10\") 1000 qty",
+                                "price":  45
+                            },
+                            {
+                                "label":  "#23-DS (5\" x 2\" x 10\") 1000 qty",
+                                "price":  39
+                            },
+                            {
+                                "label":  "#25-DS (6\" x 3.5\" x 11\") 500 qty",
+                                "price":  35
+                            }
                         ]
     },
     {
@@ -193,6 +343,16 @@
         "description":  "Show your pride with our Equality designs! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
 
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -215,6 +375,16 @@
         "description":  "Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
 
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -237,6 +407,16 @@
         "description":  "Show your pride with our Equality designs! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
 
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -259,6 +439,16 @@
         "description":  "Share your faith with your guests with our Faith \u0026 Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
 
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -281,6 +471,16 @@
         "description":  "Share your faith with your guests with our Faith \u0026 Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
 
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -303,6 +503,16 @@
         "description":  "Share your faith with your guests with our Faith \u0026 Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
 
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -325,6 +535,16 @@
         "description":  "Share your faith with your guests with our Faith \u0026 Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
 
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -347,6 +567,16 @@
         "description":  "Share your faith with your guests with our Faith \u0026 Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
 
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  25
+                            }
                         ]
     },
     {
@@ -369,6 +599,16 @@
         "description":  "Share your faith with your guests with our Faith \u0026 Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
 
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -391,6 +631,16 @@
         "description":  "Share your faith with your guests with our Faith \u0026 Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
 
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -413,6 +663,16 @@
         "description":  "Share your faith with your guests with our Faith \u0026 Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
 
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -435,6 +695,16 @@
         "description":  "Share your faith with your guests with our Faith \u0026 Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
 
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -457,6 +727,16 @@
         "description":  "Share your faith with your guests with our Faith \u0026 Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
 
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -479,6 +759,16 @@
         "description":  "Share your faith with your guests with our Faith \u0026 Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
 
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -501,6 +791,16 @@
         "description":  "Share your faith with your guests with our Faith \u0026 Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
 
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -523,6 +823,16 @@
         "description":  "Share your faith with your guests with our Faith \u0026 Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
 
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -545,6 +855,16 @@
         "description":  "Share your faith with your guests with our Faith \u0026 Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
 
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -567,6 +887,16 @@
         "description":  "Share your faith with your guests with our Faith \u0026 Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
 
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -596,6 +926,44 @@
         "description":  "FULL-CUSTOM, 1-COLOR, BAGS ARE A HIGH VALUE OPTION! Our Bag Experts are ready to work with you today to create your company’s best bags ever. Simply submit your order and a Cardinal Bag representative will be in touch with you in less than 24 hours to receive your artwork and create a proof of your design. 4 Case Minimum Order Orders over 10 Cases, Please Call 1-800-526-9032 Includes Custom Printing in 1 Stock Colors Can Print on Front, Back, and Gussets (folded sides) 30-50# Machine-Finished Paper Pinch-Bottom with Gusset or Flat-Bottom Styles 4 Week Lead Time $50 Art/Plate Fee Applies to Initial Order and/or Re-Orders Requiring Changes Additional Art/Plate Fees May Apply for Back and/or Gusset Printing FREE FREIGHT to Commercial Address for Orders of 8 Cases or More Orders Under 8 Total Cases Billed Standard UPS Shipping Rates",
         "collections":  [
 
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "#21 (3.5\" x 1.5\" x 10\") 3,000 per case",
+                                "price":  95.56
+                            },
+                            {
+                                "label":  "#22 (4.5\" x 2.25\" x 11\") 3,000 per case",
+                                "price":  119.8
+                            },
+                            {
+                                "label":  "#23 (5\" x 2\" x 10\") 3,000 per case",
+                                "price":  117.4
+                            },
+                            {
+                                "label":  "#25 (6\" x 4\" x 11\") 2,000 per case",
+                                "price":  133.08
+                            },
+                            {
+                                "label":  "#26 (7\" x 4\" x 14\") 1,000 per case",
+                                "price":  102.29
+                            },
+                            {
+                                "label":  "#28 (8\" x 5\" x 17\") 500 per case",
+                                "price":  112.1
+                            },
+                            {
+                                "label":  "#12 (7\" x 10\") 3,000 per case",
+                                "price":  115.35
+                            },
+                            {
+                                "label":  "#14 (9\" x 11\") 2,000 per case",
+                                "price":  99.68
+                            },
+                            {
+                                "label":  "#15 (8.5\" x 3.5\" x 14.5\") 1,000 per case",
+                                "price":  95.78
+                            }
                         ]
     },
     {
@@ -625,6 +993,44 @@
         "description":  "FULL-CUSTOM, 2-COLOR, BAGS ARE OUR MOST POPULAR OPTION! Our Bag Experts are ready to work with you today to create your company’s best bags ever. Simply submit your order and a Cardinal Bag representative will be in touch with you in less than 24 hours to receive your artwork and create a proof of your design. 4 Case Minimum Order Orders over 10 Cases, Please Call 1-800-526-9032 Includes Custom Printing in 2 Stock Colors Can Print on Front, Back, and Gussets (folded sides) 30-50# Machine-Finished Paper Pinch-Bottom with Gusset or Flat-Bottom Styles 4 Week Lead Time $50 Art/Plate Fee Applies to Initial Order and/or Re-Orders Requiring Changes Additional Art/Plate Fees May Apply to Back and/or Gusset Printing FREE FREIGHT to Commercial Address for Orders of 8 Cases or More Orders Under 8 Total Cases Billed Standard UPS Shipping Rates",
         "collections":  [
 
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "#21 (3.5\" x 1.5\" x 10\") 3,000 per case",
+                                "price":  95.56
+                            },
+                            {
+                                "label":  "#22 (4.5\" x 2.25\" x 11\") 3,000 per case",
+                                "price":  119.8
+                            },
+                            {
+                                "label":  "#23 (5\" x 2\" x 10\") 3,000 per case",
+                                "price":  117.39
+                            },
+                            {
+                                "label":  "#25 (6\" x 4\" x 11\") 2,000 per case",
+                                "price":  133.08
+                            },
+                            {
+                                "label":  "#26 (7\" x 4\" x 14\") 1,000 per case",
+                                "price":  102.29
+                            },
+                            {
+                                "label":  "#28 (8\" x 5\" x 17\") 500 per case",
+                                "price":  112.1
+                            },
+                            {
+                                "label":  "#12 (7\" x 10\") 3,000 per case",
+                                "price":  115.35
+                            },
+                            {
+                                "label":  "#14 (9\" x 11\") 2,000 per case",
+                                "price":  99.68
+                            },
+                            {
+                                "label":  "#15 (8.5\" x 3.5\" x 14.5\") 1,000 per case",
+                                "price":  95.78
+                            }
                         ]
     },
     {
@@ -654,6 +1060,44 @@
         "description":  "FULL-CUSTOM, 3-COLOR, BAGS ADD A SPLASH TO YOUR CHECKOUT! Our Bag Experts are ready to work with you today to create your company’s best bags ever. Simply submit your order and a Cardinal Bag representative will be in touch with you in less than 24 hours to receive your artwork and create a proof of your design. 4 Case Minimum Order Orders over 10 Cases, Please Call 1-800-526-9032 Includes Custom Printing in 3 Stock Colors Can Print on Front, Back, and Gussets (folded sides) 30-50# Machine-Finished Paper Pinch-Bottom with Gusset or Flat-Bottom Styles 4 Week Lead Time $50 Art/Plate Fee Applies to Initial Order and/or Re-Orders Requiring Changes Additional Art/Plate Fees May Apply to Back and/or Gusset Printing FREE FREIGHT to Commercial Address for Orders of 8 Cases or More Orders Under 8 Total Cases Billed Standard UPS Shipping Rates",
         "collections":  [
 
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "#21 (3.5\" x 1.5\" x 10\") 3,000 per case",
+                                "price":  119.46
+                            },
+                            {
+                                "label":  "#22 (4.5\" x 2.25\" x 11\") 3,000 per case",
+                                "price":  149.76
+                            },
+                            {
+                                "label":  "#23 (5\" x 2\" x 10\") 3,000 per case",
+                                "price":  146.76
+                            },
+                            {
+                                "label":  "#25 (6\" x 4\" x 11\") 2,000 per case",
+                                "price":  166.36
+                            },
+                            {
+                                "label":  "#26 (7\" x 4\" x 14\") 1,000 per case",
+                                "price":  127.86
+                            },
+                            {
+                                "label":  "#28 (8\" x 5\" x 17\") 500 per case",
+                                "price":  140.12
+                            },
+                            {
+                                "label":  "#12 (7\" x 10\") 3,000 per case",
+                                "price":  144.18
+                            },
+                            {
+                                "label":  "#14 (9\" x 11\") 2,000 per case",
+                                "price":  124.61
+                            },
+                            {
+                                "label":  "#15 (8.5\" x 3.5\" x 14.5\") 1,000 per case",
+                                "price":  119.71
+                            }
                         ]
     },
     {
@@ -676,6 +1120,16 @@
         "description":  "Show your USA pride with our custom-printed paper bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
                             "usa-made"
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -698,6 +1152,16 @@
         "description":  "Show your USA pride with our custom-printed paper bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
                             "usa-made"
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -720,6 +1184,16 @@
         "description":  "Show your USA pride with our custom-printed paper bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
                             "usa-made"
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -742,6 +1216,16 @@
         "description":  "Show your USA pride with our custom-printed paper bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
                             "usa-made"
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -764,6 +1248,16 @@
         "description":  "Show your USA pride with our custom-printed paper bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
                             "usa-made"
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -786,6 +1280,16 @@
         "description":  "Show your USA pride with our custom-printed paper bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
                             "usa-made"
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -808,6 +1312,16 @@
         "description":  "Show your USA pride with our custom-printed paper bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
                             "usa-made"
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -830,6 +1344,16 @@
         "description":  "Show your USA pride with our custom-printed paper bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
                             "usa-made"
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -852,6 +1376,16 @@
         "description":  "Show your USA pride with our custom-printed paper bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
                             "usa-made"
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -874,6 +1408,16 @@
         "description":  "Show your USA pride with our custom-printed paper bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
                             "usa-made"
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -896,6 +1440,16 @@
         "description":  "Show your state pride with our custom-printed paper bags! Don’t see your state? Don\u0027t worry! Send us an email to get bags with your state proudly displayed! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
                             "usa-made"
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -918,6 +1472,16 @@
         "description":  "Show your state pride with our custom-printed paper bags! Don’t see your state? Don\u0027t worry! Send us an email to get bags with your state proudly displayed! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
                             "usa-made"
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -940,6 +1504,16 @@
         "description":  "Show your state pride with our custom-printed paper bags! Don’t see your state? Don\u0027t worry! Send us an email to get bags with your state proudly displayed! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
                             "usa-made"
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -962,6 +1536,16 @@
         "description":  "Show your state pride with our custom-printed paper bags! Don’t see your state? Don\u0027t worry! Send us an email to get bags with your state proudly displayed! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
                             "usa-made"
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -984,6 +1568,16 @@
         "description":  "Show your state pride with our custom-printed paper bags! Don’t see your state? Don\u0027t worry! Send us an email to get bags with your state proudly displayed! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
                             "usa-made"
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -1006,6 +1600,16 @@
         "description":  "Celebrate the Fourth of July with spectacular 2-color designs! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
                             "seasonal"
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -1028,6 +1632,16 @@
         "description":  "Celebrate the Fourth of July with spectacular 2-color designs! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
                             "seasonal"
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -1050,6 +1664,16 @@
         "description":  "Celebrate the Fourth of July with spectacular 2-color designs! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
                             "seasonal"
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -1072,6 +1696,16 @@
         "description":  "Features a dark grey and red filigree design complete with holly and a New Year\u0027s greeting to the lyric of \"A Merry Christmas\" greeting customers one and all. Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
                             "seasonal"
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -1094,6 +1728,16 @@
         "description":  "Features a dark grey and red minimalist wreath design with a jolly message of Happy Holidays for your customers. Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
                             "seasonal"
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -1116,6 +1760,16 @@
         "description":  "This new design for Christmas 2017 features a dark grey and red graphic complete with Christmas tree, minimalist wreath and \"Merry Christmas\" design paying tribute to the current year. It\u0027s the perfect bag for any store this holiday season. Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
                             "seasonal"
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -1138,6 +1792,16 @@
         "description":  "This classic design for Christmas 2017 features a traditional storefront design appropriate for every Winter seasonal promotion with \"Season\u0027s Greetings, Happy Holidays from Your Neighborhood Pharmacy\" in beautiful script. Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
                             "seasonal"
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -1160,6 +1824,16 @@
         "description":  "Features a whimsical design with three acrobatic Pengiuns topping the Christmas tree with a star. \"Happy Holidays\" completes the seasonal messaging, sure to be a hit with kids of all ages. Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
                             "seasonal"
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -1182,6 +1856,16 @@
         "description":  "Features a stack of wrapped gifts with bows in the traditional colors of red and green for Christmas. \"Merry Christmas\" completes the seasonal messaging, giving this bag a holly, jolly feel. Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
                             "seasonal"
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -1204,6 +1888,16 @@
         "description":  "Features a modern abstract Christmas tree decoration that is sure to catch the eye of art lovers everywhere. \"Seasons Greetings\" completes the design. Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
                             "seasonal"
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -1226,6 +1920,16 @@
         "description":  "This Christmas 2017 design creates the look of the bag itself being a wrapped present. \"Happy Holidays\" (OR Merry Christmas is also available) completes the design with a strong seasonal message. If you are interested in customizing this design to include the name of your business, just give us a call at 1.800.526.9032 Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
                             "seasonal"
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -1248,6 +1952,16 @@
         "description":  "Show your customers how much you love them with these cute \u0026 functional Valentine’s Day designs! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
                             "seasonal"
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -1270,6 +1984,16 @@
         "description":  "Show your customers how much you love them with these cute \u0026 functional Valentine’s Day designs! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
                             "seasonal"
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -1292,6 +2016,16 @@
         "description":  "Show your customers how much you love them with these cute \u0026 functional Valentine’s Day designs! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
                             "seasonal"
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -1314,6 +2048,16 @@
         "description":  "Show your customers how much you love them with these cute \u0026 functional Valentine’s Day designs! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
                             "seasonal"
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -1336,6 +2080,16 @@
         "description":  "Show your customers how much you love them with these cute \u0026 functional Valentine’s Day designs! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
                             "seasonal"
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -1358,6 +2112,16 @@
         "description":  "Show your customers how much you love them with these cute \u0026 functional Valentine’s Day designs! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
         "collections":  [
                             "seasonal"
+                        ],
+        "sizePricing":  [
+                            {
+                                "label":  "Pinch bottom (5x2x10\") 500qty",
+                                "price":  25
+                            },
+                            {
+                                "label":  "Square bottom (6x4x11\") 1000qty",
+                                "price":  65
+                            }
                         ]
     },
     {
@@ -1378,6 +2142,9 @@
         "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_WFC_09.jpg?v=1675112434",
         "description":  "These beautiful bags feature our full-coverage printing, fulling the front and back of the bag with an interesting design of a variety of wine bottler openers from around the world. These bags are perfect for any Winery, Wine Club, Wine Bar or other business that sells wine by the bottle. ALL of our bags at Cardinal Bag are fully customizable. If you would like to add your logo, custom color, or other changes - contact a sales representative today at 1-800-526-9032 Stock Wine Bottle Bags - Pinch bottom - 4\" x 3\" x 16\" - 1,000 case",
         "collections":  [
+
+                        ],
+        "sizePricing":  [
 
                         ]
     },
@@ -1400,6 +2167,9 @@
         "description":  "These cool bags feature a funky design bearing the words “Good Wine for Good People” over a stylized graphic of a bunch of grapes. These bags are perfect for any Winery, Wine Club, Wine Bar or other business that sells wine by the bottle. ALL of our bags at Cardinal Bag are fully customizable. If you would like to add your logo, custom color, or other changes - contact a sales representative today at 1-800-526-9032 Stock Wine Bottle Bags - Pinch bottom - 4\" x 3\" x 16\" - 1,000 case",
         "collections":  [
 
+                        ],
+        "sizePricing":  [
+
                         ]
     },
     {
@@ -1420,6 +2190,9 @@
         "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_WFC_11.jpg?v=1675112632",
         "description":  "These color bags feature a classic design bearing the words “Wine House” over a stylized graphic of a bunch of grapes. These bags are perfect for any Winery, Wine Club, Wine Bar or other business that sells wine by the bottle. Our wine bottle bags are 4”x3”x16“. ALL of our bags at Cardinal Bag are fully customizable. If you would like to add your logo, custom color, or other changes - contact a sales representative today at 1-800-526-9032 Stock Wine Bottle Bags - Pinch bottom - 4\" x 3\" x 16\" - 1,000 case",
         "collections":  [
+
+                        ],
+        "sizePricing":  [
 
                         ]
     },
@@ -1442,6 +2215,9 @@
         "description":  "These bold bags feature an old-world design bearing the words “Wine Bar” over a stylized graphic of a Wine Barrel and Grapes with filigree. These bags are perfect for any Wine Bar that sells wine by the bottle. Our wine bottle bags are 4”x3”x16“. ALL of our bags at Cardinal Bag are fully customizable. If you would like to add your logo, custom color, or other changes - contact a sales representative today at 1-800-526-9032 Stock Wine Bottle Bags - Pinch bottom - 4\" x 3\" x 16\" - 1,000 case",
         "collections":  [
 
+                        ],
+        "sizePricing":  [
+
                         ]
     },
     {
@@ -1462,6 +2238,9 @@
         "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_WFC_13.jpg?v=1675112684",
         "description":  "These bags feature a fun design bearing the words “Wine Club” over a stylized graphic of simple Cork Screw with minimal filigree and starburst background. These bags are perfect for any Wine Club. Our wine bottle bags are 4”x3”x16“. ALL of our bags at Cardinal Bag are fully customizable. If you would like to add your logo, custom color, or other changes - contact a sales representative today at 1-800-526-9032 Stock Wine Bottle Bags - Pinch bottom - 4\" x 3\" x 16\" - 1,000 case",
         "collections":  [
+
+                        ],
+        "sizePricing":  [
 
                         ]
     }

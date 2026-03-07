@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
@@ -158,7 +158,7 @@ export default function VeterinaryCatalogPage() {
           <h2 className="section-title">Need custom print instead?</h2>
           <div className="mt-5 flex flex-wrap gap-3">
             <Link href="/catalog/custom" className="btn-secondary">Open Custom Catalog</Link>
-            <Link href="/generic-bag-quote" className="btn-primary">Build Quote</Link>
+            <Link href="/generic-bag-quote" className="btn-primary">Build a Quote</Link>
           </div>
         </div>
       </section>
@@ -167,7 +167,7 @@ export default function VeterinaryCatalogPage() {
         <div className="tonal-panel">
           <h2 className="section-title">Ready to order? Get a quote.</h2>
           <p className="mt-3 muted-text">Build your veterinary case estimate and send it to our team in minutes.</p>
-          <Link href="/generic-bag-quote" className="btn-primary mt-5">Get a Quote</Link>
+          <Link href="/generic-bag-quote" className="btn-primary mt-5">Build a Quote</Link>
         </div>
       </section>
 
@@ -193,6 +193,7 @@ export default function VeterinaryCatalogPage() {
     </div>
   )
 }
+
 
 
 

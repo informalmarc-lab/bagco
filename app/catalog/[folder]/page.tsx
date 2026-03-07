@@ -1,4 +1,4 @@
-import fs from 'fs'
+﻿import fs from 'fs'
 import path from 'path'
 import type { Metadata } from 'next'
 import Image from 'next/image'
@@ -207,13 +207,14 @@ export default async function CatalogFolderPage({
             Start your quote with this collection pre-selected and submit in minutes.
           </p>
           <Link href="/generic-bag-quote" className="btn-primary mt-5">
-            Get a Quote
+            Build a Quote
           </Link>
         </div>
       </section>
     </div>
   )
 }
+
 
 
 

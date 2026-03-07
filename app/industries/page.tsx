@@ -39,6 +39,11 @@ const segments = [
     copy: 'Durable takeout and bakery bag programs with stock and custom paths.',
     href: '/industries/food-beverage',
   },
+  {
+    title: 'Distributors',
+    copy: 'Factory-direct wholesale programs with blind shipping and drop shipping support.',
+    href: '/industries/distributors',
+  },
 ]
 
 export default function IndustriesPage() {

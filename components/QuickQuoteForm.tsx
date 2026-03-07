@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { FormEvent, useState } from 'react'
 
@@ -69,7 +69,7 @@ export default function QuickQuoteForm() {
 
   return (
     <form onSubmit={onSubmit} className="surface-card rounded-2xl p-6 md:p-8">
-      <h3 className="text-2xl font-black text-[#1E4D2B]">Request a Custom Quote</h3>
+      <h3 className="text-2xl font-black text-[#1E4D2B]">Build a Quote</h3>
       <p className="mt-2 text-sm text-[#5F4D33]">
         Frictionless intake for retail, food service, pharmacy, and veterinary teams. We respond with a structured program recommendation.
       </p>
@@ -136,7 +136,7 @@ export default function QuickQuoteForm() {
 
       <div className="mt-4 flex flex-wrap items-center gap-3">
         <button type="submit" className="btn-primary w-full justify-center sm:w-auto" disabled={state === 'submitting'}>
-          {state === 'submitting' ? 'Submitting...' : 'Request a Custom Quote'}
+          {state === 'submitting' ? 'Submitting...' : 'Build a Quote'}
         </button>
         {state === 'success' && <p className="text-sm font-semibold text-emerald-700">Quote request sent.</p>}
         {state === 'error' && <p className="text-sm font-semibold text-red-700">{error}</p>}
@@ -144,4 +144,5 @@ export default function QuickQuoteForm() {
     </form>
   )
 }
+
 

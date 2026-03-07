@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
@@ -162,7 +162,7 @@ export default function AppleStory() {
                   Browse Catalogs
                 </Link>
                 <Link href="/generic-bag-quote" className="btn-primary">
-                  Build Quote
+                  Build a Quote
                 </Link>
               </div>
             </div>
@@ -172,5 +172,6 @@ export default function AppleStory() {
     </section>
   )
 }
+
 
 

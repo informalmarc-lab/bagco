@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -71,13 +71,14 @@ export default function LegacyCatalogPage() {
             Build your estimate and send your requirements directly to our team.
           </p>
           <Link href="/generic-bag-quote" className="btn-primary mt-5">
-            Get a Quote
+            Build a Quote
           </Link>
         </div>
       </section>
     </div>
   )
 }
+
 
 
 

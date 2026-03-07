@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
@@ -163,7 +163,7 @@ export default function CustomCatalogPage() {
         <div className="tonal-panel">
           <h2 className="section-title">Ready for a structured quote?</h2>
           <div className="mt-5 flex flex-wrap gap-3">
-            <Link href="/generic-bag-quote" className="btn-primary">Build Quote</Link>
+            <Link href="/generic-bag-quote" className="btn-primary">Build a Quote</Link>
             <Link href="/contact" className="btn-secondary">Contact Team</Link>
           </div>
         </div>
@@ -173,7 +173,7 @@ export default function CustomCatalogPage() {
         <div className="tonal-panel">
           <h2 className="section-title">Ready to order? Get a quote.</h2>
           <p className="mt-3 muted-text">Start with your preferred color count and submit a case-level estimate.</p>
-          <Link href="/generic-bag-quote" className="btn-primary mt-5">Get a Quote</Link>
+          <Link href="/generic-bag-quote" className="btn-primary mt-5">Build a Quote</Link>
         </div>
       </section>
 
@@ -199,5 +199,6 @@ export default function CustomCatalogPage() {
     </div>
   )
 }
+
 
 

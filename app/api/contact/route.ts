@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
+import { submitLeadToWebhook } from '@/lib/leadWebhook'
 
-const WEBHOOK_URL = process.env.DISCORD_WEBHOOK || ''
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 function safeText(value: unknown, max = 2000): string {
@@ -28,36 +28,24 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Invalid email address' }, { status: 400 })
     }
 
-    if (!WEBHOOK_URL) {
-      return NextResponse.json({ error: 'Contact form endpoint is not configured yet.' }, { status: 503 })
-    }
-
-    const submissionType = safeText(data.submissionType, 140) || 'Contact Form'
-    const sourcePage = safeText(data.sourcePage, 240) || 'N/A'
-
-    const payload = {
-      content: `**New Contact Form Submission**
-**Type:** ${submissionType}
-**Source Page:** ${sourcePage}
-**Name:** ${name}
-**Email:** ${email}
-**Phone:** ${safeText(data.phone, 80) || 'N/A'}
-**Company:** ${safeText(data.company, 140) || 'N/A'}
-**Bag Type:** ${safeText(data.bagType, 140) || 'N/A'}
-**Quantity:** ${safeText(data.quantity, 120) || 'N/A'}
-**Message:** ${message}`,
-    }
-
-    const discordRes = await fetch(WEBHOOK_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
+    const result = await submitLeadToWebhook('contact', {
+      submissionType: safeText(data.submissionType, 140) || 'Contact Form',
+      sourcePage: safeText(data.sourcePage, 240) || 'N/A',
+      name,
+      email,
+      phone: safeText(data.phone, 80),
+      company: safeText(data.company, 140),
+      bagType: safeText(data.bagType, 140),
+      quantity: safeText(data.quantity, 120),
+      message,
+      industry: safeText(data.industry, 120),
+      shippingPreference: safeText(data.shippingPreference, 120),
+      existingCustomer: safeText(data.existingCustomer, 40),
+      submitted_at: new Date().toISOString(),
     })
 
-    if (!discordRes.ok) {
-      const text = await discordRes.text().catch(() => '')
-      console.error('Discord webhook responded with', discordRes.status, text)
-      return NextResponse.json({ error: 'Failed to forward to webhook' }, { status: 502 })
+    if (!result.ok) {
+      return NextResponse.json({ error: result.error }, { status: result.status })
     }
 
     return NextResponse.json({ success: true })

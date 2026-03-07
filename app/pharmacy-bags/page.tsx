@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -66,12 +66,13 @@ export default function PharmacyBagsPage() {
         </div>
 
         <div className="mt-8 flex flex-wrap gap-3">
-          <Link href="/generic-bag-quote" className="btn-primary">Build Quote</Link>
+          <Link href="/generic-bag-quote" className="btn-primary">Build a Quote</Link>
           <Link href="/custom-printing" className="btn-secondary">Custom Printing</Link>
         </div>
       </section>
     </div>
   )
 }
+
 
 

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import { contactEmail, pricingMailto } from '@/components/siteConfig'
 
@@ -44,12 +44,13 @@ export default function CustomPrintingPage() {
           <a href={pricingMailto} className="btn-primary mt-5">Email {contactEmail}</a>
           <div className="mt-5 flex flex-wrap gap-3">
             <Link href="/catalog/custom" className="btn-secondary">Open Custom Catalog</Link>
-            <Link href="/generic-bag-quote" className="btn-quiet">Build Quote</Link>
+            <Link href="/generic-bag-quote" className="btn-quiet">Build a Quote</Link>
           </div>
         </div>
       </section>
     </div>
   )
 }
+
 
 

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import { contactTextHref } from '@/components/siteConfig'
 
@@ -72,7 +72,7 @@ export default function AboutPage() {
               Browse Catalogs
             </Link>
             <Link href="/generic-bag-quote" className="btn-primary">
-              Open Quote Tool
+              Build a Quote
             </Link>
             <a href={contactTextHref} className="btn-quiet">
               Text Our Team
@@ -83,6 +83,7 @@ export default function AboutPage() {
     </div>
   )
 }
+
 
 
 

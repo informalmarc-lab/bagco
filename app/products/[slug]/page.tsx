@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -119,9 +119,35 @@ export default async function ProductDetailPage({
               </p>
             </div>
 
+            {product.sizePricing && product.sizePricing.length > 0 && (
+              <div className="mt-6">
+                <h3 className="text-base font-black uppercase tracking-[0.08em] text-[#1E4D2B]">
+                  Size + Price Breakdown
+                </h3>
+                <div className="mt-3 overflow-x-auto rounded-xl border border-[#C4935A66] bg-white">
+                  <table className="min-w-full text-left text-sm">
+                    <thead className="bg-[#1E4D2B] text-white">
+                      <tr>
+                        <th className="px-3 py-2">Bag Type / Size</th>
+                        <th className="px-3 py-2 text-right">Price</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {product.sizePricing.map((row, idx) => (
+                        <tr key={`${row.label}-${idx}`} className={idx % 2 === 0 ? 'bg-white' : 'bg-[#FAF6F0]'}>
+                          <td className="px-3 py-2 text-[#5F4D33]">{row.label}</td>
+                          <td className="px-3 py-2 text-right font-bold text-[#1E4D2B]">{money(row.price)}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
+
             <div className="mt-6 flex flex-wrap gap-3">
               <Link href={`/generic-bag-quote?sku=${encodeURIComponent(product.sku)}`} className="btn-primary">
-                Add to Quote
+                Build a Quote
               </Link>
               <Link href={catalogHref} className="btn-secondary">
                 Back to {INDUSTRY_LABELS[product.industry]} Catalog
@@ -162,4 +188,5 @@ export default async function ProductDetailPage({
     </div>
   )
 }
+
 

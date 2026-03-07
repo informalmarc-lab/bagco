@@ -1,487 +1,688 @@
 'use client'
 
-import Image from 'next/image'
-import { useEffect, useMemo, useState } from 'react'
-import {
-  INDUSTRY_LABELS,
-  INDUSTRY_ORDER,
-  getAllCatalogProducts,
-  getLeadTimeShort,
-  money,
-  type CatalogIndustryKey,
-} from '@/lib/catalogProducts'
+import Link from 'next/link'
+import { useMemo, useState } from 'react'
 
-type QuoteLine = {
-  slug: string
-  cases: number
+type Step = 1 | 2 | 3 | 4 | 5
+
+type BagType =
+  | 'Flat Paper Bags'
+  | 'Handled Paper Bags (Twisted Handle)'
+  | 'Pharmacy Bags'
+  | 'Veterinary Bags'
+  | 'Custom Printed Bags'
+  | 'Stock / Plain Bags'
+
+type SizeOption = 'Small (4x2x8)' | 'Medium (6x3x11)' | 'Large (8x4x14)' | 'Extra Large (10x5x16)' | 'Custom Size'
+
+type PrintOption =
+  | 'No Print - Plain stock bags'
+  | '1-Color Print'
+  | '2-Color Print'
+  | '3-Color Print'
+  | "Not sure yet - I'll decide later"
+
+type ShippingType =
+  | 'Ship to My Business (standard)'
+  | 'Drop Ship to My Customers (distributor)'
+  | 'Blind Ship - No Bag Supply Co branding on package (distributor)'
+  | 'Set Up Recurring Reorder Program'
+
+type ArtworkReady = 'Yes' | 'No' | 'Need help with design'
+
+type SizeState = {
+  cases: string
+  customSize: string
 }
 
-type CustomerInfo = {
-  name: string
-  company: string
-  email: string
-  phone: string
-}
+type SizesByBagType = Partial<Record<BagType, Partial<Record<SizeOption, SizeState>>>>
 
-type ShareState = {
-  selectedIndustry: CatalogIndustryKey | ''
-  selectedBagType: string
-  selectedProductSlug: string
-  lines: QuoteLine[]
-  customer: CustomerInfo
-}
+const BUSINESS_TYPES = [
+  { label: 'Pharmacy', icon: '🏥' },
+  { label: 'Dispensary', icon: '🌿' },
+  { label: 'Veterinary Clinic', icon: '🐾' },
+  { label: 'Retail Store / Boutique', icon: '🛍️' },
+  { label: 'Food & Beverage', icon: '🍔' },
+  { label: 'Smoke Shop', icon: '🚬' },
+  { label: 'Distributor', icon: '📦' },
+  { label: 'Other', icon: '🏢' },
+]
 
-const LEAD_TIME_MESSAGE = 'Generic stock ships same day for orders placed before 1 PM ET | Custom print: 3-4 weeks'
+const BAG_TYPES: Array<{ label: BagType; icon: string }> = [
+  { label: 'Flat Paper Bags', icon: '📄' },
+  { label: 'Handled Paper Bags (Twisted Handle)', icon: '🛍️' },
+  { label: 'Pharmacy Bags', icon: '🧴' },
+  { label: 'Veterinary Bags', icon: '🐶' },
+  { label: 'Custom Printed Bags', icon: '🎨' },
+  { label: 'Stock / Plain Bags', icon: '📦' },
+]
 
-function parseIndustryValue(value: string): CatalogIndustryKey | '' {
-  return INDUSTRY_ORDER.includes(value as CatalogIndustryKey) ? (value as CatalogIndustryKey) : ''
-}
+const SIZE_OPTIONS: SizeOption[] = [
+  'Small (4x2x8)',
+  'Medium (6x3x11)',
+  'Large (8x4x14)',
+  'Extra Large (10x5x16)',
+  'Custom Size',
+]
 
-function encodeShareState(payload: ShareState): string {
-  const json = JSON.stringify(payload)
-  const bytes = new TextEncoder().encode(json)
-  let binary = ''
-  for (const value of bytes) {
-    binary += String.fromCharCode(value)
-  }
+const PRINT_OPTIONS: Array<{ label: PrintOption; icon: string }> = [
+  { label: 'No Print - Plain stock bags', icon: '⬜' },
+  { label: '1-Color Print', icon: '1️⃣' },
+  { label: '2-Color Print', icon: '2️⃣' },
+  { label: '3-Color Print', icon: '🎨' },
+  { label: "Not sure yet - I'll decide later", icon: '❓' },
+]
 
-  return btoa(binary)
-    .replace(/\+/g, '-')
-    .replace(/\//g, '_')
-    .replace(/=+$/g, '')
-}
+const SHIPPING_OPTIONS: Array<{ label: ShippingType; icon: string }> = [
+  { label: 'Ship to My Business (standard)', icon: '🏢' },
+  { label: 'Drop Ship to My Customers (distributor)', icon: '📦' },
+  { label: 'Blind Ship - No Bag Supply Co branding on package (distributor)', icon: '👻' },
+  { label: 'Set Up Recurring Reorder Program', icon: '🔁' },
+]
 
-function decodeShareState(value: string): ShareState | null {
-  try {
-    const normalized = value.replace(/-/g, '+').replace(/_/g, '/')
-    const padded = normalized + '='.repeat((4 - (normalized.length % 4 || 4)) % 4)
-    const binary = atob(padded)
-    const bytes = Uint8Array.from(binary, (char) => char.charCodeAt(0))
-    const json = new TextDecoder().decode(bytes)
-    const parsed = JSON.parse(json)
-    if (!parsed || typeof parsed !== 'object') return null
-    return parsed as ShareState
-  } catch {
-    return null
-  }
+const BEST_TIMES = ['Morning', 'Afternoon', 'Evening', 'Anytime'] as const
+
+function isPrintDetailsRequired(printOption: PrintOption | ''): boolean {
+  return (
+    printOption !== '' &&
+    printOption !== 'No Print - Plain stock bags' &&
+    printOption !== "Not sure yet - I'll decide later"
+  )
 }
 
 export default function GenericQuoteTool() {
-  const products = useMemo(() => getAllCatalogProducts(), [])
+  const [step, setStep] = useState<Step>(1)
+  const [isSummaryOpen, setIsSummaryOpen] = useState(false)
 
-  const [selectedIndustry, setSelectedIndustry] = useState<CatalogIndustryKey | ''>('')
-  const [selectedBagType, setSelectedBagType] = useState('')
-  const [selectedProductSlug, setSelectedProductSlug] = useState('')
-  const [casesInput, setCasesInput] = useState('1')
-  const [lines, setLines] = useState<QuoteLine[]>([])
-  const [generatedAt, setGeneratedAt] = useState('')
-  const [quoteId, setQuoteId] = useState('')
-  const [copied, setCopied] = useState(false)
+  const [businessType, setBusinessType] = useState('')
+  const [bagTypes, setBagTypes] = useState<BagType[]>([])
+  const [sizesByType, setSizesByType] = useState<SizesByBagType>({})
+  const [printOption, setPrintOption] = useState<PrintOption | ''>('')
+  const [artworkReady, setArtworkReady] = useState<ArtworkReady | ''>('')
+  const [printColors, setPrintColors] = useState('')
+  const [shippingType, setShippingType] = useState<ShippingType | ''>('')
 
-  const [customer, setCustomer] = useState<CustomerInfo>({
-    name: '',
-    company: '',
-    email: '',
-    phone: '',
-  })
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [phone, setPhone] = useState('')
+  const [company, setCompany] = useState('')
+  const [bestTime, setBestTime] = useState<(typeof BEST_TIMES)[number]>('Anytime')
+  const [notes, setNotes] = useState('')
 
-  useEffect(() => {
-    setGeneratedAt(new Date().toLocaleString())
-    setQuoteId(`BAGCO-${Date.now().toString().slice(-8)}`)
+  const [error, setError] = useState('')
+  const [submitting, setSubmitting] = useState(false)
+  const [submitted, setSubmitted] = useState(false)
 
-    const params = new URLSearchParams(window.location.search)
-    const shareToken = params.get('share')
-    const skuParam = params.get('sku')
+  const sizeRows = useMemo(() => {
+    const rows: Array<{ type: BagType; size: string; cases: number }> = []
+    for (const type of bagTypes) {
+      const selections = sizesByType[type]
+      if (!selections) continue
 
-    if (shareToken) {
-      const restored = decodeShareState(shareToken)
-      if (restored) {
-        setSelectedIndustry(restored.selectedIndustry)
-        setSelectedBagType(restored.selectedBagType)
-        setSelectedProductSlug(restored.selectedProductSlug)
-        setLines(restored.lines || [])
-        setCustomer(restored.customer || { name: '', company: '', email: '', phone: '' })
-        return
+      for (const [sizeKey, state] of Object.entries(selections) as Array<[SizeOption, SizeState]>) {
+        const parsed = Number.parseInt(state.cases || '0', 10)
+        const cases = Number.isFinite(parsed) && parsed > 0 ? parsed : 0
+        const label = sizeKey === 'Custom Size' ? (state.customSize.trim() || 'Custom Size') : sizeKey
+        rows.push({ type, size: label, cases })
       }
     }
+    return rows
+  }, [bagTypes, sizesByType])
 
-    if (skuParam) {
-      const bySku = products.find((product) => product.sku === skuParam)
-      if (bySku) {
-        setSelectedIndustry(bySku.industry)
-        setSelectedBagType(bySku.bagType)
-        setSelectedProductSlug(bySku.slug)
-      }
+  const payload = useMemo(() => {
+    return {
+      business_type: businessType,
+      bag_types: bagTypes,
+      sizes: sizeRows,
+      print_option: printOption,
+      artwork_ready: artworkReady,
+      print_colors: printColors,
+      shipping_type: shippingType,
+      name,
+      email,
+      phone,
+      company,
+      best_time: bestTime,
+      notes,
+      submitted_at: new Date().toISOString(),
     }
-  }, [products])
+  }, [
+    artworkReady,
+    bagTypes,
+    bestTime,
+    businessType,
+    company,
+    email,
+    name,
+    notes,
+    phone,
+    printColors,
+    printOption,
+    shippingType,
+    sizeRows,
+  ])
 
-  const industryProducts = useMemo(() => {
-    if (!selectedIndustry) return []
-    return products.filter((product) => product.industry === selectedIndustry)
-  }, [products, selectedIndustry])
-
-  const bagTypeOptions = useMemo(() => {
-    return Array.from(new Set(industryProducts.map((product) => product.bagType))).sort((a, b) =>
-      a.localeCompare(b),
-    )
-  }, [industryProducts])
-
-  const bagTypeProducts = useMemo(() => {
-    if (!selectedBagType) return industryProducts
-    return industryProducts.filter((product) => product.bagType === selectedBagType)
-  }, [industryProducts, selectedBagType])
-
-  const previewProduct = useMemo(() => {
-    if (!selectedIndustry || !selectedBagType) return null
-    if (selectedProductSlug) {
-      return bagTypeProducts.find((product) => product.slug === selectedProductSlug) || bagTypeProducts[0] || null
+  const validateStep = (targetStep: Step): string | null => {
+    if (targetStep === 1 && !businessType) return 'Please choose your business type.'
+    if (targetStep === 2) {
+      if (bagTypes.length === 0) return 'Please select at least one bag type.'
+      if (sizeRows.length === 0) return 'Please select at least one bag size and case quantity.'
+      const invalid = sizeRows.find((row) => row.cases <= 0 || !row.size.trim())
+      if (invalid) return 'Please enter valid size details and case counts.'
     }
-    return bagTypeProducts[0] || null
-  }, [bagTypeProducts, selectedBagType, selectedIndustry, selectedProductSlug])
-
-  const quoteLines = useMemo(() => {
-    return lines
-      .map((line) => {
-        const product = products.find((item) => item.slug === line.slug)
-        if (!product) return null
-        return {
-          ...line,
-          product,
-          lineTotal: line.cases * product.startingPrice,
-        }
-      })
-      .filter((line): line is { slug: string; cases: number; product: (typeof products)[number]; lineTotal: number } => Boolean(line))
-  }, [lines, products])
-
-  const totalCases = quoteLines.reduce((sum, line) => sum + line.cases, 0)
-  const subtotal = quoteLines.reduce((sum, line) => sum + line.lineTotal, 0)
-  const shippingMessage =
-    totalCases >= 8
-      ? '8+ cases: Fuel Surcharge only applies based on UPS zone.'
-      : 'Under 8 cases: ships UPS Ground and freight is added to invoice.'
-
-  const shareState: ShareState = {
-    selectedIndustry,
-    selectedBagType,
-    selectedProductSlug,
-    lines,
-    customer,
+    if (targetStep === 3 && !printOption) return 'Please choose a print option.'
+    if (targetStep === 4 && !shippingType) return 'Please choose a shipping type.'
+    if (targetStep === 5) {
+      if (!name.trim()) return 'Full Name is required.'
+      if (!email.trim()) return 'Email Address is required.'
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) return 'Please enter a valid email address.'
+      if (isPrintDetailsRequired(printOption) && !artworkReady) return 'Please tell us if artwork is ready.'
+    }
+    return null
   }
 
-  const shareLink = useMemo(() => {
-    if (typeof window === 'undefined') return ''
-    const token = encodeShareState(shareState)
-    return `${window.location.origin}${window.location.pathname}?share=${token}`
-  }, [shareState])
+  const goNext = () => {
+    const err = validateStep(step)
+    if (err) {
+      setError(err)
+      return
+    }
+    setError('')
+    setStep((prev) => (prev === 5 ? 5 : ((prev + 1) as Step)))
+  }
 
-  const quoteBody = useMemo(() => {
-    if (quoteLines.length === 0) return ''
+  const goBack = () => {
+    setError('')
+    setStep((prev) => (prev === 1 ? 1 : ((prev - 1) as Step)))
+  }
 
-    const lineText = quoteLines.map((line) => {
-      return `${line.product.name} | SKU ${line.product.sku} | Cases: ${line.cases} | Price/Case: ${money(
-        line.product.startingPrice,
-      )} | Line Total: ${money(line.lineTotal)} | Lead Time: ${getLeadTimeShort(line.product.availability)}`
+  const toggleBagType = (type: BagType) => {
+    setBagTypes((prev) => {
+      if (prev.includes(type)) {
+        const next = prev.filter((item) => item !== type)
+        setSizesByType((current) => {
+          const clone = { ...current }
+          delete clone[type]
+          return clone
+        })
+        return next
+      }
+      return [...prev, type]
     })
+  }
 
-    return [
-      'Bag Supply Co Quote Request',
-      '',
-      `Quote ID: ${quoteId || 'Pending'}`,
-      `Generated: ${generatedAt || 'Pending'}`,
-      '',
-      `Name: ${customer.name || 'N/A'}`,
-      `Company: ${customer.company || 'N/A'}`,
-      `Email: ${customer.email || 'N/A'}`,
-      `Phone: ${customer.phone || 'N/A'}`,
-      '',
-      ...lineText,
-      '',
-      `Total Cases: ${totalCases}`,
-      `Subtotal (no shipping): ${money(subtotal)}`,
-      `Shipping: ${shippingMessage}`,
-      `Lead Time: ${LEAD_TIME_MESSAGE}`,
-      '',
-      'Note: This is an estimate and not a final invoice.',
-    ].join('\n')
-  }, [customer, generatedAt, quoteId, quoteLines, shippingMessage, subtotal, totalCases])
-
-  const mailtoHref =
-    quoteLines.length > 0
-      ? `mailto:info@bagco.com?subject=${encodeURIComponent('Bag Quote Request')}&body=${encodeURIComponent(quoteBody)}`
-      : '#'
-
-  const addLine = () => {
-    if (!previewProduct) return
-    const cases = Number.parseInt(casesInput, 10)
-    if (!Number.isFinite(cases) || cases <= 0) return
-
-    setLines((prev) => {
-      const existing = prev.find((line) => line.slug === previewProduct.slug)
-      if (existing) {
-        return prev.map((line) =>
-          line.slug === previewProduct.slug ? { ...line, cases: line.cases + cases } : line,
-        )
+  const toggleSize = (type: BagType, size: SizeOption) => {
+    setSizesByType((prev) => {
+      const forType = { ...(prev[type] || {}) }
+      if (forType[size]) {
+        delete forType[size]
+      } else {
+        forType[size] = { cases: '1', customSize: '' }
       }
-      return [...prev, { slug: previewProduct.slug, cases }]
+      return { ...prev, [type]: forType }
     })
-    setCasesInput('1')
   }
 
-  const updateLineCases = (slug: string, value: string) => {
-    const numeric = Number.parseInt(value, 10)
-    const safe = Number.isFinite(numeric) && numeric > 0 ? numeric : 1
-    setLines((prev) => prev.map((line) => (line.slug === slug ? { ...line, cases: safe } : line)))
+  const updateSizeCases = (type: BagType, size: SizeOption, value: string) => {
+    setSizesByType((prev) => ({
+      ...prev,
+      [type]: {
+        ...(prev[type] || {}),
+        [size]: {
+          ...(prev[type]?.[size] || { cases: '1', customSize: '' }),
+          cases: value,
+        },
+      },
+    }))
   }
 
-  const removeLine = (slug: string) => {
-    setLines((prev) => prev.filter((line) => line.slug !== slug))
+  const updateCustomSize = (type: BagType, value: string) => {
+    setSizesByType((prev) => ({
+      ...prev,
+      [type]: {
+        ...(prev[type] || {}),
+        'Custom Size': {
+          ...(prev[type]?.['Custom Size'] || { cases: '1', customSize: '' }),
+          customSize: value,
+        },
+      },
+    }))
   }
 
-  const copyShareLink = async () => {
-    if (!shareLink) return
+  const submit = async () => {
+    const err = validateStep(5)
+    if (err) {
+      setError(err)
+      return
+    }
+
+    if (submitting) return
+    setSubmitting(true)
+    setError('')
+
     try {
-      await navigator.clipboard.writeText(shareLink)
-      setCopied(true)
-      window.setTimeout(() => setCopied(false), 1800)
+      // WEBHOOK SETUP: Add your webhook URL to NEXT_PUBLIC_WEBHOOK_URL in .env
+      // Both the quote tool and contact form POST JSON to this URL automatically.
+      // Compatible with Zapier, Make (Integromat), n8n, or any custom HTTP endpoint.
+      const response = await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          form_type: 'quote',
+          payload,
+        }),
+      })
+
+      if (!response.ok) {
+        const json = await response.json().catch(() => null)
+        throw new Error(json?.error || 'Submission failed.')
+      }
+
+      setSubmitted(true)
     } catch {
-      setCopied(false)
+      setError('Something went wrong sending your request. Please try again or text us at (252) 516-1944.')
+    } finally {
+      setSubmitting(false)
     }
+  }
+
+  if (submitted) {
+    return (
+      <div className="section-container py-14">
+        <div className="mx-auto max-w-2xl tonal-panel text-center">
+          <p className="text-5xl">✅</p>
+          <h1 className="mt-4 text-4xl font-black text-[#1E4D2B]">Your quote request is on its way!</h1>
+          <p className="mt-4 text-base text-[#5F4D33]">
+            We'll review your details and follow up with pricing and lead times. You can also text us directly at
+            {' '}
+            (252) 516-1944 for a faster response.
+          </p>
+          <Link href="/" className="btn-primary mt-8">
+            Back to Home
+          </Link>
+        </div>
+      </div>
+    )
   }
 
   return (
     <div className="pb-16">
-      <section className="quote-hero relative overflow-hidden border-b border-amber-200 bg-[linear-gradient(120deg,#fffdf8_0%,#f5e8d3_55%,#e8d6ba_100%)]">
-        <div className="section-container py-14 md:py-20">
-          <p className="kicker">Estimate Tool</p>
-          <h1 className="heading-serif mt-5 text-4xl font-black text-[#1E4D2B] md:text-6xl">Generic Bag Quote Builder</h1>
-          <p className="mt-4 max-w-3xl text-lg text-[#5F4D33]">
-            Select industry and bag type, preview the product, then add case quantities to build a structured quote.
+      <section className="page-hero">
+        <div className="page-hero-inner">
+          <p className="kicker">Quote Tool</p>
+          <h1 className="heading-display mt-5 text-4xl md:text-6xl">Build Your Custom Bag Quote</h1>
+          <p className="mt-5 max-w-3xl text-lg muted-text">
+            Takes about 2 minutes. We'll respond with a structured program recommendation.
           </p>
-          <p className="mt-3 text-sm font-semibold text-[#5F4D33]">{LEAD_TIME_MESSAGE}</p>
-          <div className="mt-6 flex flex-wrap gap-3 print-hide">
-            <button type="button" className="btn-secondary" onClick={() => window.print()}>
-              Save as PDF
-            </button>
-            <a href={mailtoHref} className={`btn-primary ${quoteLines.length === 0 ? 'pointer-events-none opacity-50' : ''}`}>
-              Save & Share Quote (Email)
-            </a>
-            <button type="button" className="btn-secondary" onClick={copyShareLink}>
-              {copied ? 'Share Link Copied' : 'Save & Share Quote (Link)'}
-            </button>
+        </div>
+      </section>
+
+      <section className="section-container py-8">
+        <div className="rounded-2xl border border-[#C4935A66] bg-white p-4">
+          <div className="flex items-center justify-between">
+            <p className="text-sm font-black uppercase tracking-[0.08em] text-[#5F4D33]">Step {step} of 5</p>
+            <p className="text-sm font-semibold text-[#7A6548]">{Math.round((step / 5) * 100)}%</p>
+          </div>
+          <div className="mt-3 h-2 rounded-full bg-[#F0E4D3]">
+            <div
+              className="h-2 rounded-full bg-[#1E4D2B] transition-all duration-300"
+              style={{ width: `${(step / 5) * 100}%` }}
+            />
           </div>
         </div>
       </section>
 
-      <section className="section-container py-10">
-        <div className="tonal-panel">
-          <h2 className="text-2xl font-black text-[#1E4D2B]">Quote Builder</h2>
-          <div className="mt-5 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
-              Industry
-              <select
-                value={selectedIndustry}
-                onChange={(event) => {
-                  const nextIndustry = parseIndustryValue(event.target.value)
-                  setSelectedIndustry(nextIndustry)
-                  setSelectedBagType('')
-                  setSelectedProductSlug('')
-                }}
-                className="rounded-xl border border-[#C4935A66] bg-white px-3 py-2"
-              >
-                <option value="">Select industry</option>
-                {INDUSTRY_ORDER.map((industry) => (
-                  <option key={industry} value={industry}>
-                    {INDUSTRY_LABELS[industry]}
-                  </option>
-                ))}
-              </select>
-            </label>
-
-            <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
-              Bag Type
-              <select
-                value={selectedBagType}
-                onChange={(event) => {
-                  setSelectedBagType(event.target.value)
-                  setSelectedProductSlug('')
-                }}
-                className="rounded-xl border border-[#C4935A66] bg-white px-3 py-2"
-                disabled={!selectedIndustry}
-              >
-                <option value="">Select bag type</option>
-                {bagTypeOptions.map((bagType) => (
-                  <option key={bagType} value={bagType}>
-                    {bagType}
-                  </option>
-                ))}
-              </select>
-            </label>
-
-            <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
-              Product
-              <select
-                value={selectedProductSlug}
-                onChange={(event) => setSelectedProductSlug(event.target.value)}
-                className="rounded-xl border border-[#C4935A66] bg-white px-3 py-2"
-                disabled={!selectedBagType}
-              >
-                <option value="">Select product</option>
-                {bagTypeProducts.map((product) => (
-                  <option key={product.slug} value={product.slug}>
-                    {product.name} ({product.sku})
-                  </option>
-                ))}
-              </select>
-            </label>
-
-            <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
-              Cases
-              <div className="flex gap-2">
-                <input
-                  type="number"
-                  min={1}
-                  value={casesInput}
-                  onChange={(event) => setCasesInput(event.target.value)}
-                  className="w-full rounded-xl border border-[#C4935A66] bg-white px-3 py-2"
-                />
-                <button type="button" className="btn-primary whitespace-nowrap" onClick={addLine} disabled={!previewProduct}>
-                  Add
-                </button>
-              </div>
-            </label>
-          </div>
-
-          {previewProduct && (
-            <div className="mt-6 grid gap-4 lg:grid-cols-[0.42fr_0.58fr]">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-[#C4935A66] bg-[#FAF6F0]">
-                <Image src={previewProduct.image} alt={previewProduct.name} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 40vw" />
-              </div>
-              <div className="surface-card rounded-2xl p-4">
-                <h3 className="text-xl font-black text-[#1E4D2B]">{previewProduct.name}</h3>
-                <p className="mt-1 text-xs font-black uppercase tracking-[0.09em] text-[#7A6548]">SKU {previewProduct.sku}</p>
-                <p className="mt-3 text-sm text-[#5F4D33]">
-                  <span className="font-semibold text-[#1E4D2B]">Sizes:</span> {previewProduct.sizeOptions.join(', ')}
-                </p>
-                <p className="mt-1 text-sm text-[#5F4D33]">
-                  <span className="font-semibold text-[#1E4D2B]">Case Count:</span> {previewProduct.caseCount}
-                </p>
-                <p className="mt-1 text-sm text-[#5F4D33]">
-                  <span className="font-semibold text-[#1E4D2B]">From:</span> {money(previewProduct.startingPrice)}/case
-                </p>
-                <p className="mt-3 text-sm font-semibold text-[#5F4D33]">Lead time: {getLeadTimeShort(previewProduct.availability)}</p>
-              </div>
+      <section className="section-container pb-4 lg:hidden">
+        <div className="rounded-2xl border border-[#C4935A66] bg-white p-4">
+          <button
+            type="button"
+            onClick={() => setIsSummaryOpen((prev) => !prev)}
+            className="flex w-full items-center justify-between text-left"
+          >
+            <span className="text-sm font-black uppercase tracking-[0.08em] text-[#1E4D2B]">Summary</span>
+            <span className="text-xs font-semibold text-[#7A6548]">{isSummaryOpen ? 'Hide' : 'Show'}</span>
+          </button>
+          {isSummaryOpen && (
+            <div className="mt-3 space-y-3 text-sm text-[#5F4D33]">
+              <p><span className="font-semibold text-[#1E4D2B]">Business:</span> {businessType || 'Not selected'}</p>
+              <p><span className="font-semibold text-[#1E4D2B]">Bag Types:</span> {bagTypes.length ? bagTypes.join(', ') : 'None yet'}</p>
+              <p><span className="font-semibold text-[#1E4D2B]">Print:</span> {printOption || 'Not selected'}</p>
+              <p><span className="font-semibold text-[#1E4D2B]">Shipping:</span> {shippingType || 'Not selected'}</p>
             </div>
           )}
         </div>
       </section>
 
       <section className="section-container pb-8">
-        <div className="tonal-panel">
-          <h2 className="text-2xl font-black text-[#1E4D2B]">Quote Lines</h2>
-          {quoteLines.length === 0 ? (
-            <p className="mt-3 text-sm text-[#5F4D33]">No lines added yet.</p>
-          ) : (
-            <div className="mt-5 overflow-x-auto">
-              <table className="min-w-full border-separate border-spacing-y-2">
-                <thead>
-                  <tr className="text-left text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">
-                    <th className="px-2 py-1">Product</th>
-                    <th className="px-2 py-1">Price/Case</th>
-                    <th className="px-2 py-1">Cases</th>
-                    <th className="px-2 py-1">Line Total</th>
-                    <th className="px-2 py-1">Lead Time</th>
-                    <th className="px-2 py-1">Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {quoteLines.map((line) => (
-                    <tr key={line.slug} className="surface-card text-sm text-[#5F4D33]">
-                      <td className="rounded-l-xl px-2 py-2">
-                        <p className="font-semibold text-[#1E4D2B]">{line.product.name}</p>
-                        <p className="text-xs text-[#7A6548]">SKU {line.product.sku}</p>
-                      </td>
-                      <td className="px-2 py-2">{money(line.product.startingPrice)}</td>
-                      <td className="px-2 py-2">
-                        <input
-                          type="number"
-                          min={1}
-                          value={line.cases}
-                          onChange={(event) => updateLineCases(line.slug, event.target.value)}
-                          className="w-24 rounded-lg border border-[#C4935A66] px-2 py-1"
-                        />
-                      </td>
-                      <td className="px-2 py-2 font-semibold text-[#1E4D2B]">{money(line.lineTotal)}</td>
-                      <td className="px-2 py-2">
-                        {getLeadTimeShort(line.product.availability)}
-                      </td>
-                      <td className="rounded-r-xl px-2 py-2">
-                        <button type="button" className="rounded-lg border border-[#C4935A66] px-2 py-1 text-xs font-semibold" onClick={() => removeLine(line.slug)}>
-                          Remove
-                        </button>
-                      </td>
-                    </tr>
+        <div className="grid gap-6 lg:grid-cols-[1fr_320px]">
+          <div className="tonal-panel transition-all duration-300">
+            {step === 1 && (
+              <div className="reveal-up">
+                <h2 className="text-2xl font-black text-[#1E4D2B]">
+                  Let&apos;s build your quote. First, what type of business are you?
+                </h2>
+                <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                  {BUSINESS_TYPES.map((item) => (
+                    <button
+                      key={item.label}
+                      type="button"
+                      onClick={() => setBusinessType(item.label)}
+                      className={`rounded-2xl border px-4 py-4 text-left ${
+                        businessType === item.label
+                          ? 'border-[#1E4D2B] bg-[#1E4D2B] text-white'
+                          : 'border-[#C4935A66] bg-white text-[#1E4D2B] hover:bg-[#FAF6F0]'
+                      }`}
+                    >
+                      <p className="text-2xl">{item.icon}</p>
+                      <p className="mt-2 text-sm font-black">{item.label}</p>
+                    </button>
                   ))}
-                </tbody>
-              </table>
-            </div>
-          )}
+                </div>
+              </div>
+            )}
 
-          <div className="mt-6 grid gap-3 md:grid-cols-3">
-            <div className="surface-card rounded-2xl p-4">
-              <p className="text-xs font-black uppercase tracking-[0.09em] text-[#7A6548]">Total Cases</p>
-              <p className="mt-2 text-2xl font-black text-[#1E4D2B]">{totalCases}</p>
-            </div>
-            <div className="surface-card rounded-2xl p-4">
-              <p className="text-xs font-black uppercase tracking-[0.09em] text-[#7A6548]">Subtotal</p>
-              <p className="mt-2 text-2xl font-black text-[#1E4D2B]">{money(subtotal)}</p>
-            </div>
-            <div className="surface-card rounded-2xl p-4">
-              <p className="text-xs font-black uppercase tracking-[0.09em] text-[#7A6548]">Shipping Rule</p>
-              <p className="mt-2 text-sm font-semibold text-[#5F4D33]">{shippingMessage}</p>
+            {step === 2 && (
+              <div className="reveal-up">
+                <h2 className="text-2xl font-black text-[#1E4D2B]">What type of bags do you need?</h2>
+                <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                  {BAG_TYPES.map((item) => {
+                    const active = bagTypes.includes(item.label)
+                    return (
+                      <button
+                        key={item.label}
+                        type="button"
+                        onClick={() => toggleBagType(item.label)}
+                        className={`rounded-2xl border px-4 py-4 text-left ${
+                          active
+                            ? 'border-[#1E4D2B] bg-[#1E4D2B] text-white'
+                            : 'border-[#C4935A66] bg-white text-[#1E4D2B] hover:bg-[#FAF6F0]'
+                        }`}
+                      >
+                        <p className="text-2xl">{item.icon}</p>
+                        <p className="mt-2 text-sm font-black">{item.label}</p>
+                      </button>
+                    )
+                  })}
+                </div>
+
+                {bagTypes.length > 0 && (
+                  <div className="mt-8 space-y-6">
+                    {bagTypes.map((type) => (
+                      <div key={type} className="rounded-2xl border border-[#C4935A66] bg-white p-4">
+                        <h3 className="text-lg font-black text-[#1E4D2B]">{type}</h3>
+                        <p className="mt-1 text-sm text-[#5F4D33]">Select one or more sizes.</p>
+
+                        <div className="mt-4 grid gap-2 sm:grid-cols-2">
+                          {SIZE_OPTIONS.map((size) => {
+                            const selected = Boolean(sizesByType[type]?.[size])
+                            return (
+                              <button
+                                key={`${type}-${size}`}
+                                type="button"
+                                onClick={() => toggleSize(type, size)}
+                                className={`rounded-xl border px-3 py-2 text-left text-sm font-semibold ${
+                                  selected
+                                    ? 'border-[#1E4D2B] bg-[#1E4D2B] text-white'
+                                    : 'border-[#C4935A66] bg-white text-[#1E4D2B] hover:bg-[#FAF6F0]'
+                                }`}
+                              >
+                                {size}
+                              </button>
+                            )
+                          })}
+                        </div>
+
+                        {Object.entries(sizesByType[type] || {}).length > 0 && (
+                          <div className="mt-4 space-y-3">
+                            {Object.entries(sizesByType[type] || {}).map(([size, state]) => (
+                              <div key={`${type}-${size}`} className="rounded-xl border border-[#C4935A66] p-3">
+                                <p className="text-sm font-bold text-[#1E4D2B]">{size}</p>
+                                {size === 'Custom Size' && (
+                                  <input
+                                    type="text"
+                                    placeholder="Width x Depth x Height in inches"
+                                    value={state.customSize}
+                                    onChange={(event) => updateCustomSize(type, event.target.value)}
+                                    className="mt-2 w-full rounded-lg border border-[#C4935A66] px-3 py-2 text-sm"
+                                  />
+                                )}
+                                <label className="mt-2 block text-xs font-semibold uppercase tracking-[0.08em] text-[#7A6548]">
+                                  How many cases of this size?
+                                </label>
+                                <input
+                                  type="number"
+                                  min={1}
+                                  value={state.cases}
+                                  onChange={(event) => updateSizeCases(type, size as SizeOption, event.target.value)}
+                                  className="mt-1 w-full rounded-lg border border-[#C4935A66] px-3 py-2 text-sm"
+                                />
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {step === 3 && (
+              <div className="reveal-up">
+                <h2 className="text-2xl font-black text-[#1E4D2B]">Do you need custom printing?</h2>
+                <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                  {PRINT_OPTIONS.map((item) => (
+                    <button
+                      key={item.label}
+                      type="button"
+                      onClick={() => setPrintOption(item.label)}
+                      className={`rounded-2xl border px-4 py-4 text-left ${
+                        printOption === item.label
+                          ? 'border-[#1E4D2B] bg-[#1E4D2B] text-white'
+                          : 'border-[#C4935A66] bg-white text-[#1E4D2B] hover:bg-[#FAF6F0]'
+                      }`}
+                    >
+                      <p className="text-2xl">{item.icon}</p>
+                      <p className="mt-2 text-sm font-black">{item.label}</p>
+                    </button>
+                  ))}
+                </div>
+
+                {isPrintDetailsRequired(printOption) && (
+                  <div className="mt-6 space-y-4 rounded-2xl border border-[#C4935A66] bg-white p-4">
+                    <div>
+                      <p className="text-sm font-black text-[#1E4D2B]">Do you have artwork ready?</p>
+                      <div className="mt-2 flex flex-wrap gap-2">
+                        {(['Yes', 'No', 'Need help with design'] as ArtworkReady[]).map((option) => (
+                          <button
+                            key={option}
+                            type="button"
+                            onClick={() => setArtworkReady(option)}
+                            className={`rounded-full border px-3 py-1.5 text-sm font-semibold ${
+                              artworkReady === option
+                                ? 'border-[#1E4D2B] bg-[#1E4D2B] text-white'
+                                : 'border-[#C4935A66] bg-white text-[#1E4D2B]'
+                            }`}
+                          >
+                            {option}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    <label className="block text-sm font-black text-[#1E4D2B]">
+                      What color(s) do you want?
+                      <input
+                        type="text"
+                        value={printColors}
+                        onChange={(event) => setPrintColors(event.target.value)}
+                        className="mt-2 w-full rounded-lg border border-[#C4935A66] px-3 py-2 text-sm font-medium"
+                        placeholder="Example: Blue and white"
+                      />
+                    </label>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {step === 4 && (
+              <div className="reveal-up">
+                <h2 className="text-2xl font-black text-[#1E4D2B]">How should we ship your order?</h2>
+                <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                  {SHIPPING_OPTIONS.map((item) => (
+                    <button
+                      key={item.label}
+                      type="button"
+                      onClick={() => setShippingType(item.label)}
+                      className={`rounded-2xl border px-4 py-4 text-left ${
+                        shippingType === item.label
+                          ? 'border-[#1E4D2B] bg-[#1E4D2B] text-white'
+                          : 'border-[#C4935A66] bg-white text-[#1E4D2B] hover:bg-[#FAF6F0]'
+                      }`}
+                    >
+                      <p className="text-2xl">{item.icon}</p>
+                      <p className="mt-2 text-sm font-black">{item.label}</p>
+                    </button>
+                  ))}
+                </div>
+
+                {(shippingType === 'Drop Ship to My Customers (distributor)' ||
+                  shippingType === 'Blind Ship - No Bag Supply Co branding on package (distributor)') && (
+                  <div className="mt-6 rounded-2xl border border-[#1E4D2B66] bg-[#1E4D2B14] p-4 text-sm text-[#1E4D2B]">
+                    Great - we support distributor blind ship and drop ship programs. Include any notes about your
+                    customers or delivery requirements in the message field on the next step.
+                  </div>
+                )}
+              </div>
+            )}
+
+            {step === 5 && (
+              <div className="reveal-up">
+                <h2 className="text-2xl font-black text-[#1E4D2B]">Almost done - where should we send your quote?</h2>
+                <div className="mt-6 grid gap-4 md:grid-cols-2">
+                  <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
+                    Full Name *
+                    <input
+                      type="text"
+                      value={name}
+                      onChange={(event) => setName(event.target.value)}
+                      className="rounded-lg border border-[#C4935A66] px-3 py-2"
+                    />
+                  </label>
+                  <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
+                    Email Address *
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(event) => setEmail(event.target.value)}
+                      className="rounded-lg border border-[#C4935A66] px-3 py-2"
+                    />
+                  </label>
+                  <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
+                    Phone Number
+                    <input
+                      type="tel"
+                      value={phone}
+                      onChange={(event) => setPhone(event.target.value)}
+                      className="rounded-lg border border-[#C4935A66] px-3 py-2"
+                    />
+                  </label>
+                  <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
+                    Company Name
+                    <input
+                      type="text"
+                      value={company}
+                      onChange={(event) => setCompany(event.target.value)}
+                      className="rounded-lg border border-[#C4935A66] px-3 py-2"
+                    />
+                  </label>
+                  <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
+                    Best time to reach you
+                    <select
+                      value={bestTime}
+                      onChange={(event) => setBestTime(event.target.value as (typeof BEST_TIMES)[number])}
+                      className="rounded-lg border border-[#C4935A66] px-3 py-2"
+                    >
+                      {BEST_TIMES.map((item) => (
+                        <option key={item} value={item}>
+                          {item}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                </div>
+                <label className="mt-4 grid gap-1 text-sm font-semibold text-[#5F4D33]">
+                  Additional notes
+                  <textarea
+                    rows={5}
+                    value={notes}
+                    onChange={(event) => setNotes(event.target.value)}
+                    placeholder="Anything else we should know about your order?"
+                    className="rounded-lg border border-[#C4935A66] px-3 py-2"
+                  />
+                </label>
+              </div>
+            )}
+
+            {error && <p className="mt-5 text-sm font-semibold text-[#C0392B]">{error}</p>}
+
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              {step > 1 && (
+                <button type="button" onClick={goBack} className="btn-secondary">
+                  Back
+                </button>
+              )}
+
+              {step < 5 ? (
+                <button type="button" onClick={goNext} className="btn-primary">
+                  Continue
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  onClick={submit}
+                  disabled={submitting}
+                  className="btn-primary w-full justify-center disabled:pointer-events-none disabled:opacity-70"
+                >
+                  {submitting ? (
+                    <span className="inline-flex items-center gap-2">
+                      <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
+                      Sending...
+                    </span>
+                  ) : (
+                    'Send My Quote Request'
+                  )}
+                </button>
+              )}
             </div>
           </div>
 
-          <div className="mt-6 grid gap-4 md:grid-cols-2">
-            <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
-              Customer Name
-              <input
-                type="text"
-                value={customer.name}
-                onChange={(event) => setCustomer((prev) => ({ ...prev, name: event.target.value }))}
-                className="rounded-lg border border-[#C4935A66] px-3 py-2"
-              />
-            </label>
-            <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
-              Company
-              <input
-                type="text"
-                value={customer.company}
-                onChange={(event) => setCustomer((prev) => ({ ...prev, company: event.target.value }))}
-                className="rounded-lg border border-[#C4935A66] px-3 py-2"
-              />
-            </label>
-            <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
-              Email
-              <input
-                type="email"
-                value={customer.email}
-                onChange={(event) => setCustomer((prev) => ({ ...prev, email: event.target.value }))}
-                className="rounded-lg border border-[#C4935A66] px-3 py-2"
-              />
-            </label>
-            <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
-              Phone
-              <input
-                type="tel"
-                value={customer.phone}
-                onChange={(event) => setCustomer((prev) => ({ ...prev, phone: event.target.value }))}
-                className="rounded-lg border border-[#C4935A66] px-3 py-2"
-              />
-            </label>
-          </div>
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 rounded-2xl border border-[#C4935A66] bg-white p-4">
+              <h3 className="text-sm font-black uppercase tracking-[0.08em] text-[#1E4D2B]">Live Summary</h3>
+              <div className="mt-3 space-y-3 text-sm text-[#5F4D33]">
+                <p><span className="font-semibold text-[#1E4D2B]">Business:</span> {businessType || 'Not selected'}</p>
+                <p><span className="font-semibold text-[#1E4D2B]">Bag Types:</span> {bagTypes.length ? bagTypes.join(', ') : 'None yet'}</p>
+                <div>
+                  <p className="font-semibold text-[#1E4D2B]">Sizes:</p>
+                  {sizeRows.length === 0 ? (
+                    <p className="text-[#7A6548]">None yet</p>
+                  ) : (
+                    <ul className="mt-1 space-y-1">
+                      {sizeRows.map((row, idx) => (
+                        <li key={`${row.type}-${row.size}-${idx}`}>{row.type}: {row.size} ({row.cases} case{row.cases === 1 ? '' : 's'})</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+                <p><span className="font-semibold text-[#1E4D2B]">Print:</span> {printOption || 'Not selected'}</p>
+                <p><span className="font-semibold text-[#1E4D2B]">Shipping:</span> {shippingType || 'Not selected'}</p>
+                <p><span className="font-semibold text-[#1E4D2B]">Contact:</span> {name || 'N/A'} {email ? `(${email})` : ''}</p>
+              </div>
+            </div>
+          </aside>
         </div>
       </section>
     </div>
   )
 }
-

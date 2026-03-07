@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -10,13 +10,13 @@ export const metadata: Metadata = {
 const rules = [
   'Orders under 8 cases ship UPS Ground and freight is added to invoice.',
   'Orders at 8+ cases use Fuel Surcharge (FSC) only based on zone group.',
-  'Large LTL orders use pallet-based FSC and are confirmed after review.',
+  'Large LTL orders use pallet-based Fuel Surcharge (FSC) and are confirmed after review.',
 ]
 
 const zones = [
-  { label: 'UPS Zones 2-3', value: '5.0% FSC' },
-  { label: 'UPS Zones 4-6', value: '7.5% FSC' },
-  { label: 'UPS Zones 7-8', value: '10.0% FSC' },
+  { label: 'UPS Zones 2-3', value: '5.0% Fuel Surcharge (FSC)' },
+  { label: 'UPS Zones 4-6', value: '7.5% Fuel Surcharge (FSC)' },
+  { label: 'UPS Zones 7-8', value: '10.0% Fuel Surcharge (FSC)' },
 ]
 
 export default function ShippingPage() {
@@ -27,7 +27,8 @@ export default function ShippingPage() {
           <p className="kicker">Shipping Policy</p>
           <h1 className="heading-display mt-5 text-4xl md:text-6xl">Freight and FSC Rules</h1>
           <p className="mt-5 max-w-3xl text-lg muted-text">
-            Shipping is calculated by case volume and destination zone. Use these rules when planning quote totals.
+            Shipping is calculated by case volume and destination zone. FSC here means Fuel Surcharge. Use these rules
+            when planning quote totals.
           </p>
         </div>
       </section>
@@ -52,7 +53,7 @@ export default function ShippingPage() {
             ))}
           </div>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/generic-bag-quote" className="btn-primary">Build Quote</Link>
+            <Link href="/generic-bag-quote" className="btn-primary">Build a Quote</Link>
             <Link href="/contact" className="btn-secondary">Contact Team</Link>
           </div>
         </div>
@@ -60,5 +61,6 @@ export default function ShippingPage() {
     </div>
   )
 }
+
 
 

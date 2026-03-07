@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import { contactTextHref } from '@/components/siteConfig'
 
@@ -26,7 +26,7 @@ export default function ProgramsPage() {
             We combine catalog clarity, production planning, and recurring support so day-to-day packaging stays consistent.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
-            <Link href="/generic-bag-quote" className="btn-primary">Build Quote</Link>
+            <Link href="/generic-bag-quote" className="btn-primary">Build a Quote</Link>
             <a href={contactTextHref} className="btn-quiet">Text Our Team</a>
           </div>
         </div>
@@ -50,5 +50,6 @@ export default function ProgramsPage() {
     </div>
   )
 }
+
 
 

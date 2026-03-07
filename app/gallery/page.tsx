@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
@@ -79,7 +79,7 @@ export default function GalleryPage() {
           <p className="mt-3 muted-text">Share your use case and we'll route you to the right catalog and quote path.</p>
           <div className="mt-5 flex flex-wrap gap-3">
             <Link href="/catalog" className="btn-secondary">Browse Catalogs</Link>
-            <Link href="/generic-bag-quote" className="btn-primary">Build Quote</Link>
+            <Link href="/generic-bag-quote" className="btn-primary">Build a Quote</Link>
           </div>
         </div>
       </section>
@@ -106,5 +106,6 @@ export default function GalleryPage() {
     </div>
   )
 }
+
 
 

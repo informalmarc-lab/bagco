@@ -1,4 +1,4 @@
-import Link from 'next/link'
+﻿import Link from 'next/link'
 import NewsletterSignup from '@/components/NewsletterSignup'
 
 export type BlogPostSection = {
@@ -99,11 +99,12 @@ export default function BlogPostTemplate({
             Build a case-level estimate in minutes and send it directly to our team.
           </p>
           <Link href="/generic-bag-quote" className="btn-primary mt-5">
-            Build Your Quote ?
+            Build a Quote
           </Link>
         </div>
       </section>
     </div>
   )
 }
+
 

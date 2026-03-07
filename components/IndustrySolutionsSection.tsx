@@ -119,6 +119,32 @@ const INDUSTRIES: IndustryPanel[] = [
       { label: 'USA Catalog', href: '/catalog/usa' },
     ],
   },
+  {
+    id: 'distributors',
+    title: 'Distributors',
+    subtitle: 'Wholesale programs built for private-label relationships',
+    examples: 'Regional distributors, fulfillment partners, wholesale supply programs',
+    why: [
+      'Distributors need factory-direct pricing and fulfillment reliability for account retention.',
+      'Blind shipping keeps distributor relationships protected at the end-customer level.',
+      'Drop ship options help distributors expand without warehousing every SKU.',
+    ],
+    problems: [
+      'Supplier branding exposes the supply chain to end customers.',
+      'No drop ship support limits account flexibility and growth.',
+      'Inconsistent lead times damage trust with recurring wholesale clients.',
+    ],
+    benefits: [
+      'Blind ship protects customer relationships and brand ownership.',
+      'Drop ship expands reach without adding inventory overhead.',
+      'Reliable recurring supply keeps distributor accounts stable and predictable.',
+    ],
+    catalogs: [
+      { label: 'Distributor Programs', href: '/industries/distributors' },
+      { label: 'Custom 1/2/3 Color', href: '/catalog/custom' },
+      { label: 'Full Catalog', href: '/catalog' },
+    ],
+  },
 ]
 
 function Icon({ id }: { id: string }) {
@@ -145,6 +171,15 @@ function Icon({ id }: { id: string }) {
       <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8">
         <path d="M7 4v6M10 4v6M8.5 10v10" />
         <path d="M16 4c1.7 1.7 1.7 4.3 0 6v10" />
+      </svg>
+    )
+  }
+  if (id === 'distributors') {
+    return (
+      <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8">
+        <path d="M3 8l9-5 9 5-9 5-9-5z" />
+        <path d="M3 12l9 5 9-5" />
+        <path d="M3 16l9 5 9-5" />
       </svg>
     )
   }
@@ -260,7 +295,7 @@ export default function IndustrySolutionsSection() {
 
           <div className="mt-6">
             <Link href="/generic-bag-quote" className="btn-primary">
-              Request a Quote
+              Build a Quote
             </Link>
           </div>
         </div>

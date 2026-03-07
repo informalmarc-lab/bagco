@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { contactTextHref } from '@/components/siteConfig'
 
@@ -12,21 +12,33 @@ const industryLinks = [
   { href: '/industries/smoke-shops', label: 'Smoke Shops' },
   { href: '/industries/retail-stores', label: 'Retail Stores' },
   { href: '/industries/food-beverage', label: 'Food & Beverage' },
+  { href: '/industries/distributors', label: 'Distributors' },
 ]
 
 const navLinks = [
   { href: '/catalog', label: 'Catalogs' },
   { href: '/blog', label: 'Blog' },
-  { href: '/generic-bag-quote', label: 'Quote Tool' },
+  { href: '/generic-bag-quote', label: 'Build a Quote' },
   { href: '/contact', label: 'Contact' },
 ]
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const [search, setSearch] = useState('')
+  const [showMobileSearch, setShowMobileSearch] = useState(false)
   const pathname = usePathname()
+  const router = useRouter()
   const isActive = (href: string) => {
     if (href === '/') return pathname === '/'
     return pathname === href || pathname.startsWith(`${href}/`)
+  }
+
+  const submitSearch = () => {
+    const term = search.trim()
+    if (!term) return
+    router.push(`/catalog?search=${encodeURIComponent(term)}`)
+    setIsOpen(false)
+    setShowMobileSearch(false)
   }
 
   return (
@@ -80,6 +92,23 @@ export default function Navbar() {
             ))}
           </div>
 
+          <div className="hidden w-full max-w-[280px] items-center gap-2 lg:flex">
+            <input
+              type="search"
+              value={search}
+              onChange={(event) => setSearch(event.target.value)}
+              onKeyDown={(event) => {
+                if (event.key === 'Enter') submitSearch()
+              }}
+              placeholder="Search bags, sizes, industries..."
+              className="w-full rounded-xl border border-[#C4935A66] bg-white px-3 py-2 text-sm text-[#1E4D2B]"
+              aria-label="Search bags, sizes, industries"
+            />
+            <button type="button" onClick={submitSearch} className="btn-secondary px-3 py-2">
+              Go
+            </button>
+          </div>
+
           <div className="hidden items-center gap-2 lg:flex">
             <a href={contactTextHref} className="inline-flex items-center justify-center rounded-xl border border-[#B5813A] bg-[#B5813A] px-5 py-2.5 text-sm font-bold text-white hover:bg-[#C4935A]">
               Text (252) 516-1944
@@ -102,6 +131,35 @@ export default function Navbar() {
             </svg>
           </button>
         </nav>
+
+        <div className="pb-2 lg:hidden">
+          <button
+            type="button"
+            onClick={() => setShowMobileSearch((prev) => !prev)}
+            className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-[#C4935A66] bg-white text-[#1E4D2B]"
+            aria-label="Toggle search"
+          >
+            🔎
+          </button>
+          {showMobileSearch && (
+            <div className="mt-2 flex items-center gap-2">
+              <input
+                type="search"
+                value={search}
+                onChange={(event) => setSearch(event.target.value)}
+                onKeyDown={(event) => {
+                  if (event.key === 'Enter') submitSearch()
+                }}
+                placeholder="Search bags, sizes, industries..."
+                className="w-full rounded-xl border border-[#C4935A66] bg-white px-3 py-2 text-sm text-[#1E4D2B]"
+                aria-label="Search bags, sizes, industries"
+              />
+              <button type="button" onClick={submitSearch} className="btn-secondary px-3 py-2">
+                Go
+              </button>
+            </div>
+          )}
+        </div>
 
         {isOpen && (
           <div id="mobile-menu" className="pb-4 lg:hidden">

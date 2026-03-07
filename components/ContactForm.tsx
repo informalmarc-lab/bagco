@@ -1,8 +1,22 @@
 'use client'
 
-import { FormEvent, useState } from 'react'
+import Link from 'next/link'
+import { useState } from 'react'
 
 type SubmitState = 'idle' | 'submitting' | 'success' | 'error'
+
+const INDUSTRY_OPTIONS = [
+  'Pharmacy',
+  'Dispensary',
+  'Veterinary',
+  'Retail',
+  'Food & Beverage',
+  'Smoke Shop',
+  'Distributor',
+  'Other',
+] as const
+
+const SHIPPING_OPTIONS = ['Standard', 'Drop Ship', 'Blind Ship', 'Not Sure'] as const
 
 const initialForm = {
   name: '',
@@ -11,6 +25,9 @@ const initialForm = {
   company: '',
   bagType: '',
   quantity: '',
+  industry: 'Pharmacy',
+  shippingPreference: 'Standard',
+  existingCustomer: 'No',
   message: '',
   website: '',
 }
@@ -20,19 +37,29 @@ export default function ContactForm() {
   const [status, setStatus] = useState<SubmitState>('idle')
   const [errorMessage, setErrorMessage] = useState('')
 
-  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
+  const submit = async () => {
+    if (status === 'submitting') return
+    if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
+      setStatus('error')
+      setErrorMessage('Please complete Name, Email, and Message.')
+      return
+    }
+
     setStatus('submitting')
     setErrorMessage('')
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('/api/lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          ...form,
-          submissionType: 'Contact Form',
-          sourcePage: typeof window !== 'undefined' ? window.location.pathname : '/contact',
+          form_type: 'contact',
+          payload: {
+            ...form,
+            submissionType: 'Contact Form',
+            sourcePage: typeof window !== 'undefined' ? window.location.pathname : '/contact',
+            submitted_at: new Date().toISOString(),
+          },
         }),
       })
 
@@ -42,59 +69,105 @@ export default function ContactForm() {
       }
 
       setStatus('success')
-      setForm(initialForm)
-    } catch (error) {
+    } catch {
       setStatus('error')
-      setErrorMessage(error instanceof Error ? error.message : 'Something went wrong.')
+      setErrorMessage(
+        'Something went wrong sending your request. Please try again or text us at (252) 516-1944.',
+      )
     }
+  }
+
+  if (status === 'success') {
+    return (
+      <section className="tonal-panel text-center">
+        <p className="text-5xl">✅</p>
+        <h2 className="mt-4 text-3xl font-black text-[#1E4D2B]">Your quote request is on its way!</h2>
+        <p className="mt-3 text-sm text-[#5F4D33]">
+          We&apos;ll review your details and follow up with pricing and lead times. You can also text us directly at
+          {' '}
+          (252) 516-1944 for a faster response.
+        </p>
+        <Link href="/" className="btn-primary mt-6">
+          Back to Home
+        </Link>
+      </section>
+    )
   }
 
   return (
     <section className="tonal-panel">
-      <h2 className="text-2xl font-black text-[#1E4D2B]">Contact Us Form</h2>
+      <h2 className="text-2xl font-black text-[#1E4D2B]">Contact Us</h2>
       <p className="mt-2 text-sm text-[#5F4D33]">
-        Send your request here and our team will follow up with pricing and lead times.
+        Tell us your requirements and we&apos;ll respond with a structured recommendation.
       </p>
 
-      <form className="mt-5 grid gap-4" onSubmit={onSubmit}>
+      <div className="mt-5 grid gap-4">
         <div className="grid gap-4 md:grid-cols-2">
           <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
-            Name *
+            Full Name *
             <input
               required
               type="text"
               value={form.name}
-              onChange={(e) => setForm((prev) => ({ ...prev, name: e.target.value }))}
+              onChange={(event) => setForm((prev) => ({ ...prev, name: event.target.value }))}
               className="rounded-md border border-[#C4935A66] px-3 py-2"
             />
           </label>
           <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
-            Email *
+            Email Address *
             <input
               required
               type="email"
               value={form.email}
-              onChange={(e) => setForm((prev) => ({ ...prev, email: e.target.value }))}
+              onChange={(event) => setForm((prev) => ({ ...prev, email: event.target.value }))}
               className="rounded-md border border-[#C4935A66] px-3 py-2"
             />
           </label>
           <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
-            Phone
+            Phone Number
             <input
               type="tel"
               value={form.phone}
-              onChange={(e) => setForm((prev) => ({ ...prev, phone: e.target.value }))}
+              onChange={(event) => setForm((prev) => ({ ...prev, phone: event.target.value }))}
               className="rounded-md border border-[#C4935A66] px-3 py-2"
             />
           </label>
           <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
-            Company
+            Company Name
             <input
               type="text"
               value={form.company}
-              onChange={(e) => setForm((prev) => ({ ...prev, company: e.target.value }))}
+              onChange={(event) => setForm((prev) => ({ ...prev, company: event.target.value }))}
               className="rounded-md border border-[#C4935A66] px-3 py-2"
             />
+          </label>
+          <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
+            Industry
+            <select
+              value={form.industry}
+              onChange={(event) => setForm((prev) => ({ ...prev, industry: event.target.value }))}
+              className="rounded-md border border-[#C4935A66] px-3 py-2"
+            >
+              {INDUSTRY_OPTIONS.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
+            Shipping Preference
+            <select
+              value={form.shippingPreference}
+              onChange={(event) => setForm((prev) => ({ ...prev, shippingPreference: event.target.value }))}
+              className="rounded-md border border-[#C4935A66] px-3 py-2"
+            >
+              {SHIPPING_OPTIONS.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
           </label>
           <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
             Bag Type
@@ -102,7 +175,7 @@ export default function ContactForm() {
               type="text"
               placeholder="Pharmacy, Veterinary, Custom, etc."
               value={form.bagType}
-              onChange={(e) => setForm((prev) => ({ ...prev, bagType: e.target.value }))}
+              onChange={(event) => setForm((prev) => ({ ...prev, bagType: event.target.value }))}
               className="rounded-md border border-[#C4935A66] px-3 py-2"
             />
           </label>
@@ -111,11 +184,31 @@ export default function ContactForm() {
             <input
               type="text"
               value={form.quantity}
-              onChange={(e) => setForm((prev) => ({ ...prev, quantity: e.target.value }))}
+              onChange={(event) => setForm((prev) => ({ ...prev, quantity: event.target.value }))}
               className="rounded-md border border-[#C4935A66] px-3 py-2"
             />
           </label>
         </div>
+
+        <fieldset className="grid gap-2 text-sm font-semibold text-[#5F4D33]">
+          <legend className="text-sm font-semibold text-[#5F4D33]">Existing customer?</legend>
+          <div className="flex flex-wrap gap-4">
+            {['Yes', 'No'].map((option) => (
+              <label key={option} className="inline-flex items-center gap-2">
+                <input
+                  type="radio"
+                  name="existingCustomer"
+                  value={option}
+                  checked={form.existingCustomer === option}
+                  onChange={(event) =>
+                    setForm((prev) => ({ ...prev, existingCustomer: event.target.value }))
+                  }
+                />
+                {option}
+              </label>
+            ))}
+          </div>
+        </fieldset>
 
         <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
           Message *
@@ -123,7 +216,7 @@ export default function ContactForm() {
             required
             rows={5}
             value={form.message}
-            onChange={(e) => setForm((prev) => ({ ...prev, message: e.target.value }))}
+            onChange={(event) => setForm((prev) => ({ ...prev, message: event.target.value }))}
             className="rounded-md border border-[#C4935A66] px-3 py-2"
           />
         </label>
@@ -133,28 +226,33 @@ export default function ContactForm() {
           tabIndex={-1}
           autoComplete="off"
           value={form.website}
-          onChange={(e) => setForm((prev) => ({ ...prev, website: e.target.value }))}
+          onChange={(event) => setForm((prev) => ({ ...prev, website: event.target.value }))}
           className="hidden"
           aria-hidden="true"
         />
 
-        <div className="flex flex-wrap items-center gap-3">
-          <button
-            type="submit"
-            disabled={status === 'submitting'}
-            className="btn-primary disabled:cursor-not-allowed disabled:opacity-60"
-          >
-            {status === 'submitting' ? 'Sending...' : 'Send Request'}
-          </button>
-          {status === 'success' && (
-            <p className="text-sm font-semibold text-emerald-700">Thanks. Your message was sent.</p>
+        <button
+          type="button"
+          onClick={submit}
+          disabled={status === 'submitting'}
+          className="btn-primary w-full justify-center disabled:pointer-events-none disabled:opacity-70"
+        >
+          {status === 'submitting' ? (
+            <span className="inline-flex items-center gap-2">
+              <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
+              Sending...
+            </span>
+          ) : (
+            'Send My Quote Request'
           )}
-          {status === 'error' && (
-            <p className="text-sm font-semibold text-red-700">{errorMessage || 'Could not send request.'}</p>
-          )}
-        </div>
-      </form>
+        </button>
+
+        {status === 'error' && (
+          <p className="text-sm font-semibold text-red-700">
+            {errorMessage}
+          </p>
+        )}
+      </div>
     </section>
   )
 }
-

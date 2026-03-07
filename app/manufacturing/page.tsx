@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -51,11 +51,12 @@ export default function ManufacturingPage() {
 
         <div className="mt-8 flex flex-wrap gap-3">
           <Link href="/catalog" className="btn-secondary">Browse Catalogs</Link>
-          <Link href="/generic-bag-quote" className="btn-primary">Build Quote</Link>
+          <Link href="/generic-bag-quote" className="btn-primary">Build a Quote</Link>
         </div>
       </section>
     </div>
   )
 }
+
 
 

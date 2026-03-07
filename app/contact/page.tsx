@@ -23,7 +23,7 @@ export default function ContactPage() {
           <p className="kicker">Contact</p>
           <h1 className="heading-display mt-5 text-4xl md:text-6xl">Talk to the Packaging Team</h1>
           <p className="mt-5 max-w-3xl text-lg muted-text">
-            Submit your request with bag type, volume target, and timeline. We'll return a structured recommendation.
+            Whether you're a retailer, pharmacy, distributor, or just getting started - tell us what you need and we'll build a program around it.
           </p>
         </div>
       </section>
@@ -59,7 +59,7 @@ export default function ContactPage() {
 
             <div className="mt-6 grid gap-2 sm:grid-cols-2">
               <a href={pricingMailto} className="btn-secondary justify-center">Email Team</a>
-              <Link href="/generic-bag-quote" className="btn-primary justify-center">Quote Tool</Link>
+              <Link href="/generic-bag-quote" className="btn-primary justify-center">Build a Quote</Link>
             </div>
           </aside>
         </div>

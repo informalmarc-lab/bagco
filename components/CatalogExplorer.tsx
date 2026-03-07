@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import Image from 'next/image'
 import Link from 'next/link'
@@ -39,6 +39,7 @@ function readFilters(searchParams: Pick<URLSearchParams, 'get'>): CatalogFilters
     availability: parseAvailability(searchParams.get('availability')),
     usaMadeOnly: searchParams.get('usaMade') === '1',
     seasonalOnly: searchParams.get('seasonal') === '1',
+    search: searchParams.get('search') || '',
   }
 }
 
@@ -69,6 +70,7 @@ export default function CatalogExplorer() {
     setParam('size', next.size, DEFAULT_CATALOG_FILTERS.size)
     setParam('color', next.color, DEFAULT_CATALOG_FILTERS.color)
     setParam('availability', next.availability, DEFAULT_CATALOG_FILTERS.availability)
+    setParam('search', next.search, DEFAULT_CATALOG_FILTERS.search)
 
     if (next.usaMadeOnly) params.set('usaMade', '1')
     else params.delete('usaMade')
@@ -126,6 +128,16 @@ export default function CatalogExplorer() {
       <section className="section-container pb-6">
         <div className="tonal-panel">
           <h2 className="text-2xl font-black text-[#1E4D2B]">Filter Products</h2>
+          <label className="mt-4 grid gap-1 text-sm font-semibold text-[#5F4D33]">
+            Search
+            <input
+              type="search"
+              value={filters.search}
+              onChange={(event) => updateFilters({ search: event.target.value })}
+              placeholder="Search by SKU, bag type, size, or industry..."
+              className="rounded-xl border border-[#C4935A66] bg-white px-3 py-2"
+            />
+          </label>
           <div className="mt-5 grid gap-3 md:grid-cols-5">
             <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
               Industry
@@ -287,7 +299,7 @@ export default function CatalogExplorer() {
                       </Link>
                     ) : (
                       <Link href={`/generic-bag-quote?sku=${encodeURIComponent(product.sku)}`} className="btn-primary">
-                        Add to Quote
+                        Build a Quote
                       </Link>
                     )}
                     <Link href={`/products/${product.slug}`} className="btn-secondary">
@@ -303,17 +315,18 @@ export default function CatalogExplorer() {
 
       <section className="section-container pt-4">
         <div className="tonal-panel">
-          <h2 className="section-title">Ready to order? Get a quote ?</h2>
+          <h2 className="section-title">Ready to order? Build a quote.</h2>
           <p className="mt-3 muted-text">
             Build your case-level estimate and submit in minutes.
           </p>
           <Link href="/generic-bag-quote" className="btn-primary mt-5">
-            Get a Quote {String.fromCharCode(8594)}
+            Build a Quote
           </Link>
         </div>
       </section>
     </div>
   )
 }
+
 
 

@@ -1,4 +1,4 @@
-import Image from 'next/image'
+﻿import Image from 'next/image'
 import Link from 'next/link'
 import {
   INDUSTRY_LABELS,
@@ -49,7 +49,7 @@ export default function IndustryLandingPage({
           </p>
           <div className="mt-5 flex flex-wrap gap-2 text-xs font-black uppercase tracking-[0.08em] text-[#5F4D33]">
             <span className="rounded-full bg-white px-3 py-1.5">Transparent Case Pricing</span>
-            <span className="rounded-full bg-white px-3 py-1.5">Instant Quote Tool</span>
+            <span className="rounded-full bg-white px-3 py-1.5">Build a Quote</span>
             <span className="rounded-full bg-white px-3 py-1.5">Generic Same Day (Before 1 PM ET)</span>
             <span className="rounded-full bg-white px-3 py-1.5">Custom 3-4 Weeks</span>
             <span className="rounded-full bg-white px-3 py-1.5">Net 30 Available</span>
@@ -60,7 +60,7 @@ export default function IndustryLandingPage({
               Browse {INDUSTRY_LABELS[industry]} Catalog
             </Link>
             <Link href="/generic-bag-quote" className="btn-primary">
-              Add to Quote
+              Build a Quote
             </Link>
             <a href={contactTextHref} className="btn-quiet">
               Text Our Team
@@ -143,7 +143,7 @@ export default function IndustryLandingPage({
               {bottomCatalogLabel}
             </Link>
             <Link href="/generic-bag-quote" className="btn-primary">
-              Get a Quote
+              Build a Quote
             </Link>
           </div>
         </div>
@@ -151,4 +151,5 @@ export default function IndustryLandingPage({
     </div>
   )
 }
+
 

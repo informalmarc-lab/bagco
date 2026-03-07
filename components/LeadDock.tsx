@@ -11,13 +11,16 @@ export default function LeadDock() {
             Text {contactPhone}
           </a>
           <Link href="/generic-bag-quote" className="lead-dock-btn lead-dock-btn-primary">
-            Build Quote
+            Build a Quote
           </Link>
         </div>
       </div>
-      <div className="mobile-text-order print-hide">
-        <a href={contactTextHref} className="mobile-text-order-link">
-          Text to Order: {contactPhone}
+      <div className="mobile-sticky-cta print-hide">
+        <Link href="/generic-bag-quote" className="mobile-sticky-cta-link mobile-sticky-cta-primary">
+          Build a Quote
+        </Link>
+        <a href={contactTextHref} className="mobile-sticky-cta-link mobile-sticky-cta-secondary">
+          Text Us
         </a>
       </div>
     </>

@@ -1,4 +1,4 @@
-import Link from 'next/link'
+﻿import Link from 'next/link'
 import { contactEmail, pricingMailto } from '@/components/siteConfig'
 
 type SeoLandingPageProps = {
@@ -42,7 +42,7 @@ export default function SeoLandingPage({ h1, intro, bullets, links }: SeoLanding
               {contactEmail}
             </a>
             <Link href="/generic-bag-quote" className="btn-secondary">
-              Use Quote Tool
+              Build a Quote
             </Link>
           </div>
         </div>
@@ -60,4 +60,5 @@ export default function SeoLandingPage({ h1, intro, bullets, links }: SeoLanding
     </div>
   )
 }
+
 

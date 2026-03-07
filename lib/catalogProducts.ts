@@ -25,6 +25,10 @@ export type CatalogProduct = {
   image: string
   description: string
   collections: CatalogCollection[]
+  sizePricing?: Array<{
+    label: string
+    price: number
+  }>
 }
 
 export type CatalogFilters = {
@@ -35,6 +39,7 @@ export type CatalogFilters = {
   availability: CatalogAvailability | 'all'
   usaMadeOnly: boolean
   seasonalOnly: boolean
+  search: string
 }
 
 export const INDUSTRY_LABELS: Record<CatalogIndustryKey, string> = {
@@ -54,9 +59,40 @@ export const DEFAULT_CATALOG_FILTERS: CatalogFilters = {
   availability: 'all',
   usaMadeOnly: false,
   seasonalOnly: false,
+  search: '',
 }
 
-const CATALOG_PRODUCTS = catalogProducts as CatalogProduct[]
+function sanitizeDescription(description: string): string {
+  return description
+    .replace(/Cardinal Bag representative/gi, 'Bag Supply Co representative')
+    .replace(/Cardinal Bag/gi, 'Bag Supply Co')
+    .replace(/1-800-526-9032/g, '(252) 516-1944')
+}
+
+function withGuaranteedSizePricing(product: CatalogProduct): CatalogProduct {
+  if (Array.isArray(product.sizePricing) && product.sizePricing.length > 0) {
+    return {
+      ...product,
+      description: sanitizeDescription(product.description),
+    }
+  }
+
+  const fallbackRows =
+    product.sizeOptions.length > 0
+      ? product.sizeOptions.map((size) => ({
+          label: `${size} ${product.caseCount}`.trim(),
+          price: product.startingPrice,
+        }))
+      : [{ label: `Standard Size ${product.caseCount}`.trim(), price: product.startingPrice }]
+
+  return {
+    ...product,
+    description: sanitizeDescription(product.description),
+    sizePricing: fallbackRows,
+  }
+}
+
+const CATALOG_PRODUCTS = (catalogProducts as CatalogProduct[]).map(withGuaranteedSizePricing)
 
 function uniqueSorted(values: string[]): string[] {
   return Array.from(new Set(values)).sort((a, b) => a.localeCompare(b))
@@ -94,6 +130,19 @@ export function applyCatalogFilters(
     if (filters.availability !== 'all' && product.availability !== filters.availability) return false
     if (filters.usaMadeOnly && !product.collections.includes('usa-made')) return false
     if (filters.seasonalOnly && !product.collections.includes('seasonal')) return false
+    const query = filters.search.trim().toLowerCase()
+    if (query) {
+      const haystack = [
+        product.name,
+        product.sku,
+        product.bagType,
+        product.industry,
+        ...product.sizeOptions,
+      ]
+        .join(' ')
+        .toLowerCase()
+      if (!haystack.includes(query)) return false
+    }
     return true
   })
 }

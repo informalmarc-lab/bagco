@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import BlogPostTemplate, { type BlogPostInternalLink, type BlogPostSection } from '@/components/BlogPostTemplate'
 
 export const metadata: Metadata = {
@@ -58,7 +58,7 @@ const sections: BlogPostSection[] = [
 const internalLinks: BlogPostInternalLink[] = [
   { href: '/industries/dispensaries', label: 'Dispensary Industry Program' },
   { href: '/catalog?industry=dispensary', label: 'Filtered Dispensary Catalog' },
-  { href: '/generic-bag-quote', label: 'Build a Dispensary Quote' }
+  { href: '/generic-bag-quote', label: 'Build a Quote' }
 ]
 
 export default function DispensaryExitBagRequirementsPage() {
@@ -72,3 +72,4 @@ export default function DispensaryExitBagRequirementsPage() {
     />
   )
 }
+

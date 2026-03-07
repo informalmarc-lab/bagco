@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import BlogPostTemplate, { type BlogPostInternalLink, type BlogPostSection } from '@/components/BlogPostTemplate'
 
 export const metadata: Metadata = {
@@ -65,7 +65,7 @@ const sections: BlogPostSection[] = [
 const internalLinks: BlogPostInternalLink[] = [
   { href: '/catalog/custom', label: 'Custom Catalog Options' },
   { href: '/blog/how-to-order-custom-printed-paper-bags', label: 'Step-by-Step Custom Ordering' },
-  { href: '/generic-bag-quote', label: 'Get a Custom Quote' }
+  { href: '/generic-bag-quote', label: 'Build a Quote' }
 ]
 
 export default function CustomBagLeadTimesPage() {
@@ -79,3 +79,4 @@ export default function CustomBagLeadTimesPage() {
     />
   )
 }
+

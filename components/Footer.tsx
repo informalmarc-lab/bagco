@@ -4,7 +4,6 @@ import {
   contactEmail,
   contactPhone,
   contactTextHref,
-  pricingMailto,
 } from '@/components/siteConfig'
 
 export default function Footer() {
@@ -23,7 +22,7 @@ export default function Footer() {
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link href="/generic-bag-quote" className="btn-primary">
-              Open Quote Tool
+              Build a Quote
             </Link>
             <a href={contactTextHref} className="btn-quiet border-[#F4E8D899] text-white hover:bg-[#F4E8D822]">
               Text {contactPhone}
@@ -35,7 +34,7 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-black text-white">Bag Supply Co</h3>
             <p className="mt-3 text-sm leading-relaxed text-[#F4E8D8CC]">
-              Factory-direct paper bag manufacturing and structured replenishment for retail, pharmacy, and veterinary operations.
+              Factory-direct paper bag manufacturing and structured replenishment for retail, pharmacy, veterinary, and distributor operations.
             </p>
           </div>
 
@@ -52,8 +51,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-sm font-black uppercase tracking-[0.1em] text-[#C4935A]">Catalogs</h4>
+            <h4 className="text-sm font-black uppercase tracking-[0.1em] text-[#C4935A]">Industries & Catalogs</h4>
             <ul className="mt-3 space-y-2 text-sm">
+              <li><Link href="/industries/distributors" className="text-[#B5813A] hover:text-white">Distributors</Link></li>
               <li><Link href="/catalog/pharmacy" className="text-[#B5813A] hover:text-white">Pharmacy</Link></li>
               <li><Link href="/catalog/veterinary" className="text-[#B5813A] hover:text-white">Veterinary</Link></li>
               <li><Link href="/catalog/custom" className="text-[#B5813A] hover:text-white">Custom 1/2/3 Color</Link></li>
@@ -66,7 +66,7 @@ export default function Footer() {
             <h4 className="text-sm font-black uppercase tracking-[0.1em] text-[#C4935A]">Contact</h4>
             <ul className="mt-3 space-y-2 text-sm">
               <li>
-                <a href={pricingMailto} className="font-semibold text-[#F4E8D8] hover:text-white">
+                <a href={`mailto:${contactEmail}`} className="font-semibold text-[#F4E8D8] hover:text-white">
                   {contactEmail}
                 </a>
               </li>
