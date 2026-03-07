@@ -1,9 +1,7 @@
 import type { Metadata } from 'next'
 import { Manrope, Source_Serif_4 } from 'next/font/google'
 import './globals.css'
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
-import LeadDock from '@/components/LeadDock'
+import SiteChrome from '@/components/SiteChrome'
 
 const manrope = Manrope({
   subsets: ['latin'],
@@ -128,10 +126,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
         />
-        <Navbar />
-        <main className="min-h-screen site-surface">{children}</main>
-        <LeadDock />
-        <Footer />
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   )

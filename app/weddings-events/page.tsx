@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next'
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { contactTextHref } from '@/components/siteConfig'
 
@@ -36,7 +36,7 @@ export default function ProgramsPage() {
         <div className="grid gap-4 md:grid-cols-2">
           {offerings.map((item) => (
             <article key={item} className="tonal-panel">
-              <p className="text-sm font-semibold text-slate-800">{item}</p>
+              <p className="text-sm font-semibold text-[#5F4D33]">{item}</p>
             </article>
           ))}
         </div>
@@ -50,4 +50,5 @@ export default function ProgramsPage() {
     </div>
   )
 }
+
 

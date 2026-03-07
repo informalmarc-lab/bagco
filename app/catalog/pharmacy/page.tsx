@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
@@ -90,7 +90,7 @@ export default function PharmacyCatalogPage() {
     return (
       <section key={type} className="section-container py-10 md:py-14">
         <div className="tonal-panel">
-          <h2 className="text-3xl font-black tracking-[-0.03em] text-slate-950">{info.title}</h2>
+          <h2 className="text-3xl font-black tracking-[-0.03em] text-[#1E4D2B]">{info.title}</h2>
           <p className="mt-2 muted-text">{info.description}</p>
 
           {list.length > 0 && (
@@ -102,7 +102,7 @@ export default function PharmacyCatalogPage() {
                   onClick={() => setSelected(img)}
                   className="surface-card overflow-hidden rounded-2xl"
                 >
-                  <div className="relative aspect-square bg-slate-100">
+                  <div className="relative aspect-square bg-[#FAF6F0]">
                     <Image
                       src={img.src}
                       alt={img.name}
@@ -119,10 +119,10 @@ export default function PharmacyCatalogPage() {
           <div className="mt-8 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
             {info.sizes.map((size) => (
               <div key={size.id} className="surface-card rounded-2xl p-4 text-sm">
-                <p className="font-black text-slate-950">#{size.id}</p>
-                <p className="mt-1 text-slate-700">{size.dims}</p>
-                <p className="text-slate-700">{size.qty}</p>
-                <p className="mt-2 font-black text-slate-950">{size.price} / case</p>
+                <p className="font-black text-[#1E4D2B]">#{size.id}</p>
+                <p className="mt-1 text-[#5F4D33]">{size.dims}</p>
+                <p className="text-[#5F4D33]">{size.qty}</p>
+                <p className="mt-2 font-black text-[#1E4D2B]">{size.price} / case</p>
               </div>
             ))}
           </div>
@@ -166,9 +166,17 @@ export default function PharmacyCatalogPage() {
         </div>
       </section>
 
+      <section className="section-container pt-3">
+        <div className="tonal-panel">
+          <h2 className="section-title">Ready to order? Get a quote ?</h2>
+          <p className="mt-3 muted-text">Use the quote tool to build a pharmacy case estimate instantly.</p>
+          <Link href="/generic-bag-quote" className="btn-primary mt-5">Get a Quote ?</Link>
+        </div>
+      </section>
+
       {selected && (
         <div
-          className="fixed inset-0 z-[70] flex items-center justify-center bg-slate-950/85 p-4"
+          className="fixed inset-0 z-[70] flex items-center justify-center bg-[#1E4D2B]/85 p-4"
           onClick={(event) => {
             if (event.target === event.currentTarget) setSelected(null)
           }}
@@ -188,4 +196,6 @@ export default function PharmacyCatalogPage() {
     </div>
   )
 }
+
+
 

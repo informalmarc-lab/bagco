@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
@@ -80,14 +80,14 @@ export default function VeterinaryCatalogPage() {
     return (
       <section key={design} className="section-container py-10 md:py-14">
         <div className="tonal-panel">
-          <h2 className="text-3xl font-black tracking-[-0.03em] text-slate-950">Veterinary {info.title}</h2>
+          <h2 className="text-3xl font-black tracking-[-0.03em] text-[#1E4D2B]">Veterinary {info.title}</h2>
           <p className="mt-2 muted-text">{info.description}</p>
 
           {stockImages.length > 0 && (
             <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {stockImages.map((img) => (
                 <button key={img.src} type="button" onClick={() => setSelected(img)} className="surface-card overflow-hidden rounded-2xl">
-                  <div className="relative aspect-square bg-slate-100">
+                  <div className="relative aspect-square bg-[#FAF6F0]">
                     <Image src={img.src} alt={img.name} fill className="object-cover" sizes="(max-width: 768px) 100vw, 25vw" />
                   </div>
                 </button>
@@ -98,10 +98,10 @@ export default function VeterinaryCatalogPage() {
           <div className="mt-8 grid gap-3 md:grid-cols-3">
             {info.sizes.map((size) => (
               <div key={size.name} className="surface-card rounded-2xl p-4 text-sm">
-                <p className="font-black text-slate-950">{size.name}</p>
-                <p className="mt-1 text-slate-700">{size.dims}</p>
-                <p className="text-slate-700">{size.qty}</p>
-                <p className="mt-2 font-black text-slate-950">{size.price} / case</p>
+                <p className="font-black text-[#1E4D2B]">{size.name}</p>
+                <p className="mt-1 text-[#5F4D33]">{size.dims}</p>
+                <p className="text-[#5F4D33]">{size.qty}</p>
+                <p className="mt-2 font-black text-[#1E4D2B]">{size.price} / case</p>
               </div>
             ))}
           </div>
@@ -136,12 +136,12 @@ export default function VeterinaryCatalogPage() {
           {combinedCustomExamples.length > 0 && (
             <section className="section-container pb-3">
               <div className="tonal-panel">
-                <h2 className="text-3xl font-black tracking-[-0.03em] text-slate-950">Example Custom Veterinary Bags</h2>
+                <h2 className="text-3xl font-black tracking-[-0.03em] text-[#1E4D2B]">Example Custom Veterinary Bags</h2>
                 <p className="mt-2 muted-text">Real custom production samples for veterinary clients.</p>
                 <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                   {combinedCustomExamples.map((img) => (
                     <button key={img.src} type="button" onClick={() => setSelected(img)} className="surface-card overflow-hidden rounded-2xl">
-                      <div className="relative aspect-square bg-slate-100">
+                      <div className="relative aspect-square bg-[#FAF6F0]">
                         <Image src={img.src} alt={img.name} fill className="object-cover" sizes="(max-width: 768px) 100vw, 25vw" />
                       </div>
                     </button>
@@ -163,9 +163,17 @@ export default function VeterinaryCatalogPage() {
         </div>
       </section>
 
+      <section className="section-container pt-3">
+        <div className="tonal-panel">
+          <h2 className="section-title">Ready to order? Get a quote ?</h2>
+          <p className="mt-3 muted-text">Build your veterinary case estimate and send it to our team in minutes.</p>
+          <Link href="/generic-bag-quote" className="btn-primary mt-5">Get a Quote ?</Link>
+        </div>
+      </section>
+
       {selected && (
         <div
-          className="fixed inset-0 z-[70] flex items-center justify-center bg-slate-950/85 p-4"
+          className="fixed inset-0 z-[70] flex items-center justify-center bg-[#1E4D2B]/85 p-4"
           onClick={(event) => {
             if (event.target === event.currentTarget) setSelected(null)
           }}
@@ -185,4 +193,6 @@ export default function VeterinaryCatalogPage() {
     </div>
   )
 }
+
+
 

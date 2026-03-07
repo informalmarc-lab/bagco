@@ -1,33 +1,43 @@
-﻿import type { Metadata } from 'next'
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import IndustrySolutionsSection from '@/components/IndustrySolutionsSection'
 
 export const metadata: Metadata = {
   title: 'Industries',
   description:
-    'Industry-specific packaging programs for pharmacies, dispensaries, smoke shops, veterinary clinics, and retail stores.',
+    'Industry-specific packaging programs for pharmacies, veterinary clinics, dispensaries, smoke shops, retail stores, and food service teams.',
 }
 
 const segments = [
   {
-    title: 'Dispensaries',
-    copy: 'Discreet presentation, strong branding, and reliable supply for regulated retail.',
-    href: '/industries/dispensaries',
-  },
-  {
     title: 'Pharmacies',
-    copy: 'Case-based programs that support daily script volume and customer trust at checkout.',
+    copy: 'Case-based stock and custom programs for daily script volume and cleaner checkout flow.',
     href: '/industries/pharmacies',
   },
   {
+    title: 'Veterinary',
+    copy: 'Paw print stock and custom handled/flat options built for clinic workflows.',
+    href: '/industries/veterinary',
+  },
+  {
+    title: 'Dispensaries',
+    copy: 'Child-resistant, smell-proof, and custom print bag lines for compliant retail.',
+    href: '/industries/dispensaries',
+  },
+  {
     title: 'Smoke Shops',
-    copy: 'Brand-forward packaging designed to improve recognition in local markets.',
+    copy: 'Generic and branded carry-out bags to improve recognition and repeat traffic.',
     href: '/industries/smoke-shops',
   },
   {
-    title: 'Retail Stores',
-    copy: 'Flexible programs for boutiques, chains, and specialty storefront teams.',
+    title: 'Retail / Boutique',
+    copy: 'Handled kraft, euro tote, glossy white, and seasonal collections in one flow.',
     href: '/industries/retail-stores',
+  },
+  {
+    title: 'Food & Beverage',
+    copy: 'Durable takeout and bakery bag programs with stock and custom paths.',
+    href: '/industries/food-beverage',
   },
 ]
 
@@ -38,19 +48,20 @@ export default function IndustriesPage() {
         <div className="page-hero-inner">
           <p className="kicker">Industry Programs</p>
           <h1 className="heading-display mt-5 text-4xl md:text-6xl">
-            Packaging Systems Built Around Your Business Model
+            Packaging Systems Built Around Your Business Type
           </h1>
           <p className="mt-5 max-w-3xl text-lg muted-text">
-            Select your industry and weâ€™ll align bag formats, branding options, and reorder cadence to the way your operation actually runs.
+            Select your industry and go directly to an industry-specific product gallery with a filtered
+            catalog path and most-ordered sizes.
           </p>
         </div>
       </section>
 
       <section className="section-container py-12">
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {segments.map((item) => (
             <article key={item.title} className="tonal-panel">
-              <h2 className="text-2xl font-black text-slate-950">{item.title}</h2>
+              <h2 className="text-2xl font-black text-[#1E4D2B]">{item.title}</h2>
               <p className="mt-3 muted-text">{item.copy}</p>
               <Link href={item.href} className="btn-secondary mt-5">
                 Open Industry Page
@@ -64,5 +75,4 @@ export default function IndustriesPage() {
     </div>
   )
 }
-
 

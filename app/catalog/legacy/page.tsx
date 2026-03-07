@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next'
+import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -46,8 +46,8 @@ export default function LegacyCatalogPage() {
         <div className="mt-6 grid gap-4 md:grid-cols-3">
           {primary.map((item) => (
             <Link key={item.href} href={item.href} className="tonal-panel hover:translate-y-[-2px] transition-transform">
-              <h3 className="text-xl font-black text-slate-950">{item.title}</h3>
-              <p className="mt-4 text-sm font-black uppercase tracking-[0.08em] text-blue-700">Open</p>
+              <h3 className="text-xl font-black text-[#1E4D2B]">{item.title}</h3>
+              <p className="mt-4 text-sm font-black uppercase tracking-[0.08em] text-[#B5813A]">Open</p>
             </Link>
           ))}
         </div>
@@ -57,13 +57,27 @@ export default function LegacyCatalogPage() {
         <h2 className="section-title">Specialty Collections</h2>
         <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {legacyCollections.map((item) => (
-            <Link key={item.href} href={item.href} className="surface-card rounded-2xl px-4 py-3 text-sm font-semibold text-slate-800 hover:bg-slate-50">
+            <Link key={item.href} href={item.href} className="surface-card rounded-2xl px-4 py-3 text-sm font-semibold text-[#5F4D33] hover:bg-[#FAF6F0]">
               {item.title}
             </Link>
           ))}
         </div>
       </section>
+
+      <section className="section-container pt-6">
+        <div className="tonal-panel">
+          <h2 className="section-title">Ready to order? Get a quote ?</h2>
+          <p className="mt-3 muted-text">
+            Build your estimate and send your requirements directly to our team.
+          </p>
+          <Link href="/generic-bag-quote" className="btn-primary mt-5">
+            Get a Quote ?
+          </Link>
+        </div>
+      </section>
     </div>
   )
 }
+
+
 

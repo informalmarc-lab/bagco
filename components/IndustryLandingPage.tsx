@@ -1,0 +1,154 @@
+import Image from 'next/image'
+import Link from 'next/link'
+import {
+  INDUSTRY_LABELS,
+  getCatalogProductsByIndustry,
+  getMostOrderedSizesByIndustry,
+  getStartingPriceByIndustry,
+  money,
+  type CatalogIndustryKey,
+} from '@/lib/catalogProducts'
+import { contactTextHref } from '@/components/siteConfig'
+
+type IndustryLandingPageProps = {
+  industry: CatalogIndustryKey
+  title: string
+  description: string
+  heroLabel?: string
+  deepDiveSection?: {
+    title: string
+    paragraphs: string[]
+  }
+  bottomCatalogHref?: string
+  bottomCatalogLabel?: string
+}
+
+export default function IndustryLandingPage({
+  industry,
+  title,
+  description,
+  heroLabel = 'Industry Focus',
+  deepDiveSection,
+  bottomCatalogHref = `/catalog?industry=${industry}`,
+  bottomCatalogLabel = `Open ${INDUSTRY_LABELS[industry]} Catalog`,
+}: IndustryLandingPageProps) {
+  const products = getCatalogProductsByIndustry(industry)
+  const featured = products.slice(0, 6)
+  const sizes = getMostOrderedSizesByIndustry(industry)
+  const startingPrice = getStartingPriceByIndustry(industry)
+
+  return (
+    <div className="pb-16">
+      <section className="page-hero">
+        <div className="page-hero-inner">
+          <p className="kicker">{heroLabel}</p>
+          <h1 className="heading-display mt-5 text-4xl md:text-6xl">{title}</h1>
+          <p className="mt-5 max-w-3xl text-lg muted-text">{description}</p>
+          <p className="mt-4 text-sm font-semibold text-[#5F4D33]">
+            Starting stock pricing from {money(startingPrice)}/case.
+          </p>
+          <div className="mt-5 flex flex-wrap gap-2 text-xs font-black uppercase tracking-[0.08em] text-[#5F4D33]">
+            <span className="rounded-full bg-white px-3 py-1.5">Transparent Case Pricing</span>
+            <span className="rounded-full bg-white px-3 py-1.5">Instant Quote Tool</span>
+            <span className="rounded-full bg-white px-3 py-1.5">Stock 3-5 Days</span>
+            <span className="rounded-full bg-white px-3 py-1.5">Custom 3-4 Weeks</span>
+            <span className="rounded-full bg-white px-3 py-1.5">Net 30 Available</span>
+            <span className="rounded-full bg-white px-3 py-1.5">Ships Across The US</span>
+          </div>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link href={`/catalog?industry=${industry}`} className="btn-secondary">
+              Browse {INDUSTRY_LABELS[industry]} Catalog
+            </Link>
+            <Link href="/generic-bag-quote" className="btn-primary">
+              Add to Quote
+            </Link>
+            <a href={contactTextHref} className="btn-quiet">
+              Text Our Team
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-container py-10">
+        <div className="split-panel items-start">
+          <div className="tonal-panel">
+            <h2 className="section-title">{INDUSTRY_LABELS[industry]} Product Gallery</h2>
+            <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {featured.map((product) => (
+                <article key={product.sku} className="surface-card overflow-hidden rounded-2xl">
+                  <div className="relative aspect-[4/3] bg-[#FAF6F0]">
+                    <Image
+                      src={product.image}
+                      alt={`${product.name} product photo`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                  </div>
+                  <div className="p-3">
+                    <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">SKU {product.sku}</p>
+                    <p className="mt-1 text-sm font-semibold text-[#1E4D2B]">{product.name}</p>
+                    <p className="mt-1 text-sm text-[#5F4D33]">From {money(product.startingPrice)}/case</p>
+                    <Link href={`/products/${product.slug}`} className="btn-secondary mt-3">
+                      View Product
+                    </Link>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <aside className="tonal-panel">
+            <h2 className="section-title">Most Ordered Sizes</h2>
+            <div className="mt-5 grid gap-2">
+              {sizes.map((size) => (
+                <p key={size} className="surface-card rounded-xl px-3 py-2 text-sm font-semibold text-[#5F4D33]">
+                  {size}
+                </p>
+              ))}
+            </div>
+            <p className="mt-4 text-sm text-[#5F4D33]">
+              Need a different format? Filter by size and bag type in the main catalog.
+            </p>
+            <Link href={`/catalog?industry=${industry}`} className="btn-primary mt-5">
+              Open Filtered Catalog View
+            </Link>
+          </aside>
+        </div>
+      </section>
+
+      {deepDiveSection && (
+        <section className="section-container pt-2">
+          <div className="tonal-panel">
+            <h2 className="section-title">{deepDiveSection.title}</h2>
+            <div className="mt-5 grid gap-4">
+              {deepDiveSection.paragraphs.map((paragraph) => (
+                <p key={paragraph} className="text-sm leading-7 text-[#5F4D33] md:text-base">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      <section className="section-container pt-2">
+        <div className="tonal-panel">
+          <h2 className="section-title">Ready to Order from This Industry Program?</h2>
+          <p className="mt-3 muted-text">
+            Browse the most relevant catalog and move straight into case-level quote building.
+          </p>
+          <div className="mt-5 flex flex-wrap gap-3">
+            <Link href={bottomCatalogHref} className="btn-secondary">
+              {bottomCatalogLabel}
+            </Link>
+            <Link href="/generic-bag-quote" className="btn-primary">
+              Get a Quote ?
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}
+

@@ -1,4 +1,4 @@
-﻿import fs from 'fs'
+import fs from 'fs'
 import path from 'path'
 import type { Metadata } from 'next'
 import Image from 'next/image'
@@ -171,7 +171,7 @@ export default async function CatalogFolderPage({
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {images.map((img) => (
               <div key={img.src} className="surface-card overflow-hidden rounded-2xl">
-                <div className="relative aspect-square bg-slate-100">
+                <div className="relative aspect-square bg-[#FAF6F0]">
                   <Image
                     src={img.src}
                     alt={img.name}
@@ -199,7 +199,21 @@ export default async function CatalogFolderPage({
           </Link>
         </div>
       </section>
+
+      <section className="section-container pt-3">
+        <div className="tonal-panel">
+          <h2 className="section-title">Ready to order? Get a quote ?</h2>
+          <p className="mt-3 muted-text">
+            Start your quote with this collection pre-selected and submit in minutes.
+          </p>
+          <Link href="/generic-bag-quote" className="btn-primary mt-5">
+            Get a Quote ?
+          </Link>
+        </div>
+      </section>
     </div>
   )
 }
+
+
 

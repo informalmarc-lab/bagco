@@ -1,148 +1,83 @@
 'use client'
 
+import Image from 'next/image'
 import { useEffect, useMemo, useState } from 'react'
+import {
+  INDUSTRY_LABELS,
+  INDUSTRY_ORDER,
+  getAllCatalogProducts,
+  money,
+  type CatalogIndustryKey,
+} from '@/lib/catalogProducts'
 
-type QuoteVariant = {
-  id: string
-  label: string
-  quantityPerCase: string
-  pricePerCase: number
-  isCustom: boolean
+type QuoteLine = {
+  slug: string
+  cases: number
 }
 
-type QuoteCategory = {
-  id: string
-  title: string
-  variants: QuoteVariant[]
+type CustomerInfo = {
+  name: string
+  company: string
+  email: string
+  phone: string
 }
 
-const CATEGORIES: QuoteCategory[] = [
-  {
-    id: 'pharmacy-gs',
-    title: 'Pharmacy Bags - GS Design',
-    variants: [
-      { id: 'gs-21', label: '#21 (3.5" x 1.5" x 10")', quantityPerCase: '3,000', pricePerCase: 95.56, isCustom: false },
-      { id: 'gs-22', label: '#22 (4.5" x 2.25" x 11")', quantityPerCase: '3,000', pricePerCase: 119.81, isCustom: false },
-      { id: 'gs-23', label: '#23 (5" x 2" x 10")', quantityPerCase: '3,000', pricePerCase: 117.42, isCustom: false },
-      { id: 'gs-25', label: '#25 (6" x 4" x 11")', quantityPerCase: '1,000', pricePerCase: 65.91, isCustom: false },
-      { id: 'gs-26', label: '#26 (7" x 4" x 14")', quantityPerCase: '1,000', pricePerCase: 102.29, isCustom: false },
-      { id: 'gs-28', label: '#28 (8" x 5" x 17")', quantityPerCase: '500', pricePerCase: 112.1, isCustom: false },
-      { id: 'gs-12', label: '#12 (7" x 10")', quantityPerCase: '3,000', pricePerCase: 115.35, isCustom: false },
-      { id: 'gs-14', label: '#14 (9" x 11")', quantityPerCase: '2,000', pricePerCase: 99.69, isCustom: false },
-      { id: 'gs-15', label: '#15 (8.5" x 3.5" x 14.5")', quantityPerCase: '1,000', pricePerCase: 95.78, isCustom: false },
-    ],
-  },
-  {
-    id: 'pharmacy-ty',
-    title: 'Pharmacy Bags - Thank You Design',
-    variants: [
-      { id: 'ty-21', label: '#21', quantityPerCase: '3,000', pricePerCase: 95.56, isCustom: false },
-      { id: 'ty-22', label: '#22', quantityPerCase: '3,000', pricePerCase: 119.81, isCustom: false },
-      { id: 'ty-23', label: '#23', quantityPerCase: '3,000', pricePerCase: 117.41, isCustom: false },
-      { id: 'ty-25', label: '#25', quantityPerCase: '1,000', pricePerCase: 65.91, isCustom: false },
-      { id: 'ty-26', label: '#26', quantityPerCase: '1,000', pricePerCase: 102.29, isCustom: false },
-      { id: 'ty-28', label: '#28', quantityPerCase: '500', pricePerCase: 112.1, isCustom: false },
-      { id: 'ty-12', label: '#12', quantityPerCase: '3,000', pricePerCase: 115.35, isCustom: false },
-      { id: 'ty-14', label: '#14', quantityPerCase: '2,000', pricePerCase: 99.69, isCustom: false },
-      { id: 'ty-15', label: '#15', quantityPerCase: '1,000', pricePerCase: 95.78, isCustom: false },
-    ],
-  },
-  {
-    id: 'plastic-gs',
-    title: 'Plastic Pharmacy Bags - GS Design',
-    variants: [
-      { id: 'plastic-32', label: '#32 (9" x 5.5" x 18")', quantityPerCase: '1,000', pricePerCase: 70.84, isCustom: false },
-      { id: 'plastic-35', label: '#35 (12" x 7" x 23")', quantityPerCase: '1,000', pricePerCase: 90.84, isCustom: false },
-      { id: 'plastic-30', label: '#30 (12" x 7" x 25")', quantityPerCase: '500', pricePerCase: 116.03, isCustom: false },
-    ],
-  },
-  {
-    id: 'vet-vb1',
-    title: 'Veterinary Bag Design - VB1',
-    variants: [
-      { id: 'vb1-22', label: 'Pinch bottom #22', quantityPerCase: '3,000', pricePerCase: 119.81, isCustom: false },
-      { id: 'vb1-12', label: 'Flat pinch bottom #12', quantityPerCase: '3,000', pricePerCase: 115.35, isCustom: false },
-      { id: 'vb1-25', label: 'Square bottom #25', quantityPerCase: '1,000', pricePerCase: 65.91, isCustom: false },
-    ],
-  },
-  {
-    id: 'vet-vb2',
-    title: 'Veterinary Bag Design - VB2',
-    variants: [
-      { id: 'vb2-22', label: 'Pinch bottom #22', quantityPerCase: '3,000', pricePerCase: 119.81, isCustom: false },
-      { id: 'vb2-12', label: 'Flat pinch bottom #12', quantityPerCase: '3,000', pricePerCase: 115.35, isCustom: false },
-      { id: 'vb2-25', label: 'Square bottom #25', quantityPerCase: '1,000', pricePerCase: 65.91, isCustom: false },
-    ],
-  },
-  {
-    id: 'vet-vb6',
-    title: 'Veterinary Bag Design - VB6',
-    variants: [
-      { id: 'vb6-22', label: 'Pinch bottom #22', quantityPerCase: '3,000', pricePerCase: 119.81, isCustom: false },
-      { id: 'vb6-12', label: 'Flat pinch bottom #12', quantityPerCase: '3,000', pricePerCase: 115.35, isCustom: false },
-      { id: 'vb6-25', label: 'Square bottom #25', quantityPerCase: '1,000', pricePerCase: 65.91, isCustom: false },
-    ],
-  },
-  {
-    id: 'custom-1',
-    title: 'Full-Custom, 1-Color Bags',
-    variants: [
-      { id: 'c1-21', label: '#21', quantityPerCase: '3,000', pricePerCase: 95.56, isCustom: true },
-      { id: 'c1-22', label: '#22', quantityPerCase: '3,000', pricePerCase: 95.56, isCustom: true },
-      { id: 'c1-23', label: '#23', quantityPerCase: '3,000', pricePerCase: 95.56, isCustom: true },
-      { id: 'c1-25', label: '#25', quantityPerCase: '2,000', pricePerCase: 95.56, isCustom: true },
-      { id: 'c1-26', label: '#26', quantityPerCase: '1,000', pricePerCase: 95.56, isCustom: true },
-      { id: 'c1-28', label: '#28', quantityPerCase: '500', pricePerCase: 95.56, isCustom: true },
-      { id: 'c1-12', label: '#12', quantityPerCase: '3,000', pricePerCase: 95.56, isCustom: true },
-      { id: 'c1-14', label: '#14', quantityPerCase: '2,000', pricePerCase: 95.56, isCustom: true },
-      { id: 'c1-15', label: '#15', quantityPerCase: '1,000', pricePerCase: 95.56, isCustom: true },
-    ],
-  },
-  {
-    id: 'custom-2',
-    title: 'Full-Custom, 2-Color Bags',
-    variants: [
-      { id: 'c2-21', label: '#21', quantityPerCase: '3,000', pricePerCase: 95.56, isCustom: true },
-      { id: 'c2-22', label: '#22', quantityPerCase: '3,000', pricePerCase: 119.8, isCustom: true },
-      { id: 'c2-23', label: '#23', quantityPerCase: '3,000', pricePerCase: 117.39, isCustom: true },
-      { id: 'c2-25', label: '#25', quantityPerCase: '2,000', pricePerCase: 133.08, isCustom: true },
-      { id: 'c2-26', label: '#26', quantityPerCase: '1,000', pricePerCase: 102.29, isCustom: true },
-      { id: 'c2-28', label: '#28', quantityPerCase: '500', pricePerCase: 112.1, isCustom: true },
-      { id: 'c2-12', label: '#12', quantityPerCase: '3,000', pricePerCase: 115.35, isCustom: true },
-      { id: 'c2-14', label: '#14', quantityPerCase: '2,000', pricePerCase: 99.68, isCustom: true },
-      { id: 'c2-15', label: '#15', quantityPerCase: '1,000', pricePerCase: 95.78, isCustom: true },
-    ],
-  },
-  {
-    id: 'custom-3',
-    title: 'Full-Custom, 3-Color Bags',
-    variants: [
-      { id: 'c3-21', label: '#21', quantityPerCase: '3,000', pricePerCase: 119.46, isCustom: true },
-      { id: 'c3-22', label: '#22', quantityPerCase: '3,000', pricePerCase: 149.76, isCustom: true },
-      { id: 'c3-23', label: '#23', quantityPerCase: '3,000', pricePerCase: 146.76, isCustom: true },
-      { id: 'c3-25', label: '#25', quantityPerCase: '2,000', pricePerCase: 166.36, isCustom: true },
-      { id: 'c3-26', label: '#26', quantityPerCase: '1,000', pricePerCase: 127.86, isCustom: true },
-      { id: 'c3-28', label: '#28', quantityPerCase: '500', pricePerCase: 140.12, isCustom: true },
-      { id: 'c3-12', label: '#12', quantityPerCase: '3,000', pricePerCase: 144.18, isCustom: true },
-      { id: 'c3-14', label: '#14', quantityPerCase: '2,000', pricePerCase: 124.61, isCustom: true },
-      { id: 'c3-15', label: '#15', quantityPerCase: '1,000', pricePerCase: 119.71, isCustom: true },
-    ],
-  },
-]
+type ShareState = {
+  selectedIndustry: CatalogIndustryKey | ''
+  selectedBagType: string
+  selectedProductSlug: string
+  lines: QuoteLine[]
+  customer: CustomerInfo
+}
 
-function money(value: number): string {
-  return new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 2,
-  }).format(value)
+const LEAD_TIME_MESSAGE = 'Stock: ships in 3-5 days | Custom: 3-4 weeks'
+
+function parseIndustryValue(value: string): CatalogIndustryKey | '' {
+  return INDUSTRY_ORDER.includes(value as CatalogIndustryKey) ? (value as CatalogIndustryKey) : ''
+}
+
+function encodeShareState(payload: ShareState): string {
+  const json = JSON.stringify(payload)
+  const bytes = new TextEncoder().encode(json)
+  let binary = ''
+  for (const value of bytes) {
+    binary += String.fromCharCode(value)
+  }
+
+  return btoa(binary)
+    .replace(/\+/g, '-')
+    .replace(/\//g, '_')
+    .replace(/=+$/g, '')
+}
+
+function decodeShareState(value: string): ShareState | null {
+  try {
+    const normalized = value.replace(/-/g, '+').replace(/_/g, '/')
+    const padded = normalized + '='.repeat((4 - (normalized.length % 4 || 4)) % 4)
+    const binary = atob(padded)
+    const bytes = Uint8Array.from(binary, (char) => char.charCodeAt(0))
+    const json = new TextDecoder().decode(bytes)
+    const parsed = JSON.parse(json)
+    if (!parsed || typeof parsed !== 'object') return null
+    return parsed as ShareState
+  } catch {
+    return null
+  }
 }
 
 export default function GenericQuoteTool() {
-  const [casesById, setCasesById] = useState<Record<string, number>>({})
+  const products = useMemo(() => getAllCatalogProducts(), [])
+
+  const [selectedIndustry, setSelectedIndustry] = useState<CatalogIndustryKey | ''>('')
+  const [selectedBagType, setSelectedBagType] = useState('')
+  const [selectedProductSlug, setSelectedProductSlug] = useState('')
+  const [casesInput, setCasesInput] = useState('1')
+  const [lines, setLines] = useState<QuoteLine[]>([])
   const [generatedAt, setGeneratedAt] = useState('')
   const [quoteId, setQuoteId] = useState('')
-  const [customer, setCustomer] = useState({
+  const [copied, setCopied] = useState(false)
+
+  const [customer, setCustomer] = useState<CustomerInfo>({
     name: '',
     company: '',
     email: '',
@@ -152,44 +87,105 @@ export default function GenericQuoteTool() {
   useEffect(() => {
     setGeneratedAt(new Date().toLocaleString())
     setQuoteId(`BAGCO-${Date.now().toString().slice(-8)}`)
-  }, [])
 
-  const allLines = useMemo(() => {
-    return CATEGORIES.flatMap((category) =>
-      category.variants.map((variant) => {
-        const cases = casesById[variant.id] || 0
-        return {
-          categoryId: category.id,
-          categoryTitle: category.title,
-          ...variant,
-          cases,
-          lineTotal: cases * variant.pricePerCase,
-        }
-      }),
+    const params = new URLSearchParams(window.location.search)
+    const shareToken = params.get('share')
+    const skuParam = params.get('sku')
+
+    if (shareToken) {
+      const restored = decodeShareState(shareToken)
+      if (restored) {
+        setSelectedIndustry(restored.selectedIndustry)
+        setSelectedBagType(restored.selectedBagType)
+        setSelectedProductSlug(restored.selectedProductSlug)
+        setLines(restored.lines || [])
+        setCustomer(restored.customer || { name: '', company: '', email: '', phone: '' })
+        return
+      }
+    }
+
+    if (skuParam) {
+      const bySku = products.find((product) => product.sku === skuParam)
+      if (bySku) {
+        setSelectedIndustry(bySku.industry)
+        setSelectedBagType(bySku.bagType)
+        setSelectedProductSlug(bySku.slug)
+      }
+    }
+  }, [products])
+
+  const industryProducts = useMemo(() => {
+    if (!selectedIndustry) return []
+    return products.filter((product) => product.industry === selectedIndustry)
+  }, [products, selectedIndustry])
+
+  const bagTypeOptions = useMemo(() => {
+    return Array.from(new Set(industryProducts.map((product) => product.bagType))).sort((a, b) =>
+      a.localeCompare(b),
     )
-  }, [casesById])
+  }, [industryProducts])
 
-  const selectedLines = allLines.filter((line) => line.cases > 0)
-  const totalCases = selectedLines.reduce((sum, line) => sum + line.cases, 0)
-  const subtotal = selectedLines.reduce((sum, line) => sum + line.lineTotal, 0)
-  const usesFuelSurchargeOnly = totalCases >= 8
-  const selectedLineCount = selectedLines.length
-  const shippingMessage = usesFuelSurchargeOnly
-    ? '8+ cases: Fuel Surcharge (FSC) only applies. FSC is 5%, 7.5%, or 10% based on UPS zone.'
-    : 'Under 8 cases: ships UPS Ground and freight is added to invoice.'
+  const bagTypeProducts = useMemo(() => {
+    if (!selectedBagType) return industryProducts
+    return industryProducts.filter((product) => product.bagType === selectedBagType)
+  }, [industryProducts, selectedBagType])
 
-  const customMinErrors = selectedLines.filter((line) => line.isCustom && line.cases < 4)
+  const previewProduct = useMemo(() => {
+    if (!selectedIndustry || !selectedBagType) return null
+    if (selectedProductSlug) {
+      return bagTypeProducts.find((product) => product.slug === selectedProductSlug) || bagTypeProducts[0] || null
+    }
+    return bagTypeProducts[0] || null
+  }, [bagTypeProducts, selectedBagType, selectedIndustry, selectedProductSlug])
+
+  const quoteLines = useMemo(() => {
+    return lines
+      .map((line) => {
+        const product = products.find((item) => item.slug === line.slug)
+        if (!product) return null
+        return {
+          ...line,
+          product,
+          lineTotal: line.cases * product.startingPrice,
+        }
+      })
+      .filter((line): line is { slug: string; cases: number; product: (typeof products)[number]; lineTotal: number } => Boolean(line))
+  }, [lines, products])
+
+  const totalCases = quoteLines.reduce((sum, line) => sum + line.cases, 0)
+  const subtotal = quoteLines.reduce((sum, line) => sum + line.lineTotal, 0)
+  const shippingMessage =
+    totalCases >= 8
+      ? '8+ cases: Fuel Surcharge only applies based on UPS zone.'
+      : 'Under 8 cases: ships UPS Ground and freight is added to invoice.'
+
+  const shareState: ShareState = {
+    selectedIndustry,
+    selectedBagType,
+    selectedProductSlug,
+    lines,
+    customer,
+  }
+
+  const shareLink = useMemo(() => {
+    if (typeof window === 'undefined') return ''
+    const token = encodeShareState(shareState)
+    return `${window.location.origin}${window.location.pathname}?share=${token}`
+  }, [shareState])
 
   const quoteBody = useMemo(() => {
-    if (selectedLines.length === 0) return ''
+    if (quoteLines.length === 0) return ''
 
-    const lines = selectedLines.map(
-      (line) =>
-        `${line.categoryTitle} | ${line.label} | Cases: ${line.cases} | Price/Case: ${money(line.pricePerCase)} | Line Total: ${money(line.lineTotal)}`,
-    )
+    const lineText = quoteLines.map((line) => {
+      return `${line.product.name} | SKU ${line.product.sku} | Cases: ${line.cases} | Price/Case: ${money(
+        line.product.startingPrice,
+      )} | Line Total: ${money(line.lineTotal)} | Lead Time: ${
+        line.product.availability === 'stock' ? '3-5 days' : '3-4 weeks'
+      }`
+    })
 
     return [
-      'Generic Bag Quote Request',
+      'Bag Supply Co Quote Request',
       '',
       `Quote ID: ${quoteId || 'Pending'}`,
       `Generated: ${generatedAt || 'Pending'}`,
@@ -199,336 +195,296 @@ export default function GenericQuoteTool() {
       `Email: ${customer.email || 'N/A'}`,
       `Phone: ${customer.phone || 'N/A'}`,
       '',
-      ...lines,
+      ...lineText,
       '',
       `Total Cases: ${totalCases}`,
       `Subtotal (no shipping): ${money(subtotal)}`,
       `Shipping: ${shippingMessage}`,
+      `Lead Time: ${LEAD_TIME_MESSAGE}`,
       '',
-      'Note: This is an estimated quote and not a final invoice.',
+      'Note: This is an estimate and not a final invoice.',
     ].join('\n')
-  }, [selectedLines, shippingMessage, totalCases, subtotal, quoteId, generatedAt, customer])
+  }, [customer, generatedAt, quoteId, quoteLines, shippingMessage, subtotal, totalCases])
 
   const mailtoHref =
-    selectedLines.length > 0
-      ? `mailto:info@bagco.com?subject=${encodeURIComponent('Generic Bag Quote Request')}&body=${encodeURIComponent(quoteBody)}`
+    quoteLines.length > 0
+      ? `mailto:info@bagco.com?subject=${encodeURIComponent('Bag Quote Request')}&body=${encodeURIComponent(quoteBody)}`
       : '#'
 
-  const updateCases = (id: string, value: string) => {
-    const numeric = Number.parseInt(value, 10)
-    const safeValue = Number.isFinite(numeric) && numeric > 0 ? numeric : 0
-    setCasesById((prev) => ({ ...prev, [id]: safeValue }))
-  }
+  const addLine = () => {
+    if (!previewProduct) return
+    const cases = Number.parseInt(casesInput, 10)
+    if (!Number.isFinite(cases) || cases <= 0) return
 
-  const updateCustomer = (key: 'name' | 'company' | 'email' | 'phone', value: string) => {
-    setCustomer((prev) => ({ ...prev, [key]: value }))
-  }
-
-  const resetQuote = () => {
-    setCasesById({})
-    setCustomer({
-      name: '',
-      company: '',
-      email: '',
-      phone: '',
+    setLines((prev) => {
+      const existing = prev.find((line) => line.slug === previewProduct.slug)
+      if (existing) {
+        return prev.map((line) =>
+          line.slug === previewProduct.slug ? { ...line, cases: line.cases + cases } : line,
+        )
+      }
+      return [...prev, { slug: previewProduct.slug, cases }]
     })
+    setCasesInput('1')
+  }
+
+  const updateLineCases = (slug: string, value: string) => {
+    const numeric = Number.parseInt(value, 10)
+    const safe = Number.isFinite(numeric) && numeric > 0 ? numeric : 1
+    setLines((prev) => prev.map((line) => (line.slug === slug ? { ...line, cases: safe } : line)))
+  }
+
+  const removeLine = (slug: string) => {
+    setLines((prev) => prev.filter((line) => line.slug !== slug))
+  }
+
+  const copyShareLink = async () => {
+    if (!shareLink) return
+    try {
+      await navigator.clipboard.writeText(shareLink)
+      setCopied(true)
+      window.setTimeout(() => setCopied(false), 1800)
+    } catch {
+      setCopied(false)
+    }
   }
 
   return (
-    <div className="quote-print pb-16">
-      <div className="quote-web">
-        <section className="quote-hero relative overflow-hidden border-b border-amber-200 bg-[linear-gradient(120deg,#fffdf8_0%,#f5e8d3_55%,#e8d6ba_100%)]">
-          <div className="section-container py-14 md:py-20">
-            <p className="kicker">Estimate Tool</p>
-            <h1 className="heading-serif mt-5 text-4xl font-black text-slate-900 md:text-6xl">Generic Bag Quote Builder</h1>
-            <p className="mt-4 max-w-3xl text-lg text-slate-700">
-              Enter case quantities to build an estimated quote. Shipping is not calculated here.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-3 print-hide">
-              <button type="button" className="btn-secondary" onClick={() => window.print()}>
-                Save as PDF
-              </button>
-              <button type="button" className="btn-secondary" onClick={resetQuote}>
-                Reset Quote
-              </button>
-              <a
-                href={mailtoHref}
-                className={`btn-primary ${selectedLines.length === 0 || customMinErrors.length > 0 ? 'pointer-events-none opacity-50' : ''}`}
-              >
-                Email Quote Request
-              </a>
-            </div>
-          </div>
-        </section>
-
-        <section className="section-container py-10">
-          <div className="tonal-panel">
-            <h2 className="text-2xl font-black text-slate-900">Quote Rules</h2>
-            <p className="mt-3 text-slate-700">This is an estimate only and not an exact quote or final invoice.</p>
-            <p className="mt-2 text-slate-700">Under 8 total cases: ships UPS Ground and freight is added to invoice.</p>
-            <p className="mt-2 text-slate-700">8 or more total cases: Fuel Surcharge (FSC) only is applied.</p>
-            <p className="mt-2 text-slate-700">FSC groups: Zone 2-3 = 5%, Zone 4-6 = 7.5%, Zone 7-8 = 10% of order total.</p>
-            <p className="mt-2 text-slate-700">Large LTL orders use a flat FSC per pallet. We provide LTL pallet rates after review.</p>
-            <p className="mt-2 text-slate-700">Custom bags require a minimum of 4 cases per selected bag type.</p>
-          </div>
-        </section>
-
-        <section className="section-container pb-8 print-hide">
-          <div className="tonal-panel">
-            <h2 className="text-2xl font-black text-slate-900">Customer Details for PDF</h2>
-            <p className="mt-2 text-slate-700">
-              Add customer info so your saved PDF quote is complete and ready to send.
-            </p>
-            <div className="mt-5 grid gap-4 md:grid-cols-2">
-              <label className="grid gap-1 text-sm font-semibold text-slate-800">
-                Customer Name
-                <input
-                  type="text"
-                  value={customer.name}
-                  onChange={(e) => updateCustomer('name', e.target.value)}
-                  className="rounded-md border border-slate-300 px-3 py-2"
-                />
-              </label>
-              <label className="grid gap-1 text-sm font-semibold text-slate-800">
-                Company Name
-                <input
-                  type="text"
-                  value={customer.company}
-                  onChange={(e) => updateCustomer('company', e.target.value)}
-                  className="rounded-md border border-slate-300 px-3 py-2"
-                />
-              </label>
-              <label className="grid gap-1 text-sm font-semibold text-slate-800">
-                Email
-                <input
-                  type="email"
-                  value={customer.email}
-                  onChange={(e) => updateCustomer('email', e.target.value)}
-                  className="rounded-md border border-slate-300 px-3 py-2"
-                />
-              </label>
-              <label className="grid gap-1 text-sm font-semibold text-slate-800">
-                Phone
-                <input
-                  type="tel"
-                  value={customer.phone}
-                  onChange={(e) => updateCustomer('phone', e.target.value)}
-                  className="rounded-md border border-slate-300 px-3 py-2"
-                />
-              </label>
-            </div>
-          </div>
-        </section>
-
-        {customMinErrors.length > 0 && (
-          <section className="section-container pb-4">
-            <div className="rounded-xl border border-red-200 bg-red-50 p-5 text-red-900">
-              <p className="font-black">Custom minimum not met</p>
-              <p className="mt-1 text-sm">
-                Each selected custom bag line must be at least 4 cases. Please update quantities before emailing the quote.
-              </p>
-            </div>
-          </section>
-        )}
-
-        <section className="section-container pb-8 print-hide">
-          <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white">
-            <table className="min-w-full text-left">
-              <thead className="border-b border-slate-200 bg-slate-900 text-xs uppercase tracking-[0.08em] text-amber-100">
-                <tr>
-                  <th className="px-4 py-3">Category / Bag</th>
-                  <th className="px-4 py-3">Qty / Case</th>
-                  <th className="px-4 py-3">Price / Case</th>
-                  <th className="px-4 py-3">Cases</th>
-                  <th className="px-4 py-3">Line Total</th>
-                </tr>
-              </thead>
-              <tbody>
-                {CATEGORIES.map((category) => (
-                  <tr key={category.id} className="border-b border-slate-200/80 last:border-b-0">
-                    <td className="px-4 py-4 align-top" colSpan={5}>
-                      <p className="text-lg font-black text-slate-900">{category.title}</p>
-                      <div className="mt-3 overflow-x-auto">
-                        <table className="min-w-full">
-                          <tbody>
-                            {category.variants.map((variant) => {
-                              const cases = casesById[variant.id] || 0
-                              return (
-                                <tr key={variant.id} className="border-b border-slate-100 last:border-b-0">
-                                  <td className="w-[42%] px-2 py-3 text-sm font-semibold text-slate-800">{variant.label}</td>
-                                  <td className="w-[14%] px-2 py-3 text-sm text-slate-700">{variant.quantityPerCase}</td>
-                                  <td className="w-[14%] px-2 py-3 text-sm text-slate-700">{money(variant.pricePerCase)}</td>
-                                  <td className="w-[14%] px-2 py-3">
-                                    <input
-                                      type="number"
-                                      min={0}
-                                      step={1}
-                                      value={cases === 0 ? '' : cases}
-                                      onChange={(e) => updateCases(variant.id, e.target.value)}
-                                      className="w-24 rounded-md border border-slate-300 px-2 py-1 text-sm font-semibold"
-                                      aria-label={`Cases for ${variant.label}`}
-                                    />
-                                  </td>
-                                  <td className="w-[16%] px-2 py-3 text-sm font-bold text-slate-900">
-                                    {money(cases * variant.pricePerCase)}
-                                  </td>
-                                </tr>
-                              )
-                            })}
-                          </tbody>
-                        </table>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <section className="section-container">
-          <div className="rounded-2xl bg-[linear-gradient(135deg,#0f172a,#1e293b)] p-8 text-white md:p-10">
-            <h2 className="heading-serif text-3xl font-black md:text-4xl">Quote Summary</h2>
-            <div className="mt-5 grid gap-3 md:grid-cols-3">
-              <div className="rounded-lg bg-white/10 p-4">
-                <p className="text-xs font-bold uppercase tracking-[0.08em] text-slate-300">Subtotal</p>
-                <p className="mt-1 text-2xl font-black">{money(subtotal)}</p>
-              </div>
-              <div className="rounded-lg bg-white/10 p-4">
-                <p className="text-xs font-bold uppercase tracking-[0.08em] text-slate-300">Total Cases</p>
-                <p className="mt-1 text-2xl font-black">{totalCases}</p>
-              </div>
-              <div className="rounded-lg bg-white/10 p-4">
-                <p className="text-xs font-bold uppercase tracking-[0.08em] text-slate-300">Shipping Status</p>
-                <p className="mt-1 text-sm font-bold">{shippingMessage}</p>
-              </div>
-            </div>
-            <p className="mt-5 text-sm text-slate-300">
-              This quote is an estimate only. Final totals and shipping are confirmed by our team after review.
-            </p>
-            <p className="mt-1 text-xs text-slate-400">Generated {generatedAt}</p>
-          </div>
-        </section>
-      </div>
-
-      <section className="quote-pdf-only">
-        <div className="quote-pdf-sheet">
-          <div className="quote-pdf-brandbar">
-            <p className="quote-pdf-brand">BAG CO</p>
-            <p className="quote-pdf-doclabel">Generic Bag Quote</p>
-          </div>
-
-          <div className="quote-pdf-header">
-            <div>
-              <h1>Quote Estimate</h1>
-              <p className="quote-pdf-subtitle">Factory-direct paper bag pricing</p>
-            </div>
-            <div className="quote-pdf-meta">
-              <p><strong>Quote ID:</strong> {quoteId || 'Pending'}</p>
-              <p><strong>Date & Time:</strong> {generatedAt || 'Pending'}</p>
-              <p><strong>Prepared By:</strong> Bag Co</p>
-              <p><strong>Email:</strong> info@bagco.com</p>
-              <p><strong>Phone:</strong> (252) 516-1944</p>
-            </div>
-          </div>
-
-          <div className="quote-pdf-client">
-            <div>
-              <p className="quote-pdf-label">Customer Name</p>
-              <p>{customer.name || 'Not provided'}</p>
-            </div>
-            <div>
-              <p className="quote-pdf-label">Company</p>
-              <p>{customer.company || 'Not provided'}</p>
-            </div>
-            <div>
-              <p className="quote-pdf-label">Email</p>
-              <p>{customer.email || 'Not provided'}</p>
-            </div>
-            <div>
-              <p className="quote-pdf-label">Phone</p>
-              <p>{customer.phone || 'Not provided'}</p>
-            </div>
-          </div>
-
-          <div className="quote-pdf-summary">
-            <div>
-              <p className="quote-pdf-label">Line Items</p>
-              <strong>{selectedLineCount}</strong>
-            </div>
-            <div>
-              <p className="quote-pdf-label">Total Cases</p>
-              <strong>{totalCases}</strong>
-            </div>
-            <div>
-              <p className="quote-pdf-label">Subtotal</p>
-              <strong>{money(subtotal)}</strong>
-            </div>
-          </div>
-
-          <table className="quote-print-table">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Category</th>
-                <th>Bag</th>
-                <th>Qty / Case</th>
-                <th>Cases</th>
-                <th>Price / Case</th>
-                <th>Line Total</th>
-              </tr>
-            </thead>
-            <tbody>
-              {selectedLines.length === 0 ? (
-                <tr>
-                  <td colSpan={7}>No line items selected.</td>
-                </tr>
-              ) : (
-                selectedLines.map((line, index) => (
-                  <tr key={line.id}>
-                    <td>{index + 1}</td>
-                    <td>{line.categoryTitle}</td>
-                    <td>{line.label}</td>
-                    <td>{line.quantityPerCase}</td>
-                    <td>{line.cases}</td>
-                    <td>{money(line.pricePerCase)}</td>
-                    <td>{money(line.lineTotal)}</td>
-                  </tr>
-                ))
-              )}
-            </tbody>
-          </table>
-
-          <div className="quote-pdf-totalbar">
-            <div className="quote-pdf-totalrows">
-              <p>
-                <span>Subtotal (No Shipping)</span>
-                <strong>{money(subtotal)}</strong>
-              </p>
-              <p>
-                <span>Total Cases</span>
-                <strong>{totalCases}</strong>
-              </p>
-            </div>
-            <div className="quote-pdf-shipping">
-              <p className="quote-pdf-label">Shipping Status</p>
-              <strong>{shippingMessage}</strong>
-            </div>
-          </div>
-
-          <p className="quote-pdf-note">
-            This is an estimated quote only and not a final invoice.
+    <div className="pb-16">
+      <section className="quote-hero relative overflow-hidden border-b border-amber-200 bg-[linear-gradient(120deg,#fffdf8_0%,#f5e8d3_55%,#e8d6ba_100%)]">
+        <div className="section-container py-14 md:py-20">
+          <p className="kicker">Estimate Tool</p>
+          <h1 className="heading-serif mt-5 text-4xl font-black text-[#1E4D2B] md:text-6xl">Generic Bag Quote Builder</h1>
+          <p className="mt-4 max-w-3xl text-lg text-[#5F4D33]">
+            Select industry and bag type, preview the product, then add case quantities to build a structured quote.
           </p>
+          <p className="mt-3 text-sm font-semibold text-[#5F4D33]">{LEAD_TIME_MESSAGE}</p>
+          <div className="mt-6 flex flex-wrap gap-3 print-hide">
+            <button type="button" className="btn-secondary" onClick={() => window.print()}>
+              Save as PDF
+            </button>
+            <a href={mailtoHref} className={`btn-primary ${quoteLines.length === 0 ? 'pointer-events-none opacity-50' : ''}`}>
+              Save & Share Quote (Email)
+            </a>
+            <button type="button" className="btn-secondary" onClick={copyShareLink}>
+              {copied ? 'Share Link Copied' : 'Save & Share Quote (Link)'}
+            </button>
+          </div>
+        </div>
+      </section>
 
-          <div className="quote-pdf-notes">
-            <p>Custom bags require a minimum of 4 cases per selected bag type.</p>
-            <p>Under 8 total cases, orders ship UPS Ground and freight is added to invoice.</p>
-            <p>At 8+ total cases, Fuel Surcharge (FSC) only applies: Zone 2-3 (5%), Zone 4-6 (7.5%), Zone 7-8 (10%).</p>
-            <p>LTL orders use a flat FSC per pallet, confirmed after team review.</p>
-            <p>Final totals and freight are confirmed after our team reviews the request.</p>
+      <section className="section-container py-10">
+        <div className="tonal-panel">
+          <h2 className="text-2xl font-black text-[#1E4D2B]">Quote Builder</h2>
+          <div className="mt-5 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
+              Industry
+              <select
+                value={selectedIndustry}
+                onChange={(event) => {
+                  const nextIndustry = parseIndustryValue(event.target.value)
+                  setSelectedIndustry(nextIndustry)
+                  setSelectedBagType('')
+                  setSelectedProductSlug('')
+                }}
+                className="rounded-xl border border-[#C4935A66] bg-white px-3 py-2"
+              >
+                <option value="">Select industry</option>
+                {INDUSTRY_ORDER.map((industry) => (
+                  <option key={industry} value={industry}>
+                    {INDUSTRY_LABELS[industry]}
+                  </option>
+                ))}
+              </select>
+            </label>
+
+            <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
+              Bag Type
+              <select
+                value={selectedBagType}
+                onChange={(event) => {
+                  setSelectedBagType(event.target.value)
+                  setSelectedProductSlug('')
+                }}
+                className="rounded-xl border border-[#C4935A66] bg-white px-3 py-2"
+                disabled={!selectedIndustry}
+              >
+                <option value="">Select bag type</option>
+                {bagTypeOptions.map((bagType) => (
+                  <option key={bagType} value={bagType}>
+                    {bagType}
+                  </option>
+                ))}
+              </select>
+            </label>
+
+            <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
+              Product
+              <select
+                value={selectedProductSlug}
+                onChange={(event) => setSelectedProductSlug(event.target.value)}
+                className="rounded-xl border border-[#C4935A66] bg-white px-3 py-2"
+                disabled={!selectedBagType}
+              >
+                <option value="">Select product</option>
+                {bagTypeProducts.map((product) => (
+                  <option key={product.slug} value={product.slug}>
+                    {product.name} ({product.sku})
+                  </option>
+                ))}
+              </select>
+            </label>
+
+            <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
+              Cases
+              <div className="flex gap-2">
+                <input
+                  type="number"
+                  min={1}
+                  value={casesInput}
+                  onChange={(event) => setCasesInput(event.target.value)}
+                  className="w-full rounded-xl border border-[#C4935A66] bg-white px-3 py-2"
+                />
+                <button type="button" className="btn-primary whitespace-nowrap" onClick={addLine} disabled={!previewProduct}>
+                  Add
+                </button>
+              </div>
+            </label>
+          </div>
+
+          {previewProduct && (
+            <div className="mt-6 grid gap-4 lg:grid-cols-[0.42fr_0.58fr]">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-[#C4935A66] bg-[#FAF6F0]">
+                <Image src={previewProduct.image} alt={previewProduct.name} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 40vw" />
+              </div>
+              <div className="surface-card rounded-2xl p-4">
+                <h3 className="text-xl font-black text-[#1E4D2B]">{previewProduct.name}</h3>
+                <p className="mt-1 text-xs font-black uppercase tracking-[0.09em] text-[#7A6548]">SKU {previewProduct.sku}</p>
+                <p className="mt-3 text-sm text-[#5F4D33]">
+                  <span className="font-semibold text-[#1E4D2B]">Sizes:</span> {previewProduct.sizeOptions.join(', ')}
+                </p>
+                <p className="mt-1 text-sm text-[#5F4D33]">
+                  <span className="font-semibold text-[#1E4D2B]">Case Count:</span> {previewProduct.caseCount}
+                </p>
+                <p className="mt-1 text-sm text-[#5F4D33]">
+                  <span className="font-semibold text-[#1E4D2B]">From:</span> {money(previewProduct.startingPrice)}/case
+                </p>
+                <p className="mt-3 text-sm font-semibold text-[#5F4D33]">
+                  Lead time: {previewProduct.availability === 'stock' ? 'Stock ships in 3-5 days' : 'Custom runs 3-4 weeks'}
+                </p>
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
+
+      <section className="section-container pb-8">
+        <div className="tonal-panel">
+          <h2 className="text-2xl font-black text-[#1E4D2B]">Quote Lines</h2>
+          {quoteLines.length === 0 ? (
+            <p className="mt-3 text-sm text-[#5F4D33]">No lines added yet.</p>
+          ) : (
+            <div className="mt-5 overflow-x-auto">
+              <table className="min-w-full border-separate border-spacing-y-2">
+                <thead>
+                  <tr className="text-left text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">
+                    <th className="px-2 py-1">Product</th>
+                    <th className="px-2 py-1">Price/Case</th>
+                    <th className="px-2 py-1">Cases</th>
+                    <th className="px-2 py-1">Line Total</th>
+                    <th className="px-2 py-1">Lead Time</th>
+                    <th className="px-2 py-1">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {quoteLines.map((line) => (
+                    <tr key={line.slug} className="surface-card text-sm text-[#5F4D33]">
+                      <td className="rounded-l-xl px-2 py-2">
+                        <p className="font-semibold text-[#1E4D2B]">{line.product.name}</p>
+                        <p className="text-xs text-[#7A6548]">SKU {line.product.sku}</p>
+                      </td>
+                      <td className="px-2 py-2">{money(line.product.startingPrice)}</td>
+                      <td className="px-2 py-2">
+                        <input
+                          type="number"
+                          min={1}
+                          value={line.cases}
+                          onChange={(event) => updateLineCases(line.slug, event.target.value)}
+                          className="w-24 rounded-lg border border-[#C4935A66] px-2 py-1"
+                        />
+                      </td>
+                      <td className="px-2 py-2 font-semibold text-[#1E4D2B]">{money(line.lineTotal)}</td>
+                      <td className="px-2 py-2">
+                        {line.product.availability === 'stock' ? '3-5 days' : '3-4 weeks'}
+                      </td>
+                      <td className="rounded-r-xl px-2 py-2">
+                        <button type="button" className="rounded-lg border border-[#C4935A66] px-2 py-1 text-xs font-semibold" onClick={() => removeLine(line.slug)}>
+                          Remove
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+
+          <div className="mt-6 grid gap-3 md:grid-cols-3">
+            <div className="surface-card rounded-2xl p-4">
+              <p className="text-xs font-black uppercase tracking-[0.09em] text-[#7A6548]">Total Cases</p>
+              <p className="mt-2 text-2xl font-black text-[#1E4D2B]">{totalCases}</p>
+            </div>
+            <div className="surface-card rounded-2xl p-4">
+              <p className="text-xs font-black uppercase tracking-[0.09em] text-[#7A6548]">Subtotal</p>
+              <p className="mt-2 text-2xl font-black text-[#1E4D2B]">{money(subtotal)}</p>
+            </div>
+            <div className="surface-card rounded-2xl p-4">
+              <p className="text-xs font-black uppercase tracking-[0.09em] text-[#7A6548]">Shipping Rule</p>
+              <p className="mt-2 text-sm font-semibold text-[#5F4D33]">{shippingMessage}</p>
+            </div>
+          </div>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
+              Customer Name
+              <input
+                type="text"
+                value={customer.name}
+                onChange={(event) => setCustomer((prev) => ({ ...prev, name: event.target.value }))}
+                className="rounded-lg border border-[#C4935A66] px-3 py-2"
+              />
+            </label>
+            <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
+              Company
+              <input
+                type="text"
+                value={customer.company}
+                onChange={(event) => setCustomer((prev) => ({ ...prev, company: event.target.value }))}
+                className="rounded-lg border border-[#C4935A66] px-3 py-2"
+              />
+            </label>
+            <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
+              Email
+              <input
+                type="email"
+                value={customer.email}
+                onChange={(event) => setCustomer((prev) => ({ ...prev, email: event.target.value }))}
+                className="rounded-lg border border-[#C4935A66] px-3 py-2"
+              />
+            </label>
+            <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
+              Phone
+              <input
+                type="tel"
+                value={customer.phone}
+                onChange={(event) => setCustomer((prev) => ({ ...prev, phone: event.target.value }))}
+                className="rounded-lg border border-[#C4935A66] px-3 py-2"
+              />
+            </label>
           </div>
         </div>
       </section>
     </div>
   )
 }
+

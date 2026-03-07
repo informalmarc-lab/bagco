@@ -189,16 +189,16 @@ export default function IndustrySolutionsSection() {
               }}
               className={`surface-card rounded-xl p-5 text-left transition-all duration-300 ${
                 isActive
-                  ? 'border-blue-300 shadow-[0_16px_35px_rgba(37,99,235,0.15)]'
-                  : 'hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-[0_12px_28px_rgba(15,23,42,0.1)]'
+                  ? 'border-[#B5813A66] shadow-[0_16px_35px_rgba(181,129,58,0.18)]'
+                  : 'hover:-translate-y-0.5 hover:border-[#C4935A66] hover:shadow-[0_12px_28px_rgba(30,77,43,0.12)]'
               }`}
             >
-              <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 text-blue-100">
+              <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[#1E4D2B] text-[#F4E8D8]">
                 <Icon id={industry.id} />
               </div>
-              <h3 className="mt-4 text-xl font-black text-slate-900">{industry.title}</h3>
+              <h3 className="mt-4 text-xl font-black text-[#1E4D2B]">{industry.title}</h3>
               <p className="mt-2 text-sm muted-text">{industry.subtitle}</p>
-              <p className="mt-3 text-xs font-bold uppercase tracking-[0.09em] text-blue-800">
+              <p className="mt-3 text-xs font-bold uppercase tracking-[0.09em] text-[#B5813A]">
                 {isActive ? 'Selected' : 'Click to expand'}
               </p>
             </button>
@@ -208,7 +208,7 @@ export default function IndustrySolutionsSection() {
 
       <div
         ref={panelRef}
-        className="mt-6 overflow-hidden rounded-3xl border border-slate-200 bg-white/92 p-6 shadow-[0_14px_30px_rgba(15,23,42,0.1)] md:p-8"
+        className="mt-6 overflow-hidden rounded-3xl border border-[#C4935A66] bg-white/92 p-6 shadow-[0_14px_30px_rgba(30,77,43,0.12)] md:p-8"
       >
         <div key={active.id} className="industry-panel reveal-up">
           <div className="flex flex-wrap items-center gap-3">
@@ -217,24 +217,24 @@ export default function IndustrySolutionsSection() {
           </div>
 
           <div className="mt-6 grid gap-4 lg:grid-cols-3">
-            <div className="rounded-2xl border border-slate-200 bg-slate-50/70 p-4">
-              <h4 className="text-sm font-black uppercase tracking-[0.08em] text-slate-600">Why Bag Supply Co</h4>
+            <div className="rounded-2xl border border-[#C4935A66] bg-[#FAF6F0]/70 p-4">
+              <h4 className="text-sm font-black uppercase tracking-[0.08em] text-[#5F4D33]">Why Bag Supply Co</h4>
               <ul className="mt-3 space-y-2 text-sm muted-text">
                 {active.why.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
             </div>
-            <div className="rounded-2xl border border-slate-200 bg-slate-50/70 p-4">
-              <h4 className="text-sm font-black uppercase tracking-[0.08em] text-slate-600">Problems We Solve</h4>
+            <div className="rounded-2xl border border-[#C4935A66] bg-[#FAF6F0]/70 p-4">
+              <h4 className="text-sm font-black uppercase tracking-[0.08em] text-[#5F4D33]">Problems We Solve</h4>
               <ul className="mt-3 space-y-2 text-sm muted-text">
                 {active.problems.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
             </div>
-            <div className="rounded-2xl border border-slate-200 bg-slate-50/70 p-4">
-              <h4 className="text-sm font-black uppercase tracking-[0.08em] text-slate-600">Business Benefits</h4>
+            <div className="rounded-2xl border border-[#C4935A66] bg-[#FAF6F0]/70 p-4">
+              <h4 className="text-sm font-black uppercase tracking-[0.08em] text-[#5F4D33]">Business Benefits</h4>
               <ul className="mt-3 space-y-2 text-sm muted-text">
                 {active.benefits.map((item) => (
                   <li key={item}>{item}</li>
@@ -244,13 +244,13 @@ export default function IndustrySolutionsSection() {
           </div>
 
           <div className="mt-6">
-            <p className="text-xs font-black uppercase tracking-[0.08em] text-slate-600">Related Catalogs</p>
+            <p className="text-xs font-black uppercase tracking-[0.08em] text-[#5F4D33]">Related Catalogs</p>
             <div className="mt-2 flex flex-wrap gap-2">
               {active.catalogs.map((catalog) => (
                 <Link
                   key={catalog.href}
                   href={catalog.href}
-                  className="rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-xs font-bold text-slate-800 hover:bg-slate-50"
+                  className="rounded-lg border border-[#C4935A66] bg-white px-3 py-1.5 text-xs font-bold text-[#5F4D33] hover:bg-[#FAF6F0]"
                 >
                   {catalog.label}
                 </Link>
@@ -268,3 +268,4 @@ export default function IndustrySolutionsSection() {
     </section>
   )
 }
+

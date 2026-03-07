@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next'
+import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -48,7 +48,7 @@ export default function PharmacyBagsPage() {
       <section className="section-container py-12">
         <div className="grid gap-3 md:grid-cols-2">
           {highlights.map((item) => (
-            <p key={item} className="tonal-panel text-sm font-semibold text-slate-800">{item}</p>
+            <p key={item} className="tonal-panel text-sm font-semibold text-[#5F4D33]">{item}</p>
           ))}
         </div>
       </section>
@@ -58,9 +58,9 @@ export default function PharmacyBagsPage() {
         <div className="mt-6 grid gap-4 md:grid-cols-3">
           {catalogLinks.map((catalog) => (
             <Link key={catalog.href} href={catalog.href} className="tonal-panel hover:translate-y-[-2px] transition-transform">
-              <h3 className="text-2xl font-black text-slate-950">{catalog.title}</h3>
+              <h3 className="text-2xl font-black text-[#1E4D2B]">{catalog.title}</h3>
               <p className="mt-2 text-sm muted-text">{catalog.copy}</p>
-              <p className="mt-5 text-sm font-black uppercase tracking-[0.08em] text-blue-700">Open Catalog</p>
+              <p className="mt-5 text-sm font-black uppercase tracking-[0.08em] text-[#B5813A]">Open Catalog</p>
             </Link>
           ))}
         </div>
@@ -73,4 +73,5 @@ export default function PharmacyBagsPage() {
     </div>
   )
 }
+
 

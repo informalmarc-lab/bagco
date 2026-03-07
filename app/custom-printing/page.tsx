@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next'
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { contactEmail, pricingMailto } from '@/components/siteConfig'
 
@@ -32,7 +32,7 @@ export default function CustomPrintingPage() {
       <section className="section-container py-12">
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {capabilities.map((item) => (
-            <p key={item} className="tonal-panel text-sm font-semibold text-slate-800">{item}</p>
+            <p key={item} className="tonal-panel text-sm font-semibold text-[#5F4D33]">{item}</p>
           ))}
         </div>
 
@@ -51,4 +51,5 @@ export default function CustomPrintingPage() {
     </div>
   )
 }
+
 

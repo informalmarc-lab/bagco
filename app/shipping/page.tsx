@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next'
+import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -36,7 +36,7 @@ export default function ShippingPage() {
         <div className="grid gap-4 md:grid-cols-3">
           {rules.map((rule) => (
             <article key={rule} className="tonal-panel">
-              <p className="text-sm font-semibold text-slate-800">{rule}</p>
+              <p className="text-sm font-semibold text-[#5F4D33]">{rule}</p>
             </article>
           ))}
         </div>
@@ -46,8 +46,8 @@ export default function ShippingPage() {
           <div className="mt-5 grid gap-3 md:grid-cols-3">
             {zones.map((zone) => (
               <div key={zone.label} className="surface-card rounded-2xl p-4">
-                <p className="text-xs font-black uppercase tracking-[0.1em] text-slate-500">{zone.label}</p>
-                <p className="mt-2 text-lg font-black text-slate-950">{zone.value}</p>
+                <p className="text-xs font-black uppercase tracking-[0.1em] text-[#7A6548]">{zone.label}</p>
+                <p className="mt-2 text-lg font-black text-[#1E4D2B]">{zone.value}</p>
               </div>
             ))}
           </div>
@@ -60,4 +60,5 @@ export default function ShippingPage() {
     </div>
   )
 }
+
 

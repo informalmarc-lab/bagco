@@ -1,48 +1,30 @@
-﻿import type { Metadata } from 'next'
-import Link from 'next/link'
-import { contactTextHref } from '@/components/siteConfig'
+import type { Metadata } from 'next'
+import IndustryLandingPage from '@/components/IndustryLandingPage'
 
 export const metadata: Metadata = {
-  title: 'Smoke Shop Packaging Programs',
+  title: {
+    absolute: 'Custom Paper Bags for Smoke Shops | Wholesale | Bag Supply Co',
+  },
   description:
-    'Packaging programs for smoke shops focused on stronger brand presence and reliable inventory planning.',
+    'Branded paper bags for smoke shops and head shops. Stock and custom print options with bulk pricing and fast turnaround.',
 }
-
-const pillars = [
-  'Brand-forward carryout packaging',
-  'Catalog and custom print flexibility',
-  'Reorder support for growing store demand',
-]
 
 export default function SmokeShopsIndustryPage() {
   return (
-    <div className="pb-16">
-      <section className="page-hero">
-        <div className="page-hero-inner">
-          <p className="kicker">Industry Focus</p>
-          <h1 className="heading-display mt-5 text-4xl md:text-6xl">Smoke Shop Packaging Programs</h1>
-          <p className="mt-5 max-w-3xl text-lg muted-text">
-            Use packaging as a visibility channel while keeping your daily operations simple and predictable.
-          </p>
-        </div>
-      </section>
-
-      <section className="section-container py-12">
-        <div className="grid gap-4 md:grid-cols-3">
-          {pillars.map((item) => (
-            <article key={item} className="tonal-panel">
-              <p className="text-base font-semibold text-slate-900">{item}</p>
-            </article>
-          ))}
-        </div>
-
-        <div className="mt-8 flex flex-wrap gap-3">
-          <Link href="/catalog/magazine-comics" className="btn-secondary">View Smoke Shop Catalogs</Link>
-          <Link href="/generic-bag-quote" className="btn-primary">Build Quote</Link>
-          <a href={contactTextHref} className="btn-quiet">Text Our Team</a>
-        </div>
-      </section>
-    </div>
+    <IndustryLandingPage
+      industry="smoke-shop"
+      title="Smoke Shop Packaging Programs"
+      description="Use stock and branded carry-out bags to strengthen store recognition while keeping restock cadence consistent."
+      bottomCatalogHref="/catalog?industry=smoke-shop"
+      bottomCatalogLabel="Open Smoke Shop Catalog"
+      deepDiveSection={{
+        title: 'Why Branded Bags Matter for Smoke Shops',
+        paragraphs: [
+          'For smoke shops, packaging is more than a checkout necessity. It is one of the few brand touchpoints customers carry into public spaces after purchase. Choosing the right smoke shop paper bags starts with product mix. Smaller formats support accessories, wraps, and compact hardware, while larger sizes cover glass, apparel, and bundled orders. Standardizing your top bag sizes by transaction type helps staff move faster and avoids overusing premium formats for small-ticket purchases.',
+          'Branding also changes the long-term value of each order. Generic bags can work for short-term cost control, but custom bags for smoke shops create repeated local impressions every time customers leave the store. In neighborhoods with heavy foot traffic, that visibility compounds quickly. A recognizable print style, consistent logo placement, and durable paper quality can make your bag part of the store experience rather than disposable overhead. This is especially useful for independent stores competing with chains and online alternatives.',
+          'When comparing stock versus custom, teams should evaluate total cost per transaction, not just headline case price. Stock options usually deliver faster and can be ideal for baseline replenishment. Custom programs often require more planning lead time, but they improve brand recall and can support higher perceived value. Many operators run a blended model: stock for daily volume and branded lines for priority categories or seasonal campaigns. If you are sourcing retail paper bags wholesale, the most effective setup is predictable reorders, consistent sizing, and a print strategy that matches your in-store identity.',
+        ],
+      }}
+    />
   )
 }
-

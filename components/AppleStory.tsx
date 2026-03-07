@@ -127,12 +127,12 @@ export default function AppleStory() {
                 className={`story-step ${isActive ? 'story-step-active' : ''}`}
               >
                 <div className="tonal-panel">
-                  <p className="text-xs font-black uppercase tracking-[0.12em] text-blue-700">{step.phase}</p>
-                  <h3 className="mt-2 text-3xl font-black tracking-[-0.03em] text-slate-950">{step.title}</h3>
+                  <p className="text-xs font-black uppercase tracking-[0.12em] text-[#B5813A]">{step.phase}</p>
+                  <h3 className="mt-2 text-3xl font-black tracking-[-0.03em] text-[#1E4D2B]">{step.title}</h3>
                   <p className="mt-3 muted-text">{step.copy}</p>
                   <ul className="mt-5 grid gap-2">
                     {step.bullets.map((item) => (
-                      <li key={item} className="surface-card rounded-xl px-4 py-3 text-sm font-semibold text-slate-800">
+                      <li key={item} className="surface-card rounded-xl px-4 py-3 text-sm font-semibold text-[#5F4D33]">
                         {item}
                       </li>
                     ))}
@@ -155,8 +155,8 @@ export default function AppleStory() {
             />
             <div className="story-gradient" />
             <div className="story-caption">
-              <p className="text-xs font-black uppercase tracking-[0.11em] text-blue-700">{activeStep.phase}</p>
-              <p className="mt-1 text-sm font-semibold text-slate-700">{activeStep.title}</p>
+              <p className="text-xs font-black uppercase tracking-[0.11em] text-[#B5813A]">{activeStep.phase}</p>
+              <p className="mt-1 text-sm font-semibold text-[#5F4D33]">{activeStep.title}</p>
               <div className="mt-3 flex flex-wrap gap-2">
                 <Link href="/catalog" className="btn-secondary">
                   Browse Catalogs
@@ -172,4 +172,5 @@ export default function AppleStory() {
     </section>
   )
 }
+
 

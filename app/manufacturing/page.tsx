@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next'
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -37,7 +37,7 @@ export default function ManufacturingPage() {
       <section className="section-container py-12">
         <div className="grid gap-3 md:grid-cols-2">
           {strengths.map((item) => (
-            <p key={item} className="tonal-panel text-sm font-semibold text-slate-800">{item}</p>
+            <p key={item} className="tonal-panel text-sm font-semibold text-[#5F4D33]">{item}</p>
           ))}
         </div>
 
@@ -57,4 +57,5 @@ export default function ManufacturingPage() {
     </div>
   )
 }
+
 

@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next'
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
@@ -38,7 +38,7 @@ export default function PrivacyPolicyPage() {
         <div className="grid gap-4">
           {sections.map((item) => (
             <article key={item.title} className="tonal-panel">
-              <h2 className="text-2xl font-black text-slate-950">{item.title}</h2>
+              <h2 className="text-2xl font-black text-[#1E4D2B]">{item.title}</h2>
               <p className="mt-3 muted-text">{item.copy}</p>
             </article>
           ))}
@@ -47,4 +47,5 @@ export default function PrivacyPolicyPage() {
     </div>
   )
 }
+
 

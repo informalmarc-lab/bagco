@@ -1,124 +1,121 @@
-﻿import type { Metadata } from 'next'
+import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
-import AppleStory from '@/components/AppleStory'
+import Script from 'next/script'
 import QuickQuoteForm from '@/components/QuickQuoteForm'
 import IndustrySolutionsSection from '@/components/IndustrySolutionsSection'
+import NewsletterSignup from '@/components/NewsletterSignup'
 import { contactPhone, contactTextHref } from '@/components/siteConfig'
+import { getAllCatalogProducts, money } from '@/lib/catalogProducts'
 
 export const metadata: Metadata = {
-  title: 'Custom Paper Bag Manufacturer for Retail, Pharmacy, and Veterinary',
+  title: {
+    absolute: 'Custom Paper Bag Manufacturer | Pharmacy, Dispensary & Retail | Bag Supply Co',
+  },
   description:
-    'Bag Supply Co delivers custom retail bags, pharmacy packaging bags, and veterinary paper bag programs with predictable lead times and recurring reorder support.',
+    'Factory-direct custom and stock paper bags for pharmacies, dispensaries, vet clinics and retail. Instant quotes. Ships across the US. Net 30 available.',
   keywords: [
-    'custom retail bags',
-    'pharmacy packaging bags',
+    'custom pharmacy bags',
+    'dispensary exit bags',
+    'retail paper bags wholesale',
     'veterinary paper bags',
-    'wholesale custom packaging',
-    'paper bag manufacturer',
+    'custom printed paper bags',
   ],
 }
 
-const valueProps = [
-  {
-    title: 'Who We Serve',
-    copy: 'Pharmacies, veterinary clinics, dispensaries, smoke shops, and growth retail teams.',
-  },
-  {
-    title: 'What We Deliver',
-    copy: 'Stock and custom paper bag programs with clear case-level quote structure.',
-  },
-  {
-    title: 'Why Teams Stay',
-    copy: 'Reliable production timelines and recurring reorder support that reduces operational stress.',
-  },
-]
-
-const socialProof = [
-  { label: 'Retail Clients', value: '500+' },
-  { label: 'Bags Shipped', value: '10M+' },
-  { label: 'Coverage', value: 'Ships Across the US' },
-  { label: 'Terms', value: 'Net 30 Available' },
-  { label: 'Lead Window', value: '3-4 Weeks' },
-]
-
-const pricingAnchors = [
-  'Stock programs can start around $65.91 per case depending on size.',
-  'Custom print programs start at 4-case minimum per selected bag type.',
-  'Orders at 8+ total cases qualify for FSC-only freight model.',
-]
-
-const painVsOutcome = [
-  {
-    pain: 'Unclear restock timing creates checkout risk.',
-    outcome: 'Structured replenishment keeps supply predictable.',
-  },
-  {
-    pain: 'Generic packaging weakens brand perception.',
-    outcome: 'Custom print options strengthen customer recall.',
-  },
-  {
-    pain: 'Multiple vendors create communication drag.',
-    outcome: 'One packaging partner keeps execution clean.',
-  },
-]
-
-const reorderHighlights = [
-  'Weekly or monthly reorder cadence based on your actual volume.',
-  'Automatic production and billing flow for recurring accounts.',
-  'Store-level program rules for multi-location operations.',
+const industryQuickNav = [
+  { label: 'Pharmacy', href: '/industries/pharmacies', icon: 'RX' },
+  { label: 'Veterinary', href: '/industries/veterinary', icon: 'VT' },
+  { label: 'Dispensary', href: '/industries/dispensaries', icon: 'DS' },
+  { label: 'Smoke Shop', href: '/industries/smoke-shops', icon: 'SM' },
+  { label: 'Retail', href: '/industries/retail-stores', icon: 'RT' },
+  { label: 'Food & Beverage', href: '/industries/food-beverage', icon: 'FB' },
 ]
 
 const testimonials = [
   {
-    quote:
-      'The case planning was clear, and reorders became automatic instead of chaotic.',
+    quote: 'The catalog filters made it easy to compare sizes and place our quote request in minutes.',
     person: 'R. Patel',
-    location: 'Charlotte, NC',
     role: 'Independent Pharmacy Owner',
-    business: 'Oakview Pharmacy',
+    image: '/catalog/pharmacy/ty/TY-25-FRONT.webp',
   },
   {
-    quote:
-      'We moved from generic bags to custom print and immediately looked more established.',
+    quote: 'We picked a custom dispensary line and had clear case pricing before our first reorder.',
     person: 'J. Monroe',
-    location: 'Tampa, FL',
     role: 'Retail Operations Manager',
-    business: 'Monroe Wellness Dispensary',
+    image: '/catalog/dispensary/d7d49ada01_CBC-DMC24_7c313f11.png',
   },
   {
-    quote:
-      'Quality stayed consistent across repeat orders, and communication has been fast.',
+    quote: 'The veterinary options were straightforward, and lead-time expectations were clear from day one.',
     person: 'A. Kim',
-    location: 'Raleigh, NC',
     role: 'Veterinary Practice Manager',
-    business: 'Northgate Veterinary Clinic',
+    image: '/catalog/veterinary/vb2/VB2-22-FRONT.webp',
   },
+]
+
+const processSteps = [
+  {
+    title: 'Diagnose',
+    detail: 'Map industry, usage patterns, and best-fit bag specs.',
+    icon: '01',
+  },
+  {
+    title: 'Design',
+    detail: 'Select stock vs custom print, colors, and final artwork direction.',
+    icon: '02',
+  },
+  {
+    title: 'Produce',
+    detail: 'Run production to approved spec with case-level planning.',
+    icon: '03',
+  },
+  {
+    title: 'Replenish',
+    detail: 'Repeat with structured reorder cadence and reliable lead windows.',
+    icon: '04',
+  },
+]
+
+const whoWeServeLinks = [
+  { label: 'Pharmacies', href: '/industries/pharmacies' },
+  { label: 'Dispensaries', href: '/industries/dispensaries' },
+  { label: 'Smoke Shops', href: '/industries/smoke-shops' },
+  { label: 'Veterinary Clinics', href: '/industries/veterinary' },
+  { label: 'Retail Stores', href: '/industries/retail-stores' },
+  { label: 'Food & Beverage', href: '/industries/food-beverage' },
+]
+
+const clientTypes = [
+  { label: 'Independent Pharmacies', icon: 'RX' },
+  { label: 'Veterinary Clinics', icon: 'VT' },
+  { label: 'Dispensaries', icon: 'DS' },
+  { label: 'Smoke Shops', icon: 'SM' },
+  { label: 'Retail Chains', icon: 'RT' },
+  { label: 'Food Service', icon: 'FB' },
 ]
 
 const faqs = [
   {
     question: 'Can I order stock bags and custom printed bags from the same supplier?',
     answer:
-      'Yes. We support both stock and custom programs so teams can move fast now and standardize branding over time.',
+      'Yes. We support both stock and custom programs so teams can move quickly now and standardize branding over time.',
   },
   {
-    question: 'Do you support pharmacy and veterinary operations specifically?',
+    question: 'Do you show pricing anchors before I contact sales?',
     answer:
-      'Yes. We run dedicated pharmacy and veterinary catalogs with established sizes, case counts, and recurring-order support.',
+      'Yes. Catalog cards show starting case prices so you can align options before requesting a final quote.',
   },
   {
-    question: 'Is there a way to estimate pricing before contacting sales?',
+    question: 'How fast can stock and custom orders ship?',
     answer:
-      'Yes. Use our quote tool to build a case-based estimate, then send it to our team for review and final freight details.',
-  },
-  {
-    question: 'Do you offer recurring reorder programs?',
-    answer:
-      'Yes. We help set practical reorder cadence so packaging does not become a manual weekly fire drill.',
+      'Stock programs generally ship in 3-5 days. Custom print programs typically run 3-4 weeks after proof approval.',
   },
 ]
 
 export default function Home() {
+  const products = getAllCatalogProducts()
+  const featuredProducts = products.slice(0, 6)
+
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -132,43 +129,196 @@ export default function Home() {
     })),
   }
 
+  const homepageLocalBusinessSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'Bag Supply Co',
+    url: 'https://www.bagsupplyco.com',
+    telephone: '+12525161944',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '912 Houston Drive',
+      addressLocality: 'Monroe',
+      addressRegion: 'NC',
+      postalCode: '28110',
+      addressCountry: 'US',
+    },
+    description:
+      'Stock and custom paper bag programs for pharmacies, dispensaries, veterinary clinics and retail stores across the US.',
+    sameAs: ['https://www.facebook.com/profile.php?id=61586254914821'],
+  }
+
   return (
     <div className="pb-20">
+      <Script
+        id="bagsupplyco-home-localbusiness"
+        type="application/ld+json"
+        strategy="beforeInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageLocalBusinessSchema) }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className="page-hero">
         <div className="page-hero-inner">
           <div className="split-panel items-start">
             <div>
-              <p className="kicker">Custom and Stock Paper Bag Programs</p>
-              <h1 className="heading-display mt-5">
-                Packaging Programs Built for Teams That Need Reliability
-              </h1>
+              <p className="kicker">Bag Supply Co</p>
+              <h1 className="heading-display mt-5">Paper Bags. Priced. Shipped. Done.</h1>
               <p className="mt-5 max-w-3xl text-lg muted-text">
-                Bag Supply Co helps pharmacies, retail stores, veterinary clinics, and dispensaries manage packaging with cleaner branding, clearer lead times, and repeatable replenishment.
+                Stock and custom bag programs for pharmacies, dispensaries, vet clinics, and retail with pricing you can see before you call.
               </p>
-              <p className="mt-4 text-sm font-semibold text-slate-700">
-                Questions? Text us: <a href={contactTextHref} className="underline">{contactPhone}</a>
+              <div className="mt-5 flex flex-wrap gap-2 text-xs font-black uppercase tracking-[0.08em] text-[#5F4D33]">
+                <span className="rounded-full bg-white px-3 py-1.5">Stock Ships 3-5 Days</span>
+                <span className="rounded-full bg-white px-3 py-1.5">Custom 3-4 Weeks</span>
+                <span className="rounded-full bg-white px-3 py-1.5">Net 30 Available</span>
+                <span className="rounded-full bg-white px-3 py-1.5">Ships Across The US</span>
+              </div>
+              <p className="mt-4 text-sm font-semibold text-[#5F4D33]">
+                Text to order: <a href={contactTextHref} className="underline">{contactPhone}</a>
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link href="/generic-bag-quote" className="btn-primary">
                   Build a Quote
                 </Link>
                 <Link href="/catalog" className="btn-secondary">
-                  Explore Catalogs
+                  Browse Products {String.fromCharCode(8594)}
                 </Link>
-                <a href={contactTextHref} className="btn-quiet">
-                  Text Our Team
-                </a>
               </div>
             </div>
 
-            <div className="hero-panel">
-              <p className="text-xs font-black uppercase tracking-[0.12em] text-blue-700">Price and Program Anchors</p>
-              <div className="mt-4 grid gap-3">
-                {pricingAnchors.map((item) => (
-                  <div key={item} className="surface-card rounded-2xl p-4">
-                    <p className="text-sm font-semibold text-slate-800">{item}</p>
+            <div className="hero-panel overflow-hidden">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-[#C4935A66] bg-[#FAF6F0]">
+                <Image
+                  src="/catalog/custom/2-color/CBC-25-FC2C.webp"
+                  alt="Branded paper bag product photo"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 44vw"
+                  priority
+                />
+              </div>
+              <div className="mt-4 grid gap-2 text-sm font-semibold text-[#5F4D33]">
+                <p className="surface-card rounded-xl px-3 py-2">Stock bags from {money(65.91)}/case</p>
+                <p className="surface-card rounded-xl px-3 py-2">Custom print lead time: 3-4 weeks</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-8">
+            <p className="text-xs font-black uppercase tracking-[0.11em] text-[#7A6548]">Shop by Industry</p>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {industryQuickNav.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="inline-flex items-center gap-2 rounded-full border border-[#C4935A66] bg-white px-4 py-2 text-sm font-semibold text-[#5F4D33] hover:bg-[#FAF6F0]"
+                >
+                  <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#1E4D2B] text-[10px] font-black text-white">
+                    {item.icon}
+                  </span>
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-container py-8">
+        <div className="rounded-3xl bg-[#1E4D2B] px-6 py-8 text-white shadow-[0_22px_50px_rgba(30,77,43,0.36)] md:px-10">
+          <h2 className="text-3xl font-black tracking-[-0.03em]">See pricing before you call.</h2>
+          <p className="mt-3 max-w-3xl text-base text-[#F4E8D8] md:text-lg">
+            Most bag suppliers make you wait for a quote. We show case-level pricing upfront â€” build your own estimate in under 2 minutes.
+          </p>
+          <Link href="/generic-bag-quote" className="btn-primary mt-6">
+            Build Your Quote {String.fromCharCode(8594)}
+          </Link>
+        </div>
+      </section>
+
+      <section className="section-container py-4">
+        <div className="tonal-panel">
+          <p className="kicker">Who We Serve</p>
+          <h2 className="section-title mt-4">Packaging Programs by Industry</h2>
+          <div className="mt-5 flex flex-wrap gap-2">
+            {whoWeServeLinks.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="rounded-full border border-[#C4935A66] bg-white px-4 py-2 text-sm font-semibold text-[#5F4D33] hover:bg-[#FAF6F0]"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-container py-10">
+        <div className="flex items-center justify-between gap-3">
+          <h2 className="section-title">Featured Catalog Products</h2>
+          <Link href="/catalog" className="btn-secondary">
+            View Full Catalog
+          </Link>
+        </div>
+        <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
+          {featuredProducts.map((product) => (
+            <article key={product.sku} className="surface-card overflow-hidden rounded-2xl">
+              <div className="relative aspect-[4/3] bg-[#FAF6F0]">
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                />
+              </div>
+              <div className="p-4">
+                <p className="text-xs font-black uppercase tracking-[0.09em] text-[#7A6548]">SKU {product.sku}</p>
+                <h3 className="mt-2 text-lg font-black text-[#1E4D2B]">{product.name}</h3>
+                <p className="mt-1 text-sm text-[#5F4D33]">From {money(product.startingPrice)}/case</p>
+                <Link href={`/products/${product.slug}`} className="btn-secondary mt-4">
+                  View Product
+                </Link>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section-container py-6">
+        <div className="tonal-panel">
+          <p className="kicker">Social Proof</p>
+          <h2 className="section-title mt-4">Trusted by Packaging Buyers Across Core Industries</h2>
+
+          <div className="mt-6 grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
+            <div className="grid gap-3">
+              {testimonials.map((item) => (
+                <article key={item.quote} className="surface-card rounded-2xl p-4">
+                  <div className="flex items-start gap-3">
+                    <div className="relative h-16 w-16 flex-none overflow-hidden rounded-xl border border-[#C4935A66] bg-[#FAF6F0]">
+                      <Image src={item.image} alt={item.person} fill className="object-cover" sizes="64px" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-[#5F4D33]">"{item.quote}"</p>
+                      <p className="mt-2 text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">
+                        {item.person} | {item.role}
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <div className="surface-card rounded-2xl p-4">
+              <p className="text-xs font-black uppercase tracking-[0.1em] text-[#7A6548]">Client Types</p>
+              <div className="mt-4 grid gap-2 sm:grid-cols-2">
+                {clientTypes.map((type) => (
+                  <div key={type.label} className="rounded-xl border border-[#C4935A66] bg-white px-3 py-2 text-sm font-semibold text-[#5F4D33]">
+                    <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#1E4D2B] text-[10px] font-black text-white">
+                      {type.icon}
+                    </span>{' '}
+                    {type.label}
                   </div>
                 ))}
               </div>
@@ -177,64 +327,21 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-container pt-8">
+      <section className="section-container py-6">
         <div className="tonal-panel">
-          <p className="kicker">Social Proof</p>
-          <h2 className="section-title mt-4">Trusted by High-Volume Packaging Teams</h2>
-          <div className="mt-6 grid gap-3 md:grid-cols-5">
-            {socialProof.map((item) => (
-              <article key={item.label} className="surface-card rounded-2xl p-4">
-                <p className="text-xs font-black uppercase tracking-[0.1em] text-slate-500">{item.label}</p>
-                <p className="mt-2 text-2xl font-black text-slate-950">{item.value}</p>
+          <p className="kicker">How It Works</p>
+          <h2 className="section-title mt-4">Diagnose to Replenish in Four Clear Steps</h2>
+          <div className="mt-6 grid gap-3 md:grid-cols-4">
+            {processSteps.map((step) => (
+              <article key={step.title} className="surface-card rounded-2xl p-4">
+                <p className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#1E4D2B] text-xs font-black text-white">
+                  {step.icon}
+                </p>
+                <h3 className="mt-3 text-lg font-black text-[#1E4D2B]">{step.title}</h3>
+                <p className="mt-2 text-sm text-[#5F4D33]">{step.detail}</p>
               </article>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="section-container pt-8">
-        <div className="grid gap-3 md:grid-cols-3">
-          {valueProps.map((item) => (
-            <article key={item.title} className="tonal-panel">
-              <h2 className="text-xl font-black text-slate-950">{item.title}</h2>
-              <p className="mt-2 text-sm muted-text">{item.copy}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <AppleStory />
-
-      <section className="section-container py-8 md:py-14">
-        <div className="tonal-panel">
-          <h2 className="section-title">From Packaging Friction to Operational Clarity</h2>
-          <div className="mt-6 grid gap-3 md:grid-cols-3">
-            {painVsOutcome.map((item) => (
-              <article key={item.pain} className="surface-card rounded-2xl p-4">
-                <p className="text-xs font-black uppercase tracking-[0.1em] text-slate-500">Before</p>
-                <p className="mt-2 text-sm font-semibold text-slate-700">{item.pain}</p>
-                <p className="mt-4 text-xs font-black uppercase tracking-[0.1em] text-blue-700">After</p>
-                <p className="mt-2 text-sm font-semibold text-slate-900">{item.outcome}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-container pt-1">
-        <div className="tonal-panel">
-          <p className="kicker">Automated Reorder Program</p>
-          <h2 className="section-title mt-4">Stop Manually Chasing Reorders</h2>
-          <div className="mt-6 grid gap-3 md:grid-cols-3">
-            {reorderHighlights.map((item) => (
-              <article key={item} className="surface-card rounded-2xl p-4">
-                <p className="text-sm font-semibold text-slate-800">{item}</p>
-              </article>
-            ))}
-          </div>
-          <Link href="/contact" className="btn-secondary mt-6">
-            Set Up Recurring Program
-          </Link>
         </div>
       </section>
 
@@ -243,18 +350,11 @@ export default function Home() {
       <section className="section-container py-10 md:py-16">
         <div className="split-panel items-start">
           <div className="tonal-panel">
-            <p className="kicker">Client Feedback</p>
-            <h2 className="section-title mt-4">Trusted by Real Operators</h2>
-            <div className="mt-6 grid gap-3">
-              {testimonials.map((item) => (
-                <article key={item.quote} className="surface-card rounded-2xl p-4">
-                  <p className="text-sm text-slate-800">"{item.quote}"</p>
-                  <p className="mt-3 text-xs font-black uppercase tracking-[0.1em] text-slate-500">
-                    {item.person} | {item.business} | {item.role} | {item.location}
-                  </p>
-                </article>
-              ))}
-            </div>
+            <p className="kicker">Quick Quote</p>
+            <h2 className="section-title mt-4">Start with Industry, Bag Type, and Case Volume</h2>
+            <p className="mt-3 muted-text">
+              Use the quote form to send requirements quickly. We respond with stock/custom options and lead-time.
+            </p>
           </div>
 
           <QuickQuoteForm />
@@ -268,7 +368,7 @@ export default function Home() {
           <div className="mt-6 grid gap-3">
             {faqs.map((item) => (
               <article key={item.question} className="surface-card rounded-2xl p-4">
-                <h3 className="text-lg font-black text-slate-950">{item.question}</h3>
+                <h3 className="text-lg font-black text-[#1E4D2B]">{item.question}</h3>
                 <p className="mt-2 text-sm muted-text">{item.answer}</p>
               </article>
             ))}
@@ -276,23 +376,16 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-container pt-2">
-        <div className="tonal-panel">
-          <p className="kicker">Social Media</p>
-          <h2 className="section-title mt-4">Follow Bag Supply Co</h2>
-          <p className="mt-3 muted-text">
-            See updates, product highlights, and recent packaging work on Facebook.
-          </p>
-          <a
-            href="https://www.facebook.com/profile.php?id=61586254914821"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary mt-5"
-          >
-            Visit Our Facebook
-          </a>
-        </div>
+      <section className="section-container pt-4">
+        <NewsletterSignup
+          source="homepage"
+          heading="Stay ahead of reorder season."
+          subheading="New designs, seasonal collections, and reorder reminders delivered to your inbox."
+          microcopy="No spam. Unsubscribe anytime."
+          compact={false}
+        />
       </section>
     </div>
   )
 }
+

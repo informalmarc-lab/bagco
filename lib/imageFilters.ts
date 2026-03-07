@@ -1,8 +1,6 @@
 import path from 'path'
 
 const BLOCKED_NAME_SNIPPETS = [
-  'cardinal-bag',
-  'cardeinal-bag',
   'b5d758abb5_image-asset',
   'a592ac04a4_image-asset',
   'd9beeed5f9_image-asset',

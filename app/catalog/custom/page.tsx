@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
@@ -94,13 +94,13 @@ export default function CustomCatalogPage() {
       <section key={key} className="section-container py-10 md:py-14">
         <div className="tonal-panel">
           <p className="kicker">{info.tagline}</p>
-          <h2 className="mt-4 text-3xl font-black tracking-[-0.03em] text-slate-950">{info.title}</h2>
+          <h2 className="mt-4 text-3xl font-black tracking-[-0.03em] text-[#1E4D2B]">{info.title}</h2>
 
           {list.length > 0 && (
             <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {list.map((img) => (
                 <button key={img.src} type="button" onClick={() => setSelected(img)} className="surface-card overflow-hidden rounded-2xl">
-                  <div className="relative aspect-square bg-slate-100">
+                  <div className="relative aspect-square bg-[#FAF6F0]">
                     <Image src={img.src} alt={img.name} fill className="object-cover" sizes="(max-width: 768px) 100vw, 25vw" />
                   </div>
                 </button>
@@ -111,10 +111,10 @@ export default function CustomCatalogPage() {
           <div className="mt-8 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
             {info.sizes.map((size) => (
               <div key={size.id} className="surface-card rounded-2xl p-4 text-sm">
-                <p className="font-black text-slate-950">{size.id}</p>
-                <p className="mt-1 text-slate-700">{size.dims}</p>
-                <p className="text-slate-700">{size.qty}</p>
-                <p className="mt-2 font-black text-slate-950">{size.price} / case</p>
+                <p className="font-black text-[#1E4D2B]">{size.id}</p>
+                <p className="mt-1 text-[#5F4D33]">{size.dims}</p>
+                <p className="text-[#5F4D33]">{size.qty}</p>
+                <p className="mt-2 font-black text-[#1E4D2B]">{size.price} / case</p>
               </div>
             ))}
           </div>
@@ -141,7 +141,7 @@ export default function CustomCatalogPage() {
           <h2 className="section-title">Program Rules</h2>
           <div className="mt-5 grid gap-3 md:grid-cols-2">
             {BASE_RULES.map((rule) => (
-              <p key={rule} className="surface-card rounded-2xl p-4 text-sm font-semibold text-slate-800">{rule}</p>
+              <p key={rule} className="surface-card rounded-2xl p-4 text-sm font-semibold text-[#5F4D33]">{rule}</p>
             ))}
           </div>
         </div>
@@ -169,9 +169,17 @@ export default function CustomCatalogPage() {
         </div>
       </section>
 
+      <section className="section-container pt-3">
+        <div className="tonal-panel">
+          <h2 className="section-title">Ready to order? Get a quote ?</h2>
+          <p className="mt-3 muted-text">Start with your preferred print tier and submit a case-level estimate.</p>
+          <Link href="/generic-bag-quote" className="btn-primary mt-5">Get a Quote ?</Link>
+        </div>
+      </section>
+
       {selected && (
         <div
-          className="fixed inset-0 z-[70] flex items-center justify-center bg-slate-950/85 p-4"
+          className="fixed inset-0 z-[70] flex items-center justify-center bg-[#1E4D2B]/85 p-4"
           onClick={(event) => {
             if (event.target === event.currentTarget) setSelected(null)
           }}
@@ -191,4 +199,5 @@ export default function CustomCatalogPage() {
     </div>
   )
 }
+
 

@@ -6,14 +6,17 @@ import { useState } from 'react'
 import { contactTextHref } from '@/components/siteConfig'
 
 const industryLinks = [
+  { href: '/industries/pharmacies', label: 'Pharmacies' },
+  { href: '/industries/veterinary', label: 'Veterinary' },
   { href: '/industries/dispensaries', label: 'Dispensaries' },
   { href: '/industries/smoke-shops', label: 'Smoke Shops' },
-  { href: '/industries/pharmacies', label: 'Pharmacies' },
   { href: '/industries/retail-stores', label: 'Retail Stores' },
+  { href: '/industries/food-beverage', label: 'Food & Beverage' },
 ]
 
 const navLinks = [
   { href: '/catalog', label: 'Catalogs' },
+  { href: '/blog', label: 'Blog' },
   { href: '/generic-bag-quote', label: 'Quote Tool' },
   { href: '/contact', label: 'Contact' },
 ]
@@ -27,16 +30,16 @@ export default function Navbar() {
   }
 
   return (
-    <header className="print-hide sticky top-0 z-50 border-b border-white/35 bg-[rgba(250,252,255,0.78)] backdrop-blur-xl">
+    <header className="print-hide sticky top-0 z-50 border-b border-[#C4935A66] bg-[#1E4D2B] backdrop-blur-xl">
       <div className="section-container">
         <nav className="flex min-h-[74px] items-center justify-between gap-4">
           <Link href="/" className="inline-flex items-center gap-3">
-            <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-900 text-sm font-black text-white shadow-lg">
+            <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-[#B5813A] text-sm font-black text-white shadow-lg">
               BS
             </span>
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.14em] text-slate-500">Bag Supply Co</p>
-              <p className="text-sm font-semibold text-slate-800">Packaging Partner</p>
+              <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#F4E8D8]">Bag Supply Co</p>
+              <p className="text-sm font-semibold text-white">Packaging Partner</p>
             </div>
           </Link>
 
@@ -54,12 +57,12 @@ export default function Navbar() {
               >
                 Industries
               </Link>
-              <div className="pointer-events-none absolute left-0 top-[calc(100%+8px)] z-30 w-56 rounded-xl border border-slate-200 bg-white p-2 opacity-0 shadow-[0_14px_30px_rgba(15,23,42,0.14)] transition-all group-hover:pointer-events-auto group-hover:opacity-100">
+              <div className="pointer-events-none absolute left-0 top-[calc(100%+8px)] z-30 w-56 rounded-xl border border-[#C4935A66] bg-white p-2 opacity-0 shadow-[0_14px_30px_rgba(30,77,43,0.14)] transition-all group-hover:pointer-events-auto group-hover:opacity-100">
                 {industryLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="block rounded-lg px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100"
+                    className="block rounded-lg px-3 py-2 text-sm font-semibold text-[#1E4D2B] hover:bg-[#FAF6F0]"
                   >
                     {link.label}
                   </Link>
@@ -78,13 +81,13 @@ export default function Navbar() {
           </div>
 
           <div className="hidden items-center gap-2 lg:flex">
-            <a href={contactTextHref} className="btn-quiet">
+            <a href={contactTextHref} className="inline-flex items-center justify-center rounded-xl border border-[#B5813A] bg-[#B5813A] px-5 py-2.5 text-sm font-bold text-white hover:bg-[#C4935A]">
               Text (252) 516-1944
             </a>
           </div>
 
           <button
-            className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-300 bg-white text-slate-900 lg:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-[#B5813A] bg-[#FAF6F0] text-[#1E4D2B] lg:hidden"
             onClick={() => setIsOpen((prev) => !prev)}
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
@@ -102,12 +105,12 @@ export default function Navbar() {
 
         {isOpen && (
           <div id="mobile-menu" className="pb-4 lg:hidden">
-            <div className="rounded-2xl border border-slate-200 bg-white p-3 shadow-[0_16px_40px_rgba(15,23,42,0.08)]">
+            <div className="rounded-2xl border border-[#C4935A66] bg-white p-3 shadow-[0_16px_40px_rgba(30,77,43,0.15)]">
               <div className="grid gap-1">
                 <Link
                   href="/"
                   className={`rounded-lg px-3 py-2 text-sm font-semibold ${
-                    pathname === '/' ? 'bg-slate-900 text-white' : 'text-slate-700 hover:bg-slate-100'
+                    pathname === '/' ? 'bg-[#1E4D2B] text-white' : 'text-[#1E4D2B] hover:bg-[#FAF6F0]'
                   }`}
                   onClick={() => setIsOpen(false)}
                 >
@@ -116,19 +119,19 @@ export default function Navbar() {
                 <Link
                   href="/industries"
                   className={`rounded-lg px-3 py-2 text-sm font-semibold ${
-                    pathname.startsWith('/industries') ? 'bg-slate-900 text-white' : 'text-slate-700 hover:bg-slate-100'
+                    pathname.startsWith('/industries') ? 'bg-[#1E4D2B] text-white' : 'text-[#1E4D2B] hover:bg-[#FAF6F0]'
                   }`}
                   onClick={() => setIsOpen(false)}
                 >
                   Industries
                 </Link>
-                <div className="grid gap-1 border-l border-slate-200 pl-3">
+                <div className="grid gap-1 border-l border-[#C4935A66] pl-3">
                   {industryLinks.map((link) => (
                     <Link
                       key={link.href}
                       href={link.href}
                       className={`rounded-lg px-3 py-2 text-sm font-semibold ${
-                        isActive(link.href) ? 'bg-slate-900 text-white' : 'text-slate-600 hover:bg-slate-100'
+                        isActive(link.href) ? 'bg-[#1E4D2B] text-white' : 'text-[#1E4D2B] hover:bg-[#FAF6F0]'
                       }`}
                       onClick={() => setIsOpen(false)}
                     >
@@ -141,7 +144,7 @@ export default function Navbar() {
                     key={link.href}
                     href={link.href}
                     className={`rounded-lg px-3 py-2 text-sm font-semibold ${
-                      isActive(link.href) ? 'bg-slate-900 text-white' : 'text-slate-700 hover:bg-slate-100'
+                      isActive(link.href) ? 'bg-[#1E4D2B] text-white' : 'text-[#1E4D2B] hover:bg-[#FAF6F0]'
                     }`}
                     onClick={() => setIsOpen(false)}
                   >
@@ -150,7 +153,7 @@ export default function Navbar() {
                 ))}
               </div>
               <div className="mt-3 grid gap-2 sm:grid-cols-2">
-                <a href={contactTextHref} className="btn-quiet justify-center">
+                <a href={contactTextHref} className="btn-secondary justify-center">
                   Text (252) 516-1944
                 </a>
                 <Link href="/about" className="btn-secondary justify-center" onClick={() => setIsOpen(false)}>
@@ -164,3 +167,4 @@ export default function Navbar() {
     </header>
   )
 }
+

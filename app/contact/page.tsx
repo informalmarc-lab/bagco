@@ -1,4 +1,4 @@
-﻿import { Metadata } from 'next'
+import { Metadata } from 'next'
 import Link from 'next/link'
 import ContactForm from '@/components/ContactForm'
 import {
@@ -33,22 +33,22 @@ export default function ContactPage() {
           <ContactForm />
 
           <aside className="tonal-panel">
-            <h2 className="text-2xl font-black text-slate-950">Direct Contact</h2>
-            <dl className="mt-5 space-y-4 text-sm text-slate-700">
+            <h2 className="text-2xl font-black text-[#1E4D2B]">Direct Contact</h2>
+            <dl className="mt-5 space-y-4 text-sm text-[#5F4D33]">
               <div>
-                <dt className="text-xs font-black uppercase tracking-[0.11em] text-slate-500">Email</dt>
+                <dt className="text-xs font-black uppercase tracking-[0.11em] text-[#7A6548]">Email</dt>
                 <dd className="mt-1">
-                  <a href={pricingMailto} className="font-semibold text-slate-900 underline">{contactEmail}</a>
+                  <a href={pricingMailto} className="font-semibold text-[#1E4D2B] underline">{contactEmail}</a>
                 </dd>
               </div>
               <div>
-                <dt className="text-xs font-black uppercase tracking-[0.11em] text-slate-500">Phone</dt>
+                <dt className="text-xs font-black uppercase tracking-[0.11em] text-[#7A6548]">Phone</dt>
                 <dd className="mt-1">
-                  <a href={contactPhoneHref} className="font-semibold text-slate-900 underline">{contactPhone}</a>
+                  <a href={contactPhoneHref} className="font-semibold text-[#1E4D2B] underline">{contactPhone}</a>
                 </dd>
               </div>
               <div>
-                <dt className="text-xs font-black uppercase tracking-[0.11em] text-slate-500">Address</dt>
+                <dt className="text-xs font-black uppercase tracking-[0.11em] text-[#7A6548]">Address</dt>
                 <dd className="mt-1">
                   {contactAddress[0]}
                   <br />
@@ -67,4 +67,5 @@ export default function ContactPage() {
     </div>
   )
 }
+
 

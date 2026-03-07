@@ -24,7 +24,7 @@ export default function SeoLandingPage({ h1, intro, bullets, links }: SeoLanding
       <section className="section-container py-12">
         <div className="grid gap-3 md:grid-cols-2">
           {bullets.map((bullet) => (
-            <div key={bullet} className="surface-card rounded-2xl p-4 text-sm font-semibold text-slate-800">
+            <div key={bullet} className="surface-card rounded-2xl p-4 text-sm font-semibold text-[#5F4D33]">
               {bullet}
             </div>
           ))}
@@ -49,9 +49,9 @@ export default function SeoLandingPage({ h1, intro, bullets, links }: SeoLanding
       </section>
 
       <section className="section-container pt-8">
-        <div className="flex flex-wrap gap-2 text-sm font-semibold text-slate-700">
+        <div className="flex flex-wrap gap-2 text-sm font-semibold text-[#5F4D33]">
           {links.map((link) => (
-            <Link key={link.href} href={link.href} className="rounded-xl border border-slate-300 bg-white px-3 py-2 hover:bg-slate-50">
+            <Link key={link.href} href={link.href} className="rounded-xl border border-[#C4935A66] bg-white px-3 py-2 hover:bg-[#FAF6F0]">
               {link.label}
             </Link>
           ))}
@@ -60,3 +60,4 @@ export default function SeoLandingPage({ h1, intro, bullets, links }: SeoLanding
     </div>
   )
 }
+
