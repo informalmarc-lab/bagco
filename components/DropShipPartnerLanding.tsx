@@ -49,7 +49,7 @@ function WordReveal({
       {words.map((word, index) => (
         <span
           key={`${word}-${index}`}
-          className={`inline-block transition-all duration-700 ease-out ${isVisible ? 'opacity-100 md:translate-y-0' : 'opacity-0 md:translate-y-4'}`}
+          className={`inline transition-all duration-700 ease-out ${isVisible ? 'opacity-100 md:translate-y-0' : 'opacity-0 md:translate-y-4'}`}
           style={{ transitionDelay: `${startDelay + index * 55}ms` }}
         >
           {word}
