@@ -1,9 +1,9 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, type RefObject } from 'react'
 
 type RevealHook<T extends HTMLElement> = {
-  ref: React.RefObject<T>
+  ref: RefObject<T>
   isVisible: boolean
 }
 
@@ -49,10 +49,11 @@ function WordReveal({
       {words.map((word, index) => (
         <span
           key={`${word}-${index}`}
-          className={`inline-block mr-[0.34em] transition-all duration-700 ease-out ${isVisible ? 'opacity-100 md:translate-y-0' : 'opacity-0 md:translate-y-4'}`}
+          className={`inline-block transition-all duration-700 ease-out ${isVisible ? 'opacity-100 md:translate-y-0' : 'opacity-0 md:translate-y-4'}`}
           style={{ transitionDelay: `${startDelay + index * 55}ms` }}
         >
           {word}
+          {index < words.length - 1 ? ' ' : ''}
         </span>
       ))}
     </h2>
@@ -70,7 +71,8 @@ const pillars: Pillar[] = [
   {
     kicker: 'Blind Shipping',
     title: 'Your Brand. Always.',
-    body: "Every package that leaves our facility carries your name, not ours. Your customers see only you — we're the silent partner making it happen.",
+    body:
+      "Every package that leaves our facility carries your name, not ours. Your customers see only you \u2014 we're the silent partner making it happen. No BagSupplyCo branding, no inserts, no indication of origin. Just your brand, delivered.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6 text-[#B5813A]" aria-hidden="true">
         <path d="M4 8.5 12 4l8 4.5v7L12 20l-8-4.5v-7Z" stroke="currentColor" strokeWidth="1.7" />
@@ -81,7 +83,8 @@ const pillars: Pillar[] = [
   {
     kicker: 'Same-Day Fulfillment',
     title: 'In Stock Today. Out the Door Today.',
-    body: "All in-stock inventory ships the same business day. Your customers get fast delivery, and you get a reputation for reliability you didn't have to build from scratch.",
+    body:
+      "All in-stock inventory ships the same business day when orders are placed before cutoff. Your customers get fast delivery, and you get a reputation for reliability you didn't have to build from scratch. We treat your deadlines like our own.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6 text-[#B5813A]" aria-hidden="true">
         <path d="M13 2 5.5 13h5l-1 9L18.5 11h-5L13 2Z" stroke="currentColor" strokeLinejoin="round" strokeWidth="1.7" />
@@ -91,7 +94,8 @@ const pillars: Pillar[] = [
   {
     kicker: 'No Minimums. No Pressure.',
     title: 'Order What You Need, When You Need It.',
-    body: "We don't lock you into rigid order minimums. Whether you're fulfilling one order or a hundred, we scale with you — no commitments, no penalties.",
+    body:
+      "We don't lock you into rigid order minimums. Whether you're fulfilling one order or a hundred, we scale with you \u2014 no commitments, no penalties, no awkward conversations about volume. Grow at your pace.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6 text-[#B5813A]" aria-hidden="true">
         <path d="M7 7c-2.2 0-4 1.8-4 4s1.8 4 4 4h10" stroke="currentColor" strokeLinecap="round" strokeWidth="1.7" />
@@ -104,7 +108,8 @@ const pillars: Pillar[] = [
   {
     kicker: 'Custom & White-Label',
     title: 'Make It Yours, Down to the Bag.',
-    body: "Want to offer your customers custom-printed bags under your own brand? We handle the print production and ship it directly. Custom orders are ready in 3–4 weeks from artwork approval.",
+    body:
+      'Want to offer your customers custom-printed bags under your own brand? We handle the full print production and ship directly to your customer. Custom orders are production-ready in 3\u20134 weeks from artwork approval. Setup fee is a one-time $50 for new accounts.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6 text-[#B5813A]" aria-hidden="true">
         <path d="m4 20 4.2-1 10-10a1.7 1.7 0 0 0 0-2.4l-.8-.8a1.7 1.7 0 0 0-2.4 0l-10 10L4 20Z" stroke="currentColor" strokeLinejoin="round" strokeWidth="1.7" />
@@ -131,7 +136,7 @@ const stats = [
     label: 'In-stock orders ship the day you place them',
   },
   {
-    number: '3–4 Weeks',
+    number: '3\u20134 Weeks',
     label: "Custom printed orders, from artwork approval to your customer's door",
   },
   {
@@ -140,15 +145,92 @@ const stats = [
   },
 ]
 
+const workflowSteps = [
+  {
+    title: 'Apply',
+    copy:
+      "Reach out and tell us about your business and what you sell. We'll confirm you're a good fit, walk you through our catalog, and get your account set up \u2014 usually within one business day.",
+  },
+  {
+    title: 'List Our Products',
+    copy:
+      "Add our products to your store, your quote tool, or your sales process. We'll provide full specs, dimensions, case quantities, and product photography on request. No exclusivity requirements.",
+  },
+  {
+    title: 'We Fulfill, You Profit',
+    copy:
+      'When an order comes in, forward it to us. We pick, pack, and ship it under your brand \u2014 same day for stock items, 3\u20134 weeks for custom. You invoice your customer at your margin. We never contact them directly.',
+  },
+]
+
+const shippingCards = [
+  {
+    headline: "8 Cases or More? Shipping's on Us.",
+    body:
+      "Orders of 8 cases or more ship with only a fuel surcharge applied — no base freight charge. The surcharge is a small percentage of your order total based on UPS zone distance, keeping costs predictable no matter where your customer is.",
+  },
+  {
+    headline: 'Zone-Based Fuel Surcharge',
+    body:
+      'For qualifying orders, a fuel surcharge (FSC) is calculated as a percentage of the order total based on the UPS delivery zone:',
+  },
+  {
+    headline: 'Smaller Orders Ship UPS Ground',
+    body:
+      "Orders under 8 cases ship UPS Ground with actual freight added to the invoice. For most drop ship partners placing regular orders, hitting the 8-case threshold is easy — and we'll help you structure orders to get there.",
+  },
+  {
+    headline: 'High Volume? We Handle LTL Too.',
+    body:
+      'For large orders shipping on pallets, flat-rate LTL freight pricing is available. Contact us directly for pallet rates. We can also ship on your existing UPS, FedEx, or preferred carrier account if that works better for your operation.',
+  },
+] as const
+
+const fuelSurchargeZones = [
+  { label: 'Zones 2–3', value: '5% FSC' },
+  { label: 'Zones 4–6', value: '7.5% FSC' },
+  { label: 'Zones 7–8', value: '10% FSC' },
+] as const
+
+const faqs = [
+  {
+    question: 'Will my customers ever see BagSupplyCo branding on the shipment?',
+    answer:
+      'Never. Every order ships completely blind — no BagSupplyCo branding, no inserts, no return address referencing us. Your customers see only your brand, start to finish.',
+  },
+  {
+    question: 'How fast do orders ship?',
+    answer:
+      'All in-stock orders ship same day, Monday through Friday. Custom printed orders are ready in 3–4 weeks from artwork approval.',
+  },
+  {
+    question: 'Is there a minimum monthly order volume to stay active as a drop ship partner?',
+    answer: "No. We don't require minimum monthly volumes. Order what you need, when you need it.",
+  },
+  {
+    question: 'Can I see the products before I start listing them?',
+    answer:
+      "Yes — we'll send you professional product photos and full specs for everything in our catalog so you can list accurately before your first order.",
+  },
+  {
+    question: 'How do I get started?',
+    answer:
+      "Fill out our drop ship partner form and email it to dropship@bagsupplyco.com. We'll follow up within one business day to get your account set up.",
+  },
+] as const
+
 export default function DropShipPartnerLanding() {
   const [heroVisible, setHeroVisible] = useState(false)
   const [timelineStep, setTimelineStep] = useState(0)
+  const [hasScrolled, setHasScrolled] = useState(false)
 
   const sectionPromise = useRevealOnScroll<HTMLElement>()
   const sectionPillars = useRevealOnScroll<HTMLElement>()
   const sectionIndustries = useRevealOnScroll<HTMLElement>()
   const sectionTimeline = useRevealOnScroll<HTMLElement>()
+  const sectionShipping = useRevealOnScroll<HTMLElement>()
   const sectionTrust = useRevealOnScroll<HTMLElement>()
+  const sectionFaq = useRevealOnScroll<HTMLElement>()
   const sectionCta = useRevealOnScroll<HTMLElement>()
 
   useEffect(() => {
@@ -166,6 +248,13 @@ export default function DropShipPartnerLanding() {
     return () => timers.forEach((timer) => window.clearTimeout(timer))
   }, [sectionTimeline.isVisible, timelineStep])
 
+  useEffect(() => {
+    const onScroll = () => setHasScrolled(window.scrollY > 50)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   return (
     <div className="pb-20">
       <section className="relative flex min-h-[100svh] items-center justify-center overflow-hidden px-5">
@@ -181,10 +270,24 @@ export default function DropShipPartnerLanding() {
             style={{ transitionDelay: '620ms' }}
           >
             BagSupplyCo powers drop ship programs for pharmacies, dispensaries, veterinary clinics, wineries, event
-            companies, and retailers of every kind — completely behind the scenes.
+            companies, and retailers of every kind \u2014 completely behind the scenes.
+          </p>
+          <p
+            className={`mt-4 max-w-3xl text-sm font-semibold tracking-[0.02em] text-[#B5813A] transition-all duration-700 ease-out md:text-base ${heroVisible ? 'opacity-100' : 'opacity-0'}`}
+            style={{ transitionDelay: '880ms' }}
+          >
+            Trusted by pharmacies, dispensaries, veterinary clinics, and retailers across 40+ states.
+          </p>
+          <p
+            className={`mt-4 max-w-3xl text-sm leading-7 text-[#5F4D33] transition-all duration-700 ease-out md:text-base ${heroVisible ? 'opacity-100' : 'opacity-0'}`}
+            style={{ transitionDelay: '1040ms' }}
+          >
+            No contracts. No minimums. No complexity. Just a supplier that shows up for you every time.
           </p>
         </div>
-        <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 animate-bounce text-center">
+        <div
+          className={`absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-center transition-opacity duration-300 ${hasScrolled ? 'pointer-events-none opacity-0' : 'opacity-100 animate-bounce'}`}
+        >
           <p className="text-[0.7rem] font-black uppercase tracking-[0.2em] text-[#7A6548]">Scroll</p>
           <div className="mx-auto mt-1 h-8 w-5 rounded-full border border-[#C4935A99] p-1">
             <span className="block h-2 w-2 rounded-full bg-[#B5813A]" />
@@ -203,11 +306,18 @@ export default function DropShipPartnerLanding() {
               isVisible={sectionPromise.isVisible}
               className="heading-serif text-3xl font-black text-[#1E4D2B] md:text-5xl"
             />
-            <p className="text-base leading-8 text-[#3E3427] md:text-lg md:leading-9">
-              When you partner with BagSupplyCo as a drop shipper, your customers never know we exist. Every order
-              ships in your name, under your brand, with zero fulfillment overhead on your end. We've built our
-              entire operation around making our partners look exceptional.
-            </p>
+            <div>
+              <p className="text-base leading-8 text-[#3E3427] md:text-lg md:leading-9">
+                When you partner with BagSupplyCo as a drop shipper, your customers never know we exist. Every order
+                ships in your name, under your brand, with zero fulfillment overhead on your end. We've built our
+                entire operation around making our partners look exceptional.
+              </p>
+              <p className="mt-4 text-base leading-8 text-[#3E3427] md:text-lg md:leading-9">
+                Most suppliers make you chase them. We built our fulfillment process specifically for resellers who
+                need speed, consistency, and zero drama. Same-day shipping on stock. Blind labels on every box. A
+                real person on the other end of the phone.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -218,9 +328,13 @@ export default function DropShipPartnerLanding() {
       >
         <div className="section-container">
           <div className="mb-8 md:mb-10">
-            <p className="text-sm font-black uppercase tracking-[0.18em] text-[#B5813A]">Four Pillars</p>
+            <WordReveal
+              text="Four Pillars"
+              isVisible={sectionPillars.isVisible}
+              className="heading-serif text-3xl font-black text-[#1E4D2B] md:text-5xl"
+            />
             <div
-              className={`mt-3 h-[2px] w-full max-w-[220px] origin-left bg-[#C4935A] transition-transform duration-700 ease-out ${sectionPillars.isVisible ? 'scale-x-100' : 'scale-x-0'}`}
+              className={`mt-4 h-[2px] w-full max-w-[220px] origin-left bg-[#C4935A] transition-transform duration-700 ease-out ${sectionPillars.isVisible ? 'scale-x-100' : 'scale-x-0'}`}
             />
           </div>
           <div className="grid gap-5 md:grid-cols-2">
@@ -234,7 +348,7 @@ export default function DropShipPartnerLanding() {
                   {pillar.icon}
                 </div>
                 <p className="mt-4 text-xs font-black uppercase tracking-[0.12em] text-[#B5813A]">{pillar.kicker}</p>
-                <h3 className="mt-5 text-2xl font-black text-[#1E4D2B]">{pillar.title}</h3>
+                <h3 className="mt-3 text-2xl font-black text-[#1E4D2B]">{pillar.title}</h3>
                 <p className="mt-3 text-base leading-8 text-[#4B3E2E]">{pillar.body}</p>
               </article>
             ))}
@@ -255,11 +369,15 @@ export default function DropShipPartnerLanding() {
           <p className="mt-4 text-lg font-semibold tracking-[0.02em] text-[#B5813A]">
             If your customers carry things out, we have a bag for them.
           </p>
+          <p className="mt-4 max-w-4xl text-base leading-8 text-[#4B3E2E] md:text-lg">
+            We've fulfilled orders for some of the most regulated and detail-oriented industries in the country. If
+            presentation matters to your customers, it matters to us.
+          </p>
           <div
             className={`mt-7 h-[2px] w-full max-w-[320px] origin-left bg-[#C4935A] transition-transform duration-700 ease-out ${sectionIndustries.isVisible ? 'scale-x-100' : 'scale-x-0'}`}
           />
-          <div className="mt-8 overflow-x-auto pb-2 md:overflow-visible">
-            <div className="flex min-w-max gap-3 md:min-w-0 md:flex-wrap">
+          <div className="mt-8">
+            <div className="flex flex-wrap gap-3">
               {industries.map((industry, index) => (
                 <span
                   key={industry}
@@ -293,41 +411,16 @@ export default function DropShipPartnerLanding() {
           />
 
           <div className="mt-10 hidden items-start md:flex">
-            {[0, 1, 2].map((index) => (
-              <div key={`desktop-step-${index}`} className="flex flex-1 items-start">
+            {workflowSteps.map((step, index) => (
+              <div key={`desktop-step-${step.title}`} className="flex flex-1 items-start">
                 <article
                   className={`w-full rounded-3xl border border-[#C4935A99] bg-[#FFFDF9] p-6 shadow-[0_10px_25px_rgba(30,77,43,0.08)] transition-all duration-700 ease-out ${timelineStep >= index + 1 ? 'opacity-100 md:translate-y-0' : 'opacity-0 md:translate-y-8'}`}
                 >
                   <p className="text-xs font-black uppercase tracking-[0.14em] text-[#B5813A]">Step {index + 1}</p>
-                  {index === 0 && (
-                    <>
-                      <h3 className="mt-2 text-2xl font-black text-[#1E4D2B]">Apply</h3>
-                      <p className="mt-3 text-base leading-8 text-[#4B3E2E]">
-                        Reach out and tell us about your business. We'll confirm you're a fit and get your account set
-                        up.
-                      </p>
-                    </>
-                  )}
-                  {index === 1 && (
-                    <>
-                      <h3 className="mt-2 text-2xl font-black text-[#1E4D2B]">List Our Products</h3>
-                      <p className="mt-3 text-base leading-8 text-[#4B3E2E]">
-                        Add our catalog to your store or offering. We'll provide specs, dimensions, and product
-                        details.
-                      </p>
-                    </>
-                  )}
-                  {index === 2 && (
-                    <>
-                      <h3 className="mt-2 text-2xl font-black text-[#1E4D2B]">We Fulfill, You Profit</h3>
-                      <p className="mt-3 text-base leading-8 text-[#4B3E2E]">
-                        When an order comes in, send it to us. We pick, pack, and ship it under your brand — same day
-                        for stock items.
-                      </p>
-                    </>
-                  )}
+                  <h3 className="mt-2 text-2xl font-black text-[#1E4D2B]">{step.title}</h3>
+                  <p className="mt-3 text-base leading-8 text-[#4B3E2E]">{step.copy}</p>
                 </article>
-                {index < 2 && (
+                {index < workflowSteps.length - 1 && (
                   <div className="px-4 pt-16">
                     <div
                       className={`h-[2px] w-16 origin-left bg-[#C4935A] transition-transform duration-500 ease-out ${timelineStep >= index + 2 ? 'scale-x-100' : 'scale-x-0'}`}
@@ -339,9 +432,9 @@ export default function DropShipPartnerLanding() {
           </div>
 
           <div className="mt-8 grid gap-4 md:hidden">
-            {[0, 1, 2].map((index) => (
-              <div key={`mobile-step-${index}`} className="relative pl-6">
-                {index < 2 && (
+            {workflowSteps.map((step, index) => (
+              <div key={`mobile-step-${step.title}`} className="relative pl-6">
+                {index < workflowSteps.length - 1 && (
                   <span
                     className={`absolute left-[11px] top-8 h-16 w-[2px] origin-top bg-[#C4935A] transition-transform duration-500 ease-out ${timelineStep >= index + 2 ? 'scale-y-100' : 'scale-y-0'}`}
                   />
@@ -351,33 +444,8 @@ export default function DropShipPartnerLanding() {
                   className={`rounded-2xl border border-[#C4935A99] bg-[#FFFDF9] p-5 transition-opacity duration-700 ease-out ${timelineStep >= index + 1 ? 'opacity-100' : 'opacity-0'}`}
                 >
                   <p className="text-xs font-black uppercase tracking-[0.14em] text-[#B5813A]">Step {index + 1}</p>
-                  {index === 0 && (
-                    <>
-                      <h3 className="mt-1.5 text-xl font-black text-[#1E4D2B]">Apply</h3>
-                      <p className="mt-2 text-sm leading-7 text-[#4B3E2E]">
-                        Reach out and tell us about your business. We'll confirm you're a fit and get your account set
-                        up.
-                      </p>
-                    </>
-                  )}
-                  {index === 1 && (
-                    <>
-                      <h3 className="mt-1.5 text-xl font-black text-[#1E4D2B]">List Our Products</h3>
-                      <p className="mt-2 text-sm leading-7 text-[#4B3E2E]">
-                        Add our catalog to your store or offering. We'll provide specs, dimensions, and product
-                        details.
-                      </p>
-                    </>
-                  )}
-                  {index === 2 && (
-                    <>
-                      <h3 className="mt-1.5 text-xl font-black text-[#1E4D2B]">We Fulfill, You Profit</h3>
-                      <p className="mt-2 text-sm leading-7 text-[#4B3E2E]">
-                        When an order comes in, send it to us. We pick, pack, and ship it under your brand — same day
-                        for stock items.
-                      </p>
-                    </>
-                  )}
+                  <h3 className="mt-1.5 text-xl font-black text-[#1E4D2B]">{step.title}</h3>
+                  <p className="mt-2 text-sm leading-7 text-[#4B3E2E]">{step.copy}</p>
                 </article>
               </div>
             ))}
@@ -386,8 +454,65 @@ export default function DropShipPartnerLanding() {
       </section>
 
       <section
+        ref={sectionShipping.ref}
+        className={`bg-[#FFFDF9] py-20 transition-all duration-700 ease-out md:py-24 ${sectionShipping.isVisible ? 'opacity-100 md:translate-y-0' : 'opacity-0 md:translate-y-8'}`}
+      >
+        <div className="section-container">
+          <p className="text-sm font-black uppercase tracking-[0.14em] text-[#B5813A]">
+            Shipping That Works Around Your Business
+          </p>
+          <WordReveal
+            text="Transparent shipping. No surprises on your invoice."
+            isVisible={sectionShipping.isVisible}
+            className="heading-serif mt-3 text-3xl font-black text-[#1E4D2B] md:text-5xl"
+          />
+          <p className="mt-5 max-w-4xl text-base leading-8 text-[#4B3E2E] md:text-lg">
+            We keep our shipping simple and predictable so you can build accurate margins into every drop ship order
+            before you ever send it to us.
+          </p>
+          <div
+            className={`mt-7 h-[2px] w-full max-w-[320px] origin-left bg-[#C4935A] transition-transform duration-700 ease-out ${sectionShipping.isVisible ? 'scale-x-100' : 'scale-x-0'}`}
+          />
+
+          <div className="mt-8 grid gap-5 md:grid-cols-2">
+            {shippingCards.map((card, index) => (
+              <article
+                key={card.headline}
+                className={`rounded-3xl border border-[#C4935A99] bg-[#FFFBF4] p-6 shadow-[0_12px_28px_rgba(30,77,43,0.1)] transition-all duration-700 ease-out md:p-7 ${sectionShipping.isVisible ? 'opacity-100 md:translate-y-0' : 'opacity-0 md:translate-y-8'}`}
+                style={{ transitionDelay: `${index * 150}ms` }}
+              >
+                <h3 className="text-2xl font-black text-[#1E4D2B]">{card.headline}</h3>
+                <p className="mt-3 text-base leading-8 text-[#4B3E2E]">{card.body}</p>
+
+                {card.headline === 'Zone-Based Fuel Surcharge' && (
+                  <>
+                    <div className="mt-5 grid gap-2">
+                      {fuelSurchargeZones.map((zone) => (
+                        <div key={zone.label} className="surface-card rounded-xl px-4 py-3">
+                          <p className="text-xs font-black uppercase tracking-[0.1em] text-[#7A6548]">{zone.label}</p>
+                          <p className="mt-1 text-lg font-black text-[#1E4D2B]">{zone.value}</p>
+                        </div>
+                      ))}
+                    </div>
+                    <p className="mt-4 text-sm leading-7 text-[#5F4D33]">
+                      FSC rates reflect UPS pricing and are subject to change based on current fuel indexes.
+                    </p>
+                  </>
+                )}
+              </article>
+            ))}
+          </div>
+
+          <p className="mt-7 text-center text-base italic text-[#B5813A] md:text-lg">
+            We can ship on your UPS, FedEx, or preferred carrier account — just let us know when you set up your
+            partner account.
+          </p>
+        </div>
+      </section>
+
+      <section
         ref={sectionTrust.ref}
-        className={`bg-[#FFFDF9] py-20 transition-all duration-700 ease-out md:py-24 ${sectionTrust.isVisible ? 'opacity-100 md:translate-y-0' : 'opacity-0 md:translate-y-8'}`}
+        className={`bg-[#FAF6F0] py-20 transition-all duration-700 ease-out md:py-24 ${sectionTrust.isVisible ? 'opacity-100 md:translate-y-0' : 'opacity-0 md:translate-y-8'}`}
       >
         <div className="section-container">
           <WordReveal
@@ -402,7 +527,7 @@ export default function DropShipPartnerLanding() {
             {stats.map((stat, index) => (
               <article
                 key={stat.number}
-                className={`rounded-3xl border border-[#C4935A99] bg-[#FAF6F0] p-6 text-center transition-all duration-700 ease-out ${sectionTrust.isVisible ? 'opacity-100 md:translate-y-0' : 'opacity-0 md:translate-y-8'}`}
+                className={`rounded-3xl border border-[#C4935A99] bg-[#FFFDF9] p-6 text-center transition-all duration-700 ease-out ${sectionTrust.isVisible ? 'opacity-100 md:translate-y-0' : 'opacity-0 md:translate-y-8'}`}
                 style={{ transitionDelay: `${index * 160}ms` }}
               >
                 <p className="heading-serif text-4xl font-black text-[#1E4D2B] md:text-5xl">{stat.number}</p>
@@ -415,6 +540,39 @@ export default function DropShipPartnerLanding() {
             to a real person who knows your account, knows your products, and is invested in making your program
             succeed.
           </p>
+          <p className="mx-auto mt-4 max-w-4xl text-center text-base leading-8 text-[#4B3E2E] md:text-lg">
+            We've shipped for pharmacies across the Southeast, dispensaries from coast to coast, veterinary groups,
+            event production companies, and boutique retailers who needed a quiet, reliable partner. We don't compete
+            with our resellers. We exist to make them look good.
+          </p>
+        </div>
+      </section>
+
+      <section
+        ref={sectionFaq.ref}
+        className={`bg-[#FFFDF9] py-20 transition-all duration-700 ease-out md:py-24 ${sectionFaq.isVisible ? 'opacity-100 md:translate-y-0' : 'opacity-0 md:translate-y-8'}`}
+      >
+        <div className="section-container">
+          <WordReveal
+            text="Common Questions"
+            isVisible={sectionFaq.isVisible}
+            className="heading-serif text-3xl font-black text-[#1E4D2B] md:text-5xl"
+          />
+          <div
+            className={`mt-4 h-[2px] w-full max-w-[220px] origin-left bg-[#C4935A] transition-transform duration-700 ease-out ${sectionFaq.isVisible ? 'scale-x-100' : 'scale-x-0'}`}
+          />
+          <div className="mt-8 grid gap-4">
+            {faqs.map((item, index) => (
+              <article
+                key={item.question}
+                className={`rounded-2xl border border-[#C4935A99] bg-[#FFFBF4] p-5 transition-all duration-700 ease-out md:p-6 ${sectionFaq.isVisible ? 'opacity-100 md:translate-y-0' : 'opacity-0 md:translate-y-8'}`}
+                style={{ transitionDelay: `${index * 140}ms` }}
+              >
+                <h3 className="text-xl font-black text-[#1E4D2B]">{item.question}</h3>
+                <p className="mt-3 text-base leading-8 text-[#4B3E2E]">{item.answer}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -434,6 +592,17 @@ export default function DropShipPartnerLanding() {
             <p className="mt-5 text-lg font-semibold tracking-[0.02em] text-[#C4935A]">
               Reach out to our drop ship team and let's talk about what a partnership looks like for your business.
             </p>
+            <p className="mt-4 text-sm leading-7 text-[#F4E8D8] md:text-base">
+              Most partners are up and running within 48 hours of their first conversation. There's no lengthy
+              approval process \u2014 just a quick call or email to make sure we're aligned.
+            </p>
+            <p className="mt-3 text-sm italic leading-7 text-[#FAF6F0] md:text-base">
+              We onboard new drop ship partners on a rolling basis — reach out early to get your account set up
+              before your next selling season.
+            </p>
+            <a href="/api/partners/dropship-application" className="btn-secondary mt-6">
+              Download Partner Application
+            </a>
             <div className="mt-8 grid gap-4 md:grid-cols-2">
               <article className="rounded-2xl border border-[#C4935A99] bg-[#FAF6F0] p-5 text-[#1E4D2B]">
                 <p className="text-xs font-black uppercase tracking-[0.14em] text-[#B5813A]">General Inquiries</p>
