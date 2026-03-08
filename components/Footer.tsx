@@ -81,6 +81,11 @@ export default function Footer() {
               <li>{contactAddress[0]}</li>
               <li>{contactAddress[1]}</li>
               <li>
+                <Link href="/terms" className="inline-flex rounded-md border border-[#C4935A99] px-3 py-1.5 text-xs font-semibold hover:bg-[#FFFFFF14]">
+                  Terms &amp; Conditions
+                </Link>
+              </li>
+              <li>
                 <Link href="/privacy-policy" className="inline-flex rounded-md border border-[#C4935A99] px-3 py-1.5 text-xs font-semibold hover:bg-[#FFFFFF14]">
                   Privacy Policy
                 </Link>
