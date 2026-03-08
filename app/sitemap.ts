@@ -4,6 +4,7 @@ import type { MetadataRoute } from 'next'
 import { getAllCatalogProducts } from '@/lib/catalogProducts'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.bagsupplyco.com'
+const excludedRoutes = new Set(['/partners/dropship'])
 
 function getCatalogFolders(): string[] {
   try {
@@ -64,6 +65,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '/blog/veterinary-bag-sizes-guide', priority: 0.72, changeFrequency: 'monthly' },
     { route: '/blog/buying-direct-vs-distributor-pharmacy-bags', priority: 0.72, changeFrequency: 'monthly' },
     { route: '/blog/custom-bag-lead-times', priority: 0.72, changeFrequency: 'monthly' },
+    { route: '/terms', priority: 0.4, changeFrequency: 'yearly' },
     { route: '/privacy-policy', priority: 0.4, changeFrequency: 'yearly' },
     { route: '/pharmacy-bags', priority: 0.82, changeFrequency: 'monthly' },
     { route: '/custom-printing', priority: 0.82, changeFrequency: 'monthly' },
@@ -81,6 +83,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   const routes = [...staticRoutes, ...dynamicCatalogRoutes, ...productRoutes, ...productDetailRoutes]
+    .filter(({ route }) => !excludedRoutes.has(route))
 
   return routes.map(({ route, priority, changeFrequency }) => ({
     url: `${siteUrl}${route}`,
