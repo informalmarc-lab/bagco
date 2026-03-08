@@ -53,7 +53,7 @@ function WordReveal({
           style={{ transitionDelay: `${startDelay + index * 55}ms` }}
         >
           {word}
-          {index < words.length - 1 ? ' ' : ''}
+          {' '}
         </span>
       ))}
     </h2>
@@ -72,7 +72,7 @@ const pillars: Pillar[] = [
     kicker: 'Blind Shipping',
     title: 'Your Brand. Always.',
     body:
-      "Every package that leaves our facility carries your name, not ours. Your customers see only you \u2014 we're the silent partner making it happen. No BagSupplyCo branding, no inserts, no indication of origin. Just your brand, delivered.",
+      "Every package that leaves our facility carries your name, not ours. Your customers see only you — we're the silent partner making it happen. No BagSupplyCo branding, no inserts, no indication of origin. Just your brand, delivered.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6 text-[#B5813A]" aria-hidden="true">
         <path d="M4 8.5 12 4l8 4.5v7L12 20l-8-4.5v-7Z" stroke="currentColor" strokeWidth="1.7" />
@@ -95,7 +95,7 @@ const pillars: Pillar[] = [
     kicker: 'No Minimums. No Pressure.',
     title: 'Order What You Need, When You Need It.',
     body:
-      "We don't lock you into rigid order minimums. Whether you're fulfilling one order or a hundred, we scale with you \u2014 no commitments, no penalties, no awkward conversations about volume. Grow at your pace.",
+      "We don't lock you into rigid order minimums. Whether you're fulfilling one order or a hundred, we scale with you — no commitments, no penalties, no awkward conversations about volume. Grow at your pace.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6 text-[#B5813A]" aria-hidden="true">
         <path d="M7 7c-2.2 0-4 1.8-4 4s1.8 4 4 4h10" stroke="currentColor" strokeLinecap="round" strokeWidth="1.7" />
@@ -109,7 +109,7 @@ const pillars: Pillar[] = [
     kicker: 'Custom & White-Label',
     title: 'Make It Yours, Down to the Bag.',
     body:
-      'Want to offer your customers custom-printed bags under your own brand? We handle the full print production and ship directly to your customer. Custom orders are production-ready in 3\u20134 weeks from artwork approval. Setup fee is a one-time $50 for new accounts.',
+      'Want to offer your customers custom-printed bags under your own brand? We handle the full print production and ship directly to your customer. Custom orders are production-ready in 3–4 weeks from artwork approval. Setup fee is a one-time $50 for new accounts.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6 text-[#B5813A]" aria-hidden="true">
         <path d="m4 20 4.2-1 10-10a1.7 1.7 0 0 0 0-2.4l-.8-.8a1.7 1.7 0 0 0-2.4 0l-10 10L4 20Z" stroke="currentColor" strokeLinejoin="round" strokeWidth="1.7" />
@@ -136,7 +136,7 @@ const stats = [
     label: 'In-stock orders ship the day you place them',
   },
   {
-    number: '3\u20134 Weeks',
+    number: '3–4 Weeks',
     label: "Custom printed orders, from artwork approval to your customer's door",
   },
   {
@@ -149,7 +149,7 @@ const workflowSteps = [
   {
     title: 'Apply',
     copy:
-      "Reach out and tell us about your business and what you sell. We'll confirm you're a good fit, walk you through our catalog, and get your account set up \u2014 usually within one business day.",
+      "Reach out and tell us about your business and what you sell. We'll confirm you're a good fit, walk you through our catalog, and get your account set up — usually within one business day.",
   },
   {
     title: 'List Our Products',
@@ -159,7 +159,7 @@ const workflowSteps = [
   {
     title: 'We Fulfill, You Profit',
     copy:
-      'When an order comes in, forward it to us. We pick, pack, and ship it under your brand \u2014 same day for stock items, 3\u20134 weeks for custom. You invoice your customer at your margin. We never contact them directly.',
+      'When an order comes in, forward it to us. We pick, pack, and ship it under your brand — same day for stock items, 3–4 weeks for custom. You invoice your customer at your margin. We never contact them directly.',
   },
 ]
 
@@ -270,7 +270,7 @@ export default function DropShipPartnerLanding() {
             style={{ transitionDelay: '620ms' }}
           >
             BagSupplyCo powers drop ship programs for pharmacies, dispensaries, veterinary clinics, wineries, event
-            companies, and retailers of every kind \u2014 completely behind the scenes.
+            companies, and retailers of every kind — completely behind the scenes.
           </p>
           <p
             className={`mt-4 max-w-3xl text-sm font-semibold tracking-[0.02em] text-[#B5813A] transition-all duration-700 ease-out md:text-base ${heroVisible ? 'opacity-100' : 'opacity-0'}`}
@@ -594,7 +594,7 @@ export default function DropShipPartnerLanding() {
             </p>
             <p className="mt-4 text-sm leading-7 text-[#F4E8D8] md:text-base">
               Most partners are up and running within 48 hours of their first conversation. There's no lengthy
-              approval process \u2014 just a quick call or email to make sure we're aligned.
+              approval process — just a quick call or email to make sure we're aligned.
             </p>
             <p className="mt-3 text-sm italic leading-7 text-[#FAF6F0] md:text-base">
               We onboard new drop ship partners on a rolling basis — reach out early to get your account set up
