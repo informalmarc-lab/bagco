@@ -14,6 +14,9 @@ export const metadata: Metadata = {
 
 export default function ProductsIndexPage() {
   const products = getAllCatalogProducts()
+  const bagLines = products.map(
+    (product) => `${product.name} | SKU ${product.sku} | ${INDUSTRY_LABELS[product.industry]}`,
+  )
 
   return (
     <div className="pb-16">
@@ -52,6 +55,28 @@ export default function ProductsIndexPage() {
               </div>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="section-container py-10">
+        <div className="tonal-panel">
+          <h2 className="section-title text-2xl md:text-3xl">All Bags (Plain Text)</h2>
+          <p className="mt-2 text-sm text-[#5F4D33]">
+            Copy or download the full list in plain text for quick sharing.
+          </p>
+          <div className="mt-5 grid gap-4 md:grid-cols-[1.2fr_0.8fr]">
+            <pre className="max-h-[420px] overflow-auto whitespace-pre-wrap rounded-2xl border border-[#C4935A66] bg-white p-4 text-sm font-mono text-[#1E4D2B]">
+              {bagLines.join('\n')}
+            </pre>
+            <div className="grid content-start gap-3">
+              <p className="text-sm text-[#5F4D33]">
+                Direct text file link:
+              </p>
+              <a href="/bags.txt" className="btn-secondary w-fit">
+                Download Plain Text
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </div>
