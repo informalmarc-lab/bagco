@@ -27,14 +27,14 @@ export default function PrivacyPolicyPage() {
       <section className="page-hero">
         <div className="page-hero-inner">
           <p className="kicker">Legal</p>
-          <h1 className="heading-display mt-5 text-4xl md:text-6xl">Privacy Policy</h1>
+          <h1 className="heading-display mt-5">Privacy Policy</h1>
           <p className="mt-5 max-w-3xl text-lg muted-text">
             This policy explains how Bag Supply Co handles website form submissions and communication data.
           </p>
         </div>
       </section>
 
-      <section className="section-container py-12">
+      <section className="section-container py-20">
         <div className="grid gap-4">
           {sections.map((item) => (
             <article key={item.title} className="tonal-panel">

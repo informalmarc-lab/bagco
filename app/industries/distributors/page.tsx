@@ -13,7 +13,7 @@ export default function DistributorsIndustryPage() {
       <section className="page-hero">
         <div className="page-hero-inner">
           <p className="kicker">Industry Focus</p>
-          <h1 className="heading-display mt-5 text-4xl md:text-6xl">
+          <h1 className="heading-display mt-5">
             Wholesale Paper Bag Programs for Distributors
           </h1>
           <p className="mt-5 max-w-3xl text-lg muted-text">
@@ -37,7 +37,7 @@ export default function DistributorsIndustryPage() {
         </div>
       </section>
 
-      <section className="section-container py-10">
+      <section className="section-container py-20">
         <div className="split-panel items-start">
           <article className="tonal-panel">
             <h2 className="text-2xl font-black text-[#1E4D2B]">Why Bag Supply Co</h2>
@@ -79,9 +79,6 @@ export default function DistributorsIndustryPage() {
                 Recurring replenishment supports account-level consistency.
               </p>
             </div>
-            <Link href="/generic-bag-quote" className="btn-primary mt-5">
-              Build a Quote
-            </Link>
           </aside>
         </div>
       </section>
@@ -96,12 +93,10 @@ export default function DistributorsIndustryPage() {
             <Link href="/catalog" className="btn-secondary">
               Explore Catalogs
             </Link>
-            <Link href="/generic-bag-quote" className="btn-primary">
-              Build a Quote
-            </Link>
           </div>
         </div>
       </section>
     </div>
   )
 }
+

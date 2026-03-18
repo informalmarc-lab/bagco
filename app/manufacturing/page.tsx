@@ -27,14 +27,17 @@ export default function ManufacturingPage() {
       <section className="page-hero">
         <div className="page-hero-inner">
           <p className="kicker">Manufacturing</p>
-          <h1 className="heading-display mt-5 text-4xl md:text-6xl">Factory Direct, Built for Repeatability</h1>
+          <h1 className="heading-display mt-5">Factory Direct, Built for Repeatability</h1>
           <p className="mt-5 max-w-3xl text-lg muted-text">
             We manufacture and coordinate packaging programs from North Carolina with the goal of predictable quality and dependable timelines.
           </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link href="/generic-bag-quote" className="btn-primary">Build a Quote</Link>
+          </div>
         </div>
       </section>
 
-      <section className="section-container py-12">
+      <section className="section-container py-20">
         <div className="grid gap-3 md:grid-cols-2">
           {strengths.map((item) => (
             <p key={item} className="tonal-panel text-sm font-semibold text-[#5F4D33]">{item}</p>
@@ -51,7 +54,6 @@ export default function ManufacturingPage() {
 
         <div className="mt-8 flex flex-wrap gap-3">
           <Link href="/catalog" className="btn-secondary">Browse Catalogs</Link>
-          <Link href="/generic-bag-quote" className="btn-primary">Build a Quote</Link>
         </div>
       </section>
     </div>

@@ -31,7 +31,7 @@ export default function PaymentsPage() {
       <section className="page-hero">
         <div className="page-hero-inner">
           <p className="kicker">Payments</p>
-          <h1 className="heading-display mt-5 text-4xl md:text-6xl">Invoice Payment Guide</h1>
+          <h1 className="heading-display mt-5">Invoice Payment Guide</h1>
           <p className="mt-5 max-w-3xl text-lg muted-text">
             Use this page for accepted methods, payment flow, and billing support.
           </p>
@@ -39,7 +39,7 @@ export default function PaymentsPage() {
         </div>
       </section>
 
-      <section className="section-container py-12">
+      <section className="section-container py-20">
         <div className="grid gap-4 md:grid-cols-2">
           {methods.map((method) => (
             <article key={method.title} className="tonal-panel">

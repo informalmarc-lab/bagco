@@ -67,7 +67,7 @@ export async function generateQuotePdf(record: AdminQuoteRecord): Promise<Uint8A
   y -= 13
   page.drawText('912 Houston Drive, Monroe, NC 28110', { x: MARGIN, y, size: 9, font: fontRegular, color: BLACK })
   y -= 12
-  page.drawText('Phone: (252) 516-1944', { x: MARGIN, y, size: 9, font: fontRegular, color: BLACK })
+  page.drawText('Phone: (704) 862-9256', { x: MARGIN, y, size: 9, font: fontRegular, color: BLACK })
   y -= 12
   page.drawText('Website: bagsupplyco.com', { x: MARGIN, y, size: 9, font: fontRegular, color: BLACK })
 
@@ -276,7 +276,7 @@ export async function generateQuotePdf(record: AdminQuoteRecord): Promise<Uint8A
     thickness: 1,
     color: GRAY,
   })
-  page.drawText('bagsupplyco.com  |  (252) 516-1944', {
+  page.drawText('bagsupplyco.com  |  (704) 862-9256', {
     x: MARGIN + 75,
     y: footerY,
     size: 8,

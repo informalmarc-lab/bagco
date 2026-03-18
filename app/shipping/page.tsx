@@ -25,15 +25,21 @@ export default function ShippingPage() {
       <section className="page-hero">
         <div className="page-hero-inner">
           <p className="kicker">Shipping Policy</p>
-          <h1 className="heading-display mt-5 text-4xl md:text-6xl">Freight and FSC Rules</h1>
-          <p className="mt-5 max-w-3xl text-lg muted-text">
+          <h1 className="heading-display mt-5">Freight and FSC Rules</h1>
+          <p className="mt-3 max-w-3xl text-base font-semibold text-[#5F4D33]">
+            FSC stands for Fuel Surcharge — a percentage added to orders based on shipping zone, replacing flat freight rates on qualifying case volumes.
+          </p>
+          <p className="mt-4 max-w-3xl text-lg muted-text">
             Shipping is calculated by case volume and destination zone. FSC here means Fuel Surcharge. Use these rules
             when planning quote totals.
           </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link href="/generic-bag-quote" className="btn-primary">Build a Quote</Link>
+          </div>
         </div>
       </section>
 
-      <section className="section-container py-12">
+      <section className="section-container py-20">
         <div className="grid gap-4 md:grid-cols-3">
           {rules.map((rule) => (
             <article key={rule} className="tonal-panel">
@@ -53,7 +59,6 @@ export default function ShippingPage() {
             ))}
           </div>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/generic-bag-quote" className="btn-primary">Build a Quote</Link>
             <Link href="/contact" className="btn-secondary">Contact Team</Link>
           </div>
         </div>

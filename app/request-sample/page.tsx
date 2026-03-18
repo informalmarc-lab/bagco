@@ -7,7 +7,7 @@ export default function RequestSamplePage() {
       <section className="page-hero">
         <div className="page-hero-inner">
           <p className="kicker">Samples</p>
-          <h1 className="heading-display mt-5 text-4xl md:text-6xl">Request Samples</h1>
+          <h1 className="heading-display mt-5">Request Samples</h1>
           <p className="mt-5 max-w-3xl text-lg muted-text">
             Use the contact form or quote builder so our team can confirm the right size, print path, and shipping details.
           </p>
@@ -18,7 +18,7 @@ export default function RequestSamplePage() {
         </div>
       </section>
 
-      <section className="section-container py-12">
+      <section className="section-container py-20">
         <div className="tonal-panel">
           <h2 className="section-title text-2xl md:text-3xl">Include These Details</h2>
           <div className="mt-5 grid gap-3 md:grid-cols-2">

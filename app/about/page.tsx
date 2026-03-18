@@ -37,16 +37,19 @@ export default function AboutPage() {
       <section className="page-hero">
         <div className="page-hero-inner">
           <p className="kicker">About Bag Supply Co</p>
-          <h1 className="heading-display mt-5 text-4xl md:text-6xl">
+          <h1 className="heading-display mt-5">
             A Packaging Partner Built Around Repeatable Execution
           </h1>
           <p className="mt-5 max-w-3xl text-lg muted-text">
             We work with operational teams that need packaging to stay reliable, understandable, and scalable as demand grows.
           </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link href="/generic-bag-quote" className="btn-primary">Build a Quote</Link>
+          </div>
         </div>
       </section>
 
-      <section className="section-container py-12">
+      <section className="section-container py-20">
         <div className="grid gap-4 md:grid-cols-3">
           {principles.map((item) => (
             <article key={item.title} className="tonal-panel">
@@ -57,7 +60,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section-container py-3">
+      <section className="section-container py-20">
         <div className="tonal-panel">
           <h2 className="section-title">What We Deliver</h2>
           <div className="mt-6 grid gap-3 md:grid-cols-2">
@@ -70,9 +73,6 @@ export default function AboutPage() {
           <div className="mt-7 flex flex-wrap gap-3">
             <Link href="/catalog" className="btn-secondary">
               Browse Catalogs
-            </Link>
-            <Link href="/generic-bag-quote" className="btn-primary">
-              Build a Quote
             </Link>
             <a href={contactTextHref} className="btn-quiet">
               Text Our Team

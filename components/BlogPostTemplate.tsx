@@ -42,15 +42,18 @@ export default function BlogPostTemplate({
             Back to Blog
           </Link>
           <p className="kicker mt-6">Bag Supply Co Blog</p>
-          <h1 className="heading-display mt-5 text-4xl md:text-6xl">{title}</h1>
+          <h1 className="heading-display mt-5">{title}</h1>
           <p className="mt-4 text-sm font-semibold uppercase tracking-[0.08em] text-[#7A6548]">
             {formatDate(date)}
           </p>
           <p className="mt-5 max-w-3xl text-lg muted-text">{intro}</p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link href="/generic-bag-quote" className="btn-primary">Build a Quote</Link>
+          </div>
         </div>
       </section>
 
-      <article className="section-container py-10">
+      <article className="section-container py-20">
         <div className="tonal-panel">
           <div className="grid gap-8">
             {sections.map((section) => (
@@ -92,17 +95,6 @@ export default function BlogPostTemplate({
         />
       </section>
 
-      <section className="section-container pt-3">
-        <div className="tonal-panel">
-          <h2 className="section-title">Ready to price your bag program?</h2>
-          <p className="mt-3 muted-text">
-            Build a case-level estimate in minutes and send it directly to our team.
-          </p>
-          <Link href="/generic-bag-quote" className="btn-primary mt-5">
-            Build a Quote
-          </Link>
-        </div>
-      </section>
     </div>
   )
 }

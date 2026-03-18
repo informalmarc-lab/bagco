@@ -68,7 +68,7 @@ const faqItems = [
   {
     question: 'How do I set up a distributor account?',
     answer:
-      "Contact our team by building a quote or by texting (252) 516-1944. We'll walk you through volume requirements, blind ship setup, and drop ship logistics.",
+      "Contact our team by building a quote or by texting (704) 862-9256. We'll walk you through volume requirements, blind ship setup, and drop ship logistics.",
   },
   {
     question: 'What is the minimum order quantity?',
@@ -135,29 +135,30 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <section className="page-hero">
+      <section className="page-hero page-hero-home">
         <div className="page-hero-inner">
           <div className="split-panel items-start">
             <div>
               <p className="kicker">Bag Supply Co</p>
-              <h1 className="heading-display mt-5 text-4xl md:text-6xl">
+              <h1 className="heading-display mt-5 hero-reveal hero-delay-1">
                 Custom Paper Bags for Pharmacies, Dispensaries, Retailers & Distributors - Ready in 3-4 Weeks
               </h1>
-              <p className="mt-5 max-w-3xl text-lg muted-text">
+              <p className="mt-5 max-w-3xl text-lg muted-text hero-reveal hero-delay-2">
                 Stock and custom print bag programs with blind shipping, drop shipping, and recurring reorder support.
                 Built for teams that can&apos;t afford to run out.
               </p>
+              <div className="hero-divider hero-reveal hero-delay-3" />
               <div className="mt-7 flex flex-wrap gap-3">
-                <Link href="/generic-bag-quote" className="btn-primary">
+                <Link href="/generic-bag-quote" className="btn-primary hero-reveal hero-delay-4">
                   Build a Quote
                 </Link>
-                <Link href="/catalog" className="btn-secondary">
+                <Link href="/catalog" className="btn-secondary hero-reveal hero-delay-4">
                   Explore Catalogs {String.fromCharCode(8594)}
                 </Link>
               </div>
             </div>
 
-            <div className="hero-panel overflow-hidden">
+            <div className="hero-panel overflow-hidden hero-reveal hero-delay-3">
               <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-[#C4935A66] bg-[#FAF6F0]">
                 <Image
                   src={HERO_IMAGE}
@@ -181,7 +182,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-container py-8">
+      <section className="section-container py-20">
         <div className="grid gap-4 md:grid-cols-2">
           <div className="tonal-panel">
             <p className="kicker">Who We Serve</p>
@@ -195,7 +196,7 @@ export default function Home() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="rounded-full border border-[#C4935A66] bg-white px-3 py-1.5 text-xs font-semibold text-[#1E4D2B] hover:bg-[#FAF6F0]"
+                  className="rounded-md border border-[#C4935A66] bg-white px-3 py-1.5 text-xs font-semibold text-[#1E4D2B] hover:bg-[#FAF6F0]"
                 >
                   {item.icon} {item.label}
                 </Link>
@@ -225,7 +226,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full bg-[#1E4D2B] py-12 text-white">
+      <section className="w-full bg-[linear-gradient(135deg,#1E4D2B,#225935_55%,#1A4126)] py-20 text-white">
         <div className="section-container">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
             <div>
@@ -252,11 +253,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-container py-10">
+      <section className="section-container py-20">
         <h2 className="section-title">Featured Catalog Products</h2>
         <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {featuredProducts.map((product) => (
-            <article key={product.sku} className="surface-card overflow-hidden rounded-2xl">
+            <article key={product.sku} className="surface-card product-card">
               <div className="relative aspect-[4/3] bg-[#FAF6F0]">
                 <Image
                   src={product.image}
@@ -269,7 +270,7 @@ export default function Home() {
               <div className="p-4">
                 <p className="text-xs font-black uppercase tracking-[0.09em] text-[#7A6548]">SKU {product.sku}</p>
                 <h3 className="mt-2 text-lg font-black text-[#1E4D2B]">{product.name}</h3>
-                <p className="mt-1 text-sm text-[#5F4D33]">From {money(product.startingPrice)}/case</p>
+                <p className="mt-1 product-card-price">From {money(product.startingPrice)}/case</p>
                 <Link href={`/products/${product.slug}`} className="btn-secondary mt-4">
                   View Product
                 </Link>
@@ -279,7 +280,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-container py-8">
+      <section className="section-container py-20">
         <div className="grid gap-4 md:grid-cols-3">
           <article className="tonal-panel">
             <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">Before</p>
@@ -304,7 +305,7 @@ export default function Home() {
 
       <IndustrySolutionsSection />
 
-      <section className="section-container py-10">
+      <section className="section-container py-20">
         <div className="split-panel items-start">
           <div className="tonal-panel">
             <p className="kicker">Build Your Program</p>

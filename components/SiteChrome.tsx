@@ -3,7 +3,6 @@
 import { usePathname } from 'next/navigation'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import LeadDock from '@/components/LeadDock'
 
 export default function SiteChrome({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
@@ -17,7 +16,6 @@ export default function SiteChrome({ children }: { children: React.ReactNode }) 
     <>
       <Navbar />
       <main className="min-h-screen site-surface">{children}</main>
-      <LeadDock />
       <Footer />
     </>
   )

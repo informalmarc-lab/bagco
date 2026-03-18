@@ -42,7 +42,7 @@ export default function IndustryLandingPage({
       <section className="page-hero">
         <div className="page-hero-inner">
           <p className="kicker">{heroLabel}</p>
-          <h1 className="heading-display mt-5 text-4xl md:text-6xl">{title}</h1>
+          <h1 className="heading-display mt-5">{title}</h1>
           <p className="mt-5 max-w-3xl text-lg muted-text">{description}</p>
           <p className="mt-4 text-sm font-semibold text-[#5F4D33]">
             Starting stock pricing from {money(startingPrice)}/case.
@@ -69,13 +69,13 @@ export default function IndustryLandingPage({
         </div>
       </section>
 
-      <section className="section-container py-10">
+      <section className="section-container py-20">
         <div className="split-panel items-start">
           <div className="tonal-panel">
             <h2 className="section-title">{INDUSTRY_LABELS[industry]} Product Gallery</h2>
             <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {featured.map((product) => (
-                <article key={product.sku} className="surface-card overflow-hidden rounded-2xl">
+                <article key={product.sku} className="surface-card product-card">
                   <div className="relative aspect-[4/3] bg-[#FAF6F0]">
                     <Image
                       src={product.image}
@@ -88,7 +88,7 @@ export default function IndustryLandingPage({
                   <div className="p-3">
                     <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">SKU {product.sku}</p>
                     <p className="mt-1 text-sm font-semibold text-[#1E4D2B]">{product.name}</p>
-                    <p className="mt-1 text-sm text-[#5F4D33]">From {money(product.startingPrice)}/case</p>
+                    <p className="mt-1 product-card-price">From {money(product.startingPrice)}/case</p>
                     <Link href={`/products/${product.slug}`} className="btn-secondary mt-3">
                       View Product
                     </Link>
@@ -141,9 +141,6 @@ export default function IndustryLandingPage({
           <div className="mt-5 flex flex-wrap gap-3">
             <Link href={bottomCatalogHref} className="btn-secondary">
               {bottomCatalogLabel}
-            </Link>
-            <Link href="/generic-bag-quote" className="btn-primary">
-              Build a Quote
             </Link>
           </div>
         </div>

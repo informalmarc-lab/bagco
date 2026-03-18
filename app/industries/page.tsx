@@ -52,17 +52,20 @@ export default function IndustriesPage() {
       <section className="page-hero">
         <div className="page-hero-inner">
           <p className="kicker">Industry Programs</p>
-          <h1 className="heading-display mt-5 text-4xl md:text-6xl">
+          <h1 className="heading-display mt-5">
             Packaging Systems Built Around Your Business Type
           </h1>
           <p className="mt-5 max-w-3xl text-lg muted-text">
             Select your industry and go directly to an industry-specific product gallery with a filtered
             catalog path and most-ordered sizes.
           </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link href="/generic-bag-quote" className="btn-primary">Build a Quote</Link>
+          </div>
         </div>
       </section>
 
-      <section className="section-container py-12">
+      <section className="section-container py-20">
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {segments.map((item) => (
             <article key={item.title} className="tonal-panel">
@@ -80,4 +83,5 @@ export default function IndustriesPage() {
     </div>
   )
 }
+
 

@@ -83,14 +83,14 @@ export default function BlogIndexPage() {
       <section className="page-hero">
         <div className="page-hero-inner">
           <p className="kicker">Resource Center</p>
-          <h1 className="heading-display mt-5 text-4xl md:text-6xl">Bag Supply Co Blog</h1>
+          <h1 className="heading-display mt-5">Bag Supply Co Blog</h1>
           <p className="mt-5 max-w-3xl text-lg muted-text">
             Buying guides for pharmacy, dispensary, veterinary, smoke shop, and retail paper bag programs.
           </p>
         </div>
       </section>
 
-      <section className="section-container py-10">
+      <section className="section-container py-20">
         <div className="grid gap-4">
           {posts.map((post) => (
             <article key={post.slug} className="surface-card rounded-2xl p-5 md:p-6">

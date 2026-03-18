@@ -21,7 +21,7 @@ export default function TermsPage() {
       <section className="page-hero">
         <div className="page-hero-inner">
           <p className="kicker">Legal</p>
-          <h1 className="heading-display mt-5 text-4xl md:text-6xl">Terms and Conditions</h1>
+          <h1 className="heading-display mt-5">Terms and Conditions</h1>
           <p className="mt-4 text-base font-semibold text-[#B5813A] md:text-lg">Effective Date: March 2026</p>
           <p className="mt-5 max-w-3xl text-lg muted-text">
             Please read these terms carefully before placing an order or using our website.
@@ -29,7 +29,7 @@ export default function TermsPage() {
         </div>
       </section>
 
-      <section className="section-container py-12">
+      <section className="section-container py-20">
         <div className="tonal-panel">
           <article>
             <h2 className="text-2xl font-black text-[#1E4D2B] md:text-3xl">1. Acceptance of Terms</h2>
@@ -162,8 +162,8 @@ export default function TermsPage() {
                 {' '}
                 or
                 {' '}
-                <a className="font-semibold text-[#1E4D2B] underline" href="tel:+12525161944">
-                  (252) 516-1944
+                <a className="font-semibold text-[#1E4D2B] underline" href="tel:+17048629256">
+                  (704) 862-9256
                 </a>
                 .
               </li>
@@ -253,8 +253,8 @@ export default function TermsPage() {
               <li>
                 Phone:
                 {' '}
-                <a className="font-semibold text-[#1E4D2B] underline" href="tel:+12525161944">
-                  (252) 516-1944
+                <a className="font-semibold text-[#1E4D2B] underline" href="tel:+17048629256">
+                  (704) 862-9256
                 </a>
               </li>
               <li>Address: 912 Houston Drive, Monroe, NC 28110</li>
@@ -272,3 +272,4 @@ export default function TermsPage() {
     </div>
   )
 }
+

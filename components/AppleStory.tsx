@@ -104,7 +104,7 @@ export default function AppleStory() {
   const activeStep = STEPS[activeIndex] || STEPS[0]
 
   return (
-    <section className="section-container py-16 md:py-24">
+    <section className="section-container py-20 md:py-24">
       <div className="max-w-3xl">
         <p className="kicker">How It Works</p>
         <h2 className="heading-display mt-4 text-3xl md:text-5xl">A scroll-driven process built for fast understanding.</h2>
@@ -160,9 +160,6 @@ export default function AppleStory() {
               <div className="mt-3 flex flex-wrap gap-2">
                 <Link href="/catalog" className="btn-secondary">
                   Browse Catalogs
-                </Link>
-                <Link href="/generic-bag-quote" className="btn-primary">
-                  Build a Quote
                 </Link>
               </div>
             </div>

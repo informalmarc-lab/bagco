@@ -23,17 +23,17 @@ export default function ProductsIndexPage() {
       <section className="page-hero">
         <div className="page-hero-inner">
           <p className="kicker">Product Directory</p>
-          <h1 className="heading-display mt-5 text-4xl md:text-6xl">All Product Designs</h1>
+          <h1 className="heading-display mt-5">All Product Designs</h1>
           <p className="mt-5 max-w-3xl text-lg muted-text">
             Browse every catalog design by SKU with pricing anchors and direct quote actions.
           </p>
         </div>
       </section>
 
-      <section className="section-container py-10">
+      <section className="section-container py-20">
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
           {products.map((product) => (
-            <article key={product.slug} className="surface-card overflow-hidden rounded-2xl">
+            <article key={product.slug} className="surface-card product-card">
               <Link href={`/products/${product.slug}`} className="relative block aspect-[4/3] bg-[#FAF6F0]">
                 <Image
                   src={product.image}
@@ -48,7 +48,7 @@ export default function ProductsIndexPage() {
                   {INDUSTRY_LABELS[product.industry]} | SKU {product.sku}
                 </p>
                 <h2 className="mt-2 text-lg font-black text-[#1E4D2B]">{product.name}</h2>
-                <p className="mt-1 text-sm text-[#5F4D33]">From {money(product.startingPrice)}/case</p>
+                <p className="mt-1 product-card-price">From {money(product.startingPrice)}/case</p>
                 <Link href={`/products/${product.slug}`} className="btn-secondary mt-4">
                   View Product
                 </Link>
@@ -58,7 +58,7 @@ export default function ProductsIndexPage() {
         </div>
       </section>
 
-      <section className="section-container py-10">
+      <section className="section-container py-20">
         <div className="tonal-panel">
           <h2 className="section-title text-2xl md:text-3xl">All Bags (Plain Text)</h2>
           <p className="mt-2 text-sm text-[#5F4D33]">

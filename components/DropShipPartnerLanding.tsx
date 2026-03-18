@@ -623,8 +623,8 @@ export default function DropShipPartnerLanding() {
                 >
                   Marc.Castella@bagsupplyco.com
                 </a>
-                <a href="tel:+12525161944" className="mt-1 block text-base font-bold text-[#1E4D2B] underline">
-                  (252) 516-1944
+                <a href="tel:+17048629256" className="mt-1 block text-base font-bold text-[#1E4D2B] underline">
+                  (704) 862-9256
                 </a>
               </article>
             </div>

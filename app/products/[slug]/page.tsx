@@ -11,6 +11,24 @@ import {
   type CatalogIndustryKey,
 } from '@/lib/catalogProducts'
 
+function parseCaseCount(label: string): number | null {
+  const match = label.match(/(\d[\d,]*)\s*(?:per case|\/case)/i)
+  if (!match) return null
+  const numeric = Number(match[1].replace(/,/g, ''))
+  return Number.isFinite(numeric) && numeric > 0 ? numeric : null
+}
+
+function formatPerBag(price: number, label: string): string {
+  const caseCount = parseCaseCount(label)
+  if (!caseCount) return '—'
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: 4,
+    maximumFractionDigits: 4,
+  }).format(price / caseCount)
+}
+
 const industryCatalogHref: Record<CatalogIndustryKey, string> = {
   pharmacy: '/catalog/pharmacy',
   veterinary: '/catalog/veterinary',
@@ -53,9 +71,18 @@ export default async function ProductDetailPage({
   const product = getCatalogProductBySlug(slug)
   if (!product) notFound()
 
-  const related = getAllCatalogProducts()
-    .filter((item) => item.slug !== product.slug && item.industry === product.industry)
-    .slice(0, 3)
+  const relatedOverrides: Record<string, string[]> = {
+    'dispensary-prescription-exit-bag': ['veterinary-bag-design-vb1-1', 'pharmacy-bag-gs-design'],
+  }
+
+  const override = relatedOverrides[product.slug]
+  const related = override
+    ? override
+        .map((slug) => getCatalogProductBySlug(slug))
+        .filter((item): item is NonNullable<typeof item> => Boolean(item))
+    : getAllCatalogProducts()
+        .filter((item) => item.slug !== product.slug && item.industry === product.industry)
+        .slice(0, 3)
 
   const catalogHref = industryCatalogHref[product.industry]
 
@@ -73,15 +100,23 @@ export default async function ProductDetailPage({
             <span className="text-[#1E4D2B]">{product.sku}</span>
           </nav>
           <p className="kicker mt-6">Product Detail</p>
-          <h1 className="heading-display mt-5 text-4xl md:text-6xl">{product.name}</h1>
+          <h1 className="heading-display mt-5">{product.name}</h1>
           <p className="mt-3 text-sm font-semibold uppercase tracking-[0.09em] text-[#7A6548]">
             Design Number: {product.sku}
           </p>
           <p className="mt-4 max-w-3xl text-lg muted-text">{product.description}</p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link href={`/generic-bag-quote?sku=${encodeURIComponent(product.sku)}`} className="btn-primary">
+              Build a Quote
+            </Link>
+            <Link href={catalogHref} className="btn-secondary">
+              View {INDUSTRY_LABELS[product.industry]} Catalog
+            </Link>
+          </div>
         </div>
       </section>
 
-      <section className="section-container py-10">
+      <section className="section-container py-20">
         <div className="split-panel items-start">
           <div className="surface-card overflow-hidden rounded-3xl">
             <div className="relative aspect-[4/3] bg-[#FAF6F0]">
@@ -129,7 +164,8 @@ export default async function ProductDetailPage({
                     <thead className="bg-[#1E4D2B] text-white">
                       <tr>
                         <th className="px-3 py-2">Bag Type / Size</th>
-                        <th className="px-3 py-2 text-right">Price</th>
+                        <th className="px-3 py-2 text-right">Per Case</th>
+                        <th className="px-3 py-2 text-right">Per Bag</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -137,6 +173,9 @@ export default async function ProductDetailPage({
                         <tr key={`${row.label}-${idx}`} className={idx % 2 === 0 ? 'bg-white' : 'bg-[#FAF6F0]'}>
                           <td className="px-3 py-2 text-[#5F4D33]">{row.label}</td>
                           <td className="px-3 py-2 text-right font-bold text-[#1E4D2B]">{money(row.price)}</td>
+                          <td className="px-3 py-2 text-right font-bold text-[#B5813A]">
+                            {formatPerBag(row.price, row.label)}
+                          </td>
                         </tr>
                       ))}
                     </tbody>
@@ -162,7 +201,7 @@ export default async function ProductDetailPage({
           <h2 className="section-title">Related Products</h2>
           <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-3">
             {related.map((item) => (
-              <article key={item.slug} className="surface-card overflow-hidden rounded-2xl">
+              <article key={item.slug} className="surface-card product-card">
                 <Link href={`/products/${item.slug}`} className="relative block aspect-[4/3] bg-[#FAF6F0]">
                   <Image
                     src={item.image}
@@ -175,7 +214,7 @@ export default async function ProductDetailPage({
                 <div className="p-4">
                   <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">SKU {item.sku}</p>
                   <h3 className="mt-2 text-base font-black text-[#1E4D2B]">{item.name}</h3>
-                  <p className="mt-1 text-sm text-[#5F4D33]">From {money(item.startingPrice)}/case</p>
+                  <p className="mt-1 product-card-price">From {money(item.startingPrice)}/case</p>
                   <Link href={`/products/${item.slug}`} className="btn-secondary mt-4">
                     View Product
                   </Link>

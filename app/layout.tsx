@@ -1,18 +1,19 @@
 import type { Metadata } from 'next'
-import { Manrope, Source_Serif_4 } from 'next/font/google'
+import { DM_Sans, DM_Serif_Display } from 'next/font/google'
 import './globals.css'
 import SiteChrome from '@/components/SiteChrome'
 
-const manrope = Manrope({
+const dmSans = DM_Sans({
   subsets: ['latin'],
   variable: '--font-sans',
   display: 'swap',
 })
 
-const sourceSerif = Source_Serif_4({
+const dmSerif = DM_Serif_Display({
   subsets: ['latin'],
   variable: '--font-serif',
   display: 'swap',
+  weight: '400',
 })
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.bagsupplyco.com'
@@ -75,7 +76,7 @@ export default function RootLayout({
     name: 'Bag Supply Co',
     description:
       'Custom paper bag manufacturing and packaging programs for pharmacies, retail stores, veterinary clinics, and dispensaries.',
-    telephone: '+1-252-516-1944',
+    telephone: '+1-704-862-9256',
     url: siteUrl,
     address: {
       '@type': 'PostalAddress',
@@ -112,7 +113,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={`${manrope.variable} ${sourceSerif.variable}`}>
+      <body className={`${dmSans.variable} ${dmSerif.variable}`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}

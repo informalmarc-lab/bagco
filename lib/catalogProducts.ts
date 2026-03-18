@@ -66,7 +66,7 @@ function sanitizeDescription(description: string): string {
   return description
     .replace(/Cardinal Bag representative/gi, 'Bag Supply Co representative')
     .replace(/Cardinal Bag/gi, 'Bag Supply Co')
-    .replace(/1-800-526-9032/g, '(252) 516-1944')
+    .replace(/1-800-526-9032/g, '(704) 862-9256')
 }
 
 function withGuaranteedSizePricing(product: CatalogProduct): CatalogProduct {

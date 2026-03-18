@@ -22,14 +22,17 @@ export default function CustomPrintingPage() {
       <section className="page-hero">
         <div className="page-hero-inner">
           <p className="kicker">Custom Printing</p>
-          <h1 className="heading-display mt-5 text-4xl md:text-6xl">Print Programs That Scale With Your Brand</h1>
+          <h1 className="heading-display mt-5">Print Programs That Scale With Your Brand</h1>
           <p className="mt-5 max-w-3xl text-lg muted-text">
             Choose the print depth that fits your budget and brand requirements, then move into a repeatable production process.
           </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link href="/generic-bag-quote" className="btn-primary">Build a Quote</Link>
+          </div>
         </div>
       </section>
 
-      <section className="section-container py-12">
+      <section className="section-container py-20">
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {capabilities.map((item) => (
             <p key={item} className="tonal-panel text-sm font-semibold text-[#5F4D33]">{item}</p>
@@ -42,7 +45,6 @@ export default function CustomPrintingPage() {
             Use the quote builder to send your logo, target bag size, and quantity for a structured production recommendation.
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
-            <Link href="/generic-bag-quote" className="btn-primary">Build a Quote</Link>
             <Link href="/catalog/custom" className="btn-secondary">Open Custom Catalog</Link>
             <a href={contactTextHref} className="btn-quiet">Text Our Team</a>
           </div>
@@ -51,3 +53,4 @@ export default function CustomPrintingPage() {
     </div>
   )
 }
+

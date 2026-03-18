@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { contactTextHref } from '@/components/siteConfig'
 
 const industryLinks = [
@@ -26,6 +26,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [search, setSearch] = useState('')
   const [showMobileSearch, setShowMobileSearch] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
   const pathname = usePathname()
   const router = useRouter()
   const isActive = (href: string) => {
@@ -41,8 +42,21 @@ export default function Navbar() {
     setShowMobileSearch(false)
   }
 
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 8)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   return (
-    <header className="print-hide sticky top-0 z-50 border-b border-[#C4935A66] bg-[#1E4D2B] backdrop-blur-xl">
+    <header
+      className={`print-hide sticky top-0 z-50 transition-all ${
+        isScrolled
+          ? 'border-b border-[#B5813A] bg-[#FAF6F0]/85 backdrop-blur-[12px] shadow-[0_10px_30px_rgba(30,77,43,0.12)]'
+          : 'border-b border-transparent bg-transparent'
+      }`}
+    >
       <div className="section-container">
         <nav className="flex min-h-[74px] items-center justify-between gap-4">
           <Link href="/" className="inline-flex items-center gap-3">
@@ -50,8 +64,8 @@ export default function Navbar() {
               BS
             </span>
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#F4E8D8]">Bag Supply Co</p>
-              <p className="text-sm font-semibold text-white">Packaging Partner</p>
+              <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#1E4D2B]">Bag Supply Co</p>
+              <p className="text-sm font-semibold text-[#1E4D2B]">Packaging Partner</p>
             </div>
           </Link>
 
@@ -110,8 +124,8 @@ export default function Navbar() {
           </div>
 
           <div className="hidden items-center gap-2 lg:flex">
-            <a href={contactTextHref} className="inline-flex items-center justify-center rounded-xl border border-[#B5813A] bg-[#B5813A] px-5 py-2.5 text-sm font-bold text-white hover:bg-[#C4935A]">
-              Text (252) 516-1944
+            <a href={contactTextHref} className="btn-primary">
+              Text (704) 862-9256
             </a>
           </div>
 
@@ -212,7 +226,7 @@ export default function Navbar() {
               </div>
               <div className="mt-3 grid gap-2 sm:grid-cols-2">
                 <a href={contactTextHref} className="btn-secondary justify-center">
-                  Text (252) 516-1944
+                  Text (704) 862-9256
                 </a>
                 <Link href="/about" className="btn-secondary justify-center" onClick={() => setIsOpen(false)}>
                   About

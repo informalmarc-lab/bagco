@@ -278,7 +278,7 @@ export default function GenericQuoteTool() {
 
       setSubmitted(true)
     } catch {
-      setError('Something went wrong sending your request. Please try again or text us at (252) 516-1944.')
+      setError('Something went wrong sending your request. Please try again or text us at (704) 862-9256.')
     } finally {
       setSubmitting(false)
     }
@@ -286,14 +286,14 @@ export default function GenericQuoteTool() {
 
   if (submitted) {
     return (
-      <div className="section-container py-14">
+      <div className="section-container py-20">
         <div className="mx-auto max-w-2xl tonal-panel text-center">
           <p className="text-5xl">✅</p>
           <h1 className="mt-4 text-4xl font-black text-[#1E4D2B]">Your quote request is on its way!</h1>
           <p className="mt-4 text-base text-[#5F4D33]">
             We'll review your details and follow up with pricing and lead times. You can also text us directly at
             {' '}
-            (252) 516-1944 for a faster response.
+            (704) 862-9256 for a faster response.
           </p>
           <Link href="/" className="btn-primary mt-8">
             Back to Home
@@ -308,14 +308,14 @@ export default function GenericQuoteTool() {
       <section className="page-hero">
         <div className="page-hero-inner">
           <p className="kicker">Quote Tool</p>
-          <h1 className="heading-display mt-5 text-4xl md:text-6xl">Build Your Custom Bag Quote</h1>
+          <h1 className="heading-display mt-5">Build Your Custom Bag Quote</h1>
           <p className="mt-5 max-w-3xl text-lg muted-text">
             Takes about 2 minutes. We'll respond with a structured program recommendation.
           </p>
         </div>
       </section>
 
-      <section className="section-container py-8">
+      <section className="section-container py-20">
         <div className="rounded-2xl border border-[#C4935A66] bg-white p-4">
           <div className="flex items-center justify-between">
             <p className="text-sm font-black uppercase tracking-[0.08em] text-[#5F4D33]">Step {step} of 5</p>
@@ -496,7 +496,7 @@ export default function GenericQuoteTool() {
                             key={option}
                             type="button"
                             onClick={() => setArtworkReady(option)}
-                            className={`rounded-full border px-3 py-1.5 text-sm font-semibold ${
+                            className={`rounded-md border px-3 py-1.5 text-sm font-semibold ${
                               artworkReady === option
                                 ? 'border-[#1E4D2B] bg-[#1E4D2B] text-white'
                                 : 'border-[#C4935A66] bg-white text-[#1E4D2B]'

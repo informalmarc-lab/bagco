@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next'
+import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -33,15 +33,18 @@ export default function LegacyCatalogPage() {
       <section className="page-hero">
         <div className="page-hero-inner">
           <p className="kicker">Catalog Directory</p>
-          <h1 className="heading-display mt-5 text-4xl md:text-6xl">Legacy Catalogs</h1>
+          <h1 className="heading-display mt-5">Legacy Catalogs</h1>
           <p className="mt-5 max-w-3xl text-lg muted-text">
             Access every catalog collection in one place, including specialty and seasonal programs.
           </p>
-          <Link href="/catalog" className="btn-secondary mt-6">Back to Catalog Hub</Link>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link href="/generic-bag-quote" className="btn-primary">Build a Quote</Link>
+            <Link href="/catalog" className="btn-secondary">Back to Catalog Hub</Link>
+          </div>
         </div>
       </section>
 
-      <section className="section-container py-12">
+      <section className="section-container py-20">
         <h2 className="section-title">Primary Catalogs</h2>
         <div className="mt-6 grid gap-4 md:grid-cols-3">
           {primary.map((item) => (
@@ -64,20 +67,10 @@ export default function LegacyCatalogPage() {
         </div>
       </section>
 
-      <section className="section-container pt-6">
-        <div className="tonal-panel">
-          <h2 className="section-title">Ready to order? Get a quote.</h2>
-          <p className="mt-3 muted-text">
-            Build your estimate and send your requirements directly to our team.
-          </p>
-          <Link href="/generic-bag-quote" className="btn-primary mt-5">
-            Build a Quote
-          </Link>
-        </div>
-      </section>
     </div>
   )
 }
+
 
 
 

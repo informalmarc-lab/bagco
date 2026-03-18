@@ -1,4 +1,4 @@
-﻿import fs from 'fs'
+import fs from 'fs'
 import path from 'path'
 import type { Metadata } from 'next'
 import Image from 'next/image'
@@ -161,12 +161,15 @@ export default async function CatalogFolderPage({
         <div className="page-hero-inner">
           <Link href="/catalog" className="btn-secondary">Back to Catalog</Link>
           <p className="kicker mt-6">Specialty Collection</p>
-          <h1 className="heading-display mt-5 text-4xl md:text-6xl">{pageTitle}</h1>
+          <h1 className="heading-display mt-5">{pageTitle}</h1>
           <p className="mt-5 max-w-3xl text-lg muted-text">{description}</p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link href="/generic-bag-quote" className="btn-primary">Build a Quote</Link>
+          </div>
         </div>
       </section>
 
-      <section className="section-container py-12">
+      <section className="section-container py-20">
         {images.length > 0 ? (
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {images.map((img) => (
@@ -200,20 +203,10 @@ export default async function CatalogFolderPage({
         </div>
       </section>
 
-      <section className="section-container pt-3">
-        <div className="tonal-panel">
-          <h2 className="section-title">Ready to order? Get a quote.</h2>
-          <p className="mt-3 muted-text">
-            Start your quote with this collection pre-selected and submit in minutes.
-          </p>
-          <Link href="/generic-bag-quote" className="btn-primary mt-5">
-            Build a Quote
-          </Link>
-        </div>
-      </section>
     </div>
   )
 }
+
 
 
 

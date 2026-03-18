@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next'
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -46,13 +46,13 @@ export default async function CatalogProductDetailPage({
             Back to Catalog
           </Link>
           <p className="kicker mt-6">Product Detail</p>
-          <h1 className="heading-display mt-5 text-4xl md:text-6xl">{product.name}</h1>
+          <h1 className="heading-display mt-5">{product.name}</h1>
           <p className="mt-4 text-sm font-semibold uppercase tracking-[0.09em] text-[#7A6548]">SKU {product.sku}</p>
           <p className="mt-4 max-w-3xl text-lg muted-text">{product.description}</p>
         </div>
       </section>
 
-      <section className="section-container py-10">
+      <section className="section-container py-20">
         <div className="split-panel items-start">
           <div className="surface-card overflow-hidden rounded-3xl">
             <div className="relative aspect-[4/3] bg-[#FAF6F0]">
@@ -157,19 +157,9 @@ export default async function CatalogProductDetailPage({
         </div>
       </section>
 
-      <section className="section-container pt-1">
-        <div className="tonal-panel">
-          <h2 className="section-title">Ready to order? Get a quote.</h2>
-          <p className="mt-3 muted-text">
-            Use this SKU in the quote tool to lock in pricing and lead-time options.
-          </p>
-          <Link href={`/generic-bag-quote?sku=${encodeURIComponent(product.sku)}`} className="btn-primary mt-5">
-            Build a Quote
-          </Link>
-        </div>
-      </section>
     </div>
   )
 }
+
 
 

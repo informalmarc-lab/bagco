@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next'
+import type { Metadata } from 'next'
 import BlogPostTemplate, { type BlogPostInternalLink, type BlogPostSection } from '@/components/BlogPostTemplate'
 
 export const metadata: Metadata = {
@@ -79,4 +79,5 @@ export default function CustomBagLeadTimesPage() {
     />
   )
 }
+
 

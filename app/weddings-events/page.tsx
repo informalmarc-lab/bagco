@@ -21,7 +21,7 @@ export default function ProgramsPage() {
       <section className="page-hero">
         <div className="page-hero-inner">
           <p className="kicker">Program Overview</p>
-          <h1 className="heading-display mt-5 text-4xl md:text-6xl">Pharmacy and Veterinary Packaging, Simplified</h1>
+          <h1 className="heading-display mt-5">Pharmacy and Veterinary Packaging, Simplified</h1>
           <p className="mt-5 max-w-3xl text-lg muted-text">
             We combine catalog clarity, production planning, and recurring support so day-to-day packaging stays consistent.
           </p>
@@ -32,7 +32,7 @@ export default function ProgramsPage() {
         </div>
       </section>
 
-      <section className="section-container py-12">
+      <section className="section-container py-20">
         <div className="grid gap-4 md:grid-cols-2">
           {offerings.map((item) => (
             <article key={item} className="tonal-panel">

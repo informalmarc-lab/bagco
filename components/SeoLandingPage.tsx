@@ -14,13 +14,16 @@ export default function SeoLandingPage({ h1, intro, bullets, links }: SeoLanding
         <div className="page-hero-inner">
           <div className="max-w-4xl">
             <p className="kicker">Specialized Resource</p>
-            <h1 className="heading-display mt-5 text-4xl md:text-6xl">{h1}</h1>
+            <h1 className="heading-display mt-5">{h1}</h1>
             <p className="mt-4 max-w-3xl text-lg muted-text">{intro}</p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link href="/generic-bag-quote" className="btn-primary">Build a Quote</Link>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="section-container py-12">
+      <section className="section-container py-20">
         <div className="grid gap-3 md:grid-cols-2">
           {bullets.map((bullet) => (
             <div key={bullet} className="surface-card rounded-2xl p-4 text-sm font-semibold text-[#5F4D33]">
@@ -39,9 +42,6 @@ export default function SeoLandingPage({ h1, intro, bullets, links }: SeoLanding
           <div className="mt-5 flex flex-wrap gap-3">
             <Link href="/contact" className="btn-primary">
               Contact Team
-            </Link>
-            <Link href="/generic-bag-quote" className="btn-secondary">
-              Build a Quote
             </Link>
           </div>
         </div>

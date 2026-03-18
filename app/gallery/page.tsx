@@ -40,14 +40,17 @@ export default function GalleryPage() {
       <section className="page-hero">
         <div className="page-hero-inner">
           <p className="kicker">Gallery</p>
-          <h1 className="heading-display mt-5 text-4xl md:text-6xl">Production Gallery</h1>
+          <h1 className="heading-display mt-5">Production Gallery</h1>
           <p className="mt-5 max-w-3xl text-lg muted-text">
             Browse real bag program imagery across catalog families and custom print work.
           </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link href="/generic-bag-quote" className="btn-primary">Build a Quote</Link>
+          </div>
         </div>
       </section>
 
-      <section className="section-container py-12">
+      <section className="section-container py-20">
         {loading ? (
           <p className="tonal-panel text-center muted-text">Loading gallery...</p>
         ) : images.length === 0 ? (
@@ -79,7 +82,6 @@ export default function GalleryPage() {
           <p className="mt-3 muted-text">Share your use case and we'll route you to the right catalog and quote path.</p>
           <div className="mt-5 flex flex-wrap gap-3">
             <Link href="/catalog" className="btn-secondary">Browse Catalogs</Link>
-            <Link href="/generic-bag-quote" className="btn-primary">Build a Quote</Link>
           </div>
         </div>
       </section>

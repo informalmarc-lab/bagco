@@ -192,15 +192,15 @@ function Icon({ id }: { id: string }) {
 }
 
 export default function IndustrySolutionsSection() {
-  const [activeId, setActiveId] = useState(INDUSTRIES[0].id)
+  const [activeId, setActiveId] = useState<string | null>(null)
   const panelRef = useRef<HTMLDivElement | null>(null)
   const active = useMemo(
-    () => INDUSTRIES.find((industry) => industry.id === activeId) || INDUSTRIES[0],
+    () => INDUSTRIES.find((industry) => industry.id === activeId) || null,
     [activeId],
   )
 
   return (
-    <section id="industry-solutions" className="section-container py-14 md:py-20">
+    <section id="industry-solutions" className="section-container py-20 md:py-24">
       <p className="kicker">Industry Solutions</p>
       <h2 className="heading-display mt-5 text-3xl md:text-5xl">
         Packaging Programs by Business Type
@@ -245,60 +245,60 @@ export default function IndustrySolutionsSection() {
         ref={panelRef}
         className="mt-6 overflow-hidden rounded-3xl border border-[#C4935A66] bg-white/92 p-6 shadow-[0_14px_30px_rgba(30,77,43,0.12)] md:p-8"
       >
-        <div key={active.id} className="industry-panel reveal-up">
-          <div className="flex flex-wrap items-center gap-3">
-            <p className="kicker m-0">{active.title}</p>
-            <p className="text-sm font-semibold muted-text">{active.examples}</p>
-          </div>
+        {active ? (
+          <div key={active.id} className="industry-panel reveal-up">
+            <div className="flex flex-wrap items-center gap-3">
+              <p className="kicker m-0">{active.title}</p>
+              <p className="text-sm font-semibold muted-text">{active.examples}</p>
+            </div>
 
-          <div className="mt-6 grid gap-4 lg:grid-cols-3">
-            <div className="rounded-2xl border border-[#C4935A66] bg-[#FAF6F0]/70 p-4">
-              <h4 className="text-sm font-black uppercase tracking-[0.08em] text-[#5F4D33]">Why Bag Supply Co</h4>
-              <ul className="mt-3 space-y-2 text-sm muted-text">
-                {active.why.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
+            <div className="mt-6 grid gap-4 lg:grid-cols-3">
+              <div className="rounded-2xl border border-[#C4935A66] bg-[#FAF6F0]/70 p-4">
+                <h4 className="text-sm font-black uppercase tracking-[0.08em] text-[#5F4D33]">Why Bag Supply Co</h4>
+                <ul className="mt-3 space-y-2 text-sm muted-text">
+                  {active.why.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="rounded-2xl border border-[#C4935A66] bg-[#FAF6F0]/70 p-4">
+                <h4 className="text-sm font-black uppercase tracking-[0.08em] text-[#5F4D33]">Problems We Solve</h4>
+                <ul className="mt-3 space-y-2 text-sm muted-text">
+                  {active.problems.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="rounded-2xl border border-[#C4935A66] bg-[#FAF6F0]/70 p-4">
+                <h4 className="text-sm font-black uppercase tracking-[0.08em] text-[#5F4D33]">Business Benefits</h4>
+                <ul className="mt-3 space-y-2 text-sm muted-text">
+                  {active.benefits.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
-            <div className="rounded-2xl border border-[#C4935A66] bg-[#FAF6F0]/70 p-4">
-              <h4 className="text-sm font-black uppercase tracking-[0.08em] text-[#5F4D33]">Problems We Solve</h4>
-              <ul className="mt-3 space-y-2 text-sm muted-text">
-                {active.problems.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-            <div className="rounded-2xl border border-[#C4935A66] bg-[#FAF6F0]/70 p-4">
-              <h4 className="text-sm font-black uppercase tracking-[0.08em] text-[#5F4D33]">Business Benefits</h4>
-              <ul className="mt-3 space-y-2 text-sm muted-text">
-                {active.benefits.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
 
-          <div className="mt-6">
-            <p className="text-xs font-black uppercase tracking-[0.08em] text-[#5F4D33]">Related Catalogs</p>
-            <div className="mt-2 flex flex-wrap gap-2">
-              {active.catalogs.map((catalog) => (
-                <Link
-                  key={catalog.href}
-                  href={catalog.href}
-                  className="rounded-lg border border-[#C4935A66] bg-white px-3 py-1.5 text-xs font-bold text-[#5F4D33] hover:bg-[#FAF6F0]"
-                >
-                  {catalog.label}
-                </Link>
-              ))}
+            <div className="mt-6">
+              <p className="text-xs font-black uppercase tracking-[0.08em] text-[#5F4D33]">Related Catalogs</p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {active.catalogs.map((catalog) => (
+                  <Link
+                    key={catalog.href}
+                    href={catalog.href}
+                    className="rounded-lg border border-[#C4935A66] bg-white px-3 py-1.5 text-xs font-bold text-[#5F4D33] hover:bg-[#FAF6F0]"
+                  >
+                    {catalog.label}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
-
-          <div className="mt-6">
-            <Link href="/generic-bag-quote" className="btn-primary">
-              Build a Quote
-            </Link>
+        ) : (
+          <div className="industry-panel reveal-up text-center">
+            <p className="text-sm font-semibold text-[#5F4D33]">Select an industry above to view details.</p>
           </div>
-        </div>
+        )}
       </div>
     </section>
   )

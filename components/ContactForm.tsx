@@ -72,7 +72,7 @@ export default function ContactForm() {
     } catch {
       setStatus('error')
       setErrorMessage(
-        'Something went wrong sending your request. Please try again or text us at (252) 516-1944.',
+        'Something went wrong sending your request. Please try again or text us at (704) 862-9256.',
       )
     }
   }
@@ -85,7 +85,7 @@ export default function ContactForm() {
         <p className="mt-3 text-sm text-[#5F4D33]">
           We&apos;ll review your details and follow up with pricing and lead times. You can also text us directly at
           {' '}
-          (252) 516-1944 for a faster response.
+          (704) 862-9256 for a faster response.
         </p>
         <Link href="/" className="btn-primary mt-6">
           Back to Home

@@ -20,14 +20,17 @@ export default function ContactPage() {
       <section className="page-hero">
         <div className="page-hero-inner">
           <p className="kicker">Contact</p>
-          <h1 className="heading-display mt-5 text-4xl md:text-6xl">Talk to the Packaging Team</h1>
+          <h1 className="heading-display mt-5">Talk to the Packaging Team</h1>
           <p className="mt-5 max-w-3xl text-lg muted-text">
             Whether you're a retailer, pharmacy, distributor, or just getting started - tell us what you need and we'll build a program around it.
           </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link href="/generic-bag-quote" className="btn-primary">Build a Quote</Link>
+          </div>
         </div>
       </section>
 
-      <section className="section-container py-12">
+      <section className="section-container py-20">
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <ContactForm />
 
@@ -58,7 +61,6 @@ export default function ContactPage() {
 
             <div className="mt-6 grid gap-2 sm:grid-cols-2">
               <a href={contactTextHref} className="btn-secondary justify-center">Text Us</a>
-              <Link href="/generic-bag-quote" className="btn-primary justify-center">Build a Quote</Link>
             </div>
           </aside>
         </div>
@@ -66,3 +68,4 @@ export default function ContactPage() {
     </div>
   )
 }
+

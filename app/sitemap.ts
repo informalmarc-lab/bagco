@@ -2,6 +2,8 @@ import fs from 'fs'
 import path from 'path'
 import type { MetadataRoute } from 'next'
 import { getAllCatalogProducts } from '@/lib/catalogProducts'
+import cityData from '@/data/seo/cities.json'
+import { INDUSTRY_PAGES } from '@/lib/seo/industries'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.bagsupplyco.com'
 const excludedRoutes = new Set(['/partners/dropship'])
@@ -82,10 +84,46 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: 'monthly' as const,
   }))
 
-  const routes = [...staticRoutes, ...dynamicCatalogRoutes, ...productRoutes, ...productDetailRoutes]
+  const seoCities = cityData as Array<{ slug: string }>
+  const cityRoutes = seoCities.map((city) => ({
+    route: `/local/${city.slug}`,
+    priority: 0.72,
+    changeFrequency: 'monthly' as const,
+  }))
+
+  const industryHubRoutes = INDUSTRY_PAGES.map((industry) => ({
+    route: `/${industry.slug}`,
+    priority: 0.8,
+    changeFrequency: 'monthly' as const,
+  }))
+
+  const industryCityRoutes = seoCities.flatMap((city) =>
+    INDUSTRY_PAGES.map((industry) => ({
+      route: `/${industry.slug}/${city.slug}`,
+      priority: 0.62,
+      changeFrequency: 'monthly' as const,
+    })),
+  )
+
+  const routes = [
+    ...staticRoutes,
+    ...dynamicCatalogRoutes,
+    ...cityRoutes,
+    ...industryHubRoutes,
+    ...industryCityRoutes,
+    ...productRoutes,
+    ...productDetailRoutes,
+  ]
     .filter(({ route }) => !excludedRoutes.has(route))
 
-  return routes.map(({ route, priority, changeFrequency }) => ({
+  const uniqueRoutes = new Map<string, { route: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'] }>()
+  for (const item of routes) {
+    if (!uniqueRoutes.has(item.route)) {
+      uniqueRoutes.set(item.route, item)
+    }
+  }
+
+  return Array.from(uniqueRoutes.values()).map(({ route, priority, changeFrequency }) => ({
     url: `${siteUrl}${route}`,
     lastModified: new Date(),
     changeFrequency,

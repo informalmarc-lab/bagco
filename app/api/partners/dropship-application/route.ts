@@ -166,7 +166,7 @@ export async function GET() {
     font: fontRegular,
     color: tan,
   })
-  page.drawText('Bag Supply Co | 912 Houston Drive, Monroe, NC 28110 | (252) 516-1944', {
+  page.drawText('Bag Supply Co | 912 Houston Drive, Monroe, NC 28110 | (704) 862-9256', {
     x: LEFT,
     y: 50,
     size: 9,
