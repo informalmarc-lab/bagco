@@ -2,14 +2,7 @@
 
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
-
-type PharmacyImage = { src: string; name: string; type: 'ty' | 'gs' | 'plastic-gs' }
-
-export type PharmacyCatalogImages = {
-  ty: PharmacyImage[]
-  gs: PharmacyImage[]
-  'plastic-gs': PharmacyImage[]
-}
+import type { PharmacyCatalogImages, PharmacyImage } from '@/lib/catalogImages'
 
 const PRODUCT_INFO = {
   ty: {

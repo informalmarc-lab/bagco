@@ -9,6 +9,16 @@ export type CatalogImage = {
   name: string
 }
 
+export type PharmacyImage = CatalogImage & {
+  type: 'ty' | 'gs' | 'plastic-gs'
+}
+
+export type PharmacyCatalogImages = {
+  ty: PharmacyImage[]
+  gs: PharmacyImage[]
+  'plastic-gs': PharmacyImage[]
+}
+
 function getImagesFromFolder(dir: string, webPrefix: string): CatalogImage[] {
   const images: CatalogImage[] = []
   if (!fs.existsSync(dir)) return images
@@ -34,11 +44,16 @@ function getImagesFromFolder(dir: string, webPrefix: string): CatalogImage[] {
 
 export function getPharmacyCatalogImages() {
   const basePath = path.join(process.cwd(), 'public', 'catalog', 'pharmacy')
+  const withType = (type: PharmacyImage['type'], images: CatalogImage[]): PharmacyImage[] =>
+    images.map((img) => ({ ...img, type }))
   return {
-    ty: getImagesFromFolder(path.join(basePath, 'ty'), '/catalog/pharmacy/ty'),
-    gs: getImagesFromFolder(path.join(basePath, 'gs'), '/catalog/pharmacy/gs'),
-    'plastic-gs': getImagesFromFolder(path.join(basePath, 'plastic-gs'), '/catalog/pharmacy/plastic-gs'),
-  }
+    ty: withType('ty', getImagesFromFolder(path.join(basePath, 'ty'), '/catalog/pharmacy/ty')),
+    gs: withType('gs', getImagesFromFolder(path.join(basePath, 'gs'), '/catalog/pharmacy/gs')),
+    'plastic-gs': withType(
+      'plastic-gs',
+      getImagesFromFolder(path.join(basePath, 'plastic-gs'), '/catalog/pharmacy/plastic-gs'),
+    ),
+  } satisfies PharmacyCatalogImages
 }
 
 export function getVeterinaryCatalogImages() {
