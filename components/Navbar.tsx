@@ -10,6 +10,7 @@ const industryLinks = [
   { href: '/industries/veterinary', label: 'Veterinary' },
   { href: '/industries/dispensaries', label: 'Dispensaries' },
   { href: '/industries/smoke-shops', label: 'Smoke Shops' },
+  { href: '/catalog/custom', label: 'Custom Bags' },
   { href: '/industries/distributors', label: 'Distributors' },
 ]
 

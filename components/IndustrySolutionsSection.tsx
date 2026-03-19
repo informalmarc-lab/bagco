@@ -68,6 +68,32 @@ const INDUSTRIES: IndustryPanel[] = [
     ],
   },
   {
+    id: 'custom-bags',
+    title: 'Custom Bags',
+    subtitle: 'Brand-forward print programs with clear production and reorder rules',
+    examples: 'Single-location brands, multi-location operators, distributor private-label programs',
+    why: [
+      'Custom print programs improve brand recall on every carry-out transaction.',
+      'Standardized color options and proofs reduce ordering uncertainty.',
+      'Case-level pricing and lead-time planning support predictable reorders.',
+    ],
+    problems: [
+      'Plain stock bags do not reinforce brand identity after checkout.',
+      'Inconsistent artwork handoff creates delays and proof revisions.',
+      'No custom reorder cadence leads to rush-order pressure.',
+    ],
+    benefits: [
+      'Stronger street-level visibility from every bag leaving the store.',
+      'Cleaner purchasing process with repeatable proof and reorder flow.',
+      'Reliable production planning with 1/2/3 color program options.',
+    ],
+    catalogs: [
+      { label: 'Custom Bags Catalog', href: '/catalog/custom' },
+      { label: 'Pharmacy Catalog', href: '/catalog/pharmacy' },
+      { label: 'Veterinary Catalog', href: '/catalog/veterinary' },
+    ],
+  },
+  {
     id: 'distributors',
     title: 'Distributors',
     subtitle: 'Wholesale programs built for private-label relationships',

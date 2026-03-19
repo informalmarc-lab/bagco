@@ -66,7 +66,7 @@ export const INDUSTRY_PAGES: IndustryMeta[] = [
     marketLabel: 'event companies',
     focus: 'Kitting, gifting, and event swag distribution programs.',
     naics: '56192',
-    catalogIndustry: 'retail',
+    catalogIndustry: 'custom',
   },
 ]
 

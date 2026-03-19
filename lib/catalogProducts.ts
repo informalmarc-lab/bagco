@@ -5,9 +5,7 @@ export type CatalogIndustryKey =
   | 'veterinary'
   | 'dispensary'
   | 'smoke-shop'
-  | 'wineries-breweries'
-  | 'retail'
-  | 'food-beverage'
+  | 'custom'
 
 export type CatalogAvailability = 'stock' | 'custom'
 export type CatalogCollection = 'usa-made' | 'seasonal'
@@ -48,9 +46,7 @@ export const INDUSTRY_LABELS: Record<CatalogIndustryKey, string> = {
   veterinary: 'Veterinary',
   dispensary: 'Dispensary',
   'smoke-shop': 'Smoke Shop',
-  'wineries-breweries': 'Wineries & Breweries',
-  retail: 'Retail',
-  'food-beverage': 'Food & Beverage',
+  custom: 'Custom Bags',
 }
 
 export const DEFAULT_CATALOG_FILTERS: CatalogFilters = {
@@ -97,6 +93,7 @@ const ACTIVE_INDUSTRIES = new Set<CatalogIndustryKey>([
   'veterinary',
   'dispensary',
   'smoke-shop',
+  'custom',
 ])
 
 const CATALOG_PRODUCTS = (catalogProducts as CatalogProduct[])
@@ -189,6 +186,7 @@ export const INDUSTRY_ORDER: CatalogIndustryKey[] = [
   'veterinary',
   'dispensary',
   'smoke-shop',
+  'custom',
 ]
 
 const INDUSTRY_CATALOG_HREF: Record<CatalogIndustryKey, string> = {
@@ -196,9 +194,7 @@ const INDUSTRY_CATALOG_HREF: Record<CatalogIndustryKey, string> = {
   veterinary: '/catalog/veterinary',
   dispensary: '/catalog?industry=dispensary',
   'smoke-shop': '/catalog?industry=smoke-shop',
-  'wineries-breweries': '/catalog?industry=wineries-breweries',
-  retail: '/catalog?industry=retail',
-  'food-beverage': '/catalog?industry=food-beverage',
+  custom: '/catalog/custom',
 }
 
 export function getIndustryCatalogHref(industry: CatalogIndustryKey): string {

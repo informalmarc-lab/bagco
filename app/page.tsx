@@ -11,7 +11,7 @@ import { getAllCatalogProducts, getCatalogOverviewPath, money } from '@/lib/cata
 export const metadata: Metadata = {
   title: {
     absolute:
-      'Custom Paper Bags for Pharmacies, Dispensaries, Smoke Shops & Distributors | Bag Supply Co',
+      'Custom Paper Bags for Pharmacies, Veterinary, Dispensaries, Smoke Shops & Distributors | Bag Supply Co',
   },
   description:
     'Stock and custom print bag programs with blind shipping, drop shipping, and recurring reorder support.',
@@ -22,6 +22,7 @@ const industryQuickNav = [
   { label: 'Dispensaries', href: '/industries/dispensaries', icon: '🌿' },
   { label: 'Veterinary', href: '/industries/veterinary', icon: '🐾' },
   { label: 'Smoke Shops', href: '/industries/smoke-shops', icon: '🚬' },
+  { label: 'Custom Bags', href: '/catalog/custom', icon: 'CB' },
   { label: 'Distributors', href: '/industries/distributors', icon: '📦' },
 ]
 
@@ -139,7 +140,7 @@ export default function Home() {
             <div>
               <p className="kicker">Bag Supply Co</p>
               <h1 className="heading-display mt-5 hero-reveal hero-delay-1">
-                Custom Paper Bags for Pharmacies, Dispensaries, Smoke Shops & Distributors - Ready in 3-4 Weeks
+                Custom Paper Bags for Pharmacies, Veterinary, Dispensaries, Smoke Shops & Distributors - Ready in 3-4 Weeks
               </h1>
               <p className="mt-5 max-w-3xl text-lg muted-text hero-reveal hero-delay-2">
                 Stock and custom print bag programs with blind shipping, drop shipping, and recurring reorder support.
@@ -186,7 +187,7 @@ export default function Home() {
             <p className="kicker">Who We Serve</p>
             <h2 className="section-title mt-4">Built for B2B Buyers</h2>
             <p className="mt-3 text-sm text-[#5F4D33]">
-              Pharmacies, veterinary clinics, dispensaries, smoke shops, and wholesale distributors.
+              Pharmacies, veterinary clinics, dispensaries, smoke shops, custom bag buyers, and wholesale distributors.
             </p>
             <div className="mt-5 flex flex-wrap gap-2">
               {industryQuickNav.map((item) => (
