@@ -18,7 +18,6 @@ const catalogLinks = [
   { href: '/catalog/pharmacy', label: 'Pharmacy' },
   { href: '/catalog/veterinary', label: 'Veterinary' },
   { href: '/catalog/custom', label: 'Custom 1/2/3 Color' },
-  { href: '/catalog/legacy', label: 'Legacy Collections' },
   { href: '/catalog/mylar-bags', label: 'Mylar Bags' },
 ]
 

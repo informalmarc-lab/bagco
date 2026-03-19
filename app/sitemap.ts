@@ -1,5 +1,3 @@
-import fs from 'fs'
-import path from 'path'
 import type { MetadataRoute } from 'next'
 import {
   getAllCatalogProducts,
@@ -13,20 +11,6 @@ import { INDUSTRY_PAGES } from '@/lib/seo/industries'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.bagsupplyco.com'
 const excludedRoutes = new Set(['/partners/dropship'])
-
-function getCatalogFolders(): string[] {
-  try {
-    const catalogRoot = path.join(process.cwd(), 'public', 'catalog')
-    const entries = fs.readdirSync(catalogRoot, { withFileTypes: true })
-    return entries
-      .filter((entry) => entry.isDirectory())
-      .map((entry) => entry.name)
-      .filter((name) => !['custom', 'pharmacy', 'veterinary', 'legacy', 'winery'].includes(name))
-      .sort()
-  } catch {
-    return []
-  }
-}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const productOverviewRoutes = getAllCatalogProducts().map((product) => ({
@@ -53,7 +37,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '', priority: 1, changeFrequency: 'weekly' },
     { route: '/about', priority: 0.75, changeFrequency: 'monthly' },
     { route: '/catalog', priority: 0.9, changeFrequency: 'weekly' },
-    { route: '/catalog/legacy', priority: 0.7, changeFrequency: 'monthly' },
     { route: '/catalog/pharmacy', priority: 0.9, changeFrequency: 'weekly' },
     { route: '/catalog/veterinary', priority: 0.85, changeFrequency: 'weekly' },
     { route: '/catalog/custom', priority: 0.9, changeFrequency: 'weekly' },
@@ -90,12 +73,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '/made-in-usa-paper-bags', priority: 0.7, changeFrequency: 'monthly' },
   ]
 
-  const dynamicCatalogRoutes = getCatalogFolders().map((folder) => ({
-    route: `/catalog/${folder}`,
-    priority: 0.62,
-    changeFrequency: 'monthly' as const,
-  }))
-
   const seoCities = CITIES.map((city) => ({ slug: city.slug }))
   const cityRoutes = seoCities.map((city) => ({
     route: `/local/${city.slug}`,
@@ -119,7 +96,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const routes = [
     ...staticRoutes,
-    ...dynamicCatalogRoutes,
     ...cityRoutes,
     ...industryHubRoutes,
     ...industryCityRoutes,
