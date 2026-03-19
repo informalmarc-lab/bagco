@@ -191,6 +191,20 @@ export const INDUSTRY_ORDER: CatalogIndustryKey[] = [
   'smoke-shop',
 ]
 
+const INDUSTRY_CATALOG_HREF: Record<CatalogIndustryKey, string> = {
+  pharmacy: '/catalog/pharmacy',
+  veterinary: '/catalog/veterinary',
+  dispensary: '/catalog?industry=dispensary',
+  'smoke-shop': '/catalog?industry=smoke-shop',
+  'wineries-breweries': '/catalog?industry=wineries-breweries',
+  retail: '/catalog?industry=retail',
+  'food-beverage': '/catalog?industry=food-beverage',
+}
+
+export function getIndustryCatalogHref(industry: CatalogIndustryKey): string {
+  return INDUSTRY_CATALOG_HREF[industry]
+}
+
 export function getLeadTimeText(availability: CatalogAvailability): string {
   if (availability === 'stock') return 'Same day shipping for stock orders placed before 1 PM ET'
   return 'Custom print lead time: 3-4 weeks after proof approval'
@@ -199,4 +213,88 @@ export function getLeadTimeText(availability: CatalogAvailability): string {
 export function getLeadTimeShort(availability: CatalogAvailability): string {
   if (availability === 'stock') return 'Same day before 1 PM ET'
   return 'Custom: 3-4 weeks'
+}
+
+function slugifySegment(value: string): string {
+  const slug = value
+    .toLowerCase()
+    .trim()
+    .replace(/['"]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+  return slug || 'item'
+}
+
+function stripRowToSizeLabel(label: string): string {
+  const withoutCase = label
+    .replace(/\s*\d[\d,]*\s*(?:qty|per case|\/case)(?:\s*[-–].*)?$/i, '')
+    .trim()
+
+  return withoutCase
+    .replace(/\s+\d+\s*-\s*color$/i, '')
+    .trim()
+}
+
+export function getCatalogSkuSlug(sku: string): string {
+  return slugifySegment(sku)
+}
+
+export function getCatalogSizeSlug(sizeLabel: string): string {
+  const numericMatch = sizeLabel.match(/#(\d+)(?=\s|\(|$)/i)
+  if (numericMatch) return numericMatch[1]
+
+  const normalized = sizeLabel
+    .replace(/\([^)]*\)/g, ' ')
+    .replace(/^#/, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+
+  return slugifySegment(normalized)
+}
+
+export function getCatalogOverviewPath(product: CatalogProduct): string {
+  return `/catalog/${product.industry}/${getCatalogSkuSlug(product.sku)}`
+}
+
+export function getCatalogSizePath(product: CatalogProduct, sizeSlug: string): string {
+  return `${getCatalogOverviewPath(product)}/${sizeSlug}`
+}
+
+export function getCatalogProductByRoute(category: string, skuSlug: string): CatalogProduct | undefined {
+  return CATALOG_PRODUCTS.find(
+    (product) => product.industry === category && getCatalogSkuSlug(product.sku) === skuSlug,
+  )
+}
+
+export function getCatalogProductSizes(product: CatalogProduct): Array<{
+  slug: string
+  label: string
+  pricing: Array<{ label: string; price: number }>
+}> {
+  const orderedSlugs: string[] = []
+  const sizeMap = new Map<
+    string,
+    { slug: string; label: string; pricing: Array<{ label: string; price: number }> }
+  >()
+
+  const ensure = (label: string) => {
+    const slug = getCatalogSizeSlug(label)
+    if (!sizeMap.has(slug)) {
+      sizeMap.set(slug, { slug, label, pricing: [] })
+      orderedSlugs.push(slug)
+    }
+    return sizeMap.get(slug)!
+  }
+
+  for (const label of product.sizeOptions) {
+    ensure(label)
+  }
+
+  for (const row of product.sizePricing || []) {
+    const baseLabel = stripRowToSizeLabel(row.label)
+    const target = ensure(baseLabel || row.label)
+    target.pricing.push(row)
+  }
+
+  return orderedSlugs.map((slug) => sizeMap.get(slug)!).filter(Boolean)
 }

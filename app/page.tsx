@@ -6,7 +6,7 @@ import IndustrySolutionsSection from '@/components/IndustrySolutionsSection'
 import NewsletterSignup from '@/components/NewsletterSignup'
 import QuickQuoteForm from '@/components/QuickQuoteForm'
 import { contactPhone } from '@/components/siteConfig'
-import { getAllCatalogProducts, money } from '@/lib/catalogProducts'
+import { getAllCatalogProducts, getCatalogOverviewPath, money } from '@/lib/catalogProducts'
 
 export const metadata: Metadata = {
   title: {
@@ -268,7 +268,7 @@ export default function Home() {
                 <p className="text-xs font-black uppercase tracking-[0.09em] text-[#7A6548]">SKU {product.sku}</p>
                 <h3 className="mt-2 text-lg font-black text-[#1E4D2B]">{product.name}</h3>
                 <p className="mt-1 product-card-price">From {money(product.startingPrice)}/case</p>
-                <Link href={`/products/${product.slug}`} className="btn-secondary mt-4">
+                <Link href={getCatalogOverviewPath(product)} className="btn-secondary mt-4">
                   View Product
                 </Link>
               </div>

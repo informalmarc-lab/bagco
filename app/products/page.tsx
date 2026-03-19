@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
-import { getAllCatalogProducts, INDUSTRY_LABELS, money } from '@/lib/catalogProducts'
+import { getAllCatalogProducts, getCatalogOverviewPath, INDUSTRY_LABELS, money } from '@/lib/catalogProducts'
 
 export const metadata: Metadata = {
   title: 'Paper Bag Product Catalog | Bag Supply Co',
@@ -34,7 +34,7 @@ export default function ProductsIndexPage() {
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
           {products.map((product) => (
             <article key={product.slug} className="surface-card product-card">
-              <Link href={`/products/${product.slug}`} className="relative block aspect-[4/3] bg-[#FAF6F0]">
+              <Link href={getCatalogOverviewPath(product)} className="relative block aspect-[4/3] bg-[#FAF6F0]">
                 <Image
                   src={product.image}
                   alt={`${product.name} bag product image`}
@@ -49,7 +49,7 @@ export default function ProductsIndexPage() {
                 </p>
                 <h2 className="mt-2 text-lg font-black text-[#1E4D2B]">{product.name}</h2>
                 <p className="mt-1 product-card-price">From {money(product.startingPrice)}/case</p>
-                <Link href={`/products/${product.slug}`} className="btn-secondary mt-4">
+                <Link href={getCatalogOverviewPath(product)} className="btn-secondary mt-4">
                   View Product
                 </Link>
               </div>

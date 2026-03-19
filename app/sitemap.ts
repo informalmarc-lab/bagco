@@ -1,7 +1,12 @@
 import fs from 'fs'
 import path from 'path'
 import type { MetadataRoute } from 'next'
-import { getAllCatalogProducts } from '@/lib/catalogProducts'
+import {
+  getAllCatalogProducts,
+  getCatalogOverviewPath,
+  getCatalogProductSizes,
+  getCatalogSizePath,
+} from '@/lib/catalogProducts'
 import { getAllMylarProducts } from '@/lib/mylarCatalog'
 import { CITIES } from '@/lib/seo/cities'
 import { INDUSTRY_PAGES } from '@/lib/seo/industries'
@@ -24,17 +29,19 @@ function getCatalogFolders(): string[] {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const productRoutes = getAllCatalogProducts().map((product) => ({
-    route: `/catalog/products/${product.slug}`,
-    priority: 0.64,
-    changeFrequency: 'weekly' as const,
-  }))
-
-  const productDetailRoutes = getAllCatalogProducts().map((product) => ({
-    route: `/products/${product.slug}`,
+  const productOverviewRoutes = getAllCatalogProducts().map((product) => ({
+    route: getCatalogOverviewPath(product),
     priority: 0.7,
     changeFrequency: 'weekly' as const,
   }))
+
+  const productSizeRoutes = getAllCatalogProducts().flatMap((product) =>
+    getCatalogProductSizes(product).map((size) => ({
+      route: getCatalogSizePath(product, size.slug),
+      priority: 0.64,
+      changeFrequency: 'weekly' as const,
+    })),
+  )
 
   const mylarRoutes = getAllMylarProducts().map((product) => ({
     route: `/catalog/mylar-bags/${product.slug}`,
@@ -81,8 +88,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '/pharmacy-paper-bags-wholesale', priority: 0.7, changeFrequency: 'monthly' },
     { route: '/independent-pharmacy-packaging', priority: 0.7, changeFrequency: 'monthly' },
     { route: '/made-in-usa-paper-bags', priority: 0.7, changeFrequency: 'monthly' },
-    { route: '/products/smoke-shop-plain-kraft-bag', priority: 0.8, changeFrequency: 'weekly' },
-    { route: '/products/smoke-shop-custom-bag', priority: 0.85, changeFrequency: 'weekly' },
   ]
 
   const dynamicCatalogRoutes = getCatalogFolders().map((folder) => ({
@@ -118,8 +123,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...cityRoutes,
     ...industryHubRoutes,
     ...industryCityRoutes,
-    ...productRoutes,
-    ...productDetailRoutes,
+    ...productOverviewRoutes,
+    ...productSizeRoutes,
     ...mylarRoutes,
   ]
     .filter(({ route }) => !excludedRoutes.has(route))

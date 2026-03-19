@@ -10,6 +10,7 @@ import {
   INDUSTRY_ORDER,
   applyCatalogFilters,
   getCatalogFilterOptions,
+  getCatalogOverviewPath,
   getStartingPriceByIndustry,
   money,
   type CatalogAvailability,
@@ -251,7 +252,7 @@ export default function CatalogExplorerClient({ products }: CatalogExplorerClien
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
             {filtered.map((product) => (
               <article key={product.sku} className="surface-card product-card">
-                <Link href={`/products/${product.slug}`} className="relative block aspect-[4/3] bg-[#FAF6F0]">
+                <Link href={getCatalogOverviewPath(product)} className="relative block aspect-[4/3] bg-[#FAF6F0]">
                   <Image
                     src={product.image}
                     alt={product.name}
@@ -305,7 +306,7 @@ export default function CatalogExplorerClient({ products }: CatalogExplorerClien
                         Build a Quote
                       </Link>
                     )}
-                    <Link href={`/products/${product.slug}`} className="btn-secondary">
+                    <Link href={getCatalogOverviewPath(product)} className="btn-secondary">
                       View Details
                     </Link>
                   </div>

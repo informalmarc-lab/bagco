@@ -3,6 +3,7 @@ import Link from 'next/link'
 import {
   INDUSTRY_LABELS,
   getCatalogProductBySlug,
+  getCatalogOverviewPath,
   getCatalogProductsByIndustry,
   getMostOrderedSizesByIndustry,
   getStartingPriceByIndustry,
@@ -111,7 +112,7 @@ export default function IndustryLandingPage({
                     <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">SKU {product.sku}</p>
                     <p className="mt-1 text-sm font-semibold text-[#1E4D2B]">{product.name}</p>
                     <p className="mt-1 product-card-price">From {money(product.startingPrice)}/case</p>
-                    <Link href={`/products/${product.slug}`} className="btn-secondary mt-3">
+                    <Link href={getCatalogOverviewPath(product)} className="btn-secondary mt-3">
                       View Product
                     </Link>
                   </div>
