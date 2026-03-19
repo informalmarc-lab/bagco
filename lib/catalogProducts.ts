@@ -5,6 +5,7 @@ export type CatalogIndustryKey =
   | 'veterinary'
   | 'dispensary'
   | 'smoke-shop'
+  | 'wineries-breweries'
   | 'retail'
   | 'food-beverage'
 
@@ -47,6 +48,7 @@ export const INDUSTRY_LABELS: Record<CatalogIndustryKey, string> = {
   veterinary: 'Veterinary',
   dispensary: 'Dispensary',
   'smoke-shop': 'Smoke Shop',
+  'wineries-breweries': 'Wineries & Breweries',
   retail: 'Retail',
   'food-beverage': 'Food & Beverage',
 }
@@ -64,8 +66,6 @@ export const DEFAULT_CATALOG_FILTERS: CatalogFilters = {
 
 function sanitizeDescription(description: string): string {
   return description
-    .replace(/Cardinal Bag representative/gi, 'Bag Supply Co representative')
-    .replace(/Cardinal Bag/gi, 'Bag Supply Co')
     .replace(/1-800-526-9032/g, '(704) 862-9256')
 }
 
@@ -180,6 +180,7 @@ export const INDUSTRY_ORDER: CatalogIndustryKey[] = [
   'veterinary',
   'dispensary',
   'smoke-shop',
+  'wineries-breweries',
   'retail',
   'food-beverage',
 ]

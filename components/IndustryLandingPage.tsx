@@ -2,10 +2,12 @@
 import Link from 'next/link'
 import {
   INDUSTRY_LABELS,
+  getCatalogProductBySlug,
   getCatalogProductsByIndustry,
   getMostOrderedSizesByIndustry,
   getStartingPriceByIndustry,
   money,
+  type CatalogProduct,
   type CatalogIndustryKey,
 } from '@/lib/catalogProducts'
 import { contactTextHref } from '@/components/siteConfig'
@@ -19,8 +21,13 @@ type IndustryLandingPageProps = {
     title: string
     paragraphs: string[]
   }
+  badges?: string[]
+  heroCatalogLabel?: string
   bottomCatalogHref?: string
   bottomCatalogLabel?: string
+  featuredProductSlugs?: string[]
+  mostOrderedSizesOverride?: string[]
+  startingPriceOverride?: number
 }
 
 export default function IndustryLandingPage({
@@ -29,13 +36,29 @@ export default function IndustryLandingPage({
   description,
   heroLabel = 'Industry Focus',
   deepDiveSection,
+  badges = [
+    'Transparent Case Pricing',
+    'Build a Quote',
+    'Generic Same Day (Before 1 PM ET)',
+    'Custom 3-4 Weeks',
+    'Net 30 Available',
+    'Ships Across The US',
+  ],
+  heroCatalogLabel = `Browse ${INDUSTRY_LABELS[industry]} Catalog`,
   bottomCatalogHref = `/catalog?industry=${industry}`,
   bottomCatalogLabel = `Open ${INDUSTRY_LABELS[industry]} Catalog`,
+  featuredProductSlugs,
+  mostOrderedSizesOverride,
+  startingPriceOverride,
 }: IndustryLandingPageProps) {
-  const products = getCatalogProductsByIndustry(industry)
+  const products = featuredProductSlugs?.length
+    ? featuredProductSlugs
+        .map((slug) => getCatalogProductBySlug(slug))
+        .filter((product): product is CatalogProduct => Boolean(product))
+    : getCatalogProductsByIndustry(industry)
   const featured = products.slice(0, 6)
-  const sizes = getMostOrderedSizesByIndustry(industry)
-  const startingPrice = getStartingPriceByIndustry(industry)
+  const sizes = mostOrderedSizesOverride || getMostOrderedSizesByIndustry(industry)
+  const startingPrice = startingPriceOverride ?? getStartingPriceByIndustry(industry)
 
   return (
     <div className="pb-16">
@@ -48,16 +71,15 @@ export default function IndustryLandingPage({
             Starting stock pricing from {money(startingPrice)}/case.
           </p>
           <div className="mt-5 flex flex-wrap gap-2 text-xs font-black uppercase tracking-[0.08em] text-[#5F4D33]">
-            <span className="rounded-full bg-white px-3 py-1.5">Transparent Case Pricing</span>
-            <span className="rounded-full bg-white px-3 py-1.5">Build a Quote</span>
-            <span className="rounded-full bg-white px-3 py-1.5">Generic Same Day (Before 1 PM ET)</span>
-            <span className="rounded-full bg-white px-3 py-1.5">Custom 3-4 Weeks</span>
-            <span className="rounded-full bg-white px-3 py-1.5">Net 30 Available</span>
-            <span className="rounded-full bg-white px-3 py-1.5">Ships Across The US</span>
+            {badges.map((badge) => (
+              <span key={badge} className="rounded-full bg-white px-3 py-1.5">
+                {badge}
+              </span>
+            ))}
           </div>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link href={`/catalog?industry=${industry}`} className="btn-secondary">
-              Browse {INDUSTRY_LABELS[industry]} Catalog
+              {heroCatalogLabel}
             </Link>
             <Link href="/generic-bag-quote" className="btn-primary">
               Build a Quote

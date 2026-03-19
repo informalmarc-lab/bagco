@@ -48,6 +48,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '/industries', priority: 0.9, changeFrequency: 'weekly' },
     { route: '/industries/dispensaries', priority: 0.8, changeFrequency: 'monthly' },
     { route: '/industries/smoke-shops', priority: 0.8, changeFrequency: 'monthly' },
+    { route: '/industries/wineries-breweries', priority: 0.8, changeFrequency: 'weekly' },
     { route: '/industries/pharmacies', priority: 0.82, changeFrequency: 'monthly' },
     { route: '/industries/veterinary', priority: 0.82, changeFrequency: 'monthly' },
     { route: '/industries/retail-stores', priority: 0.8, changeFrequency: 'monthly' },
@@ -76,6 +77,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '/independent-pharmacy-packaging', priority: 0.7, changeFrequency: 'monthly' },
     { route: '/custom-retail-paper-bags', priority: 0.7, changeFrequency: 'monthly' },
     { route: '/made-in-usa-paper-bags', priority: 0.7, changeFrequency: 'monthly' },
+    { route: '/products/winery-bag-wmc09', priority: 0.8, changeFrequency: 'weekly' },
+    { route: '/products/winery-bag-wmc10', priority: 0.8, changeFrequency: 'weekly' },
+    { route: '/products/winery-bag-wmc11', priority: 0.8, changeFrequency: 'weekly' },
+    { route: '/products/winery-bag-custom', priority: 0.85, changeFrequency: 'weekly' },
+    { route: '/products/smoke-shop-plain-kraft-bag', priority: 0.8, changeFrequency: 'weekly' },
+    { route: '/products/smoke-shop-custom-bag', priority: 0.85, changeFrequency: 'weekly' },
   ]
 
   const dynamicCatalogRoutes = getCatalogFolders().map((folder) => ({

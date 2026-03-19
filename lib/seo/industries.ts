@@ -87,7 +87,7 @@ export const INDUSTRY_PAGES: IndustryMeta[] = [
     marketLabel: 'wineries and breweries',
     focus: 'Bottle and tasting room carryout with sturdy handled bags.',
     naics: '3121',
-    catalogIndustry: 'food-beverage',
+    catalogIndustry: 'wineries-breweries',
   },
   {
     key: 'event-company',

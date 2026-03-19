@@ -34,6 +34,7 @@ const industryCatalogHref: Record<CatalogIndustryKey, string> = {
   veterinary: '/catalog/veterinary',
   dispensary: '/catalog?industry=dispensary',
   'smoke-shop': '/catalog?industry=smoke-shop',
+  'wineries-breweries': '/catalog?industry=wineries-breweries',
   retail: '/catalog?industry=retail',
   'food-beverage': '/catalog?industry=food-beverage',
 }
@@ -73,6 +74,10 @@ export default async function ProductDetailPage({
 
   const relatedOverrides: Record<string, string[]> = {
     'dispensary-prescription-exit-bag': ['veterinary-bag-design-vb1-1', 'pharmacy-bag-gs-design'],
+    'winery-bag-wmc09': ['winery-bag-wmc10', 'winery-bag-wmc11', 'winery-bag-custom'],
+    'winery-bag-wmc10': ['winery-bag-wmc09', 'winery-bag-wmc11', 'winery-bag-custom'],
+    'winery-bag-wmc11': ['winery-bag-wmc09', 'winery-bag-wmc10', 'winery-bag-custom'],
+    'winery-bag-custom': ['winery-bag-wmc09', 'winery-bag-wmc10', 'winery-bag-wmc11'],
   }
 
   const override = relatedOverrides[product.slug]

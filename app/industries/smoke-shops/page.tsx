@@ -14,15 +14,34 @@ export default function SmokeShopsIndustryPage() {
     <IndustryLandingPage
       industry="smoke-shop"
       title="Smoke Shop Packaging Programs"
-      description="Use stock and branded carry-out bags to strengthen store recognition while keeping restock cadence consistent."
+      description="Plain and custom kraft paper bags for smoke shops, head shops, and tobacco retailers. Durable carry-out formats with stock and custom print options for single-item and multi-item purchases."
+      badges={[
+        'Transparent Case Pricing',
+        'Build a Quote',
+        'Same Day Stock (Before 1 PM ET)',
+        'Custom 3-4 Weeks',
+        'Net 30 Available',
+        'Ships Across The US',
+      ]}
+      startingPriceOverride={65.91}
+      featuredProductSlugs={[
+        'smoke-shop-plain-kraft-bag',
+        'smoke-shop-custom-bag',
+        'pharmacy-bag-gs-design',
+      ]}
+      mostOrderedSizesOverride={[
+        '#22 (4.5" x 2.25" x 11") — standard single-item carry-out',
+        '#25 (6" x 4" x 11") — mid-size multi-item carry-out',
+        '#28 (8" x 5" x 17") — large item and accessory carry-out',
+      ]}
       bottomCatalogHref="/catalog?industry=smoke-shop"
-      bottomCatalogLabel="Open Smoke Shop Catalog"
+      bottomCatalogLabel="Browse Smoke Shop Catalog"
       deepDiveSection={{
-        title: 'Why Branded Bags Matter for Smoke Shops',
+        title: 'Choosing the Right Smoke Shop Bag Program',
         paragraphs: [
-          'For smoke shops, packaging is more than a checkout necessity. It is one of the few brand touchpoints customers carry into public spaces after purchase. Choosing the right smoke shop paper bags starts with product mix. Smaller formats support accessories, wraps, and compact hardware, while larger sizes cover glass, apparel, and bundled orders. Standardizing your top bag sizes by transaction type helps staff move faster and avoids overusing premium formats for small-ticket purchases.',
-          'Branding also changes the long-term value of each order. Generic bags can work for short-term cost control, but custom bags for smoke shops create repeated local impressions every time customers leave the store. In neighborhoods with heavy foot traffic, that visibility compounds quickly. A recognizable print style, consistent logo placement, and durable paper quality can make your bag part of the store experience rather than disposable overhead. This is especially useful for independent stores competing with chains and online alternatives.',
-          'When comparing stock versus custom, teams should evaluate total cost per transaction, not just headline case price. Stock options usually deliver faster and can be ideal for baseline replenishment. Custom programs often require more planning lead time, but they improve brand recall and can support higher perceived value. Many operators run a blended model: stock for daily volume and branded lines for priority categories or seasonal campaigns. If you are sourcing retail paper bags wholesale, the most effective setup is predictable reorders, consistent sizing, and a print strategy that matches your in-store identity.',
+          'Smoke shop carry-out bags serve a straightforward purpose — durable, discreet transport for glassware, accessories, tobacco, and related products. The right size mix matters: smaller bags like the #21 and #22 handle single-item purchases cleanly, while larger formats like the #25 and #28 accommodate multi-item transactions and larger accessories without stress on the seams or handles. Stocking two or three core sizes eliminates checkout friction and keeps the transaction moving at busy periods.',
+          'Plain kraft bags are the default choice for most smoke shops because they are neutral, professional, and immediately available. Custom printed bags are a step up in brand presence — a shop name and logo on the bag that walks out the door is low-cost advertising in the local area. Even a one-color imprint with the store name significantly improves recall compared to a plain bag, and the cost difference per bag is minimal at case volume. For shops with consistent weekly volume, a custom program paired with a plain stock buffer is a reliable approach that covers branding without risking stockouts.',
+          'Reorder planning for smoke shop bags is typically straightforward — volume is relatively stable week to week compared to seasonal verticals. The main risk is running out mid-week during high-traffic periods. Setting a reorder trigger at one case remaining per size eliminates most stockout situations. For shops doing higher volume, monthly ordering with same-day stock fulfillment as a safety net keeps the operation clean. Custom programs require a 3-4 week lead time, so factoring that into seasonal or promotional planning prevents gaps in branded carry-out availability.',
         ],
       }}
     />

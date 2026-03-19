@@ -30,6 +30,11 @@ const segments = [
     href: '/industries/smoke-shops',
   },
   {
+    title: 'Wineries & Breweries',
+    copy: 'Bottle bag programs for tasting rooms, clubs, and retail bottle handoff workflows.',
+    href: '/industries/wineries-breweries',
+  },
+  {
     title: 'Retail / Boutique',
     copy: 'Handled kraft, euro tote, glossy white, and seasonal collections in one flow.',
     href: '/industries/retail-stores',
