@@ -7,8 +7,13 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const root = path.resolve(__dirname, '..', '..')
 
-const cities = JSON.parse(fs.readFileSync(path.join(root, 'data', 'seo', 'cities.json'), 'utf8'))
-const counts = JSON.parse(fs.readFileSync(path.join(root, 'data', 'seo', 'industryCounts.json'), 'utf8')).counts
+function readJson(filePath, fallback) {
+  if (!fs.existsSync(filePath)) return fallback
+  return JSON.parse(fs.readFileSync(filePath, 'utf8'))
+}
+
+const cities = readJson(path.join(root, 'data', 'seo', 'cities.json'), [])
+const counts = readJson(path.join(root, 'data', 'seo', 'industryCounts.json'), { counts: {} }).counts || {}
 const catalogProducts = JSON.parse(fs.readFileSync(path.join(root, 'data', 'catalogProducts.json'), 'utf8'))
 
 const INDUSTRIES = [

@@ -41,8 +41,6 @@ const BUSINESS_TYPES = [
   { label: 'Pharmacy', icon: '🏥' },
   { label: 'Dispensary', icon: '🌿' },
   { label: 'Veterinary Clinic', icon: '🐾' },
-  { label: 'Retail Store / Boutique', icon: '🛍️' },
-  { label: 'Food & Beverage', icon: '🍔' },
   { label: 'Smoke Shop', icon: '🚬' },
   { label: 'Distributor', icon: '📦' },
   { label: 'Other', icon: '🏢' },

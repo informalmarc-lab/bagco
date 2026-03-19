@@ -9,8 +9,6 @@ const INDUSTRY_OPTIONS = [
   'Pharmacy',
   'Dispensary',
   'Veterinary',
-  'Retail',
-  'Food & Beverage',
   'Smoke Shop',
   'Distributor',
   'Other',

@@ -92,7 +92,16 @@ function withGuaranteedSizePricing(product: CatalogProduct): CatalogProduct {
   }
 }
 
-const CATALOG_PRODUCTS = (catalogProducts as CatalogProduct[]).map(withGuaranteedSizePricing)
+const ACTIVE_INDUSTRIES = new Set<CatalogIndustryKey>([
+  'pharmacy',
+  'veterinary',
+  'dispensary',
+  'smoke-shop',
+])
+
+const CATALOG_PRODUCTS = (catalogProducts as CatalogProduct[])
+  .map(withGuaranteedSizePricing)
+  .filter((product) => ACTIVE_INDUSTRIES.has(product.industry))
 
 function uniqueSorted(values: string[]): string[] {
   return Array.from(new Set(values)).sort((a, b) => a.localeCompare(b))
@@ -180,9 +189,6 @@ export const INDUSTRY_ORDER: CatalogIndustryKey[] = [
   'veterinary',
   'dispensary',
   'smoke-shop',
-  'wineries-breweries',
-  'retail',
-  'food-beverage',
 ]
 
 export function getLeadTimeText(availability: CatalogAvailability): string {

@@ -1,5 +1,3 @@
-import cityData from '@/data/seo/cities.json'
-import countsData from '@/data/seo/industryCounts.json'
 import { INDUSTRY_PAGES, type IndustryKey } from '@/lib/seo/industries'
 
 export type CityData = {
@@ -31,10 +29,8 @@ export type CityCounts = {
   industryCounts: IndustryCounts
 }
 
-export const CITIES = cityData as CityData[]
-const COUNTS = (countsData as {
-  counts: Record<string, CityCounts>
-}).counts
+export const CITIES: CityData[] = []
+const COUNTS: Record<string, CityCounts> = {}
 
 export function getCityBySlug(slug: string): CityData | undefined {
   return CITIES.find((city) => city.slug === slug)

@@ -4,7 +4,7 @@ import SeoLandingPage from '@/components/SeoLandingPage'
 export const metadata: Metadata = {
   title: 'Made in USA Paper Bags',
   description:
-    'Made in USA paper bags manufactured in Union County, North Carolina. Factory-direct production for pharmacies and retail businesses.',
+    'Made in USA paper bags manufactured in Union County, North Carolina. Factory-direct production for pharmacies, dispensaries, and veterinary businesses.',
 }
 
 export default function MadeInUsaPaperBagsPage() {
@@ -21,7 +21,7 @@ export default function MadeInUsaPaperBagsPage() {
       links={[
         { href: '/manufacturing', label: 'Manufacturing' },
         { href: '/pharmacy-bags', label: 'Pharmacy Bags' },
-        { href: '/custom-retail-paper-bags', label: 'Custom Retail Paper Bags' },
+        { href: '/dispensary-bags', label: 'Dispensary Bags' },
       ]}
     />
   )

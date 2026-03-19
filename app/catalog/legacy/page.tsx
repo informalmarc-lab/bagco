@@ -24,7 +24,6 @@ const legacyCollections = [
   { title: 'Pride Bags', href: '/catalog/pride' },
   { title: 'Seasonal Bags', href: '/catalog/seasonal' },
   { title: 'USA Bags', href: '/catalog/usa' },
-  { title: 'Winery Bags', href: '/catalog/winery' },
 ]
 
 export default function LegacyCatalogPage() {

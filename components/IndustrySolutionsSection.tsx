@@ -16,32 +16,6 @@ type IndustryPanel = {
 
 const INDUSTRIES: IndustryPanel[] = [
   {
-    id: 'retail-boutiques',
-    title: 'Retail & Boutiques',
-    subtitle: 'Professional bag programs for style-driven storefronts',
-    examples: 'Clothing stores, shoe shops, jewelry stores, gift shops',
-    why: [
-      'Higher-end retailers need sturdy, well-designed bags that match premium merchandise.',
-      'Consistent bag quality keeps presentation uniform across peak days and seasonal traffic.',
-      'Branded bags turn every customer exit into repeat local brand visibility.',
-    ],
-    problems: [
-      'Low-grade bags tear or lose shape, hurting customer experience.',
-      'Inconsistent reorders create stock pressure at checkout.',
-      'Generic packaging weakens premium store positioning.',
-    ],
-    benefits: [
-      'Stronger brand recognition after each sale.',
-      'Cleaner checkout presentation that supports higher perceived value.',
-      'More predictable operations with structured reorder cycles.',
-    ],
-    catalogs: [
-      { label: 'Custom 1/2/3 Color', href: '/catalog/custom' },
-      { label: 'USA Catalog', href: '/catalog/usa' },
-      { label: 'Seasonal Catalog', href: '/catalog/seasonal' },
-    ],
-  },
-  {
     id: 'pharmacies',
     title: 'Pharmacies',
     subtitle: 'Reliable packaging programs for regulated daily-volume operations',
@@ -94,32 +68,6 @@ const INDUSTRIES: IndustryPanel[] = [
     ],
   },
   {
-    id: 'food-beverage',
-    title: 'Food & Beverage',
-    subtitle: 'Durable carry-out programs for fast-moving service environments',
-    examples: 'Cafes, bakeries, donut shops, specialty grocery, fast food, small restaurants',
-    why: [
-      'Food operations need consistent supply and dependable bag quality under daily volume.',
-      'Branded carry-out packaging supports repeat recognition in local neighborhoods.',
-      'Structured inventory planning prevents service interruptions.',
-    ],
-    problems: [
-      'Weak bags fail in carry-out and delivery use.',
-      'Supply gaps disrupt checkout and takeout flow.',
-      'Generic bags miss a major branding opportunity for repeat traffic.',
-    ],
-    benefits: [
-      'Free advertising through every takeout and delivery handoff.',
-      'Smoother operations with planned replenishment.',
-      'More professional presentation that supports customer trust.',
-    ],
-    catalogs: [
-      { label: 'Bakery Catalog', href: '/catalog/bakery' },
-      { label: 'Custom 1/2/3 Color', href: '/catalog/custom' },
-      { label: 'USA Catalog', href: '/catalog/usa' },
-    ],
-  },
-  {
     id: 'distributors',
     title: 'Distributors',
     subtitle: 'Wholesale programs built for private-label relationships',
@@ -163,14 +111,6 @@ function Icon({ id }: { id: string }) {
         <circle cx="12" cy="7.5" r="1.2" />
         <circle cx="16.5" cy="9" r="1.2" />
         <path d="M8.2 15.4c0-2.1 1.7-3.8 3.8-3.8s3.8 1.7 3.8 3.8c0 1.7-1.3 2.8-3.8 2.8s-3.8-1.1-3.8-2.8z" />
-      </svg>
-    )
-  }
-  if (id === 'food-beverage') {
-    return (
-      <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8">
-        <path d="M7 4v6M10 4v6M8.5 10v10" />
-        <path d="M16 4c1.7 1.7 1.7 4.3 0 6v10" />
       </svg>
     )
   }

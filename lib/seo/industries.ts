@@ -10,9 +10,6 @@ export type IndustryKey =
   | 'veterinary'
   | 'dispensary'
   | 'smoke-shop'
-  | 'retail'
-  | 'food-beverage'
-  | 'wineries-breweries'
   | 'event-company'
 
 export type IndustryMeta = {
@@ -61,33 +58,6 @@ export const INDUSTRY_PAGES: IndustryMeta[] = [
     focus: 'Small-item carryout bags with durable paper stock options.',
     naics: '453991',
     catalogIndustry: 'smoke-shop',
-  },
-  {
-    key: 'retail',
-    slug: 'retail-bags',
-    label: 'Retail Bags',
-    marketLabel: 'retail',
-    focus: 'Boutique carryout programs with stock and custom print options.',
-    naics: '44-45',
-    catalogIndustry: 'retail',
-  },
-  {
-    key: 'food-beverage',
-    slug: 'food-beverage-bags',
-    label: 'Food & Beverage Bags',
-    marketLabel: 'food & beverage',
-    focus: 'Takeout, catering, and beverage carrier programs for food teams.',
-    naics: '722',
-    catalogIndustry: 'food-beverage',
-  },
-  {
-    key: 'wineries-breweries',
-    slug: 'wineries-breweries-bags',
-    label: 'Wineries & Breweries Bags',
-    marketLabel: 'wineries and breweries',
-    focus: 'Bottle and tasting room carryout with sturdy handled bags.',
-    naics: '3121',
-    catalogIndustry: 'wineries-breweries',
   },
   {
     key: 'event-company',

@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import type { MetadataRoute } from 'next'
 import { getAllCatalogProducts } from '@/lib/catalogProducts'
-import cityData from '@/data/seo/cities.json'
+import { CITIES } from '@/lib/seo/cities'
 import { INDUSTRY_PAGES } from '@/lib/seo/industries'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.bagsupplyco.com'
@@ -15,7 +15,7 @@ function getCatalogFolders(): string[] {
     return entries
       .filter((entry) => entry.isDirectory())
       .map((entry) => entry.name)
-      .filter((name) => !['custom', 'pharmacy', 'veterinary', 'legacy'].includes(name))
+      .filter((name) => !['custom', 'pharmacy', 'veterinary', 'legacy', 'winery'].includes(name))
       .sort()
   } catch {
     return []
@@ -48,11 +48,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '/industries', priority: 0.9, changeFrequency: 'weekly' },
     { route: '/industries/dispensaries', priority: 0.8, changeFrequency: 'monthly' },
     { route: '/industries/smoke-shops', priority: 0.8, changeFrequency: 'monthly' },
-    { route: '/industries/wineries-breweries', priority: 0.8, changeFrequency: 'weekly' },
     { route: '/industries/pharmacies', priority: 0.82, changeFrequency: 'monthly' },
     { route: '/industries/veterinary', priority: 0.82, changeFrequency: 'monthly' },
-    { route: '/industries/retail-stores', priority: 0.8, changeFrequency: 'monthly' },
-    { route: '/industries/food-beverage', priority: 0.8, changeFrequency: 'monthly' },
     { route: '/industries/distributors', priority: 0.8, changeFrequency: 'monthly' },
     { route: '/manufacturing', priority: 0.75, changeFrequency: 'monthly' },
     { route: '/payments', priority: 0.78, changeFrequency: 'monthly' },
@@ -75,12 +72,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '/custom-pharmacy-paper-bags', priority: 0.7, changeFrequency: 'monthly' },
     { route: '/pharmacy-paper-bags-wholesale', priority: 0.7, changeFrequency: 'monthly' },
     { route: '/independent-pharmacy-packaging', priority: 0.7, changeFrequency: 'monthly' },
-    { route: '/custom-retail-paper-bags', priority: 0.7, changeFrequency: 'monthly' },
     { route: '/made-in-usa-paper-bags', priority: 0.7, changeFrequency: 'monthly' },
-    { route: '/products/winery-bag-wmc09', priority: 0.8, changeFrequency: 'weekly' },
-    { route: '/products/winery-bag-wmc10', priority: 0.8, changeFrequency: 'weekly' },
-    { route: '/products/winery-bag-wmc11', priority: 0.8, changeFrequency: 'weekly' },
-    { route: '/products/winery-bag-custom', priority: 0.85, changeFrequency: 'weekly' },
     { route: '/products/smoke-shop-plain-kraft-bag', priority: 0.8, changeFrequency: 'weekly' },
     { route: '/products/smoke-shop-custom-bag', priority: 0.85, changeFrequency: 'weekly' },
   ]
@@ -91,7 +83,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: 'monthly' as const,
   }))
 
-  const seoCities = cityData as Array<{ slug: string }>
+  const seoCities = CITIES.map((city) => ({ slug: city.slug }))
   const cityRoutes = seoCities.map((city) => ({
     route: `/local/${city.slug}`,
     priority: 0.72,

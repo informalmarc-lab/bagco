@@ -7,7 +7,7 @@ import { notFound } from 'next/navigation'
 import { isBlockedImageFile } from '@/lib/imageFilters'
 
 const RESERVED = new Set(['custom', 'pharmacy', 'veterinary'])
-const BLOCKED_CATALOGS = new Set(['grocery'])
+const BLOCKED_CATALOGS = new Set(['grocery', 'winery'])
 const IMAGE_EXT = new Set(['.jpg', '.jpeg', '.png', '.gif', '.webp'])
 const HIDDEN_PREFIX = '.'
 
@@ -52,10 +52,6 @@ const LABELS: Record<string, { title: string; description: string }> = {
   usa: {
     title: 'USA Bags',
     description: 'USA-themed bag design collection with non-duplicate imported assets.',
-  },
-  winery: {
-    title: 'Winery Bags',
-    description: 'Winery and bottle-shop oriented paper bag design examples.',
   },
 }
 

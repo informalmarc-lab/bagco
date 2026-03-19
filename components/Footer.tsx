@@ -33,7 +33,7 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-black text-[#B5813A]">Bag Supply Co</h3>
             <p className="mt-3 text-sm leading-relaxed text-[#FAF6F0CC]">
-              Factory-direct paper bag manufacturing and structured replenishment for retail, pharmacy, veterinary, and distributor operations.
+              Factory-direct paper bag manufacturing and structured replenishment for pharmacy, veterinary, dispensary, smoke shop, and distributor operations.
             </p>
           </div>
 
@@ -55,7 +55,6 @@ export default function Footer() {
               <li><Link href="/industries/distributors" className="footer-link">Distributors</Link></li>
               <li><Link href="/catalog/pharmacy" className="footer-link">Pharmacy</Link></li>
               <li><Link href="/catalog/veterinary" className="footer-link">Veterinary</Link></li>
-              <li><Link href="/industries/wineries-breweries" className="footer-link">Wineries &amp; Breweries</Link></li>
               <li><Link href="/catalog/custom" className="footer-link">Custom 1/2/3 Color</Link></li>
               <li><Link href="/catalog/legacy" className="footer-link">Legacy Collections</Link></li>
               <li><Link href="/gallery" className="footer-link">Gallery</Link></li>

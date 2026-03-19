@@ -5,7 +5,7 @@ import IndustrySolutionsSection from '@/components/IndustrySolutionsSection'
 export const metadata: Metadata = {
   title: 'Industries',
   description:
-    'Industry-specific packaging programs for pharmacies, veterinary clinics, dispensaries, smoke shops, retail stores, and food service teams.',
+    'Industry-specific packaging programs for pharmacies, veterinary clinics, dispensaries, smoke shops, and distributors.',
 }
 
 const segments = [
@@ -28,21 +28,6 @@ const segments = [
     title: 'Smoke Shops',
     copy: 'Generic and branded carry-out bags to improve recognition and repeat traffic.',
     href: '/industries/smoke-shops',
-  },
-  {
-    title: 'Wineries & Breweries',
-    copy: 'Bottle bag programs for tasting rooms, clubs, and retail bottle handoff workflows.',
-    href: '/industries/wineries-breweries',
-  },
-  {
-    title: 'Retail / Boutique',
-    copy: 'Handled kraft, euro tote, glossy white, and seasonal collections in one flow.',
-    href: '/industries/retail-stores',
-  },
-  {
-    title: 'Food & Beverage',
-    copy: 'Durable takeout and bakery bag programs with stock and custom paths.',
-    href: '/industries/food-beverage',
   },
   {
     title: 'Distributors',
