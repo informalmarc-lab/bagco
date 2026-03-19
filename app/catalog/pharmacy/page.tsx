@@ -1,9 +1,14 @@
 import Link from 'next/link'
 import PharmacyCatalogClient from '@/components/catalog/PharmacyCatalogClient'
-import { getPharmacyCatalogImages } from '@/lib/catalogImages'
+import { getPharmacyCatalogImages, type PharmacyCatalogImages } from '@/lib/catalogImages'
 
 export default function PharmacyCatalogPage() {
-  const images = getPharmacyCatalogImages()
+  const sourceImages = getPharmacyCatalogImages()
+  const images: PharmacyCatalogImages = {
+    ty: sourceImages.ty.map((image) => ({ ...image, type: 'ty' })),
+    gs: sourceImages.gs.map((image) => ({ ...image, type: 'gs' })),
+    'plastic-gs': sourceImages['plastic-gs'].map((image) => ({ ...image, type: 'plastic-gs' })),
+  }
 
   return (
     <div className="pb-16">
