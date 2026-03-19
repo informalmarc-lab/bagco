@@ -284,42 +284,32 @@
     {
         "sku":  "DISPENSARY-PRESCRIPTION-EXIT-BAG",
         "slug":  "dispensary-prescription-exit-bag",
-        "name":  "Dispensary Prescription Exit Bag",
+        "name":  "Classic RX Prescription Pharmacy Bags",
         "industry":  "dispensary",
-        "bagType":  "Dispensary Stock Design",
+        "bagType":  "Classic RX Stock Design",
         "sizeOptions":  [
-                            "#21-DS (3.5\" x 1.5\" x 10\")",
-                            "#12-DS (7\" x 10\")",
-                            "#23-DS (5\" x 2\" x 10\")",
-                            "#25-DS (6\" x 3.5\" x 11\")"
+                            "Classic RX (10\" x 5\" x 1\")",
+                            "#12-DS (7\" x 10\")"
                         ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  35,
+        "caseCount":  "1,000/case",
+        "startingPrice":  45,
         "colorOptions":  [
                              "Stock Print"
                          ],
         "availability":  "stock",
         "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/21-ds.jpg?v=1677602787",
-        "description":  "Looking for the perfect exit bag for your dispensary? Our stock paper bags will keep your products discreet and professional! Now available in four Quantity/Size options. Small Pinch bottom #21-DS - 3.5 x 1.5 x 10\" - 1,000 qty Large Pinch bottom #12-DS - 7 x 10\" - 1,000 qty Large Pinch bottom #23-DS - 5 x 2 x 10\" - 1,000 qty Large Square Bottom #25-DS - 6 x 3.5 x 11\" - 500 qty",
+        "description":  "1000 Pack Classic RX Paper Prescription Pharmacy Bags Drug Store Bottle 10\" x 5\" x 1\" is on sale for $110 with free shipping. #12-DS (7\" x 10\") pricing remains unchanged and is not free shipping.",
         "collections":  [
 
                         ],
         "sizePricing":  [
                             {
-                                "label":  "#21-DS (3.5\" x 1.5\" x 10\") 1000 qty",
-                                "price":  36
+                                "label":  "Classic RX (10\" x 5\" x 1\") 1000 qty - FREE SHIPPING",
+                                "price":  110
                             },
                             {
                                 "label":  "#12-DS (7\" x 10\") 1000 qty",
                                 "price":  45
-                            },
-                            {
-                                "label":  "#23-DS (5\" x 2\" x 10\") 1000 qty",
-                                "price":  39
-                            },
-                            {
-                                "label":  "#25-DS (6\" x 3.5\" x 11\") 500 qty",
-                                "price":  35
                             }
                         ]
     },
