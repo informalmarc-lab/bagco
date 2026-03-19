@@ -11,6 +11,7 @@ const primary = [
   { title: 'Pharmacy Catalog', href: '/catalog/pharmacy' },
   { title: 'Veterinary Catalog', href: '/catalog/veterinary' },
   { title: 'Custom Print Catalog', href: '/catalog/custom' },
+  { title: 'Mylar Bags Catalog', href: '/catalog/mylar-bags' },
 ]
 
 const legacyCollections = [

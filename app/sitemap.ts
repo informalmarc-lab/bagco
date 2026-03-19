@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import type { MetadataRoute } from 'next'
 import { getAllCatalogProducts } from '@/lib/catalogProducts'
+import { getAllMylarProducts } from '@/lib/mylarCatalog'
 import { CITIES } from '@/lib/seo/cities'
 import { INDUSTRY_PAGES } from '@/lib/seo/industries'
 
@@ -35,6 +36,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: 'weekly' as const,
   }))
 
+  const mylarRoutes = getAllMylarProducts().map((product) => ({
+    route: `/catalog/mylar-bags/${product.slug}`,
+    priority: 0.76,
+    changeFrequency: 'weekly' as const,
+  }))
+
   const staticRoutes: Array<{ route: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'] }> = [
     { route: '', priority: 1, changeFrequency: 'weekly' },
     { route: '/about', priority: 0.75, changeFrequency: 'monthly' },
@@ -43,6 +50,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '/catalog/pharmacy', priority: 0.9, changeFrequency: 'weekly' },
     { route: '/catalog/veterinary', priority: 0.85, changeFrequency: 'weekly' },
     { route: '/catalog/custom', priority: 0.9, changeFrequency: 'weekly' },
+    { route: '/catalog/mylar-bags', priority: 0.86, changeFrequency: 'weekly' },
     { route: '/products', priority: 0.82, changeFrequency: 'weekly' },
     { route: '/gallery', priority: 0.7, changeFrequency: 'monthly' },
     { route: '/industries', priority: 0.9, changeFrequency: 'weekly' },
@@ -112,6 +120,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...industryCityRoutes,
     ...productRoutes,
     ...productDetailRoutes,
+    ...mylarRoutes,
   ]
     .filter(({ route }) => !excludedRoutes.has(route))
 

@@ -55,6 +55,7 @@ export default function Footer() {
               <li><Link href="/industries/distributors" className="footer-link">Distributors</Link></li>
               <li><Link href="/catalog/pharmacy" className="footer-link">Pharmacy</Link></li>
               <li><Link href="/catalog/veterinary" className="footer-link">Veterinary</Link></li>
+              <li><Link href="/catalog/mylar-bags" className="footer-link">Mylar Bags</Link></li>
               <li><Link href="/catalog/custom" className="footer-link">Custom 1/2/3 Color</Link></li>
               <li><Link href="/catalog/legacy" className="footer-link">Legacy Collections</Link></li>
               <li><Link href="/gallery" className="footer-link">Gallery</Link></li>

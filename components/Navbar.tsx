@@ -13,8 +13,16 @@ const industryLinks = [
   { href: '/industries/distributors', label: 'Distributors' },
 ]
 
+const catalogLinks = [
+  { href: '/catalog', label: 'All Catalogs' },
+  { href: '/catalog/pharmacy', label: 'Pharmacy' },
+  { href: '/catalog/veterinary', label: 'Veterinary' },
+  { href: '/catalog/custom', label: 'Custom 1/2/3 Color' },
+  { href: '/catalog/legacy', label: 'Legacy Collections' },
+  { href: '/catalog/mylar-bags', label: 'Mylar Bags' },
+]
+
 const navLinks = [
-  { href: '/catalog', label: 'Catalogs' },
   { href: '/blog', label: 'Blog' },
   { href: '/generic-bag-quote', label: 'Build a Quote' },
   { href: '/contact', label: 'Contact' },
@@ -74,6 +82,25 @@ export default function Navbar() {
             >
               Home
             </Link>
+            <div className="group relative">
+              <Link
+                href="/catalog"
+                className={`nav-chip ${pathname.startsWith('/catalog') ? 'nav-chip-active' : ''}`}
+              >
+                Catalogs
+              </Link>
+              <div className="pointer-events-none absolute left-0 top-[calc(100%+8px)] z-30 w-64 rounded-xl border border-[#C4935A66] bg-white p-2 opacity-0 shadow-[0_14px_30px_rgba(30,77,43,0.14)] transition-all group-hover:pointer-events-auto group-hover:opacity-100">
+                {catalogLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="block rounded-lg px-3 py-2 text-sm font-semibold text-[#1E4D2B] hover:bg-[#FAF6F0]"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
             <div className="group relative">
               <Link
                 href="/industries"
@@ -195,6 +222,29 @@ export default function Navbar() {
                 >
                   Industries
                 </Link>
+                <Link
+                  href="/catalog"
+                  className={`rounded-lg px-3 py-2 text-sm font-semibold ${
+                    pathname.startsWith('/catalog') ? 'bg-[#1E4D2B] text-white' : 'text-[#1E4D2B] hover:bg-[#FAF6F0]'
+                  }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  Catalogs
+                </Link>
+                <div className="grid gap-1 border-l border-[#C4935A66] pl-3">
+                  {catalogLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className={`rounded-lg px-3 py-2 text-sm font-semibold ${
+                        isActive(link.href) ? 'bg-[#1E4D2B] text-white' : 'text-[#1E4D2B] hover:bg-[#FAF6F0]'
+                      }`}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
                 <div className="grid gap-1 border-l border-[#C4935A66] pl-3">
                   {industryLinks.map((link) => (
                     <Link
