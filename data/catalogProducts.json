@@ -1,2238 +1,2211 @@
 [
     {
-        "sku":  "GS",
-        "slug":  "pharmacy-bag-gs-design",
-        "name":  "Pharmacy Bags - GS Design",
-        "industry":  "pharmacy",
-        "bagType":  "Pharmacy Stock Design",
-        "sizeOptions":  [
-                            "#21 (3.5\" x 1.5\" x 10\")",
-                            "#22 (4.5\" x 2.25\" x 11\")",
-                            "#23 (5\" x 2\" x 10\")",
-                            "#25 (6\" x 4\" x 11\")",
-                            "#26 (7\" x 4\" x 14\")",
-                            "#28 (8\" x 5\" x 17\")",
-                            "#12 (7\" x 10\")",
-                            "#14 (9\" x 11\")",
-                            "#15 (8.5\" x 3.5\" x 14.5\")"
-                        ],
-        "caseCount":  "500-3,000/case",
-        "startingPrice":  65.91,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/GS-COVER.jpg?v=1558568731",
-        "description":  "Full Case of Stock Pharmacy Bag in \"GS\" design. These classic Pharmacy bags have been our most popular item for many years. They are perfect for any pharmacy and come in a range of Eight Quantity/Size options.",
-        "collections":  [
-
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "#21 (3.5\" x 1.5\" x 10\") 3,000 per case",
-                                "price":  95.56
-                            },
-                            {
-                                "label":  "#22 (4.5\" x 2.25\" x 11\") 3,000 per case",
-                                "price":  119.81
-                            },
-                            {
-                                "label":  "#23 (5\" x 2\" x 10\") 3,000 per case",
-                                "price":  117.42
-                            },
-                            {
-                                "label":  "#25 (6\" x 4\" x 11\") 1,000 per case",
-                                "price":  65.91
-                            },
-                            {
-                                "label":  "#26 (7\" x 4\" x 14\") 1,000 per case",
-                                "price":  102.29
-                            },
-                            {
-                                "label":  "#28 (8\" x 5\" x 17\") 500 per case",
-                                "price":  112.1
-                            },
-                            {
-                                "label":  "#12 (7\" x 10\") 3,000 per case",
-                                "price":  115.35
-                            },
-                            {
-                                "label":  "#14 (9\" x 11\") 2,000 per case",
-                                "price":  99.69
-                            },
-                            {
-                                "label":  "#15 (8.5\" x 3.5\" x 14.5\") 1,000 per case",
-                                "price":  95.78
-                            }
-                        ]
-    },
-    {
-        "sku":  "PFCGSP",
-        "slug":  "pharmacy-bags-plastic-gs-design",
-        "name":  "Pharmacy Bags - Plastic GS Design",
-        "industry":  "pharmacy",
-        "bagType":  "Plastic Pharmacy Design",
-        "sizeOptions":  [
-                            "#32 (9\" x 5.5\" x 18\")",
-                            "#35 (12\" x 7\" x 23\")",
-                            "#30 (12\" x 7\" x 25\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  70.84,
-        "colorOptions":  [
-                             "White Plastic"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/GSP-Hero.jpg?v=1573685230",
-        "description":  "Full Case of Plastic Pharmacy Bags in our stock \"GS\" design. These classic Pharmacy bags have been a very popular item for many years. They are perfect for any pharmacy and come in a range of Three Quantity/Size options.",
-        "collections":  [
-
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "#32 (9\" x 5.5\" x 18\") 1,000 per case",
-                                "price":  70.84
-                            },
-                            {
-                                "label":  "#35 (12\" x 7\" x 23\") 1,000 per case",
-                                "price":  90.84
-                            },
-                            {
-                                "label":  "#30 (12\" x 7\" x 25\") 500 per case",
-                                "price":  116.03
-                            }
-                        ]
-    },
-    {
-        "sku":  "TY",
-        "slug":  "pharmacy-bag-thank-you-design",
-        "name":  "Pharmacy Bags - TY Design",
-        "industry":  "pharmacy",
-        "bagType":  "Pharmacy Stock Design",
-        "sizeOptions":  [
-                            "#21 (3.5\" x 1.5\" x 10\")",
-                            "#22 (4.5\" x 2.25\" x 11\")",
-                            "#23 (5\" x 2\" x 10\")",
-                            "#25 (6\" x 4\" x 11\")",
-                            "#26 (7\" x 4\" x 14\")",
-                            "#28 (8\" x 5\" x 17\")",
-                            "#12 (7\" x 10\")",
-                            "#14 (9\" x 11\")",
-                            "#15 (8.5\" x 3.5\" x 14.5\")"
-                        ],
-        "caseCount":  "500-3,000/case",
-        "startingPrice":  65.91,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/TY-COVER.jpg?v=1559186288",
-        "description":  "Full Case of Pharmacy \"Thank You\" Bag design #TY in eight Quantity/Size options.",
-        "collections":  [
-
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "#21 (3.5\" x 1.5\" x 10\") 3,000 per case",
-                                "price":  95.56
-                            },
-                            {
-                                "label":  "#22 (4.5\" x 2.25\" x 11\") 3,000 per case",
-                                "price":  119.81
-                            },
-                            {
-                                "label":  "#23 (5\" x 2\" x 10\") 3,000 per case",
-                                "price":  117.41
-                            },
-                            {
-                                "label":  "#25 (6\" x 4\" x 11\") 1,000 per case",
-                                "price":  65.91
-                            },
-                            {
-                                "label":  "#26 (7\" x 4\" x 14\") 1,000 per case",
-                                "price":  102.29
-                            },
-                            {
-                                "label":  "#28 (8\" x 5\" x 17\") 500 per case",
-                                "price":  112.1
-                            },
-                            {
-                                "label":  "#12 (7\" x 10\") 3,000 per case",
-                                "price":  115.35
-                            },
-                            {
-                                "label":  "#14 (9\" x 11\") 2,000 per case",
-                                "price":  99.69
-                            },
-                            {
-                                "label":  "#15 (8.5\" x 3.5\" x 14.5\") 1,000 per case",
-                                "price":  95.78
-                            }
-                        ]
-    },
-    {
-        "sku":  "VB1",
-        "slug":  "veterinary-bag-design-vb1-1",
-        "name":  "Veterinary Bag Design #VB1",
-        "industry":  "veterinary",
-        "bagType":  "Veterinary Stock Design",
-        "sizeOptions":  [
-                            "Pinch bottom #22 (4.5\" x 2.25\" x 11\")",
-                            "Flat bag #12 (7\" x 10\")",
-                            "Square bottom #25 (6\" x 4\" x 11\")"
-                        ],
-        "caseCount":  "1,000-3,000/case",
-        "startingPrice":  65.91,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/VB1-ALL3.png?v=1579754655",
-        "description":  "VB1 is a stock veterinary bag program available in three sizes, designed for medication handoff and repeat prescription workflows at veterinary and pet-care clinics. Pinch bottom #22 (4.5\" x 2.25\" x 11\") - 3,000 qty. Flat bag #12 (7\" x 10\") - 3,000 qty. Square bottom #25 (6\" x 4\" x 11\") - 1,000 qty.",
-        "collections":  [
-
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom #22 (4.5\" x 2.25\" x 11\") 3,000 per case",
-                                "price":  119.81
-                            },
-                            {
-                                "label":  "Flat bag #12 (7\" x 10\") 3,000 per case",
-                                "price":  115.35
-                            },
-                            {
-                                "label":  "Square bottom #25 (6\" x 4\" x 11\") 1,000 per case",
-                                "price":  65.91
-                            }
-                        ]
-    },
-    {
-        "sku":  "VB2",
-        "slug":  "veterinary-bag-design-vb1",
-        "name":  "Veterinary Bag Design #VB2",
-        "industry":  "veterinary",
-        "bagType":  "Veterinary Stock Design",
-        "sizeOptions":  [
-                            "Pinch bottom #22 (4.5\" x 2.25\" x 11\")",
-                            "Flat bag #12 (7\" x 10\")",
-                            "Square bottom #25 (6\" x 4\" x 11\")"
-                        ],
-        "caseCount":  "1,000-3,000/case",
-        "startingPrice":  65.91,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/VB2-ALL3.png?v=1579752589",
-        "description":  "Full Case of Veterinary Bags design #VB2 in three Quantity/Size options. Perfect for every Vet or Pet Store, these adorable bags will leave paw prints all over the hearts of your customers. Pinch bottom #22 - 4.5 x 2.25 x 11” - 3,000 qty Flat Pinch bottom #12 - 7 x 10” - 3,000 qty Square bottom #25 - 6 x 4 x 11” - 1,000 qty",
-        "collections":  [
-
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom #22 (4.5\" x 2.25\" x 11\") 3,000 per case",
-                                "price":  119.81
-                            },
-                            {
-                                "label":  "Flat bag #12 (7\" x 10\") 3,000 per case",
-                                "price":  115.35
-                            },
-                            {
-                                "label":  "Square bottom #25 (6\" x 4\" x 11\") 1,000 per case",
-                                "price":  65.91
-                            }
-                        ]
-    },
-    {
-        "sku":  "VB6",
-        "slug":  "veterinary-bag-design-vb3",
-        "name":  "Veterinary Bag Design #VB6",
-        "industry":  "veterinary",
-        "bagType":  "Veterinary Stock Design",
-        "sizeOptions":  [
-                            "Pinch bottom #22 (4.5\" x 2.25\" x 11\")",
-                            "Flat bag #12 (7\" x 10\")",
-                            "Square bottom #25 (6\" x 4\" x 11\")"
-                        ],
-        "caseCount":  "1,000-3,000/case",
-        "startingPrice":  65.91,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/VB6-ALL3.png?v=1579754989",
-        "description":  "Full Case of Veterinary Bags design #VB6 in three Quantity/Size options. Perfect for every Vet or Pet Store, these adorable bags will leave paw prints all over the hearts of your customers. Pinch bottom #22 - 4.5 x 2.25 x 11” - 3,000 qty Flat Pinch bottom #12 - 7 x 10” - 3,000 qty Square bottom #25 - 6 x 4 x 11” - 1,000 qty",
-        "collections":  [
-
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom #22 (4.5\" x 2.25\" x 11\") 3,000 per case",
-                                "price":  119.81
-                            },
-                            {
-                                "label":  "Flat bag #12 (7\" x 10\") 3,000 per case",
-                                "price":  115.35
-                            },
-                            {
-                                "label":  "Square bottom #25 (6\" x 4\" x 11\") 1,000 per case",
-                                "price":  65.91
-                            }
-                        ]
-    },
-    {
-        "sku":  "DISPENSARY-PRESCRIPTION-EXIT-BAG",
-        "slug":  "dispensary-prescription-exit-bag",
-        "name":  "Classic RX Prescription Pharmacy Bags",
-        "industry":  "dispensary",
-        "bagType":  "Classic RX Stock Design",
-        "sizeOptions":  [
-                            "Classic RX (10\" x 5\" x 1\")",
-                            "#12-DS (7\" x 10\")"
-                        ],
-        "caseCount":  "1,000/case",
-        "startingPrice":  45,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/21-ds.jpg?v=1677602787",
-        "description":  "1000 Pack Classic RX Paper Prescription Pharmacy Bags Drug Store Bottle 10\" x 5\" x 1\" is on sale for $110 with free shipping. #12-DS (7\" x 10\") pricing remains unchanged and is not free shipping.",
-        "collections":  [
-
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Classic RX (10\" x 5\" x 1\") 1000 qty - FREE SHIPPING",
-                                "price":  110
-                            },
-                            {
-                                "label":  "#12-DS (7\" x 10\") 1000 qty",
-                                "price":  45
-                            }
-                        ]
-    },
-    {
-        "sku":  "SKU-10",
-        "slug":  "equality-design-10-6x4x11-1000qty",
-        "name":  "Equality Design #10",
-        "industry":  "smoke-shop",
-        "bagType":  "Equality / Pride Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/cbc_mce10_0b9cd5a2-d89b-44dd-94e1-073d25ee6db8.png?v=1675106391",
-        "description":  "Show your pride with our Equality designs! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "SKU-11-2",
-        "slug":  "equality-design-eq11",
-        "name":  "Equality Design #11",
-        "industry":  "smoke-shop",
-        "bagType":  "Equality / Pride Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/cbc_mce11.png?v=1675106451",
-        "description":  "Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "SKU-12-2",
-        "slug":  "equality-design-eq12",
-        "name":  "Equality Design #12",
-        "industry":  "smoke-shop",
-        "bagType":  "Equality / Pride Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/cbc_mce12.png?v=1675106597",
-        "description":  "Show your pride with our Equality designs! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "SKU-10-4",
-        "slug":  "faith-religious-design-10",
-        "name":  "Faith / Religious Design #10",
-        "industry":  "retail",
-        "bagType":  "Faith Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_FRMC_10.png?v=1675106719",
-        "description":  "Share your faith with your guests with our Faith \u0026 Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "SKU-11-4",
-        "slug":  "faith-religious-design-11",
-        "name":  "Faith / Religious Design #11",
-        "industry":  "retail",
-        "bagType":  "Faith Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/RELIGION_5499b6ac-ee53-44f4-8f4f-44b678aef675.png?v=1675106857",
-        "description":  "Share your faith with your guests with our Faith \u0026 Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "SKU-12-4",
-        "slug":  "faith-religious-design-12",
-        "name":  "Faith / Religious Design #12",
-        "industry":  "retail",
-        "bagType":  "Faith Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_FRMC_12.png?v=1675106898",
-        "description":  "Share your faith with your guests with our Faith \u0026 Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "SKU-13-3",
-        "slug":  "faith-religious-design-13",
-        "name":  "Faith / Religious Design #13",
-        "industry":  "retail",
-        "bagType":  "Faith Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_FRMC_13.png?v=1675106950",
-        "description":  "Share your faith with your guests with our Faith \u0026 Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "SKU-14-2",
-        "slug":  "faith-religious-design-14",
-        "name":  "Faith / Religious Design #14",
-        "industry":  "retail",
-        "bagType":  "Faith Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_FRMC_14.png?v=1675107160",
-        "description":  "Share your faith with your guests with our Faith \u0026 Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  25
-                            }
-                        ]
-    },
-    {
-        "sku":  "SKU-15-2",
-        "slug":  "faith-religious-design-15",
-        "name":  "Faith / Religious Design #15",
-        "industry":  "retail",
-        "bagType":  "Faith Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_FRMC_15.png?v=1675107228",
-        "description":  "Share your faith with your guests with our Faith \u0026 Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "SKU-16-2",
-        "slug":  "faith-religious-design-16",
-        "name":  "Faith / Religious Design #16",
-        "industry":  "retail",
-        "bagType":  "Faith Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_FRMC_16.png?v=1675107295",
-        "description":  "Share your faith with your guests with our Faith \u0026 Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "SKU-17",
-        "slug":  "faith-religious-design-17",
-        "name":  "Faith / Religious Design #17",
-        "industry":  "retail",
-        "bagType":  "Faith Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_FRMC_17.png?v=1675107356",
-        "description":  "Share your faith with your guests with our Faith \u0026 Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "SKU-18-2",
-        "slug":  "faith-religious-design-18",
-        "name":  "Faith / Religious Design #18",
-        "industry":  "retail",
-        "bagType":  "Faith Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_FRMC_18.png?v=1675108454",
-        "description":  "Share your faith with your guests with our Faith \u0026 Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "SKU-19-2",
-        "slug":  "faith-religious-design-19",
-        "name":  "Faith / Religious Design #19",
-        "industry":  "retail",
-        "bagType":  "Faith Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_FRMC_19.png?v=1675108486",
-        "description":  "Share your faith with your guests with our Faith \u0026 Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "SKU-20",
-        "slug":  "faith-religious-design-20",
-        "name":  "Faith / Religious Design #20",
-        "industry":  "retail",
-        "bagType":  "Faith Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_FRMC_20.png?v=1675108541",
-        "description":  "Share your faith with your guests with our Faith \u0026 Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "SKU-21",
-        "slug":  "faith-religious-design-21",
-        "name":  "Faith / Religious Design #21",
-        "industry":  "retail",
-        "bagType":  "Faith Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_FRMC_21.png?v=1675108589",
-        "description":  "Share your faith with your guests with our Faith \u0026 Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "SKU-22",
-        "slug":  "faith-religious-design-22",
-        "name":  "Faith / Religious Design #22",
-        "industry":  "retail",
-        "bagType":  "Faith Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_FRMC_22.png?v=1675108623",
-        "description":  "Share your faith with your guests with our Faith \u0026 Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "SKU-23",
-        "slug":  "faith-religious-design-23",
-        "name":  "Faith / Religious Design #23",
-        "industry":  "retail",
-        "bagType":  "Faith Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_FRMC_23.png?v=1675108657",
-        "description":  "Share your faith with your guests with our Faith \u0026 Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "SKU-24",
-        "slug":  "faith-religious-design-24",
-        "name":  "Faith / Religious Design #24",
-        "industry":  "retail",
-        "bagType":  "Faith Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_FRMC_24.png?v=1675108699",
-        "description":  "Share your faith with your guests with our Faith \u0026 Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "FC1C",
-        "slug":  "full-custom-1-color-bags",
-        "name":  "Full-Custom, 1-Color Bags",
-        "industry":  "retail",
-        "bagType":  "Custom Print Program",
-        "sizeOptions":  [
-                            "#21 (3.5\" x 1.5\" x 10\")",
-                            "#22 (4.5\" x 2.25\" x 11\")",
-                            "#23 (5\" x 2\" x 10\")",
-                            "#25 (6\" x 4\" x 11\")",
-                            "#26 (7\" x 4\" x 14\")",
-                            "#28 (8\" x 5\" x 17\")",
-                            "#12 (7\" x 10\")",
-                            "#14 (9\" x 11\")",
-                            "#15 (8.5\" x 3.5\" x 14.5\")"
-                        ],
-        "caseCount":  "500-3,000/case",
-        "startingPrice":  95.56,
-        "colorOptions":  [
-                             "1-Color Custom"
-                         ],
-        "availability":  "custom",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC-FC1C-Hero.jpg?v=1565820121",
-        "description":  "FULL-CUSTOM, 1-COLOR, BAGS ARE A HIGH VALUE OPTION! Our Bag Experts are ready to work with you today to create your company’s best bags ever. Simply submit your order and a Bag Supply Co representative will be in touch with you in less than 24 hours to receive your artwork and create a proof of your design. 4 Case Minimum Order Orders over 10 Cases, Please Call (704) 862-9256 Includes Custom Printing in 1 Stock Colors Can Print on Front, Back, and Gussets (folded sides) 30-50# Machine-Finished Paper Pinch-Bottom with Gusset or Flat-Bottom Styles 4 Week Lead Time $50 Art/Plate Fee Applies to Initial Order and/or Re-Orders Requiring Changes Additional Art/Plate Fees May Apply for Back and/or Gusset Printing FREE FREIGHT to Commercial Address for Orders of 8 Cases or More Orders Under 8 Total Cases Billed Standard UPS Shipping Rates",
-        "collections":  [
-
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "#21 (3.5\" x 1.5\" x 10\") 3,000 per case",
-                                "price":  95.56
-                            },
-                            {
-                                "label":  "#22 (4.5\" x 2.25\" x 11\") 3,000 per case",
-                                "price":  119.8
-                            },
-                            {
-                                "label":  "#23 (5\" x 2\" x 10\") 3,000 per case",
-                                "price":  117.4
-                            },
-                            {
-                                "label":  "#25 (6\" x 4\" x 11\") 2,000 per case",
-                                "price":  133.08
-                            },
-                            {
-                                "label":  "#26 (7\" x 4\" x 14\") 1,000 per case",
-                                "price":  102.29
-                            },
-                            {
-                                "label":  "#28 (8\" x 5\" x 17\") 500 per case",
-                                "price":  112.1
-                            },
-                            {
-                                "label":  "#12 (7\" x 10\") 3,000 per case",
-                                "price":  115.35
-                            },
-                            {
-                                "label":  "#14 (9\" x 11\") 2,000 per case",
-                                "price":  99.68
-                            },
-                            {
-                                "label":  "#15 (8.5\" x 3.5\" x 14.5\") 1,000 per case",
-                                "price":  95.78
-                            }
-                        ]
-    },
-    {
-        "sku":  "FC2C",
-        "slug":  "full-custom-2-color-bags",
-        "name":  "Full-Custom, 2-Color Bags",
-        "industry":  "retail",
-        "bagType":  "Custom Print Program",
-        "sizeOptions":  [
-                            "#21 (3.5\" x 1.5\" x 10\")",
-                            "#22 (4.5\" x 2.25\" x 11\")",
-                            "#23 (5\" x 2\" x 10\")",
-                            "#25 (6\" x 4\" x 11\")",
-                            "#26 (7\" x 4\" x 14\")",
-                            "#28 (8\" x 5\" x 17\")",
-                            "#12 (7\" x 10\")",
-                            "#14 (9\" x 11\")",
-                            "#15 (8.5\" x 3.5\" x 14.5\")"
-                        ],
-        "caseCount":  "500-3,000/case",
-        "startingPrice":  95.56,
-        "colorOptions":  [
-                             "2-Color Custom"
-                         ],
-        "availability":  "custom",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC-FC2C.jpg?v=1571237552",
-        "description":  "FULL-CUSTOM, 2-COLOR, BAGS ARE OUR MOST POPULAR OPTION! Our Bag Experts are ready to work with you today to create your company’s best bags ever. Simply submit your order and a Bag Supply Co representative will be in touch with you in less than 24 hours to receive your artwork and create a proof of your design. 4 Case Minimum Order Orders over 10 Cases, Please Call (704) 862-9256 Includes Custom Printing in 2 Stock Colors Can Print on Front, Back, and Gussets (folded sides) 30-50# Machine-Finished Paper Pinch-Bottom with Gusset or Flat-Bottom Styles 4 Week Lead Time $50 Art/Plate Fee Applies to Initial Order and/or Re-Orders Requiring Changes Additional Art/Plate Fees May Apply to Back and/or Gusset Printing FREE FREIGHT to Commercial Address for Orders of 8 Cases or More Orders Under 8 Total Cases Billed Standard UPS Shipping Rates",
-        "collections":  [
-
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "#21 (3.5\" x 1.5\" x 10\") 3,000 per case",
-                                "price":  95.56
-                            },
-                            {
-                                "label":  "#22 (4.5\" x 2.25\" x 11\") 3,000 per case",
-                                "price":  119.8
-                            },
-                            {
-                                "label":  "#23 (5\" x 2\" x 10\") 3,000 per case",
-                                "price":  117.39
-                            },
-                            {
-                                "label":  "#25 (6\" x 4\" x 11\") 2,000 per case",
-                                "price":  133.08
-                            },
-                            {
-                                "label":  "#26 (7\" x 4\" x 14\") 1,000 per case",
-                                "price":  102.29
-                            },
-                            {
-                                "label":  "#28 (8\" x 5\" x 17\") 500 per case",
-                                "price":  112.1
-                            },
-                            {
-                                "label":  "#12 (7\" x 10\") 3,000 per case",
-                                "price":  115.35
-                            },
-                            {
-                                "label":  "#14 (9\" x 11\") 2,000 per case",
-                                "price":  99.68
-                            },
-                            {
-                                "label":  "#15 (8.5\" x 3.5\" x 14.5\") 1,000 per case",
-                                "price":  95.78
-                            }
-                        ]
-    },
-    {
-        "sku":  "FC3C",
-        "slug":  "full-custom-3-color-bags",
-        "name":  "Full-Custom, 3-Color Bags",
-        "industry":  "retail",
-        "bagType":  "Custom Print Program",
-        "sizeOptions":  [
-                            "#21 (3.5\" x 1.5\" x 10\")",
-                            "#22 (4.5\" x 2.25\" x 11\")",
-                            "#23 (5\" x 2\" x 10\")",
-                            "#25 (6\" x 4\" x 11\")",
-                            "#26 (7\" x 4\" x 14\")",
-                            "#28 (8\" x 5\" x 17\")",
-                            "#12 (7\" x 10\")",
-                            "#14 (9\" x 11\")",
-                            "#15 (8.5\" x 3.5\" x 14.5\")"
-                        ],
-        "caseCount":  "500-3,000/case",
-        "startingPrice":  119.46,
-        "colorOptions":  [
-                             "3-Color Custom"
-                         ],
-        "availability":  "custom",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC-FC3C-Hero.jpg?v=1565831236",
-        "description":  "FULL-CUSTOM, 3-COLOR, BAGS ADD A SPLASH TO YOUR CHECKOUT! Our Bag Experts are ready to work with you today to create your company’s best bags ever. Simply submit your order and a Bag Supply Co representative will be in touch with you in less than 24 hours to receive your artwork and create a proof of your design. 4 Case Minimum Order Orders over 10 Cases, Please Call (704) 862-9256 Includes Custom Printing in 3 Stock Colors Can Print on Front, Back, and Gussets (folded sides) 30-50# Machine-Finished Paper Pinch-Bottom with Gusset or Flat-Bottom Styles 4 Week Lead Time $50 Art/Plate Fee Applies to Initial Order and/or Re-Orders Requiring Changes Additional Art/Plate Fees May Apply to Back and/or Gusset Printing FREE FREIGHT to Commercial Address for Orders of 8 Cases or More Orders Under 8 Total Cases Billed Standard UPS Shipping Rates",
-        "collections":  [
-
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "#21 (3.5\" x 1.5\" x 10\") 3,000 per case",
-                                "price":  119.46
-                            },
-                            {
-                                "label":  "#22 (4.5\" x 2.25\" x 11\") 3,000 per case",
-                                "price":  149.76
-                            },
-                            {
-                                "label":  "#23 (5\" x 2\" x 10\") 3,000 per case",
-                                "price":  146.76
-                            },
-                            {
-                                "label":  "#25 (6\" x 4\" x 11\") 2,000 per case",
-                                "price":  166.36
-                            },
-                            {
-                                "label":  "#26 (7\" x 4\" x 14\") 1,000 per case",
-                                "price":  127.86
-                            },
-                            {
-                                "label":  "#28 (8\" x 5\" x 17\") 500 per case",
-                                "price":  140.12
-                            },
-                            {
-                                "label":  "#12 (7\" x 10\") 3,000 per case",
-                                "price":  144.18
-                            },
-                            {
-                                "label":  "#14 (9\" x 11\") 2,000 per case",
-                                "price":  124.61
-                            },
-                            {
-                                "label":  "#15 (8.5\" x 3.5\" x 14.5\") 1,000 per case",
-                                "price":  119.71
-                            }
-                        ]
-    },
-    {
-        "sku":  "SKU-10-3",
-        "slug":  "usa-design-10",
-        "name":  "USA Design #10",
-        "industry":  "retail",
-        "bagType":  "USA-Made Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_USMC_10.png?v=1675110020",
-        "description":  "Show your USA pride with our custom-printed paper bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-                            "usa-made"
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "SKU-11-3",
-        "slug":  "usa-design-11",
-        "name":  "USA Design #11",
-        "industry":  "retail",
-        "bagType":  "USA-Made Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_USMC_11.png?v=1675110086",
-        "description":  "Show your USA pride with our custom-printed paper bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-                            "usa-made"
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "SKU-12-3",
-        "slug":  "usa-design-12",
-        "name":  "USA Design #12",
-        "industry":  "retail",
-        "bagType":  "USA-Made Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_USMC_12.png?v=1675110152",
-        "description":  "Show your USA pride with our custom-printed paper bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-                            "usa-made"
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "SKU-13-2",
-        "slug":  "usa-design-13",
-        "name":  "USA Design #13",
-        "industry":  "retail",
-        "bagType":  "USA-Made Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_USMC_13_1.png?v=1675110194",
-        "description":  "Show your USA pride with our custom-printed paper bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-                            "usa-made"
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "SKU-14",
-        "slug":  "usa-design-14",
-        "name":  "USA Design #14",
-        "industry":  "retail",
-        "bagType":  "USA-Made Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_USMC_14.png?v=1675110231",
-        "description":  "Show your USA pride with our custom-printed paper bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-                            "usa-made"
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "SKU-15",
-        "slug":  "usa-design-15",
-        "name":  "USA Design #15",
-        "industry":  "retail",
-        "bagType":  "USA-Made Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_USMC_15.png?v=1675110269",
-        "description":  "Show your USA pride with our custom-printed paper bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-                            "usa-made"
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "SKU-16",
-        "slug":  "usa-design-16",
-        "name":  "USA Design #16",
-        "industry":  "retail",
-        "bagType":  "USA-Made Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_USMC_16.png?v=1675110305",
-        "description":  "Show your USA pride with our custom-printed paper bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-                            "usa-made"
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "SKU-17-2",
-        "slug":  "usa-design-17",
-        "name":  "USA Design #17",
-        "industry":  "retail",
-        "bagType":  "USA-Made Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_USMC_17.png?v=1675110341",
-        "description":  "Show your USA pride with our custom-printed paper bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-                            "usa-made"
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "SKU-18",
-        "slug":  "usa-design-18",
-        "name":  "USA Design #18",
-        "industry":  "retail",
-        "bagType":  "USA-Made Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_USMC_18.png?v=1675110381",
-        "description":  "Show your USA pride with our custom-printed paper bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-                            "usa-made"
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "SKU-19",
-        "slug":  "usa-design-19",
-        "name":  "USA Design #19",
-        "industry":  "retail",
-        "bagType":  "USA-Made Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC-MCUS019.jpg?v=1675110416",
-        "description":  "Show your USA pride with our custom-printed paper bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-                            "usa-made"
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "USMC-2",
-        "slug":  "usa-design-23",
-        "name":  "USA Design California #23",
-        "industry":  "retail",
-        "bagType":  "USA-Made Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC-MCUS023.jpg?v=1675110687",
-        "description":  "Show your state pride with our custom-printed paper bags! Don’t see your state? Don\u0027t worry! Send us an email to get bags with your state proudly displayed! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-                            "usa-made"
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "USMC-5",
-        "slug":  "usa-design-20",
-        "name":  "USA Design Florida #20",
-        "industry":  "retail",
-        "bagType":  "USA-Made Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC-MCUS020.jpg?v=1675110498",
-        "description":  "Show your state pride with our custom-printed paper bags! Don’t see your state? Don\u0027t worry! Send us an email to get bags with your state proudly displayed! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-                            "usa-made"
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "USMC",
-        "slug":  "usa-design-24",
-        "name":  "USA Design North and South Carolina #24",
-        "industry":  "retail",
-        "bagType":  "USA-Made Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC-MCUS024.jpg?v=1675110727",
-        "description":  "Show your state pride with our custom-printed paper bags! Don’t see your state? Don\u0027t worry! Send us an email to get bags with your state proudly displayed! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-                            "usa-made"
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "USMC-3",
-        "slug":  "usa-design-22",
-        "name":  "USA Design Oregon #22",
-        "industry":  "retail",
-        "bagType":  "USA-Made Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC-MCUS022.jpg?v=1675110646",
-        "description":  "Show your state pride with our custom-printed paper bags! Don’t see your state? Don\u0027t worry! Send us an email to get bags with your state proudly displayed! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-                            "usa-made"
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "USMC-4",
-        "slug":  "usa-design-21",
-        "name":  "USA Design Texas #21",
-        "industry":  "retail",
-        "bagType":  "USA-Made Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC-MCUS021.jpg?v=1675110612",
-        "description":  "Show your state pride with our custom-printed paper bags! Don’t see your state? Don\u0027t worry! Send us an email to get bags with your state proudly displayed! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-                            "usa-made"
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "JUL4010",
-        "slug":  "independence-day-design-jul4010",
-        "name":  "Independence Day Design #JUL4010",
-        "industry":  "food-beverage",
-        "bagType":  "Seasonal Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC-JUL4010.png?v=1675108862",
-        "description":  "Celebrate the Fourth of July with spectacular 2-color designs! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-                            "seasonal"
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "JUL4011",
-        "slug":  "independence-day-design-jul4011",
-        "name":  "Independence Day Design #JUL4011",
-        "industry":  "food-beverage",
-        "bagType":  "Seasonal Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC-JUL4011.png?v=1675108945",
-        "description":  "Celebrate the Fourth of July with spectacular 2-color designs! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-                            "seasonal"
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "JUL4012",
-        "slug":  "independence-day-design-jul4012",
-        "name":  "Independence Day Design #JUL4012",
-        "industry":  "food-beverage",
-        "bagType":  "Seasonal Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC-JUL4012.png?v=1675109004",
-        "description":  "Celebrate the Fourth of July with spectacular 2-color designs! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-                            "seasonal"
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "CN010",
-        "slug":  "seasonal-bag-design-cn010",
-        "name":  "Seasonal Bag Design #CN010",
-        "industry":  "food-beverage",
-        "bagType":  "Seasonal Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/605435.jpg?v=1675109393",
-        "description":  "Features a dark grey and red filigree design complete with holly and a New Year\u0027s greeting to the lyric of \"A Merry Christmas\" greeting customers one and all. Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-                            "seasonal"
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "CN020",
-        "slug":  "seasonal-bag-design-cn020",
-        "name":  "Seasonal Bag Design #CN020",
-        "industry":  "food-beverage",
-        "bagType":  "Seasonal Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/605433.jpg?v=1675109474",
-        "description":  "Features a dark grey and red minimalist wreath design with a jolly message of Happy Holidays for your customers. Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-                            "seasonal"
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "CN030",
-        "slug":  "seasonal-bag-design-cn030",
-        "name":  "Seasonal Bag Design #CN030",
-        "industry":  "food-beverage",
-        "bagType":  "Seasonal Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/605431.jpg?v=1675109525",
-        "description":  "This new design for Christmas 2017 features a dark grey and red graphic complete with Christmas tree, minimalist wreath and \"Merry Christmas\" design paying tribute to the current year. It\u0027s the perfect bag for any store this holiday season. Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-                            "seasonal"
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "COG020",
-        "slug":  "seasonal-bag-design-cog020",
-        "name":  "Seasonal Bag Design #COG020",
-        "industry":  "food-beverage",
-        "bagType":  "Seasonal Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/605425.jpg?v=1675109618",
-        "description":  "This classic design for Christmas 2017 features a traditional storefront design appropriate for every Winter seasonal promotion with \"Season\u0027s Greetings, Happy Holidays from Your Neighborhood Pharmacy\" in beautiful script. Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-                            "seasonal"
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "COG030",
-        "slug":  "seasonal-bag-design-cog030",
-        "name":  "Seasonal Bag Design #COG030",
-        "industry":  "food-beverage",
-        "bagType":  "Seasonal Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/605421.jpg?v=1675109697",
-        "description":  "Features a whimsical design with three acrobatic Pengiuns topping the Christmas tree with a star. \"Happy Holidays\" completes the seasonal messaging, sure to be a hit with kids of all ages. Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-                            "seasonal"
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "COG040",
-        "slug":  "seasonal-bag-design-cog040",
-        "name":  "Seasonal Bag Design #COG040",
-        "industry":  "food-beverage",
-        "bagType":  "Seasonal Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/605423.jpg?v=1675109786",
-        "description":  "Features a stack of wrapped gifts with bows in the traditional colors of red and green for Christmas. \"Merry Christmas\" completes the seasonal messaging, giving this bag a holly, jolly feel. Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-                            "seasonal"
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "COG050",
-        "slug":  "seasonal-bag-design-cog050",
-        "name":  "Seasonal Bag Design #COG050",
-        "industry":  "food-beverage",
-        "bagType":  "Seasonal Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/605427.jpg?v=1675109840",
-        "description":  "Features a modern abstract Christmas tree decoration that is sure to catch the eye of art lovers everywhere. \"Seasons Greetings\" completes the design. Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-                            "seasonal"
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "COG060",
-        "slug":  "seasonal-bag-design-cog060",
-        "name":  "Seasonal Bag Design #COG060",
-        "industry":  "food-beverage",
-        "bagType":  "Seasonal Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/605429.jpg?v=1675109877",
-        "description":  "This Christmas 2017 design creates the look of the bag itself being a wrapped present. \"Happy Holidays\" (OR Merry Christmas is also available) completes the design with a strong seasonal message. If you are interested in customizing this design to include the name of your business, just give us a call at 1.800.526.9032 Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-                            "seasonal"
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "SKU-12-5",
-        "slug":  "valentines-day-design-12",
-        "name":  "Valentine\u0027s Day Design #12",
-        "industry":  "food-beverage",
-        "bagType":  "Seasonal Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_VMC_12.png?v=1675110858",
-        "description":  "Show your customers how much you love them with these cute \u0026 functional Valentine’s Day designs! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-                            "seasonal"
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "SKU-13-4",
-        "slug":  "valentines-day-design-13",
-        "name":  "Valentine\u0027s Day Design #13",
-        "industry":  "food-beverage",
-        "bagType":  "Seasonal Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_VMC_13.png?v=1675110904",
-        "description":  "Show your customers how much you love them with these cute \u0026 functional Valentine’s Day designs! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-                            "seasonal"
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "SKU-15-3",
-        "slug":  "valentines-day-design-15",
-        "name":  "Valentine\u0027s Day Design #15",
-        "industry":  "food-beverage",
-        "bagType":  "Seasonal Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_VMC_15.png?v=1675111095",
-        "description":  "Show your customers how much you love them with these cute \u0026 functional Valentine’s Day designs! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-                            "seasonal"
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "SKU-16-3",
-        "slug":  "valentines-day-design-16",
-        "name":  "Valentine\u0027s Day Design #16",
-        "industry":  "food-beverage",
-        "bagType":  "Seasonal Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_VMC_16.png?v=1675111111",
-        "description":  "Show your customers how much you love them with these cute \u0026 functional Valentine’s Day designs! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-                            "seasonal"
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "SKU-17-3",
-        "slug":  "valentines-day-design-17",
-        "name":  "Valentine\u0027s Day Design #17",
-        "industry":  "food-beverage",
-        "bagType":  "Seasonal Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_VMC_17.png?v=1675111186",
-        "description":  "Show your customers how much you love them with these cute \u0026 functional Valentine’s Day designs! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-                            "seasonal"
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "SKU-18-3",
-        "slug":  "valentines-day-design-18",
-        "name":  "Valentine\u0027s Day Design #18",
-        "industry":  "food-beverage",
-        "bagType":  "Seasonal Collection",
-        "sizeOptions":  [
-                            "Pinch bottom (5x2x10\")",
-                            "Square bottom (6x4x11\")"
-                        ],
-        "caseCount":  "500-1,000/case",
-        "startingPrice":  25,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_VMC_18.png?v=1675111156",
-        "description":  "Show your customers how much you love them with these cute \u0026 functional Valentine’s Day designs! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections":  [
-                            "seasonal"
-                        ],
-        "sizePricing":  [
-                            {
-                                "label":  "Pinch bottom (5x2x10\") 500qty",
-                                "price":  25
-                            },
-                            {
-                                "label":  "Square bottom (6x4x11\") 1000qty",
-                                "price":  65
-                            }
-                        ]
-    },
-    {
-        "sku":  "SKU-09",
-        "slug":  "wine-bottle-bag-design-09",
-        "name":  "Wine Bottle Bag Design #09",
-        "industry":  "food-beverage",
-        "bagType":  "Wine Bottle Bag",
-        "sizeOptions":  [
-                            "Standard Size"
-                        ],
-        "caseCount":  "Varies by size",
-        "startingPrice":  64.42,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_WFC_09.jpg?v=1675112434",
-        "description":  "These beautiful bags feature our full-coverage printing, fulling the front and back of the bag with an interesting design of a variety of wine bottler openers from around the world. These bags are perfect for any Winery, Wine Club, Wine Bar or other business that sells wine by the bottle. ALL of our bags at Bag Supply Co are fully customizable. If you would like to add your logo, custom color, or other changes - contact a sales representative today at (704) 862-9256 Stock Wine Bottle Bags - Pinch bottom - 4\" x 3\" x 16\" - 1,000 case",
-        "collections":  [
-
-                        ],
-        "sizePricing":  [
-
-                        ]
-    },
-    {
-        "sku":  "SKU-10-2",
-        "slug":  "wine-bottle-bag-design-10",
-        "name":  "Wine Bottle Bag Design #10",
-        "industry":  "food-beverage",
-        "bagType":  "Wine Bottle Bag",
-        "sizeOptions":  [
-                            "Standard Size"
-                        ],
-        "caseCount":  "Varies by size",
-        "startingPrice":  64.42,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_WFC_10.jpg?v=1675112588",
-        "description":  "These cool bags feature a funky design bearing the words “Good Wine for Good People” over a stylized graphic of a bunch of grapes. These bags are perfect for any Winery, Wine Club, Wine Bar or other business that sells wine by the bottle. ALL of our bags at Bag Supply Co are fully customizable. If you would like to add your logo, custom color, or other changes - contact a sales representative today at (704) 862-9256 Stock Wine Bottle Bags - Pinch bottom - 4\" x 3\" x 16\" - 1,000 case",
-        "collections":  [
-
-                        ],
-        "sizePricing":  [
-
-                        ]
-    },
-    {
-        "sku":  "SKU-11",
-        "slug":  "wine-bottle-bag-design-11",
-        "name":  "Wine Bottle Bag Design #11",
-        "industry":  "food-beverage",
-        "bagType":  "Wine Bottle Bag",
-        "sizeOptions":  [
-                            "Standard Size"
-                        ],
-        "caseCount":  "Varies by size",
-        "startingPrice":  64.42,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_WFC_11.jpg?v=1675112632",
-        "description":  "These color bags feature a classic design bearing the words “Wine House” over a stylized graphic of a bunch of grapes. These bags are perfect for any Winery, Wine Club, Wine Bar or other business that sells wine by the bottle. Our wine bottle bags are 4”x3”x16“. ALL of our bags at Bag Supply Co are fully customizable. If you would like to add your logo, custom color, or other changes - contact a sales representative today at (704) 862-9256 Stock Wine Bottle Bags - Pinch bottom - 4\" x 3\" x 16\" - 1,000 case",
-        "collections":  [
-
-                        ],
-        "sizePricing":  [
-
-                        ]
-    },
-    {
-        "sku":  "SKU-12",
-        "slug":  "wine-bottle-bag-design-12",
-        "name":  "Wine Bottle Bag Design #12",
-        "industry":  "food-beverage",
-        "bagType":  "Wine Bottle Bag",
-        "sizeOptions":  [
-                            "Standard Size"
-                        ],
-        "caseCount":  "Varies by size",
-        "startingPrice":  64.42,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_WFC_12.jpg?v=1675112664",
-        "description":  "These bold bags feature an old-world design bearing the words “Wine Bar” over a stylized graphic of a Wine Barrel and Grapes with filigree. These bags are perfect for any Wine Bar that sells wine by the bottle. Our wine bottle bags are 4”x3”x16“. ALL of our bags at Bag Supply Co are fully customizable. If you would like to add your logo, custom color, or other changes - contact a sales representative today at (704) 862-9256 Stock Wine Bottle Bags - Pinch bottom - 4\" x 3\" x 16\" - 1,000 case",
-        "collections":  [
-
-                        ],
-        "sizePricing":  [
-
-                        ]
-    },
-    {
-        "sku":  "SKU-13",
-        "slug":  "wine-bottle-bag-design-13",
-        "name":  "Wine Bottle Bag Design #13",
-        "industry":  "food-beverage",
-        "bagType":  "Wine Bottle Bag",
-        "sizeOptions":  [
-                            "Standard Size"
-                        ],
-        "caseCount":  "Varies by size",
-        "startingPrice":  64.42,
-        "colorOptions":  [
-                             "Stock Print"
-                         ],
-        "availability":  "stock",
-        "image":  "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_WFC_13.jpg?v=1675112684",
-        "description":  "These bags feature a fun design bearing the words “Wine Club” over a stylized graphic of simple Cork Screw with minimal filigree and starburst background. These bags are perfect for any Wine Club. Our wine bottle bags are 4”x3”x16“. ALL of our bags at Bag Supply Co are fully customizable. If you would like to add your logo, custom color, or other changes - contact a sales representative today at (704) 862-9256 Stock Wine Bottle Bags - Pinch bottom - 4\" x 3\" x 16\" - 1,000 case",
-        "collections":  [
-
-                        ],
-        "sizePricing":  [
-
-                        ]
+        "sku": "GS",
+        "slug": "pharmacy-bag-gs-design",
+        "name": "Pharmacy Bags - GS Design",
+        "industry": "pharmacy",
+        "bagType": "Pharmacy Stock Design",
+        "sizeOptions": [
+            "#21 (3.5\" x 1.5\" x 10\")",
+            "#22 (4.5\" x 2.25\" x 11\")",
+            "#23 (5\" x 2\" x 10\")",
+            "#25 (6\" x 4\" x 11\")",
+            "#26 (7\" x 4\" x 14\")",
+            "#28 (8\" x 5\" x 17\")",
+            "#12 (7\" x 10\")",
+            "#14 (9\" x 11\")",
+            "#15 (8.5\" x 3.5\" x 14.5\")"
+        ],
+        "caseCount": "500-3,000/case",
+        "startingPrice": 65.91,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/GS-COVER.jpg?v=1558568731",
+        "description": "Full Case of Stock Pharmacy Bag in \"GS\" design. These classic Pharmacy bags have been our most popular item for many years. They are perfect for any pharmacy and come in a range of Eight Quantity/Size options.",
+        "collections": [],
+        "sizePricing": [
+            {
+                "label": "#21 (3.5\" x 1.5\" x 10\") 3,000 per case",
+                "price": 95.56
+            },
+            {
+                "label": "#22 (4.5\" x 2.25\" x 11\") 3,000 per case",
+                "price": 119.81
+            },
+            {
+                "label": "#23 (5\" x 2\" x 10\") 3,000 per case",
+                "price": 117.42
+            },
+            {
+                "label": "#25 (6\" x 4\" x 11\") 1,000 per case",
+                "price": 65.91
+            },
+            {
+                "label": "#26 (7\" x 4\" x 14\") 1,000 per case",
+                "price": 102.29
+            },
+            {
+                "label": "#28 (8\" x 5\" x 17\") 500 per case",
+                "price": 112.1
+            },
+            {
+                "label": "#12 (7\" x 10\") 3,000 per case",
+                "price": 115.35
+            },
+            {
+                "label": "#14 (9\" x 11\") 2,000 per case",
+                "price": 99.69
+            },
+            {
+                "label": "#15 (8.5\" x 3.5\" x 14.5\") 1,000 per case",
+                "price": 95.78
+            }
+        ]
+    },
+    {
+        "sku": "PFCGSP",
+        "slug": "pharmacy-bags-plastic-gs-design",
+        "name": "Pharmacy Bags - Plastic GS Design",
+        "industry": "pharmacy",
+        "bagType": "Plastic Pharmacy Design",
+        "sizeOptions": [
+            "#32 (9\" x 5.5\" x 18\")",
+            "#35 (12\" x 7\" x 23\")",
+            "#30 (12\" x 7\" x 25\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 70.84,
+        "colorOptions": [
+            "White Plastic"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/GSP-Hero.jpg?v=1573685230",
+        "description": "Full Case of Plastic Pharmacy Bags in our stock \"GS\" design. These classic Pharmacy bags have been a very popular item for many years. They are perfect for any pharmacy and come in a range of Three Quantity/Size options.",
+        "collections": [],
+        "sizePricing": [
+            {
+                "label": "#32 (9\" x 5.5\" x 18\") 1,000 per case",
+                "price": 70.84
+            },
+            {
+                "label": "#35 (12\" x 7\" x 23\") 1,000 per case",
+                "price": 90.84
+            },
+            {
+                "label": "#30 (12\" x 7\" x 25\") 500 per case",
+                "price": 116.03
+            }
+        ]
+    },
+    {
+        "sku": "TY",
+        "slug": "pharmacy-bag-thank-you-design",
+        "name": "Pharmacy Bags - TY Design",
+        "industry": "pharmacy",
+        "bagType": "Pharmacy Stock Design",
+        "sizeOptions": [
+            "#21 (3.5\" x 1.5\" x 10\")",
+            "#22 (4.5\" x 2.25\" x 11\")",
+            "#23 (5\" x 2\" x 10\")",
+            "#25 (6\" x 4\" x 11\")",
+            "#26 (7\" x 4\" x 14\")",
+            "#28 (8\" x 5\" x 17\")",
+            "#12 (7\" x 10\")",
+            "#14 (9\" x 11\")",
+            "#15 (8.5\" x 3.5\" x 14.5\")"
+        ],
+        "caseCount": "500-3,000/case",
+        "startingPrice": 65.91,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/TY-COVER.jpg?v=1559186288",
+        "description": "Full Case of Pharmacy \"Thank You\" Bag design #TY in eight Quantity/Size options.",
+        "collections": [],
+        "sizePricing": [
+            {
+                "label": "#21 (3.5\" x 1.5\" x 10\") 3,000 per case",
+                "price": 95.56
+            },
+            {
+                "label": "#22 (4.5\" x 2.25\" x 11\") 3,000 per case",
+                "price": 119.81
+            },
+            {
+                "label": "#23 (5\" x 2\" x 10\") 3,000 per case",
+                "price": 117.41
+            },
+            {
+                "label": "#25 (6\" x 4\" x 11\") 1,000 per case",
+                "price": 65.91
+            },
+            {
+                "label": "#26 (7\" x 4\" x 14\") 1,000 per case",
+                "price": 102.29
+            },
+            {
+                "label": "#28 (8\" x 5\" x 17\") 500 per case",
+                "price": 112.1
+            },
+            {
+                "label": "#12 (7\" x 10\") 3,000 per case",
+                "price": 115.35
+            },
+            {
+                "label": "#14 (9\" x 11\") 2,000 per case",
+                "price": 99.69
+            },
+            {
+                "label": "#15 (8.5\" x 3.5\" x 14.5\") 1,000 per case",
+                "price": 95.78
+            }
+        ]
+    },
+    {
+        "sku": "VB1",
+        "slug": "veterinary-bag-design-vb1-1",
+        "name": "Veterinary Bag Design #VB1",
+        "industry": "veterinary",
+        "bagType": "Veterinary Stock Design",
+        "sizeOptions": [
+            "Pinch bottom #22 (4.5\" x 2.25\" x 11\")",
+            "Flat bag #12 (7\" x 10\")",
+            "Square bottom #25 (6\" x 4\" x 11\")"
+        ],
+        "caseCount": "1,000-3,000/case",
+        "startingPrice": 65.91,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/VB1-ALL3.png?v=1579754655",
+        "description": "VB1 is a stock veterinary bag program available in three sizes, designed for medication handoff and repeat prescription workflows at veterinary and pet-care clinics. Pinch bottom #22 (4.5\" x 2.25\" x 11\") - 3,000 qty. Flat bag #12 (7\" x 10\") - 3,000 qty. Square bottom #25 (6\" x 4\" x 11\") - 1,000 qty.",
+        "collections": [],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom #22 (4.5\" x 2.25\" x 11\") 3,000 per case",
+                "price": 119.81
+            },
+            {
+                "label": "Flat bag #12 (7\" x 10\") 3,000 per case",
+                "price": 115.35
+            },
+            {
+                "label": "Square bottom #25 (6\" x 4\" x 11\") 1,000 per case",
+                "price": 65.91
+            }
+        ]
+    },
+    {
+        "sku": "VB2",
+        "slug": "veterinary-bag-design-vb1",
+        "name": "Veterinary Bag Design #VB2",
+        "industry": "veterinary",
+        "bagType": "Veterinary Stock Design",
+        "sizeOptions": [
+            "Pinch bottom #22 (4.5\" x 2.25\" x 11\")",
+            "Flat bag #12 (7\" x 10\")",
+            "Square bottom #25 (6\" x 4\" x 11\")"
+        ],
+        "caseCount": "1,000-3,000/case",
+        "startingPrice": 65.91,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/VB2-ALL3.png?v=1579752589",
+        "description": "Full Case of Veterinary Bags design #VB2 in three Quantity/Size options. Perfect for every Vet or Pet Store, these adorable bags will leave paw prints all over the hearts of your customers. Pinch bottom #22 - 4.5 x 2.25 x 11” - 3,000 qty Flat Pinch bottom #12 - 7 x 10” - 3,000 qty Square bottom #25 - 6 x 4 x 11” - 1,000 qty",
+        "collections": [],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom #22 (4.5\" x 2.25\" x 11\") 3,000 per case",
+                "price": 119.81
+            },
+            {
+                "label": "Flat bag #12 (7\" x 10\") 3,000 per case",
+                "price": 115.35
+            },
+            {
+                "label": "Square bottom #25 (6\" x 4\" x 11\") 1,000 per case",
+                "price": 65.91
+            }
+        ]
+    },
+    {
+        "sku": "VB6",
+        "slug": "veterinary-bag-design-vb3",
+        "name": "Veterinary Bag Design #VB6",
+        "industry": "veterinary",
+        "bagType": "Veterinary Stock Design",
+        "sizeOptions": [
+            "Pinch bottom #22 (4.5\" x 2.25\" x 11\")",
+            "Flat bag #12 (7\" x 10\")",
+            "Square bottom #25 (6\" x 4\" x 11\")"
+        ],
+        "caseCount": "1,000-3,000/case",
+        "startingPrice": 65.91,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/VB6-ALL3.png?v=1579754989",
+        "description": "Full Case of Veterinary Bags design #VB6 in three Quantity/Size options. Perfect for every Vet or Pet Store, these adorable bags will leave paw prints all over the hearts of your customers. Pinch bottom #22 - 4.5 x 2.25 x 11” - 3,000 qty Flat Pinch bottom #12 - 7 x 10” - 3,000 qty Square bottom #25 - 6 x 4 x 11” - 1,000 qty",
+        "collections": [],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom #22 (4.5\" x 2.25\" x 11\") 3,000 per case",
+                "price": 119.81
+            },
+            {
+                "label": "Flat bag #12 (7\" x 10\") 3,000 per case",
+                "price": 115.35
+            },
+            {
+                "label": "Square bottom #25 (6\" x 4\" x 11\") 1,000 per case",
+                "price": 65.91
+            }
+        ]
+    },
+    {
+        "sku": "DISPENSARY-PRESCRIPTION-EXIT-BAG",
+        "slug": "dispensary-prescription-exit-bag",
+        "name": "Classic RX Prescription Pharmacy Bags",
+        "industry": "dispensary",
+        "bagType": "Classic RX Stock Design",
+        "sizeOptions": [
+            "Classic RX (10\" x 5\" x 1\")",
+            "#12-DS (7\" x 10\")"
+        ],
+        "caseCount": "1,000/case",
+        "startingPrice": 45,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/21-ds.jpg?v=1677602787",
+        "description": "1000 Pack Classic RX Paper Prescription Pharmacy Bags Drug Store Bottle 10\" x 5\" x 1\" is on sale for $110 with free shipping. #12-DS (7\" x 10\") pricing remains unchanged and is not free shipping.",
+        "collections": [],
+        "sizePricing": [
+            {
+                "label": "Classic RX (10\" x 5\" x 1\") 1000 qty - FREE SHIPPING",
+                "price": 110
+            },
+            {
+                "label": "#12-DS (7\" x 10\") 1000 qty",
+                "price": 45
+            }
+        ]
+    },
+    {
+        "sku": "SKU-10",
+        "slug": "equality-design-10-6x4x11-1000qty",
+        "name": "Equality Design #10",
+        "industry": "smoke-shop",
+        "bagType": "Equality / Pride Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/cbc_mce10_0b9cd5a2-d89b-44dd-94e1-073d25ee6db8.png?v=1675106391",
+        "description": "Show your pride with our Equality designs! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "SKU-11-2",
+        "slug": "equality-design-eq11",
+        "name": "Equality Design #11",
+        "industry": "smoke-shop",
+        "bagType": "Equality / Pride Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/cbc_mce11.png?v=1675106451",
+        "description": "Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "SKU-12-2",
+        "slug": "equality-design-eq12",
+        "name": "Equality Design #12",
+        "industry": "smoke-shop",
+        "bagType": "Equality / Pride Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/cbc_mce12.png?v=1675106597",
+        "description": "Show your pride with our Equality designs! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "SKU-10-4",
+        "slug": "faith-religious-design-10",
+        "name": "Faith / Religious Design #10",
+        "industry": "retail",
+        "bagType": "Faith Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_FRMC_10.png?v=1675106719",
+        "description": "Share your faith with your guests with our Faith & Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "SKU-11-4",
+        "slug": "faith-religious-design-11",
+        "name": "Faith / Religious Design #11",
+        "industry": "retail",
+        "bagType": "Faith Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/RELIGION_5499b6ac-ee53-44f4-8f4f-44b678aef675.png?v=1675106857",
+        "description": "Share your faith with your guests with our Faith & Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "SKU-12-4",
+        "slug": "faith-religious-design-12",
+        "name": "Faith / Religious Design #12",
+        "industry": "retail",
+        "bagType": "Faith Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_FRMC_12.png?v=1675106898",
+        "description": "Share your faith with your guests with our Faith & Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "SKU-13-3",
+        "slug": "faith-religious-design-13",
+        "name": "Faith / Religious Design #13",
+        "industry": "retail",
+        "bagType": "Faith Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_FRMC_13.png?v=1675106950",
+        "description": "Share your faith with your guests with our Faith & Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "SKU-14-2",
+        "slug": "faith-religious-design-14",
+        "name": "Faith / Religious Design #14",
+        "industry": "retail",
+        "bagType": "Faith Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_FRMC_14.png?v=1675107160",
+        "description": "Share your faith with your guests with our Faith & Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 25
+            }
+        ]
+    },
+    {
+        "sku": "SKU-15-2",
+        "slug": "faith-religious-design-15",
+        "name": "Faith / Religious Design #15",
+        "industry": "retail",
+        "bagType": "Faith Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_FRMC_15.png?v=1675107228",
+        "description": "Share your faith with your guests with our Faith & Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "SKU-16-2",
+        "slug": "faith-religious-design-16",
+        "name": "Faith / Religious Design #16",
+        "industry": "retail",
+        "bagType": "Faith Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_FRMC_16.png?v=1675107295",
+        "description": "Share your faith with your guests with our Faith & Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "SKU-17",
+        "slug": "faith-religious-design-17",
+        "name": "Faith / Religious Design #17",
+        "industry": "retail",
+        "bagType": "Faith Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_FRMC_17.png?v=1675107356",
+        "description": "Share your faith with your guests with our Faith & Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "SKU-18-2",
+        "slug": "faith-religious-design-18",
+        "name": "Faith / Religious Design #18",
+        "industry": "retail",
+        "bagType": "Faith Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_FRMC_18.png?v=1675108454",
+        "description": "Share your faith with your guests with our Faith & Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "SKU-19-2",
+        "slug": "faith-religious-design-19",
+        "name": "Faith / Religious Design #19",
+        "industry": "retail",
+        "bagType": "Faith Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_FRMC_19.png?v=1675108486",
+        "description": "Share your faith with your guests with our Faith & Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "SKU-20",
+        "slug": "faith-religious-design-20",
+        "name": "Faith / Religious Design #20",
+        "industry": "retail",
+        "bagType": "Faith Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_FRMC_20.png?v=1675108541",
+        "description": "Share your faith with your guests with our Faith & Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "SKU-21",
+        "slug": "faith-religious-design-21",
+        "name": "Faith / Religious Design #21",
+        "industry": "retail",
+        "bagType": "Faith Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_FRMC_21.png?v=1675108589",
+        "description": "Share your faith with your guests with our Faith & Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "SKU-22",
+        "slug": "faith-religious-design-22",
+        "name": "Faith / Religious Design #22",
+        "industry": "retail",
+        "bagType": "Faith Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_FRMC_22.png?v=1675108623",
+        "description": "Share your faith with your guests with our Faith & Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "SKU-23",
+        "slug": "faith-religious-design-23",
+        "name": "Faith / Religious Design #23",
+        "industry": "retail",
+        "bagType": "Faith Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_FRMC_23.png?v=1675108657",
+        "description": "Share your faith with your guests with our Faith & Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "SKU-24",
+        "slug": "faith-religious-design-24",
+        "name": "Faith / Religious Design #24",
+        "industry": "retail",
+        "bagType": "Faith Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_FRMC_24.png?v=1675108699",
+        "description": "Share your faith with your guests with our Faith & Religion bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "FC1C",
+        "slug": "full-custom-1-color-bags",
+        "name": "Full-Custom, 1-Color Bags",
+        "industry": "retail",
+        "bagType": "Custom Print Program",
+        "sizeOptions": [
+            "#21 (3.5\" x 1.5\" x 10\")",
+            "#22 (4.5\" x 2.25\" x 11\")",
+            "#23 (5\" x 2\" x 10\")",
+            "#25 (6\" x 4\" x 11\")",
+            "#26 (7\" x 4\" x 14\")",
+            "#28 (8\" x 5\" x 17\")",
+            "#12 (7\" x 10\")",
+            "#14 (9\" x 11\")",
+            "#15 (8.5\" x 3.5\" x 14.5\")"
+        ],
+        "caseCount": "500-3,000/case",
+        "startingPrice": 95.56,
+        "colorOptions": [
+            "1-Color Custom"
+        ],
+        "availability": "custom",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC-FC1C-Hero.jpg?v=1565820121",
+        "description": "FULL-CUSTOM, 1-COLOR, BAGS ARE A HIGH VALUE OPTION! Our Bag Experts are ready to work with you today to create your company’s best bags ever. Simply submit your order and a Bag Supply Co representative will be in touch with you in less than 24 hours to receive your artwork and create a proof of your design. 4 Case Minimum Order Orders over 10 Cases, Please Call (704) 862-9256 Includes Custom Printing in 1 Stock Colors Can Print on Front, Back, and Gussets (folded sides) 30-50# Machine-Finished Paper Pinch-Bottom with Gusset or Flat-Bottom Styles 4 Week Lead Time $50 Art/Plate Fee Applies to Initial Order and/or Re-Orders Requiring Changes Additional Art/Plate Fees May Apply for Back and/or Gusset Printing FREE FREIGHT to Commercial Address for Orders of 8 Cases or More Orders Under 8 Total Cases Billed Standard UPS Shipping Rates",
+        "collections": [],
+        "sizePricing": [
+            {
+                "label": "#21 (3.5\" x 1.5\" x 10\") 3,000 per case",
+                "price": 95.56
+            },
+            {
+                "label": "#22 (4.5\" x 2.25\" x 11\") 3,000 per case",
+                "price": 119.8
+            },
+            {
+                "label": "#23 (5\" x 2\" x 10\") 3,000 per case",
+                "price": 117.4
+            },
+            {
+                "label": "#25 (6\" x 4\" x 11\") 2,000 per case",
+                "price": 133.08
+            },
+            {
+                "label": "#26 (7\" x 4\" x 14\") 1,000 per case",
+                "price": 102.29
+            },
+            {
+                "label": "#28 (8\" x 5\" x 17\") 500 per case",
+                "price": 112.1
+            },
+            {
+                "label": "#12 (7\" x 10\") 3,000 per case",
+                "price": 115.35
+            },
+            {
+                "label": "#14 (9\" x 11\") 2,000 per case",
+                "price": 99.68
+            },
+            {
+                "label": "#15 (8.5\" x 3.5\" x 14.5\") 1,000 per case",
+                "price": 95.78
+            }
+        ]
+    },
+    {
+        "sku": "FC2C",
+        "slug": "full-custom-2-color-bags",
+        "name": "Full-Custom, 2-Color Bags",
+        "industry": "retail",
+        "bagType": "Custom Print Program",
+        "sizeOptions": [
+            "#21 (3.5\" x 1.5\" x 10\")",
+            "#22 (4.5\" x 2.25\" x 11\")",
+            "#23 (5\" x 2\" x 10\")",
+            "#25 (6\" x 4\" x 11\")",
+            "#26 (7\" x 4\" x 14\")",
+            "#28 (8\" x 5\" x 17\")",
+            "#12 (7\" x 10\")",
+            "#14 (9\" x 11\")",
+            "#15 (8.5\" x 3.5\" x 14.5\")"
+        ],
+        "caseCount": "500-3,000/case",
+        "startingPrice": 95.56,
+        "colorOptions": [
+            "2-Color Custom"
+        ],
+        "availability": "custom",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC-FC2C.jpg?v=1571237552",
+        "description": "FULL-CUSTOM, 2-COLOR, BAGS ARE OUR MOST POPULAR OPTION! Our Bag Experts are ready to work with you today to create your company’s best bags ever. Simply submit your order and a Bag Supply Co representative will be in touch with you in less than 24 hours to receive your artwork and create a proof of your design. 4 Case Minimum Order Orders over 10 Cases, Please Call (704) 862-9256 Includes Custom Printing in 2 Stock Colors Can Print on Front, Back, and Gussets (folded sides) 30-50# Machine-Finished Paper Pinch-Bottom with Gusset or Flat-Bottom Styles 4 Week Lead Time $50 Art/Plate Fee Applies to Initial Order and/or Re-Orders Requiring Changes Additional Art/Plate Fees May Apply to Back and/or Gusset Printing FREE FREIGHT to Commercial Address for Orders of 8 Cases or More Orders Under 8 Total Cases Billed Standard UPS Shipping Rates",
+        "collections": [],
+        "sizePricing": [
+            {
+                "label": "#21 (3.5\" x 1.5\" x 10\") 3,000 per case",
+                "price": 95.56
+            },
+            {
+                "label": "#22 (4.5\" x 2.25\" x 11\") 3,000 per case",
+                "price": 119.8
+            },
+            {
+                "label": "#23 (5\" x 2\" x 10\") 3,000 per case",
+                "price": 117.39
+            },
+            {
+                "label": "#25 (6\" x 4\" x 11\") 2,000 per case",
+                "price": 133.08
+            },
+            {
+                "label": "#26 (7\" x 4\" x 14\") 1,000 per case",
+                "price": 102.29
+            },
+            {
+                "label": "#28 (8\" x 5\" x 17\") 500 per case",
+                "price": 112.1
+            },
+            {
+                "label": "#12 (7\" x 10\") 3,000 per case",
+                "price": 115.35
+            },
+            {
+                "label": "#14 (9\" x 11\") 2,000 per case",
+                "price": 99.68
+            },
+            {
+                "label": "#15 (8.5\" x 3.5\" x 14.5\") 1,000 per case",
+                "price": 95.78
+            }
+        ]
+    },
+    {
+        "sku": "FC3C",
+        "slug": "full-custom-3-color-bags",
+        "name": "Full-Custom, 3-Color Bags",
+        "industry": "retail",
+        "bagType": "Custom Print Program",
+        "sizeOptions": [
+            "#21 (3.5\" x 1.5\" x 10\")",
+            "#22 (4.5\" x 2.25\" x 11\")",
+            "#23 (5\" x 2\" x 10\")",
+            "#25 (6\" x 4\" x 11\")",
+            "#26 (7\" x 4\" x 14\")",
+            "#28 (8\" x 5\" x 17\")",
+            "#12 (7\" x 10\")",
+            "#14 (9\" x 11\")",
+            "#15 (8.5\" x 3.5\" x 14.5\")"
+        ],
+        "caseCount": "500-3,000/case",
+        "startingPrice": 119.46,
+        "colorOptions": [
+            "3-Color Custom"
+        ],
+        "availability": "custom",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC-FC3C-Hero.jpg?v=1565831236",
+        "description": "FULL-CUSTOM, 3-COLOR, BAGS ADD A SPLASH TO YOUR CHECKOUT! Our Bag Experts are ready to work with you today to create your company’s best bags ever. Simply submit your order and a Bag Supply Co representative will be in touch with you in less than 24 hours to receive your artwork and create a proof of your design. 4 Case Minimum Order Orders over 10 Cases, Please Call (704) 862-9256 Includes Custom Printing in 3 Stock Colors Can Print on Front, Back, and Gussets (folded sides) 30-50# Machine-Finished Paper Pinch-Bottom with Gusset or Flat-Bottom Styles 4 Week Lead Time $50 Art/Plate Fee Applies to Initial Order and/or Re-Orders Requiring Changes Additional Art/Plate Fees May Apply to Back and/or Gusset Printing FREE FREIGHT to Commercial Address for Orders of 8 Cases or More Orders Under 8 Total Cases Billed Standard UPS Shipping Rates",
+        "collections": [],
+        "sizePricing": [
+            {
+                "label": "#21 (3.5\" x 1.5\" x 10\") 3,000 per case",
+                "price": 119.46
+            },
+            {
+                "label": "#22 (4.5\" x 2.25\" x 11\") 3,000 per case",
+                "price": 149.76
+            },
+            {
+                "label": "#23 (5\" x 2\" x 10\") 3,000 per case",
+                "price": 146.76
+            },
+            {
+                "label": "#25 (6\" x 4\" x 11\") 2,000 per case",
+                "price": 166.36
+            },
+            {
+                "label": "#26 (7\" x 4\" x 14\") 1,000 per case",
+                "price": 127.86
+            },
+            {
+                "label": "#28 (8\" x 5\" x 17\") 500 per case",
+                "price": 140.12
+            },
+            {
+                "label": "#12 (7\" x 10\") 3,000 per case",
+                "price": 144.18
+            },
+            {
+                "label": "#14 (9\" x 11\") 2,000 per case",
+                "price": 124.61
+            },
+            {
+                "label": "#15 (8.5\" x 3.5\" x 14.5\") 1,000 per case",
+                "price": 119.71
+            }
+        ]
+    },
+    {
+        "sku": "SKU-10-3",
+        "slug": "usa-design-10",
+        "name": "USA Design #10",
+        "industry": "retail",
+        "bagType": "USA-Made Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_USMC_10.png?v=1675110020",
+        "description": "Show your USA pride with our custom-printed paper bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [
+            "usa-made"
+        ],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "SKU-11-3",
+        "slug": "usa-design-11",
+        "name": "USA Design #11",
+        "industry": "retail",
+        "bagType": "USA-Made Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_USMC_11.png?v=1675110086",
+        "description": "Show your USA pride with our custom-printed paper bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [
+            "usa-made"
+        ],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "SKU-12-3",
+        "slug": "usa-design-12",
+        "name": "USA Design #12",
+        "industry": "retail",
+        "bagType": "USA-Made Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_USMC_12.png?v=1675110152",
+        "description": "Show your USA pride with our custom-printed paper bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [
+            "usa-made"
+        ],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "SKU-13-2",
+        "slug": "usa-design-13",
+        "name": "USA Design #13",
+        "industry": "retail",
+        "bagType": "USA-Made Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_USMC_13_1.png?v=1675110194",
+        "description": "Show your USA pride with our custom-printed paper bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [
+            "usa-made"
+        ],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "SKU-14",
+        "slug": "usa-design-14",
+        "name": "USA Design #14",
+        "industry": "retail",
+        "bagType": "USA-Made Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_USMC_14.png?v=1675110231",
+        "description": "Show your USA pride with our custom-printed paper bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [
+            "usa-made"
+        ],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "SKU-15",
+        "slug": "usa-design-15",
+        "name": "USA Design #15",
+        "industry": "retail",
+        "bagType": "USA-Made Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_USMC_15.png?v=1675110269",
+        "description": "Show your USA pride with our custom-printed paper bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [
+            "usa-made"
+        ],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "SKU-16",
+        "slug": "usa-design-16",
+        "name": "USA Design #16",
+        "industry": "retail",
+        "bagType": "USA-Made Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_USMC_16.png?v=1675110305",
+        "description": "Show your USA pride with our custom-printed paper bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [
+            "usa-made"
+        ],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "SKU-17-2",
+        "slug": "usa-design-17",
+        "name": "USA Design #17",
+        "industry": "retail",
+        "bagType": "USA-Made Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_USMC_17.png?v=1675110341",
+        "description": "Show your USA pride with our custom-printed paper bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [
+            "usa-made"
+        ],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "SKU-18",
+        "slug": "usa-design-18",
+        "name": "USA Design #18",
+        "industry": "retail",
+        "bagType": "USA-Made Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_USMC_18.png?v=1675110381",
+        "description": "Show your USA pride with our custom-printed paper bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [
+            "usa-made"
+        ],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "SKU-19",
+        "slug": "usa-design-19",
+        "name": "USA Design #19",
+        "industry": "retail",
+        "bagType": "USA-Made Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC-MCUS019.jpg?v=1675110416",
+        "description": "Show your USA pride with our custom-printed paper bags! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [
+            "usa-made"
+        ],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "USMC-2",
+        "slug": "usa-design-23",
+        "name": "USA Design California #23",
+        "industry": "retail",
+        "bagType": "USA-Made Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC-MCUS023.jpg?v=1675110687",
+        "description": "Show your state pride with our custom-printed paper bags! Don’t see your state? Don't worry! Send us an email to get bags with your state proudly displayed! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [
+            "usa-made"
+        ],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "USMC-5",
+        "slug": "usa-design-20",
+        "name": "USA Design Florida #20",
+        "industry": "retail",
+        "bagType": "USA-Made Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC-MCUS020.jpg?v=1675110498",
+        "description": "Show your state pride with our custom-printed paper bags! Don’t see your state? Don't worry! Send us an email to get bags with your state proudly displayed! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [
+            "usa-made"
+        ],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "USMC",
+        "slug": "usa-design-24",
+        "name": "USA Design North and South Carolina #24",
+        "industry": "retail",
+        "bagType": "USA-Made Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC-MCUS024.jpg?v=1675110727",
+        "description": "Show your state pride with our custom-printed paper bags! Don’t see your state? Don't worry! Send us an email to get bags with your state proudly displayed! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [
+            "usa-made"
+        ],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "USMC-3",
+        "slug": "usa-design-22",
+        "name": "USA Design Oregon #22",
+        "industry": "retail",
+        "bagType": "USA-Made Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC-MCUS022.jpg?v=1675110646",
+        "description": "Show your state pride with our custom-printed paper bags! Don’t see your state? Don't worry! Send us an email to get bags with your state proudly displayed! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [
+            "usa-made"
+        ],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "USMC-4",
+        "slug": "usa-design-21",
+        "name": "USA Design Texas #21",
+        "industry": "retail",
+        "bagType": "USA-Made Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC-MCUS021.jpg?v=1675110612",
+        "description": "Show your state pride with our custom-printed paper bags! Don’t see your state? Don't worry! Send us an email to get bags with your state proudly displayed! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [
+            "usa-made"
+        ],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "JUL4010",
+        "slug": "independence-day-design-jul4010",
+        "name": "Independence Day Design #JUL4010",
+        "industry": "food-beverage",
+        "bagType": "Seasonal Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC-JUL4010.png?v=1675108862",
+        "description": "Celebrate the Fourth of July with spectacular 2-color designs! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [
+            "seasonal"
+        ],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "JUL4011",
+        "slug": "independence-day-design-jul4011",
+        "name": "Independence Day Design #JUL4011",
+        "industry": "food-beverage",
+        "bagType": "Seasonal Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC-JUL4011.png?v=1675108945",
+        "description": "Celebrate the Fourth of July with spectacular 2-color designs! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [
+            "seasonal"
+        ],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "JUL4012",
+        "slug": "independence-day-design-jul4012",
+        "name": "Independence Day Design #JUL4012",
+        "industry": "food-beverage",
+        "bagType": "Seasonal Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC-JUL4012.png?v=1675109004",
+        "description": "Celebrate the Fourth of July with spectacular 2-color designs! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [
+            "seasonal"
+        ],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "CN010",
+        "slug": "seasonal-bag-design-cn010",
+        "name": "Seasonal Bag Design #CN010",
+        "industry": "food-beverage",
+        "bagType": "Seasonal Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/605435.jpg?v=1675109393",
+        "description": "Features a dark grey and red filigree design complete with holly and a New Year's greeting to the lyric of \"A Merry Christmas\" greeting customers one and all. Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [
+            "seasonal"
+        ],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "CN020",
+        "slug": "seasonal-bag-design-cn020",
+        "name": "Seasonal Bag Design #CN020",
+        "industry": "food-beverage",
+        "bagType": "Seasonal Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/605433.jpg?v=1675109474",
+        "description": "Features a dark grey and red minimalist wreath design with a jolly message of Happy Holidays for your customers. Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [
+            "seasonal"
+        ],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "CN030",
+        "slug": "seasonal-bag-design-cn030",
+        "name": "Seasonal Bag Design #CN030",
+        "industry": "food-beverage",
+        "bagType": "Seasonal Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/605431.jpg?v=1675109525",
+        "description": "This new design for Christmas 2017 features a dark grey and red graphic complete with Christmas tree, minimalist wreath and \"Merry Christmas\" design paying tribute to the current year. It's the perfect bag for any store this holiday season. Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [
+            "seasonal"
+        ],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "COG020",
+        "slug": "seasonal-bag-design-cog020",
+        "name": "Seasonal Bag Design #COG020",
+        "industry": "food-beverage",
+        "bagType": "Seasonal Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/605425.jpg?v=1675109618",
+        "description": "This classic design for Christmas 2017 features a traditional storefront design appropriate for every Winter seasonal promotion with \"Season's Greetings, Happy Holidays from Your Neighborhood Pharmacy\" in beautiful script. Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [
+            "seasonal"
+        ],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "COG030",
+        "slug": "seasonal-bag-design-cog030",
+        "name": "Seasonal Bag Design #COG030",
+        "industry": "food-beverage",
+        "bagType": "Seasonal Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/605421.jpg?v=1675109697",
+        "description": "Features a whimsical design with three acrobatic Pengiuns topping the Christmas tree with a star. \"Happy Holidays\" completes the seasonal messaging, sure to be a hit with kids of all ages. Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [
+            "seasonal"
+        ],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "COG040",
+        "slug": "seasonal-bag-design-cog040",
+        "name": "Seasonal Bag Design #COG040",
+        "industry": "food-beverage",
+        "bagType": "Seasonal Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/605423.jpg?v=1675109786",
+        "description": "Features a stack of wrapped gifts with bows in the traditional colors of red and green for Christmas. \"Merry Christmas\" completes the seasonal messaging, giving this bag a holly, jolly feel. Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [
+            "seasonal"
+        ],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "COG050",
+        "slug": "seasonal-bag-design-cog050",
+        "name": "Seasonal Bag Design #COG050",
+        "industry": "food-beverage",
+        "bagType": "Seasonal Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/605427.jpg?v=1675109840",
+        "description": "Features a modern abstract Christmas tree decoration that is sure to catch the eye of art lovers everywhere. \"Seasons Greetings\" completes the design. Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [
+            "seasonal"
+        ],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "COG060",
+        "slug": "seasonal-bag-design-cog060",
+        "name": "Seasonal Bag Design #COG060",
+        "industry": "food-beverage",
+        "bagType": "Seasonal Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/605429.jpg?v=1675109877",
+        "description": "This Christmas 2017 design creates the look of the bag itself being a wrapped present. \"Happy Holidays\" (OR Merry Christmas is also available) completes the design with a strong seasonal message. If you are interested in customizing this design to include the name of your business, just give us a call at 1.800.526.9032 Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [
+            "seasonal"
+        ],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "SKU-12-5",
+        "slug": "valentines-day-design-12",
+        "name": "Valentine's Day Design #12",
+        "industry": "food-beverage",
+        "bagType": "Seasonal Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_VMC_12.png?v=1675110858",
+        "description": "Show your customers how much you love them with these cute & functional Valentine’s Day designs! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [
+            "seasonal"
+        ],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "SKU-13-4",
+        "slug": "valentines-day-design-13",
+        "name": "Valentine's Day Design #13",
+        "industry": "food-beverage",
+        "bagType": "Seasonal Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_VMC_13.png?v=1675110904",
+        "description": "Show your customers how much you love them with these cute & functional Valentine’s Day designs! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [
+            "seasonal"
+        ],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "SKU-15-3",
+        "slug": "valentines-day-design-15",
+        "name": "Valentine's Day Design #15",
+        "industry": "food-beverage",
+        "bagType": "Seasonal Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_VMC_15.png?v=1675111095",
+        "description": "Show your customers how much you love them with these cute & functional Valentine’s Day designs! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [
+            "seasonal"
+        ],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "SKU-16-3",
+        "slug": "valentines-day-design-16",
+        "name": "Valentine's Day Design #16",
+        "industry": "food-beverage",
+        "bagType": "Seasonal Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_VMC_16.png?v=1675111111",
+        "description": "Show your customers how much you love them with these cute & functional Valentine’s Day designs! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [
+            "seasonal"
+        ],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "SKU-17-3",
+        "slug": "valentines-day-design-17",
+        "name": "Valentine's Day Design #17",
+        "industry": "food-beverage",
+        "bagType": "Seasonal Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_VMC_17.png?v=1675111186",
+        "description": "Show your customers how much you love them with these cute & functional Valentine’s Day designs! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [
+            "seasonal"
+        ],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "SKU-18-3",
+        "slug": "valentines-day-design-18",
+        "name": "Valentine's Day Design #18",
+        "industry": "food-beverage",
+        "bagType": "Seasonal Collection",
+        "sizeOptions": [
+            "Pinch bottom (5x2x10\")",
+            "Square bottom (6x4x11\")"
+        ],
+        "caseCount": "500-1,000/case",
+        "startingPrice": 25,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_VMC_18.png?v=1675111156",
+        "description": "Show your customers how much you love them with these cute & functional Valentine’s Day designs! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
+        "collections": [
+            "seasonal"
+        ],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (5x2x10\") 500qty",
+                "price": 25
+            },
+            {
+                "label": "Square bottom (6x4x11\") 1000qty",
+                "price": 65
+            }
+        ]
+    },
+    {
+        "sku": "WFC09-104",
+        "slug": "wine-bottle-bag-design-09",
+        "name": "Wine Bottle Bag Design #09",
+        "industry": "food-beverage",
+        "bagType": "Wine Bottle Bag",
+        "sizeOptions": [
+            "Pinch bottom (4\" x 3\" x 16\")"
+        ],
+        "caseCount": "1,000/case",
+        "startingPrice": 64.42,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_WFC_09.jpg?v=1675112434",
+        "description": "This design features full-coverage printing with a mix of wine bottle openers. Great for wineries, wine clubs, wine bars, and bottle sales. Pinch bottom 4\" x 3\" x 16\" bag. 1,000 per case.",
+        "collections": [],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (4\" x 3\" x 16\") 1,000 per case",
+                "price": 64.42
+            }
+        ]
+    },
+    {
+        "sku": "WFC10-104",
+        "slug": "wine-bottle-bag-design-10",
+        "name": "Wine Bottle Bag Design #10",
+        "industry": "food-beverage",
+        "bagType": "Wine Bottle Bag",
+        "sizeOptions": [
+            "Pinch bottom (4\" x 3\" x 16\")"
+        ],
+        "caseCount": "1,000/case",
+        "startingPrice": 64.42,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_WFC_10.jpg?v=1675112588",
+        "description": "This design reads \"Good Wine for Good People\" over a stylized grape graphic. Great for wineries, wine clubs, wine bars, and bottle sales. Pinch bottom 4\" x 3\" x 16\" bag. 1,000 per case.",
+        "collections": [],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (4\" x 3\" x 16\") 1,000 per case",
+                "price": 64.42
+            }
+        ]
+    },
+    {
+        "sku": "WFC11-104",
+        "slug": "wine-bottle-bag-design-11",
+        "name": "Wine Bottle Bag Design #11",
+        "industry": "food-beverage",
+        "bagType": "Wine Bottle Bag",
+        "sizeOptions": [
+            "Pinch bottom (4\" x 3\" x 16\")"
+        ],
+        "caseCount": "1,000/case",
+        "startingPrice": 64.42,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_WFC_11.jpg?v=1675112632",
+        "description": "This design features \"Wine House\" with a stylized grape graphic. Great for wineries, wine clubs, wine bars, and bottle sales. Pinch bottom 4\" x 3\" x 16\" bag. 1,000 per case.",
+        "collections": [],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (4\" x 3\" x 16\") 1,000 per case",
+                "price": 64.42
+            }
+        ]
+    },
+    {
+        "sku": "WFC12-104",
+        "slug": "wine-bottle-bag-design-12",
+        "name": "Wine Bottle Bag Design #12",
+        "industry": "food-beverage",
+        "bagType": "Wine Bottle Bag",
+        "sizeOptions": [
+            "Pinch bottom (4\" x 3\" x 16\")"
+        ],
+        "caseCount": "1,000/case",
+        "startingPrice": 64.42,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_WFC_12.jpg?v=1675112664",
+        "description": "This design features \"Wine Bar\" with a wine barrel and grape graphic. Great for wine bars and bottle sales. Pinch bottom 4\" x 3\" x 16\" bag. 1,000 per case.",
+        "collections": [],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (4\" x 3\" x 16\") 1,000 per case",
+                "price": 64.42
+            }
+        ]
+    },
+    {
+        "sku": "WFC13-104",
+        "slug": "wine-bottle-bag-design-13",
+        "name": "Wine Bottle Bag Design #13",
+        "industry": "food-beverage",
+        "bagType": "Wine Bottle Bag",
+        "sizeOptions": [
+            "Pinch bottom (4\" x 3\" x 16\")"
+        ],
+        "caseCount": "1,000/case",
+        "startingPrice": 64.42,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_WFC_13.jpg?v=1675112684",
+        "description": "This design features \"Wine Club\" with a corkscrew graphic. Great for wine clubs and bottle sales. Pinch bottom 4\" x 3\" x 16\" bag. 1,000 per case.",
+        "collections": [],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (4\" x 3\" x 16\") 1,000 per case",
+                "price": 64.42
+            }
+        ]
+    },
+    {
+        "sku": "WFC14-104",
+        "slug": "wine-bottle-bag-design-14",
+        "name": "Wine Bottle Bag Design #14",
+        "industry": "food-beverage",
+        "bagType": "Wine Bottle Bag",
+        "sizeOptions": [
+            "Pinch bottom (4\" x 3\" x 16\")"
+        ],
+        "caseCount": "1,000/case",
+        "startingPrice": 64.42,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC_WFC_14.jpg?v=1675112703",
+        "description": "This design features \"WINE\" with a charcuterie and cheese board graphic. Great for wineries, wine bars, and wine clubs that sell bottles. Pinch bottom 4\" x 3\" x 16\" bag. 1,000 per case.",
+        "collections": [],
+        "sizePricing": [
+            {
+                "label": "Pinch bottom (4\" x 3\" x 16\") 1,000 per case",
+                "price": 64.42
+            }
+        ]
     }
 ]
-
