@@ -29,7 +29,6 @@ const catalogLinks = [
 
 const navLinks = [
   { href: '/blog', label: 'Blog' },
-  { href: '/generic-bag-quote', label: 'Build a Quote' },
   { href: '/contact', label: 'Contact' },
 ]
 
@@ -105,7 +104,7 @@ export default function Navbar() {
             </div>
           </Link>
 
-          <div className="hidden items-center gap-1 xl:gap-2 lg:flex">
+          <div className="hidden items-center gap-1 xl:gap-2 xl:flex">
             <Link
               href="/"
               className={`nav-chip ${pathname === '/' ? 'nav-chip-active' : ''}`}
@@ -193,7 +192,7 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="hidden w-full max-w-[220px] items-center gap-2 xl:max-w-[280px] lg:flex">
+          <div className="hidden w-full max-w-[200px] items-center gap-2 2xl:max-w-[260px] xl:flex">
             <input
               type="search"
               value={search}
@@ -210,16 +209,19 @@ export default function Navbar() {
             </button>
           </div>
 
-          <div className="hidden items-center gap-2 lg:flex">
+          <div className="hidden items-center gap-2 xl:flex">
             <CartLink />
+            <Link href="/generic-bag-quote" className="btn-secondary min-h-[44px] px-4">
+              Quote
+            </Link>
             <a href={contactTextHref} className="btn-primary min-h-[44px] px-4">
-              <span className="xl:hidden">Text Us</span>
-              <span className="hidden xl:inline">Text (704) 862-9256</span>
+              <span className="2xl:hidden">Text Us</span>
+              <span className="hidden 2xl:inline">Text (704) 862-9256</span>
             </a>
           </div>
 
           <button
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-[#B5813A] bg-[#FAF6F0] text-[#1E4D2B] lg:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-[#B5813A] bg-[#FAF6F0] text-[#1E4D2B] xl:hidden"
             onClick={() => setIsOpen((prev) => !prev)}
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
@@ -235,7 +237,7 @@ export default function Navbar() {
           </button>
         </nav>
 
-        <div className="pb-2 lg:hidden">
+        <div className="pb-2 xl:hidden">
           <button
             type="button"
             onClick={() => setShowMobileSearch((prev) => !prev)}
@@ -265,7 +267,7 @@ export default function Navbar() {
         </div>
 
         {isOpen && (
-          <div id="mobile-menu" className="pb-4 lg:hidden">
+          <div id="mobile-menu" className="pb-4 xl:hidden">
             <div className="rounded-2xl border border-[#C4935A66] bg-white p-3 shadow-[0_16px_40px_rgba(30,77,43,0.15)]">
               <div className="grid gap-1">
                 <Link
@@ -348,7 +350,10 @@ export default function Navbar() {
               <div className="mt-4">
                 <CartLink mobile onClick={() => setIsOpen(false)} />
               </div>
-              <div className="mt-3 grid gap-2 sm:grid-cols-2">
+              <div className="mt-3 grid gap-2 sm:grid-cols-3">
+                <Link href="/generic-bag-quote" className="btn-primary min-h-[44px] justify-center" onClick={() => setIsOpen(false)}>
+                  Build a Quote
+                </Link>
                 <a href={contactTextHref} className="btn-secondary min-h-[44px] justify-center">
                   Text (704) 862-9256
                 </a>
