@@ -16,6 +16,7 @@ import {
   isCatalogProductQuoteOnly,
   money,
 } from '@/lib/catalogProducts'
+import { buildProductJsonLd, buildProductMetadata } from '@/lib/seo/productSeo'
 
 const ACTIVE_FOLDER_SET = new Set<string>(INDUSTRY_ORDER)
 
@@ -37,17 +38,12 @@ export async function generateMetadata({
   const product = getCatalogProductByRoute(folder, sku)
   if (!product) return {}
 
-  const sizes = getCatalogProductSizes(product)
-
-  return {
-    title: `${product.name} | ${product.sku} Sizes | Bag Supply Co`,
-    description:
-      `${product.description} Available sizes: ${sizes.map((size) => size.label).join(', ')}. ` +
-      `Starting at ${money(product.startingPrice)} per case.`,
-    alternates: {
-      canonical: getCatalogOverviewPath(product),
-    },
-  }
+  return buildProductMetadata({
+    name: product.name,
+    description: product.description,
+    urlPath: getCatalogOverviewPath(product),
+    imagePath: product.image,
+  })
 }
 
 export default async function CatalogSkuOverviewPage({
@@ -64,9 +60,20 @@ export default async function CatalogSkuOverviewPage({
   const sizes = getCatalogProductSizes(product)
   const industryHref = getIndustryCatalogHref(product.industry)
   const isQuoteOnly = isCatalogProductQuoteOnly(product)
+  const jsonLd = buildProductJsonLd({
+    name: product.name,
+    imagePath: product.image,
+    description: product.description,
+    urlPath: getCatalogOverviewPath(product),
+    price: product.startingPrice,
+  })
 
   return (
     <div className="pb-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <section className="page-hero">
         <div className="page-hero-inner">
           <nav className="text-sm font-semibold text-[#5F4D33]">

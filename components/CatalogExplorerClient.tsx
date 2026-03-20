@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useMemo } from 'react'
-import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import FallbackImage from '@/components/FallbackImage'
 import {
   DEFAULT_CATALOG_FILTERS,
@@ -22,6 +22,7 @@ import {
 
 type CatalogExplorerClientProps = {
   products: CatalogProduct[]
+  searchParams: Record<string, string | string[] | undefined>
 }
 
 function parseIndustry(value: string | null): CatalogIndustryKey | 'all' {
@@ -36,21 +37,29 @@ function parseAvailability(value: string | null): CatalogAvailability | 'all' {
   return 'all'
 }
 
-function readFilters(searchParams: Pick<URLSearchParams, 'get'>): CatalogFilters {
+function getParam(
+  searchParams: Record<string, string | string[] | undefined>,
+  key: string,
+): string | null {
+  const value = searchParams[key]
+  if (Array.isArray(value)) return value[0] || null
+  return value || null
+}
+
+function readFilters(searchParams: Record<string, string | string[] | undefined>): CatalogFilters {
   return {
-    industry: parseIndustry(searchParams.get('industry')),
-    bagType: searchParams.get('bagType') || 'all',
-    size: searchParams.get('size') || 'all',
-    color: searchParams.get('color') || 'all',
-    availability: parseAvailability(searchParams.get('availability')),
-    usaMadeOnly: searchParams.get('usaMade') === '1',
-    seasonalOnly: searchParams.get('seasonal') === '1',
-    search: searchParams.get('search') || '',
+    industry: parseIndustry(getParam(searchParams, 'industry')),
+    bagType: getParam(searchParams, 'bagType') || 'all',
+    size: getParam(searchParams, 'size') || 'all',
+    color: getParam(searchParams, 'color') || 'all',
+    availability: parseAvailability(getParam(searchParams, 'availability')),
+    usaMadeOnly: getParam(searchParams, 'usaMade') === '1',
+    seasonalOnly: getParam(searchParams, 'seasonal') === '1',
+    search: getParam(searchParams, 'search') || '',
   }
 }
 
-export default function CatalogExplorerClient({ products }: CatalogExplorerClientProps) {
-  const searchParams = useSearchParams()
+export default function CatalogExplorerClient({ products, searchParams }: CatalogExplorerClientProps) {
   const pathname = usePathname()
   const router = useRouter()
 
@@ -60,7 +69,7 @@ export default function CatalogExplorerClient({ products }: CatalogExplorerClien
 
   const updateFilters = (updates: Partial<CatalogFilters>) => {
     const next: CatalogFilters = { ...filters, ...updates }
-    const params = new URLSearchParams(searchParams.toString())
+    const params = new URLSearchParams()
 
     const setParam = (key: string, value: string, defaultValue: string) => {
       if (!value || value === defaultValue) {

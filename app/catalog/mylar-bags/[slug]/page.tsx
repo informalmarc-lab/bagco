@@ -10,6 +10,7 @@ import {
   getMylarProductBySlug,
   isLargeStorageMylar,
 } from '@/lib/mylarCatalog'
+import { buildProductJsonLd, buildProductMetadata } from '@/lib/seo/productSeo'
 
 export async function generateStaticParams() {
   return getAllMylarProducts().map((item) => ({ slug: item.slug }))
@@ -24,12 +25,12 @@ export async function generateMetadata({
   const product = getMylarProductBySlug(slug)
   if (!product) return {}
 
-  return {
-    title: `${product.name} | ${product.sku}`,
-    description:
-      `${product.name} mylar bags in ${product.finish} finish, packed ${formatMylarQuantityLabel(product.quantity)} ` +
-      `at ${money(product.price)} per ${formatMylarQuantityLabel(product.quantity)}.`,
-  }
+  return buildProductMetadata({
+    name: product.name,
+    description: product.description,
+    urlPath: `/catalog/mylar-bags/${product.slug}`,
+    imagePath: product.image,
+  })
 }
 
 export default async function MylarProductPage({
@@ -62,9 +63,20 @@ export default async function MylarProductPage({
     unit: 'pack' as const,
     unitLabel: formatMylarQuantityLabel(product.quantity),
   }
+  const jsonLd = buildProductJsonLd({
+    name: product.name,
+    imagePath: product.image,
+    description: product.description,
+    urlPath: `/catalog/mylar-bags/${product.slug}`,
+    price: product.price,
+  })
 
   return (
     <div className="pb-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <section className="page-hero">
         <div className="page-hero-inner">
           <nav className="text-sm font-semibold text-[#5F4D33]">

@@ -1,7 +1,11 @@
 import { getAllCatalogProducts } from '@/lib/catalogProducts'
 import CatalogExplorerClient from '@/components/CatalogExplorerClient'
 
-export default function CatalogExplorer() {
+type CatalogExplorerProps = {
+  searchParams?: Record<string, string | string[] | undefined>
+}
+
+export default function CatalogExplorer({ searchParams = {} }: CatalogExplorerProps) {
   const products = getAllCatalogProducts()
-  return <CatalogExplorerClient products={products} />
+  return <CatalogExplorerClient products={products} searchParams={searchParams} />
 }

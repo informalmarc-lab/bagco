@@ -16,6 +16,7 @@ import {
   isCatalogProductQuoteOnly,
   money,
 } from '@/lib/catalogProducts'
+import { buildProductJsonLd, buildProductMetadata } from '@/lib/seo/productSeo'
 
 const ACTIVE_FOLDER_SET = new Set<string>(INDUSTRY_ORDER)
 
@@ -61,13 +62,12 @@ export async function generateMetadata({
   const sizeOption = getCatalogProductSizes(product).find((item) => item.slug === size)
   if (!sizeOption) return {}
 
-  return {
-    title: `${product.sku} ${sizeOption.label} | Bag Supply Co`,
-    description: `${product.name} ${sizeOption.label} pricing and case details.`,
-    alternates: {
-      canonical: getCatalogSizePath(product, sizeOption.slug),
-    },
-  }
+  return buildProductMetadata({
+    name: `${product.name} - ${sizeOption.label}`,
+    description: `${product.description} Size: ${sizeOption.label}.`,
+    urlPath: getCatalogSizePath(product, sizeOption.slug),
+    imagePath: product.image,
+  })
 }
 
 export default async function CatalogSkuSizePage({
@@ -103,9 +103,20 @@ export default async function CatalogSkuSizePage({
     unit: 'case' as const,
     sizeLabel: selectedSize.label,
   }
+  const jsonLd = buildProductJsonLd({
+    name: `${product.name} - ${selectedSize.label}`,
+    imagePath: product.image,
+    description: `${product.description} Size: ${selectedSize.label}.`,
+    urlPath: getCatalogSizePath(product, selectedSize.slug),
+    price: pricingRows[0].price,
+  })
 
   return (
     <div className="pb-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <section className="page-hero">
         <div className="page-hero-inner">
           <nav className="text-sm font-semibold text-[#5F4D33]">
