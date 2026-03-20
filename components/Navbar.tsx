@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { type FocusEvent, useEffect, useState } from 'react'
 import CartLink from '@/components/cart/CartLink'
 import { contactTextHref } from '@/components/siteConfig'
 
@@ -35,6 +35,7 @@ export default function Navbar() {
   const [search, setSearch] = useState('')
   const [showMobileSearch, setShowMobileSearch] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [openDesktopMenu, setOpenDesktopMenu] = useState<'catalog' | 'industries' | null>(null)
   const pathname = usePathname()
   const router = useRouter()
   const isActive = (href: string) => {
@@ -56,6 +57,18 @@ export default function Navbar() {
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  useEffect(() => {
+    setOpenDesktopMenu(null)
+  }, [pathname])
+
+  const closeDesktopMenu = () => setOpenDesktopMenu(null)
+
+  const handleDesktopMenuBlur = (event: FocusEvent<HTMLDivElement>) => {
+    if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+      closeDesktopMenu()
+    }
+  }
 
   return (
     <header
@@ -81,43 +94,72 @@ export default function Navbar() {
             <Link
               href="/"
               className={`nav-chip ${pathname === '/' ? 'nav-chip-active' : ''}`}
+              onClick={closeDesktopMenu}
             >
               Home
             </Link>
-            <div className="group relative">
+            <div
+              className="relative flex h-10 items-center"
+              onMouseEnter={() => setOpenDesktopMenu('catalog')}
+              onMouseLeave={closeDesktopMenu}
+              onFocus={() => setOpenDesktopMenu('catalog')}
+              onBlur={handleDesktopMenuBlur}
+            >
               <Link
                 href="/catalog"
                 className={`nav-chip ${pathname.startsWith('/catalog') ? 'nav-chip-active' : ''}`}
                 aria-haspopup="menu"
+                aria-expanded={openDesktopMenu === 'catalog'}
+                onClick={closeDesktopMenu}
               >
                 Catalogs
               </Link>
-              <div className="pointer-events-none absolute left-0 top-[calc(100%+8px)] z-30 w-64 rounded-xl border border-[#C4935A66] bg-white p-2 opacity-0 shadow-[0_14px_30px_rgba(30,77,43,0.14)] transition-all group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100">
+              <div
+                className={`absolute left-0 top-[calc(100%+8px)] z-30 w-64 rounded-xl border border-[#C4935A66] bg-white p-2 shadow-[0_14px_30px_rgba(30,77,43,0.14)] transition-all ${
+                  openDesktopMenu === 'catalog' ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
+                }`}
+              >
                 {catalogLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
                     className="block rounded-md px-3 py-2 text-sm font-semibold text-[#1E4D2B] hover:bg-[#FAF6F0] focus:bg-[#FAF6F0]"
+                    onClick={closeDesktopMenu}
                   >
                     {link.label}
                   </Link>
                 ))}
               </div>
             </div>
-            <div className="group relative">
+            <div
+              className="relative flex h-10 items-center"
+              onMouseEnter={() => setOpenDesktopMenu('industries')}
+              onMouseLeave={closeDesktopMenu}
+              onFocus={() => setOpenDesktopMenu('industries')}
+              onBlur={handleDesktopMenuBlur}
+            >
               <Link
                 href="/industries"
                 className={`nav-chip ${pathname.startsWith('/industries') ? 'nav-chip-active' : ''}`}
                 aria-haspopup="menu"
+                aria-expanded={openDesktopMenu === 'industries'}
+                onClick={closeDesktopMenu}
               >
                 Industries
               </Link>
-              <div className="pointer-events-none absolute left-0 top-[calc(100%+8px)] z-30 w-56 rounded-xl border border-[#C4935A66] bg-white p-2 opacity-0 shadow-[0_14px_30px_rgba(30,77,43,0.14)] transition-all group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100">
+              <div
+                className={`absolute left-0 top-[calc(100%+8px)] z-30 w-56 rounded-xl border border-[#C4935A66] bg-white p-2 shadow-[0_14px_30px_rgba(30,77,43,0.14)] transition-all ${
+                  openDesktopMenu === 'industries'
+                    ? 'pointer-events-auto opacity-100'
+                    : 'pointer-events-none opacity-0'
+                }`}
+              >
                 {industryLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
                     className="block rounded-md px-3 py-2 text-sm font-semibold text-[#1E4D2B] hover:bg-[#FAF6F0] focus:bg-[#FAF6F0]"
+                    onClick={closeDesktopMenu}
                   >
                     {link.label}
                   </Link>
@@ -129,6 +171,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={`nav-chip ${isActive(link.href) ? 'nav-chip-active' : ''}`}
+                onClick={closeDesktopMenu}
               >
                 {link.label}
               </Link>

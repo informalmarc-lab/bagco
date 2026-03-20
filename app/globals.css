@@ -250,7 +250,7 @@ select {
   }
 
   .nav-chip {
-    @apply relative px-3 py-2 text-sm font-semibold text-[#1E4D2B];
+    @apply relative inline-flex h-10 items-center px-3 text-sm font-semibold text-[#1E4D2B];
   }
 
   .nav-chip:hover {
