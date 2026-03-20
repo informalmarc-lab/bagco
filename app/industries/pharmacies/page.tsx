@@ -1,31 +1,303 @@
 import type { Metadata } from 'next'
-import IndustryLandingPage from '@/components/IndustryLandingPage'
+import Link from 'next/link'
+import FallbackImage from '@/components/FallbackImage'
+import { contactPhone, contactPhoneHref, contactTextHref } from '@/components/siteConfig'
+import { getCatalogOverviewPath, getCatalogProductBySlug, money, type CatalogProduct } from '@/lib/catalogProducts'
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Custom Pharmacy Bags & Rx Bags | Bulk Paper Bag Manufacturer | Bag Supply Co',
+    absolute: 'Pharmacy Packaging Programs | Stock and Custom Pharmacy Bags | Bag Supply Co',
   },
   description:
-    'Stock and custom printed pharmacy bags in all standard Rx sizes. Low minimums, 3-4 week lead times, recurring reorder programs.',
+    'Stock and custom pharmacy bag programs for independent pharmacies that need reliable prescription bag sizes, branded carry-out options, and cleaner quote routing.',
+  alternates: {
+    canonical: '/industries/pharmacies',
+  },
+}
+
+const featuredPharmacySlugs = [
+  'pharmacy-bag-gs-design',
+  'pharmacy-bag-thank-you-design',
+  'pharmacy-bags-plastic-gs-design',
+] as const
+
+const featuredCustomSlugs = [
+  'full-custom-1-color-bags',
+  'full-custom-2-color-bags',
+  'full-custom-3-color-bags',
+] as const
+
+const aboutPoints = [
+  'Stocked prescription bag programs keep daily script handoff fast and predictable.',
+  'Branded carry-out options help independent pharmacies reinforce trust at checkout.',
+  'One quote path makes it easier to plan stock replenishment and custom print together.',
+]
+
+type FeaturedPharmacyCard = {
+  id: string
+  sku: string
+  familyName: string
+  sizeLabel: string
+  caseCount: string
+  price: number
+  image: string
+  href: string
+}
+
+function getFeaturedPharmacyCards(): FeaturedPharmacyCard[] {
+  return featuredPharmacySlugs.flatMap((slug) => {
+    const product = getCatalogProductBySlug(slug)
+    if (!product) return []
+
+    const sizeRows = product.sizePricing?.slice(0, 2) || []
+
+    return sizeRows.map((row) => {
+      const sizeLabel = row.label.replace(/\s+\d[\d,]*\s+per case$/i, '').trim()
+      const caseCountMatch = row.label.match(/(\d[\d,]*)\s+per case$/i)
+
+      return {
+        id: `${product.sku}-${sizeLabel}`,
+        sku: product.sku,
+        familyName: product.name,
+        sizeLabel,
+        caseCount: caseCountMatch ? `${caseCountMatch[1]} per case` : product.caseCount,
+        price: row.price,
+        image: product.image,
+        href: getCatalogOverviewPath(product),
+      }
+    })
+  })
+}
+
+function getFeaturedCustomProducts(): CatalogProduct[] {
+  return featuredCustomSlugs
+    .map((slug) => getCatalogProductBySlug(slug))
+    .filter((product): product is CatalogProduct => Boolean(product))
 }
 
 export default function PharmaciesIndustryPage() {
+  const heroProduct = getCatalogProductBySlug('pharmacy-bag-gs-design')
+  const paperCards = getFeaturedPharmacyCards()
+  const customProducts = getFeaturedCustomProducts()
+
   return (
-    <IndustryLandingPage
-      industry="pharmacy"
-      title="Pharmacy Packaging Programs"
-      description="Keep pharmacy checkout smooth with stock and custom bag options built around script volume, case counts, and predictable replenishment."
-      bottomCatalogHref="/catalog/pharmacy"
-      bottomCatalogLabel="Open Pharmacy Catalog"
-      deepDiveSection={{
-        title: 'Choosing the Right Pharmacy Bag for Your Operation',
-        paragraphs: [
-          'Selecting the right pharmacy paper bag starts with understanding prescription mix, pickup flow, and shelf space at your counter. Most operations rotate through a small set of core formats, especially 5x2x10, 6x4x11, 7x4x13, and 10x5x15. Smaller sizes handle single-script pickups and blister packs, while medium and large bags support multi-script orders, over-the-counter add-ons, and specialty items. Standardizing around the right pharmacy bag sizes keeps purchasing cleaner and minimizes partial-case leftovers that create waste.',
-          'When evaluating custom pharmacy bags, teams should compare stock availability against branding goals. Stock lines are ideal for immediate demand and tighter reorder windows, while custom printed rx bags support stronger brand recall at handoff. A practical strategy is to run stock for baseline volume and layer in custom pharmacy bags for higher-traffic locations or growth periods. Working with an rx bags manufacturer that supports both tracks gives you flexibility without changing vendors when your needs shift.',
-          'For high-volume stores, reorder cadence is as important as unit cost. Pharmacy paper bags bulk ordering works best when tied to script counts and refill behavior, not guesswork. If weekly volume is stable, monthly replenishment can reduce admin burden; if volume swings seasonally, biweekly ordering often prevents overstock and stockouts. This is where lead time matters: a delayed custom run can disrupt operations if there is no stock buffer. Reliable 3-4 week planning for custom orders plus stock backup inventory helps pharmacies stay consistent, protect front-counter speed, and maintain a professional patient experience every day.',
-        ],
-      }}
-    />
+    <div className="pb-16">
+      <section className="page-hero overflow-hidden">
+        <div className="page-hero-inner relative">
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-52 bg-[radial-gradient(circle_at_top,rgba(181,129,58,0.24),transparent_70%)]" />
+          <div className="relative split-panel items-start">
+            <div>
+              <p className="kicker">Pharmacy Programs</p>
+              <h1 className="heading-display mt-5">
+                Pharmacy bag programs built for independent counters that need stock now and branded carry-out later.
+              </h1>
+              <p className="mt-5 max-w-3xl text-lg muted-text">
+                Keep prescription pickup moving with stocked paper pharmacy bags, then layer in custom print when you
+                are ready to tighten up patient-facing branding across your locations.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-[#1E4D2B]">
+                  6 featured size cards
+                </span>
+                <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-[#1E4D2B]">
+                  3 custom print options
+                </span>
+                <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-[#1E4D2B]">
+                  Stock + custom planning
+                </span>
+              </div>
+              <div className="mt-7 flex flex-wrap gap-3">
+                <Link href="/generic-bag-quote" className="btn-primary">
+                  Build a Quote
+                </Link>
+                <Link href="/catalog/pharmacy" className="btn-secondary">
+                  View All Pharmacy Bags
+                </Link>
+                <Link href="/catalog/custom" className="btn-secondary">
+                  View Custom Bag Options
+                </Link>
+              </div>
+            </div>
+
+            <div className="hero-panel overflow-hidden">
+              <div className="grid gap-4">
+                {heroProduct && (
+                  <Link
+                    href={getCatalogOverviewPath(heroProduct)}
+                    className="relative block aspect-[4/3] overflow-hidden rounded-2xl border border-[#C4935A66] bg-[#FAF6F0]"
+                  >
+                    <FallbackImage
+                      src={heroProduct.image}
+                      fallbackSrc="/images/catalog/placeholder.svg"
+                      alt={heroProduct.name}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 44vw"
+                      priority
+                    />
+                  </Link>
+                )}
+                <div className="grid gap-2 text-sm font-semibold text-[#5F4D33] sm:grid-cols-2">
+                  <p className="surface-card rounded-xl px-3 py-2">Stock sizes cover the most common prescription pickup formats.</p>
+                  <p className="surface-card rounded-xl px-3 py-2">Custom print adds branded carry-out without changing suppliers.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-container py-20">
+        <div className="grid gap-4 md:grid-cols-[1.15fr_0.85fr]">
+          <div className="tonal-panel">
+            <p className="kicker">About</p>
+            <h2 className="section-title mt-4">Built for pharmacies that want cleaner handoff, steadier inventory, and easier reordering.</h2>
+            <p className="mt-4 text-sm leading-7 text-[#5F4D33] md:text-base">
+              Independent pharmacies usually need a packaging mix that does two jobs at once: support daily script
+              volume with ready-to-ship stock bags and give the front counter a more polished branded handoff when
+              custom print makes sense. This page is structured around that exact workflow.
+            </p>
+            <p className="mt-4 text-sm leading-7 text-[#5F4D33] md:text-base">
+              Start with the most-used prescription sizes, then move into custom 1-color, 2-color, or 3-color options
+              when you want stronger carry-out recognition. Keeping both lanes under one supplier makes replenishment
+              easier and reduces friction for repeat quote requests.
+            </p>
+          </div>
+
+          <div className="tonal-panel">
+            <p className="kicker">Why It Works</p>
+            <div className="mt-5 grid gap-3">
+              {aboutPoints.map((point) => (
+                <div key={point} className="surface-card rounded-xl px-4 py-3 text-sm font-semibold text-[#1E4D2B]">
+                  {point}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-container pt-2">
+        <div className="tonal-panel">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="kicker">Paper Bags</p>
+              <h2 className="section-title mt-4">Six featured pharmacy bag size cards built from the most-used stock families.</h2>
+              <p className="mt-3 max-w-3xl muted-text">
+                We pulled the top two size rows from each current pharmacy family so you can compare common stock
+                formats without digging through the full catalog first.
+              </p>
+            </div>
+            <Link href="/catalog/pharmacy" className="btn-secondary">
+              View All Pharmacy Bags
+            </Link>
+          </div>
+
+          <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {paperCards.map((card) => (
+              <article key={card.id} className="surface-card product-card flex h-full flex-col">
+                <Link href={card.href} className="relative block aspect-[4/3] bg-[#FAF6F0]">
+                  <FallbackImage
+                    src={card.image}
+                    fallbackSrc="/images/catalog/placeholder.svg"
+                    alt={`${card.familyName} ${card.sizeLabel}`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                  />
+                </Link>
+                <div className="flex flex-1 flex-col p-4">
+                  <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">SKU {card.sku}</p>
+                  <h3 className="mt-2 text-lg font-black text-[#1E4D2B]">
+                    <Link href={card.href} className="transition hover:text-[#B5813A]">
+                      {card.familyName}
+                    </Link>
+                  </h3>
+                  <p className="mt-2 text-sm font-semibold text-[#5F4D33]">{card.sizeLabel}</p>
+                  <p className="mt-1 text-sm text-[#5F4D33]">{card.caseCount}</p>
+                  <p className="mt-2 product-card-price">{money(card.price)} / case</p>
+                  <div className="mt-auto pt-4">
+                    <Link href="/generic-bag-quote" className="btn-primary">
+                      Build a Quote
+                    </Link>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-container pt-2">
+        <div className="tonal-panel">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="kicker">Custom Bags</p>
+              <h2 className="section-title mt-4">Custom 1-color, 2-color, and 3-color pharmacy bag programs.</h2>
+              <p className="mt-3 max-w-3xl muted-text">
+                Use the same core prescription sizes in a custom print lane when you are ready to standardize branding
+                across independent locations, recurring orders, or higher-traffic counters.
+              </p>
+            </div>
+            <Link href="/generic-bag-quote" className="btn-secondary">
+              Get a Quote
+            </Link>
+          </div>
+
+          <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {customProducts.map((product) => (
+              <article key={product.sku} className="surface-card product-card flex h-full flex-col">
+                <div className="relative aspect-[4/3] bg-[#FAF6F0]">
+                  <FallbackImage
+                    src={product.image}
+                    fallbackSrc="/images/catalog/placeholder.svg"
+                    alt={product.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-4">
+                  <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">SKU {product.sku}</p>
+                  <h3 className="mt-2 text-lg font-black text-[#1E4D2B]">{product.name}</h3>
+                  <p className="mt-2 text-sm text-[#5F4D33]">{product.caseCount}</p>
+                  <p className="mt-1 text-sm text-[#5F4D33]">Standard Rx sizes plus flat and gusset-bottom formats.</p>
+                  <p className="mt-2 product-card-price">From {money(product.startingPrice)} / case</p>
+                  <div className="mt-auto pt-4">
+                    <Link href="/generic-bag-quote" className="btn-primary">
+                      Get a Quote
+                    </Link>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-container pt-2">
+        <div className="rounded-[2rem] bg-[linear-gradient(135deg,#1E4D2B,#225935_55%,#15361F)] p-8 text-white shadow-[0_24px_48px_rgba(30,77,43,0.28)] md:p-10">
+          <p className="kicker text-[#F4E8D8]">Contact CTA</p>
+          <h2 className="heading-display mt-4 max-w-4xl text-[2.4rem] leading-tight text-white md:text-[3.2rem]">
+            Ready to line up a pharmacy bag program that covers both stock and branded carry-out?
+          </h2>
+          <p className="mt-4 max-w-3xl text-base leading-7 text-[#F4E8D8]">
+            Start with the quote and we can help you map the right prescription bag sizes, custom print path, and
+            reorder cadence for your pharmacy operation.
+          </p>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <Link href="/generic-bag-quote" className="btn-primary">
+              Build a Quote
+            </Link>
+            <a href={contactTextHref} className="btn-secondary">
+              Text {contactPhone}
+            </a>
+            <a href={contactPhoneHref} className="btn-secondary">
+              Call {contactPhone}
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
   )
 }
-

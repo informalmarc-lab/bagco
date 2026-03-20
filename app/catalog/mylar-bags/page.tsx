@@ -137,7 +137,7 @@ export default function MylarCatalogPage() {
       <section className="section-container pt-2">
         <div className="tonal-panel">
           <p className="kicker">Plain Stock</p>
-          <h2 className="section-title mt-4">Plain Stock Mylar (1,000 qty)</h2>
+          <h2 className="section-title mt-4">Plain Stock Mylar</h2>
           <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
             {plain.map((item) => (
               <ProductCard key={item.slug} {...item} />
