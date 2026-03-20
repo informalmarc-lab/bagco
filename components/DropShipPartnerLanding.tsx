@@ -600,7 +600,7 @@ export default function DropShipPartnerLanding() {
               We onboard new drop ship partners on a rolling basis — reach out early to get your account set up
               before your next selling season.
             </p>
-            <a href="/api/partners/dropship-application" className="btn-secondary mt-6">
+            <a href="/api/partners/dropship-application" className="btn-secondary-inverse mt-6">
               Download Partner Application
             </a>
             <div className="mt-8 grid gap-4 md:grid-cols-2">

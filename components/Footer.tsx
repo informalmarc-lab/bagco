@@ -26,7 +26,7 @@ export default function Footer() {
             <Link href="/generic-bag-quote" className="btn-primary">
               Build a Quote
             </Link>
-            <a href={contactTextHref} className="btn-quiet border-[#F4E8D899] text-[#FAF6F0] hover:bg-[#F4E8D822]">
+            <a href={contactTextHref} className="btn-secondary-inverse">
               Text {contactPhone}
             </a>
           </div>

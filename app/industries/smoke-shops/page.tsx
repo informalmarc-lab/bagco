@@ -346,19 +346,19 @@ export default function SmokeShopsIndustryPage() {
             </Link>
             <Link
               href="/catalog?industry=smoke-shop"
-              className="btn-secondary border-[#F4E8D8] text-[#FAF6F0] hover:border-[#FAF6F0] hover:bg-[#FAF6F0] hover:text-[#1E4D2B]"
+              className="btn-secondary-inverse"
             >
               Browse Smoke Shop Catalog
             </Link>
             <a
               href={contactTextHref}
-              className="btn-secondary border-[#F4E8D8] text-[#FAF6F0] hover:border-[#FAF6F0] hover:bg-[#FAF6F0] hover:text-[#1E4D2B]"
+              className="btn-secondary-inverse"
             >
               Text {contactPhone}
             </a>
             <a
               href={contactPhoneHref}
-              className="btn-secondary border-[#F4E8D8] text-[#FAF6F0] hover:border-[#FAF6F0] hover:bg-[#FAF6F0] hover:text-[#1E4D2B]"
+              className="btn-secondary-inverse"
             >
               Call {contactPhone}
             </a>

@@ -62,6 +62,18 @@ export default function Navbar() {
     setOpenDesktopMenu(null)
   }, [pathname])
 
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setOpenDesktopMenu(null)
+        setShowMobileSearch(false)
+      }
+    }
+
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [])
+
   const closeDesktopMenu = () => setOpenDesktopMenu(null)
 
   const handleDesktopMenuBlur = (event: FocusEvent<HTMLDivElement>) => {
@@ -90,7 +102,7 @@ export default function Navbar() {
             </div>
           </Link>
 
-          <div className="hidden items-center gap-1 lg:flex">
+          <div className="hidden items-center gap-1 xl:gap-2 lg:flex">
             <Link
               href="/"
               className={`nav-chip ${pathname === '/' ? 'nav-chip-active' : ''}`}
@@ -99,7 +111,7 @@ export default function Navbar() {
               Home
             </Link>
             <div
-              className="relative flex h-10 items-center"
+              className="relative flex h-11 items-center"
               onMouseEnter={() => setOpenDesktopMenu('catalog')}
               onMouseLeave={closeDesktopMenu}
               onFocus={() => setOpenDesktopMenu('catalog')}
@@ -123,7 +135,7 @@ export default function Navbar() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="block rounded-md px-3 py-2 text-sm font-semibold text-[#1E4D2B] hover:bg-[#FAF6F0] focus:bg-[#FAF6F0]"
+                    className="block rounded-md px-4 py-2.5 text-sm font-semibold text-[#1E4D2B] hover:bg-[#FAF6F0] focus:bg-[#FAF6F0]"
                     onClick={closeDesktopMenu}
                   >
                     {link.label}
@@ -132,7 +144,7 @@ export default function Navbar() {
               </div>
             </div>
             <div
-              className="relative flex h-10 items-center"
+              className="relative flex h-11 items-center"
               onMouseEnter={() => setOpenDesktopMenu('industries')}
               onMouseLeave={closeDesktopMenu}
               onFocus={() => setOpenDesktopMenu('industries')}
@@ -158,7 +170,7 @@ export default function Navbar() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="block rounded-md px-3 py-2 text-sm font-semibold text-[#1E4D2B] hover:bg-[#FAF6F0] focus:bg-[#FAF6F0]"
+                    className="block rounded-md px-4 py-2.5 text-sm font-semibold text-[#1E4D2B] hover:bg-[#FAF6F0] focus:bg-[#FAF6F0]"
                     onClick={closeDesktopMenu}
                   >
                     {link.label}
@@ -178,7 +190,7 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="hidden w-full max-w-[280px] items-center gap-2 lg:flex">
+          <div className="hidden w-full max-w-[220px] items-center gap-2 xl:max-w-[280px] lg:flex">
             <input
               type="search"
               value={search}
@@ -186,19 +198,20 @@ export default function Navbar() {
               onKeyDown={(event) => {
                 if (event.key === 'Enter') submitSearch()
               }}
-              placeholder="Search bags, sizes, industries..."
-              className="w-full rounded-md border border-[#C4935A66] bg-white px-3 py-2 text-sm text-[#1E4D2B]"
+              placeholder="Search catalog..."
+              className="h-11 w-full rounded-md border border-[#C4935A66] bg-white px-3 text-sm text-[#1E4D2B]"
               aria-label="Search bags, sizes, industries"
             />
-            <button type="button" onClick={submitSearch} className="btn-secondary px-3 py-2">
+            <button type="button" onClick={submitSearch} className="btn-secondary h-11 min-w-11 px-4">
               Go
             </button>
           </div>
 
           <div className="hidden items-center gap-2 lg:flex">
             <CartLink />
-            <a href={contactTextHref} className="btn-primary">
-              Text (704) 862-9256
+            <a href={contactTextHref} className="btn-primary min-h-[44px] px-4">
+              <span className="xl:hidden">Text Us</span>
+              <span className="hidden xl:inline">Text (704) 862-9256</span>
             </a>
           </div>
 
@@ -223,7 +236,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setShowMobileSearch((prev) => !prev)}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-[#C4935A66] bg-white text-[#1E4D2B]"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-[#C4935A66] bg-white text-[#1E4D2B]"
             aria-label="Toggle search"
           >
             {'\u{1F50E}'}
@@ -238,10 +251,10 @@ export default function Navbar() {
                   if (event.key === 'Enter') submitSearch()
                 }}
                 placeholder="Search bags, sizes, industries..."
-                className="w-full rounded-md border border-[#C4935A66] bg-white px-3 py-2 text-sm text-[#1E4D2B]"
+                className="h-11 w-full rounded-md border border-[#C4935A66] bg-white px-3 text-sm text-[#1E4D2B]"
                 aria-label="Search bags, sizes, industries"
               />
-              <button type="button" onClick={submitSearch} className="btn-secondary px-3 py-2">
+              <button type="button" onClick={submitSearch} className="btn-secondary h-11 min-w-11 px-4">
                 Go
               </button>
             </div>
@@ -254,64 +267,18 @@ export default function Navbar() {
               <div className="grid gap-1">
                 <Link
                   href="/"
-                  className={`rounded-lg px-3 py-2 text-sm font-semibold ${
+                  className={`rounded-lg px-4 py-2.5 text-sm font-semibold ${
                     pathname === '/' ? 'bg-[#1E4D2B] text-white' : 'text-[#1E4D2B] hover:bg-[#FAF6F0]'
                   }`}
                   onClick={() => setIsOpen(false)}
                 >
                   Home
                 </Link>
-                <Link
-                  href="/industries"
-                  className={`rounded-lg px-3 py-2 text-sm font-semibold ${
-                    pathname.startsWith('/industries') ? 'bg-[#1E4D2B] text-white' : 'text-[#1E4D2B] hover:bg-[#FAF6F0]'
-                  }`}
-                  onClick={() => setIsOpen(false)}
-                >
-                  Industries
-                </Link>
-                <Link
-                  href="/catalog"
-                  className={`rounded-lg px-3 py-2 text-sm font-semibold ${
-                    pathname.startsWith('/catalog') ? 'bg-[#1E4D2B] text-white' : 'text-[#1E4D2B] hover:bg-[#FAF6F0]'
-                  }`}
-                  onClick={() => setIsOpen(false)}
-                >
-                  Catalogs
-                </Link>
-                <div className="grid gap-1 border-l border-[#C4935A66] pl-3">
-                  {catalogLinks.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className={`rounded-lg px-3 py-2 text-sm font-semibold ${
-                        isActive(link.href) ? 'bg-[#1E4D2B] text-white' : 'text-[#1E4D2B] hover:bg-[#FAF6F0]'
-                      }`}
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
-                </div>
-                <div className="grid gap-1 border-l border-[#C4935A66] pl-3">
-                  {industryLinks.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className={`rounded-lg px-3 py-2 text-sm font-semibold ${
-                        isActive(link.href) ? 'bg-[#1E4D2B] text-white' : 'text-[#1E4D2B] hover:bg-[#FAF6F0]'
-                      }`}
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
-                </div>
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`rounded-lg px-3 py-2 text-sm font-semibold ${
+                    className={`rounded-lg px-4 py-2.5 text-sm font-semibold ${
                       isActive(link.href) ? 'bg-[#1E4D2B] text-white' : 'text-[#1E4D2B] hover:bg-[#FAF6F0]'
                     }`}
                     onClick={() => setIsOpen(false)}
@@ -319,13 +286,70 @@ export default function Navbar() {
                     {link.label}
                   </Link>
                 ))}
+              </div>
+
+              <div className="mt-4">
+                <div className="flex items-center justify-between gap-3 px-1">
+                  <p className="text-[11px] font-black uppercase tracking-[0.14em] text-[#7A6548]">Catalogs</p>
+                  <Link
+                    href="/catalog"
+                    className="text-xs font-bold text-[#1E4D2B] underline-offset-2 hover:text-[#B5813A] hover:underline"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Open All
+                  </Link>
+                </div>
+                <div className="mt-2 grid gap-1 border-l border-[#C4935A66] pl-3">
+                  {catalogLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className={`rounded-lg px-4 py-2.5 text-sm font-semibold ${
+                        isActive(link.href) ? 'bg-[#1E4D2B] text-white' : 'text-[#1E4D2B] hover:bg-[#FAF6F0]'
+                      }`}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-4">
+                <div className="flex items-center justify-between gap-3 px-1">
+                  <p className="text-[11px] font-black uppercase tracking-[0.14em] text-[#7A6548]">Industries</p>
+                  <Link
+                    href="/industries"
+                    className="text-xs font-bold text-[#1E4D2B] underline-offset-2 hover:text-[#B5813A] hover:underline"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Open All
+                  </Link>
+                </div>
+                <div className="mt-2 grid gap-1 border-l border-[#C4935A66] pl-3">
+                  {industryLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className={`rounded-lg px-4 py-2.5 text-sm font-semibold ${
+                        isActive(link.href) ? 'bg-[#1E4D2B] text-white' : 'text-[#1E4D2B] hover:bg-[#FAF6F0]'
+                      }`}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-4">
                 <CartLink mobile onClick={() => setIsOpen(false)} />
               </div>
               <div className="mt-3 grid gap-2 sm:grid-cols-2">
-                <a href={contactTextHref} className="btn-secondary justify-center">
+                <a href={contactTextHref} className="btn-secondary min-h-[44px] justify-center">
                   Text (704) 862-9256
                 </a>
-                <Link href="/about" className="btn-secondary justify-center" onClick={() => setIsOpen(false)}>
+                <Link href="/about" className="btn-secondary min-h-[44px] justify-center" onClick={() => setIsOpen(false)}>
                   About
                 </Link>
               </div>
