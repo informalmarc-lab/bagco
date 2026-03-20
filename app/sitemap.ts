@@ -5,6 +5,7 @@ import {
   getCatalogProductSizes,
   getCatalogSizePath,
 } from '@/lib/catalogProducts'
+import { getAllRetailProducts } from '@/lib/retailCatalog'
 import { getAllMylarProducts } from '@/lib/mylarCatalog'
 import { CITIES } from '@/lib/seo/cities'
 import { INDUSTRY_PAGES } from '@/lib/seo/industries'
@@ -33,6 +34,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: 'weekly' as const,
   }))
 
+  const retailRoutes = getAllRetailProducts().map((product) => ({
+    route: `/catalog/retail-bags/${product.slug}`,
+    priority: 0.72,
+    changeFrequency: 'weekly' as const,
+  }))
+
   const legacyCatalogProductRoutes = getAllCatalogProducts().map((product) => ({
     route: `/catalog/products/${product.slug}`,
     priority: 0.55,
@@ -46,6 +53,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '/catalog/pharmacy', priority: 0.9, changeFrequency: 'weekly' },
     { route: '/catalog/veterinary', priority: 0.85, changeFrequency: 'weekly' },
     { route: '/catalog/custom', priority: 0.9, changeFrequency: 'weekly' },
+    { route: '/catalog/retail-bags', priority: 0.85, changeFrequency: 'weekly' },
     { route: '/catalog/mylar-bags', priority: 0.86, changeFrequency: 'weekly' },
     { route: '/catalog/labels', priority: 0.84, changeFrequency: 'weekly' },
     { route: '/products', priority: 0.82, changeFrequency: 'weekly' },
@@ -109,6 +117,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...productOverviewRoutes,
     ...productSizeRoutes,
     ...mylarRoutes,
+    ...retailRoutes,
     ...legacyCatalogProductRoutes,
   ]
     .filter(({ route }) => !excludedRoutes.has(route))

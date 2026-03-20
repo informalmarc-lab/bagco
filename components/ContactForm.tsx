@@ -1,7 +1,7 @@
 ﻿'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { FormEvent, useState } from 'react'
 
 type SubmitState = 'idle' | 'submitting' | 'success' | 'error'
 
@@ -35,7 +35,8 @@ export default function ContactForm() {
   const [status, setStatus] = useState<SubmitState>('idle')
   const [errorMessage, setErrorMessage] = useState('')
 
-  const submit = async () => {
+  const submit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
     if (status === 'submitting') return
     if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
       setStatus('error')
@@ -47,17 +48,14 @@ export default function ContactForm() {
     setErrorMessage('')
 
     try {
-      const response = await fetch('/api/lead', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          form_type: 'contact',
-          payload: {
-            ...form,
-            submissionType: 'Contact Form',
-            sourcePage: typeof window !== 'undefined' ? window.location.pathname : '/contact',
-            submitted_at: new Date().toISOString(),
-          },
+          ...form,
+          submissionType: 'Contact Form',
+          sourcePage: typeof window !== 'undefined' ? window.location.pathname : '/contact',
+          submitted_at: new Date().toISOString(),
         }),
       })
 
@@ -99,7 +97,7 @@ export default function ContactForm() {
         Tell us your requirements and we&apos;ll respond with a structured recommendation.
       </p>
 
-      <div className="mt-5 grid gap-4">
+      <form onSubmit={submit} className="mt-5 grid gap-4">
         <div className="grid gap-4 md:grid-cols-2">
           <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
             Full Name *
@@ -229,12 +227,7 @@ export default function ContactForm() {
           aria-hidden="true"
         />
 
-        <button
-          type="button"
-          onClick={submit}
-          disabled={status === 'submitting'}
-          className="btn-primary w-full justify-center disabled:pointer-events-none disabled:opacity-70"
-        >
+        <button type="submit" disabled={status === 'submitting'} className="btn-primary w-full justify-center disabled:pointer-events-none disabled:opacity-70">
           {status === 'submitting' ? (
             <span className="inline-flex items-center gap-2">
               <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
@@ -246,11 +239,11 @@ export default function ContactForm() {
         </button>
 
         {status === 'error' && (
-          <p className="text-sm font-semibold text-red-700">
+          <p className="text-sm font-semibold text-red-700" role="status" aria-live="polite">
             {errorMessage}
           </p>
         )}
-      </div>
+      </form>
     </section>
   )
 }

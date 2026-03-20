@@ -41,8 +41,9 @@ export default function NewsletterSignup({
       })
 
       if (!response.ok) {
+        const payload = await response.json().catch(() => null)
         setStatus('error')
-        setMessage('Unable to subscribe right now. Please try again.')
+        setMessage(payload?.error || 'Unable to subscribe right now. Please try again.')
         return
       }
 
@@ -82,7 +83,11 @@ export default function NewsletterSignup({
 
       <p className="mt-3 text-xs text-[#5F4D33]">{microcopy}</p>
       {message && (
-        <p className={`mt-2 text-xs font-semibold ${status === 'success' ? 'text-[#1E4D2B]' : 'text-[#A44A3F]'}`}>
+        <p
+          className={`mt-2 text-xs font-semibold ${status === 'success' ? 'text-[#1E4D2B]' : 'text-[#A44A3F]'}`}
+          role="status"
+          aria-live="polite"
+        >
           {message}
         </p>
       )}

@@ -135,8 +135,8 @@ export default function QuickQuoteForm() {
         <button type="submit" className="btn-primary w-full justify-center sm:w-auto" disabled={state === 'submitting'}>
           {state === 'submitting' ? 'Submitting...' : 'Build a Quote'}
         </button>
-        {state === 'success' && <p className="text-sm font-semibold text-emerald-700">Quote request sent.</p>}
-        {state === 'error' && <p className="text-sm font-semibold text-red-700">{error}</p>}
+        {state === 'success' && <p className="text-sm font-semibold text-emerald-700" role="status" aria-live="polite">Quote request sent.</p>}
+        {state === 'error' && <p className="text-sm font-semibold text-red-700" role="status" aria-live="polite">{error}</p>}
       </div>
     </form>
   )
