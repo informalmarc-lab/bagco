@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useMemo, useState } from 'react'
 import { useCart } from '@/components/cart/CartProvider'
-import { formatCartUnit, getCartLineTotal } from '@/lib/cart'
+import { formatCartUnit, getCartLineTotal, getCartPriceUnitLabel } from '@/lib/cart'
 import { money } from '@/lib/catalogProducts'
 import type { OrderCustomer, PaymentPreference } from '@/lib/order'
 
@@ -260,7 +260,7 @@ export default function CheckoutPageClient() {
                 {item.sizeLabel && <p className="mt-1 text-sm text-[#5F4D33]">{item.sizeLabel}</p>}
                 <p className="mt-1 text-sm text-[#5F4D33]">{formatCartUnit(item.quantity, item.unit)}</p>
                 <p className="mt-2 text-sm font-semibold text-[#1E4D2B]">
-                  {money(item.unitPrice)} / {item.unit}
+                  {money(item.unitPrice)} / {getCartPriceUnitLabel(item)}
                 </p>
                 <p className="mt-1 text-lg font-black text-[#B5813A]">{money(getCartLineTotal(item))}</p>
               </div>

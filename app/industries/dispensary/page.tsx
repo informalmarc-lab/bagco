@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import AddToCartControl from '@/components/cart/AddToCartControl'
 import { contactPhone, contactPhoneHref, contactTextHref } from '@/components/siteConfig'
 import { getCatalogOverviewPath, getCatalogProductBySlug, money } from '@/lib/catalogProducts'
 import { getAllLabelProducts } from '@/lib/labelCatalog'
-import { getMylarProductBySlug, type MylarProduct } from '@/lib/mylarCatalog'
+import { formatMylarQuantityLabel, getMylarProductBySlug, type MylarProduct } from '@/lib/mylarCatalog'
 
 export const metadata: Metadata = {
   title: {
@@ -214,13 +215,30 @@ export default function DispensaryIndustryPage() {
                 </Link>
                 <div className="p-4">
                   <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">SKU {product.sku}</p>
-                  <h3 className="mt-2 text-lg font-black text-[#1E4D2B]">{product.name}</h3>
+                  <h3 className="mt-2 text-lg font-black text-[#1E4D2B]">
+                    <Link href={`/catalog/mylar-bags/${product.slug}`} className="transition hover:text-[#B5813A]">
+                      {product.name}
+                    </Link>
+                  </h3>
                   <p className="mt-1 text-sm text-[#5F4D33]">{product.size} / {product.finish}</p>
-                  <p className="mt-1 text-sm text-[#5F4D33]">{product.quantity.toLocaleString('en-US')} qty</p>
-                  <p className="mt-2 product-card-price">{money(product.price)} / pack</p>
-                  <Link href={`/catalog/mylar-bags/${product.slug}`} className="btn-secondary mt-4">
-                    View SKU
-                  </Link>
+                  <p className="mt-1 text-sm text-[#5F4D33]">{formatMylarQuantityLabel(product.quantity)}</p>
+                  <p className="mt-2 product-card-price">{money(product.price)} / {formatMylarQuantityLabel(product.quantity)}</p>
+                  <AddToCartControl
+                    item={{
+                      id: `mylar:${product.slug}`,
+                      kind: 'mylar',
+                      sku: product.sku,
+                      slug: product.slug,
+                      name: product.name,
+                      image: product.image,
+                      productHref: `/catalog/mylar-bags/${product.slug}`,
+                      unit: 'pack',
+                      unitLabel: formatMylarQuantityLabel(product.quantity),
+                      unitPrice: product.price,
+                      quantity: 1,
+                    }}
+                    className="mt-4"
+                  />
                 </div>
               </article>
             ))}

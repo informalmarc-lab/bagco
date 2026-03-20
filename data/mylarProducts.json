@@ -647,18 +647,6 @@
       "price": 254,
       "image": "/images/mylar/1-oz-matte-black-opaque-plain.webp",
       "description": "1 oz Matte Black Opaque mylar bag format in Matte Black Opaque finish. Packaged in 1,000 quantity with local Bag Supply Co fulfillment."
-    },
-    {
-      "sku": "MYL-PS-055",
-      "slug": "pre-roll-matte-white-clear-plain",
-      "name": "Pre-Roll Matte White/Clear",
-      "size": "Pre-Roll",
-      "finish": "Matte White/Clear",
-      "quantity": 1000,
-      "type": "plain-stock",
-      "price": 127,
-      "image": "/images/mylar/pre-roll-matte-white-clear-plain.webp",
-      "description": "Pre-Roll Matte White/Clear mylar bag format in Matte White/Clear finish. Packaged in 1,000 quantity with local Bag Supply Co fulfillment."
     }
   ]
 }

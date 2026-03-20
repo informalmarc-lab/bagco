@@ -13,6 +13,7 @@ export type CartItem = {
   quantity: number
   unitPrice: number
   unit: CartUnit
+  unitLabel?: string
   sizeLabel?: string
 }
 
@@ -20,6 +21,10 @@ export const CART_STORAGE_KEY = 'bagsupplyco-cart-v1'
 
 export function formatCartUnit(quantity: number, unit: CartUnit): string {
   return `${quantity} ${unit}${quantity === 1 ? '' : 's'}`
+}
+
+export function getCartPriceUnitLabel(item: CartItem): string {
+  return item.unitLabel || item.unit
 }
 
 export function getCartLineTotal(item: CartItem): number {
@@ -49,6 +54,7 @@ export function isCartItem(value: unknown): value is CartItem {
     Number.isFinite(item.quantity) &&
     typeof item.unitPrice === 'number' &&
     Number.isFinite(item.unitPrice) &&
+    (item.unitLabel === undefined || typeof item.unitLabel === 'string') &&
     (item.unit === 'case' || item.unit === 'pack')
   )
 }

@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useCart } from '@/components/cart/CartProvider'
-import { formatCartUnit, getCartLineTotal } from '@/lib/cart'
+import { formatCartUnit, getCartLineTotal, getCartPriceUnitLabel } from '@/lib/cart'
 import { money } from '@/lib/catalogProducts'
 
 export default function CartPageClient() {
@@ -72,7 +72,7 @@ export default function CartPageClient() {
                         <p className="mt-1 text-sm font-semibold text-[#5F4D33]">{item.sizeLabel}</p>
                       )}
                       <p className="mt-1 text-sm text-[#5F4D33]">
-                        {money(item.unitPrice)} / {item.unit}
+                        {money(item.unitPrice)} / {getCartPriceUnitLabel(item)}
                       </p>
                     </div>
 

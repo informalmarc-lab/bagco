@@ -4,7 +4,12 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import AddToCartControl from '@/components/cart/AddToCartControl'
 import { money } from '@/lib/catalogProducts'
-import { getAllMylarProducts, getMylarProductBySlug } from '@/lib/mylarCatalog'
+import {
+  formatMylarQuantityLabel,
+  getAllMylarProducts,
+  getMylarProductBySlug,
+  isLargeStorageMylar,
+} from '@/lib/mylarCatalog'
 
 export async function generateStaticParams() {
   return getAllMylarProducts().map((item) => ({ slug: item.slug }))
@@ -21,7 +26,9 @@ export async function generateMetadata({
 
   return {
     title: `${product.name} | ${product.sku}`,
-    description: `${product.name} mylar bags in ${product.finish} finish, packed ${product.quantity.toLocaleString('en-US')} qty at ${money(product.price)}.`,
+    description:
+      `${product.name} mylar bags in ${product.finish} finish, packed ${formatMylarQuantityLabel(product.quantity)} ` +
+      `at ${money(product.price)} per ${formatMylarQuantityLabel(product.quantity)}.`,
   }
 }
 
@@ -34,8 +41,13 @@ export default async function MylarProductPage({
   const product = getMylarProductBySlug(slug)
   if (!product) notFound()
 
+  const productIsLargeStorage = isLargeStorageMylar(product)
   const related = getAllMylarProducts()
-    .filter((item) => item.slug !== product.slug && item.type === product.type)
+    .filter((item) => {
+      if (item.slug === product.slug) return false
+      if (productIsLargeStorage) return isLargeStorageMylar(item)
+      return item.type === product.type && !isLargeStorageMylar(item)
+    })
     .slice(0, 3)
   const cartItem = {
     id: `mylar:${product.slug}`,
@@ -48,6 +60,7 @@ export default async function MylarProductPage({
     quantity: 1,
     unitPrice: product.price,
     unit: 'pack' as const,
+    unitLabel: formatMylarQuantityLabel(product.quantity),
   }
 
   return (
@@ -66,7 +79,7 @@ export default async function MylarProductPage({
           <p className="kicker mt-6">Mylar SKU</p>
           <h1 className="heading-display mt-5">{product.name}</h1>
           <p className="mt-3 text-sm font-semibold uppercase tracking-[0.09em] text-[#7A6548]">
-            {product.type === 'designer-printed' ? 'Designer Printed' : 'Plain Stock'}
+            {productIsLargeStorage ? 'Large Storage' : product.type === 'designer-printed' ? 'Designer Printed' : 'Plain Stock'}
           </p>
           <p className="mt-4 max-w-3xl text-lg muted-text">{product.description}</p>
           <div className="mt-6 flex flex-wrap gap-3">
@@ -100,10 +113,10 @@ export default async function MylarProductPage({
               <p><span className="font-semibold text-[#1E4D2B]">Finish:</span> {product.finish}</p>
               <p>
                 <span className="font-semibold text-[#1E4D2B]">Pack Quantity:</span>{' '}
-                {product.quantity.toLocaleString('en-US')}
+                {formatMylarQuantityLabel(product.quantity)}
               </p>
               <p>
-                <span className="font-semibold text-[#1E4D2B]">Price:</span> {money(product.price)} / pack
+                <span className="font-semibold text-[#1E4D2B]">Price:</span> {money(product.price)} / {formatMylarQuantityLabel(product.quantity)}
               </p>
             </div>
 
@@ -134,9 +147,13 @@ export default async function MylarProductPage({
                 </Link>
                 <div className="p-4">
                   <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">SKU {item.sku}</p>
-                  <h3 className="mt-2 text-base font-black text-[#1E4D2B]">{item.name}</h3>
-                  <p className="mt-1 product-card-price">{money(item.price)} / pack</p>
-                  <div className="mt-4 flex flex-wrap gap-2">
+                  <h3 className="mt-2 text-base font-black text-[#1E4D2B]">
+                    <Link href={`/catalog/mylar-bags/${item.slug}`} className="hover:text-[#B5813A]">
+                      {item.name}
+                    </Link>
+                  </h3>
+                  <p className="mt-1 product-card-price">{money(item.price)} / {formatMylarQuantityLabel(item.quantity)}</p>
+                  <div className="mt-4">
                     <AddToCartControl
                       item={{
                         id: `mylar:${item.slug}`,
@@ -149,12 +166,10 @@ export default async function MylarProductPage({
                         quantity: 1,
                         unitPrice: item.price,
                         unit: 'pack',
+                        unitLabel: formatMylarQuantityLabel(item.quantity),
                       }}
                       showQuantity={false}
                     />
-                    <Link href={`/catalog/mylar-bags/${item.slug}`} className="btn-secondary">
-                      View SKU
-                    </Link>
                   </div>
                 </div>
               </article>
