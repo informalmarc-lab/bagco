@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import Link from 'next/link'
 import { useState } from 'react'
@@ -78,10 +78,10 @@ export default function ContactForm() {
   if (status === 'success') {
     return (
       <section className="tonal-panel text-center">
-        <p className="text-5xl">✅</p>
-        <h2 className="mt-4 text-3xl font-black text-[#1E4D2B]">Your quote request is on its way!</h2>
+        <p className="text-5xl">{'\u2705'}</p>
+        <h2 className="mt-4 text-3xl font-black text-[#1E4D2B]">Message sent. We&apos;ll be in touch soon.</h2>
         <p className="mt-3 text-sm text-[#5F4D33]">
-          We&apos;ll review your details and follow up with pricing and lead times. You can also text us directly at
+          Thanks for reaching out. We&apos;ll review your details and follow up shortly. You can also text us directly at
           {' '}
           (704) 862-9256 for a faster response.
         </p>
@@ -241,7 +241,7 @@ export default function ContactForm() {
               Sending...
             </span>
           ) : (
-            'Send My Quote Request'
+            'Send Message'
           )}
         </button>
 
@@ -254,3 +254,4 @@ export default function ContactForm() {
     </section>
   )
 }
+

@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
@@ -88,15 +88,16 @@ export default function Navbar() {
               <Link
                 href="/catalog"
                 className={`nav-chip ${pathname.startsWith('/catalog') ? 'nav-chip-active' : ''}`}
+                aria-haspopup="menu"
               >
                 Catalogs
               </Link>
-              <div className="pointer-events-none absolute left-0 top-[calc(100%+8px)] z-30 w-64 rounded-xl border border-[#C4935A66] bg-white p-2 opacity-0 shadow-[0_14px_30px_rgba(30,77,43,0.14)] transition-all group-hover:pointer-events-auto group-hover:opacity-100">
+              <div className="pointer-events-none absolute left-0 top-[calc(100%+8px)] z-30 w-64 rounded-xl border border-[#C4935A66] bg-white p-2 opacity-0 shadow-[0_14px_30px_rgba(30,77,43,0.14)] transition-all group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100">
                 {catalogLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="block rounded-lg px-3 py-2 text-sm font-semibold text-[#1E4D2B] hover:bg-[#FAF6F0]"
+                    className="block rounded-md px-3 py-2 text-sm font-semibold text-[#1E4D2B] hover:bg-[#FAF6F0] focus:bg-[#FAF6F0]"
                   >
                     {link.label}
                   </Link>
@@ -107,15 +108,16 @@ export default function Navbar() {
               <Link
                 href="/industries"
                 className={`nav-chip ${pathname.startsWith('/industries') ? 'nav-chip-active' : ''}`}
+                aria-haspopup="menu"
               >
                 Industries
               </Link>
-              <div className="pointer-events-none absolute left-0 top-[calc(100%+8px)] z-30 w-56 rounded-xl border border-[#C4935A66] bg-white p-2 opacity-0 shadow-[0_14px_30px_rgba(30,77,43,0.14)] transition-all group-hover:pointer-events-auto group-hover:opacity-100">
+              <div className="pointer-events-none absolute left-0 top-[calc(100%+8px)] z-30 w-56 rounded-xl border border-[#C4935A66] bg-white p-2 opacity-0 shadow-[0_14px_30px_rgba(30,77,43,0.14)] transition-all group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100">
                 {industryLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="block rounded-lg px-3 py-2 text-sm font-semibold text-[#1E4D2B] hover:bg-[#FAF6F0]"
+                    className="block rounded-md px-3 py-2 text-sm font-semibold text-[#1E4D2B] hover:bg-[#FAF6F0] focus:bg-[#FAF6F0]"
                   >
                     {link.label}
                   </Link>
@@ -142,7 +144,7 @@ export default function Navbar() {
                 if (event.key === 'Enter') submitSearch()
               }}
               placeholder="Search bags, sizes, industries..."
-              className="w-full rounded-xl border border-[#C4935A66] bg-white px-3 py-2 text-sm text-[#1E4D2B]"
+              className="w-full rounded-md border border-[#C4935A66] bg-white px-3 py-2 text-sm text-[#1E4D2B]"
               aria-label="Search bags, sizes, industries"
             />
             <button type="button" onClick={submitSearch} className="btn-secondary px-3 py-2">
@@ -158,7 +160,7 @@ export default function Navbar() {
           </div>
 
           <button
-            className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-[#B5813A] bg-[#FAF6F0] text-[#1E4D2B] lg:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-[#B5813A] bg-[#FAF6F0] text-[#1E4D2B] lg:hidden"
             onClick={() => setIsOpen((prev) => !prev)}
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
@@ -178,10 +180,10 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setShowMobileSearch((prev) => !prev)}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-[#C4935A66] bg-white text-[#1E4D2B]"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-[#C4935A66] bg-white text-[#1E4D2B]"
             aria-label="Toggle search"
           >
-            🔎
+            {'\u{1F50E}'}
           </button>
           {showMobileSearch && (
             <div className="mt-2 flex items-center gap-2">
@@ -193,7 +195,7 @@ export default function Navbar() {
                   if (event.key === 'Enter') submitSearch()
                 }}
                 placeholder="Search bags, sizes, industries..."
-                className="w-full rounded-xl border border-[#C4935A66] bg-white px-3 py-2 text-sm text-[#1E4D2B]"
+                className="w-full rounded-md border border-[#C4935A66] bg-white px-3 py-2 text-sm text-[#1E4D2B]"
                 aria-label="Search bags, sizes, industries"
               />
               <button type="button" onClick={submitSearch} className="btn-secondary px-3 py-2">
@@ -291,4 +293,6 @@ export default function Navbar() {
     </header>
   )
 }
+
+
 

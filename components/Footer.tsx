@@ -65,34 +65,41 @@ export default function Footer() {
 
           <div>
             <h4 className="text-sm font-black uppercase tracking-[0.1em] text-[#B5813A]">Contact</h4>
-            <ul className="mt-3 space-y-2 text-sm">
-              <li><Link href="/contact" className="footer-link font-semibold">Contact Form</Link></li>
-              <li><a href={contactTextHref} className="footer-link">Text {contactPhone}</a></li>
-              <li>
-                <a
-                  href="https://www.facebook.com/profile.php?id=61586254914821"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="footer-link"
-                >
-                  Follow us on Facebook
-                </a>
-              </li>
-              <li className="text-xs text-[#FAF6F0CC]">See our latest bag designs and client features.</li>
-              <li className="text-xs text-[#FAF6F0]">Tag us @bagsupplyco for a feature</li>
-              <li>{contactAddress[0]}</li>
-              <li>{contactAddress[1]}</li>
-              <li>
+            <div className="mt-3 space-y-4 text-sm">
+              <div className="space-y-2">
+                <div><Link href="/contact" className="footer-link font-semibold">Contact Form</Link></div>
+                <div><a href={contactTextHref} className="footer-link">Text {contactPhone}</a></div>
+                <div>
+                  <a
+                    href="https://www.facebook.com/profile.php?id=61586254914821"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="footer-link"
+                  >
+                    Follow us on Facebook
+                  </a>
+                </div>
+              </div>
+
+              <div className="space-y-1 text-xs">
+                <p className="text-[#FAF6F0CC]">See our latest bag designs and client features.</p>
+                <p className="text-[#FAF6F0]">Tag us @bagsupplyco for a feature</p>
+              </div>
+
+              <div className="space-y-1 text-sm text-[#FAF6F0CC]">
+                <p>{contactAddress[0]}</p>
+                <p>{contactAddress[1]}</p>
+              </div>
+
+              <div className="flex flex-wrap gap-2 pt-1">
                 <Link href="/terms" className="footer-link inline-flex rounded-md border border-[#C4935A99] px-3 py-1.5 text-xs font-semibold">
                   Terms &amp; Conditions
                 </Link>
-              </li>
-              <li>
                 <Link href="/privacy-policy" className="footer-link inline-flex rounded-md border border-[#C4935A99] px-3 py-1.5 text-xs font-semibold">
                   Privacy Policy
                 </Link>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
         </div>
 

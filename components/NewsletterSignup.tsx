@@ -68,7 +68,7 @@ export default function NewsletterSignup({
           onChange={(event) => setEmail(event.target.value)}
           placeholder="Email address"
           aria-label="Email address"
-          className="w-full rounded-xl border border-[#C4935A66] bg-white px-3 py-2 text-sm text-[#1E4D2B]"
+          className="w-full rounded-md border border-[#C4935A66] bg-white px-3 py-2 text-sm text-[#1E4D2B]"
           required
         />
         <button
@@ -82,7 +82,7 @@ export default function NewsletterSignup({
 
       <p className="mt-3 text-xs text-[#5F4D33]">{microcopy}</p>
       {message && (
-        <p className={`mt-2 text-xs font-semibold ${status === 'success' ? 'text-emerald-700' : 'text-rose-700'}`}>
+        <p className={`mt-2 text-xs font-semibold ${status === 'success' ? 'text-[#1E4D2B]' : 'text-[#A44A3F]'}`}>
           {message}
         </p>
       )}

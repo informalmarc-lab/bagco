@@ -192,7 +192,7 @@ export default function CheckoutPageClient() {
                     key={option.value}
                     type="button"
                     onClick={() => updateField('paymentPreference', option.value)}
-                    className={`rounded-2xl border px-4 py-4 text-left ${
+                    className={`rounded-md border px-4 py-4 text-left ${
                       active
                         ? 'border-[#1E4D2B] bg-[#1E4D2B] text-white'
                         : 'border-[#C4935A66] bg-white text-[#1E4D2B] hover:bg-[#FAF6F0]'
