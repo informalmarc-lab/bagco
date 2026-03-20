@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
+import FallbackImage from '@/components/FallbackImage'
 import AddToCartControl from '@/components/cart/AddToCartControl'
 import { contactPhone, contactPhoneHref, contactTextHref } from '@/components/siteConfig'
 import { getCatalogOverviewPath, getCatalogProductBySlug, money } from '@/lib/catalogProducts'
@@ -86,8 +86,9 @@ export default function DispensaryIndustryPage() {
             <div className="hero-panel overflow-hidden">
               <div className="grid gap-4">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-[#C4935A66] bg-[#FAF6F0]">
-                  <Image
+                  <FallbackImage
                     src="/images/labels/california-v2-universal-symbol-rx-compliant-labels.webp"
+                    fallbackSrc="/images/catalog/placeholder.svg"
                     alt="Dispensary compliance labels"
                     fill
                     className="object-cover"
@@ -152,17 +153,18 @@ export default function DispensaryIndustryPage() {
 
           <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
             {labels.map((label) => (
-              <article key={label.sku} className="surface-card product-card">
+              <article key={label.sku} className="surface-card product-card flex h-full flex-col">
                 <div className="relative aspect-[4/3] bg-[#FAF6F0]">
-                  <Image
+                  <FallbackImage
                     src={label.image}
+                    fallbackSrc="/images/catalog/placeholder.svg"
                     alt={label.name}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                   />
                 </div>
-                <div className="p-4">
+                <div className="flex flex-1 flex-col p-4">
                   <div className="flex flex-wrap items-center gap-2">
                     <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">SKU {label.sku}</p>
                     <span className="rounded-full bg-[#E8F4EC] px-2.5 py-1 text-[0.65rem] font-black uppercase tracking-[0.08em] text-[#1E4D2B]">
@@ -175,7 +177,7 @@ export default function DispensaryIndustryPage() {
                     {label.quantity.toLocaleString('en-US')} qty per case
                   </p>
                   <p className="mt-1 product-card-price">{money(label.price)} / case</p>
-                  <Link href="/generic-bag-quote" className="btn-primary mt-4">
+                  <Link href="/generic-bag-quote" className="btn-primary mt-auto pt-4">
                     Build a Quote
                   </Link>
                 </div>
@@ -203,17 +205,18 @@ export default function DispensaryIndustryPage() {
 
           <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
             {mylarProducts.map((product) => (
-              <article key={product.sku} className="surface-card product-card">
+              <article key={product.sku} className="surface-card product-card flex h-full flex-col">
                 <Link href={`/catalog/mylar-bags/${product.slug}`} className="relative block aspect-[4/3] bg-[#FAF6F0]">
-                  <Image
+                  <FallbackImage
                     src={product.image}
+                    fallbackSrc="/images/mylar/placeholder.webp"
                     alt={product.name}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                   />
                 </Link>
-                <div className="p-4">
+                <div className="flex flex-1 flex-col p-4">
                   <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">SKU {product.sku}</p>
                   <h3 className="mt-2 text-lg font-black text-[#1E4D2B]">
                     <Link href={`/catalog/mylar-bags/${product.slug}`} className="transition hover:text-[#B5813A]">
@@ -237,7 +240,7 @@ export default function DispensaryIndustryPage() {
                       unitPrice: product.price,
                       quantity: 1,
                     }}
-                    className="mt-4"
+                    className="mt-auto pt-4"
                   />
                 </div>
               </article>
@@ -277,8 +280,9 @@ export default function DispensaryIndustryPage() {
 
               <article className="surface-card product-card">
                 <div className="relative aspect-[4/3] bg-[#FAF6F0]">
-                  <Image
+                  <FallbackImage
                     src={paperBag.image}
+                    fallbackSrc="/images/catalog/placeholder.svg"
                     alt={paperBag.name}
                     fill
                     className="object-cover"

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import FallbackImage from '@/components/FallbackImage'
 import AddToCartControl from '@/components/cart/AddToCartControl'
 import { money } from '@/lib/catalogProducts'
 import {
@@ -95,8 +95,9 @@ export default async function MylarProductPage({
         <div className="split-panel items-start">
           <div className="surface-card overflow-hidden rounded-3xl">
             <div className="relative aspect-[4/3] bg-[#FAF6F0]">
-              <Image
+              <FallbackImage
                 src={product.image}
+                fallbackSrc="/images/mylar/placeholder.webp"
                 alt={`${product.name} mylar bag`}
                 fill
                 className="object-cover"
@@ -135,17 +136,18 @@ export default async function MylarProductPage({
           <h2 className="section-title">Related Mylar SKUs</h2>
           <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-3">
             {related.map((item) => (
-              <article key={item.slug} className="surface-card product-card">
+              <article key={item.slug} className="surface-card product-card flex h-full flex-col">
                 <Link href={`/catalog/mylar-bags/${item.slug}`} className="relative block aspect-[4/3] bg-[#FAF6F0]">
-                  <Image
+                  <FallbackImage
                     src={item.image}
+                    fallbackSrc="/images/mylar/placeholder.webp"
                     alt={item.name}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
                 </Link>
-                <div className="p-4">
+                <div className="flex flex-1 flex-col p-4">
                   <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">SKU {item.sku}</p>
                   <h3 className="mt-2 text-base font-black text-[#1E4D2B]">
                     <Link href={`/catalog/mylar-bags/${item.slug}`} className="hover:text-[#B5813A]">
@@ -153,7 +155,7 @@ export default async function MylarProductPage({
                     </Link>
                   </h3>
                   <p className="mt-1 product-card-price">{money(item.price)} / {formatMylarQuantityLabel(item.quantity)}</p>
-                  <div className="mt-4">
+                  <div className="mt-auto pt-4">
                     <AddToCartControl
                       item={{
                         id: `mylar:${item.slug}`,

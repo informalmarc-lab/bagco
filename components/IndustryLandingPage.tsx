@@ -1,5 +1,5 @@
-﻿import Image from 'next/image'
 import Link from 'next/link'
+import FallbackImage from '@/components/FallbackImage'
 import {
   INDUSTRY_LABELS,
   getCatalogProductBySlug,
@@ -98,21 +98,22 @@ export default function IndustryLandingPage({
             <h2 className="section-title">{INDUSTRY_LABELS[industry]} Product Gallery</h2>
             <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {featured.map((product) => (
-                <article key={product.sku} className="surface-card product-card">
+                <article key={product.sku} className="surface-card product-card flex h-full flex-col">
                   <div className="relative aspect-[4/3] bg-[#FAF6F0]">
-                    <Image
+                    <FallbackImage
                       src={product.image}
+                      fallbackSrc="/images/catalog/placeholder.svg"
                       alt={`${product.name} product photo`}
                       fill
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                   </div>
-                  <div className="p-3">
+                  <div className="flex flex-1 flex-col p-3">
                     <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">SKU {product.sku}</p>
                     <p className="mt-1 text-sm font-semibold text-[#1E4D2B]">{product.name}</p>
                     <p className="mt-1 product-card-price">From {money(product.startingPrice)}/case</p>
-                    <Link href={getCatalogOverviewPath(product)} className="btn-secondary mt-3">
+                    <Link href={getCatalogOverviewPath(product)} className="btn-secondary mt-auto pt-3">
                       View Product
                     </Link>
                   </div>
@@ -171,5 +172,3 @@ export default function IndustryLandingPage({
     </div>
   )
 }
-
-

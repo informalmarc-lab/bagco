@@ -1,6 +1,6 @@
-﻿import type { Metadata } from 'next'
-import Image from 'next/image'
+import type { Metadata } from 'next'
 import Link from 'next/link'
+import FallbackImage from '@/components/FallbackImage'
 import { contactPhone, contactPhoneHref, contactTextHref } from '@/components/siteConfig'
 import {
   getCatalogOverviewPath,
@@ -94,8 +94,9 @@ export default function SmokeShopsIndustryPage() {
                     href={getCatalogOverviewPath(firstProduct)}
                     className="relative block aspect-[4/3] overflow-hidden rounded-2xl border border-[#C4935A66] bg-[#FAF6F0]"
                   >
-                    <Image
+                    <FallbackImage
                       src={firstProduct.image}
+                      fallbackSrc="/images/catalog/placeholder.svg"
                       alt={firstProduct.name}
                       fill
                       className="object-cover"
@@ -168,17 +169,18 @@ export default function SmokeShopsIndustryPage() {
 
           <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
             {featuredProducts.map((product) => (
-              <article key={product.sku} className="surface-card product-card">
+              <article key={product.sku} className="surface-card product-card flex h-full flex-col">
                 <Link href={getCatalogOverviewPath(product)} className="relative block aspect-[4/3] bg-[#FAF6F0]">
-                  <Image
+                  <FallbackImage
                     src={product.image}
+                    fallbackSrc="/images/catalog/placeholder.svg"
                     alt={product.name}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                   />
                 </Link>
-                <div className="p-4">
+                <div className="flex flex-1 flex-col p-4">
                   <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">SKU {product.sku}</p>
                   <h3 className="mt-2 text-lg font-black text-[#1E4D2B]">
                     <Link href={getCatalogOverviewPath(product)} className="transition hover:text-[#B5813A]">
@@ -189,7 +191,7 @@ export default function SmokeShopsIndustryPage() {
                   <p className="mt-3 text-sm font-semibold text-[#5F4D33]">{product.caseCount}</p>
                   <p className="mt-1 text-sm text-[#5F4D33]">{product.sizeOptions.join(' / ')}</p>
                   <p className="mt-2 product-card-price">From {money(product.startingPrice)} / case</p>
-                  <Link href={getCatalogOverviewPath(product)} className="btn-secondary mt-4">
+                  <Link href={getCatalogOverviewPath(product)} className="btn-secondary mt-auto pt-4">
                     View Product
                   </Link>
                 </div>

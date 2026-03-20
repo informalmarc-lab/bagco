@@ -1,6 +1,6 @@
-﻿import type { Metadata } from 'next'
-import Image from 'next/image'
+import type { Metadata } from 'next'
 import Link from 'next/link'
+import FallbackImage from '@/components/FallbackImage'
 import AddToCartControl from '@/components/cart/AddToCartControl'
 import {
   formatMylarQuantityLabel,
@@ -50,10 +50,11 @@ function ProductCard({
   }
 
   return (
-    <article className="surface-card product-card">
+    <article className="surface-card product-card flex h-full flex-col">
       <Link href={`/catalog/mylar-bags/${slug}`} className="relative block aspect-[4/3] bg-[#FAF6F0]">
-        <Image
+        <FallbackImage
           src={image}
+          fallbackSrc="/images/mylar/placeholder.webp"
           alt={name}
           fill
           className="object-cover"
@@ -61,7 +62,7 @@ function ProductCard({
         />
       </Link>
 
-      <div className="p-4">
+      <div className="flex flex-1 flex-col p-4">
         <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">SKU {sku}</p>
         <h3 className="mt-2 text-lg font-black text-[#1E4D2B]">
           <Link href={`/catalog/mylar-bags/${slug}`} className="hover:text-[#B5813A]">
@@ -71,7 +72,7 @@ function ProductCard({
         <p className="mt-1 text-sm text-[#5F4D33]">{size} / {finish}</p>
         <p className="mt-1 text-sm text-[#5F4D33]">{quantity.toLocaleString('en-US')} qty</p>
         <p className="mt-2 product-card-price">{money(price)} / {formatMylarQuantityLabel(quantity)}</p>
-        <div className="mt-4">
+        <div className="mt-auto pt-4">
           <AddToCartControl item={cartItem} showQuantity={false} />
         </div>
       </div>
@@ -110,7 +111,7 @@ export default function MylarCatalogPage() {
       <section className="section-container py-20">
         <div className="tonal-panel">
           <p className="kicker">Designer Printed</p>
-          <h2 className="section-title mt-4">{'Designer Printed Mylar (100\u20131,000 qty)'}</h2>
+          <h2 className="section-title mt-4">Designer Printed Mylar (100-1,000 qty)</h2>
           <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
             {designer.map((item) => (
               <ProductCard key={item.slug} {...item} />

@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useCart } from '@/components/cart/CartProvider'
-import { formatCartUnit, getCartLineTotal, getCartPriceUnitLabel } from '@/lib/cart'
+import { formatCartUnit, getCartItemCount, getCartLineTotal, getCartPriceUnitLabel } from '@/lib/cart'
 import { money } from '@/lib/catalogProducts'
 
 export default function CartPageClient() {
@@ -116,7 +116,7 @@ export default function CartPageClient() {
           <div className="mt-5 space-y-3 text-sm text-[#5F4D33]">
             <div className="flex items-center justify-between">
               <span>Items</span>
-              <span className="font-semibold text-[#1E4D2B]">{items.length}</span>
+              <span className="font-semibold text-[#1E4D2B]">{getCartItemCount(items)}</span>
             </div>
             <div className="flex items-center justify-between border-t border-[#C4935A66] pt-3">
               <span className="text-base font-semibold text-[#1E4D2B]">Order Total</span>

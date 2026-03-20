@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 import Script from 'next/script'
+import FallbackImage from '@/components/FallbackImage'
 import IndustrySolutionsSection from '@/components/IndustrySolutionsSection'
 import NewsletterSignup from '@/components/NewsletterSignup'
 import QuickQuoteForm from '@/components/QuickQuoteForm'
@@ -18,12 +18,12 @@ export const metadata: Metadata = {
 }
 
 const industryQuickNav = [
-  { label: 'Pharmacies', href: '/industries/pharmacies', icon: '🏥' },
-  { label: 'Dispensaries', href: '/industries/dispensary', icon: '🌿' },
-  { label: 'Veterinary', href: '/industries/veterinary', icon: '🐾' },
-  { label: 'Smoke Shops', href: '/industries/smoke-shops', icon: '🚬' },
+  { label: 'Pharmacies', href: '/industries/pharmacies', icon: '\u{1F3E5}' },
+  { label: 'Dispensaries', href: '/industries/dispensary', icon: '\u{1F33F}' },
+  { label: 'Veterinary', href: '/industries/veterinary', icon: '\u{1F43E}' },
+  { label: 'Smoke Shops', href: '/industries/smoke-shops', icon: '\u{1F6AC}' },
   { label: 'Custom Bags', href: '/catalog/custom', icon: 'CB' },
-  { label: 'Distributors', href: '/industries/distributors', icon: '📦' },
+  { label: 'Distributors', href: '/industries/distributors', icon: '\u{1F4E6}' },
 ]
 
 const deliveryPoints = [
@@ -159,8 +159,9 @@ export default function Home() {
 
             <div className="hero-panel overflow-hidden hero-reveal hero-delay-3">
               <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-[#C4935A66] bg-[#FAF6F0]">
-                <Image
+                <FallbackImage
                   src={HERO_IMAGE}
+                  fallbackSrc="/images/catalog/placeholder.svg"
                   alt="Bag Supply Co product showcase"
                   fill
                   className="object-cover"
@@ -255,21 +256,22 @@ export default function Home() {
         <h2 className="section-title">Featured Catalog Products</h2>
         <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {featuredProducts.map((product) => (
-            <article key={product.sku} className="surface-card product-card">
+            <article key={product.sku} className="surface-card product-card flex h-full flex-col">
               <div className="relative aspect-[4/3] bg-[#FAF6F0]">
-                <Image
+                <FallbackImage
                   src={product.image}
+                  fallbackSrc="/images/catalog/placeholder.svg"
                   alt={product.name}
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                 />
               </div>
-              <div className="p-4">
+              <div className="flex flex-1 flex-col p-4">
                 <p className="text-xs font-black uppercase tracking-[0.09em] text-[#7A6548]">SKU {product.sku}</p>
                 <h3 className="mt-2 text-lg font-black text-[#1E4D2B]">{product.name}</h3>
                 <p className="mt-1 product-card-price">From {money(product.startingPrice)}/case</p>
-                <Link href={getCatalogOverviewPath(product)} className="btn-secondary mt-4">
+                <Link href={getCatalogOverviewPath(product)} className="btn-secondary mt-auto pt-4">
                   View Product
                 </Link>
               </div>

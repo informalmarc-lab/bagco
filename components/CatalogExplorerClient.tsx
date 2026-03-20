@@ -1,9 +1,9 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import { useMemo } from 'react'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+import FallbackImage from '@/components/FallbackImage'
 import {
   DEFAULT_CATALOG_FILTERS,
   INDUSTRY_LABELS,
@@ -140,7 +140,7 @@ export default function CatalogExplorerClient({ products }: CatalogExplorerClien
               value={filters.search}
               onChange={(event) => updateFilters({ search: event.target.value })}
               placeholder="Search by SKU, bag type, size, or industry..."
-              className="rounded-xl border border-[#C4935A66] bg-white px-3 py-2"
+              className="rounded-md border border-[#C4935A66] bg-white px-3 py-2"
             />
           </label>
           <div className="mt-5 grid gap-3 md:grid-cols-5">
@@ -149,7 +149,7 @@ export default function CatalogExplorerClient({ products }: CatalogExplorerClien
               <select
                 value={filters.industry}
                 onChange={(event) => updateFilters({ industry: parseIndustry(event.target.value) })}
-                className="rounded-xl border border-[#C4935A66] bg-white px-3 py-2"
+                className="rounded-md border border-[#C4935A66] bg-white px-3 py-2"
               >
                 <option value="all">All Industries</option>
                 {INDUSTRY_ORDER.map((industry) => (
@@ -165,7 +165,7 @@ export default function CatalogExplorerClient({ products }: CatalogExplorerClien
               <select
                 value={filters.bagType}
                 onChange={(event) => updateFilters({ bagType: event.target.value || 'all' })}
-                className="rounded-xl border border-[#C4935A66] bg-white px-3 py-2"
+                className="rounded-md border border-[#C4935A66] bg-white px-3 py-2"
               >
                 <option value="all">All Bag Types</option>
                 {options.bagTypes.map((bagType) => (
@@ -181,7 +181,7 @@ export default function CatalogExplorerClient({ products }: CatalogExplorerClien
               <select
                 value={filters.size}
                 onChange={(event) => updateFilters({ size: event.target.value || 'all' })}
-                className="rounded-xl border border-[#C4935A66] bg-white px-3 py-2"
+                className="rounded-md border border-[#C4935A66] bg-white px-3 py-2"
               >
                 <option value="all">All Sizes</option>
                 {options.sizes.map((size) => (
@@ -197,7 +197,7 @@ export default function CatalogExplorerClient({ products }: CatalogExplorerClien
               <select
                 value={filters.color}
                 onChange={(event) => updateFilters({ color: event.target.value || 'all' })}
-                className="rounded-xl border border-[#C4935A66] bg-white px-3 py-2"
+                className="rounded-md border border-[#C4935A66] bg-white px-3 py-2"
               >
                 <option value="all">All Colors</option>
                 {options.colors.map((color) => (
@@ -213,7 +213,7 @@ export default function CatalogExplorerClient({ products }: CatalogExplorerClien
               <select
                 value={filters.availability}
                 onChange={(event) => updateFilters({ availability: parseAvailability(event.target.value) })}
-                className="rounded-xl border border-[#C4935A66] bg-white px-3 py-2"
+                className="rounded-md border border-[#C4935A66] bg-white px-3 py-2"
               >
                 <option value="all">All</option>
                 <option value="stock">In Stock</option>
@@ -223,7 +223,7 @@ export default function CatalogExplorerClient({ products }: CatalogExplorerClien
           </div>
 
           <div className="mt-4 flex flex-wrap items-center gap-3">
-            <label className="inline-flex items-center gap-2 rounded-xl border border-[#C4935A66] bg-white px-3 py-2 text-sm font-semibold text-[#5F4D33]">
+            <label className="inline-flex items-center gap-2 rounded-md border border-[#C4935A66] bg-white px-3 py-2 text-sm font-semibold text-[#5F4D33]">
               <input
                 type="checkbox"
                 checked={filters.usaMadeOnly}
@@ -231,7 +231,7 @@ export default function CatalogExplorerClient({ products }: CatalogExplorerClien
               />
               USA-Made Collection
             </label>
-            <label className="inline-flex items-center gap-2 rounded-xl border border-[#C4935A66] bg-white px-3 py-2 text-sm font-semibold text-[#5F4D33]">
+            <label className="inline-flex items-center gap-2 rounded-md border border-[#C4935A66] bg-white px-3 py-2 text-sm font-semibold text-[#5F4D33]">
               <input
                 type="checkbox"
                 checked={filters.seasonalOnly}
@@ -252,10 +252,11 @@ export default function CatalogExplorerClient({ products }: CatalogExplorerClien
         ) : (
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
             {filtered.map((product) => (
-              <article key={product.sku} className="surface-card product-card">
+              <article key={product.sku} className="surface-card product-card flex h-full flex-col">
                 <Link href={getCatalogOverviewPath(product)} className="relative block aspect-[4/3] bg-[#FAF6F0]">
-                  <Image
+                  <FallbackImage
                     src={product.image}
+                    fallbackSrc="/images/catalog/placeholder.svg"
                     alt={product.name}
                     fill
                     className="object-cover"
@@ -263,9 +264,15 @@ export default function CatalogExplorerClient({ products }: CatalogExplorerClien
                   />
                 </Link>
 
-                <div className="p-4">
+                <div className="flex flex-1 flex-col p-4">
                   <div className="flex flex-wrap gap-2">
-                    <span className={`rounded-full px-3 py-1 text-xs font-black uppercase tracking-[0.08em] ${product.availability === 'stock' ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-900'}`}>
+                    <span
+                      className={`rounded-full px-3 py-1 text-xs font-black uppercase tracking-[0.08em] ${
+                        product.availability === 'stock'
+                          ? 'bg-[#1E4D2B1A] text-[#1E4D2B]'
+                          : 'bg-[#B5813A22] text-[#7A6548]'
+                      }`}
+                    >
                       {product.availability === 'stock' ? 'Stock' : 'Custom Print'}
                     </span>
                     {product.collections.includes('usa-made') && (
@@ -274,7 +281,7 @@ export default function CatalogExplorerClient({ products }: CatalogExplorerClien
                       </span>
                     )}
                     {product.collections.includes('seasonal') && (
-                      <span className="rounded-full bg-rose-100 px-3 py-1 text-xs font-black uppercase tracking-[0.08em] text-rose-800">
+                      <span className="rounded-full bg-[#C4935A22] px-3 py-1 text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">
                         Seasonal
                       </span>
                     )}
@@ -297,7 +304,7 @@ export default function CatalogExplorerClient({ products }: CatalogExplorerClien
                     </p>
                   </div>
 
-                  <div className="mt-5 flex flex-wrap gap-2">
+                  <div className="mt-auto flex flex-wrap gap-2 pt-5">
                     {isCatalogProductQuoteOnly(product) ? (
                       <Link href={`/generic-bag-quote?sku=${encodeURIComponent(product.sku)}`} className="btn-primary">
                         Get a Quote

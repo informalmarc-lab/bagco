@@ -1,6 +1,9 @@
 import Link from 'next/link'
 import {
   contactAddress,
+  contactEmail,
+  contactEmailHref,
+  contactHours,
   contactPhone,
   contactTextHref,
 } from '@/components/siteConfig'
@@ -8,8 +11,8 @@ import {
 export default function Footer() {
   return (
     <footer className="mt-24 border-t border-[#B5813A] bg-[#1E4D2B] text-[#FAF6F0]">
-      <div className="section-container py-20">
-        <div className="rounded-3xl border border-[#C4935A77] bg-[linear-gradient(135deg,#1E4D2B,#225935_55%,#1A4126)] p-8 md:p-10">
+      <div className="section-container py-16 md:py-20">
+        <div className="rounded-3xl border border-[#C4935A77] bg-[linear-gradient(135deg,#1E4D2B,#225935_55%,#1A4126)] p-6 md:p-10">
           <p className="inline-flex rounded-full border border-[#F4E8D8AA] bg-[#F4E8D822] px-3 py-1 text-xs font-bold uppercase tracking-[0.12em] text-[#FAF6F0]">
             Ready to standardize packaging?
           </p>
@@ -29,7 +32,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 grid gap-10 md:grid-cols-4">
+        <div className="mt-12 grid gap-8 sm:grid-cols-2 xl:grid-cols-[1.15fr_0.9fr_1fr_1.05fr]">
           <div>
             <h3 className="text-xl font-black text-[#B5813A]">Bag Supply Co</h3>
             <p className="mt-3 text-sm leading-relaxed text-[#FAF6F0CC]">
@@ -65,11 +68,29 @@ export default function Footer() {
 
           <div>
             <h4 className="text-sm font-black uppercase tracking-[0.1em] text-[#B5813A]">Contact</h4>
-            <div className="mt-3 space-y-4 text-sm">
-              <div className="space-y-2">
-                <div><Link href="/contact" className="footer-link font-semibold">Contact Form</Link></div>
-                <div><a href={contactTextHref} className="footer-link">Text {contactPhone}</a></div>
-                <div>
+            <div className="mt-4 space-y-3 text-sm">
+              <div className="rounded-2xl border border-[#C4935A33] bg-[#FAF6F00F] p-4">
+                <p className="text-xs font-black uppercase tracking-[0.1em] text-[#B5813A]">Reach Us</p>
+                <div className="mt-3 space-y-2">
+                  <div><Link href="/contact" className="footer-link font-semibold">Contact Form</Link></div>
+                  <div><a href={contactTextHref} className="footer-link">Text {contactPhone}</a></div>
+                  <div><a href={contactEmailHref} className="footer-link">{contactEmail}</a></div>
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-[#C4935A33] bg-[#FAF6F00F] p-4">
+                <p className="text-xs font-black uppercase tracking-[0.1em] text-[#B5813A]">Address & Hours</p>
+                <div className="mt-3 space-y-1 text-sm text-[#FAF6F0CC]">
+                  <p>{contactAddress[0]}</p>
+                  <p>{contactAddress[1]}</p>
+                  <p className="pt-2 text-[#FAF6F0]">{contactHours[0]}</p>
+                  <p className="text-xs text-[#FAF6F0B3]">{contactHours[1]}</p>
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-[#C4935A33] bg-[#FAF6F00F] p-4">
+                <p className="text-xs font-black uppercase tracking-[0.1em] text-[#B5813A]">Follow Along</p>
+                <div className="mt-3 space-y-2">
                   <a
                     href="https://www.facebook.com/profile.php?id=61586254914821"
                     target="_blank"
@@ -78,17 +99,9 @@ export default function Footer() {
                   >
                     Follow us on Facebook
                   </a>
+                  <p className="text-xs text-[#FAF6F0CC]">See our latest bag designs and client features.</p>
+                  <p className="text-sm text-[#FAF6F0]">Tag us @bagsupplyco for a feature</p>
                 </div>
-              </div>
-
-              <div className="space-y-1 text-xs">
-                <p className="text-[#FAF6F0CC]">See our latest bag designs and client features.</p>
-                <p className="text-[#FAF6F0]">Tag us @bagsupplyco for a feature</p>
-              </div>
-
-              <div className="space-y-1 text-sm text-[#FAF6F0CC]">
-                <p>{contactAddress[0]}</p>
-                <p>{contactAddress[1]}</p>
               </div>
 
               <div className="flex flex-wrap gap-2 pt-1">

@@ -1,7 +1,8 @@
 'use client'
 
-import Image from 'next/image'
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
+import FallbackImage from '@/components/FallbackImage'
 
 type CustomImage = { src: string; name: string }
 
@@ -88,7 +89,14 @@ export default function CustomCatalogClient({ images }: CustomCatalogClientProps
               {list.map((img) => (
                 <button key={img.src} type="button" onClick={() => setSelected(img)} className="surface-card overflow-hidden rounded-2xl">
                   <div className="relative aspect-square bg-[#FAF6F0]">
-                    <Image src={img.src} alt={img.name} fill className="object-cover" sizes="(max-width: 768px) 100vw, 25vw" />
+                    <FallbackImage
+                      src={img.src}
+                      fallbackSrc="/images/catalog/placeholder.svg"
+                      alt={img.name}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 25vw"
+                    />
                   </div>
                 </button>
               ))}
