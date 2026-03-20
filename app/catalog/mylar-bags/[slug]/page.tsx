@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import AddToCartControl from '@/components/cart/AddToCartControl'
 import { money } from '@/lib/catalogProducts'
 import { getAllMylarProducts, getMylarProductBySlug } from '@/lib/mylarCatalog'
 
@@ -36,6 +37,18 @@ export default async function MylarProductPage({
   const related = getAllMylarProducts()
     .filter((item) => item.slug !== product.slug && item.type === product.type)
     .slice(0, 3)
+  const cartItem = {
+    id: `mylar:${product.slug}`,
+    kind: 'mylar' as const,
+    sku: product.sku,
+    slug: product.slug,
+    name: product.name,
+    image: product.image,
+    productHref: `/catalog/mylar-bags/${product.slug}`,
+    quantity: 1,
+    unitPrice: product.price,
+    unit: 'pack' as const,
+  }
 
   return (
     <div className="pb-16">
@@ -57,9 +70,7 @@ export default async function MylarProductPage({
           </p>
           <p className="mt-4 max-w-3xl text-lg muted-text">{product.description}</p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link href={`/generic-bag-quote?sku=${encodeURIComponent(product.sku)}`} className="btn-primary">
-              Build a Quote
-            </Link>
+            <AddToCartControl item={cartItem} />
             <Link href="/catalog/mylar-bags" className="btn-secondary">
               Back to Mylar Catalog
             </Link>
@@ -97,9 +108,7 @@ export default async function MylarProductPage({
             </div>
 
             <div className="mt-6 flex flex-wrap gap-3">
-              <Link href={`/generic-bag-quote?sku=${encodeURIComponent(product.sku)}`} className="btn-primary">
-                Build a Quote
-              </Link>
+              <AddToCartControl item={cartItem} />
               <Link href="/catalog/mylar-bags" className="btn-secondary">
                 View All Mylar SKUs
               </Link>
@@ -127,9 +136,26 @@ export default async function MylarProductPage({
                   <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">SKU {item.sku}</p>
                   <h3 className="mt-2 text-base font-black text-[#1E4D2B]">{item.name}</h3>
                   <p className="mt-1 product-card-price">{money(item.price)} / pack</p>
-                  <Link href={`/catalog/mylar-bags/${item.slug}`} className="btn-secondary mt-4">
-                    View SKU
-                  </Link>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    <AddToCartControl
+                      item={{
+                        id: `mylar:${item.slug}`,
+                        kind: 'mylar',
+                        sku: item.sku,
+                        slug: item.slug,
+                        name: item.name,
+                        image: item.image,
+                        productHref: `/catalog/mylar-bags/${item.slug}`,
+                        quantity: 1,
+                        unitPrice: item.price,
+                        unit: 'pack',
+                      }}
+                      showQuantity={false}
+                    />
+                    <Link href={`/catalog/mylar-bags/${item.slug}`} className="btn-secondary">
+                      View SKU
+                    </Link>
+                  </div>
                 </div>
               </article>
             ))}

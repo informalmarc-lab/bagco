@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
+import CartLink from '@/components/cart/CartLink'
 import { contactTextHref } from '@/components/siteConfig'
 
 const industryLinks = [
@@ -150,6 +151,7 @@ export default function Navbar() {
           </div>
 
           <div className="hidden items-center gap-2 lg:flex">
+            <CartLink />
             <a href={contactTextHref} className="btn-primary">
               Text (704) 862-9256
             </a>
@@ -272,6 +274,7 @@ export default function Navbar() {
                     {link.label}
                   </Link>
                 ))}
+                <CartLink mobile onClick={() => setIsOpen(false)} />
               </div>
               <div className="mt-3 grid gap-2 sm:grid-cols-2">
                 <a href={contactTextHref} className="btn-secondary justify-center">

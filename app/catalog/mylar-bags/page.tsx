@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import AddToCartControl from '@/components/cart/AddToCartControl'
 import { getAllMylarProducts, getMylarProductsByType, getMylarStartingPrice } from '@/lib/mylarCatalog'
 import { money } from '@/lib/catalogProducts'
 
 export const metadata: Metadata = {
   title: 'Mylar Bags Catalog',
   description:
-    'Shop Bag Supply Co mylar bag inventory by SKU with local images, pack quantities, and transparent pricing.',
+    'Shop Bag Supply Co mylar bag inventory by SKU with local images, pack quantities, transparent pricing, and direct cart ordering.',
 }
 
 function ProductCard({
@@ -29,6 +30,19 @@ function ProductCard({
   price: number
   image: string
 }) {
+  const cartItem = {
+    id: `mylar:${slug}`,
+    kind: 'mylar' as const,
+    sku,
+    slug,
+    name,
+    image,
+    productHref: `/catalog/mylar-bags/${slug}`,
+    quantity: 1,
+    unitPrice: price,
+    unit: 'pack' as const,
+  }
+
   return (
     <article className="surface-card product-card">
       <Link href={`/catalog/mylar-bags/${slug}`} className="relative block aspect-[4/3] bg-[#FAF6F0]">
@@ -47,9 +61,12 @@ function ProductCard({
         <p className="mt-1 text-sm text-[#5F4D33]">{size} · {finish}</p>
         <p className="mt-1 text-sm text-[#5F4D33]">{quantity.toLocaleString('en-US')} qty</p>
         <p className="mt-2 product-card-price">{money(price)} / pack</p>
-        <Link href={`/catalog/mylar-bags/${slug}`} className="btn-secondary mt-4">
-          View SKU
-        </Link>
+        <div className="mt-4 flex flex-wrap gap-2">
+          <AddToCartControl item={cartItem} showQuantity={false} />
+          <Link href={`/catalog/mylar-bags/${slug}`} className="btn-secondary">
+            View SKU
+          </Link>
+        </div>
       </div>
     </article>
   )
@@ -69,7 +86,7 @@ export default function MylarCatalogPage() {
           <p className="kicker mt-6">Mylar Catalog</p>
           <h1 className="heading-display mt-5">Mylar Bags</h1>
           <p className="mt-5 max-w-3xl text-lg muted-text">
-            55 SKU-level mylar options with local product images, fixed pricing, and direct quote routing.
+            55 SKU-level mylar options with local product images, fixed pricing, and direct add-to-cart ordering.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-[#1E4D2B]">

@@ -13,6 +13,7 @@ import {
   getCatalogSizePath,
   getIndustryCatalogHref,
   getLeadTimeShort,
+  isCatalogProductQuoteOnly,
   money,
 } from '@/lib/catalogProducts'
 
@@ -62,6 +63,7 @@ export default async function CatalogSkuOverviewPage({
 
   const sizes = getCatalogProductSizes(product)
   const industryHref = getIndustryCatalogHref(product.industry)
+  const isQuoteOnly = isCatalogProductQuoteOnly(product)
 
   return (
     <div className="pb-16">
@@ -83,9 +85,15 @@ export default async function CatalogSkuOverviewPage({
           </p>
           <p className="mt-4 max-w-3xl text-lg muted-text">{product.description}</p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link href={`/generic-bag-quote?sku=${encodeURIComponent(product.sku)}`} className="btn-primary">
-              Build a Quote
-            </Link>
+            {isQuoteOnly ? (
+              <Link href={`/generic-bag-quote?sku=${encodeURIComponent(product.sku)}`} className="btn-primary">
+                Get a Quote
+              </Link>
+            ) : (
+              <Link href="#available-sizes" className="btn-primary">
+                Select a Size
+              </Link>
+            )}
             <Link href={industryHref} className="btn-secondary">
               View {INDUSTRY_LABELS[product.industry]} Catalog
             </Link>
@@ -121,9 +129,15 @@ export default async function CatalogSkuOverviewPage({
             </div>
 
             <div className="mt-6 flex flex-wrap gap-3">
-              <Link href={`/generic-bag-quote?sku=${encodeURIComponent(product.sku)}`} className="btn-primary">
-                Build a Quote
-              </Link>
+              {isQuoteOnly ? (
+                <Link href={`/generic-bag-quote?sku=${encodeURIComponent(product.sku)}`} className="btn-primary">
+                  Get a Quote
+                </Link>
+              ) : (
+                <Link href="#available-sizes" className="btn-primary">
+                  Select a Size
+                </Link>
+              )}
               <Link href={industryHref} className="btn-secondary">
                 Back to {INDUSTRY_LABELS[product.industry]}
               </Link>
@@ -132,7 +146,7 @@ export default async function CatalogSkuOverviewPage({
         </div>
       </section>
 
-      <section className="section-container pt-2">
+      <section id="available-sizes" className="section-container pt-2">
         <div className="tonal-panel">
           <h2 className="section-title">Available Sizes</h2>
           <p className="mt-3 muted-text">

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import AddToCartControl from '@/components/cart/AddToCartControl'
 import {
   INDUSTRY_LABELS,
   INDUSTRY_ORDER,
@@ -12,6 +13,7 @@ import {
   getCatalogSkuSlug,
   getCatalogSizePath,
   getIndustryCatalogHref,
+  isCatalogProductQuoteOnly,
   money,
 } from '@/lib/catalogProducts'
 
@@ -87,6 +89,20 @@ export default async function CatalogSkuSizePage({
     ? selectedSize.pricing
     : [{ label: `${selectedSize.label} ${product.caseCount}`, price: product.startingPrice }]
   const industryHref = getIndustryCatalogHref(product.industry)
+  const isQuoteOnly = isCatalogProductQuoteOnly(product)
+  const cartItem = {
+    id: `catalog:${product.sku}:${selectedSize.slug}`,
+    kind: 'catalog' as const,
+    sku: product.sku,
+    slug: product.slug,
+    name: product.name,
+    image: product.image,
+    productHref: getCatalogSizePath(product, selectedSize.slug),
+    quantity: 1,
+    unitPrice: pricingRows[0].price,
+    unit: 'case' as const,
+    sizeLabel: selectedSize.label,
+  }
 
   return (
     <div className="pb-16">
@@ -110,9 +126,13 @@ export default async function CatalogSkuSizePage({
           </p>
           <p className="mt-4 max-w-3xl text-lg muted-text">{product.description}</p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link href={`/generic-bag-quote?sku=${encodeURIComponent(product.sku)}`} className="btn-primary">
-              Build a Quote
-            </Link>
+            {isQuoteOnly ? (
+              <Link href={`/generic-bag-quote?sku=${encodeURIComponent(product.sku)}`} className="btn-primary">
+                Get a Quote
+              </Link>
+            ) : (
+              <AddToCartControl item={cartItem} />
+            )}
             <Link href={getCatalogOverviewPath(product)} className="btn-secondary">
               Back to {product.sku} Sizes
             </Link>
@@ -165,9 +185,13 @@ export default async function CatalogSkuSizePage({
             </div>
 
             <div className="mt-6 flex flex-wrap gap-3">
-              <Link href={`/generic-bag-quote?sku=${encodeURIComponent(product.sku)}`} className="btn-primary">
-                Build a Quote
-              </Link>
+              {isQuoteOnly ? (
+                <Link href={`/generic-bag-quote?sku=${encodeURIComponent(product.sku)}`} className="btn-primary">
+                  Get a Quote
+                </Link>
+              ) : (
+                <AddToCartControl item={cartItem} />
+              )}
               <Link href={industryHref} className="btn-secondary">
                 View {INDUSTRY_LABELS[product.industry]} Catalog
               </Link>

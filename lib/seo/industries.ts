@@ -55,7 +55,7 @@ export const INDUSTRY_PAGES: IndustryMeta[] = [
     slug: 'smoke-shop-bags',
     label: 'Smoke Shop Bags',
     marketLabel: 'smoke shop',
-    focus: 'Small-item carryout bags with durable paper stock options.',
+    focus: 'Stocked dispensary-style paper bag designs with discreet carryout sizing for smoke shops and specialty retailers.',
     naics: '453991',
     catalogIndustry: 'smoke-shop',
   },

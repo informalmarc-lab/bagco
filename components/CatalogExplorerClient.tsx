@@ -12,6 +12,7 @@ import {
   getCatalogFilterOptions,
   getCatalogOverviewPath,
   getStartingPriceByIndustry,
+  isCatalogProductQuoteOnly,
   money,
   type CatalogAvailability,
   type CatalogFilters,
@@ -297,13 +298,13 @@ export default function CatalogExplorerClient({ products }: CatalogExplorerClien
                   </div>
 
                   <div className="mt-5 flex flex-wrap gap-2">
-                    {product.availability === 'stock' ? (
-                      <Link href={`/contact?sku=${encodeURIComponent(product.sku)}`} className="btn-primary">
-                        Order Now
+                    {isCatalogProductQuoteOnly(product) ? (
+                      <Link href={`/generic-bag-quote?sku=${encodeURIComponent(product.sku)}`} className="btn-primary">
+                        Get a Quote
                       </Link>
                     ) : (
-                      <Link href={`/generic-bag-quote?sku=${encodeURIComponent(product.sku)}`} className="btn-primary">
-                        Build a Quote
+                      <Link href={getCatalogOverviewPath(product)} className="btn-primary">
+                        Select Size
                       </Link>
                     )}
                     <Link href={getCatalogOverviewPath(product)} className="btn-secondary">

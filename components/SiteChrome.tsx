@@ -1,6 +1,7 @@
 'use client'
 
 import { usePathname } from 'next/navigation'
+import { CartProvider } from '@/components/cart/CartProvider'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
@@ -13,10 +14,10 @@ export default function SiteChrome({ children }: { children: React.ReactNode }) 
   }
 
   return (
-    <>
+    <CartProvider>
       <Navbar />
       <main className="min-h-screen site-surface">{children}</main>
       <Footer />
-    </>
+    </CartProvider>
   )
 }

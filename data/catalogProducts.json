@@ -217,7 +217,7 @@
         ],
         "availability": "stock",
         "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/VB2-ALL3.png?v=1579752589",
-        "description": "Full Case of Veterinary Bags design #VB2 in three Quantity/Size options. Perfect for every Vet or Pet Store, these adorable bags will leave paw prints all over the hearts of your customers. Pinch bottom #22 - 4.5 x 2.25 x 11” - 3,000 qty Flat Pinch bottom #12 - 7 x 10” - 3,000 qty Square bottom #25 - 6 x 4 x 11” - 1,000 qty",
+        "description": "Full Case of Veterinary Bags design #VB2 in three Quantity/Size options. Perfect for every Vet or Pet Store, these adorable bags will leave paw prints all over the hearts of your customers. Pinch bottom #22 - 4.5 x 2.25 x 11\u201d - 3,000 qty Flat Pinch bottom #12 - 7 x 10\u201d - 3,000 qty Square bottom #25 - 6 x 4 x 11\u201d - 1,000 qty",
         "collections": [],
         "sizePricing": [
             {
@@ -252,7 +252,7 @@
         ],
         "availability": "stock",
         "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/VB6-ALL3.png?v=1579754989",
-        "description": "Full Case of Veterinary Bags design #VB6 in three Quantity/Size options. Perfect for every Vet or Pet Store, these adorable bags will leave paw prints all over the hearts of your customers. Pinch bottom #22 - 4.5 x 2.25 x 11” - 3,000 qty Flat Pinch bottom #12 - 7 x 10” - 3,000 qty Square bottom #25 - 6 x 4 x 11” - 1,000 qty",
+        "description": "Full Case of Veterinary Bags design #VB6 in three Quantity/Size options. Perfect for every Vet or Pet Store, these adorable bags will leave paw prints all over the hearts of your customers. Pinch bottom #22 - 4.5 x 2.25 x 11\u201d - 3,000 qty Flat Pinch bottom #12 - 7 x 10\u201d - 3,000 qty Square bottom #25 - 6 x 4 x 11\u201d - 1,000 qty",
         "collections": [],
         "sizePricing": [
             {
@@ -300,94 +300,304 @@
         ]
     },
     {
-        "sku": "SKU-10",
-        "slug": "equality-design-10-6x4x11-1000qty",
-        "name": "Equality Design #10",
+        "sku": "DS-10",
+        "slug": "dispensary-bag-design-10",
+        "name": "Dispensary Bag Design #10",
         "industry": "smoke-shop",
-        "bagType": "Equality / Pride Collection",
+        "bagType": "Classic RX Stock Design",
         "sizeOptions": [
-            "Pinch bottom (5x2x10\")",
-            "Square bottom (6x4x11\")"
+            "Classic RX (10\" x 5\" x 1\")",
+            "#12-DS (7\" x 10\")"
         ],
-        "caseCount": "500-1,000/case",
-        "startingPrice": 25,
+        "caseCount": "1,000/case",
+        "startingPrice": 43.4,
         "colorOptions": [
             "Stock Print"
         ],
         "availability": "stock",
-        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/cbc_mce10_0b9cd5a2-d89b-44dd-94e1-073d25ee6db8.png?v=1675106391",
-        "description": "Show your pride with our Equality designs! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections": [],
-        "sizePricing": [
-            {
-                "label": "Pinch bottom (5x2x10\") 500qty",
-                "price": 25
-            },
-            {
-                "label": "Square bottom (6x4x11\") 1000qty",
-                "price": 65
-            }
-        ]
+        "image": "/images/catalog/smoke-shop/dispensary-bag-design-10.webp",
+        "description": "Dispensary Bag Design #10 is a stocked dispensary-style paper bag design for discreet retail carryout, adapted to our Classic RX and #12-DS size program with case pricing that starts at $43.40.",
+        "collections": []
     },
     {
-        "sku": "SKU-11-2",
-        "slug": "equality-design-eq11",
-        "name": "Equality Design #11",
+        "sku": "DS-11",
+        "slug": "dispensary-bag-design-11",
+        "name": "Dispensary Bag Design #11",
         "industry": "smoke-shop",
-        "bagType": "Equality / Pride Collection",
+        "bagType": "Classic RX Stock Design",
         "sizeOptions": [
-            "Pinch bottom (5x2x10\")",
-            "Square bottom (6x4x11\")"
+            "Classic RX (10\" x 5\" x 1\")",
+            "#12-DS (7\" x 10\")"
         ],
-        "caseCount": "500-1,000/case",
-        "startingPrice": 25,
+        "caseCount": "1,000/case",
+        "startingPrice": 43.4,
         "colorOptions": [
             "Stock Print"
         ],
         "availability": "stock",
-        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/cbc_mce11.png?v=1675106451",
-        "description": "Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections": [],
-        "sizePricing": [
-            {
-                "label": "Pinch bottom (5x2x10\") 500qty",
-                "price": 25
-            },
-            {
-                "label": "Square bottom (6x4x11\") 1000qty",
-                "price": 65
-            }
-        ]
+        "image": "/images/catalog/smoke-shop/dispensary-bag-design-11.webp",
+        "description": "Dispensary Bag Design #11 is a stocked dispensary-style paper bag design for discreet retail carryout, adapted to our Classic RX and #12-DS size program with case pricing that starts at $43.40.",
+        "collections": []
     },
     {
-        "sku": "SKU-12-2",
-        "slug": "equality-design-eq12",
-        "name": "Equality Design #12",
+        "sku": "DS-12",
+        "slug": "dispensary-bag-design-12",
+        "name": "Dispensary Bag Design #12",
         "industry": "smoke-shop",
-        "bagType": "Equality / Pride Collection",
+        "bagType": "Classic RX Stock Design",
         "sizeOptions": [
-            "Pinch bottom (5x2x10\")",
-            "Square bottom (6x4x11\")"
+            "Classic RX (10\" x 5\" x 1\")",
+            "#12-DS (7\" x 10\")"
         ],
-        "caseCount": "500-1,000/case",
-        "startingPrice": 25,
+        "caseCount": "1,000/case",
+        "startingPrice": 43.4,
         "colorOptions": [
             "Stock Print"
         ],
         "availability": "stock",
-        "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/cbc_mce12.png?v=1675106597",
-        "description": "Show your pride with our Equality designs! Pinch bottom bag - 5 x 2 x 10\" - 500qty Square bottom bag - 6 x 4 x 11\" - 1000qty",
-        "collections": [],
-        "sizePricing": [
-            {
-                "label": "Pinch bottom (5x2x10\") 500qty",
-                "price": 25
-            },
-            {
-                "label": "Square bottom (6x4x11\") 1000qty",
-                "price": 65
-            }
-        ]
+        "image": "/images/catalog/smoke-shop/dispensary-bag-design-12.webp",
+        "description": "Dispensary Bag Design #12 is a stocked dispensary-style paper bag design for discreet retail carryout, adapted to our Classic RX and #12-DS size program with case pricing that starts at $43.40.",
+        "collections": []
+    },
+    {
+        "sku": "DS-13",
+        "slug": "dispensary-bag-design-13",
+        "name": "Dispensary Bag Design #13",
+        "industry": "smoke-shop",
+        "bagType": "Classic RX Stock Design",
+        "sizeOptions": [
+            "Classic RX (10\" x 5\" x 1\")",
+            "#12-DS (7\" x 10\")"
+        ],
+        "caseCount": "1,000/case",
+        "startingPrice": 43.4,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "/images/catalog/smoke-shop/dispensary-bag-design-13.webp",
+        "description": "Dispensary Bag Design #13 is a stocked dispensary-style paper bag design for discreet retail carryout, adapted to our Classic RX and #12-DS size program with case pricing that starts at $43.40.",
+        "collections": []
+    },
+    {
+        "sku": "DS-14",
+        "slug": "dispensary-bag-design-14",
+        "name": "Dispensary Bag Design #14",
+        "industry": "smoke-shop",
+        "bagType": "Classic RX Stock Design",
+        "sizeOptions": [
+            "Classic RX (10\" x 5\" x 1\")",
+            "#12-DS (7\" x 10\")"
+        ],
+        "caseCount": "1,000/case",
+        "startingPrice": 43.4,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "/images/catalog/smoke-shop/dispensary-bag-design-14.webp",
+        "description": "Dispensary Bag Design #14 is a stocked dispensary-style paper bag design for discreet retail carryout, adapted to our Classic RX and #12-DS size program with case pricing that starts at $43.40.",
+        "collections": []
+    },
+    {
+        "sku": "DS-15",
+        "slug": "dispensary-bag-design-15",
+        "name": "Dispensary Bag Design #15",
+        "industry": "smoke-shop",
+        "bagType": "Classic RX Stock Design",
+        "sizeOptions": [
+            "Classic RX (10\" x 5\" x 1\")",
+            "#12-DS (7\" x 10\")"
+        ],
+        "caseCount": "1,000/case",
+        "startingPrice": 43.4,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "/images/catalog/smoke-shop/dispensary-bag-design-15.webp",
+        "description": "Dispensary Bag Design #15 is a stocked dispensary-style paper bag design for discreet retail carryout, adapted to our Classic RX and #12-DS size program with case pricing that starts at $43.40.",
+        "collections": []
+    },
+    {
+        "sku": "DS-16",
+        "slug": "dispensary-bag-design-16",
+        "name": "Dispensary Bag Design #16",
+        "industry": "smoke-shop",
+        "bagType": "Classic RX Stock Design",
+        "sizeOptions": [
+            "Classic RX (10\" x 5\" x 1\")",
+            "#12-DS (7\" x 10\")"
+        ],
+        "caseCount": "1,000/case",
+        "startingPrice": 43.4,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "/images/catalog/smoke-shop/dispensary-bag-design-16.webp",
+        "description": "Dispensary Bag Design #16 is a stocked dispensary-style paper bag design for discreet retail carryout, adapted to our Classic RX and #12-DS size program with case pricing that starts at $43.40.",
+        "collections": []
+    },
+    {
+        "sku": "DS-17",
+        "slug": "dispensary-bag-design-17",
+        "name": "Dispensary Bag Design #17",
+        "industry": "smoke-shop",
+        "bagType": "Classic RX Stock Design",
+        "sizeOptions": [
+            "Classic RX (10\" x 5\" x 1\")",
+            "#12-DS (7\" x 10\")"
+        ],
+        "caseCount": "1,000/case",
+        "startingPrice": 43.4,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "/images/catalog/smoke-shop/dispensary-bag-design-17.webp",
+        "description": "Dispensary Bag Design #17 is a stocked dispensary-style paper bag design for discreet retail carryout, adapted to our Classic RX and #12-DS size program with case pricing that starts at $43.40.",
+        "collections": []
+    },
+    {
+        "sku": "DS-18",
+        "slug": "dispensary-bag-design-18",
+        "name": "Dispensary Bag Design #18",
+        "industry": "smoke-shop",
+        "bagType": "Classic RX Stock Design",
+        "sizeOptions": [
+            "Classic RX (10\" x 5\" x 1\")",
+            "#12-DS (7\" x 10\")"
+        ],
+        "caseCount": "1,000/case",
+        "startingPrice": 43.4,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "/images/catalog/smoke-shop/dispensary-bag-design-18.webp",
+        "description": "Dispensary Bag Design #18 is a stocked dispensary-style paper bag design for discreet retail carryout, adapted to our Classic RX and #12-DS size program with case pricing that starts at $43.40.",
+        "collections": []
+    },
+    {
+        "sku": "DS-19",
+        "slug": "dispensary-bag-design-19",
+        "name": "Dispensary Bag Design #19",
+        "industry": "smoke-shop",
+        "bagType": "Classic RX Stock Design",
+        "sizeOptions": [
+            "Classic RX (10\" x 5\" x 1\")",
+            "#12-DS (7\" x 10\")"
+        ],
+        "caseCount": "1,000/case",
+        "startingPrice": 43.4,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "/images/catalog/smoke-shop/dispensary-bag-design-19.webp",
+        "description": "Dispensary Bag Design #19 is a stocked dispensary-style paper bag design for discreet retail carryout, adapted to our Classic RX and #12-DS size program with case pricing that starts at $43.40.",
+        "collections": []
+    },
+    {
+        "sku": "DS-20",
+        "slug": "dispensary-bag-design-20",
+        "name": "Dispensary Bag Design #20",
+        "industry": "smoke-shop",
+        "bagType": "Classic RX Stock Design",
+        "sizeOptions": [
+            "Classic RX (10\" x 5\" x 1\")",
+            "#12-DS (7\" x 10\")"
+        ],
+        "caseCount": "1,000/case",
+        "startingPrice": 43.4,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "/images/catalog/smoke-shop/dispensary-bag-design-20.webp",
+        "description": "Dispensary Bag Design #20 is a stocked dispensary-style paper bag design for discreet retail carryout, adapted to our Classic RX and #12-DS size program with case pricing that starts at $43.40.",
+        "collections": []
+    },
+    {
+        "sku": "DS-21",
+        "slug": "dispensary-bag-design-21",
+        "name": "Dispensary Bag Design #21",
+        "industry": "smoke-shop",
+        "bagType": "Classic RX Stock Design",
+        "sizeOptions": [
+            "Classic RX (10\" x 5\" x 1\")",
+            "#12-DS (7\" x 10\")"
+        ],
+        "caseCount": "1,000/case",
+        "startingPrice": 43.4,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "/images/catalog/smoke-shop/dispensary-bag-design-21.webp",
+        "description": "Dispensary Bag Design #21 is a stocked dispensary-style paper bag design for discreet retail carryout, adapted to our Classic RX and #12-DS size program with case pricing that starts at $43.40.",
+        "collections": []
+    },
+    {
+        "sku": "DS-22",
+        "slug": "dispensary-bag-design-22",
+        "name": "Dispensary Bag Design #22",
+        "industry": "smoke-shop",
+        "bagType": "Classic RX Stock Design",
+        "sizeOptions": [
+            "Classic RX (10\" x 5\" x 1\")",
+            "#12-DS (7\" x 10\")"
+        ],
+        "caseCount": "1,000/case",
+        "startingPrice": 43.4,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "/images/catalog/smoke-shop/dispensary-bag-design-22.webp",
+        "description": "Dispensary Bag Design #22 is a stocked dispensary-style paper bag design for discreet retail carryout, adapted to our Classic RX and #12-DS size program with case pricing that starts at $43.40.",
+        "collections": []
+    },
+    {
+        "sku": "DS-23",
+        "slug": "dispensary-bag-design-23",
+        "name": "Dispensary Bag Design #23",
+        "industry": "smoke-shop",
+        "bagType": "Classic RX Stock Design",
+        "sizeOptions": [
+            "Classic RX (10\" x 5\" x 1\")",
+            "#12-DS (7\" x 10\")"
+        ],
+        "caseCount": "1,000/case",
+        "startingPrice": 43.4,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "/images/catalog/smoke-shop/dispensary-bag-design-23.webp",
+        "description": "Dispensary Bag Design #23 is a stocked dispensary-style paper bag design for discreet retail carryout, adapted to our Classic RX and #12-DS size program with case pricing that starts at $43.40.",
+        "collections": []
+    },
+    {
+        "sku": "DS-24",
+        "slug": "dispensary-bag-design-24",
+        "name": "Dispensary Bag Design #24",
+        "industry": "smoke-shop",
+        "bagType": "Classic RX Stock Design",
+        "sizeOptions": [
+            "Classic RX (10\" x 5\" x 1\")",
+            "#12-DS (7\" x 10\")"
+        ],
+        "caseCount": "1,000/case",
+        "startingPrice": 43.4,
+        "colorOptions": [
+            "Stock Print"
+        ],
+        "availability": "stock",
+        "image": "/images/catalog/smoke-shop/dispensary-bag-design-24.webp",
+        "description": "Dispensary Bag Design #24 is a stocked dispensary-style paper bag design for discreet retail carryout, adapted to our Classic RX and #12-DS size program with case pricing that starts at $43.40.",
+        "collections": []
     },
     {
         "sku": "FC1C",
@@ -413,7 +623,7 @@
         ],
         "availability": "custom",
         "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC-FC1C-Hero.jpg?v=1565820121",
-        "description": "FULL-CUSTOM, 1-COLOR, BAGS ARE A HIGH VALUE OPTION! Our Bag Experts are ready to work with you today to create your company’s best bags ever. Simply submit your order and a Bag Supply Co representative will be in touch with you in less than 24 hours to receive your artwork and create a proof of your design. 4 Case Minimum Order Orders over 10 Cases, Please Call (704) 862-9256 Includes Custom Printing in 1 Stock Colors Can Print on Front, Back, and Gussets (folded sides) 30-50# Machine-Finished Paper Pinch-Bottom with Gusset or Flat-Bottom Styles 4 Week Lead Time $50 Art/Plate Fee Applies to Initial Order and/or Re-Orders Requiring Changes Additional Art/Plate Fees May Apply for Back and/or Gusset Printing FREE FREIGHT to Commercial Address for Orders of 8 Cases or More Orders Under 8 Total Cases Billed Standard UPS Shipping Rates",
+        "description": "FULL-CUSTOM, 1-COLOR, BAGS ARE A HIGH VALUE OPTION! Our Bag Experts are ready to work with you today to create your company\u2019s best bags ever. Simply submit your order and a Bag Supply Co representative will be in touch with you in less than 24 hours to receive your artwork and create a proof of your design. 4 Case Minimum Order Orders over 10 Cases, Please Call (704) 862-9256 Includes Custom Printing in 1 Stock Colors Can Print on Front, Back, and Gussets (folded sides) 30-50# Machine-Finished Paper Pinch-Bottom with Gusset or Flat-Bottom Styles 4 Week Lead Time $50 Art/Plate Fee Applies to Initial Order and/or Re-Orders Requiring Changes Additional Art/Plate Fees May Apply for Back and/or Gusset Printing FREE FREIGHT to Commercial Address for Orders of 8 Cases or More Orders Under 8 Total Cases Billed Standard UPS Shipping Rates",
         "collections": [],
         "sizePricing": [
             {
@@ -478,7 +688,7 @@
         ],
         "availability": "custom",
         "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC-FC2C.jpg?v=1571237552",
-        "description": "FULL-CUSTOM, 2-COLOR, BAGS ARE OUR MOST POPULAR OPTION! Our Bag Experts are ready to work with you today to create your company’s best bags ever. Simply submit your order and a Bag Supply Co representative will be in touch with you in less than 24 hours to receive your artwork and create a proof of your design. 4 Case Minimum Order Orders over 10 Cases, Please Call (704) 862-9256 Includes Custom Printing in 2 Stock Colors Can Print on Front, Back, and Gussets (folded sides) 30-50# Machine-Finished Paper Pinch-Bottom with Gusset or Flat-Bottom Styles 4 Week Lead Time $50 Art/Plate Fee Applies to Initial Order and/or Re-Orders Requiring Changes Additional Art/Plate Fees May Apply to Back and/or Gusset Printing FREE FREIGHT to Commercial Address for Orders of 8 Cases or More Orders Under 8 Total Cases Billed Standard UPS Shipping Rates",
+        "description": "FULL-CUSTOM, 2-COLOR, BAGS ARE OUR MOST POPULAR OPTION! Our Bag Experts are ready to work with you today to create your company\u2019s best bags ever. Simply submit your order and a Bag Supply Co representative will be in touch with you in less than 24 hours to receive your artwork and create a proof of your design. 4 Case Minimum Order Orders over 10 Cases, Please Call (704) 862-9256 Includes Custom Printing in 2 Stock Colors Can Print on Front, Back, and Gussets (folded sides) 30-50# Machine-Finished Paper Pinch-Bottom with Gusset or Flat-Bottom Styles 4 Week Lead Time $50 Art/Plate Fee Applies to Initial Order and/or Re-Orders Requiring Changes Additional Art/Plate Fees May Apply to Back and/or Gusset Printing FREE FREIGHT to Commercial Address for Orders of 8 Cases or More Orders Under 8 Total Cases Billed Standard UPS Shipping Rates",
         "collections": [],
         "sizePricing": [
             {
@@ -543,7 +753,7 @@
         ],
         "availability": "custom",
         "image": "https://cdn.shopify.com/s/files/1/0088/4493/5273/products/CBC-FC3C-Hero.jpg?v=1565831236",
-        "description": "FULL-CUSTOM, 3-COLOR, BAGS ADD A SPLASH TO YOUR CHECKOUT! Our Bag Experts are ready to work with you today to create your company’s best bags ever. Simply submit your order and a Bag Supply Co representative will be in touch with you in less than 24 hours to receive your artwork and create a proof of your design. 4 Case Minimum Order Orders over 10 Cases, Please Call (704) 862-9256 Includes Custom Printing in 3 Stock Colors Can Print on Front, Back, and Gussets (folded sides) 30-50# Machine-Finished Paper Pinch-Bottom with Gusset or Flat-Bottom Styles 4 Week Lead Time $50 Art/Plate Fee Applies to Initial Order and/or Re-Orders Requiring Changes Additional Art/Plate Fees May Apply to Back and/or Gusset Printing FREE FREIGHT to Commercial Address for Orders of 8 Cases or More Orders Under 8 Total Cases Billed Standard UPS Shipping Rates",
+        "description": "FULL-CUSTOM, 3-COLOR, BAGS ADD A SPLASH TO YOUR CHECKOUT! Our Bag Experts are ready to work with you today to create your company\u2019s best bags ever. Simply submit your order and a Bag Supply Co representative will be in touch with you in less than 24 hours to receive your artwork and create a proof of your design. 4 Case Minimum Order Orders over 10 Cases, Please Call (704) 862-9256 Includes Custom Printing in 3 Stock Colors Can Print on Front, Back, and Gussets (folded sides) 30-50# Machine-Finished Paper Pinch-Bottom with Gusset or Flat-Bottom Styles 4 Week Lead Time $50 Art/Plate Fee Applies to Initial Order and/or Re-Orders Requiring Changes Additional Art/Plate Fees May Apply to Back and/or Gusset Printing FREE FREIGHT to Commercial Address for Orders of 8 Cases or More Orders Under 8 Total Cases Billed Standard UPS Shipping Rates",
         "collections": [],
         "sizePricing": [
             {
@@ -581,120 +791,6 @@
             {
                 "label": "#15 (8.5\" x 3.5\" x 14.5\") 1,000 per case",
                 "price": 119.71
-            }
-        ]
-    },
-    {
-        "sku": "SS-PLAIN",
-        "slug": "smoke-shop-plain-kraft-bag",
-        "name": "Smoke Shop Plain Kraft Bag",
-        "industry": "smoke-shop",
-        "bagType": "Smoke Shop Plain Kraft Bag",
-        "sizeOptions": [
-            "#21 (3.5\" x 1.5\" x 10\")",
-            "#22 (4.5\" x 2.25\" x 11\")",
-            "#25 (6\" x 4\" x 11\")",
-            "#28 (8\" x 5\" x 17\")"
-        ],
-        "caseCount": "500-3,000/case",
-        "startingPrice": 65.91,
-        "colorOptions": [
-            "Plain (unprinted)"
-        ],
-        "availability": "stock",
-        "image": "/catalog/pharmacy/gs/GS-22-FRONT.webp",
-        "description": "SS-PLAIN is a plain stock kraft carry-out bag for smoke shops, head shops, and tobacco retailers. No printing - clean brown kraft stock suitable for any carry-out transaction. Available in four sizes.",
-        "collections": [],
-        "sizePricing": [
-            {
-                "label": "#21 (3.5\" x 1.5\" x 10\") 3,000 per case",
-                "price": 85
-            },
-            {
-                "label": "#22 (4.5\" x 2.25\" x 11\") 3,000 per case",
-                "price": 95
-            },
-            {
-                "label": "#25 (6\" x 4\" x 11\") 1,000 per case",
-                "price": 65.91
-            },
-            {
-                "label": "#28 (8\" x 5\" x 17\") 500 per case",
-                "price": 99
-            }
-        ]
-    },
-    {
-        "sku": "SS-CUSTOM",
-        "slug": "smoke-shop-custom-bag",
-        "name": "Custom Printed Smoke Shop Bags",
-        "industry": "smoke-shop",
-        "bagType": "Custom Smoke Shop Bag",
-        "sizeOptions": [
-            "#21 (3.5\" x 1.5\" x 10\")",
-            "#22 (4.5\" x 2.25\" x 11\")",
-            "#25 (6\" x 4\" x 11\")",
-            "#28 (8\" x 5\" x 17\")"
-        ],
-        "caseCount": "4 case minimum per bag type",
-        "startingPrice": 89,
-        "colorOptions": [
-            "1-color",
-            "2-color",
-            "3-color"
-        ],
-        "availability": "custom",
-        "image": "/catalog/pharmacy/gs/GS-22-FRONT.webp",
-        "description": "Full custom print carry-out bags for smoke shops in 1, 2, or 3 color options. Feature your shop name, logo, or brand design. Minimum 4 cases per bag type. Artwork required: AI, EPS, or PDF vector files. 4-case minimum per bag type.",
-        "collections": [],
-        "sizePricing": [
-            {
-                "label": "#21 1-color 3,000 per case",
-                "price": 105
-            },
-            {
-                "label": "#21 2-color 3,000 per case",
-                "price": 119
-            },
-            {
-                "label": "#21 3-color 3,000 per case",
-                "price": 135
-            },
-            {
-                "label": "#22 1-color 3,000 per case",
-                "price": 115
-            },
-            {
-                "label": "#22 2-color 3,000 per case",
-                "price": 129
-            },
-            {
-                "label": "#22 3-color 3,000 per case",
-                "price": 145
-            },
-            {
-                "label": "#25 1-color 1,000 per case",
-                "price": 89
-            },
-            {
-                "label": "#25 2-color 1,000 per case",
-                "price": 105
-            },
-            {
-                "label": "#25 3-color 1,000 per case",
-                "price": 119
-            },
-            {
-                "label": "#28 1-color 500 per case",
-                "price": 119
-            },
-            {
-                "label": "#28 2-color 500 per case",
-                "price": 135
-            },
-            {
-                "label": "#28 3-color 500 per case",
-                "price": 149
             }
         ]
     }

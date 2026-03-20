@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import AddToCartControl from '@/components/cart/AddToCartControl'
 import { money } from '@/lib/catalogProducts'
 import { getAllLabelProducts } from '@/lib/labelCatalog'
 
 export const metadata: Metadata = {
   title: 'Compliance Labels Catalog',
   description:
-    'Six dispensary-ready compliance label options with fixed case pricing, free shipping, and direct quote routing.',
+    'Six dispensary-ready compliance label options with fixed case pricing, free shipping, and direct add-to-cart ordering.',
 }
 
 export default function LabelsCatalogPage() {
@@ -67,9 +68,22 @@ export default function LabelsCatalogPage() {
                     {label.quantity.toLocaleString('en-US')} qty per case
                   </p>
                   <p className="mt-1 product-card-price">{money(label.price)} / case</p>
-                  <Link href="/generic-bag-quote" className="btn-primary mt-4">
-                    Build a Quote
-                  </Link>
+                  <AddToCartControl
+                    className="mt-4"
+                    showQuantity={false}
+                    item={{
+                      id: `label:${label.slug}`,
+                      kind: 'label',
+                      sku: label.sku,
+                      slug: label.slug,
+                      name: label.name,
+                      image: label.image,
+                      productHref: '/catalog/labels',
+                      quantity: 1,
+                      unitPrice: label.price,
+                      unit: 'case',
+                    }}
+                  />
                 </div>
               </article>
             ))}

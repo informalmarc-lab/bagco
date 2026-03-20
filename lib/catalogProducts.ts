@@ -211,6 +211,10 @@ export function getLeadTimeShort(availability: CatalogAvailability): string {
   return 'Custom: 3-4 weeks'
 }
 
+export function isCatalogProductQuoteOnly(product: CatalogProduct): boolean {
+  return product.availability === 'custom'
+}
+
 function slugifySegment(value: string): string {
   const slug = value
     .toLowerCase()
