@@ -11,6 +11,7 @@ const industryLinks = [
   { href: '/industries/veterinary', label: 'Veterinary' },
   { href: '/industries/dispensary', label: 'Dispensaries' },
   { href: '/industries/smoke-shops', label: 'Smoke Shops' },
+  { href: '/industries/cigar-shops', label: 'Cigar Shops' },
   { href: '/catalog/custom', label: 'Custom Bags' },
   { href: '/industries/distributors', label: 'Distributors' },
 ]
@@ -20,6 +21,7 @@ const catalogLinks = [
   { href: '/catalog/pharmacy', label: 'Pharmacy' },
   { href: '/catalog/veterinary', label: 'Veterinary' },
   { href: '/catalog/retail-bags', label: 'Retail Bags' },
+  { href: '/catalog/cigar-bags', label: 'Cigar Bags' },
   { href: '/catalog/custom', label: 'Custom 1/2/3 Color' },
   { href: '/catalog/mylar-bags', label: 'Mylar Bags' },
   { href: '/catalog/labels', label: 'Labels' },

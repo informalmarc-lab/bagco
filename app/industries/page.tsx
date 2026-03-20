@@ -30,6 +30,11 @@ const segments = [
     href: '/industries/smoke-shops',
   },
   {
+    title: 'Cigar Shops',
+    copy: 'Printed cigar bags and mylar packaging for shops and lounges that want a cleaner premium handoff.',
+    href: '/industries/cigar-shops',
+  },
+  {
     title: 'Custom Bags',
     copy: '1-color, 2-color, and 3-color print programs with case-level pricing and structured lead times.',
     href: '/catalog/custom',
