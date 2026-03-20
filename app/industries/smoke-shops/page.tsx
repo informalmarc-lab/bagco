@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import FallbackImage from '@/components/FallbackImage'
+import AddToCartControl from '@/components/cart/AddToCartControl'
 import { contactPhone, contactPhoneHref, contactTextHref } from '@/components/siteConfig'
 import {
   getCatalogOverviewPath,
@@ -9,6 +10,8 @@ import {
   money,
   type CatalogProduct,
 } from '@/lib/catalogProducts'
+import { getAllLabelProducts } from '@/lib/labelCatalog'
+import { formatMylarQuantityLabel, getMylarProductBySlug, type MylarProduct } from '@/lib/mylarCatalog'
 
 export const metadata: Metadata = {
   title: {
@@ -36,15 +39,32 @@ const aboutPoints = [
   'Design variety lets teams refresh the look of the bag wall without changing the core case-count program.',
 ]
 
+const featuredMylarSlugs = [
+  '1-8-oz-gloss-gold-clear-plain',
+  '1-8-oz-gloss-holographic-clear-plain',
+  '1-8-oz-kraft-opaque-plain',
+  'pre-roll-gloss-holographic-clear-plain',
+  'pre-roll-matte-black-opaque-plain',
+  'pre-roll-kraft-opaque-plain',
+]
+
 function getFeaturedProducts(): CatalogProduct[] {
   return featuredSmokeShopSlugs
     .map((slug) => getCatalogProductBySlug(slug))
     .filter((product): product is CatalogProduct => Boolean(product))
 }
 
+function getFeaturedMylarProducts(): MylarProduct[] {
+  return featuredMylarSlugs
+    .map((slug) => getMylarProductBySlug(slug))
+    .filter((product): product is MylarProduct => Boolean(product))
+}
+
 export default function SmokeShopsIndustryPage() {
   const smokeShopProducts = getCatalogProductsByIndustry('smoke-shop')
   const featuredProducts = getFeaturedProducts()
+  const labels = getAllLabelProducts()
+  const mylarProducts = getFeaturedMylarProducts()
   const firstProduct = featuredProducts[0]
 
   return (
@@ -202,6 +222,115 @@ export default function SmokeShopsIndustryPage() {
       </section>
 
       <section className="section-container pt-2">
+        <div className="tonal-panel">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="kicker">Labels</p>
+              <h2 className="section-title mt-4">Add compliance-ready labels to round out the counter program.</h2>
+              <p className="mt-3 max-w-3xl muted-text">
+                Smoke shops that carry pre-rolls, mylar, or mixed packaging can keep labeling simple with the same
+                fixed-case label options already used across dispensary-style programs.
+              </p>
+            </div>
+            <Link href="/catalog/labels" className="btn-secondary">
+              Browse Labels
+            </Link>
+          </div>
+
+          <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {labels.map((label) => (
+              <article key={label.sku} className="surface-card product-card flex h-full flex-col">
+                <div className="relative aspect-[4/3] bg-[#FAF6F0]">
+                  <FallbackImage
+                    src={label.image}
+                    fallbackSrc="/images/catalog/placeholder.svg"
+                    alt={label.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-4">
+                  <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">SKU {label.sku}</p>
+                  <h3 className="mt-2 text-lg font-black text-[#1E4D2B]">{label.name}</h3>
+                  <p className="mt-2 text-sm text-[#5F4D33]">{label.description}</p>
+                  <p className="mt-3 text-sm font-semibold text-[#5F4D33]">
+                    {label.quantity.toLocaleString('en-US')} qty per case
+                  </p>
+                  <p className="mt-1 product-card-price">{money(label.price)} / case</p>
+                  <Link href="/generic-bag-quote" className="btn-primary mt-auto pt-4">
+                    Build a Quote
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-container pt-2">
+        <div className="tonal-panel">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="kicker">Mylar Bags</p>
+              <h2 className="section-title mt-4">Add mylar and pre-roll formats for smoke shop add-on packaging.</h2>
+              <p className="mt-3 max-w-3xl muted-text">
+                These featured mylar SKUs keep the mix focused on holographic, gold, kraft, and pre-roll-friendly
+                formats that fit smoke shop counters and specialty retail packaging displays.
+              </p>
+            </div>
+            <Link href="/catalog/mylar-bags" className="btn-secondary">
+              Browse Mylar Bags
+            </Link>
+          </div>
+
+          <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {mylarProducts.map((product) => (
+              <article key={product.sku} className="surface-card product-card flex h-full flex-col">
+                <Link href={`/catalog/mylar-bags/${product.slug}`} className="relative block aspect-[4/3] bg-[#FAF6F0]">
+                  <FallbackImage
+                    src={product.image}
+                    fallbackSrc="/images/mylar/placeholder.webp"
+                    alt={product.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                  />
+                </Link>
+                <div className="flex flex-1 flex-col p-4">
+                  <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">SKU {product.sku}</p>
+                  <h3 className="mt-2 text-lg font-black text-[#1E4D2B]">
+                    <Link href={`/catalog/mylar-bags/${product.slug}`} className="transition hover:text-[#B5813A]">
+                      {product.name}
+                    </Link>
+                  </h3>
+                  <p className="mt-1 text-sm text-[#5F4D33]">{product.size} / {product.finish}</p>
+                  <p className="mt-1 text-sm text-[#5F4D33]">{formatMylarQuantityLabel(product.quantity)}</p>
+                  <p className="mt-2 product-card-price">{money(product.price)} / {formatMylarQuantityLabel(product.quantity)}</p>
+                  <AddToCartControl
+                    item={{
+                      id: `mylar:${product.slug}`,
+                      kind: 'mylar',
+                      sku: product.sku,
+                      slug: product.slug,
+                      name: product.name,
+                      image: product.image,
+                      productHref: `/catalog/mylar-bags/${product.slug}`,
+                      unit: 'pack',
+                      unitLabel: formatMylarQuantityLabel(product.quantity),
+                      unitPrice: product.price,
+                      quantity: 1,
+                    }}
+                    className="mt-auto pt-4"
+                  />
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-container pt-2">
         <div className="rounded-[2rem] bg-[linear-gradient(135deg,#1E4D2B,#225935_55%,#15361F)] p-8 text-white shadow-[0_24px_48px_rgba(30,77,43,0.28)] md:p-10">
           <p className="kicker text-[#F4E8D8]">Contact CTA</p>
           <h2 className="heading-display mt-4 max-w-4xl text-[2.4rem] leading-tight text-white md:text-[3.2rem]">
@@ -215,13 +344,22 @@ export default function SmokeShopsIndustryPage() {
             <Link href="/generic-bag-quote" className="btn-primary">
               Build a Quote
             </Link>
-            <Link href="/catalog?industry=smoke-shop" className="btn-secondary">
+            <Link
+              href="/catalog?industry=smoke-shop"
+              className="btn-secondary border-[#F4E8D8] text-[#FAF6F0] hover:border-[#FAF6F0] hover:bg-[#FAF6F0] hover:text-[#1E4D2B]"
+            >
               Browse Smoke Shop Catalog
             </Link>
-            <a href={contactTextHref} className="btn-secondary">
+            <a
+              href={contactTextHref}
+              className="btn-secondary border-[#F4E8D8] text-[#FAF6F0] hover:border-[#FAF6F0] hover:bg-[#FAF6F0] hover:text-[#1E4D2B]"
+            >
               Text {contactPhone}
             </a>
-            <a href={contactPhoneHref} className="btn-secondary">
+            <a
+              href={contactPhoneHref}
+              className="btn-secondary border-[#F4E8D8] text-[#FAF6F0] hover:border-[#FAF6F0] hover:bg-[#FAF6F0] hover:text-[#1E4D2B]"
+            >
               Call {contactPhone}
             </a>
           </div>

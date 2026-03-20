@@ -33,40 +33,10 @@ const aboutPoints = [
   'One quote path makes it easier to plan stock replenishment and custom print together.',
 ]
 
-type FeaturedPharmacyCard = {
-  id: string
-  sku: string
-  familyName: string
-  sizeLabel: string
-  caseCount: string
-  price: number
-  image: string
-  href: string
-}
-
-function getFeaturedPharmacyCards(): FeaturedPharmacyCard[] {
-  return featuredPharmacySlugs.flatMap((slug) => {
-    const product = getCatalogProductBySlug(slug)
-    if (!product) return []
-
-    const sizeRows = product.sizePricing?.slice(0, 2) || []
-
-    return sizeRows.map((row) => {
-      const sizeLabel = row.label.replace(/\s+\d[\d,]*\s+per case$/i, '').trim()
-      const caseCountMatch = row.label.match(/(\d[\d,]*)\s+per case$/i)
-
-      return {
-        id: `${product.sku}-${sizeLabel}`,
-        sku: product.sku,
-        familyName: product.name,
-        sizeLabel,
-        caseCount: caseCountMatch ? `${caseCountMatch[1]} per case` : product.caseCount,
-        price: row.price,
-        image: product.image,
-        href: getCatalogOverviewPath(product),
-      }
-    })
-  })
+function getFeaturedPharmacyProducts(): CatalogProduct[] {
+  return featuredPharmacySlugs
+    .map((slug) => getCatalogProductBySlug(slug))
+    .filter((product): product is CatalogProduct => Boolean(product))
 }
 
 function getFeaturedCustomProducts(): CatalogProduct[] {
@@ -77,7 +47,7 @@ function getFeaturedCustomProducts(): CatalogProduct[] {
 
 export default function PharmaciesIndustryPage() {
   const heroProduct = getCatalogProductBySlug('pharmacy-bag-gs-design')
-  const paperCards = getFeaturedPharmacyCards()
+  const featuredProducts = getFeaturedPharmacyProducts()
   const customProducts = getFeaturedCustomProducts()
 
   return (
@@ -97,7 +67,7 @@ export default function PharmaciesIndustryPage() {
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-[#1E4D2B]">
-                  6 featured size cards
+                  3 stocked families
                 </span>
                 <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-[#1E4D2B]">
                   3 custom print options
@@ -182,10 +152,10 @@ export default function PharmaciesIndustryPage() {
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
               <p className="kicker">Paper Bags</p>
-              <h2 className="section-title mt-4">Six featured pharmacy bag size cards built from the most-used stock families.</h2>
+              <h2 className="section-title mt-4">Three stocked pharmacy bag families covering the core lineup.</h2>
               <p className="mt-3 max-w-3xl muted-text">
-                We pulled the top two size rows from each current pharmacy family so you can compare common stock
-                formats without digging through the full catalog first.
+                Start with GS, TY, or Plastic GS depending on the type of pharmacy handoff you need, then use the full
+                product page to choose the size that fits your script flow.
               </p>
             </div>
             <Link href="/catalog/pharmacy" className="btn-secondary">
@@ -194,28 +164,29 @@ export default function PharmaciesIndustryPage() {
           </div>
 
           <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {paperCards.map((card) => (
-              <article key={card.id} className="surface-card product-card flex h-full flex-col">
-                <Link href={card.href} className="relative block aspect-[4/3] bg-[#FAF6F0]">
+            {featuredProducts.map((product) => (
+              <article key={product.sku} className="surface-card product-card flex h-full flex-col">
+                <Link href={getCatalogOverviewPath(product)} className="relative block aspect-[4/3] bg-[#FAF6F0]">
                   <FallbackImage
-                    src={card.image}
+                    src={product.image}
                     fallbackSrc="/images/catalog/placeholder.svg"
-                    alt={`${card.familyName} ${card.sizeLabel}`}
+                    alt={product.name}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                   />
                 </Link>
                 <div className="flex flex-1 flex-col p-4">
-                  <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">SKU {card.sku}</p>
+                  <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">SKU {product.sku}</p>
                   <h3 className="mt-2 text-lg font-black text-[#1E4D2B]">
-                    <Link href={card.href} className="transition hover:text-[#B5813A]">
-                      {card.familyName}
+                    <Link href={getCatalogOverviewPath(product)} className="transition hover:text-[#B5813A]">
+                      {product.name}
                     </Link>
                   </h3>
-                  <p className="mt-2 text-sm font-semibold text-[#5F4D33]">{card.sizeLabel}</p>
-                  <p className="mt-1 text-sm text-[#5F4D33]">{card.caseCount}</p>
-                  <p className="mt-2 product-card-price">{money(card.price)} / case</p>
+                  <p className="mt-2 text-sm text-[#5F4D33]">{product.description}</p>
+                  <p className="mt-3 text-sm font-semibold text-[#5F4D33]">{product.caseCount}</p>
+                  <p className="mt-1 text-sm text-[#5F4D33]">{product.sizeOptions.slice(0, 2).join(' / ')}</p>
+                  <p className="mt-2 product-card-price">From {money(product.startingPrice)} / case</p>
                   <div className="mt-auto pt-4">
                     <Link href="/generic-bag-quote" className="btn-primary">
                       Build a Quote
@@ -289,10 +260,16 @@ export default function PharmaciesIndustryPage() {
             <Link href="/generic-bag-quote" className="btn-primary">
               Build a Quote
             </Link>
-            <a href={contactTextHref} className="btn-secondary">
+            <a
+              href={contactTextHref}
+              className="btn-secondary border-[#F4E8D8] text-[#FAF6F0] hover:border-[#FAF6F0] hover:bg-[#FAF6F0] hover:text-[#1E4D2B]"
+            >
               Text {contactPhone}
             </a>
-            <a href={contactPhoneHref} className="btn-secondary">
+            <a
+              href={contactPhoneHref}
+              className="btn-secondary border-[#F4E8D8] text-[#FAF6F0] hover:border-[#FAF6F0] hover:bg-[#FAF6F0] hover:text-[#1E4D2B]"
+            >
               Call {contactPhone}
             </a>
           </div>

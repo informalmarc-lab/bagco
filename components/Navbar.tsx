@@ -115,7 +115,7 @@ export default function Navbar() {
                 Catalogs
               </Link>
               <div
-                className={`absolute left-0 top-[calc(100%+8px)] z-30 w-64 rounded-xl border border-[#C4935A66] bg-white p-2 shadow-[0_14px_30px_rgba(30,77,43,0.14)] transition-all ${
+                className={`absolute left-0 top-full z-30 w-64 translate-y-2 rounded-xl border border-[#C4935A66] bg-white p-2 shadow-[0_14px_30px_rgba(30,77,43,0.14)] transition-all ${
                   openDesktopMenu === 'catalog' ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
                 }`}
               >
@@ -148,7 +148,7 @@ export default function Navbar() {
                 Industries
               </Link>
               <div
-                className={`absolute left-0 top-[calc(100%+8px)] z-30 w-56 rounded-xl border border-[#C4935A66] bg-white p-2 shadow-[0_14px_30px_rgba(30,77,43,0.14)] transition-all ${
+                className={`absolute left-0 top-full z-30 w-56 translate-y-2 rounded-xl border border-[#C4935A66] bg-white p-2 shadow-[0_14px_30px_rgba(30,77,43,0.14)] transition-all ${
                   openDesktopMenu === 'industries'
                     ? 'pointer-events-auto opacity-100'
                     : 'pointer-events-none opacity-0'

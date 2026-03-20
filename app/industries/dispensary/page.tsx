@@ -316,10 +316,16 @@ export default function DispensaryIndustryPage() {
             <Link href="/generic-bag-quote" className="btn-primary">
               Build a Quote
             </Link>
-            <a href={contactTextHref} className="btn-secondary">
+            <a
+              href={contactTextHref}
+              className="btn-secondary border-[#F4E8D8] text-[#FAF6F0] hover:border-[#FAF6F0] hover:bg-[#FAF6F0] hover:text-[#1E4D2B]"
+            >
               Text {contactPhone}
             </a>
-            <a href={contactPhoneHref} className="btn-secondary">
+            <a
+              href={contactPhoneHref}
+              className="btn-secondary border-[#F4E8D8] text-[#FAF6F0] hover:border-[#FAF6F0] hover:bg-[#FAF6F0] hover:text-[#1E4D2B]"
+            >
               Call {contactPhone}
             </a>
           </div>
