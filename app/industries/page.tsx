@@ -22,7 +22,7 @@ const segments = [
   {
     title: 'Dispensaries',
     copy: 'Child-resistant, smell-proof, and custom print bag lines for compliant retail.',
-    href: '/industries/dispensaries',
+    href: '/industries/dispensary',
   },
   {
     title: 'Smoke Shops',

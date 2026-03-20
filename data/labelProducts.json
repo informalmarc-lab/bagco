@@ -1,0 +1,64 @@
+{
+  "products": [
+    {
+      "sku": "LBL-001",
+      "slug": "generic-v2-cannabis-rx-compliant-strain-labels",
+      "name": "Generic V2 Cannabis Rx Compliant Strain Labels",
+      "quantity": 1000,
+      "price": 12,
+      "shippingBadge": "Free Shipping",
+      "image": "/images/labels/generic-v2-cannabis-rx-compliant-strain-labels.webp",
+      "description": "Generic Rx-compliant strain labels for dispensary jars, mylar bags, and exit packaging programs."
+    },
+    {
+      "sku": "LBL-002",
+      "slug": "california-v2-universal-symbol-rx-compliant-labels",
+      "name": "California V2 Universal Symbol Rx Compliant Labels",
+      "quantity": 1000,
+      "price": 12,
+      "shippingBadge": "Free Shipping",
+      "image": "/images/labels/california-v2-universal-symbol-rx-compliant-labels.webp",
+      "description": "California-ready universal symbol and Rx-compliant labels sized for regulated dispensary packaging workflows."
+    },
+    {
+      "sku": "LBL-003",
+      "slug": "green-tamper-evident-universal-marijuana-strain-labels",
+      "name": "Green Tamper Evident Universal Marijuana Strain Labels",
+      "quantity": 1000,
+      "price": 12,
+      "shippingBadge": "Free Shipping",
+      "image": "/images/labels/green-tamper-evident-universal-marijuana-strain-labels.webp",
+      "description": "Green tamper-evident strain labels for dispensary packaging that needs a quick visual compliance cue."
+    },
+    {
+      "sku": "LBL-004",
+      "slug": "red-tamper-evident-universal-marijuana-strain-labels",
+      "name": "Red Tamper Evident Universal Marijuana Strain Labels",
+      "quantity": 1000,
+      "price": 12,
+      "shippingBadge": "Free Shipping",
+      "image": "/images/labels/red-tamper-evident-universal-marijuana-strain-labels.webp",
+      "description": "Red tamper-evident strain labels for high-visibility dispensary packaging and checkout handling."
+    },
+    {
+      "sku": "LBL-005",
+      "slug": "montana-thc-universal-symbol-labels",
+      "name": "Montana THC Universal Symbol Labels",
+      "quantity": 1000,
+      "price": 12,
+      "shippingBadge": "Free Shipping",
+      "image": "/images/labels/montana-thc-universal-symbol-labels.webp",
+      "description": "Montana THC universal symbol labels for state-specific dispensary packaging programs."
+    },
+    {
+      "sku": "LBL-006",
+      "slug": "oklahoma-omma-universal-symbol-labels",
+      "name": "Oklahoma OMMA Universal Symbol Labels",
+      "quantity": 1000,
+      "price": 12,
+      "shippingBadge": "Free Shipping",
+      "image": "/images/labels/oklahoma-omma-universal-symbol-labels.webp",
+      "description": "Oklahoma OMMA universal symbol labels for dispensary packaging, jars, and bag-ready labeling workflows."
+    }
+  ]
+}

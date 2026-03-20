@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 const industryQuickNav = [
   { label: 'Pharmacies', href: '/industries/pharmacies', icon: '🏥' },
-  { label: 'Dispensaries', href: '/industries/dispensaries', icon: '🌿' },
+  { label: 'Dispensaries', href: '/industries/dispensary', icon: '🌿' },
   { label: 'Veterinary', href: '/industries/veterinary', icon: '🐾' },
   { label: 'Smoke Shops', href: '/industries/smoke-shops', icon: '🚬' },
   { label: 'Custom Bags', href: '/catalog/custom', icon: 'CB' },

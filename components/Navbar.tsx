@@ -8,7 +8,7 @@ import { contactTextHref } from '@/components/siteConfig'
 const industryLinks = [
   { href: '/industries/pharmacies', label: 'Pharmacies' },
   { href: '/industries/veterinary', label: 'Veterinary' },
-  { href: '/industries/dispensaries', label: 'Dispensaries' },
+  { href: '/industries/dispensary', label: 'Dispensaries' },
   { href: '/industries/smoke-shops', label: 'Smoke Shops' },
   { href: '/catalog/custom', label: 'Custom Bags' },
   { href: '/industries/distributors', label: 'Distributors' },
@@ -20,6 +20,7 @@ const catalogLinks = [
   { href: '/catalog/veterinary', label: 'Veterinary' },
   { href: '/catalog/custom', label: 'Custom 1/2/3 Color' },
   { href: '/catalog/mylar-bags', label: 'Mylar Bags' },
+  { href: '/catalog/labels', label: 'Labels' },
 ]
 
 const navLinks = [
