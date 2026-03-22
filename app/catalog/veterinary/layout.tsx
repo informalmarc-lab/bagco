@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   },
   description:
     'Stock and custom veterinary paper bags. Standard vet sizes available for immediate shipping or custom print programs.',
+  alternates: {
+    canonical: '/catalog/veterinary',
+  },
 }
 
 export default function VeterinaryCatalogLayout({ children }: { children: React.ReactNode }) {

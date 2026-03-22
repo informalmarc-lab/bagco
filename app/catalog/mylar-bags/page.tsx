@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   title: 'Mylar Bags Catalog',
   description:
     'Shop Bag Supply Co mylar bag inventory by SKU with local images, pack quantities, transparent pricing, and direct cart ordering.',
+  alternates: {
+    canonical: '/catalog/mylar-bags',
+  },
 }
 
 function ProductCard({

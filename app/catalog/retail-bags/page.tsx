@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: 'Retail Bags Catalog',
   description:
     'Shop retail checkout bag options from BagSupplyCo with fixed case pricing, shipping breakpoints, and product detail pages.',
+  alternates: {
+    canonical: '/catalog/retail-bags',
+  },
 }
 
 export default function RetailBagsPage() {

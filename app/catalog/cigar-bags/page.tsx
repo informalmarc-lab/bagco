@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   title: 'Printed Cigar Bags Catalog',
   description:
     'Shop printed cigar bags and slider cigar bag formats from BagSupplyCo with local images, case pricing, and product detail pages.',
+  alternates: {
+    canonical: '/catalog/cigar-bags',
+  },
 }
 
 function ProductCard({

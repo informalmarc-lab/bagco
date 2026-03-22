@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import CustomCatalogClient from '@/components/catalog/CustomCatalogClient'
 import { getCustomCatalogImages } from '@/lib/catalogImages'
@@ -8,6 +9,15 @@ const BASE_RULES = [
   'Typical lead time: around 4 weeks after proof approval',
   '8+ cases qualify for free shipping to commercial addresses',
 ]
+
+export const metadata: Metadata = {
+  title: 'Custom Printed Bag Catalog',
+  description:
+    'Compare Bag Supply Co custom printed bag programs across 1-color, 2-color, and 3-color options with case-level pricing and production rules.',
+  alternates: {
+    canonical: '/catalog/custom',
+  },
+}
 
 export default function CustomCatalogPage() {
   const images = getCustomCatalogImages()

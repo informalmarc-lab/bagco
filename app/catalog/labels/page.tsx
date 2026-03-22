@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: 'Compliance Labels Catalog',
   description:
     'Six dispensary-ready compliance label options with fixed case pricing, free shipping, and direct add-to-cart ordering.',
+  alternates: {
+    canonical: '/catalog/labels',
+  },
 }
 
 export default function LabelsCatalogPage() {
