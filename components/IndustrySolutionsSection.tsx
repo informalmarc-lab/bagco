@@ -114,7 +114,7 @@ const INDUSTRIES: IndustryPanel[] = [
       'Reliable recurring supply keeps distributor accounts stable and predictable.',
     ],
     catalogs: [
-      { label: 'Distributor Programs', href: '/industries/distributors' },
+      { label: 'Distributor Programs', href: '/distributors' },
       { label: 'Custom 1/2/3 Color', href: '/catalog/custom' },
       { label: 'Full Catalog', href: '/catalog' },
     ],

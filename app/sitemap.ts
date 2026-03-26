@@ -72,7 +72,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '/industries/cigar-shops', priority: 0.8, changeFrequency: 'monthly' },
     { route: '/industries/pharmacies', priority: 0.82, changeFrequency: 'monthly' },
     { route: '/industries/veterinary', priority: 0.82, changeFrequency: 'monthly' },
-    { route: '/industries/distributors', priority: 0.8, changeFrequency: 'monthly' },
+    { route: '/distributors', priority: 0.82, changeFrequency: 'monthly' },
     { route: '/manufacturing', priority: 0.75, changeFrequency: 'monthly' },
     { route: '/payments', priority: 0.78, changeFrequency: 'monthly' },
     { route: '/shipping', priority: 0.72, changeFrequency: 'monthly' },

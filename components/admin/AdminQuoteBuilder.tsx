@@ -94,7 +94,7 @@ export default function AdminQuoteBuilder({ initialQuote, nextDocNumber }: Admin
         item: 'SETUP',
         sizeAndPaper: 'N/A',
         description: 'New Customer Custom Artwork Setup Fee (One-Time)',
-        price: 50,
+        price: 75,
         locked: true,
       }) as AdminLineItem,
     [],
@@ -291,7 +291,7 @@ export default function AdminQuoteBuilder({ initialQuote, nextDocNumber }: Admin
 
         <label className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#1E4D2B]">
           <input type="checkbox" checked={payload.includeSetupFee} onChange={(e) => setPayload((p) => ({ ...p, includeSetupFee: e.target.checked }))} />
-          New customer ordering custom print (+$50.00 one-time fee)
+          New customer ordering custom print (+$75.00 one-time fee)
         </label>
       </section>
 

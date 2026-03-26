@@ -11,7 +11,7 @@ import {
 
 const STORE_DIR = path.join(process.cwd(), 'data')
 const STORE_PATH = path.join(STORE_DIR, 'quotes.json')
-const SETUP_FEE_AMOUNT = 50
+const SETUP_FEE_AMOUNT = 75
 
 const defaultStore: AdminStore = {
   lastSequence: 0,

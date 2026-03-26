@@ -23,7 +23,7 @@ const industryQuickNav = [
   { label: 'Veterinary', href: '/industries/veterinary', icon: '\u{1F43E}' },
   { label: 'Smoke Shops', href: '/industries/smoke-shops', icon: '\u{1F6AC}' },
   { label: 'Custom Bags', href: '/catalog/custom', icon: 'CB' },
-  { label: 'Distributors', href: '/industries/distributors', icon: '\u{1F4E6}' },
+  { label: 'Distributors', href: '/distributors', icon: '\u{1F4E6}' },
 ]
 
 const deliveryPoints = [

@@ -42,7 +42,7 @@ const segments = [
   {
     title: 'Distributors',
     copy: 'Factory-direct wholesale programs with blind shipping and drop shipping support.',
-    href: '/industries/distributors',
+    href: '/distributors',
   },
 ]
 

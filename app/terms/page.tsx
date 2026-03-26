@@ -118,7 +118,7 @@ export default function TermsPage() {
           <article>
             <h2 className="text-2xl font-black text-[#1E4D2B] md:text-3xl">5. Custom Orders and Artwork</h2>
             <ul className="mt-4 list-disc space-y-2 pl-5 text-base leading-8 text-[#3E3427] md:text-lg">
-              <li>A one-time custom artwork setup fee of $50 applies to all new customer custom print orders.</li>
+              <li>A one-time custom artwork setup fee of $75 applies to all new customer custom print orders.</li>
               <li>
                 Customers are responsible for ensuring all submitted artwork is accurate, complete, and does not
                 infringe on any third-party intellectual property rights.

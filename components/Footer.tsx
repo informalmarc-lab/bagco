@@ -55,7 +55,7 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-black uppercase tracking-[0.1em] text-[#B5813A]">Industries & Catalogs</h4>
             <ul className="mt-3 space-y-2 text-sm">
-              <li><Link href="/industries/distributors" className="footer-link">Distributors</Link></li>
+              <li><Link href="/distributors" className="footer-link">Distributors</Link></li>
               <li><Link href="/catalog/pharmacy" className="footer-link">Pharmacy</Link></li>
               <li><Link href="/catalog/veterinary" className="footer-link">Veterinary</Link></li>
               <li><Link href="/industries/dispensary" className="footer-link">Dispensaries</Link></li>

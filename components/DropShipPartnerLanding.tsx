@@ -109,7 +109,7 @@ const pillars: Pillar[] = [
     kicker: 'Custom & White-Label',
     title: 'Make It Yours, Down to the Bag.',
     body:
-      'Want to offer your customers custom-printed bags under your own brand? We handle the full print production and ship directly to your customer. Custom orders are production-ready in 3–4 weeks from artwork approval. Setup fee is a one-time $50 for new accounts.',
+      'Want to offer your customers custom-printed bags under your own brand? We handle the full print production and ship directly to your customer. Custom orders are production-ready in 3–4 weeks from artwork approval. Setup fee is a one-time $75 for new accounts.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6 text-[#B5813A]" aria-hidden="true">
         <path d="m4 20 4.2-1 10-10a1.7 1.7 0 0 0 0-2.4l-.8-.8a1.7 1.7 0 0 0-2.4 0l-10 10L4 20Z" stroke="currentColor" strokeLinejoin="round" strokeWidth="1.7" />

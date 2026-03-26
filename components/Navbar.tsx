@@ -13,7 +13,7 @@ const industryLinks = [
   { href: '/industries/smoke-shops', label: 'Smoke Shops' },
   { href: '/industries/cigar-shops', label: 'Cigar Shops' },
   { href: '/catalog/custom', label: 'Custom Bags' },
-  { href: '/industries/distributors', label: 'Distributors' },
+  { href: '/distributors', label: 'Distributors' },
 ]
 
 const catalogLinks = [
