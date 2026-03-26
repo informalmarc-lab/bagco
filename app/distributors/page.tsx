@@ -160,6 +160,33 @@ const steps = [
   },
 ] as const
 
+const domesticReasons = [
+  {
+    title: 'No tariff risk',
+    copy: 'Domestic sourcing keeps your bag program clear of import duties and trade-policy swings affecting Chinese goods.',
+  },
+  {
+    title: 'No 6-8 week lead times',
+    copy: 'Stock orders ship same day instead of sitting on a container schedule for months.',
+  },
+  {
+    title: 'Low minimums',
+    copy: 'We ship single cases on stock programs, so you can cover more accounts without oversized inventory bets.',
+  },
+  {
+    title: 'Custom printing without massive commitments',
+    copy: 'Private label programs stay accessible without the huge overseas quantity requirements.',
+  },
+  {
+    title: 'Drop-ship ready',
+    copy: 'We can blind ship to your customers directly, which overseas manufacturers typically will not support.',
+  },
+  {
+    title: 'Reliable, consistent supply',
+    copy: 'No port delays, no customs holds, and no surprise disruptions when your customers need reorders.',
+  },
+] as const
+
 function CheckIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5 text-[#B5813A]" aria-hidden="true">
@@ -411,6 +438,35 @@ export default function DistributorsPage() {
               <p className="mt-3 text-sm leading-7 text-[#5F4D33]">{step.copy}</p>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="section-container pb-20">
+        <div className="overflow-hidden rounded-[2rem] border border-[#C4935A99] bg-[linear-gradient(135deg,#1E4D2B,#225935_58%,#3A2A19)] p-6 text-[#FAF6F0] shadow-[0_22px_46px_rgba(30,77,43,0.22)] md:p-8">
+          <div className="max-w-3xl">
+            <p className="inline-flex rounded-full border border-[#F4E8D899] bg-[#F4E8D81A] px-3 py-1 text-[11px] font-black uppercase tracking-[0.14em] text-[#F4E8D8]">
+              Domestic Advantage
+            </p>
+            <h2 className="heading-serif mt-4 text-3xl font-black text-[#FAF6F0] md:text-5xl">
+              Why Source Domestic?
+            </h2>
+            <p className="mt-4 text-base leading-8 text-[#F4E8D8] md:text-lg">
+              Give your customers a supply program that moves faster, carries less risk, and does not force
+              oversized commitments just to get started.
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {domesticReasons.map((reason) => (
+              <article
+                key={reason.title}
+                className="rounded-2xl border border-[#C4935A80] bg-[#FAF6F0] p-5 text-[#1E4D2B] shadow-[0_14px_30px_rgba(0,0,0,0.16)]"
+              >
+                <p className="text-xs font-black uppercase tracking-[0.1em] text-[#B5813A]">{reason.title}</p>
+                <p className="mt-3 text-sm font-semibold leading-7 text-[#5F4D33]">{reason.copy}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
