@@ -81,6 +81,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '/manufacturing', priority: 0.75, changeFrequency: 'monthly' },
     { route: '/payments', priority: 0.78, changeFrequency: 'monthly' },
     { route: '/shipping', priority: 0.72, changeFrequency: 'monthly' },
+    { route: '/returns', priority: 0.5, changeFrequency: 'yearly' },
     { route: '/contact', priority: 0.95, changeFrequency: 'weekly' },
     { route: '/generic-bag-quote', priority: 0.95, changeFrequency: 'weekly' },
     { route: '/blog', priority: 0.82, changeFrequency: 'weekly' },
