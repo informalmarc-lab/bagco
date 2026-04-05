@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { DM_Sans, DM_Serif_Display } from 'next/font/google'
 import './globals.css'
 import SiteChrome from '@/components/SiteChrome'
+import { buildPageTitle } from '@/lib/seo/pageMetadata'
+import { getSiteUrl } from '@/lib/seo/site'
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -16,17 +18,17 @@ const dmSerif = DM_Serif_Display({
   weight: '400',
 })
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.bagsupplyco.com'
+const siteUrl = getSiteUrl()
 const ogImage = `${siteUrl}/catalog/pharmacy/gs/GS-22-FRONT.webp`
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Bag Supply Co | Custom Paper Bag Manufacturing and Packaging Programs',
-    template: '%s | Bag Supply Co',
+    default: buildPageTitle('Wholesale Bags'),
+    template: '%s',
   },
   description:
-    'Bag Supply Co manufactures custom and stock paper bags for pharmacies, veterinary clinics, dispensaries, smoke shops, and retail operations with structured reorder support and predictable delivery.',
+    'Wholesale bag programs for pharmacies, vet clinics, dispensaries, smoke shops, retailers, and distributors with dependable supply from BagSupplyCo.',
   keywords: [
     'custom retail bags',
     'custom dispensary bags',
@@ -41,9 +43,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: siteUrl,
-    title: 'Bag Supply Co | Custom Paper Bag Manufacturing',
+    title: buildPageTitle('Wholesale Bags'),
     description:
-      'Custom and stock paper bag programs for regulated retail and healthcare-adjacent operations with reliable replenishment.',
+      'Wholesale bag programs for pharmacies, vet clinics, dispensaries, smoke shops, retailers, and distributors.',
     siteName: 'Bag Supply Co',
     locale: 'en_US',
     images: [
@@ -57,9 +59,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Bag Supply Co | Paper Bag Manufacturer',
+    title: buildPageTitle('Wholesale Bags'),
     description:
-      'Custom retail, pharmacy, and veterinary bag programs with clear lead times and repeat supply support.',
+      'Wholesale bags with catalog pricing, custom print options, and repeat supply support from BagSupplyCo.',
     images: [ogImage],
   },
   category: 'business',
@@ -70,62 +72,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const localBusinessSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: 'Bag Supply Co',
-    description:
-      'Custom paper bag manufacturing and packaging programs for pharmacies, retail stores, veterinary clinics, and dispensaries.',
-    telephone: '+1-704-862-9256',
-    url: siteUrl,
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: '912 Houston Drive',
-      addressLocality: 'Monroe',
-      addressRegion: 'NC',
-      postalCode: '28110',
-      addressCountry: 'US',
-    },
-    logo: `${siteUrl}/catalog/pharmacy/gs/GS-22-FRONT.webp`,
-    areaServed: 'US',
-  }
-
-  const websiteSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    name: 'Bag Supply Co',
-    url: siteUrl,
-    inLanguage: 'en-US',
-  }
-
-  const serviceSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: 'Custom Paper Bag Manufacturing and Reorder Programs',
-    provider: {
-      '@type': 'Organization',
-      name: 'Bag Supply Co',
-      url: siteUrl,
-    },
-    areaServed: 'US',
-    serviceType: 'Custom printed paper bags and stock bag catalog programs',
-  }
-
   return (
     <html lang="en">
       <body className={`${dmSans.variable} ${dmSerif.variable}`}>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-        />
         <SiteChrome>{children}</SiteChrome>
       </body>
     </html>

@@ -1,17 +1,19 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import FallbackImage from '@/components/FallbackImage'
+import RelatedIndustryLinks from '@/components/seo/RelatedIndustryLinks'
 import { money } from '@/lib/catalogProducts'
 import { getAllRetailProducts, getRetailStartingPrice } from '@/lib/retailCatalog'
+import { getRetailProductAlt } from '@/lib/seo/imageAlt'
+import { buildPageMetadata } from '@/lib/seo/pageMetadata'
 
-export const metadata: Metadata = {
-  title: 'Retail Bags Catalog',
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Wholesale Retail Bags',
   description:
-    'Shop retail checkout bag options from BagSupplyCo with fixed case pricing, shipping breakpoints, and product detail pages.',
-  alternates: {
-    canonical: '/catalog/retail-bags',
-  },
-}
+    'Shop wholesale retail bags for checkout counters that need fixed pricing, fast reorder options, and BagSupplyCo buying support.',
+  path: '/catalog/retail-bags',
+  imagePath: '/images/catalog/retail-bags/thank-you-t-shirt-bags-main.webp',
+})
 
 export default function RetailBagsPage() {
   const products = getAllRetailProducts()
@@ -23,7 +25,7 @@ export default function RetailBagsPage() {
         <div className="page-hero-inner">
           <Link href="/catalog" className="btn-secondary">Back to Catalog</Link>
           <p className="kicker mt-6">Retail Bags</p>
-          <h1 className="heading-display mt-5">Retail Checkout Bags</h1>
+          <h1 className="heading-display mt-5">Wholesale Retail Checkout Bags</h1>
           <p className="mt-5 max-w-3xl text-lg muted-text">
             Stocked checkout bag options for convenience stores, gift shops, and everyday retail counters with clear
             case pricing and shipping breakpoints.
@@ -47,7 +49,7 @@ export default function RetailBagsPage() {
                 <FallbackImage
                   src={product.image}
                   fallbackSrc="/images/catalog/placeholder.svg"
-                  alt={product.name}
+                  alt={getRetailProductAlt(product)}
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
@@ -84,6 +86,23 @@ export default function RetailBagsPage() {
           ))}
         </div>
       </section>
+
+      <RelatedIndustryLinks
+        title="Related retail and smoke shop bag pages."
+        intro="Use these industry pages when you want buying guidance for specific retail environments before choosing a checkout bag SKU."
+        links={[
+          {
+            href: '/industries/retail',
+            label: 'Wholesale Retail Bags for Stores',
+            description: 'Review checkout bag guidance for convenience stores, gift shops, and general retail counters.',
+          },
+          {
+            href: '/industries/smoke-shops',
+            label: 'Smoke Shop Carryout Bags',
+            description: 'Compare a specialty retail bag program with discreet paper and add-on packaging options.',
+          },
+        ]}
+      />
     </div>
   )
 }

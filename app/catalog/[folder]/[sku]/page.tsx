@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import StructuredData from '@/components/seo/StructuredData'
 import {
   INDUSTRY_LABELS,
   INDUSTRY_ORDER,
@@ -16,6 +17,7 @@ import {
   isCatalogProductQuoteOnly,
   money,
 } from '@/lib/catalogProducts'
+import { getCatalogProductAlt } from '@/lib/seo/imageAlt'
 import { buildProductJsonLd, buildProductMetadata } from '@/lib/seo/productSeo'
 
 const ACTIVE_FOLDER_SET = new Set<string>(INDUSTRY_ORDER)
@@ -70,10 +72,7 @@ export default async function CatalogSkuOverviewPage({
 
   return (
     <div className="pb-16">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <StructuredData data={jsonLd} />
       <section className="page-hero">
         <div className="page-hero-inner">
           <nav className="text-sm font-semibold text-[#5F4D33]">
@@ -114,9 +113,11 @@ export default async function CatalogSkuOverviewPage({
             <div className="relative aspect-[4/3] bg-[#FAF6F0]">
               <Image
                 src={product.image}
-                alt={`${product.name} paper bag design ${product.sku}`}
-                fill
+                alt={getCatalogProductAlt(product, `SKU ${product.sku}`)}
+                width={1200}
+                height={900}
                 className="object-cover"
+                style={{ width: '100%', height: '100%' }}
                 sizes="(max-width: 1024px) 100vw, 55vw"
               />
             </div>
@@ -172,9 +173,12 @@ export default async function CatalogSkuOverviewPage({
                   >
                     <Image
                       src={product.image}
-                      alt={`${product.name} ${size.label}`}
-                      fill
+                      alt={getCatalogProductAlt(product, size.label)}
+                      width={1200}
+                      height={900}
+                      loading="lazy"
                       className="object-cover"
+                      style={{ width: '100%', height: '100%' }}
                       sizes="(max-width: 768px) 100vw, 33vw"
                     />
                   </Link>

@@ -50,6 +50,13 @@ type PharmacyCatalogClientProps = {
   images: PharmacyCatalogImages
 }
 
+function getPharmacyImageAlt(type: 'ty' | 'gs' | 'plastic-gs', name: string) {
+  if (type === 'plastic-gs') {
+    return `${name}, white plastic pharmacy bag`
+  }
+  return `${name}, white paper pharmacy bag`
+}
+
 export default function PharmacyCatalogClient({ images }: PharmacyCatalogClientProps) {
   const [selected, setSelected] = useState<PharmacyImage | null>(null)
 
@@ -76,7 +83,7 @@ export default function PharmacyCatalogClient({ images }: PharmacyCatalogClientP
     return (
       <section key={type} className="section-container py-20 md:py-24">
         <div className="tonal-panel">
-          <h2 className="text-3xl font-black tracking-[-0.03em] text-[#1E4D2B]">{info.title}</h2>
+          <h2 className="text-3xl font-black tracking-[-0.03em] text-[#1E4D2B]">{info.title} for wholesale pharmacy ordering</h2>
           <p className="mt-2 muted-text">{info.description}</p>
 
           {list.length > 0 && (
@@ -91,9 +98,12 @@ export default function PharmacyCatalogClient({ images }: PharmacyCatalogClientP
                   <div className="relative aspect-square bg-[#FAF6F0]">
                     <Image
                       src={img.src}
-                      alt={img.name}
-                      fill
+                      alt={getPharmacyImageAlt(type, img.name)}
+                      width={1200}
+                      height={1200}
+                      loading="lazy"
                       className="object-cover"
+                      style={{ width: '100%', height: '100%' }}
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                     />
                   </div>

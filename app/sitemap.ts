@@ -10,11 +10,15 @@ import { getAllRetailProducts } from '@/lib/retailCatalog'
 import { getAllMylarProducts } from '@/lib/mylarCatalog'
 import { CITIES } from '@/lib/seo/cities'
 import { INDUSTRY_PAGES } from '@/lib/seo/industries'
+import { getSiteUrl } from '@/lib/seo/site'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.bagsupplyco.com'
+const siteUrl = getSiteUrl()
 const excludedRoutes = new Set(['/partners/dropship'])
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const lastModified = new Date()
+  lastModified.setHours(0, 0, 0, 0)
+
   const productOverviewRoutes = getAllCatalogProducts().map((product) => ({
     route: getCatalogOverviewPath(product),
     priority: 0.7,
@@ -72,6 +76,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '/industries/cigar-shops', priority: 0.8, changeFrequency: 'monthly' },
     { route: '/industries/pharmacies', priority: 0.82, changeFrequency: 'monthly' },
     { route: '/industries/veterinary', priority: 0.82, changeFrequency: 'monthly' },
+    { route: '/industries/retail', priority: 0.8, changeFrequency: 'monthly' },
     { route: '/distributors', priority: 0.82, changeFrequency: 'monthly' },
     { route: '/manufacturing', priority: 0.75, changeFrequency: 'monthly' },
     { route: '/payments', priority: 0.78, changeFrequency: 'monthly' },
@@ -141,7 +146,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return Array.from(uniqueRoutes.values()).map(({ route, priority, changeFrequency }) => ({
     url: `${siteUrl}${route}`,
-    lastModified: new Date(),
+    lastModified,
     changeFrequency,
     priority,
   }))

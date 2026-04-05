@@ -1,19 +1,21 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import FallbackImage from '@/components/FallbackImage'
+import FaqSection from '@/components/seo/FaqSection'
+import StructuredData from '@/components/seo/StructuredData'
 import { contactPhone, contactPhoneHref, contactTextHref } from '@/components/siteConfig'
 import { getCatalogOverviewPath, getCatalogProductBySlug, money, type CatalogProduct } from '@/lib/catalogProducts'
+import { getCatalogProductAlt } from '@/lib/seo/imageAlt'
+import { buildPageMetadata } from '@/lib/seo/pageMetadata'
+import { buildFaqJsonLd } from '@/lib/seo/structuredData'
 
-export const metadata: Metadata = {
-  title: {
-    absolute: 'Pharmacy Packaging Programs | Stock and Custom Pharmacy Bags | Bag Supply Co',
-  },
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Wholesale Pharmacy Bags for Independent Pharmacies',
   description:
-    'Stock and custom pharmacy bag programs for independent pharmacies that need reliable prescription bag sizes, branded carry-out options, and cleaner quote routing.',
-  alternates: {
-    canonical: '/industries/pharmacies',
-  },
-}
+    'Wholesale pharmacy bags for buyers who need stock prescription sizes, custom print options, and BagSupplyCo support for dependable reorders.',
+  path: '/industries/pharmacies',
+  imagePath: '/catalog/pharmacy/gs/GS-22-FRONT.webp',
+})
 
 const featuredPharmacySlugs = [
   'pharmacy-bag-gs-design',
@@ -31,6 +33,24 @@ const aboutPoints = [
   'Stocked prescription bag programs keep daily script handoff fast and predictable.',
   'Branded carry-out options help independent pharmacies reinforce trust at checkout.',
   'One quote path makes it easier to plan stock replenishment and custom print together.',
+]
+
+const faqItems = [
+  {
+    question: 'Which pharmacy bag sizes should an independent pharmacy stock first?',
+    answer:
+      'Most independent pharmacies start with the most common prescription bag sizes such as #21, #22, #25, and #12 to cover daily script volume efficiently.',
+  },
+  {
+    question: 'Can BagSupplyCo support both stock pharmacy bags and custom printed pharmacy bags?',
+    answer:
+      'Yes. Pharmacies often begin with stock white paper bags, then add custom print once they want stronger front-counter branding without changing suppliers.',
+  },
+  {
+    question: 'Where do I browse the full pharmacy bag catalog before requesting pricing?',
+    answer:
+      'Use the pharmacy catalog page to compare GS, TY, and plastic GS bag families, then build a quote once you know the sizes your pharmacy needs.',
+  },
 ]
 
 function getFeaturedPharmacyProducts(): CatalogProduct[] {
@@ -52,6 +72,7 @@ export default function PharmaciesIndustryPage() {
 
   return (
     <div className="pb-16">
+      <StructuredData data={buildFaqJsonLd(faqItems)} />
       <section className="page-hero overflow-hidden">
         <div className="page-hero-inner relative">
           <div className="pointer-events-none absolute inset-x-0 top-0 h-52 bg-[radial-gradient(circle_at_top,rgba(181,129,58,0.24),transparent_70%)]" />
@@ -99,7 +120,7 @@ export default function PharmaciesIndustryPage() {
                     <FallbackImage
                       src={heroProduct.image}
                       fallbackSrc="/images/catalog/placeholder.svg"
-                      alt={heroProduct.name}
+                      alt={getCatalogProductAlt(heroProduct)}
                       fill
                       className="object-cover"
                       sizes="(max-width: 1024px) 100vw, 44vw"
@@ -121,7 +142,7 @@ export default function PharmaciesIndustryPage() {
         <div className="grid gap-4 md:grid-cols-[1.15fr_0.85fr]">
           <div className="tonal-panel">
             <p className="kicker">About</p>
-            <h2 className="section-title mt-4">Built for pharmacies that want cleaner handoff, steadier inventory, and easier reordering.</h2>
+            <h2 className="section-title mt-4">Wholesale paper bags for independent pharmacies that need cleaner prescription handoff.</h2>
             <p className="mt-4 text-sm leading-7 text-[#5F4D33] md:text-base">
               Independent pharmacies usually need a packaging mix that does two jobs at once: support daily script
               volume with ready-to-ship stock bags and give the front counter a more polished branded handoff when
@@ -170,7 +191,7 @@ export default function PharmaciesIndustryPage() {
                   <FallbackImage
                     src={product.image}
                     fallbackSrc="/images/catalog/placeholder.svg"
-                    alt={product.name}
+                    alt={getCatalogProductAlt(product)}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
@@ -222,7 +243,7 @@ export default function PharmaciesIndustryPage() {
                   <FallbackImage
                     src={product.image}
                     fallbackSrc="/images/catalog/placeholder.svg"
-                    alt={product.name}
+                    alt={getCatalogProductAlt(product)}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
@@ -275,6 +296,12 @@ export default function PharmaciesIndustryPage() {
           </div>
         </div>
       </section>
+
+      <FaqSection
+        title="Wholesale pharmacy bag FAQs for independent pharmacy buyers."
+        intro="These answers help pharmacy teams compare stock bag sizes, custom print options, and the next step into the pharmacy catalog."
+        items={faqItems}
+      />
     </div>
   )
 }

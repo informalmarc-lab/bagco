@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import FallbackImage from '@/components/FallbackImage'
 import AddToCartControl from '@/components/cart/AddToCartControl'
+import StructuredData from '@/components/seo/StructuredData'
 import { money } from '@/lib/catalogProducts'
 import {
   CIGAR_DISCOUNT_TIERS,
@@ -11,6 +12,7 @@ import {
   getCigarProductBySlug,
   getDiscountedCigarPrice,
 } from '@/lib/cigarCatalog'
+import { getCigarProductAlt } from '@/lib/seo/imageAlt'
 import { buildProductJsonLd, buildProductMetadata } from '@/lib/seo/productSeo'
 
 export async function generateStaticParams() {
@@ -70,10 +72,7 @@ export default async function CigarBagProductPage({
 
   return (
     <div className="pb-16">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <StructuredData data={jsonLd} />
       <section className="page-hero">
         <div className="page-hero-inner">
           <nav className="text-sm font-semibold text-[#5F4D33]">
@@ -107,7 +106,7 @@ export default async function CigarBagProductPage({
               <FallbackImage
                 src={product.image}
                 fallbackSrc="/images/catalog/placeholder.svg"
-                alt={`${product.name} ${product.size}`}
+                alt={getCigarProductAlt(product)}
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 55vw"
@@ -197,7 +196,7 @@ export default async function CigarBagProductPage({
                     <FallbackImage
                       src={item.image}
                       fallbackSrc="/images/catalog/placeholder.svg"
-                      alt={`${item.name} ${item.size}`}
+                      alt={getCigarProductAlt(item)}
                       fill
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, 33vw"

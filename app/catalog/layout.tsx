@@ -1,10 +1,12 @@
 import type { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/seo/pageMetadata'
 
-export const metadata: Metadata = {
-  title: 'Catalog',
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Wholesale Bag Catalog',
   description:
-    'Browse Bag Supply Co catalog products by industry, bag type, size, color options, and stock/custom availability with case-level pricing anchors.',
-}
+    'Browse wholesale bags by industry, size, material, and availability so buyers can compare options, pricing, and BagSupplyCo supply programs faster.',
+  path: '/catalog',
+})
 
 export default function CatalogLayout({
   children,

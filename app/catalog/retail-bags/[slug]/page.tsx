@@ -2,8 +2,10 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import FallbackImage from '@/components/FallbackImage'
+import StructuredData from '@/components/seo/StructuredData'
 import { money } from '@/lib/catalogProducts'
 import { buildProductJsonLd, buildProductMetadata } from '@/lib/seo/productSeo'
+import { getRetailProductAlt } from '@/lib/seo/imageAlt'
 import {
   getAllRetailProducts,
   getDiscountedRetailPrice,
@@ -51,10 +53,7 @@ export default async function RetailBagProductPage({
 
   return (
     <div className="pb-16">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <StructuredData data={jsonLd} />
       <section className="page-hero">
         <div className="page-hero-inner">
           <nav className="text-sm font-semibold text-[#5F4D33]">
@@ -91,7 +90,7 @@ export default async function RetailBagProductPage({
                 <FallbackImage
                   src={product.gallery[0]}
                   fallbackSrc="/images/catalog/placeholder.svg"
-                  alt={product.name}
+                  alt={getRetailProductAlt(product)}
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 55vw"
@@ -104,7 +103,7 @@ export default async function RetailBagProductPage({
                   <FallbackImage
                     src={product.gallery[1]}
                     fallbackSrc="/images/catalog/placeholder.svg"
-                    alt={`${product.name} alternate view`}
+                    alt={getRetailProductAlt(product, 'alternate view')}
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 55vw"

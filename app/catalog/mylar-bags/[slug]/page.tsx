@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import FallbackImage from '@/components/FallbackImage'
 import AddToCartControl from '@/components/cart/AddToCartControl'
+import StructuredData from '@/components/seo/StructuredData'
 import { money } from '@/lib/catalogProducts'
 import {
   formatMylarQuantityLabel,
@@ -10,6 +11,7 @@ import {
   getMylarProductBySlug,
   isLargeStorageMylar,
 } from '@/lib/mylarCatalog'
+import { getMylarProductAlt } from '@/lib/seo/imageAlt'
 import { buildProductJsonLd, buildProductMetadata } from '@/lib/seo/productSeo'
 
 export async function generateStaticParams() {
@@ -73,10 +75,7 @@ export default async function MylarProductPage({
 
   return (
     <div className="pb-16">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <StructuredData data={jsonLd} />
       <section className="page-hero">
         <div className="page-hero-inner">
           <nav className="text-sm font-semibold text-[#5F4D33]">
@@ -110,7 +109,7 @@ export default async function MylarProductPage({
               <FallbackImage
                 src={product.image}
                 fallbackSrc="/images/mylar/placeholder.webp"
-                alt={`${product.name} mylar bag`}
+                alt={getMylarProductAlt(product)}
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 55vw"
@@ -153,7 +152,7 @@ export default async function MylarProductPage({
                   <FallbackImage
                     src={item.image}
                     fallbackSrc="/images/mylar/placeholder.webp"
-                    alt={item.name}
+                    alt={getMylarProductAlt(item)}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 33vw"

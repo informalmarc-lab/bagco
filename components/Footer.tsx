@@ -111,6 +111,9 @@ export default function Footer() {
                 <Link href="/privacy-policy" className="footer-link inline-flex rounded-md border border-[#C4935A99] px-3 py-1.5 text-xs font-semibold">
                   Privacy Policy
                 </Link>
+                <Link href="/sitemap.xml" className="footer-link inline-flex rounded-md border border-[#C4935A99] px-3 py-1.5 text-xs font-semibold">
+                  Sitemap XML
+                </Link>
               </div>
             </div>
           </div>

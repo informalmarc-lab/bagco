@@ -1,21 +1,26 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import Script from 'next/script'
 import FallbackImage from '@/components/FallbackImage'
 import IndustrySolutionsSection from '@/components/IndustrySolutionsSection'
 import NewsletterSignup from '@/components/NewsletterSignup'
 import QuickQuoteForm from '@/components/QuickQuoteForm'
+import FaqSection from '@/components/seo/FaqSection'
+import StructuredData from '@/components/seo/StructuredData'
 import { contactPhone } from '@/components/siteConfig'
 import { getAllCatalogProducts, getCatalogOverviewPath, money } from '@/lib/catalogProducts'
+import { getCatalogProductAlt } from '@/lib/seo/imageAlt'
+import { buildPageMetadata } from '@/lib/seo/pageMetadata'
+import { buildFaqJsonLd, buildOrganizationJsonLd } from '@/lib/seo/structuredData'
 
-export const metadata: Metadata = {
-  title: {
-    absolute:
-      'Custom Paper Bags for Pharmacies, Veterinary, Dispensaries, Smoke Shops & Distributors | Bag Supply Co',
-  },
+const HERO_IMAGE = '/catalog/pharmacy/gs/GS-22-FRONT.webp'
+
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Wholesale Bags for Pharmacies, Vet Clinics, Dispensaries, Retailers, and Distributors',
   description:
-    'Stock and custom print bag programs with blind shipping, drop shipping, and recurring reorder support.',
-}
+    'Wholesale bag programs for buyers who need stock, custom print, and distributor support with reliable pricing, fast replenishment, and BagSupplyCo guidance.',
+  path: '/',
+  imagePath: HERO_IMAGE,
+})
 
 const industryQuickNav = [
   { label: 'Pharmacies', href: '/industries/pharmacies', icon: '\u{1F3E5}' },
@@ -31,7 +36,6 @@ const deliveryPoints = [
   'Blind shipping and drop shipping support for distributor accounts',
   'Recurring replenishment support for multi-location teams',
 ]
-const HERO_IMAGE = '/catalog/pharmacy/gs/GS-22-FRONT.webp'
 
 const faqItems = [
   {
@@ -113,26 +117,11 @@ const faqItems = [
 
 export default function Home() {
   const featuredProducts = getAllCatalogProducts().slice(0, 6)
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqItems.map((item) => ({
-      '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.answer,
-      },
-    })),
-  }
 
   return (
     <div className="pb-20">
-      <Script
-        id="bagsupplyco-home-faq"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <StructuredData data={buildOrganizationJsonLd()} />
+      <StructuredData data={buildFaqJsonLd(faqItems)} />
 
       <section className="page-hero page-hero-home">
         <div className="page-hero-inner">
@@ -154,6 +143,9 @@ export default function Home() {
                 <Link href="/catalog" className="btn-secondary hero-reveal hero-delay-4">
                   Explore Catalogs {String.fromCharCode(8594)}
                 </Link>
+                <Link href="/distributors" className="btn-quiet hero-reveal hero-delay-4">
+                  wholesale bag pricing for distributors
+                </Link>
               </div>
             </div>
 
@@ -162,7 +154,7 @@ export default function Home() {
                 <FallbackImage
                   src={HERO_IMAGE}
                   fallbackSrc="/images/catalog/placeholder.svg"
-                  alt="Bag Supply Co product showcase"
+                  alt="Pharmacy Bags - GS Design, white paper pharmacy bag"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 44vw"
@@ -186,7 +178,7 @@ export default function Home() {
         <div className="grid gap-4 md:grid-cols-2">
           <div className="tonal-panel">
             <p className="kicker">Who We Serve</p>
-            <h2 className="section-title mt-4">Built for B2B Buyers</h2>
+            <h2 className="section-title mt-4">Wholesale bag programs for pharmacy, veterinary, dispensary, retail, and distributor buyers.</h2>
             <p className="mt-3 text-sm text-[#5F4D33]">
               Pharmacies, veterinary clinics, dispensaries, smoke shops, custom bag buyers, and wholesale distributors.
             </p>
@@ -205,7 +197,7 @@ export default function Home() {
 
           <div className="tonal-panel">
             <p className="kicker">What We Deliver</p>
-            <h2 className="section-title mt-4">Reliable Programs, Not One-Off Orders</h2>
+            <h2 className="section-title mt-4">Stock and custom wholesale bags with repeat supply support.</h2>
             <ul className="mt-4 space-y-2 text-sm text-[#5F4D33]">
               {deliveryPoints.map((item) => (
                 <li key={item} className="surface-card rounded-xl px-3 py-2">
@@ -253,7 +245,7 @@ export default function Home() {
       </section>
 
       <section className="section-container py-20">
-        <h2 className="section-title">Featured Catalog Products</h2>
+        <h2 className="section-title">Featured wholesale bag products for repeat B2B ordering.</h2>
         <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {featuredProducts.map((product) => (
             <article key={product.sku} className="surface-card product-card flex h-full flex-col">
@@ -261,7 +253,7 @@ export default function Home() {
                 <FallbackImage
                   src={product.image}
                   fallbackSrc="/images/catalog/placeholder.svg"
-                  alt={product.name}
+                  alt={getCatalogProductAlt(product)}
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
@@ -309,7 +301,7 @@ export default function Home() {
         <div className="split-panel items-start">
           <div className="tonal-panel">
             <p className="kicker">Build Your Program</p>
-            <h2 className="section-title mt-4">Quote Intake Built for B2B Teams</h2>
+            <h2 className="section-title mt-4">Wholesale bag quote intake built for B2B teams.</h2>
             <p className="mt-3 muted-text">
               Build your quote in a guided flow for stock, custom print, distributor blind ship, and drop ship requirements.
             </p>
@@ -318,20 +310,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-container pt-2">
-        <div className="tonal-panel">
-          <p className="kicker">FAQ</p>
-          <h2 className="section-title mt-4">Answers Before You Reach Out</h2>
-          <div className="mt-6 grid gap-3">
-            {faqItems.map((item) => (
-              <article key={item.question} className="surface-card rounded-2xl p-4">
-                <h3 className="text-lg font-black text-[#1E4D2B]">{item.question}</h3>
-                <p className="mt-2 text-sm muted-text">{item.answer}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FaqSection
+        title="Wholesale bag FAQs for buyers comparing stock, custom print, and distributor programs."
+        intro="These answers cover the questions B2B buyers ask most often before requesting pricing."
+        items={faqItems}
+      />
 
       <section className="section-container pt-4">
         <NewsletterSignup

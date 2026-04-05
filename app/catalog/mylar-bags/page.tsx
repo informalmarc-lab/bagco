@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import FallbackImage from '@/components/FallbackImage'
 import AddToCartControl from '@/components/cart/AddToCartControl'
+import RelatedIndustryLinks from '@/components/seo/RelatedIndustryLinks'
 import {
   formatMylarQuantityLabel,
   getAllMylarProducts,
@@ -9,15 +10,16 @@ import {
   getMylarStartingPrice,
 } from '@/lib/mylarCatalog'
 import { money } from '@/lib/catalogProducts'
+import { getMylarProductAlt } from '@/lib/seo/imageAlt'
+import { buildPageMetadata } from '@/lib/seo/pageMetadata'
 
-export const metadata: Metadata = {
-  title: 'Mylar Bags Catalog',
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Wholesale Mylar Bags',
   description:
-    'Shop Bag Supply Co mylar bag inventory by SKU with local images, pack quantities, transparent pricing, and direct cart ordering.',
-  alternates: {
-    canonical: '/catalog/mylar-bags',
-  },
-}
+    'Browse wholesale mylar bags for dispensary and smoke shop buyers who need pack pricing, SKU detail, and BagSupplyCo fulfillment support.',
+  path: '/catalog/mylar-bags',
+  imagePath: '/images/mylar/1-8-oz-rx-generic-designer.webp',
+})
 
 function ProductCard({
   sku,
@@ -58,7 +60,7 @@ function ProductCard({
         <FallbackImage
           src={image}
           fallbackSrc="/images/mylar/placeholder.webp"
-          alt={name}
+          alt={getMylarProductAlt({ sku, slug, name, finish, size, quantity, type: 'plain-stock', price, image, description: '' })}
           fill
           className="object-cover"
           sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
@@ -96,7 +98,7 @@ export default function MylarCatalogPage() {
         <div className="page-hero-inner">
           <Link href="/catalog" className="btn-secondary">Back to Catalog</Link>
           <p className="kicker mt-6">Mylar Catalog</p>
-          <h1 className="heading-display mt-5">Mylar Bags</h1>
+          <h1 className="heading-display mt-5">Wholesale Mylar Bags for Dispensaries and Smoke Shops</h1>
           <p className="mt-5 max-w-3xl text-lg muted-text">
             {all.length} SKU-level mylar options with local product images, fixed pricing, and direct add-to-cart ordering.
           </p>
@@ -140,7 +142,7 @@ export default function MylarCatalogPage() {
       <section className="section-container pt-2">
         <div className="tonal-panel">
           <p className="kicker">Plain Stock</p>
-          <h2 className="section-title mt-4">Plain Stock Mylar</h2>
+          <h2 className="section-title mt-4">Plain stock mylar bags for repeat dispensary and smoke shop orders.</h2>
           <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
             {plain.map((item) => (
               <ProductCard key={item.slug} {...item} />
@@ -152,6 +154,23 @@ export default function MylarCatalogPage() {
           </div>
         </div>
       </section>
+
+      <RelatedIndustryLinks
+        title="Related industry pages for mylar bag buyers."
+        intro="These industry pages connect the mylar catalog to the most common dispensary and smoke shop buying workflows."
+        links={[
+          {
+            href: '/industries/dispensary',
+            label: 'Dispensary Packaging Programs',
+            description: 'See how labels, mylar, and paper exit bags fit together for compliant dispensary operations.',
+          },
+          {
+            href: '/industries/smoke-shops',
+            label: 'Smoke Shop Packaging Programs',
+            description: 'Explore discreet carryout and add-on packaging recommendations for smoke shop counters.',
+          },
+        ]}
+      />
     </div>
   )
 }

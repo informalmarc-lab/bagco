@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import VeterinaryCatalogClient from '@/components/catalog/VeterinaryCatalogClient'
+import RelatedIndustryLinks from '@/components/seo/RelatedIndustryLinks'
 import { getVeterinaryCatalogImages } from '@/lib/catalogImages'
 
 export default function VeterinaryCatalogPage() {
@@ -11,7 +12,7 @@ export default function VeterinaryCatalogPage() {
         <div className="page-hero-inner">
           <Link href="/catalog" className="btn-secondary">Back to Catalog</Link>
           <p className="kicker mt-6">Veterinary Catalog</p>
-          <h1 className="heading-display mt-5">Veterinary Bag Programs</h1>
+          <h1 className="heading-display mt-5">Wholesale Veterinary Bags for Vet Clinics</h1>
           <p className="mt-5 max-w-3xl text-lg muted-text">
             VB1, VB2, and VB6 designs with stock options and additional custom examples.
           </p>
@@ -23,9 +24,26 @@ export default function VeterinaryCatalogPage() {
 
       <VeterinaryCatalogClient images={images} />
 
+      <RelatedIndustryLinks
+        title="Related healthcare bag verticals."
+        intro="These industry pages help clinic buyers compare broader workflow guidance before selecting veterinary SKUs."
+        links={[
+          {
+            href: '/industries/veterinary',
+            label: 'Wholesale Paper Bags for Vet Clinics',
+            description: 'See veterinary-specific buying guidance for medication handoff, discharge kits, and repeat ordering.',
+          },
+          {
+            href: '/industries/pharmacies',
+            label: 'Independent Pharmacy Bag Programs',
+            description: 'Compare another healthcare-adjacent paper bag program with similar counter and prescription workflows.',
+          },
+        ]}
+      />
+
       <section className="section-container pt-3">
         <div className="tonal-panel">
-          <h2 className="section-title">Need custom print instead?</h2>
+          <h2 className="section-title">Need custom printed veterinary bags instead?</h2>
           <div className="mt-5 flex flex-wrap gap-3">
             <Link href="/catalog/custom" className="btn-secondary">Open Custom Catalog</Link>
           </div>

@@ -2,21 +2,23 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import FallbackImage from '@/components/FallbackImage'
 import AddToCartControl from '@/components/cart/AddToCartControl'
+import FaqSection from '@/components/seo/FaqSection'
+import StructuredData from '@/components/seo/StructuredData'
 import { contactPhone, contactPhoneHref, contactTextHref } from '@/components/siteConfig'
 import { getCatalogOverviewPath, getCatalogProductBySlug, money } from '@/lib/catalogProducts'
 import { getAllLabelProducts } from '@/lib/labelCatalog'
 import { formatMylarQuantityLabel, getMylarProductBySlug, type MylarProduct } from '@/lib/mylarCatalog'
+import { getCatalogProductAlt, getLabelProductAlt, getMylarProductAlt } from '@/lib/seo/imageAlt'
+import { buildPageMetadata } from '@/lib/seo/pageMetadata'
+import { buildFaqJsonLd } from '@/lib/seo/structuredData'
 
-export const metadata: Metadata = {
-  title: {
-    absolute: 'Dispensary Packaging Programs | Labels, Mylar Bags, and Paper Bags | Bag Supply Co',
-  },
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Wholesale Dispensary Bags and Packaging',
   description:
-    'Dispensary-ready packaging with compliance labels, curated mylar bags, paper exit bags, and direct quote routing.',
-  alternates: {
-    canonical: '/industries/dispensary',
-  },
-}
+    'Wholesale dispensary packaging for buyers who need labels, mylar bags, paper exit bags, and BagSupplyCo support for compliant reorders.',
+  path: '/industries/dispensary',
+  imagePath: '/images/labels/california-v2-universal-symbol-rx-compliant-labels.webp',
+})
 
 const featuredMylarSlugs = [
   '1-8-oz-matte-black-opaque-with-labels-designer',
@@ -33,6 +35,24 @@ const aboutPoints = [
   'A stocked-and-custom mix lets operators move now, then dial in branded programs without changing suppliers.',
 ]
 
+const faqItems = [
+  {
+    question: 'What packaging categories should a dispensary source together?',
+    answer:
+      'Most dispensary buyers bundle compliance labels, mylar bags, and paper exit bags so the team can standardize checkout and reorder through one supplier.',
+  },
+  {
+    question: 'Which BagSupplyCo catalog pages are most relevant for dispensary packaging?',
+    answer:
+      'Dispensary buyers usually start with the labels catalog and mylar bag catalog, then add a stocked paper exit bag when they want a simple carryout option.',
+  },
+  {
+    question: 'Can dispensaries start with stock packaging and add custom options later?',
+    answer:
+      'Yes. Many operators start with stock labels and mylar SKUs, then expand into more branded or curated packaging once their reorder cadence is stable.',
+  },
+]
+
 function getFeaturedMylarProducts(): MylarProduct[] {
   return featuredMylarSlugs
     .map((slug) => getMylarProductBySlug(slug))
@@ -46,6 +66,7 @@ export default function DispensaryIndustryPage() {
 
   return (
     <div className="pb-16">
+      <StructuredData data={buildFaqJsonLd(faqItems)} />
       <section className="page-hero overflow-hidden">
         <div className="page-hero-inner relative">
           <div className="pointer-events-none absolute inset-x-0 top-0 h-52 bg-[radial-gradient(circle_at_top,rgba(181,129,58,0.24),transparent_70%)]" />
@@ -89,7 +110,7 @@ export default function DispensaryIndustryPage() {
                   <FallbackImage
                     src="/images/labels/california-v2-universal-symbol-rx-compliant-labels.webp"
                     fallbackSrc="/images/catalog/placeholder.svg"
-                    alt="Dispensary compliance labels"
+                    alt="California V2 Universal Symbol Rx Compliant Labels, dispensary compliance labels"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 44vw"
@@ -110,7 +131,7 @@ export default function DispensaryIndustryPage() {
         <div className="grid gap-4 md:grid-cols-[1.15fr_0.85fr]">
           <div className="tonal-panel">
             <p className="kicker">About</p>
-            <h2 className="section-title mt-4">Built for dispensary operators who need packaging to stay predictable.</h2>
+            <h2 className="section-title mt-4">Wholesale dispensary packaging for compliant checkout and repeat ordering.</h2>
             <p className="mt-4 text-sm leading-7 text-[#5F4D33] md:text-base">
               Dispensary teams usually need three things from packaging: fast replenishment, clear compliance handling,
               and a clean handoff at checkout. This page is built around that exact workflow. Start with stocked label
@@ -158,7 +179,7 @@ export default function DispensaryIndustryPage() {
                   <FallbackImage
                     src={label.image}
                     fallbackSrc="/images/catalog/placeholder.svg"
-                    alt={label.name}
+                    alt={getLabelProductAlt(label)}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
@@ -210,7 +231,7 @@ export default function DispensaryIndustryPage() {
                   <FallbackImage
                     src={product.image}
                     fallbackSrc="/images/mylar/placeholder.webp"
-                    alt={product.name}
+                    alt={getMylarProductAlt(product)}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
@@ -283,7 +304,7 @@ export default function DispensaryIndustryPage() {
                   <FallbackImage
                     src={paperBag.image}
                     fallbackSrc="/images/catalog/placeholder.svg"
-                    alt={paperBag.name}
+                    alt={getCatalogProductAlt(paperBag)}
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 44vw"
@@ -331,6 +352,12 @@ export default function DispensaryIndustryPage() {
           </div>
         </div>
       </section>
+
+      <FaqSection
+        title="Wholesale dispensary packaging FAQs for multi-product buyers."
+        intro="These answers cover how labels, mylar, and paper exit bags usually fit together in a dispensary packaging program."
+        items={faqItems}
+      />
     </div>
   )
 }

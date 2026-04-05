@@ -13,6 +13,10 @@ export default function FallbackImage({
   fallbackSrc,
   unoptimized,
   onError,
+  fill,
+  priority,
+  loading,
+  className,
   ...props
 }: FallbackImageProps) {
   const [currentSrc, setCurrentSrc] = useState(src)
@@ -31,8 +35,12 @@ export default function FallbackImage({
     // eslint-disable-next-line jsx-a11y/alt-text
     <Image
       {...props}
+      {...(fill ? { width: 1200, height: 900 } : {})}
       src={currentSrc}
+      priority={priority}
+      loading={priority ? undefined : (loading || 'lazy')}
       unoptimized={shouldBypassOptimization}
+      className={fill ? `h-full w-full ${className || ''}`.trim() : className}
       onError={(event) => {
         if (currentSrc !== fallbackSrc) {
           setCurrentSrc(fallbackSrc)

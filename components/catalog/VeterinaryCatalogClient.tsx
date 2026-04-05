@@ -11,6 +11,10 @@ export type VetCatalogImages = {
   vb6: VetImage[]
 }
 
+function getVetImageAlt(name: string) {
+  return `${name}, white paper veterinary bag`
+}
+
 const VET_DESIGNS = {
   vb1: {
     title: 'VB1 Design',
@@ -78,7 +82,7 @@ export default function VeterinaryCatalogClient({ images }: VeterinaryCatalogCli
     return (
       <section key={design} className="section-container py-20 md:py-24">
         <div className="tonal-panel">
-          <h2 className="text-3xl font-black tracking-[-0.03em] text-[#1E4D2B]">Veterinary {info.title}</h2>
+          <h2 className="text-3xl font-black tracking-[-0.03em] text-[#1E4D2B]">Veterinary {info.title} for clinic bag reorders</h2>
           <p className="mt-2 muted-text">{info.description}</p>
 
           {stockImages.length > 0 && (
@@ -86,7 +90,16 @@ export default function VeterinaryCatalogClient({ images }: VeterinaryCatalogCli
               {stockImages.map((img) => (
                 <button key={img.src} type="button" onClick={() => setSelected(img)} className="surface-card overflow-hidden rounded-2xl">
                   <div className="relative aspect-square bg-[#FAF6F0]">
-                    <Image src={img.src} alt={img.name} fill className="object-cover" sizes="(max-width: 768px) 100vw, 25vw" />
+                    <Image
+                      src={img.src}
+                      alt={getVetImageAlt(img.name)}
+                      width={1200}
+                      height={1200}
+                      loading="lazy"
+                      className="object-cover"
+                      style={{ width: '100%', height: '100%' }}
+                      sizes="(max-width: 768px) 100vw, 25vw"
+                    />
                   </div>
                 </button>
               ))}
@@ -117,13 +130,22 @@ export default function VeterinaryCatalogClient({ images }: VeterinaryCatalogCli
       {combinedCustomExamples.length > 0 && (
         <section className="section-container pb-3">
           <div className="tonal-panel">
-            <h2 className="text-3xl font-black tracking-[-0.03em] text-[#1E4D2B]">Example Custom Veterinary Bags</h2>
+            <h2 className="text-3xl font-black tracking-[-0.03em] text-[#1E4D2B]">Custom veterinary paper bag examples for vet clinics</h2>
             <p className="mt-2 muted-text">Real custom production samples for veterinary clients.</p>
             <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {combinedCustomExamples.map((img) => (
                 <button key={img.src} type="button" onClick={() => setSelected(img)} className="surface-card overflow-hidden rounded-2xl">
                   <div className="relative aspect-square bg-[#FAF6F0]">
-                    <Image src={img.src} alt={img.name} fill className="object-cover" sizes="(max-width: 768px) 100vw, 25vw" />
+                    <Image
+                      src={img.src}
+                      alt={`${img.name}, custom paper veterinary bag`}
+                      width={1200}
+                      height={1200}
+                      loading="lazy"
+                      className="object-cover"
+                      style={{ width: '100%', height: '100%' }}
+                      sizes="(max-width: 768px) 100vw, 25vw"
+                    />
                   </div>
                 </button>
               ))}

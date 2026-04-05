@@ -1,15 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import DistributorRequestForm from '@/components/DistributorRequestForm'
+import StructuredData from '@/components/seo/StructuredData'
+import { buildPageMetadata } from '@/lib/seo/pageMetadata'
+import { buildDistributorServiceJsonLd } from '@/lib/seo/structuredData'
 
-export const metadata: Metadata = {
-  title: 'Wholesale Bag Distributor Program | BagSupplyCo',
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Wholesale Bag Pricing for Distributors',
   description:
-    'Partner with BagSupplyCo to supply pharmacy, dispensary, veterinary, and retail bags. Case and pallet pricing available. Custom printing, drop-ship, and Net 30 for qualified accounts.',
-  alternates: {
-    canonical: '/distributors',
-  },
-}
+    'Wholesale bag pricing for distributors who need factory-direct supply, drop-ship support, and BagSupplyCo guidance for repeat customer orders.',
+  path: '/distributors',
+  imagePath: '/catalog/pharmacy/gs/GS-22-FRONT.webp',
+})
 
 const products = [
   {
@@ -205,6 +207,7 @@ function CheckIcon() {
 export default function DistributorsPage() {
   return (
     <div className="pb-16">
+      <StructuredData data={buildDistributorServiceJsonLd()} />
       <section className="overflow-hidden border-b border-[#C4935A66] bg-[#1E4D2B] text-[#FAF6F0]">
         <div className="section-container py-20 md:py-28">
           <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
@@ -213,7 +216,7 @@ export default function DistributorsPage() {
                 Distributor Program
               </p>
               <h1 className="heading-serif mt-5 max-w-4xl text-4xl font-black tracking-[-0.05em] text-[#FAF6F0] md:text-6xl">
-                Supply Your Customers With Better Bags.
+                Wholesale bag pricing for distributors and drop-ship programs.
               </h1>
               <p className="mt-5 max-w-3xl text-lg leading-8 text-[#F4E8D8] md:text-xl">
                 BagSupplyCo partners with distributors to supply stock and custom bags for pharmacies,
@@ -258,7 +261,7 @@ export default function DistributorsPage() {
       <section className="section-container py-20">
         <div className="max-w-3xl">
           <p className="kicker">What We Carry</p>
-          <h2 className="section-title mt-4">A distributor-ready mix of stock and private label bag programs.</h2>
+          <h2 className="section-title mt-4">Wholesale stock and private label bag programs for distributors.</h2>
           <p className="mt-4 text-base leading-8 text-[#5F4D33] md:text-lg">
             Built for pharmacy supply, vet supply, dispensary supply, and broader wholesale accounts that
             need reliable fill rates and cleaner vendor consolidation.
@@ -315,7 +318,7 @@ export default function DistributorsPage() {
         <div className="section-container">
           <div className="max-w-3xl">
             <p className="kicker">Order Volume</p>
-            <h2 className="section-title mt-4">Programs sized for emerging accounts and high-volume buyers.</h2>
+            <h2 className="section-title mt-4">Programs sized for emerging distributors and high-volume wholesale buyers.</h2>
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
             {volumeOptions.map((item) => (
@@ -331,7 +334,7 @@ export default function DistributorsPage() {
         <div className="rounded-[2rem] border border-[#C4935A66] bg-[#FAF6F0] p-6 shadow-[0_14px_34px_rgba(30,77,43,0.12)] md:p-8">
           <div className="max-w-3xl">
             <p className="kicker">Wholesale Pricing</p>
-            <h2 className="section-title mt-4">Wholesale Pallet Pricing.</h2>
+            <h2 className="section-title mt-4">Wholesale pallet pricing for distributor bag programs.</h2>
             <p className="mt-4 text-base leading-8 text-[#5F4D33] md:text-lg">
               The more you order, the more you save - up to 20% off on high-volume orders.
             </p>
@@ -408,7 +411,7 @@ export default function DistributorsPage() {
         <div className="section-container">
           <div className="max-w-3xl">
             <p className="kicker">Why Partner With Us</p>
-            <h2 className="section-title mt-4">A cleaner supply partner for wholesale accounts.</h2>
+            <h2 className="section-title mt-4">A cleaner wholesale bag supply partner for distributor accounts.</h2>
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {partnerReasons.map((reason) => (
@@ -426,7 +429,7 @@ export default function DistributorsPage() {
       <section className="section-container py-20">
         <div className="max-w-3xl">
           <p className="kicker">How It Works</p>
-          <h2 className="section-title mt-4">A simple first order for distributor teams.</h2>
+          <h2 className="section-title mt-4">A simple first wholesale bag order for distributor teams.</h2>
         </div>
         <div className="mt-8 grid gap-4 lg:grid-cols-3">
           {steps.map((step) => (
@@ -474,7 +477,7 @@ export default function DistributorsPage() {
         <div className="grid gap-6 lg:grid-cols-[1fr_0.95fr]">
           <div className="tonal-panel">
             <p className="kicker">Request Pricing</p>
-            <h2 className="section-title mt-4">Tell us what your distributor program needs.</h2>
+            <h2 className="section-title mt-4">Tell us what your wholesale distributor program needs.</h2>
             <p className="mt-4 text-base leading-8 text-[#5F4D33]">
               Share your volume, product mix, and private label goals. We will respond with the right mix of
               case pricing, pallet pricing, and custom print guidance for your team.

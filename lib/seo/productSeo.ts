@@ -1,10 +1,6 @@
 import type { Metadata } from 'next'
-
-const DEFAULT_SITE_URL = 'https://www.bagsupplyco.com'
-
-function cleanSiteUrl(value: string): string {
-  return value.replace(/\/+$/, '')
-}
+import { buildPageTitle } from '@/lib/seo/pageMetadata'
+import { getSiteUrl, toAbsoluteUrl } from '@/lib/seo/site'
 
 function normalizeWhitespace(value: string): string {
   return value.replace(/\s+/g, ' ').trim()
@@ -13,16 +9,6 @@ function normalizeWhitespace(value: string): string {
 function ensureSentence(value: string): string {
   const trimmed = normalizeWhitespace(value).replace(/[.?!]+$/, '')
   return trimmed ? `${trimmed}.` : ''
-}
-
-export function getSiteUrl(): string {
-  return cleanSiteUrl(process.env.NEXT_PUBLIC_SITE_URL || DEFAULT_SITE_URL)
-}
-
-export function toAbsoluteUrl(pathOrUrl: string): string {
-  if (/^https?:\/\//i.test(pathOrUrl)) return pathOrUrl
-  const normalizedPath = pathOrUrl.startsWith('/') ? pathOrUrl : `/${pathOrUrl}`
-  return `${getSiteUrl()}${normalizedPath}`
 }
 
 export function getShortProductDescription(description: string, maxLength = 110): string {
@@ -37,6 +23,13 @@ export function getShortProductDescription(description: string, maxLength = 110)
   return ensureSentence(shortened || base.slice(0, maxLength))
 }
 
+function clampDescription(value: string, maxLength = 155): string {
+  const normalized = normalizeWhitespace(value)
+  if (normalized.length <= maxLength) return normalized
+  const shortened = normalized.slice(0, maxLength).replace(/\s+\S*$/, '').trim()
+  return ensureSentence(shortened)
+}
+
 export function buildProductMetadata(input: {
   name: string
   description: string
@@ -44,10 +37,10 @@ export function buildProductMetadata(input: {
   imagePath: string
 }): Metadata {
   const shortDescription = getShortProductDescription(input.description)
-  const title = `${input.name} | BagSupplyCo`
-  const metaDescription =
-    `Buy ${input.name} from BagSupplyCo. ${shortDescription} ` +
-    'Free shipping on 8+ cases. Same-day shipping before 1PM ET.'
+  const title = buildPageTitle(input.name)
+  const metaDescription = clampDescription(
+    `${input.name} for wholesale buyers at BagSupplyCo. ${shortDescription} Compare pricing, sizes, and repeat supply support.`,
+  )
 
   return {
     title: {
@@ -88,7 +81,7 @@ export function buildProductJsonLd(input: {
   availability?: string
 }) {
   return {
-    '@context': 'https://schema.org/',
+    '@context': 'https://schema.org',
     '@type': 'Product',
     name: input.name,
     image: toAbsoluteUrl(input.imagePath),
@@ -104,6 +97,11 @@ export function buildProductJsonLd(input: {
       price: input.price.toFixed(2),
       availability: input.availability || 'https://schema.org/InStock',
       itemCondition: 'https://schema.org/NewCondition',
+      seller: {
+        '@type': 'Organization',
+        name: 'BagSupplyCo',
+        url: getSiteUrl(),
+      },
     },
   }
 }

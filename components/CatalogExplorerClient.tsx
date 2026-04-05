@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useMemo } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 import FallbackImage from '@/components/FallbackImage'
+import { getCatalogProductAlt } from '@/lib/seo/imageAlt'
 import {
   DEFAULT_CATALOG_FILTERS,
   INDUSTRY_LABELS,
@@ -105,7 +106,7 @@ export default function CatalogExplorerClient({ products, searchParams }: Catalo
       <section className="page-hero">
         <div className="page-hero-inner">
           <p className="kicker">Catalog</p>
-          <h1 className="heading-display mt-5">Filterable Paper Bag Catalog</h1>
+          <h1 className="heading-display mt-5">Wholesale Bag Catalog by Industry, Size, and Material</h1>
           <p className="mt-5 max-w-3xl text-lg muted-text">
             Browse by industry, bag type, size, color, and stock status. Every product card includes SKU,
             case counts, and starting case pricing.
@@ -141,7 +142,7 @@ export default function CatalogExplorerClient({ products, searchParams }: Catalo
 
       <section className="section-container pb-6">
         <div className="tonal-panel">
-          <h2 className="text-2xl font-black text-[#1E4D2B]">Filter Products</h2>
+          <h2 className="text-2xl font-black text-[#1E4D2B]">Filter wholesale paper bags and packaging products.</h2>
           <label className="mt-4 grid gap-1 text-sm font-semibold text-[#5F4D33]">
             Search
             <input
@@ -253,6 +254,33 @@ export default function CatalogExplorerClient({ products, searchParams }: Catalo
         </div>
       </section>
 
+      <section className="section-container pb-6">
+        <div className="tonal-panel">
+          <h2 className="section-title">Shop wholesale bag programs by buyer type.</h2>
+          <p className="mt-3 max-w-3xl muted-text">
+            Start with the industry page that matches your storefront, clinic, or distributor channel, then use the catalog to compare exact SKUs.
+          </p>
+          <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            <Link href="/industries/pharmacies" className="surface-card rounded-2xl p-5">
+              <h3 className="text-lg font-black text-[#1E4D2B]">Pharmacy Bags</h3>
+              <p className="mt-2 text-sm text-[#5F4D33]">Wholesale paper bags for independent pharmacies and regional chains.</p>
+            </Link>
+            <Link href="/industries/veterinary" className="surface-card rounded-2xl p-5">
+              <h3 className="text-lg font-black text-[#1E4D2B]">Veterinary Bags</h3>
+              <p className="mt-2 text-sm text-[#5F4D33]">Vet clinic bag programs for medications, discharge kits, and take-home retail.</p>
+            </Link>
+            <Link href="/industries/dispensary" className="surface-card rounded-2xl p-5">
+              <h3 className="text-lg font-black text-[#1E4D2B]">Dispensary Packaging</h3>
+              <p className="mt-2 text-sm text-[#5F4D33]">Labels, mylar, and paper exit bags for compliant dispensary workflows.</p>
+            </Link>
+            <Link href="/industries/retail" className="surface-card rounded-2xl p-5">
+              <h3 className="text-lg font-black text-[#1E4D2B]">Retail Bags</h3>
+              <p className="mt-2 text-sm text-[#5F4D33]">Checkout bag options for convenience stores, gift shops, and general retail buyers.</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="section-container pb-2">
         {filtered.length === 0 ? (
           <p className="tonal-panel text-center text-sm font-semibold text-[#5F4D33]">
@@ -266,7 +294,7 @@ export default function CatalogExplorerClient({ products, searchParams }: Catalo
                   <FallbackImage
                     src={product.image}
                     fallbackSrc="/images/catalog/placeholder.svg"
-                    alt={product.name}
+                    alt={getCatalogProductAlt(product)}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"

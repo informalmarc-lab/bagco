@@ -2,21 +2,23 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import FallbackImage from '@/components/FallbackImage'
 import AddToCartControl from '@/components/cart/AddToCartControl'
+import RelatedIndustryLinks from '@/components/seo/RelatedIndustryLinks'
 import { money } from '@/lib/catalogProducts'
 import {
   formatCigarQuantityLabel,
   getAllCigarProducts,
   getCigarStartingPrice,
 } from '@/lib/cigarCatalog'
+import { getCigarProductAlt } from '@/lib/seo/imageAlt'
+import { buildPageMetadata } from '@/lib/seo/pageMetadata'
 
-export const metadata: Metadata = {
-  title: 'Printed Cigar Bags Catalog',
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Wholesale Cigar Bags',
   description:
-    'Shop printed cigar bags and slider cigar bag formats from BagSupplyCo with local images, case pricing, and product detail pages.',
-  alternates: {
-    canonical: '/catalog/cigar-bags',
-  },
-}
+    'Shop wholesale cigar bags for tobacconists who need SKU-level pricing, size detail, and BagSupplyCo reorder support.',
+  path: '/catalog/cigar-bags',
+  imagePath: '/images/catalog/cigar-bags/cigar-bag-5x10.jpg',
+})
 
 function ProductCard({
   sku,
@@ -58,7 +60,7 @@ function ProductCard({
         <FallbackImage
           src={image}
           fallbackSrc="/images/catalog/placeholder.svg"
-          alt={`${name} ${size}`}
+          alt={getCigarProductAlt({ sku, slug, name, size, quantity, unit, price, image, description: '' })}
           fill
           className="object-cover"
           sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
@@ -93,7 +95,7 @@ export default function CigarBagsCatalogPage() {
         <div className="page-hero-inner">
           <Link href="/catalog" className="btn-secondary">Back to Catalog</Link>
           <p className="kicker mt-6">Cigar Bags Catalog</p>
-          <h1 className="heading-display mt-5">Printed Cigar Bags</h1>
+          <h1 className="heading-display mt-5">Wholesale Cigar Bags for Tobacconists</h1>
           <p className="mt-5 max-w-3xl text-lg muted-text">
             Printed cigar bag sizes and premium slider bag formats for cigar shops, lounges, and specialty tobacconists.
           </p>
@@ -111,7 +113,7 @@ export default function CigarBagsCatalogPage() {
       <section className="section-container py-20">
         <div className="tonal-panel">
           <p className="kicker">Printed Cigar Bags</p>
-          <h2 className="section-title mt-4">Stocked sizes for singles, bundles, and premium cigar presentation.</h2>
+          <h2 className="section-title mt-4">Wholesale cigar bag sizes for singles, bundles, and premium presentation.</h2>
           <p className="mt-3 max-w-3xl muted-text">
             Start with the size that fits your counter flow, then use the product page to review discount tiers, shipping breaks, and reorder-friendly case pricing.
           </p>
@@ -126,6 +128,23 @@ export default function CigarBagsCatalogPage() {
           </div>
         </div>
       </section>
+
+      <RelatedIndustryLinks
+        title="Related specialty retail bag pages."
+        intro="These pages help cigar and specialty retail buyers compare adjacent packaging programs before choosing a bag style."
+        links={[
+          {
+            href: '/industries/smoke-shops',
+            label: 'Smoke Shop Packaging Programs',
+            description: 'Compare discreet carryout and add-on packaging ideas for smoke shops and related specialty retailers.',
+          },
+          {
+            href: '/industries/retail',
+            label: 'Retail Checkout Bag Programs',
+            description: 'Review broader retail bag guidance for specialty stores that need simple reorder-friendly carryout bags.',
+          },
+        ]}
+      />
     </div>
   )
 }

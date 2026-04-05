@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import FallbackImage from '@/components/FallbackImage'
+import FaqSection from '@/components/seo/FaqSection'
+import StructuredData from '@/components/seo/StructuredData'
 import {
   INDUSTRY_LABELS,
   getCatalogProductBySlug,
@@ -12,6 +14,9 @@ import {
   type CatalogIndustryKey,
 } from '@/lib/catalogProducts'
 import { contactTextHref } from '@/components/siteConfig'
+import { getCatalogProductAlt } from '@/lib/seo/imageAlt'
+import type { FaqItem } from '@/lib/seo/structuredData'
+import { buildFaqJsonLd } from '@/lib/seo/structuredData'
 
 type IndustryLandingPageProps = {
   industry: CatalogIndustryKey
@@ -29,6 +34,9 @@ type IndustryLandingPageProps = {
   featuredProductSlugs?: string[]
   mostOrderedSizesOverride?: string[]
   startingPriceOverride?: number
+  faqItems?: FaqItem[]
+  faqTitle?: string
+  faqIntro?: string
 }
 
 export default function IndustryLandingPage({
@@ -51,6 +59,9 @@ export default function IndustryLandingPage({
   featuredProductSlugs,
   mostOrderedSizesOverride,
   startingPriceOverride,
+  faqItems,
+  faqTitle = `Frequently asked questions about ${title.toLowerCase()}.`,
+  faqIntro = 'These answers cover the most common buying and reorder questions for this packaging program.',
 }: IndustryLandingPageProps) {
   const products = featuredProductSlugs?.length
     ? featuredProductSlugs
@@ -63,6 +74,7 @@ export default function IndustryLandingPage({
 
   return (
     <div className="pb-16">
+      {faqItems && faqItems.length > 0 && <StructuredData data={buildFaqJsonLd(faqItems)} />}
       <section className="page-hero">
         <div className="page-hero-inner">
           <p className="kicker">{heroLabel}</p>
@@ -95,7 +107,7 @@ export default function IndustryLandingPage({
       <section className="section-container py-20">
         <div className="split-panel items-start">
           <div className="tonal-panel">
-            <h2 className="section-title">{INDUSTRY_LABELS[industry]} Product Gallery</h2>
+            <h2 className="section-title">{INDUSTRY_LABELS[industry]} products for wholesale reorder planning.</h2>
             <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {featured.map((product) => (
                 <article key={product.sku} className="surface-card product-card flex h-full flex-col">
@@ -103,7 +115,7 @@ export default function IndustryLandingPage({
                     <FallbackImage
                       src={product.image}
                       fallbackSrc="/images/catalog/placeholder.svg"
-                      alt={`${product.name} product photo`}
+                      alt={getCatalogProductAlt(product)}
                       fill
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -156,9 +168,17 @@ export default function IndustryLandingPage({
         </section>
       )}
 
+      {faqItems && faqItems.length > 0 && (
+        <FaqSection
+          title={faqTitle}
+          intro={faqIntro}
+          items={faqItems}
+        />
+      )}
+
       <section className="section-container pt-2">
         <div className="tonal-panel">
-          <h2 className="section-title">Ready to Order from This Industry Program?</h2>
+          <h2 className="section-title">Ready to order from this wholesale bag program?</h2>
           <p className="mt-3 muted-text">
             Browse the most relevant catalog and move straight into case-level quote building.
           </p>

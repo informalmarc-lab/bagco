@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import FallbackImage from '@/components/FallbackImage'
 import AddToCartControl from '@/components/cart/AddToCartControl'
+import FaqSection from '@/components/seo/FaqSection'
+import StructuredData from '@/components/seo/StructuredData'
 import { contactPhone, contactPhoneHref, contactTextHref } from '@/components/siteConfig'
 import {
   getCatalogOverviewPath,
@@ -12,17 +14,17 @@ import {
 } from '@/lib/catalogProducts'
 import { getAllLabelProducts } from '@/lib/labelCatalog'
 import { formatMylarQuantityLabel, getMylarProductBySlug, type MylarProduct } from '@/lib/mylarCatalog'
+import { getCatalogProductAlt, getLabelProductAlt, getMylarProductAlt } from '@/lib/seo/imageAlt'
+import { buildPageMetadata } from '@/lib/seo/pageMetadata'
+import { buildFaqJsonLd } from '@/lib/seo/structuredData'
 
-export const metadata: Metadata = {
-  title: {
-    absolute: 'Smoke Shop Bag Programs | Stocked Dispensary Style Paper Bags | Bag Supply Co',
-  },
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Wholesale Smoke Shop Bags and Packaging',
   description:
-    'Stocked dispensary style paper bag designs for smoke shops and specialty retailers. Browse 15 paper designs in Classic RX and #12-DS formats with case pricing from $43.40.',
-  alternates: {
-    canonical: '/industries/smoke-shops',
-  },
-}
+    'Wholesale smoke shop bags for buyers who need discreet paper carryout, add-on mylar and labels, and BagSupplyCo reorder support.',
+  path: '/industries/smoke-shops',
+  imagePath: '/images/catalog/smoke-shop/dispensary-bag-design-10.webp',
+})
 
 const featuredSmokeShopSlugs = [
   'dispensary-bag-design-10',
@@ -48,6 +50,24 @@ const featuredMylarSlugs = [
   'pre-roll-kraft-opaque-plain',
 ]
 
+const faqItems = [
+  {
+    question: 'What bag sizes work best for smoke shop carryout?',
+    answer:
+      'Most smoke shop buyers stay with Classic RX and #12-DS paper bag formats because they simplify checkout, storage, and repeat ordering.',
+  },
+  {
+    question: 'Can smoke shops buy paper bags, labels, and mylar from the same supplier?',
+    answer:
+      'Yes. BagSupplyCo supports stocked paper bag designs plus label and mylar add-ons so smoke shop buyers can consolidate more packaging under one source.',
+  },
+  {
+    question: 'Which catalog page should a smoke shop buyer use first?',
+    answer:
+      'Start with the smoke shop paper bag selection on this page, then move into the mylar bag or label catalogs if your counter mix includes packaged add-on products.',
+  },
+]
+
 function getFeaturedProducts(): CatalogProduct[] {
   return featuredSmokeShopSlugs
     .map((slug) => getCatalogProductBySlug(slug))
@@ -69,6 +89,7 @@ export default function SmokeShopsIndustryPage() {
 
   return (
     <div className="pb-16">
+      <StructuredData data={buildFaqJsonLd(faqItems)} />
       <section className="page-hero overflow-hidden">
         <div className="page-hero-inner relative">
           <div className="pointer-events-none absolute inset-x-0 top-0 h-52 bg-[radial-gradient(circle_at_top,rgba(181,129,58,0.24),transparent_70%)]" />
@@ -117,7 +138,7 @@ export default function SmokeShopsIndustryPage() {
                     <FallbackImage
                       src={firstProduct.image}
                       fallbackSrc="/images/catalog/placeholder.svg"
-                      alt={firstProduct.name}
+                      alt={getCatalogProductAlt(firstProduct)}
                       fill
                       className="object-cover"
                       sizes="(max-width: 1024px) 100vw, 44vw"
@@ -139,7 +160,7 @@ export default function SmokeShopsIndustryPage() {
         <div className="grid gap-4 md:grid-cols-[1.15fr_0.85fr]">
           <div className="tonal-panel">
             <p className="kicker">About</p>
-            <h2 className="section-title mt-4">Built for retailers that want ready-to-ship paper bags without a custom setup cycle.</h2>
+            <h2 className="section-title mt-4">Wholesale smoke shop paper bags for discreet retail carryout.</h2>
             <p className="mt-4 text-sm leading-7 text-[#5F4D33] md:text-base">
               Smoke shops often need packaging that feels more polished than a blank kraft bag but does not require the
               lead time, proofs, and minimums of a full custom run. This stocked design lineup gives teams a faster path:
@@ -194,7 +215,7 @@ export default function SmokeShopsIndustryPage() {
                   <FallbackImage
                     src={product.image}
                     fallbackSrc="/images/catalog/placeholder.svg"
-                    alt={product.name}
+                    alt={getCatalogProductAlt(product)}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
@@ -244,7 +265,7 @@ export default function SmokeShopsIndustryPage() {
                   <FallbackImage
                     src={label.image}
                     fallbackSrc="/images/catalog/placeholder.svg"
-                    alt={label.name}
+                    alt={getLabelProductAlt(label)}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
@@ -291,7 +312,7 @@ export default function SmokeShopsIndustryPage() {
                   <FallbackImage
                     src={product.image}
                     fallbackSrc="/images/mylar/placeholder.webp"
-                    alt={product.name}
+                    alt={getMylarProductAlt(product)}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
@@ -365,6 +386,12 @@ export default function SmokeShopsIndustryPage() {
           </div>
         </div>
       </section>
+
+      <FaqSection
+        title="Wholesale smoke shop bag FAQs for specialty retail buyers."
+        intro="These answers cover the common sizing, category-mix, and reorder questions smoke shop buyers ask before choosing packaging."
+        items={faqItems}
+      />
     </div>
   )
 }
