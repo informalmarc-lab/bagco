@@ -1,3 +1,5 @@
+import { cleanTextDeep } from './utils/cleanText.ts'
+
 export type RetailDiscountTier = {
   label: string
   casesLabel: string
@@ -23,7 +25,7 @@ export type RetailBagProduct = {
   shippingNote: string
 }
 
-const RETAIL_PRODUCTS: RetailBagProduct[] = [
+const RETAIL_PRODUCTS = ([
   {
     sku: 'RT-TYB',
     slug: 'thank-you-t-shirt-bags',
@@ -51,9 +53,9 @@ const RETAIL_PRODUCTS: RetailBagProduct[] = [
     ],
     shippingNote: 'Order 2+ cases and get free shipping. Single case orders ship at calculated rate.',
   },
-]
+] satisfies RetailBagProduct[]).map((product) => cleanTextDeep(product) as RetailBagProduct)
 
-export const RETAIL_DISCOUNT_TIERS: RetailDiscountTier[] = [
+export const RETAIL_DISCOUNT_TIERS = ([
   {
     label: 'Single Case',
     casesLabel: '1 case',
@@ -78,7 +80,7 @@ export const RETAIL_DISCOUNT_TIERS: RetailDiscountTier[] = [
     discountPercent: 7,
     freeShipping: true,
   },
-]
+] satisfies RetailDiscountTier[]).map((tier) => cleanTextDeep(tier) as RetailDiscountTier)
 
 export function getAllRetailProducts(): RetailBagProduct[] {
   return [...RETAIL_PRODUCTS]

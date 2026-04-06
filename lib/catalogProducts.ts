@@ -1,4 +1,5 @@
 import catalogProducts from '@/data/catalogProducts.json'
+import { cleanText, cleanTextArray, cleanTextDeep } from './utils/cleanText.ts'
 
 export type CatalogIndustryKey =
   | 'pharmacy'
@@ -61,29 +62,41 @@ export const DEFAULT_CATALOG_FILTERS: CatalogFilters = {
 }
 
 function sanitizeDescription(description: string): string {
-  return description
+  return cleanText(description)
     .replace(/1-800-526-9032/g, '(704) 862-9256')
 }
 
 function withGuaranteedSizePricing(product: CatalogProduct): CatalogProduct {
-  if (Array.isArray(product.sizePricing) && product.sizePricing.length > 0) {
+  const cleanedProduct = cleanTextDeep(product)
+
+  if (Array.isArray(cleanedProduct.sizePricing) && cleanedProduct.sizePricing.length > 0) {
     return {
-      ...product,
-      description: sanitizeDescription(product.description),
+      ...cleanedProduct,
+      name: cleanText(cleanedProduct.name),
+      bagType: cleanText(cleanedProduct.bagType),
+      caseCount: cleanText(cleanedProduct.caseCount),
+      colorOptions: cleanTextArray(cleanedProduct.colorOptions),
+      sizeOptions: cleanTextArray(cleanedProduct.sizeOptions),
+      description: sanitizeDescription(cleanedProduct.description),
     }
   }
 
   const fallbackRows =
-    product.sizeOptions.length > 0
-      ? product.sizeOptions.map((size) => ({
-          label: `${size} ${product.caseCount}`.trim(),
-          price: product.startingPrice,
+    cleanedProduct.sizeOptions.length > 0
+      ? cleanedProduct.sizeOptions.map((size) => ({
+          label: cleanText(`${size} ${cleanedProduct.caseCount}`.trim()),
+          price: cleanedProduct.startingPrice,
         }))
-      : [{ label: `Standard Size ${product.caseCount}`.trim(), price: product.startingPrice }]
+      : [{ label: cleanText(`Standard Size ${cleanedProduct.caseCount}`.trim()), price: cleanedProduct.startingPrice }]
 
   return {
-    ...product,
-    description: sanitizeDescription(product.description),
+    ...cleanedProduct,
+    name: cleanText(cleanedProduct.name),
+    bagType: cleanText(cleanedProduct.bagType),
+    caseCount: cleanText(cleanedProduct.caseCount),
+    colorOptions: cleanTextArray(cleanedProduct.colorOptions),
+    sizeOptions: cleanTextArray(cleanedProduct.sizeOptions),
+    description: sanitizeDescription(cleanedProduct.description),
     sizePricing: fallbackRows,
   }
 }

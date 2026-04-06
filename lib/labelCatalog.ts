@@ -1,4 +1,5 @@
 import labelData from '@/data/labelProducts.json'
+import { cleanTextDeep } from './utils/cleanText.ts'
 
 export type LabelProduct = {
   sku: string
@@ -11,7 +12,9 @@ export type LabelProduct = {
   description: string
 }
 
-const PRODUCTS = (labelData as { products: LabelProduct[] }).products
+const PRODUCTS = ((labelData as { products: LabelProduct[] }).products).map((product) =>
+  cleanTextDeep(product),
+)
 
 export function getAllLabelProducts(): LabelProduct[] {
   return [...PRODUCTS]

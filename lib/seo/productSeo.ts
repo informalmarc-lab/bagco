@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
 import { buildPageTitle } from '@/lib/seo/pageMetadata'
 import { getSiteUrl, toAbsoluteUrl } from '@/lib/seo/site'
+import { cleanText } from '@/lib/utils/cleanText.ts'
 
 function normalizeWhitespace(value: string): string {
-  return value.replace(/\s+/g, ' ').trim()
+  return cleanText(value).replace(/\s+/g, ' ').trim()
 }
 
 function ensureSentence(value: string): string {

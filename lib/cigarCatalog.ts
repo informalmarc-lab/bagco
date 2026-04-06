@@ -1,3 +1,5 @@
+import { cleanTextDeep } from './utils/cleanText.ts'
+
 export type CigarProductUnit = 'case' | 'pack'
 
 export type CigarDiscountTier = {
@@ -19,7 +21,7 @@ export type CigarBagProduct = {
   description: string
 }
 
-const CIGAR_PRODUCTS: CigarBagProduct[] = [
+const CIGAR_PRODUCTS = ([
   {
     sku: 'CIG-3X10',
     slug: 'printed-cigar-bags-3x10',
@@ -64,9 +66,9 @@ const CIGAR_PRODUCTS: CigarBagProduct[] = [
     image: '/images/catalog/cigar-bags/cigar-bag-slider-6x10.jpg',
     description: '4 mil slider cigar bags with a larger 6.5 x 10 footprint for premium presentation, humidor-friendly storage, and protected multi-stick packaging.',
   },
-]
+] satisfies CigarBagProduct[]).map((product) => cleanTextDeep(product) as CigarBagProduct)
 
-export const CIGAR_DISCOUNT_TIERS: CigarDiscountTier[] = [
+export const CIGAR_DISCOUNT_TIERS = ([
   {
     label: 'Single Case',
     quantityLabel: '1 case',
@@ -91,7 +93,7 @@ export const CIGAR_DISCOUNT_TIERS: CigarDiscountTier[] = [
     discountPercent: 7,
     freeShipping: true,
   },
-]
+] satisfies CigarDiscountTier[]).map((tier) => cleanTextDeep(tier) as CigarDiscountTier)
 
 export function getAllCigarProducts(): CigarBagProduct[] {
   return [...CIGAR_PRODUCTS]

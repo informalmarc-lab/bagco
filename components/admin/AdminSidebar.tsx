@@ -8,6 +8,7 @@ const links = [
   { href: '/admin/dashboard', label: 'Dashboard' },
   { href: '/admin/quotes/new', label: 'New Quote' },
   { href: '/admin/quotes', label: 'All Quotes' },
+  { href: '/admin/short-links', label: 'Short Links' },
 ]
 
 export default function AdminSidebar() {

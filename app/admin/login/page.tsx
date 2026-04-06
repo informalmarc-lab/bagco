@@ -14,7 +14,7 @@ export default function AdminLoginPage() {
           <AdminLogo />
         </div>
         <h1 className="text-center text-2xl font-black text-[#1E4D2B]">Admin Login</h1>
-        <p className="mt-2 text-center text-sm text-[#5F4D33]">Sign in to manage quotes and invoices.</p>
+        <p className="mt-2 text-center text-sm text-[#5F4D33]">Sign in to manage quotes, invoices, and short links.</p>
         <div className="mt-6">
           <AdminLoginForm />
         </div>

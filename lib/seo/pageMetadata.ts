@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { getSiteUrl, toAbsoluteUrl } from '@/lib/seo/site'
+import { cleanText } from '@/lib/utils/cleanText.ts'
 
 type PageMetadataInput = {
   title: string
@@ -11,7 +12,7 @@ type PageMetadataInput = {
 const DEFAULT_OG_IMAGE = '/catalog/pharmacy/gs/GS-22-FRONT.webp'
 
 export function buildPageTitle(topic: string): string {
-  return `${topic} | BagSupplyCo — Wholesale Bags`
+  return `${cleanText(topic)} | BagSupplyCo — Wholesale Bags`
 }
 
 export function buildPageMetadata({
@@ -21,6 +22,7 @@ export function buildPageMetadata({
   imagePath = DEFAULT_OG_IMAGE,
 }: PageMetadataInput): Metadata {
   const absoluteTitle = buildPageTitle(title)
+  const normalizedDescription = cleanText(description)
   const canonicalUrl = toAbsoluteUrl(path)
   const imageUrl = toAbsoluteUrl(imagePath)
 
@@ -28,7 +30,7 @@ export function buildPageMetadata({
     title: {
       absolute: absoluteTitle,
     },
-    description,
+    description: normalizedDescription,
     alternates: {
       canonical: path,
     },
@@ -36,7 +38,7 @@ export function buildPageMetadata({
       type: 'website',
       url: canonicalUrl,
       title: absoluteTitle,
-      description,
+      description: normalizedDescription,
       siteName: 'BagSupplyCo',
       images: [
         {
@@ -50,7 +52,7 @@ export function buildPageMetadata({
     twitter: {
       card: 'summary_large_image',
       title: absoluteTitle,
-      description,
+      description: normalizedDescription,
       images: [imageUrl],
     },
     metadataBase: new URL(getSiteUrl()),

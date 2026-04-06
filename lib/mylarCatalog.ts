@@ -1,4 +1,5 @@
 import mylarData from '@/data/mylarProducts.json'
+import { cleanTextDeep } from './utils/cleanText.ts'
 
 export type MylarCatalogType = 'designer-printed' | 'plain-stock'
 export type MylarCatalogSection = 'designer-printed' | 'large-storage' | 'plain-stock'
@@ -16,7 +17,9 @@ export type MylarProduct = {
   description: string
 }
 
-const PRODUCTS = (mylarData as { products: MylarProduct[] }).products
+const PRODUCTS = ((mylarData as { products: MylarProduct[] }).products).map((product) =>
+  cleanTextDeep(product),
+)
 
 export function getAllMylarProducts(): MylarProduct[] {
   return [...PRODUCTS]

@@ -1,4 +1,4 @@
-﻿import Link from 'next/link'
+import Link from 'next/link'
 import NewsletterSignup from '@/components/NewsletterSignup'
 
 export type BlogPostSection = {
