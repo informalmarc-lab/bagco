@@ -10,19 +10,16 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="mt-24 border-t border-[#B5813A] bg-[#1E4D2B] text-[#FAF6F0]">
-      <div className="section-container py-16 md:py-20">
-        <div className="rounded-3xl border border-[#C4935A77] bg-[linear-gradient(135deg,#1E4D2B,#225935_55%,#1A4126)] p-6 md:p-10">
-          <p className="inline-flex rounded-full border border-[#F4E8D8AA] bg-[#F4E8D822] px-3 py-1 text-xs font-bold uppercase tracking-[0.12em] text-[#FAF6F0]">
-            Ready to standardize packaging?
-          </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-black text-white md:text-4xl">
-            Build a predictable packaging program in one call.
-          </h2>
-          <p className="mt-3 max-w-3xl text-[#FAF6F0]">
-            We help teams choose the right catalog, lock in repeat supply, and ship with a clear schedule.
-          </p>
-          <div className="mt-6 flex flex-wrap gap-3">
+    <footer className="mt-20 border-t border-[#D8C5A7] bg-[#1E4D2B] text-[#FAF6F0]">
+      <div className="section-container py-14">
+        <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[#355a3c] pb-8">
+          <div>
+            <h2 className="text-2xl font-black text-white">Need pricing or reorder help?</h2>
+            <p className="mt-2 max-w-2xl text-sm text-[#E9DFD0]">
+              Talk to our team about stock programs, custom print, and distributor fulfillment.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3">
             <Link href="/generic-bag-quote" className="btn-primary">
               Build a Quote
             </Link>
@@ -32,9 +29,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 xl:grid-cols-[1.15fr_0.9fr_1fr_1.05fr]">
+        <div className="mt-10 grid gap-8 sm:grid-cols-2 xl:grid-cols-[1.15fr_0.9fr_1fr_1.05fr]">
           <div>
-            <h3 className="text-xl font-black text-[#B5813A]">Bag Supply Co</h3>
+            <h3 className="text-xl font-black text-[#FAF6F0]">Bag Supply Co</h3>
             <p className="mt-3 text-sm leading-relaxed text-[#FAF6F0CC]">
               Factory-direct paper bag manufacturing and structured replenishment for pharmacy, veterinary, dispensary, smoke shop, and distributor operations.
             </p>
@@ -67,10 +64,10 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-sm font-black uppercase tracking-[0.1em] text-[#B5813A]">Contact</h4>
+            <h4 className="text-sm font-black uppercase tracking-[0.08em] text-[#B5813A]">Contact</h4>
             <div className="mt-4 space-y-3 text-sm">
-              <div className="rounded-2xl border border-[#C4935A33] bg-[#FAF6F00F] p-4">
-                <p className="text-xs font-black uppercase tracking-[0.1em] text-[#B5813A]">Reach Us</p>
+              <div className="rounded-md border border-[#355a3c] bg-[#204d2c] p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#B5813A]">Reach us</p>
                 <div className="mt-3 space-y-2">
                   <div><Link href="/contact" className="footer-link font-semibold">Contact Form</Link></div>
                   <div><a href={contactTextHref} className="footer-link">Text {contactPhone}</a></div>
@@ -78,8 +75,8 @@ export default function Footer() {
                 </div>
               </div>
 
-              <div className="rounded-2xl border border-[#C4935A33] bg-[#FAF6F00F] p-4">
-                <p className="text-xs font-black uppercase tracking-[0.1em] text-[#B5813A]">Address & Hours</p>
+              <div className="rounded-md border border-[#355a3c] bg-[#204d2c] p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#B5813A]">Location & Hours</p>
                 <div className="mt-3 space-y-1 text-sm text-[#FAF6F0CC]">
                   <p>{contactAddress[0]}</p>
                   <p>{contactAddress[1]}</p>
@@ -88,8 +85,8 @@ export default function Footer() {
                 </div>
               </div>
 
-              <div className="rounded-2xl border border-[#C4935A33] bg-[#FAF6F00F] p-4">
-                <p className="text-xs font-black uppercase tracking-[0.1em] text-[#B5813A]">Follow Along</p>
+              <div className="rounded-md border border-[#355a3c] bg-[#204d2c] p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#B5813A]">Follow along</p>
                 <div className="mt-3 space-y-2">
                   <a
                     href="https://www.facebook.com/profile.php?id=61586254914821"
@@ -105,13 +102,13 @@ export default function Footer() {
               </div>
 
               <div className="flex flex-wrap gap-2 pt-1">
-                <Link href="/terms" className="footer-link inline-flex rounded-md border border-[#C4935A99] px-3 py-1.5 text-xs font-semibold">
+                <Link href="/terms" className="footer-link inline-flex rounded-md border border-[#4A6A51] px-3 py-1.5 text-xs font-semibold">
                   Terms &amp; Conditions
                 </Link>
-                <Link href="/privacy-policy" className="footer-link inline-flex rounded-md border border-[#C4935A99] px-3 py-1.5 text-xs font-semibold">
+                <Link href="/privacy-policy" className="footer-link inline-flex rounded-md border border-[#4A6A51] px-3 py-1.5 text-xs font-semibold">
                   Privacy Policy
                 </Link>
-                <Link href="/sitemap.xml" className="footer-link inline-flex rounded-md border border-[#C4935A99] px-3 py-1.5 text-xs font-semibold">
+                <Link href="/sitemap.xml" className="footer-link inline-flex rounded-md border border-[#4A6A51] px-3 py-1.5 text-xs font-semibold">
                   Sitemap XML
                 </Link>
               </div>

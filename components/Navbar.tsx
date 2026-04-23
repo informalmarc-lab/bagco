@@ -36,7 +36,6 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [search, setSearch] = useState('')
   const [showMobileSearch, setShowMobileSearch] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
   const [openDesktopMenu, setOpenDesktopMenu] = useState<'catalog' | 'industries' | null>(null)
   const pathname = usePathname()
   const router = useRouter()
@@ -52,13 +51,6 @@ export default function Navbar() {
     setIsOpen(false)
     setShowMobileSearch(false)
   }
-
-  useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 8)
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
 
   useEffect(() => {
     setOpenDesktopMenu(null)
@@ -85,26 +77,20 @@ export default function Navbar() {
   }
 
   return (
-    <header
-      className={`print-hide sticky top-0 z-50 transition-all ${
-        isScrolled
-          ? 'border-b border-[#B5813A] bg-[#FAF6F0]/85 backdrop-blur-[12px] shadow-[0_10px_30px_rgba(30,77,43,0.12)]'
-          : 'border-b border-transparent bg-transparent'
-      }`}
-    >
+    <header className="print-hide sticky top-0 z-50 border-b border-[#D8C5A7] bg-[#FAF6F0]">
       <div className="section-container">
-        <nav className="flex min-h-[74px] items-center justify-between gap-4">
+        <nav className="flex min-h-[72px] items-center justify-between gap-4">
           <Link href="/" className="inline-flex items-center gap-3">
-            <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-[#B5813A] text-sm font-black text-white shadow-lg">
+            <span className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-[#1E4D2B] text-sm font-black text-white">
               BS
             </span>
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#1E4D2B]">Bag Supply Co</p>
-              <p className="text-sm font-semibold text-[#1E4D2B]">Packaging Partner</p>
+              <p className="text-sm font-black text-[#1E4D2B]">Bag Supply Co</p>
+              <p className="text-xs text-[#5F4D33]">Wholesale bags</p>
             </div>
           </Link>
 
-          <div className="hidden items-center gap-1 xl:gap-2 xl:flex">
+          <div className="hidden items-center gap-1 xl:flex">
             <Link
               href="/"
               className={`nav-chip ${pathname === '/' ? 'nav-chip-active' : ''}`}
@@ -129,7 +115,7 @@ export default function Navbar() {
                 Catalogs
               </Link>
               <div
-                className={`absolute left-0 top-full z-30 w-64 translate-y-2 rounded-xl border border-[#C4935A66] bg-white p-2 shadow-[0_14px_30px_rgba(30,77,43,0.14)] transition-all ${
+                className={`absolute left-0 top-full z-30 mt-1 w-64 rounded-md border border-[#D8C5A7] bg-white p-2 shadow-[0_8px_18px_rgba(30,77,43,0.08)] transition-all ${
                   openDesktopMenu === 'catalog' ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
                 }`}
               >
@@ -162,7 +148,7 @@ export default function Navbar() {
                 Industries
               </Link>
               <div
-                className={`absolute left-0 top-full z-30 w-56 translate-y-2 rounded-xl border border-[#C4935A66] bg-white p-2 shadow-[0_14px_30px_rgba(30,77,43,0.14)] transition-all ${
+                className={`absolute left-0 top-full z-30 mt-1 w-56 rounded-md border border-[#D8C5A7] bg-white p-2 shadow-[0_8px_18px_rgba(30,77,43,0.08)] transition-all ${
                   openDesktopMenu === 'industries'
                     ? 'pointer-events-auto opacity-100'
                     : 'pointer-events-none opacity-0'
@@ -192,7 +178,7 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="hidden w-full max-w-[200px] items-center gap-2 2xl:max-w-[260px] xl:flex">
+          <div className="hidden w-full max-w-[220px] items-center gap-2 2xl:max-w-[280px] xl:flex">
             <input
               type="search"
               value={search}
@@ -201,10 +187,10 @@ export default function Navbar() {
                 if (event.key === 'Enter') submitSearch()
               }}
               placeholder="Search catalog..."
-              className="h-11 w-full rounded-md border border-[#C4935A66] bg-white px-3 text-sm text-[#1E4D2B]"
+              className="h-10 w-full rounded-md border border-[#D8C5A7] bg-white px-3 text-sm text-[#1E4D2B]"
               aria-label="Search bags, sizes, industries"
             />
-            <button type="button" onClick={submitSearch} className="btn-secondary h-11 min-w-11 px-4">
+            <button type="button" onClick={submitSearch} className="btn-secondary h-10 min-w-10 px-3">
               Go
             </button>
           </div>
@@ -221,7 +207,7 @@ export default function Navbar() {
           </div>
 
           <button
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-[#B5813A] bg-[#FAF6F0] text-[#1E4D2B] xl:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-[#D8C5A7] bg-white text-[#1E4D2B] xl:hidden"
             onClick={() => setIsOpen((prev) => !prev)}
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
@@ -241,7 +227,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setShowMobileSearch((prev) => !prev)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-[#C4935A66] bg-white text-[#1E4D2B]"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-[#D8C5A7] bg-white text-[#1E4D2B]"
             aria-label="Toggle search"
           >
             {'\u{1F50E}'}
@@ -256,10 +242,10 @@ export default function Navbar() {
                   if (event.key === 'Enter') submitSearch()
                 }}
                 placeholder="Search bags, sizes, industries..."
-                className="h-11 w-full rounded-md border border-[#C4935A66] bg-white px-3 text-sm text-[#1E4D2B]"
+                className="h-10 w-full rounded-md border border-[#D8C5A7] bg-white px-3 text-sm text-[#1E4D2B]"
                 aria-label="Search bags, sizes, industries"
               />
-              <button type="button" onClick={submitSearch} className="btn-secondary h-11 min-w-11 px-4">
+              <button type="button" onClick={submitSearch} className="btn-secondary h-10 min-w-10 px-3">
                 Go
               </button>
             </div>
@@ -268,7 +254,7 @@ export default function Navbar() {
 
         {isOpen && (
           <div id="mobile-menu" className="pb-4 xl:hidden">
-            <div className="rounded-2xl border border-[#C4935A66] bg-white p-3 shadow-[0_16px_40px_rgba(30,77,43,0.15)]">
+            <div className="rounded-md border border-[#D8C5A7] bg-white p-3 shadow-[0_8px_18px_rgba(30,77,43,0.08)]">
               <div className="grid gap-1">
                 <Link
                   href="/"
@@ -295,7 +281,7 @@ export default function Navbar() {
 
               <div className="mt-4">
                 <div className="flex items-center justify-between gap-3 px-1">
-                  <p className="text-[11px] font-black uppercase tracking-[0.14em] text-[#7A6548]">Catalogs</p>
+                  <p className="text-sm font-semibold text-[#5F4D33]">Catalogs</p>
                   <Link
                     href="/catalog"
                     className="text-xs font-bold text-[#1E4D2B] underline-offset-2 hover:text-[#B5813A] hover:underline"
@@ -322,7 +308,7 @@ export default function Navbar() {
 
               <div className="mt-4">
                 <div className="flex items-center justify-between gap-3 px-1">
-                  <p className="text-[11px] font-black uppercase tracking-[0.14em] text-[#7A6548]">Industries</p>
+                  <p className="text-sm font-semibold text-[#5F4D33]">Industries</p>
                   <Link
                     href="/industries"
                     className="text-xs font-bold text-[#1E4D2B] underline-offset-2 hover:text-[#B5813A] hover:underline"

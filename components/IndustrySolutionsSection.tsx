@@ -167,10 +167,7 @@ export default function IndustrySolutionsSection() {
 
   return (
     <section id="industry-solutions" className="section-container py-20 md:py-24">
-      <p className="kicker">Industry Solutions</p>
-      <h2 className="heading-display mt-5 text-3xl md:text-5xl">
-        Packaging Programs by Business Type
-      </h2>
+      <h2 className="section-title">Packaging programs by business type</h2>
       <p className="mt-4 max-w-3xl text-lg muted-text">
         Select an industry to see why teams choose Bag Supply Co, what problems we solve, and how packaging improves business outcomes.
       </p>
@@ -188,20 +185,18 @@ export default function IndustrySolutionsSection() {
                   panelRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
                 }, 120)
               }}
-              className={`surface-card rounded-xl p-5 text-left transition-all duration-300 ${
+              className={`surface-card rounded-md p-5 text-left ${
                 isActive
-                  ? 'border-[#B5813A66] shadow-[0_16px_35px_rgba(181,129,58,0.18)]'
-                  : 'hover:-translate-y-0.5 hover:border-[#C4935A66] hover:shadow-[0_12px_28px_rgba(30,77,43,0.12)]'
+                  ? 'border-[#B5813A99]'
+                  : 'hover:border-[#C4935A66]'
               }`}
             >
-              <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[#1E4D2B] text-[#F4E8D8]">
+              <div className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-[#1E4D2B] text-[#F4E8D8]">
                 <Icon id={industry.id} />
               </div>
               <h3 className="mt-4 text-xl font-black text-[#1E4D2B]">{industry.title}</h3>
               <p className="mt-2 text-sm muted-text">{industry.subtitle}</p>
-              <p className="mt-3 text-xs font-bold uppercase tracking-[0.09em] text-[#B5813A]">
-                {isActive ? 'Selected' : 'Click to expand'}
-              </p>
+              <p className="mt-3 text-xs font-semibold text-[#7A6548]">{isActive ? 'Selected' : 'View details'}</p>
             </button>
           )
         })}
@@ -209,34 +204,34 @@ export default function IndustrySolutionsSection() {
 
       <div
         ref={panelRef}
-        className="mt-6 overflow-hidden rounded-3xl border border-[#C4935A66] bg-white/92 p-6 shadow-[0_14px_30px_rgba(30,77,43,0.12)] md:p-8"
+        className="mt-6 overflow-hidden rounded-md border border-[#D8C5A7] bg-white p-6 shadow-[0_2px_8px_rgba(30,77,43,0.05)] md:p-8"
       >
         {active ? (
-          <div key={active.id} className="industry-panel reveal-up">
-            <div className="flex flex-wrap items-center gap-3">
-              <p className="kicker m-0">{active.title}</p>
-              <p className="text-sm font-semibold muted-text">{active.examples}</p>
+          <div key={active.id} className="industry-panel">
+            <div>
+              <h3 className="text-2xl font-black text-[#1E4D2B]">{active.title}</h3>
+              <p className="mt-2 text-sm font-semibold muted-text">{active.examples}</p>
             </div>
 
             <div className="mt-6 grid gap-4 lg:grid-cols-3">
-              <div className="rounded-2xl border border-[#C4935A66] bg-[#FAF6F0]/70 p-4">
-                <h4 className="text-sm font-black uppercase tracking-[0.08em] text-[#5F4D33]">Why Bag Supply Co</h4>
+              <div className="rounded-md border border-[#D8C5A7] bg-[#FCFAF7] p-4">
+                <h4 className="text-sm font-black text-[#1E4D2B]">Why Bag Supply Co</h4>
                 <ul className="mt-3 space-y-2 text-sm muted-text">
                   {active.why.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
               </div>
-              <div className="rounded-2xl border border-[#C4935A66] bg-[#FAF6F0]/70 p-4">
-                <h4 className="text-sm font-black uppercase tracking-[0.08em] text-[#5F4D33]">Problems We Solve</h4>
+              <div className="rounded-md border border-[#D8C5A7] bg-[#FCFAF7] p-4">
+                <h4 className="text-sm font-black text-[#1E4D2B]">Problems We Solve</h4>
                 <ul className="mt-3 space-y-2 text-sm muted-text">
                   {active.problems.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
               </div>
-              <div className="rounded-2xl border border-[#C4935A66] bg-[#FAF6F0]/70 p-4">
-                <h4 className="text-sm font-black uppercase tracking-[0.08em] text-[#5F4D33]">Business Benefits</h4>
+              <div className="rounded-md border border-[#D8C5A7] bg-[#FCFAF7] p-4">
+                <h4 className="text-sm font-black text-[#1E4D2B]">Business Benefits</h4>
                 <ul className="mt-3 space-y-2 text-sm muted-text">
                   {active.benefits.map((item) => (
                     <li key={item}>{item}</li>
@@ -246,13 +241,13 @@ export default function IndustrySolutionsSection() {
             </div>
 
             <div className="mt-6">
-              <p className="text-xs font-black uppercase tracking-[0.08em] text-[#5F4D33]">Related Catalogs</p>
+              <p className="text-sm font-black text-[#1E4D2B]">Related Catalogs</p>
               <div className="mt-2 flex flex-wrap gap-2">
                 {active.catalogs.map((catalog) => (
                   <Link
                     key={catalog.href}
                     href={catalog.href}
-                    className="rounded-lg border border-[#C4935A66] bg-white px-3 py-1.5 text-xs font-bold text-[#5F4D33] hover:bg-[#FAF6F0]"
+                    className="rounded-md border border-[#D8C5A7] bg-white px-3 py-2 text-xs font-bold text-[#5F4D33] hover:bg-[#FAF6F0]"
                   >
                     {catalog.label}
                   </Link>
@@ -261,7 +256,7 @@ export default function IndustrySolutionsSection() {
             </div>
           </div>
         ) : (
-          <div className="industry-panel reveal-up text-center">
+          <div className="industry-panel text-center">
             <p className="text-sm font-semibold text-[#5F4D33]">Select an industry above to view details.</p>
           </div>
         )}

@@ -69,7 +69,7 @@ export default function NewsletterSignup({
           onChange={(event) => setEmail(event.target.value)}
           placeholder="Email address"
           aria-label="Email address"
-          className="w-full rounded-md border border-[#C4935A66] bg-white px-3 py-2 text-sm text-[#1E4D2B]"
+          className="w-full rounded-md border border-[#D8C5A7] bg-white px-3 py-2 text-sm text-[#1E4D2B]"
           required
         />
         <button

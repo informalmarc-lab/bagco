@@ -64,7 +64,7 @@ export default function ContactPage() {
                 </dd>
               </div>
               <div className="surface-card rounded-2xl p-4">
-                <dt className="text-xs font-black uppercase tracking-[0.11em] text-[#7A6548]">Address</dt>
+                <dt className="text-xs font-black uppercase tracking-[0.11em] text-[#7A6548]">Location</dt>
                 <dd className="mt-2">
                   {contactAddress[0]}
                   <br />

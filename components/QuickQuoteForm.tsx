@@ -68,7 +68,7 @@ export default function QuickQuoteForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="surface-card rounded-2xl p-6 md:p-8">
+    <form onSubmit={onSubmit} className="surface-card rounded-md p-6 md:p-8">
       <h3 className="text-2xl font-black text-[#1E4D2B]">Build a Quote</h3>
       <p className="mt-2 text-sm text-[#5F4D33]">
         Frictionless intake for pharmacy, dispensary, smoke shop, veterinary, and distributor teams. We respond with a structured program recommendation.
@@ -80,7 +80,7 @@ export default function QuickQuoteForm() {
           placeholder="Name"
           value={form.name}
           onChange={(e) => setForm((prev) => ({ ...prev, name: e.target.value }))}
-          className="rounded-md border border-[#C4935A66] px-3 py-2 text-sm"
+          className="rounded-md border border-[#D8C5A7] bg-white px-3 py-2 text-sm"
         />
         <input
           required
@@ -88,24 +88,24 @@ export default function QuickQuoteForm() {
           placeholder="Email"
           value={form.email}
           onChange={(e) => setForm((prev) => ({ ...prev, email: e.target.value }))}
-          className="rounded-md border border-[#C4935A66] px-3 py-2 text-sm"
+          className="rounded-md border border-[#D8C5A7] bg-white px-3 py-2 text-sm"
         />
         <input
           placeholder="Company"
           value={form.company}
           onChange={(e) => setForm((prev) => ({ ...prev, company: e.target.value }))}
-          className="rounded-md border border-[#C4935A66] px-3 py-2 text-sm"
+          className="rounded-md border border-[#D8C5A7] bg-white px-3 py-2 text-sm"
         />
         <input
           placeholder="Monthly Volume (cases)"
           value={form.quantity}
           onChange={(e) => setForm((prev) => ({ ...prev, quantity: e.target.value }))}
-          className="rounded-md border border-[#C4935A66] px-3 py-2 text-sm"
+          className="rounded-md border border-[#D8C5A7] bg-white px-3 py-2 text-sm"
         />
         <select
           value={form.industry}
           onChange={(e) => setForm((prev) => ({ ...prev, industry: e.target.value }))}
-          className="rounded-md border border-[#C4935A66] px-3 py-2 text-sm md:col-span-2"
+          className="rounded-md border border-[#D8C5A7] bg-white px-3 py-2 text-sm md:col-span-2"
         >
           <option>Dispensary</option>
           <option>Smoke Shop</option>
@@ -118,7 +118,7 @@ export default function QuickQuoteForm() {
           value={form.message}
           onChange={(e) => setForm((prev) => ({ ...prev, message: e.target.value }))}
           rows={4}
-          className="rounded-md border border-[#C4935A66] px-3 py-2 text-sm md:col-span-2"
+          className="rounded-md border border-[#D8C5A7] bg-white px-3 py-2 text-sm md:col-span-2"
         />
         <input
           type="text"

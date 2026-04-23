@@ -257,7 +257,6 @@ export default function TermsPage() {
                   (704) 862-9256
                 </a>
               </li>
-              <li>Address: 912 Houston Drive, Monroe, NC 28110</li>
               <li>
                 Website:
                 {' '}

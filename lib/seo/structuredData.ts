@@ -1,4 +1,4 @@
-import { contactAddress, contactPhone } from '@/components/siteConfig'
+import { contactPhone } from '@/components/siteConfig'
 import { getSiteUrl, toAbsoluteUrl } from '@/lib/seo/site'
 
 export type FaqItem = {
@@ -39,7 +39,6 @@ export function buildOrganizationJsonLd() {
     },
     address: {
       '@type': 'PostalAddress',
-      streetAddress: contactAddress[0],
       addressLocality: 'Monroe',
       addressRegion: 'NC',
       postalCode: '28110',
