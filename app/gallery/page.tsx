@@ -79,7 +79,7 @@ export default function GalleryPage() {
       <section className="section-container">
         <div className="tonal-panel">
           <h2 className="section-title">Need Help Choosing a Program?</h2>
-          <p className="mt-3 muted-text">Share your use case and we'll route you to the right catalog and quote path.</p>
+          <p className="mt-3 muted-text">Share your use case and we&apos;ll route you to the right catalog and quote path.</p>
           <div className="mt-5 flex flex-wrap gap-3">
             <Link href="/catalog" className="btn-secondary">Browse Catalogs</Link>
           </div>

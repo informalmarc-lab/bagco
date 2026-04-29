@@ -1,4 +1,4 @@
-import { PDFDocument, StandardFonts, rgb, type PDFFont } from 'pdf-lib'
+import { PDFDocument, StandardFonts, rgb } from 'pdf-lib'
 import { type AdminQuoteRecord } from '@/lib/admin/types'
 
 const GREEN = rgb(30 / 255, 77 / 255, 43 / 255)
@@ -13,17 +13,6 @@ const MARGIN = 54
 
 function fmtMoney(value: number): string {
   return `$${value.toFixed(2)}`
-}
-
-function drawText(
-  text: string,
-  x: number,
-  y: number,
-  size: number,
-  font: PDFFont,
-  color = BLACK,
-) {
-  return { text, x, y, size, font, color }
 }
 
 function splitLines(text: string, maxChars = 45): string[] {

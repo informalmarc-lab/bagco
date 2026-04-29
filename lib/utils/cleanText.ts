@@ -1,5 +1,5 @@
 function hasMojibakeSignature(value: string): boolean {
-  return /(?:Ã.|Â.|â..|â.|¤|�)/.test(value)
+  return /(?:Ã.|Â.|â[\u0080-\u00BF]|ï¿½)/.test(value)
 }
 
 function repairUtf8Mojibake(value: string): string {
@@ -20,10 +20,15 @@ function repairUtf8Mojibake(value: string): string {
 function postProcess(value: string): string {
   return value
     .replace(/\u00a0/g, ' ')
-    .replace(/Â®/g, '®')
-    .replace(/Â°/g, '°')
-    .replace(/Â™/g, '™')
-    .replace(/Â·/g, '·')
+    .replace(/Ã‚Â®|Â®/g, '®')
+    .replace(/Ã‚Â°|Â°/g, '°')
+    .replace(/Ã‚â„¢|â„¢/g, '™')
+    .replace(/Ã‚Â·|Â·/g, '·')
+    .replace(/â€™|â€˜/g, "'")
+    .replace(/â€œ|â€/g, '"')
+    .replace(/â€“|â€”/g, '-')
+    .replace(/â€¢/g, '•')
+    .replace(/ï¿½/g, '')
     .normalize('NFC')
 }
 

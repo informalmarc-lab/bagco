@@ -1,8 +1,11 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import FallbackImage from '@/components/FallbackImage'
+import { getCatalogOverviewPath, getCatalogProductSizes, money, type CatalogProduct } from '@/lib/catalogProducts'
+import { getCustomProgramContent } from '@/lib/customCatalogContent'
 
 type CustomImage = { src: string; name: string }
 
@@ -12,59 +15,18 @@ export type CustomCatalogImages = {
   '3-color': CustomImage[]
 }
 
-const CUSTOM_SECTIONS = {
-  '1-color': {
-    title: 'Full-Custom, 1-Color Bags',
-    tagline: 'Value-focused option',
-    sizes: [
-      { id: '#21', dims: '3.5" x 1.5" x 10"', qty: '3,000 per case', price: '$95.56' },
-      { id: '#22', dims: '4.5" x 2.25" x 11"', qty: '3,000 per case', price: '$119.80' },
-      { id: '#23', dims: '5" x 2" x 10"', qty: '3,000 per case', price: '$117.40' },
-      { id: '#25', dims: '6" x 4" x 11"', qty: '2,000 per case', price: '$133.08' },
-      { id: '#26', dims: '7" x 4" x 14"', qty: '1,000 per case', price: '$102.29' },
-      { id: '#28', dims: '8" x 5" x 17"', qty: '500 per case', price: '$112.10' },
-      { id: '#12', dims: '7" x 10"', qty: '3,000 per case', price: '$115.35' },
-      { id: '#14', dims: '9" x 11"', qty: '2,000 per case', price: '$99.68' },
-      { id: '#15', dims: '8.5" x 3.5" x 14.5"', qty: '1,000 per case', price: '$95.78' },
-    ],
-  },
-  '2-color': {
-    title: 'Full-Custom, 2-Color Bags',
-    tagline: 'Most popular option',
-    sizes: [
-      { id: '#21', dims: '3.5" x 1.5" x 10"', qty: '3,000 per case', price: '$95.56' },
-      { id: '#22', dims: '4.5" x 2.25" x 11"', qty: '3,000 per case', price: '$119.80' },
-      { id: '#23', dims: '5" x 2" x 10"', qty: '3,000 per case', price: '$117.39' },
-      { id: '#25', dims: '6" x 4" x 11"', qty: '2,000 per case', price: '$133.08' },
-      { id: '#26', dims: '7" x 4" x 14"', qty: '1,000 per case', price: '$102.29' },
-      { id: '#28', dims: '8" x 5" x 17"', qty: '500 per case', price: '$112.10' },
-      { id: '#12', dims: '7" x 10"', qty: '3,000 per case', price: '$115.35' },
-      { id: '#14', dims: '9" x 11"', qty: '2,000 per case', price: '$99.68' },
-      { id: '#15', dims: '8.5" x 3.5" x 14.5"', qty: '1,000 per case', price: '$95.78' },
-    ],
-  },
-  '3-color': {
-    title: 'Full-Custom, 3-Color Bags',
-    tagline: 'Highest visual impact',
-    sizes: [
-      { id: '#21', dims: '3.5" x 1.5" x 10"', qty: '3,000 per case', price: '$119.46' },
-      { id: '#22', dims: '4.5" x 2.25" x 11"', qty: '3,000 per case', price: '$149.76' },
-      { id: '#23', dims: '5" x 2" x 10"', qty: '3,000 per case', price: '$146.76' },
-      { id: '#25', dims: '6" x 4" x 11"', qty: '2,000 per case', price: '$166.36' },
-      { id: '#26', dims: '7" x 4" x 14"', qty: '1,000 per case', price: '$127.86' },
-      { id: '#28', dims: '8" x 5" x 17"', qty: '500 per case', price: '$140.12' },
-      { id: '#12', dims: '7" x 10"', qty: '3,000 per case', price: '$144.18' },
-      { id: '#14', dims: '9" x 11"', qty: '2,000 per case', price: '$124.61' },
-      { id: '#15', dims: '8.5" x 3.5" x 14.5"', qty: '1,000 per case', price: '$119.71' },
-    ],
-  },
-} as const
-
 type CustomCatalogClientProps = {
   images: CustomCatalogImages
+  products: CatalogProduct[]
 }
 
-export default function CustomCatalogClient({ images }: CustomCatalogClientProps) {
+function getImageKey(product: CatalogProduct): keyof CustomCatalogImages {
+  if (product.image.includes('/1-color/')) return '1-color'
+  if (product.image.includes('/2-color/')) return '2-color'
+  return '3-color'
+}
+
+export default function CustomCatalogClient({ images, products }: CustomCatalogClientProps) {
   const [selected, setSelected] = useState<CustomImage | null>(null)
 
   useEffect(() => {
@@ -83,55 +45,161 @@ export default function CustomCatalogClient({ images }: CustomCatalogClientProps
     }
   }, [selected])
 
-  const renderSection = (key: '1-color' | '2-color' | '3-color') => {
-    const info = CUSTOM_SECTIONS[key]
-    const list = images[key]
-
-    return (
-      <section key={key} className="section-container py-20 md:py-24">
-        <div className="tonal-panel">
-          <p className="kicker">{info.tagline}</p>
-          <h2 className="mt-4 text-3xl font-black tracking-[-0.03em] text-[#1E4D2B]">{info.title}</h2>
-
-          {list.length > 0 && (
-            <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {list.map((img) => (
-                <button key={img.src} type="button" onClick={() => setSelected(img)} className="surface-card overflow-hidden rounded-2xl">
-                  <div className="relative aspect-square bg-[#FAF6F0]">
-                    <FallbackImage
-                      src={img.src}
-                      fallbackSrc="/images/catalog/placeholder.svg"
-                      alt={img.name}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 25vw"
-                    />
-                  </div>
-                </button>
-              ))}
-            </div>
-          )}
-
-          <div className="mt-8 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
-            {info.sizes.map((size) => (
-              <div key={size.id} className="surface-card rounded-2xl p-4 text-sm">
-                <p className="font-black text-[#1E4D2B]">{size.id}</p>
-                <p className="mt-1 text-[#5F4D33]">{size.dims}</p>
-                <p className="text-[#5F4D33]">{size.qty}</p>
-                <p className="mt-2 font-black text-[#1E4D2B]">{size.price} / case</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    )
-  }
+  const orderedProducts = useMemo(
+    () =>
+      [...products].sort((a, b) => {
+        const aRank = a.colorOptions[0] || ''
+        const bRank = b.colorOptions[0] || ''
+        return aRank.localeCompare(bRank)
+      }),
+    [products],
+  )
 
   return (
     <>
-      {renderSection('1-color')}
-      {renderSection('2-color')}
-      {renderSection('3-color')}
+      {orderedProducts.map((product) => {
+        const content = getCustomProgramContent(product)
+        const sizeRows = getCatalogProductSizes(product)
+        const gallery = images[getImageKey(product)]
+
+        return (
+          <section key={product.sku} className="section-container py-12 md:py-16">
+            <div className="tonal-panel">
+              <div className="grid gap-6 xl:grid-cols-[minmax(0,1.1fr)_360px] xl:items-start">
+                <div>
+                  <p className="kicker">{product.colorOptions[0]}</p>
+                  <h2 className="mt-4 text-3xl font-black tracking-[-0.03em] text-[#1E4D2B]">
+                    {product.name}
+                  </h2>
+                  <p className="mt-4 max-w-3xl text-base leading-7 text-[#5F4D33]">{content.headline}</p>
+                  <p className="mt-3 max-w-3xl text-sm leading-7 text-[#7A6548]">{content.shortPitch}</p>
+
+                  <div className="mt-5 grid gap-3 md:grid-cols-2">
+                    <div className="rounded-md border border-[#E7D9C3] bg-white p-4">
+                      <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#7A6548]">Best For</p>
+                      <p className="mt-2 text-sm leading-6 text-[#1E4D2B]">{content.bestFor}</p>
+                    </div>
+                    <div className="rounded-md border border-[#E7D9C3] bg-white p-4">
+                      <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#7A6548]">Program Snapshot</p>
+                      <p className="mt-2 text-sm leading-6 text-[#1E4D2B]">{content.printLabel}</p>
+                    </div>
+                  </div>
+
+                  <div className="mt-5 grid gap-3 md:grid-cols-2">
+                    {content.features.map((feature) => (
+                      <div key={feature} className="rounded-md bg-[#FCF8F2] p-4 text-sm leading-6 text-[#5F4D33]">
+                        {feature}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="rounded-md border border-[#D8C5A7] bg-white p-5">
+                  <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#7A6548]">At a Glance</p>
+                  <div className="mt-4 grid gap-4">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#7A6548]">Starting Price</p>
+                      <p className="mt-1 text-3xl font-black tracking-[-0.04em] text-[#1E4D2B]">
+                        {money(product.startingPrice)}
+                      </p>
+                      <p className="text-sm text-[#5F4D33]">per case</p>
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#7A6548]">Available Sizes</p>
+                      <p className="mt-1 text-lg font-black text-[#1E4D2B]">{sizeRows.length}</p>
+                      <p className="text-sm text-[#5F4D33]">size options</p>
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#7A6548]">Lead Time</p>
+                      <p className="mt-1 text-lg font-black text-[#1E4D2B]">About 4 weeks</p>
+                      <p className="text-sm text-[#5F4D33]">after proof approval</p>
+                    </div>
+                  </div>
+                  <div className="mt-5 flex flex-wrap gap-3">
+                    <Link href={getCatalogOverviewPath(product)} className="btn-primary">
+                      View Program
+                    </Link>
+                    <Link href="/generic-bag-quote" className="btn-secondary">
+                      Start Quote
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
+              {gallery.length > 0 && (
+                <div className="mt-8">
+                  <p className="text-sm font-black text-[#1E4D2B]">Sample Artwork</p>
+                  <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                    {gallery.slice(0, 8).map((img) => (
+                      <button
+                        key={img.src}
+                        type="button"
+                        onClick={() => setSelected(img)}
+                        className="surface-card overflow-hidden rounded-md"
+                      >
+                        <div className="relative aspect-square bg-[#FAF6F0]">
+                          <FallbackImage
+                            src={img.src}
+                            fallbackSrc="/images/catalog/placeholder.svg"
+                            alt={img.name}
+                            fill
+                            className="object-contain p-4"
+                            sizes="(max-width: 768px) 100vw, 25vw"
+                          />
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              <div className="mt-8">
+                <div className="flex flex-wrap items-end justify-between gap-4">
+                  <div>
+                    <p className="text-sm font-black text-[#1E4D2B]">Size Pricing</p>
+                    <p className="mt-1 text-sm text-[#5F4D33]">
+                      Compare the available bag sizes before moving into proofing and setup.
+                    </p>
+                  </div>
+                </div>
+                <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+                  {sizeRows.map((size) => {
+                    const lowest = size.pricing.length > 0
+                      ? Math.min(...size.pricing.map((row) => row.price))
+                      : product.startingPrice
+
+                    return (
+                      <Link
+                        key={size.slug}
+                        href={`${getCatalogOverviewPath(product)}/${size.slug}`}
+                        className="surface-card rounded-md p-4 transition hover:border-[#C4935A] hover:bg-[#FFFCF7]"
+                      >
+                        <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#7A6548]">Size Option</p>
+                        <p className="mt-2 text-lg font-black text-[#1E4D2B]">{size.label}</p>
+                        <div className="mt-3 flex items-end justify-between gap-3 rounded-md border border-[#E7D9C3] bg-white p-3">
+                          <div>
+                            <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#7A6548]">From</p>
+                            <p className="mt-1 font-black text-[#B5813A]">{money(lowest)}/case</p>
+                          </div>
+                          <p className="text-sm font-semibold text-[#5F4D33]">{size.pricing.length} row{size.pricing.length === 1 ? '' : 's'}</p>
+                        </div>
+                      </Link>
+                    )
+                  })}
+                </div>
+              </div>
+
+              <div className="mt-8 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+                {content.rules.map((rule) => (
+                  <div key={rule} className="rounded-md border border-[#E7D9C3] bg-white p-4 text-sm leading-6 text-[#5F4D33]">
+                    {rule}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )
+      })}
 
       {selected && (
         <div

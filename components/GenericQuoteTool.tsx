@@ -289,7 +289,7 @@ export default function GenericQuoteTool() {
           <p className="text-5xl">✅</p>
           <h1 className="mt-4 text-4xl font-black text-[#1E4D2B]">Your quote request is on its way!</h1>
           <p className="mt-4 text-base text-[#5F4D33]">
-            We'll review your details and follow up with pricing and lead times. You can also text us directly at
+            We&apos;ll review your details and follow up with pricing and lead times. You can also text us directly at
             {' '}
             (704) 862-9256 for a faster response.
           </p>
@@ -308,7 +308,7 @@ export default function GenericQuoteTool() {
           <p className="kicker">Quote Tool</p>
           <h1 className="heading-display mt-5">Build Your Custom Bag Quote</h1>
           <p className="mt-5 max-w-3xl text-lg muted-text">
-            Takes about 2 minutes. We'll respond with a structured program recommendation.
+            Takes about 2 minutes. We&apos;ll respond with a structured program recommendation.
           </p>
         </div>
       </section>

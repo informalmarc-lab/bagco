@@ -17,6 +17,9 @@ import {
   isCatalogProductQuoteOnly,
   money,
 } from '@/lib/catalogProducts'
+import { getCustomProgramContent } from '@/lib/customCatalogContent'
+import { getCustomCatalogImageForSize } from '@/lib/customCatalogImage'
+import { getCatalogImageClass } from '@/lib/catalogImagePresentation'
 import { getCatalogProductAlt } from '@/lib/seo/imageAlt'
 import { buildProductJsonLd, buildProductMetadata } from '@/lib/seo/productSeo'
 
@@ -68,7 +71,7 @@ export async function generateMetadata({
     name: `${product.name} - ${sizeOption.label}`,
     description: `${product.description} Size: ${sizeOption.label}.`,
     urlPath: getCatalogSizePath(product, sizeOption.slug),
-    imagePath: product.image,
+    imagePath: getCustomCatalogImageForSize(product, sizeOption.label),
   })
 }
 
@@ -86,6 +89,8 @@ export default async function CatalogSkuSizePage({
   const sizes = getCatalogProductSizes(product)
   const selectedSize = sizes.find((item) => item.slug === size)
   if (!selectedSize) notFound()
+  const selectedImage = getCustomCatalogImageForSize(product, selectedSize.label)
+  const customContent = product.industry === 'custom' ? getCustomProgramContent(product) : null
 
   const pricingRows = selectedSize.pricing.length > 0
     ? selectedSize.pricing
@@ -98,7 +103,7 @@ export default async function CatalogSkuSizePage({
     sku: product.sku,
     slug: product.slug,
     name: product.name,
-    image: product.image,
+    image: selectedImage,
     productHref: getCatalogSizePath(product, selectedSize.slug),
     quantity: 1,
     unitPrice: pricingRows[0].price,
@@ -107,7 +112,7 @@ export default async function CatalogSkuSizePage({
   }
   const jsonLd = buildProductJsonLd({
     name: `${product.name} - ${selectedSize.label}`,
-    imagePath: product.image,
+    imagePath: selectedImage,
     description: `${product.description} Size: ${selectedSize.label}.`,
     urlPath: getCatalogSizePath(product, selectedSize.slug),
     price: pricingRows[0].price,
@@ -134,7 +139,9 @@ export default async function CatalogSkuSizePage({
           <p className="mt-3 text-sm font-semibold uppercase tracking-[0.09em] text-[#7A6548]">
             {product.sku} - {selectedSize.label}
           </p>
-          <p className="mt-4 max-w-3xl text-lg muted-text">{product.description}</p>
+          <p className="mt-4 max-w-3xl text-lg muted-text">
+            {customContent ? customContent.shortPitch : product.description}
+          </p>
           <div className="mt-6 flex flex-wrap gap-3">
             {isQuoteOnly ? (
               <Link href={`/generic-bag-quote?sku=${encodeURIComponent(product.sku)}`} className="btn-primary">
@@ -147,19 +154,34 @@ export default async function CatalogSkuSizePage({
               Back to {product.sku} Sizes
             </Link>
           </div>
+          <div className="mt-8 grid gap-3 md:grid-cols-3">
+            <div className="rounded-md bg-[rgba(255,255,255,0.62)] p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#7A6548]">Selected Size</p>
+              <p className="mt-1 text-lg font-black text-[#1E4D2B]">{selectedSize.label}</p>
+            </div>
+            <div className="rounded-md bg-[rgba(255,255,255,0.62)] p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#7A6548]">Starting Price</p>
+              <p className="mt-1 text-2xl font-black tracking-[-0.03em] text-[#1E4D2B]">{money(pricingRows[0].price)}</p>
+              <p className="text-sm text-[#5F4D33]">per case</p>
+            </div>
+            <div className="rounded-md bg-[rgba(255,255,255,0.62)] p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#7A6548]">Per Bag</p>
+              <p className="mt-1 text-lg font-black text-[#1E4D2B]">{formatPerBag(pricingRows[0].price, pricingRows[0].label)}</p>
+            </div>
+          </div>
         </div>
       </section>
 
       <section className="section-container py-20">
         <div className="split-panel items-start">
-          <div className="surface-card overflow-hidden rounded-3xl">
+          <div className="surface-card overflow-hidden rounded-[10px]">
             <div className="relative aspect-[4/3] bg-[#FAF6F0]">
               <Image
-                src={product.image}
+                src={selectedImage}
                 alt={getCatalogProductAlt(product, selectedSize.label)}
                 width={1200}
                 height={900}
-                className="object-cover"
+                className={getCatalogImageClass(product)}
                 style={{ width: '100%', height: '100%' }}
                 sizes="(max-width: 1024px) 100vw, 55vw"
               />
@@ -168,7 +190,32 @@ export default async function CatalogSkuSizePage({
 
           <div className="tonal-panel">
             <h2 className="section-title">Pricing for {selectedSize.label}</h2>
-            <div className="mt-3 overflow-x-auto rounded-xl border border-[#C4935A66] bg-white">
+            <div className="mt-4 grid gap-3 md:grid-cols-2">
+              {customContent && (
+                <div className="rounded-md border border-[#E7D9C3] bg-white p-4 md:col-span-2">
+                  <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#7A6548]">Best For</p>
+                  <p className="mt-2 text-sm leading-6 text-[#1E4D2B]">{customContent.bestFor}</p>
+                </div>
+              )}
+              <div className="rounded-md border border-[#E7D9C3] bg-white p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#7A6548]">Color Options</p>
+                <p className="mt-1 leading-6 text-[#1E4D2B]">{product.colorOptions.join(', ')}</p>
+              </div>
+              <div className="rounded-md border border-[#E7D9C3] bg-white p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#7A6548]">Default Case Count</p>
+                <p className="mt-1 font-semibold text-[#1E4D2B]">{product.caseCount}</p>
+              </div>
+            </div>
+            {customContent && (
+              <div className="mt-4 grid gap-3 md:grid-cols-2">
+                {customContent.rules.slice(0, 4).map((rule) => (
+                  <div key={rule} className="rounded-md border border-[#E7D9C3] bg-[#FCF8F2] p-4 text-sm leading-6 text-[#5F4D33]">
+                    {rule}
+                  </div>
+                ))}
+              </div>
+            )}
+            <div className="mt-4 overflow-x-auto rounded-md border border-[#C4935A66] bg-white">
               <table className="min-w-full text-left text-sm">
                 <thead className="bg-[#1E4D2B] text-white">
                   <tr>
@@ -189,11 +236,6 @@ export default async function CatalogSkuSizePage({
                   ))}
                 </tbody>
               </table>
-            </div>
-
-            <div className="mt-5 space-y-2 text-sm text-[#5F4D33]">
-              <p><span className="font-semibold text-[#1E4D2B]">Color Options:</span> {product.colorOptions.join(', ')}</p>
-              <p><span className="font-semibold text-[#1E4D2B]">Default Case Count:</span> {product.caseCount}</p>
             </div>
 
             <div className="mt-6 flex flex-wrap gap-3">
@@ -220,8 +262,9 @@ export default async function CatalogSkuSizePage({
               {sizes
                 .filter((item) => item.slug !== selectedSize.slug)
                 .map((item) => (
-                  <Link key={item.slug} href={getCatalogSizePath(product, item.slug)} className="surface-card rounded-xl px-4 py-3 text-sm font-semibold text-[#1E4D2B] hover:bg-[#FAF6F0]">
-                    {item.label}
+                  <Link key={item.slug} href={getCatalogSizePath(product, item.slug)} className="surface-card rounded-md px-4 py-4 text-sm font-semibold text-[#1E4D2B] hover:border-[#C4935A] hover:bg-[#FFFCF7]">
+                    <p className="font-black">{item.label}</p>
+                    <p className="mt-1 text-xs uppercase tracking-[0.08em] text-[#7A6548]">View pricing</p>
                   </Link>
                 ))}
             </div>

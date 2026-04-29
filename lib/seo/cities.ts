@@ -51,7 +51,8 @@ export function getCitiesByIndustry(industryKey: IndustryKey): Array<{ city: Cit
   })).sort((a, b) => b.count - a.count)
 }
 
-export function getIndustryCitySlugs(industryKey: IndustryKey): string[] {
+export function getIndustryCitySlugs(_industryKey: IndustryKey): string[] {
+  void _industryKey
   return CITIES.map((city) => city.slug)
 }
 

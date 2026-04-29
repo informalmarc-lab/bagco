@@ -3,6 +3,8 @@ import Link from 'next/link'
 import CustomCatalogClient from '@/components/catalog/CustomCatalogClient'
 import RelatedIndustryLinks from '@/components/seo/RelatedIndustryLinks'
 import { getCustomCatalogImages } from '@/lib/catalogImages'
+import { getCatalogProductsByIndustry, money } from '@/lib/catalogProducts'
+import { CUSTOM_COMPARE_ROWS, CUSTOM_ORDER_STEPS, CUSTOM_PROOF_POINTS } from '@/lib/customCatalogContent'
 import { buildPageMetadata } from '@/lib/seo/pageMetadata'
 
 const BASE_RULES = [
@@ -22,6 +24,7 @@ export const metadata: Metadata = buildPageMetadata({
 
 export default function CustomCatalogPage() {
   const images = getCustomCatalogImages()
+  const customProducts = getCatalogProductsByIndustry('custom')
 
   return (
     <div className="pb-16">
@@ -31,26 +34,98 @@ export default function CustomCatalogPage() {
           <p className="kicker mt-6">Custom Catalog</p>
           <h1 className="heading-display mt-5">Custom Printed Wholesale Paper Bags</h1>
           <p className="mt-5 max-w-3xl text-lg muted-text">
-            Compare 1-color, 2-color, and 3-color custom print options with case-level pricing.
+            Compare 1-color, 2-color, and 3-color custom print options, understand the production rules, and move buyers into a cleaner custom-order path.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/generic-bag-quote" className="btn-primary">Build a Quote</Link>
+            <Link href="/generic-bag-quote" className="btn-primary">Start a Custom Quote</Link>
+            <Link href="/contact" className="btn-secondary">Talk to the Team</Link>
           </div>
-        </div>
-      </section>
-
-      <section className="section-container py-20">
-        <div className="tonal-panel">
-          <h2 className="section-title">Program Rules</h2>
-          <div className="mt-5 grid gap-3 md:grid-cols-2">
-            {BASE_RULES.map((rule) => (
-              <p key={rule} className="surface-card rounded-2xl p-4 text-sm font-semibold text-[#5F4D33]">{rule}</p>
+          <div className="mt-8 grid gap-3 md:grid-cols-4">
+            {CUSTOM_PROOF_POINTS.map((point) => (
+              <div key={point} className="rounded-md bg-[rgba(255,255,255,0.62)] p-4 text-sm leading-6 text-[#5F4D33]">
+                {point}
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      <CustomCatalogClient images={images} />
+      <section className="section-container py-20">
+        <div className="grid gap-6 xl:grid-cols-[minmax(0,1.1fr)_360px]">
+          <div className="tonal-panel">
+            <h2 className="section-title">Compare the Custom Print Levels</h2>
+            <div className="mt-5 overflow-x-auto rounded-md border border-[#D8C5A7] bg-white">
+              <table className="min-w-full text-left text-sm">
+                <thead className="bg-[#1E4D2B] text-white">
+                  <tr>
+                    <th className="px-4 py-3">Program</th>
+                    {customProducts.map((product) => (
+                      <th key={product.sku} className="px-4 py-3">
+                        {product.colorOptions[0]}
+                        <div className="mt-1 text-xs font-medium text-[#E9DFD0]">
+                          from {money(product.startingPrice)}/case
+                        </div>
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {CUSTOM_COMPARE_ROWS.map((row, index) => (
+                    <tr key={row.key} className={index % 2 === 0 ? 'bg-white' : 'bg-[#FAF6F0]'}>
+                      <td className="px-4 py-3 font-semibold text-[#1E4D2B]">{row.key}</td>
+                      {row.values.map((value, valueIndex) => (
+                        <td key={`${row.key}-${valueIndex}`} className="px-4 py-3 text-[#5F4D33]">{value}</td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div className="tonal-panel">
+            <h2 className="section-title">Program Rules</h2>
+            <div className="mt-5 grid gap-3">
+              {BASE_RULES.map((rule) => (
+                <p key={rule} className="surface-card rounded-md p-4 text-sm font-semibold leading-6 text-[#5F4D33]">{rule}</p>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-container pb-6">
+        <div className="rounded-md border border-[#D8C5A7] bg-[#1E4D2B] px-6 py-8 text-[#FAF6F0] md:px-8">
+          <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
+            <div>
+              <p className="text-xs font-black uppercase tracking-[0.1em] text-[#D8C5A7]">How Custom Works</p>
+              <h2 className="mt-3 text-3xl font-black tracking-[-0.04em] text-white md:text-4xl">
+                Make the custom ordering path feel simple before the buyer asks for help.
+              </h2>
+              <div className="mt-5 grid gap-3 md:grid-cols-2">
+                {CUSTOM_ORDER_STEPS.map((step, index) => (
+                  <div key={step} className="rounded-md border border-[#4A6A51] bg-[#204D2C] p-4">
+                    <p className="text-xs font-black uppercase tracking-[0.08em] text-[#D8C5A7]">Step 0{index + 1}</p>
+                    <p className="mt-2 text-sm leading-6 text-[#F4E8D8]">{step}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="rounded-md border border-[#4A6A51] bg-[#204D2C] p-5">
+              <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#D8C5A7]">Best Next Move</p>
+              <p className="mt-3 text-sm leading-7 text-[#F4E8D8]">
+                If the buyer already knows they want branded bags, do not send them wandering through the entire catalog first. Move them into custom print sizing and quote support immediately.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-3">
+                <Link href="/generic-bag-quote" className="btn-primary">Start a Quote</Link>
+                <Link href="/contact" className="btn-secondary-inverse">Ask a Question</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <CustomCatalogClient images={images} products={customProducts} />
 
       <RelatedIndustryLinks
         title="Related industry pages for custom bag buyers."
@@ -73,6 +148,7 @@ export default function CustomCatalogPage() {
         <div className="tonal-panel">
           <h2 className="section-title">Ready for a custom printed bag quote?</h2>
           <div className="mt-5 flex flex-wrap gap-3">
+            <Link href="/generic-bag-quote" className="btn-primary">Start a Custom Quote</Link>
             <Link href="/contact" className="btn-secondary">Contact Team</Link>
           </div>
         </div>

@@ -208,7 +208,7 @@ export default function TermsPage() {
               limited to loss of revenue, loss of profits, or business interruption.
             </p>
             <p className="mt-3 text-base leading-8 text-[#3E3427] md:text-lg">
-              In all cases, BagSupplyCo's total liability to any customer shall not exceed the amount paid for the
+              In all cases, BagSupplyCo&apos;s total liability to any customer shall not exceed the amount paid for the
               specific order giving rise to the claim.
             </p>
           </article>

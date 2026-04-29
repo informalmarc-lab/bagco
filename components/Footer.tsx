@@ -11,11 +11,11 @@ import {
 export default function Footer() {
   return (
     <footer className="mt-20 border-t border-[#D8C5A7] bg-[#1E4D2B] text-[#FAF6F0]">
-      <div className="section-container py-14">
-        <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[#355a3c] pb-8">
+      <div className="section-container py-14 md:py-16">
+        <div className="flex flex-wrap items-center justify-between gap-5 border-b border-[#355a3c] pb-8">
           <div>
-            <h2 className="text-2xl font-black text-white">Need pricing or reorder help?</h2>
-            <p className="mt-2 max-w-2xl text-sm text-[#E9DFD0]">
+            <h2 className="text-2xl font-black tracking-[-0.03em] text-white">Need pricing or reorder help?</h2>
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-[#E9DFD0]">
               Talk to our team about stock programs, custom print, and distributor fulfillment.
             </p>
           </div>
@@ -29,10 +29,10 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 grid gap-8 sm:grid-cols-2 xl:grid-cols-[1.15fr_0.9fr_1fr_1.05fr]">
+        <div className="mt-10 grid gap-8 sm:grid-cols-2 xl:grid-cols-[1.2fr_0.9fr_1fr_1.05fr]">
           <div>
-            <h3 className="text-xl font-black text-[#FAF6F0]">Bag Supply Co</h3>
-            <p className="mt-3 text-sm leading-relaxed text-[#FAF6F0CC]">
+            <h3 className="text-xl font-black tracking-[-0.03em] text-[#FAF6F0]">Bag Supply Co</h3>
+            <p className="mt-3 max-w-sm text-sm leading-7 text-[#FAF6F0CC]">
               Factory-direct paper bag manufacturing and structured replenishment for pharmacy, veterinary, dispensary, smoke shop, and distributor operations.
             </p>
           </div>

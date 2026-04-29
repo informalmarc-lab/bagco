@@ -1,4 +1,5 @@
 import catalogProducts from '@/data/catalogProducts.json'
+import { getCustomCatalogImageForSize } from './customCatalogImage'
 import { cleanText, cleanTextArray, cleanTextDeep } from './utils/cleanText.ts'
 
 export type CatalogIndustryKey =
@@ -23,6 +24,7 @@ export type CatalogProduct = {
   colorOptions: string[]
   availability: CatalogAvailability
   image: string
+  sizeImages?: Record<string, string>
   description: string
   collections: CatalogCollection[]
   sizePricing?: Array<{
@@ -66,6 +68,18 @@ function sanitizeDescription(description: string): string {
     .replace(/1-800-526-9032/g, '(704) 862-9256')
 }
 
+function buildCustomSizeImages(product: CatalogProduct): Record<string, string> | undefined {
+  if (product.industry !== 'custom') return undefined
+
+  const images = product.sizeOptions.reduce<Record<string, string>>((acc, sizeLabel) => {
+    const image = getCustomCatalogImageForSize(product, sizeLabel)
+    if (image !== product.image) acc[cleanText(sizeLabel)] = image
+    return acc
+  }, {})
+
+  return Object.keys(images).length > 0 ? images : undefined
+}
+
 function withGuaranteedSizePricing(product: CatalogProduct): CatalogProduct {
   const cleanedProduct = cleanTextDeep(product)
 
@@ -77,6 +91,7 @@ function withGuaranteedSizePricing(product: CatalogProduct): CatalogProduct {
       caseCount: cleanText(cleanedProduct.caseCount),
       colorOptions: cleanTextArray(cleanedProduct.colorOptions),
       sizeOptions: cleanTextArray(cleanedProduct.sizeOptions),
+      sizeImages: buildCustomSizeImages(cleanedProduct),
       description: sanitizeDescription(cleanedProduct.description),
     }
   }
@@ -96,6 +111,7 @@ function withGuaranteedSizePricing(product: CatalogProduct): CatalogProduct {
     caseCount: cleanText(cleanedProduct.caseCount),
     colorOptions: cleanTextArray(cleanedProduct.colorOptions),
     sizeOptions: cleanTextArray(cleanedProduct.sizeOptions),
+    sizeImages: buildCustomSizeImages(cleanedProduct),
     description: sanitizeDescription(cleanedProduct.description),
     sizePricing: fallbackRows,
   }
@@ -282,18 +298,24 @@ export function getCatalogProductByRoute(category: string, skuSlug: string): Cat
 export function getCatalogProductSizes(product: CatalogProduct): Array<{
   slug: string
   label: string
+  image: string
   pricing: Array<{ label: string; price: number }>
 }> {
   const orderedSlugs: string[] = []
   const sizeMap = new Map<
     string,
-    { slug: string; label: string; pricing: Array<{ label: string; price: number }> }
+    { slug: string; label: string; image: string; pricing: Array<{ label: string; price: number }> }
   >()
 
   const ensure = (label: string) => {
     const slug = getCatalogSizeSlug(label)
     if (!sizeMap.has(slug)) {
-      sizeMap.set(slug, { slug, label, pricing: [] })
+      sizeMap.set(slug, {
+        slug,
+        label,
+        image: product.sizeImages?.[cleanText(label)] || product.image,
+        pricing: [],
+      })
       orderedSlugs.push(slug)
     }
     return sizeMap.get(slug)!

@@ -77,20 +77,20 @@ export default function Navbar() {
   }
 
   return (
-    <header className="print-hide sticky top-0 z-50 border-b border-[#D8C5A7] bg-[#FAF6F0]">
+    <header className="print-hide sticky top-0 z-50 border-b border-[#D8C5A7] bg-[rgba(250,246,240,0.92)] backdrop-blur">
       <div className="section-container">
-        <nav className="flex min-h-[72px] items-center justify-between gap-4">
-          <Link href="/" className="inline-flex items-center gap-3">
-            <span className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-[#1E4D2B] text-sm font-black text-white">
+        <nav className="flex min-h-[76px] items-center justify-between gap-4">
+          <Link href="/" className="inline-flex items-center gap-3 pr-2">
+            <span className="inline-flex h-11 w-11 items-center justify-center rounded-md bg-[#1E4D2B] text-sm font-black text-white shadow-[0_6px_14px_rgba(30,77,43,0.18)]">
               BS
             </span>
             <div>
-              <p className="text-sm font-black text-[#1E4D2B]">Bag Supply Co</p>
-              <p className="text-xs text-[#5F4D33]">Wholesale bags</p>
+              <p className="text-[15px] font-black tracking-[-0.02em] text-[#1E4D2B]">Bag Supply Co</p>
+              <p className="text-xs font-medium text-[#5F4D33]">Wholesale bags</p>
             </div>
           </Link>
 
-          <div className="hidden items-center gap-1 xl:flex">
+          <div className="hidden items-stretch gap-1 xl:flex">
             <Link
               href="/"
               className={`nav-chip ${pathname === '/' ? 'nav-chip-active' : ''}`}
@@ -99,7 +99,7 @@ export default function Navbar() {
               Home
             </Link>
             <div
-              className="relative flex h-11 items-center"
+              className="relative flex items-stretch"
               onMouseEnter={() => setOpenDesktopMenu('catalog')}
               onMouseLeave={closeDesktopMenu}
               onFocus={() => setOpenDesktopMenu('catalog')}
@@ -115,7 +115,7 @@ export default function Navbar() {
                 Catalogs
               </Link>
               <div
-                className={`absolute left-0 top-full z-30 mt-1 w-64 rounded-md border border-[#D8C5A7] bg-white p-2 shadow-[0_8px_18px_rgba(30,77,43,0.08)] transition-all ${
+                className={`absolute left-0 top-[calc(100%-1px)] z-30 w-64 rounded-md border border-[#D8C5A7] bg-white p-2 pt-3 shadow-[0_8px_18px_rgba(30,77,43,0.08)] transition-all ${
                   openDesktopMenu === 'catalog' ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
                 }`}
               >
@@ -132,7 +132,7 @@ export default function Navbar() {
               </div>
             </div>
             <div
-              className="relative flex h-11 items-center"
+              className="relative flex items-stretch"
               onMouseEnter={() => setOpenDesktopMenu('industries')}
               onMouseLeave={closeDesktopMenu}
               onFocus={() => setOpenDesktopMenu('industries')}
@@ -148,7 +148,7 @@ export default function Navbar() {
                 Industries
               </Link>
               <div
-                className={`absolute left-0 top-full z-30 mt-1 w-56 rounded-md border border-[#D8C5A7] bg-white p-2 shadow-[0_8px_18px_rgba(30,77,43,0.08)] transition-all ${
+                className={`absolute left-0 top-[calc(100%-1px)] z-30 w-56 rounded-md border border-[#D8C5A7] bg-white p-2 pt-3 shadow-[0_8px_18px_rgba(30,77,43,0.08)] transition-all ${
                   openDesktopMenu === 'industries'
                     ? 'pointer-events-auto opacity-100'
                     : 'pointer-events-none opacity-0'

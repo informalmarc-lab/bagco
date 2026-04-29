@@ -1,5 +1,7 @@
 'use client'
 
+/* eslint-disable react/no-unescaped-entities */
+
 import { useEffect, useRef, useState, type RefObject } from 'react'
 
 type RevealHook<T extends HTMLElement> = {
@@ -309,7 +311,7 @@ export default function DropShipPartnerLanding() {
             <div>
               <p className="text-base leading-8 text-[#3E3427] md:text-lg md:leading-9">
                 When you partner with BagSupplyCo as a drop shipper, your customers never know we exist. Every order
-                ships in your name, under your brand, with zero fulfillment overhead on your end. We've built our
+                ships in your name, under your brand, with zero fulfillment overhead on your end. We&apos;ve built our
                 entire operation around making our partners look exceptional.
               </p>
               <p className="mt-4 text-base leading-8 text-[#3E3427] md:text-lg md:leading-9">
@@ -370,7 +372,7 @@ export default function DropShipPartnerLanding() {
             If your customers carry things out, we have a bag for them.
           </p>
           <p className="mt-4 max-w-4xl text-base leading-8 text-[#4B3E2E] md:text-lg">
-            We've fulfilled orders for some of the most regulated and detail-oriented industries in the country. If
+            We&apos;ve fulfilled orders for some of the most regulated and detail-oriented industries in the country. If
             presentation matters to your customers, it matters to us.
           </p>
           <div
@@ -536,13 +538,13 @@ export default function DropShipPartnerLanding() {
             ))}
           </div>
           <p className="mx-auto mt-8 max-w-4xl text-center text-base leading-8 text-[#4B3E2E] md:text-lg">
-            We're a family-owned supplier. We don't treat partners like ticket numbers. When you reach out, you talk
+            We&apos;re a family-owned supplier. We don&apos;t treat partners like ticket numbers. When you reach out, you talk
             to a real person who knows your account, knows your products, and is invested in making your program
             succeed.
           </p>
           <p className="mx-auto mt-4 max-w-4xl text-center text-base leading-8 text-[#4B3E2E] md:text-lg">
-            We've shipped for pharmacies across the Southeast, dispensaries from coast to coast, veterinary groups,
-            event production companies, and boutique retailers who needed a quiet, reliable partner. We don't compete
+            We&apos;ve shipped for pharmacies across the Southeast, dispensaries from coast to coast, veterinary groups,
+            event production companies, and boutique retailers who needed a quiet, reliable partner. We don&apos;t compete
             with our resellers. We exist to make them look good.
           </p>
         </div>
@@ -590,10 +592,10 @@ export default function DropShipPartnerLanding() {
               className="heading-serif text-3xl font-black text-[#FAF6F0] md:text-5xl"
             />
             <p className="mt-5 text-lg font-semibold tracking-[0.02em] text-[#C4935A]">
-              Reach out to our drop ship team and let's talk about what a partnership looks like for your business.
+              Reach out to our drop ship team and let&apos;s talk about what a partnership looks like for your business.
             </p>
             <p className="mt-4 text-sm leading-7 text-[#F4E8D8] md:text-base">
-              Most partners are up and running within 48 hours of their first conversation. There's no lengthy
+              Most partners are up and running within 48 hours of their first conversation. There&apos;s no lengthy
               approval process — just a quick call or email to make sure we're aligned.
             </p>
             <p className="mt-3 text-sm italic leading-7 text-[#FAF6F0] md:text-base">
