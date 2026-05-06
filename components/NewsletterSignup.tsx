@@ -61,17 +61,18 @@ export default function NewsletterSignup({
       <h2 className={`${compact ? 'text-xl md:text-2xl' : 'section-title'} font-black text-[#1E4D2B]`}>{heading}</h2>
       <p className="mt-3 text-sm leading-7 text-[#5F4D33] md:text-base">{subheading}</p>
 
-      <form onSubmit={submit} className="mt-5 flex flex-col gap-3 sm:flex-row">
-        <input
-          type="email"
-          autoComplete="email"
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
-          placeholder="Email address"
-          aria-label="Email address"
-          className="w-full rounded-md border border-[#D8C5A7] bg-white px-3 py-2 text-sm text-[#1E4D2B]"
-          required
-        />
+      <form onSubmit={submit} className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-end">
+        <label className="grid w-full gap-1 text-sm font-semibold text-[#5F4D33]">
+          Email address
+          <input
+            type="email"
+            autoComplete="email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            className="w-full rounded-md border border-[#D8C5A7] bg-white px-3 py-2 text-sm text-[#1E4D2B]"
+            required
+          />
+        </label>
         <button
           type="submit"
           disabled={status === 'loading'}

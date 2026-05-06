@@ -78,8 +78,9 @@ export default function Footer() {
               <div className="rounded-md border border-[#355a3c] bg-[#204d2c] p-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#B5813A]">Location & Hours</p>
                 <div className="mt-3 space-y-1 text-sm text-[#FAF6F0CC]">
-                  <p>{contactAddress[0]}</p>
-                  <p>{contactAddress[1]}</p>
+                  {contactAddress.map((line) => (
+                    <p key={line}>{line}</p>
+                  ))}
                   <p className="pt-2 text-[#FAF6F0]">{contactHours[0]}</p>
                   <p className="text-xs text-[#FAF6F0B3]">{contactHours[1]}</p>
                 </div>

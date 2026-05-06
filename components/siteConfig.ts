@@ -4,5 +4,5 @@ export const contactPhoneHref = 'tel:+17048629256'
 export const contactTextHref = 'sms:+17048629256'
 export const contactEmail = 'Marc.Castella@bagsupplyco.com'
 export const contactEmailHref = 'mailto:Marc.Castella@bagsupplyco.com'
-export const contactAddress = ['Monroe, NC', 'United States']
+export const contactAddress = ['912 Houston Drive', 'Monroe, NC 28110', 'United States']
 export const contactHours = ['Monday-Friday support', 'Follow-up within 24 hours']

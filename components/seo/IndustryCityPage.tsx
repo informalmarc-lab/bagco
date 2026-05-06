@@ -52,6 +52,7 @@ export default function IndustryCityPage({
         },
         address: {
           '@type': 'PostalAddress',
+          streetAddress: '912 Houston Drive',
           addressLocality: 'Monroe',
           addressRegion: 'NC',
           postalCode: '28110',

@@ -75,51 +75,68 @@ export default function QuickQuoteForm() {
       </p>
 
       <div className="mt-5 grid gap-3 md:grid-cols-2">
-        <input
-          required
-          placeholder="Name"
-          value={form.name}
-          onChange={(e) => setForm((prev) => ({ ...prev, name: e.target.value }))}
-          className="rounded-md border border-[#D8C5A7] bg-white px-3 py-2 text-sm"
-        />
-        <input
-          required
-          type="email"
-          placeholder="Email"
-          value={form.email}
-          onChange={(e) => setForm((prev) => ({ ...prev, email: e.target.value }))}
-          className="rounded-md border border-[#D8C5A7] bg-white px-3 py-2 text-sm"
-        />
-        <input
-          placeholder="Company"
-          value={form.company}
-          onChange={(e) => setForm((prev) => ({ ...prev, company: e.target.value }))}
-          className="rounded-md border border-[#D8C5A7] bg-white px-3 py-2 text-sm"
-        />
-        <input
-          placeholder="Monthly Volume (cases)"
-          value={form.quantity}
-          onChange={(e) => setForm((prev) => ({ ...prev, quantity: e.target.value }))}
-          className="rounded-md border border-[#D8C5A7] bg-white px-3 py-2 text-sm"
-        />
-        <select
-          value={form.industry}
-          onChange={(e) => setForm((prev) => ({ ...prev, industry: e.target.value }))}
-          className="rounded-md border border-[#D8C5A7] bg-white px-3 py-2 text-sm md:col-span-2"
-        >
-          <option>Dispensary</option>
-          <option>Smoke Shop</option>
-          <option>Pharmacy</option>
-          <option>Veterinary Clinic</option>
-          <option>Distributor</option>
-        </select>
-        <textarea
-          placeholder="Packaging goals or requirements"
-          value={form.message}
-          onChange={(e) => setForm((prev) => ({ ...prev, message: e.target.value }))}
-          rows={4}
-          className="rounded-md border border-[#D8C5A7] bg-white px-3 py-2 text-sm md:col-span-2"
-        />
+        <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
+          Name *
+          <input
+            required
+            autoComplete="name"
+            value={form.name}
+            onChange={(e) => setForm((prev) => ({ ...prev, name: e.target.value }))}
+            className="rounded-md border border-[#D8C5A7] bg-white px-3 py-2 text-sm"
+          />
+        </label>
+        <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
+          Email *
+          <input
+            required
+            type="email"
+            autoComplete="email"
+            value={form.email}
+            onChange={(e) => setForm((prev) => ({ ...prev, email: e.target.value }))}
+            className="rounded-md border border-[#D8C5A7] bg-white px-3 py-2 text-sm"
+          />
+        </label>
+        <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
+          Company
+          <input
+            autoComplete="organization"
+            value={form.company}
+            onChange={(e) => setForm((prev) => ({ ...prev, company: e.target.value }))}
+            className="rounded-md border border-[#D8C5A7] bg-white px-3 py-2 text-sm"
+          />
+        </label>
+        <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
+          Monthly Volume (cases)
+          <input
+            inputMode="numeric"
+            value={form.quantity}
+            onChange={(e) => setForm((prev) => ({ ...prev, quantity: e.target.value }))}
+            className="rounded-md border border-[#D8C5A7] bg-white px-3 py-2 text-sm"
+          />
+        </label>
+        <label className="grid gap-1 text-sm font-semibold text-[#5F4D33] md:col-span-2">
+          Industry
+          <select
+            value={form.industry}
+            onChange={(e) => setForm((prev) => ({ ...prev, industry: e.target.value }))}
+            className="rounded-md border border-[#D8C5A7] bg-white px-3 py-2 text-sm"
+          >
+            <option>Dispensary</option>
+            <option>Smoke Shop</option>
+            <option>Pharmacy</option>
+            <option>Veterinary Clinic</option>
+            <option>Distributor</option>
+          </select>
+        </label>
+        <label className="grid gap-1 text-sm font-semibold text-[#5F4D33] md:col-span-2">
+          Packaging goals or requirements
+          <textarea
+            value={form.message}
+            onChange={(e) => setForm((prev) => ({ ...prev, message: e.target.value }))}
+            rows={4}
+            className="rounded-md border border-[#D8C5A7] bg-white px-3 py-2 text-sm"
+          />
+        </label>
         <input
           type="text"
           tabIndex={-1}
@@ -136,7 +153,7 @@ export default function QuickQuoteForm() {
           {state === 'submitting' ? 'Submitting...' : 'Build a Quote'}
         </button>
         {state === 'success' && <p className="text-sm font-semibold text-emerald-700" role="status" aria-live="polite">Quote request sent.</p>}
-        {state === 'error' && <p className="text-sm font-semibold text-red-700" role="status" aria-live="polite">{error}</p>}
+        {state === 'error' && <p className="text-sm font-semibold text-red-700" role="alert">{error}</p>}
       </div>
     </form>
   )

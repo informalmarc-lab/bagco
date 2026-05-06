@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 
 type Step = 1 | 2 | 3 | 4 | 5
 
@@ -88,9 +88,34 @@ function isPrintDetailsRequired(printOption: PrintOption | ''): boolean {
   )
 }
 
+function getOptionMark(label: string): string {
+  if (label === 'Pharmacy' || label === 'Pharmacy Bags') return 'Rx'
+  if (label === 'Veterinary Clinic' || label === 'Veterinary Bags') return 'Vet'
+  if (label === 'Dispensary') return 'Disp'
+  if (label === 'Smoke Shop') return 'Smoke'
+  if (label === 'Distributor') return 'Dist'
+  if (label === 'Other') return 'Other'
+  if (label === 'Flat Paper Bags') return 'Flat'
+  if (label === 'Handled Paper Bags (Twisted Handle)') return 'Handle'
+  if (label === 'Custom Printed Bags') return 'Print'
+  if (label === 'Stock / Plain Bags') return 'Stock'
+  if (label === 'No Print - Plain stock bags') return 'Plain'
+  if (label === '1-Color Print') return '1C'
+  if (label === '2-Color Print') return '2C'
+  if (label === '3-Color Print') return '3C'
+  if (label === "Not sure yet - I'll decide later") return 'TBD'
+  if (label === 'Ship to My Business (standard)') return 'Ship'
+  if (label === 'Drop Ship to My Customers (distributor)') return 'Drop'
+  if (label === 'Blind Ship - No Bag Supply Co branding on package (distributor)') return 'Blind'
+  if (label === 'Set Up Recurring Reorder Program') return 'Repeat'
+  return ''
+}
+
 export default function GenericQuoteTool() {
   const [step, setStep] = useState<Step>(1)
   const [isSummaryOpen, setIsSummaryOpen] = useState(false)
+  const stepHeadingRef = useRef<HTMLHeadingElement | null>(null)
+  const hasMountedRef = useRef(false)
 
   const [businessType, setBusinessType] = useState('')
   const [bagTypes, setBagTypes] = useState<BagType[]>([])
@@ -110,6 +135,14 @@ export default function GenericQuoteTool() {
   const [error, setError] = useState('')
   const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+
+  useEffect(() => {
+    if (!hasMountedRef.current) {
+      hasMountedRef.current = true
+      return
+    }
+    stepHeadingRef.current?.focus()
+  }, [step])
 
   const sizeRows = useMemo(() => {
     const rows: Array<{ type: BagType; size: string; cases: number }> = []
@@ -321,6 +354,12 @@ export default function GenericQuoteTool() {
           </div>
           <div className="mt-3 h-2 rounded-full bg-[#F0E4D3]">
             <div
+              role="progressbar"
+              aria-label="Quote form progress"
+              aria-valuemin={1}
+              aria-valuemax={5}
+              aria-valuenow={step}
+              aria-valuetext={`Step ${step} of 5`}
               className="h-2 rounded-full bg-[#1E4D2B] transition-all duration-300"
               style={{ width: `${(step / 5) * 100}%` }}
             />
@@ -354,7 +393,7 @@ export default function GenericQuoteTool() {
           <div className="tonal-panel transition-all duration-300">
             {step === 1 && (
               <div className="reveal-up">
-                <h2 className="text-2xl font-black text-[#1E4D2B]">
+                <h2 ref={stepHeadingRef} tabIndex={-1} className="text-2xl font-black text-[#1E4D2B]">
                   Let&apos;s build your quote. First, what type of business are you?
                 </h2>
                 <div className="mt-6 grid gap-3 sm:grid-cols-2">
@@ -363,13 +402,14 @@ export default function GenericQuoteTool() {
                       key={item.label}
                       type="button"
                       onClick={() => setBusinessType(item.label)}
+                      aria-pressed={businessType === item.label}
                       className={`rounded-2xl border px-4 py-4 text-left ${
                         businessType === item.label
                           ? 'border-[#1E4D2B] bg-[#1E4D2B] text-white'
                           : 'border-[#C4935A66] bg-white text-[#1E4D2B] hover:bg-[#FAF6F0]'
                       }`}
                     >
-                      <p className="text-2xl">{item.icon}</p>
+                      <p className="text-sm font-black" aria-hidden="true">{getOptionMark(item.label)}</p>
                       <p className="mt-2 text-sm font-black">{item.label}</p>
                     </button>
                   ))}
@@ -379,7 +419,7 @@ export default function GenericQuoteTool() {
 
             {step === 2 && (
               <div className="reveal-up">
-                <h2 className="text-2xl font-black text-[#1E4D2B]">What type of bags do you need?</h2>
+                <h2 ref={stepHeadingRef} tabIndex={-1} className="text-2xl font-black text-[#1E4D2B]">What type of bags do you need?</h2>
                 <div className="mt-6 grid gap-3 sm:grid-cols-2">
                   {BAG_TYPES.map((item) => {
                     const active = bagTypes.includes(item.label)
@@ -388,13 +428,14 @@ export default function GenericQuoteTool() {
                         key={item.label}
                         type="button"
                         onClick={() => toggleBagType(item.label)}
+                        aria-pressed={active}
                         className={`rounded-2xl border px-4 py-4 text-left ${
                           active
                             ? 'border-[#1E4D2B] bg-[#1E4D2B] text-white'
                             : 'border-[#C4935A66] bg-white text-[#1E4D2B] hover:bg-[#FAF6F0]'
                         }`}
                       >
-                        <p className="text-2xl">{item.icon}</p>
+                        <p className="text-sm font-black" aria-hidden="true">{getOptionMark(item.label)}</p>
                         <p className="mt-2 text-sm font-black">{item.label}</p>
                       </button>
                     )
@@ -416,6 +457,7 @@ export default function GenericQuoteTool() {
                                 key={`${type}-${size}`}
                                 type="button"
                                 onClick={() => toggleSize(type, size)}
+                                aria-pressed={selected}
                                 className={`rounded-xl border px-3 py-2 text-left text-sm font-semibold ${
                                   selected
                                     ? 'border-[#1E4D2B] bg-[#1E4D2B] text-white'
@@ -440,6 +482,7 @@ export default function GenericQuoteTool() {
                                     value={state.customSize}
                                     onChange={(event) => updateCustomSize(type, event.target.value)}
                                     className="mt-2 w-full rounded-lg border border-[#C4935A66] px-3 py-2 text-sm"
+                                    aria-label={`Custom size for ${type}`}
                                   />
                                 )}
                                 <label className="mt-2 block text-xs font-semibold uppercase tracking-[0.08em] text-[#7A6548]">
@@ -451,6 +494,7 @@ export default function GenericQuoteTool() {
                                   value={state.cases}
                                   onChange={(event) => updateSizeCases(type, size as SizeOption, event.target.value)}
                                   className="mt-1 w-full rounded-lg border border-[#C4935A66] px-3 py-2 text-sm"
+                                  aria-label={`Cases for ${type} ${size}`}
                                 />
                               </div>
                             ))}
@@ -465,20 +509,21 @@ export default function GenericQuoteTool() {
 
             {step === 3 && (
               <div className="reveal-up">
-                <h2 className="text-2xl font-black text-[#1E4D2B]">Do you need custom printing?</h2>
+                <h2 ref={stepHeadingRef} tabIndex={-1} className="text-2xl font-black text-[#1E4D2B]">Do you need custom printing?</h2>
                 <div className="mt-6 grid gap-3 sm:grid-cols-2">
                   {PRINT_OPTIONS.map((item) => (
                     <button
                       key={item.label}
                       type="button"
                       onClick={() => setPrintOption(item.label)}
+                      aria-pressed={printOption === item.label}
                       className={`rounded-2xl border px-4 py-4 text-left ${
                         printOption === item.label
                           ? 'border-[#1E4D2B] bg-[#1E4D2B] text-white'
                           : 'border-[#C4935A66] bg-white text-[#1E4D2B] hover:bg-[#FAF6F0]'
                       }`}
                     >
-                      <p className="text-2xl">{item.icon}</p>
+                      <p className="text-sm font-black" aria-hidden="true">{getOptionMark(item.label)}</p>
                       <p className="mt-2 text-sm font-black">{item.label}</p>
                     </button>
                   ))}
@@ -494,6 +539,7 @@ export default function GenericQuoteTool() {
                             key={option}
                             type="button"
                             onClick={() => setArtworkReady(option)}
+                            aria-pressed={artworkReady === option}
                             className={`rounded-md border px-3 py-1.5 text-sm font-semibold ${
                               artworkReady === option
                                 ? 'border-[#1E4D2B] bg-[#1E4D2B] text-white'
@@ -523,20 +569,21 @@ export default function GenericQuoteTool() {
 
             {step === 4 && (
               <div className="reveal-up">
-                <h2 className="text-2xl font-black text-[#1E4D2B]">How should we ship your order?</h2>
+                <h2 ref={stepHeadingRef} tabIndex={-1} className="text-2xl font-black text-[#1E4D2B]">How should we ship your order?</h2>
                 <div className="mt-6 grid gap-3 sm:grid-cols-2">
                   {SHIPPING_OPTIONS.map((item) => (
                     <button
                       key={item.label}
                       type="button"
                       onClick={() => setShippingType(item.label)}
+                      aria-pressed={shippingType === item.label}
                       className={`rounded-2xl border px-4 py-4 text-left ${
                         shippingType === item.label
                           ? 'border-[#1E4D2B] bg-[#1E4D2B] text-white'
                           : 'border-[#C4935A66] bg-white text-[#1E4D2B] hover:bg-[#FAF6F0]'
                       }`}
                     >
-                      <p className="text-2xl">{item.icon}</p>
+                      <p className="text-sm font-black" aria-hidden="true">{getOptionMark(item.label)}</p>
                       <p className="mt-2 text-sm font-black">{item.label}</p>
                     </button>
                   ))}
@@ -554,7 +601,7 @@ export default function GenericQuoteTool() {
 
             {step === 5 && (
               <div className="reveal-up">
-                <h2 className="text-2xl font-black text-[#1E4D2B]">Almost done - where should we send your quote?</h2>
+                <h2 ref={stepHeadingRef} tabIndex={-1} className="text-2xl font-black text-[#1E4D2B]">Almost done - where should we send your quote?</h2>
                 <div className="mt-6 grid gap-4 md:grid-cols-2">
                   <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
                     Full Name *
@@ -620,7 +667,11 @@ export default function GenericQuoteTool() {
               </div>
             )}
 
-            {error && <p className="mt-5 text-sm font-semibold text-[#C0392B]">{error}</p>}
+            {error && (
+              <p className="mt-5 text-sm font-semibold text-[#C0392B]" role="alert">
+                {error}
+              </p>
+            )}
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
               {step > 1 && (

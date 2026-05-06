@@ -18,6 +18,7 @@ export default function CartLink({ mobile = false, onClick }: CartLinkProps) {
         href="/cart"
         className="rounded-lg px-3 py-2 text-sm font-semibold text-[#1E4D2B] hover:bg-[#FAF6F0]"
         onClick={onClick}
+        aria-label={`Cart, ${count} item${count === 1 ? '' : 's'}`}
       >
         Cart ({count})
       </Link>
@@ -25,7 +26,11 @@ export default function CartLink({ mobile = false, onClick }: CartLinkProps) {
   }
 
   return (
-    <Link href="/cart" className="relative inline-flex items-center gap-2 px-3 py-2 text-sm font-semibold text-[#1E4D2B]">
+    <Link
+      href="/cart"
+      className="relative inline-flex items-center gap-2 px-3 py-2 text-sm font-semibold text-[#1E4D2B]"
+      aria-label={`Cart, ${count} item${count === 1 ? '' : 's'}`}
+    >
       <svg
         aria-hidden="true"
         viewBox="0 0 24 24"

@@ -104,6 +104,7 @@ export default function ContactForm() {
             <input
               required
               type="text"
+              autoComplete="name"
               value={form.name}
               onChange={(event) => setForm((prev) => ({ ...prev, name: event.target.value }))}
               className="rounded-md border border-[#C4935A66] px-3 py-2"
@@ -114,6 +115,7 @@ export default function ContactForm() {
             <input
               required
               type="email"
+              autoComplete="email"
               value={form.email}
               onChange={(event) => setForm((prev) => ({ ...prev, email: event.target.value }))}
               className="rounded-md border border-[#C4935A66] px-3 py-2"
@@ -123,6 +125,7 @@ export default function ContactForm() {
             Phone Number
             <input
               type="tel"
+              autoComplete="tel"
               value={form.phone}
               onChange={(event) => setForm((prev) => ({ ...prev, phone: event.target.value }))}
               className="rounded-md border border-[#C4935A66] px-3 py-2"
@@ -132,6 +135,7 @@ export default function ContactForm() {
             Company Name
             <input
               type="text"
+              autoComplete="organization"
               value={form.company}
               onChange={(event) => setForm((prev) => ({ ...prev, company: event.target.value }))}
               className="rounded-md border border-[#C4935A66] px-3 py-2"
@@ -239,7 +243,7 @@ export default function ContactForm() {
         </button>
 
         {status === 'error' && (
-          <p className="text-sm font-semibold text-red-700" role="status" aria-live="polite">
+          <p className="text-sm font-semibold text-red-700" role="alert">
             {errorMessage}
           </p>
         )}

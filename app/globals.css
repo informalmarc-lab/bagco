@@ -52,6 +52,24 @@ select {
   outline-offset: 2px;
 }
 
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  z-index: 100;
+  border-radius: 8px;
+  border: 2px solid rgb(var(--brand-rgb));
+  background: #fff;
+  color: rgb(var(--brand-rgb));
+  font-weight: 800;
+  padding: 0.65rem 0.9rem;
+  transform: translateY(calc(-100% - 1.5rem));
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
 @layer utilities {
   .site-surface {
     background: rgb(var(--background-rgb));

@@ -252,6 +252,7 @@ export default function CatalogExplorerClient({ products, searchParams }: Catalo
                 onClick={() => setShowMobileFilters((prev) => !prev)}
                 className="btn-secondary"
                 aria-expanded={showMobileFilters}
+                aria-controls="catalog-filters"
               >
                 {showMobileFilters ? 'Hide Filters' : 'Show Filters'}
               </button>
@@ -260,7 +261,7 @@ export default function CatalogExplorerClient({ products, searchParams }: Catalo
         </div>
 
         <div className="grid gap-6 lg:grid-cols-[300px_minmax(0,1fr)] xl:grid-cols-[320px_minmax(0,1fr)]">
-          <aside className={`${showMobileFilters ? 'block' : 'hidden'} lg:sticky lg:top-24 lg:block lg:self-start`}>
+          <aside id="catalog-filters" className={`${showMobileFilters ? 'block' : 'hidden'} lg:sticky lg:top-24 lg:block lg:self-start`}>
             <div className="tonal-panel p-5">
               <div className="flex items-center justify-between gap-3">
                 <h2 className="text-xl font-black text-[#1E4D2B]">Filters</h2>
@@ -293,6 +294,7 @@ export default function CatalogExplorerClient({ products, searchParams }: Catalo
                           updateFilters({ industry: active ? 'all' : industry })
                           setShowMobileFilters(false)
                         }}
+                        aria-pressed={active}
                         className={`rounded-md border px-3 py-3 text-left transition ${
                           active
                             ? 'border-[#1E4D2B] bg-[#1E4D2B] text-white'
@@ -421,6 +423,9 @@ export default function CatalogExplorerClient({ products, searchParams }: Catalo
                 <div>
                   <h2 className="text-2xl font-black text-[#1E4D2B]">Results</h2>
                   <p className="mt-1 text-sm text-[#5F4D33]">
+                    <span className="sr-only" aria-live="polite">
+                      {filtered.length} product{filtered.length === 1 ? '' : 's'} found.
+                    </span>
                     {filtered.length} product{filtered.length === 1 ? '' : 's'} matching your current filter set.
                   </p>
                 </div>
@@ -436,10 +441,11 @@ export default function CatalogExplorerClient({ products, searchParams }: Catalo
                       key={chip.key}
                       type="button"
                       onClick={chip.onRemove}
+                      aria-label={`Remove ${chip.label} filter`}
                       className="inline-flex items-center gap-2 rounded-md border border-[#D8C5A7] bg-white px-3 py-2 text-sm font-semibold text-[#1E4D2B] hover:border-[#C4935A] hover:bg-[#FFFCF7]"
                     >
                       <span>{chip.label}</span>
-                      <span className="text-[#7A6548]">x</span>
+                      <span className="text-[#7A6548]" aria-hidden="true">x</span>
                     </button>
                   ))}
                 </div>

@@ -93,32 +93,6 @@ const INDUSTRIES: IndustryPanel[] = [
       { label: 'Veterinary Catalog', href: '/catalog/veterinary' },
     ],
   },
-  {
-    id: 'distributors',
-    title: 'Distributors',
-    subtitle: 'Wholesale programs built for private-label relationships',
-    examples: 'Regional distributors, fulfillment partners, wholesale supply programs',
-    why: [
-      'Distributors need factory-direct pricing and fulfillment reliability for account retention.',
-      'Blind shipping keeps distributor relationships protected at the end-customer level.',
-      'Drop ship options help distributors expand without warehousing every SKU.',
-    ],
-    problems: [
-      'Supplier branding exposes the supply chain to end customers.',
-      'No drop ship support limits account flexibility and growth.',
-      'Inconsistent lead times damage trust with recurring wholesale clients.',
-    ],
-    benefits: [
-      'Blind ship protects customer relationships and brand ownership.',
-      'Drop ship expands reach without adding inventory overhead.',
-      'Reliable recurring supply keeps distributor accounts stable and predictable.',
-    ],
-    catalogs: [
-      { label: 'Distributor Programs', href: '/distributors' },
-      { label: 'Custom 1/2/3 Color', href: '/catalog/custom' },
-      { label: 'Full Catalog', href: '/catalog' },
-    ],
-  },
 ]
 
 function Icon({ id }: { id: string }) {
@@ -137,15 +111,6 @@ function Icon({ id }: { id: string }) {
         <circle cx="12" cy="7.5" r="1.2" />
         <circle cx="16.5" cy="9" r="1.2" />
         <path d="M8.2 15.4c0-2.1 1.7-3.8 3.8-3.8s3.8 1.7 3.8 3.8c0 1.7-1.3 2.8-3.8 2.8s-3.8-1.1-3.8-2.8z" />
-      </svg>
-    )
-  }
-  if (id === 'distributors') {
-    return (
-      <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8">
-        <path d="M3 8l9-5 9 5-9 5-9-5z" />
-        <path d="M3 12l9 5 9-5" />
-        <path d="M3 16l9 5 9-5" />
       </svg>
     )
   }

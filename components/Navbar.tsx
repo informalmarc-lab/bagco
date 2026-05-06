@@ -95,6 +95,7 @@ export default function Navbar() {
               href="/"
               className={`nav-chip ${pathname === '/' ? 'nav-chip-active' : ''}`}
               onClick={closeDesktopMenu}
+              aria-current={pathname === '/' ? 'page' : undefined}
             >
               Home
             </Link>
@@ -111,6 +112,7 @@ export default function Navbar() {
                 aria-haspopup="menu"
                 aria-expanded={openDesktopMenu === 'catalog'}
                 onClick={closeDesktopMenu}
+                aria-current={pathname.startsWith('/catalog') ? 'page' : undefined}
               >
                 Catalogs
               </Link>
@@ -125,6 +127,7 @@ export default function Navbar() {
                     href={link.href}
                     className="block rounded-md px-4 py-2.5 text-sm font-semibold text-[#1E4D2B] hover:bg-[#FAF6F0] focus:bg-[#FAF6F0]"
                     onClick={closeDesktopMenu}
+                    aria-current={isActive(link.href) ? 'page' : undefined}
                   >
                     {link.label}
                   </Link>
@@ -144,6 +147,7 @@ export default function Navbar() {
                 aria-haspopup="menu"
                 aria-expanded={openDesktopMenu === 'industries'}
                 onClick={closeDesktopMenu}
+                aria-current={pathname.startsWith('/industries') ? 'page' : undefined}
               >
                 Industries
               </Link>
@@ -160,6 +164,7 @@ export default function Navbar() {
                     href={link.href}
                     className="block rounded-md px-4 py-2.5 text-sm font-semibold text-[#1E4D2B] hover:bg-[#FAF6F0] focus:bg-[#FAF6F0]"
                     onClick={closeDesktopMenu}
+                    aria-current={isActive(link.href) ? 'page' : undefined}
                   >
                     {link.label}
                   </Link>
@@ -172,6 +177,7 @@ export default function Navbar() {
                 href={link.href}
                 className={`nav-chip ${isActive(link.href) ? 'nav-chip-active' : ''}`}
                 onClick={closeDesktopMenu}
+                aria-current={isActive(link.href) ? 'page' : undefined}
               >
                 {link.label}
               </Link>
@@ -262,6 +268,7 @@ export default function Navbar() {
                     pathname === '/' ? 'bg-[#1E4D2B] text-white' : 'text-[#1E4D2B] hover:bg-[#FAF6F0]'
                   }`}
                   onClick={() => setIsOpen(false)}
+                  aria-current={pathname === '/' ? 'page' : undefined}
                 >
                   Home
                 </Link>
@@ -273,6 +280,7 @@ export default function Navbar() {
                       isActive(link.href) ? 'bg-[#1E4D2B] text-white' : 'text-[#1E4D2B] hover:bg-[#FAF6F0]'
                     }`}
                     onClick={() => setIsOpen(false)}
+                    aria-current={isActive(link.href) ? 'page' : undefined}
                   >
                     {link.label}
                   </Link>
@@ -299,6 +307,7 @@ export default function Navbar() {
                         isActive(link.href) ? 'bg-[#1E4D2B] text-white' : 'text-[#1E4D2B] hover:bg-[#FAF6F0]'
                       }`}
                       onClick={() => setIsOpen(false)}
+                      aria-current={isActive(link.href) ? 'page' : undefined}
                     >
                       {link.label}
                     </Link>
@@ -326,6 +335,7 @@ export default function Navbar() {
                         isActive(link.href) ? 'bg-[#1E4D2B] text-white' : 'text-[#1E4D2B] hover:bg-[#FAF6F0]'
                       }`}
                       onClick={() => setIsOpen(false)}
+                      aria-current={isActive(link.href) ? 'page' : undefined}
                     >
                       {link.label}
                     </Link>
