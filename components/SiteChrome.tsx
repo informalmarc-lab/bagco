@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation'
 import { CartProvider } from '@/components/cart/CartProvider'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import AccessibilityControls from '@/components/AccessibilityControls'
 
 export default function SiteChrome({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
@@ -22,6 +23,7 @@ export default function SiteChrome({ children }: { children: React.ReactNode }) 
       <main id="main-content" className="min-h-screen site-surface" tabIndex={-1}>
         {children}
       </main>
+      <AccessibilityControls />
       <Footer />
     </CartProvider>
   )

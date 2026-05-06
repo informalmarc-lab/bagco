@@ -19,6 +19,34 @@ html {
   scroll-behavior: smooth;
 }
 
+html.a11y-large-text {
+  font-size: 112.5%;
+}
+
+html.a11y-high-contrast {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+  --surface-rgb: 255, 255, 255;
+  --muted-rgb: 35, 35, 35;
+  --brand-rgb: 0, 55, 22;
+  --accent-rgb: 94, 63, 24;
+  --kraft-rgb: 92, 74, 49;
+  --ring-rgb: 0, 0, 0;
+}
+
+html.a11y-reduce-motion {
+  scroll-behavior: auto;
+}
+
+html.a11y-reduce-motion *,
+html.a11y-reduce-motion *::before,
+html.a11y-reduce-motion *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  scroll-behavior: auto !important;
+  transition-duration: 0.001ms !important;
+}
+
 body {
   font-family: var(--font-sans), sans-serif;
   color: rgb(var(--foreground-rgb));
@@ -68,6 +96,136 @@ select {
 
 .skip-link:focus-visible {
   transform: translateY(0);
+}
+
+html.a11y-underline-links a:not(.btn-primary):not(.btn-secondary):not(.btn-secondary-inverse):not(.btn-quiet):not(.mobile-sticky-cta-link):not(.lead-dock-btn):not(.accessibility-trigger) {
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+html.a11y-high-contrast body,
+html.a11y-high-contrast .site-surface,
+html.a11y-high-contrast .page-hero {
+  background: #fff !important;
+  color: #000 !important;
+}
+
+html.a11y-high-contrast .tonal-panel,
+html.a11y-high-contrast .hero-panel,
+html.a11y-high-contrast .surface-card,
+html.a11y-high-contrast .accessibility-panel {
+  border-color: #111 !important;
+  box-shadow: none !important;
+}
+
+html.a11y-high-contrast .muted-text,
+html.a11y-high-contrast [class*='text-[#5F4D33]'],
+html.a11y-high-contrast [class*='text-[#7A6548]'],
+html.a11y-high-contrast [class*='text-[#B5813A]'] {
+  color: #111 !important;
+}
+
+.accessibility-widget {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 80;
+  width: min(92vw, 340px);
+}
+
+.accessibility-trigger {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid rgb(var(--brand-rgb));
+  border-radius: 8px;
+  background: #fff;
+  color: rgb(var(--brand-rgb));
+  font-size: 0.88rem;
+  font-weight: 800;
+  padding: 0.65rem 0.85rem;
+  box-shadow: 0 2px 8px rgba(30, 77, 43, 0.12);
+}
+
+.accessibility-trigger:hover {
+  background: #faf6f0;
+}
+
+.accessibility-count {
+  display: inline-flex;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgb(var(--brand-rgb));
+  color: #fff;
+  font-size: 0.72rem;
+  line-height: 1;
+}
+
+.accessibility-panel {
+  margin-bottom: 0.6rem;
+  border: 1px solid rgba(var(--kraft-rgb), 0.65);
+  border-radius: 10px;
+  background: #fff;
+  color: rgb(var(--foreground-rgb));
+  padding: 1rem;
+  box-shadow: 0 8px 24px rgba(30, 77, 43, 0.16);
+}
+
+.accessibility-close,
+.accessibility-reset {
+  border-radius: 8px;
+  border: 1px solid rgba(var(--kraft-rgb), 0.75);
+  background: #fff;
+  color: rgb(var(--brand-rgb));
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 0.42rem 0.6rem;
+}
+
+.accessibility-reset {
+  margin-top: 0.8rem;
+  width: 100%;
+}
+
+.accessibility-option {
+  display: flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border: 1px solid rgba(var(--kraft-rgb), 0.45);
+  border-radius: 8px;
+  background: #fff;
+  padding: 0.7rem 0.75rem;
+  color: rgb(var(--foreground-rgb));
+}
+
+.accessibility-option strong,
+.accessibility-option span span {
+  display: block;
+}
+
+.accessibility-option strong {
+  color: rgb(var(--brand-rgb));
+  font-size: 0.9rem;
+}
+
+.accessibility-option span span {
+  color: rgb(var(--muted-rgb));
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.accessibility-option input {
+  width: 1.15rem;
+  height: 1.15rem;
+  flex: 0 0 auto;
+  accent-color: rgb(var(--brand-rgb));
 }
 
 @layer utilities {
@@ -513,6 +671,12 @@ select {
 }
 
 @media (max-width: 768px) {
+  .accessibility-widget {
+    bottom: 5.9rem;
+    left: 0.6rem;
+    width: min(94vw, 340px);
+  }
+
   .section-container {
     padding-left: 1rem;
     padding-right: 1rem;
