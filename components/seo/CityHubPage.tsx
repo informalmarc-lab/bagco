@@ -23,7 +23,7 @@ export default function CityHubPage({ city, counts }: { city: CityData; counts: 
             teams across {city.city}.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/generic-bag-quote" className="btn-primary">Build a Quote</Link>
+            <Link href="/makeyourquote" className="btn-primary">Build a Quote</Link>
           </div>
         </div>
       </section>

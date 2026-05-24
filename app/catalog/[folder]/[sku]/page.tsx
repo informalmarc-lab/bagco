@@ -106,7 +106,7 @@ export default async function CatalogSkuOverviewPage({
           )}
           <div className="mt-6 flex flex-wrap gap-3">
             {isQuoteOnly ? (
-              <Link href={`/generic-bag-quote?sku=${encodeURIComponent(product.sku)}`} className="btn-primary">
+              <Link href={`/makeyourquote?sku=${encodeURIComponent(product.sku)}`} className="btn-primary">
                 Get a Quote
               </Link>
             ) : (
@@ -195,7 +195,7 @@ export default async function CatalogSkuOverviewPage({
 
             <div className="mt-6 flex flex-wrap gap-3">
               {isQuoteOnly ? (
-                <Link href={`/generic-bag-quote?sku=${encodeURIComponent(product.sku)}`} className="btn-primary">
+                <Link href={`/makeyourquote?sku=${encodeURIComponent(product.sku)}`} className="btn-primary">
                   Get a Quote
                 </Link>
               ) : (

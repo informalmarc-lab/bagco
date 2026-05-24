@@ -92,7 +92,7 @@ export default function IndustryCityPage({
             for teams that need predictable case planning and consistent supply.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/generic-bag-quote" className="btn-primary">Build a Quote</Link>
+            <Link href="/makeyourquote" className="btn-primary">Build a Quote</Link>
           </div>
         </div>
       </section>

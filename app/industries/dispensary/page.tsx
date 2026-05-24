@@ -92,7 +92,7 @@ export default function DispensaryIndustryPage() {
                 </span>
               </div>
               <div className="mt-7 flex flex-wrap gap-3">
-                <Link href="/generic-bag-quote" className="btn-primary">
+                <Link href="/makeyourquote" className="btn-primary">
                   Build a Quote
                 </Link>
                 <Link href="/catalog/labels" className="btn-secondary">
@@ -198,7 +198,7 @@ export default function DispensaryIndustryPage() {
                     {label.quantity.toLocaleString('en-US')} qty per case
                   </p>
                   <p className="mt-1 product-card-price">{money(label.price)} / case</p>
-                  <Link href="/generic-bag-quote" className="btn-primary mt-auto pt-4">
+                  <Link href="/makeyourquote" className="btn-primary mt-auto pt-4">
                     Build a Quote
                   </Link>
                 </div>
@@ -293,7 +293,7 @@ export default function DispensaryIndustryPage() {
                   <Link href="/catalog?industry=dispensary" className="btn-secondary">
                     Filter Dispensary Catalog
                   </Link>
-                  <Link href="/generic-bag-quote" className="btn-primary">
+                  <Link href="/makeyourquote" className="btn-primary">
                     Quote This Program
                   </Link>
                 </div>
@@ -334,7 +334,7 @@ export default function DispensaryIndustryPage() {
             packaging program.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
-            <Link href="/generic-bag-quote" className="btn-primary">
+            <Link href="/makeyourquote" className="btn-primary">
               Build a Quote
             </Link>
             <a

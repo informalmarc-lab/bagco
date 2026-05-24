@@ -58,7 +58,7 @@ const sections: BlogPostSection[] = [
 const internalLinks: BlogPostInternalLink[] = [
   { href: '/industries/dispensary', label: 'Dispensary Industry Program' },
   { href: '/catalog?industry=dispensary', label: 'Filtered Dispensary Catalog' },
-  { href: '/generic-bag-quote', label: 'Build a Quote' }
+  { href: '/makeyourquote', label: 'Build a Quote' }
 ]
 
 export default function DispensaryExitBagRequirementsPage() {

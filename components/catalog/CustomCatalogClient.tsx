@@ -119,7 +119,7 @@ export default function CustomCatalogClient({ images, products }: CustomCatalogC
                     <Link href={getCatalogOverviewPath(product)} className="btn-primary">
                       View Program
                     </Link>
-                    <Link href="/generic-bag-quote" className="btn-secondary">
+                    <Link href="/makeyourquote" className="btn-secondary">
                       Start Quote
                     </Link>
                   </div>

@@ -5,6 +5,7 @@ A modern, professional website for Bagco - a paper bag manufacturing business.
 ## Features
 
 - **Home Page**: Hero section with call-to-action buttons and feature highlights
+- **Make Your Quote**: Premium animated quote configurator at `/makeyourquote`
 - **About Page**: Company information and mission
 - **Catalog Page**: Product listings with descriptions and sizes
 - **Gallery Page**: Visual showcase of paper bag designs
@@ -31,12 +32,17 @@ cd C:\Users\MarcC\bagco
 npm install
 ```
 
-3. Run the development server:
+3. Configure quote submissions:
+```bash
+QUOTE_DISCORD_WEBHOOK_URL=your_discord_webhook_url
+```
+
+4. Run the development server:
 ```bash
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
 
 ### Building for Production
 

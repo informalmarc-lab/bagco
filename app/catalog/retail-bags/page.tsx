@@ -77,7 +77,7 @@ export default function RetailBagsPage() {
                   <Link href={`/catalog/retail-bags/${product.slug}`} className="btn-primary">
                     View Product
                   </Link>
-                  <Link href="/generic-bag-quote" className="btn-secondary">
+                  <Link href="/makeyourquote" className="btn-secondary">
                     Build a Quote
                   </Link>
                 </div>

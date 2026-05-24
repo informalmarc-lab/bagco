@@ -17,7 +17,7 @@ export default function VeterinaryCatalogPage() {
             VB1, VB2, and VB6 designs with stock options and additional custom examples.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/generic-bag-quote" className="btn-primary">Build a Quote</Link>
+            <Link href="/makeyourquote" className="btn-primary">Build a Quote</Link>
           </div>
         </div>
       </section>

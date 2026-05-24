@@ -65,7 +65,7 @@ const sections: BlogPostSection[] = [
 const internalLinks: BlogPostInternalLink[] = [
   { href: '/catalog/veterinary', label: 'Veterinary Catalog' },
   { href: '/industries/veterinary', label: 'Veterinary Industry Program' },
-  { href: '/generic-bag-quote', label: 'Build a Quote' }
+  { href: '/makeyourquote', label: 'Build a Quote' }
 ]
 
 export default function VeterinaryBagSizesGuidePage() {

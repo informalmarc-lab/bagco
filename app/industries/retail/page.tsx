@@ -66,7 +66,7 @@ export default function RetailIndustryPage() {
                 <Link href="/catalog/retail-bags" className="btn-secondary">
                   Browse Retail Bag Catalog
                 </Link>
-                <Link href="/generic-bag-quote" className="btn-primary">
+                <Link href="/makeyourquote" className="btn-primary">
                   Build a Quote
                 </Link>
               </div>

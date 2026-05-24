@@ -119,7 +119,7 @@ export default function SmokeShopsIndustryPage() {
                 <Link href="/catalog?industry=smoke-shop" className="btn-secondary">
                   Browse Smoke Shop Catalog
                 </Link>
-                <Link href="/generic-bag-quote" className="btn-primary">
+                <Link href="/makeyourquote" className="btn-primary">
                   Build a Quote
                 </Link>
                 <a href={contactTextHref} className="btn-quiet">
@@ -279,7 +279,7 @@ export default function SmokeShopsIndustryPage() {
                     {label.quantity.toLocaleString('en-US')} qty per case
                   </p>
                   <p className="mt-1 product-card-price">{money(label.price)} / case</p>
-                  <Link href="/generic-bag-quote" className="btn-primary mt-auto pt-4">
+                  <Link href="/makeyourquote" className="btn-primary mt-auto pt-4">
                     Build a Quote
                   </Link>
                 </div>
@@ -362,7 +362,7 @@ export default function SmokeShopsIndustryPage() {
             ordering or build a broader packaging program around it.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
-            <Link href="/generic-bag-quote" className="btn-primary">
+            <Link href="/makeyourquote" className="btn-primary">
               Build a Quote
             </Link>
             <Link

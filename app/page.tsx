@@ -33,9 +33,9 @@ const industryQuickNav = [
 ]
 
 const operationalPoints = [
-  '1-color, 2-color, and 3-color custom paper bag programs',
-  'Artwork, sizing, and reorder planning for branded bag buyers',
-  'Stock bags and distributor support when custom is not the right first move',
+  '1, 2, and 3 color custom paper bag programs',
+  'Artwork and reorder planning for branded buyers',
+  'Stock bags when speed matters more than customization',
 ]
 
 const processSteps = [
@@ -112,18 +112,18 @@ export default function Home() {
 
       <section className="page-hero page-hero-home">
         <div className="page-hero-inner">
-          <div className="grid gap-8 lg:grid-cols-[minmax(0,1.2fr)_420px]">
+          <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_380px] xl:grid-cols-[minmax(0,1fr)_420px]">
             <div>
-              <h1 className="heading-display max-w-4xl">
-                Custom printed bags should be the first thing serious buyers see.
+              <h1 className="heading-display max-w-3xl">
+                Custom printed bags for serious wholesale buyers.
               </h1>
-              <p className="mt-5 max-w-3xl text-lg text-[#4B3E2E]">
-                Start with branded paper bags if custom print is the real money path, then backfill with stock bags,
-                distributor support, and repeat-order planning when the program needs it.
+              <p className="mt-5 max-w-2xl text-base leading-7 text-[#4B3E2E] md:text-lg">
+                Build branded paper bag programs with clear pricing, real product visuals, and support for repeat orders.
+                Stock bags and distributor paths are available when speed matters.
               </p>
-              <ul className="mt-6 grid gap-3 text-sm text-[#4B3E2E] md:max-w-3xl md:grid-cols-3">
+              <ul className="mt-6 grid max-w-3xl gap-3 text-sm text-[#4B3E2E] md:grid-cols-3">
                 {operationalPoints.map((item) => (
-                  <li key={item} className="rounded-md border border-[#D8C5A7] bg-white px-4 py-3 leading-6 shadow-[0_2px_10px_rgba(30,77,43,0.04)]">
+                  <li key={item} className="min-w-0 rounded-md border border-[#D8C5A7] bg-white px-4 py-3 leading-6">
                     {item}
                   </li>
                 ))}
@@ -132,34 +132,17 @@ export default function Home() {
                 <Link href="/catalog/custom" className="btn-primary">
                   Shop Custom Bags
                 </Link>
-                <Link href="/generic-bag-quote" className="btn-secondary">
+                <Link href="/makeyourquote" className="btn-secondary">
                   Start a Custom Quote
                 </Link>
                 <Link href="/catalog" className="btn-quiet">
                   Browse All Catalogs
                 </Link>
-                <Link href="/distributors" className="btn-quiet">
-                  wholesale bag pricing for distributors
-                </Link>
-              </div>
-              <div className="mt-8 grid gap-4 border-t border-[#D8C5A7] pt-6 text-sm text-[#5F4D33] md:grid-cols-3">
-                <div className="rounded-md bg-[rgba(255,255,255,0.55)] p-3">
-                  <p className="font-black text-[#1E4D2B]">Custom focus</p>
-                  <p className="mt-1">Push branded paper bags first when the buyer wants repeatable brand presentation.</p>
-                </div>
-                <div className="rounded-md bg-[rgba(255,255,255,0.55)] p-3">
-                  <p className="font-black text-[#1E4D2B]">Custom lead time</p>
-                  <p className="mt-1">Typical production window is 3-4 weeks after proof approval.</p>
-                </div>
-                <div className="rounded-md bg-[rgba(255,255,255,0.55)] p-3">
-                  <p className="font-black text-[#1E4D2B]">Fallback path</p>
-                  <p className="mt-1">Use stock bags and distributor support when speed matters more than customization.</p>
-                </div>
               </div>
             </div>
 
-            <aside className="hero-panel">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-md border border-[#D8C5A7] bg-[#F4ECE1]">
+            <aside className="hero-panel p-4">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-md border border-[#D8C5A7] bg-[#F6EFE5]">
                 <FallbackImage
                   src={HERO_IMAGE}
                   fallbackSrc="/images/catalog/placeholder.svg"
@@ -170,14 +153,14 @@ export default function Home() {
                   priority
                 />
               </div>
-              <div className="mt-5 space-y-4 text-sm">
+              <div className="mt-4 space-y-4 text-sm">
                 <div className="border-b border-[#E7D9C3] pb-4">
                   <p className="font-black text-[#1E4D2B]">Custom-first buying path</p>
                   <p className="mt-2 text-[#5F4D33]">
-                    Custom branded paper bags first, then stock replenishment, distributor blind-ship support, and category expansion after the core program is set.
+                    Branded paper bags first, then stock replenishment and distributor support when the program needs it.
                   </p>
                 </div>
-                <div className="grid gap-3 sm:grid-cols-2">
+                <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
                   <div>
                     <p className="font-black text-[#1E4D2B]">Custom starting price</p>
                     <p className="mt-1 text-[#5F4D33]">Featured custom bags start at {money(featuredProducts[0]?.startingPrice || 0)} per case.</p>
@@ -193,11 +176,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-container py-14">
-        <div className="rounded-md border border-[#D8C5A7] bg-white px-5 py-5 md:px-6">
-          <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+      <section className="section-container py-10">
+        <div className="rounded-md border border-[#D8C5A7] bg-white p-4 md:p-5">
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(210px,1fr))] gap-3">
             {trustProofItems.map((item) => (
-              <div key={item} className="rounded-md border border-[#E7D9C3] bg-[#FCF8F2] px-4 py-3 text-sm font-semibold leading-6 text-[#5F4D33]">
+              <div key={item} className="min-w-0 rounded-md border border-[#E7D9C3] bg-[#FCF8F2] px-4 py-3 text-sm font-semibold leading-6 text-[#5F4D33]">
                 {item}
               </div>
             ))}
@@ -227,7 +210,7 @@ export default function Home() {
                 <Link href="/catalog/custom" className="btn-secondary-inverse">
                   Shop Custom Bags
                 </Link>
-                <Link href="/generic-bag-quote" className="btn-primary">
+                <Link href="/makeyourquote" className="btn-primary">
                   Start a Custom Quote
                 </Link>
               </div>

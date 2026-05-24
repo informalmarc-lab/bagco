@@ -17,7 +17,7 @@ export default function SeoLandingPage({ h1, intro, bullets, links }: SeoLanding
             <h1 className="heading-display mt-5">{h1}</h1>
             <p className="mt-4 max-w-3xl text-lg muted-text">{intro}</p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Link href="/generic-bag-quote" className="btn-primary">Build a Quote</Link>
+              <Link href="/makeyourquote" className="btn-primary">Build a Quote</Link>
             </div>
           </div>
         </div>

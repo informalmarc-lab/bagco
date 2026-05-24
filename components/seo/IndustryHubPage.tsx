@@ -26,7 +26,7 @@ export default function IndustryHubPage({ industry }: { industry: IndustryMeta }
           <h1 className="heading-display mt-5">{industry.label} programs</h1>
           <p className="mt-5 max-w-3xl text-lg muted-text">{industry.focus}</p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/generic-bag-quote" className="btn-primary">Build a Quote</Link>
+            <Link href="/makeyourquote" className="btn-primary">Build a Quote</Link>
           </div>
         </div>
       </section>

@@ -60,7 +60,7 @@ export default function IndustriesPage() {
             catalog path and most-ordered sizes.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/generic-bag-quote" className="btn-primary">Build a Quote</Link>
+            <Link href="/makeyourquote" className="btn-primary">Build a Quote</Link>
           </div>
         </div>
       </section>

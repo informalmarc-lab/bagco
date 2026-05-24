@@ -37,7 +37,7 @@ export default function CustomCatalogPage() {
             Compare 1-color, 2-color, and 3-color custom print options, understand the production rules, and move buyers into a cleaner custom-order path.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/generic-bag-quote" className="btn-primary">Start a Custom Quote</Link>
+            <Link href="/makeyourquote" className="btn-primary">Start a Custom Quote</Link>
             <Link href="/contact" className="btn-secondary">Talk to the Team</Link>
           </div>
           <div className="mt-8 grid gap-3 md:grid-cols-4">
@@ -117,7 +117,7 @@ export default function CustomCatalogPage() {
                 If the buyer already knows they want branded bags, do not send them wandering through the entire catalog first. Move them into custom print sizing and quote support immediately.
               </p>
               <div className="mt-5 flex flex-wrap gap-3">
-                <Link href="/generic-bag-quote" className="btn-primary">Start a Quote</Link>
+                <Link href="/makeyourquote" className="btn-primary">Start a Quote</Link>
                 <Link href="/contact" className="btn-secondary-inverse">Ask a Question</Link>
               </div>
             </div>
@@ -148,7 +148,7 @@ export default function CustomCatalogPage() {
         <div className="tonal-panel">
           <h2 className="section-title">Ready for a custom printed bag quote?</h2>
           <div className="mt-5 flex flex-wrap gap-3">
-            <Link href="/generic-bag-quote" className="btn-primary">Start a Custom Quote</Link>
+            <Link href="/makeyourquote" className="btn-primary">Start a Custom Quote</Link>
             <Link href="/contact" className="btn-secondary">Contact Team</Link>
           </div>
         </div>

@@ -83,7 +83,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '/shipping', priority: 0.72, changeFrequency: 'monthly' },
     { route: '/returns', priority: 0.5, changeFrequency: 'yearly' },
     { route: '/contact', priority: 0.95, changeFrequency: 'weekly' },
-    { route: '/generic-bag-quote', priority: 0.95, changeFrequency: 'weekly' },
+    { route: '/makeyourquote', priority: 0.95, changeFrequency: 'weekly' },
     { route: '/blog', priority: 0.82, changeFrequency: 'weekly' },
     { route: '/blog/how-many-pharmacy-bags-per-case', priority: 0.72, changeFrequency: 'monthly' },
     { route: '/blog/rx-bag-sizes-chart', priority: 0.72, changeFrequency: 'monthly' },

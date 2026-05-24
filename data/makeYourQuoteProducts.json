@@ -1,0 +1,181 @@
+[
+  {
+    "item": "#21",
+    "category": "Prescription Bags",
+    "size": "3.5 x 1.5 x 10",
+    "material": "White",
+    "pack": 3000,
+    "customPrintable": true,
+    "image": "/catalog/pharmacy/gs/GS-21-FRONT (1).webp",
+    "prices": {
+      "9000": 40.36,
+      "12000": 30.11,
+      "36000": 28.6,
+      "51000": 27.09
+    }
+  },
+  {
+    "item": "#22",
+    "category": "Prescription Bags",
+    "size": "4.5 x 2.25 x 11",
+    "material": "White",
+    "pack": 3000,
+    "customPrintable": true,
+    "image": "/catalog/pharmacy/gs/GS-22-FRONT.webp",
+    "prices": {
+      "9000": 50.48,
+      "12000": 37.77,
+      "36000": 35.87,
+      "51000": 33.99
+    }
+  },
+  {
+    "item": "#23",
+    "category": "Prescription Bags",
+    "size": "5 x 2 x 10",
+    "material": "White",
+    "pack": 3000,
+    "customPrintable": true,
+    "image": "/catalog/pharmacy/gs/GS-23-FRONT.webp",
+    "prices": {
+      "9000": 49.58,
+      "12000": 36.99,
+      "36000": 35.13,
+      "51000": 33.29
+    }
+  },
+  {
+    "item": "#12",
+    "category": "Flat & Gusset Bags",
+    "size": "7 x 10",
+    "material": "White",
+    "pack": 3000,
+    "customPrintable": true,
+    "image": "/catalog/pharmacy/gs/GS-12-FRONT.webp",
+    "prices": {
+      "9000": 48.66,
+      "12000": 36.33,
+      "36000": 34.52,
+      "48000": 32.69
+    }
+  },
+  {
+    "item": "#14",
+    "category": "Flat & Gusset Bags",
+    "size": "9 x 11",
+    "material": "White",
+    "pack": 2000,
+    "customPrintable": true,
+    "image": "/catalog/pharmacy/gs/GS-14-FRONT.webp",
+    "prices": {
+      "6000": 63.06,
+      "8000": 47.11,
+      "12000": 47.11,
+      "36000": 44.75,
+      "48000": 42.39
+    }
+  },
+  {
+    "item": "#15",
+    "category": "Flat & Gusset Bags",
+    "size": "8.5 x 3.5 x 14.5",
+    "material": "Heavy White",
+    "pack": 1000,
+    "customPrintable": true,
+    "image": "/catalog/pharmacy/gs/GS-15-FRONT.webp",
+    "prices": {
+      "4000": 90.51,
+      "6000": 90.51,
+      "8000": 90.51,
+      "9000": 90.51,
+      "12000": 86.04,
+      "36000": 83.19,
+      "48000": 81.1
+    }
+  },
+  {
+    "item": "#25",
+    "category": "SOS Grocery Bags",
+    "size": "6 x 3.5 x 11",
+    "material": "Heavy White",
+    "pack": 2000,
+    "customPrintable": true,
+    "image": "/catalog/pharmacy/gs/GS-25-FRONT.webp",
+    "prices": {
+      "6000": 83.45,
+      "8000": 62.28,
+      "12000": 62.28,
+      "24000": 59.17,
+      "48000": 56.06
+    }
+  },
+  {
+    "item": "#26",
+    "category": "SOS Grocery Bags",
+    "size": "6.5 x 4 x 13.5",
+    "material": "Heavy White",
+    "pack": 1000,
+    "customPrintable": true,
+    "image": "/catalog/custom/1-color/CBC-26-FC1C.webp",
+    "prices": {
+      "4000": 96.68,
+      "6000": 96.68,
+      "8000": 91.84,
+      "12000": 87,
+      "24000": 85.07,
+      "48000": 82.17
+    }
+  },
+  {
+    "item": "#28",
+    "category": "SOS Grocery Bags",
+    "size": "8 x 5 x 16.5",
+    "material": "Heavy White",
+    "pack": 500,
+    "customPrintable": true,
+    "image": "/catalog/pharmacy/gs/GS-28-FRONT.webp",
+    "prices": {
+      "3000": 134.82,
+      "6000": 128.08,
+      "12000": 121.34,
+      "24000": 118.64,
+      "48000": 114.6
+    }
+  },
+  {
+    "item": "#30",
+    "category": "Plastic Bags",
+    "size": "12 x 7 x 25",
+    "material": "Heavy Poly",
+    "pack": 500,
+    "customPrintable": false,
+    "image": "/catalog/pharmacy/plastic-gs/30-GSP-FRONT.webp",
+    "prices": {
+      "500": 106.63
+    }
+  },
+  {
+    "item": "#32",
+    "category": "Plastic Bags",
+    "size": "9 x 5 x 18",
+    "material": "HDPE Poly",
+    "pack": 1000,
+    "customPrintable": false,
+    "image": "/catalog/pharmacy/plastic-gs/32-GSP-FRONT.webp",
+    "prices": {
+      "1000": 65.1
+    }
+  },
+  {
+    "item": "#35",
+    "category": "Plastic Bags",
+    "size": "12 x 7 x 23",
+    "material": "HDPE Poly",
+    "pack": 1000,
+    "customPrintable": false,
+    "image": "/catalog/pharmacy/plastic-gs/35-GSP-FRONT.webp",
+    "prices": {
+      "1000": 83.48
+    }
+  }
+]

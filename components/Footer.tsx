@@ -20,7 +20,7 @@ export default function Footer() {
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <Link href="/generic-bag-quote" className="btn-primary">
+            <Link href="/makeyourquote" className="btn-primary">
               Build a Quote
             </Link>
             <a href={contactTextHref} className="btn-secondary-inverse">

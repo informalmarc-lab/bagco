@@ -205,7 +205,7 @@ export default function CatalogExplorerClient({ products, searchParams }: Catalo
                 bouncing between category pages.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
-                <Link href="/generic-bag-quote" className="btn-primary">
+                <Link href="/makeyourquote" className="btn-primary">
                   Build a Quote
                 </Link>
                 <button type="button" className="btn-secondary" onClick={resetFilters}>
@@ -429,7 +429,7 @@ export default function CatalogExplorerClient({ products, searchParams }: Catalo
                     {filtered.length} product{filtered.length === 1 ? '' : 's'} matching your current filter set.
                   </p>
                 </div>
-                <Link href="/generic-bag-quote" className="btn-secondary">
+                <Link href="/makeyourquote" className="btn-secondary">
                   Need help choosing?
                 </Link>
               </div>
@@ -564,7 +564,7 @@ export default function CatalogExplorerClient({ products, searchParams }: Catalo
 
                         <div className="mt-auto flex flex-wrap gap-2 pt-5">
                           {isCatalogProductQuoteOnly(product) ? (
-                            <Link href={`/generic-bag-quote?sku=${encodeURIComponent(product.sku)}`} className="btn-primary">
+                            <Link href={`/makeyourquote?sku=${encodeURIComponent(product.sku)}`} className="btn-primary">
                               Get a Quote
                             </Link>
                           ) : (

@@ -203,7 +203,7 @@ export default function Navbar() {
 
           <div className="hidden items-center gap-2 xl:flex">
             <CartLink />
-            <Link href="/generic-bag-quote" className="btn-secondary min-h-[44px] px-4">
+            <Link href="/makeyourquote" className="btn-secondary min-h-[44px] px-4">
               Quote
             </Link>
             <a href={contactTextHref} className="btn-primary min-h-[44px] px-4">
@@ -347,7 +347,7 @@ export default function Navbar() {
                 <CartLink mobile onClick={() => setIsOpen(false)} />
               </div>
               <div className="mt-3 grid gap-2 sm:grid-cols-3">
-                <Link href="/generic-bag-quote" className="btn-primary min-h-[44px] justify-center" onClick={() => setIsOpen(false)}>
+                <Link href="/makeyourquote" className="btn-primary min-h-[44px] justify-center" onClick={() => setIsOpen(false)}>
                   Build a Quote
                 </Link>
                 <a href={contactTextHref} className="btn-secondary min-h-[44px] justify-center">

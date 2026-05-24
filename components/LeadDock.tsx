@@ -10,13 +10,13 @@ export default function LeadDock() {
           <a href={contactTextHref} className="lead-dock-btn lead-dock-btn-secondary">
             Text {contactPhone}
           </a>
-          <Link href="/generic-bag-quote" className="lead-dock-btn lead-dock-btn-primary">
+          <Link href="/makeyourquote" className="lead-dock-btn lead-dock-btn-primary">
             Build a Quote
           </Link>
         </div>
       </div>
       <div className="mobile-sticky-cta print-hide" role="complementary" aria-label="Quick contact actions">
-        <Link href="/generic-bag-quote" className="mobile-sticky-cta-link mobile-sticky-cta-primary">
+        <Link href="/makeyourquote" className="mobile-sticky-cta-link mobile-sticky-cta-primary">
           Build a Quote
         </Link>
         <a href={contactTextHref} className="mobile-sticky-cta-link mobile-sticky-cta-secondary">

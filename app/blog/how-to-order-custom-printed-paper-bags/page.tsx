@@ -64,7 +64,7 @@ const sections: BlogPostSection[] = [
 
 const internalLinks: BlogPostInternalLink[] = [
   { href: '/catalog/custom', label: 'Custom 1/2/3-Color Catalog' },
-  { href: '/generic-bag-quote', label: 'Build a Quote' },
+  { href: '/makeyourquote', label: 'Build a Quote' },
   { href: '/blog/custom-bag-lead-times', label: 'Custom Lead Time Guide' }
 ]
 

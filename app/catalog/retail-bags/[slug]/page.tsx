@@ -72,7 +72,7 @@ export default async function RetailBagProductPage({
           </p>
           <p className="mt-4 max-w-3xl text-lg muted-text">{product.description}</p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/generic-bag-quote" className="btn-primary">
+            <Link href="/makeyourquote" className="btn-primary">
               Build a Quote
             </Link>
             <Link href="/catalog/retail-bags" className="btn-secondary">
@@ -144,7 +144,7 @@ export default async function RetailBagProductPage({
             </div>
 
             <div className="mt-6 flex flex-wrap gap-3">
-              <Link href="/generic-bag-quote" className="btn-primary">
+              <Link href="/makeyourquote" className="btn-primary">
                 Build a Quote
               </Link>
               <Link href="/contact" className="btn-secondary">

@@ -27,7 +27,7 @@ export default function CustomPrintingPage() {
             Choose the print depth that fits your budget and brand requirements, then move into a repeatable production process.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/generic-bag-quote" className="btn-primary">Build a Quote</Link>
+            <Link href="/makeyourquote" className="btn-primary">Build a Quote</Link>
           </div>
         </div>
       </section>

@@ -98,7 +98,7 @@ export default function PharmaciesIndustryPage() {
                 </span>
               </div>
               <div className="mt-7 flex flex-wrap gap-3">
-                <Link href="/generic-bag-quote" className="btn-primary">
+                <Link href="/makeyourquote" className="btn-primary">
                   Build a Quote
                 </Link>
                 <Link href="/catalog/pharmacy" className="btn-secondary">
@@ -209,7 +209,7 @@ export default function PharmaciesIndustryPage() {
                   <p className="mt-1 text-sm text-[#5F4D33]">{product.sizeOptions.slice(0, 2).join(' / ')}</p>
                   <p className="mt-2 product-card-price">From {money(product.startingPrice)} / case</p>
                   <div className="mt-auto pt-4">
-                    <Link href="/generic-bag-quote" className="btn-primary">
+                    <Link href="/makeyourquote" className="btn-primary">
                       Build a Quote
                     </Link>
                   </div>
@@ -231,7 +231,7 @@ export default function PharmaciesIndustryPage() {
                 across independent locations, recurring orders, or higher-traffic counters.
               </p>
             </div>
-            <Link href="/generic-bag-quote" className="btn-secondary">
+            <Link href="/makeyourquote" className="btn-secondary">
               Get a Quote
             </Link>
           </div>
@@ -256,7 +256,7 @@ export default function PharmaciesIndustryPage() {
                   <p className="mt-1 text-sm text-[#5F4D33]">Standard Rx sizes plus flat and gusset-bottom formats.</p>
                   <p className="mt-2 product-card-price">From {money(product.startingPrice)} / case</p>
                   <div className="mt-auto pt-4">
-                    <Link href="/generic-bag-quote" className="btn-primary">
+                    <Link href="/makeyourquote" className="btn-primary">
                       Get a Quote
                     </Link>
                   </div>
@@ -278,7 +278,7 @@ export default function PharmaciesIndustryPage() {
             reorder cadence for your pharmacy operation.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
-            <Link href="/generic-bag-quote" className="btn-primary">
+            <Link href="/makeyourquote" className="btn-primary">
               Build a Quote
             </Link>
             <a

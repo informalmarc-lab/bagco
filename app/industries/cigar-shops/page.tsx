@@ -79,7 +79,7 @@ export default function CigarShopsIndustryPage() {
                 <Link href="/catalog/mylar-bags" className="btn-secondary">
                   Browse Mylar Bags
                 </Link>
-                <Link href="/generic-bag-quote" className="btn-secondary">
+                <Link href="/makeyourquote" className="btn-secondary">
                   Build a Quote
                 </Link>
               </div>
@@ -291,7 +291,7 @@ export default function CigarShopsIndustryPage() {
             ordering program for the counter, lounge, and special-release side of the business.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
-            <Link href="/generic-bag-quote" className="btn-primary">
+            <Link href="/makeyourquote" className="btn-primary">
               Build a Quote
             </Link>
             <Link href="/catalog/cigar-bags" className="btn-secondary-inverse">

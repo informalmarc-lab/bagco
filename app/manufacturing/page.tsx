@@ -32,7 +32,7 @@ export default function ManufacturingPage() {
             We manufacture and coordinate packaging programs from North Carolina with the goal of predictable quality and dependable timelines.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/generic-bag-quote" className="btn-primary">Build a Quote</Link>
+            <Link href="/makeyourquote" className="btn-primary">Build a Quote</Link>
           </div>
         </div>
       </section>

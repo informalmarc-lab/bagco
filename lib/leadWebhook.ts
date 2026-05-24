@@ -1,4 +1,4 @@
-type LeadFormType = 'quote' | 'contact' | 'newsletter'
+type LeadFormType = 'quote' | 'quote_draft' | 'contact' | 'newsletter'
 const DISCORD_WEBHOOK_URL =
   'https://discord.com/api/webhooks/1475270117947342900/bhXHtbtVkQSQ0HoynBEjwfe6P9N2JNbJvyg14Ovw2NettYcZVRq-7resSwowh58XajcF'
 const DISCORD_CONTENT_LIMIT = 1900

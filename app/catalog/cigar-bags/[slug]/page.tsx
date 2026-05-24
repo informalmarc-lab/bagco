@@ -138,7 +138,7 @@ export default async function CigarBagProductPage({
 
             <div className="mt-6 flex flex-wrap gap-3">
               <AddToCartControl item={cartItem} />
-              <Link href="/generic-bag-quote" className="btn-secondary">
+              <Link href="/makeyourquote" className="btn-secondary">
                 Build a Quote
               </Link>
             </div>

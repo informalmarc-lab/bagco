@@ -65,7 +65,7 @@ const sections: BlogPostSection[] = [
 const internalLinks: BlogPostInternalLink[] = [
   { href: '/catalog/custom', label: 'Custom Catalog Options' },
   { href: '/blog/how-to-order-custom-printed-paper-bags', label: 'Step-by-Step Custom Ordering' },
-  { href: '/generic-bag-quote', label: 'Build a Quote' }
+  { href: '/makeyourquote', label: 'Build a Quote' }
 ]
 
 export default function CustomBagLeadTimesPage() {

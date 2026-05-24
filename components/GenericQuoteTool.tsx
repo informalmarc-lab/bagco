@@ -116,6 +116,7 @@ export default function GenericQuoteTool() {
   const [isSummaryOpen, setIsSummaryOpen] = useState(false)
   const stepHeadingRef = useRef<HTMLHeadingElement | null>(null)
   const hasMountedRef = useRef(false)
+  const draftSentRef = useRef(false)
 
   const [businessType, setBusinessType] = useState('')
   const [bagTypes, setBagTypes] = useState<BagType[]>([])
@@ -192,6 +193,43 @@ export default function GenericQuoteTool() {
     shippingType,
     sizeRows,
   ])
+
+  const hasAnyContactInfo = useMemo(() => {
+    return [name, email, phone, company].some((value) => value.trim().length > 0)
+  }, [company, email, name, phone])
+
+  useEffect(() => {
+    if (submitted || draftSentRef.current || step !== 5 || !hasAnyContactInfo) return
+
+    const timer = window.setTimeout(async () => {
+      if (draftSentRef.current) return
+
+      draftSentRef.current = true
+      try {
+        const response = await fetch('/api/lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            form_type: 'quote_draft',
+            payload: {
+              ...payload,
+              notification_type: 'Quote started with contact info',
+              page_path: window.location.pathname,
+              draft_submitted_at: new Date().toISOString(),
+            },
+          }),
+        })
+
+        if (!response.ok) {
+          draftSentRef.current = false
+        }
+      } catch {
+        draftSentRef.current = false
+      }
+    }, 1800)
+
+    return () => window.clearTimeout(timer)
+  }, [hasAnyContactInfo, payload, step, submitted])
 
   const validateStep = (targetStep: Step): string | null => {
     if (targetStep === 1 && !businessType) return 'Please choose your business type.'

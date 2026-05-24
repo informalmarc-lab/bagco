@@ -123,7 +123,7 @@ export default function CigarBagsCatalogPage() {
             ))}
           </div>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/generic-bag-quote" className="btn-primary">Build a Quote</Link>
+            <Link href="/makeyourquote" className="btn-primary">Build a Quote</Link>
             <Link href="/catalog/mylar-bags" className="btn-secondary">Browse Mylar Bags</Link>
           </div>
         </div>

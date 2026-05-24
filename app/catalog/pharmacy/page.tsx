@@ -22,7 +22,7 @@ export default function PharmacyCatalogPage() {
             TY, GS, and plastic GS options with clear size and case details.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/generic-bag-quote" className="btn-primary">Build a Quote</Link>
+            <Link href="/makeyourquote" className="btn-primary">Build a Quote</Link>
           </div>
         </div>
       </section>

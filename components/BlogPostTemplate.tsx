@@ -48,7 +48,7 @@ export default function BlogPostTemplate({
           </p>
           <p className="mt-5 max-w-3xl text-lg muted-text">{intro}</p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/generic-bag-quote" className="btn-primary">Build a Quote</Link>
+            <Link href="/makeyourquote" className="btn-primary">Build a Quote</Link>
           </div>
         </div>
       </section>

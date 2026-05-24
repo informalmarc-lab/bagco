@@ -3,6 +3,9 @@ node_modules/
 .local/
 data/seo/_raw/
 
+.env
+.env*.local
+
 *.log
 *.zip
 *.tar.gz

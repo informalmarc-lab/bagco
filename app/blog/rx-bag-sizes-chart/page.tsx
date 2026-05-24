@@ -58,7 +58,7 @@ const sections: BlogPostSection[] = [
 const internalLinks: BlogPostInternalLink[] = [
   { href: '/catalog/pharmacy', label: 'Pharmacy Catalog Sizes' },
   { href: '/blog/how-many-pharmacy-bags-per-case', label: 'Case Count Planning Guide' },
-  { href: '/generic-bag-quote', label: 'Build a Quote' }
+  { href: '/makeyourquote', label: 'Build a Quote' }
 ]
 
 export default function RxBagSizesChartPage() {
