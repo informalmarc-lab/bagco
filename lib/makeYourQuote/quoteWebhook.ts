@@ -2,7 +2,15 @@ import { type QuoteSubmissionPayload } from '@/lib/makeYourQuote/types'
 
 type SubmitQuoteResult = { ok: true; skipped?: boolean } | { ok: false; status: number; error: string }
 
-const QUOTE_DISCORD_WEBHOOK_URL =
+export type CouponSubmissionPayload = {
+  name: string
+  email: string
+  phone: string
+  submittedAt: string
+  sourcePath: string
+}
+
+export const QUOTE_DISCORD_WEBHOOK_URL =
   'https://discord.com/api/webhooks/1507883597862801418/7wWBhLoHiH1qE2tvesCH_XP1xioMgOmT40XFhJSuq8KdkXs5FTo0vwegpENhXJ6I4Isk'
 
 function field(name: string, value: string, inline = false) {
@@ -86,6 +94,48 @@ export async function submitQuoteToDiscord(payload: QuoteSubmissionPayload): Pro
   if (!response.ok) {
     const body = await response.text().catch(() => '')
     return { ok: false, status: 502, error: `Quote webhook failed (${response.status}). ${body}`.trim() }
+  }
+
+  return { ok: true }
+}
+
+export async function submitCouponToDiscord(payload: CouponSubmissionPayload): Promise<SubmitQuoteResult> {
+  const response = await fetch(QUOTE_DISCORD_WEBHOOK_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    cache: 'no-store',
+    body: JSON.stringify({
+      username: 'Bag Supply Co Coupons',
+      allowed_mentions: { parse: [] },
+      content: `COUPON - Employee Price request from ${payload.name} (${payload.email})`,
+      embeds: [
+        {
+          title: 'COUPON - Employee Price',
+          color: 11960634,
+          timestamp: payload.submittedAt,
+          fields: [
+            field(
+              'Customer Contact',
+              [
+                `**Name:** ${payload.name}`,
+                `**Email:** ${payload.email}`,
+                `**Phone:** ${payload.phone}`,
+              ].join('\n'),
+            ),
+            field('Offer', 'Employee Price coupon', true),
+            field('Source', payload.sourcePath || '/', true),
+          ],
+          footer: {
+            text: 'Bag Supply Co coupon capture',
+          },
+        },
+      ],
+    }),
+  })
+
+  if (!response.ok) {
+    const body = await response.text().catch(() => '')
+    return { ok: false, status: 502, error: `Coupon webhook failed (${response.status}). ${body}`.trim() }
   }
 
   return { ok: true }

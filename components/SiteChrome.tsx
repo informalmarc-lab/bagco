@@ -5,6 +5,7 @@ import { CartProvider } from '@/components/cart/CartProvider'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import AccessibilityControls from '@/components/AccessibilityControls'
+import CouponDropDown from '@/components/CouponDropDown'
 
 export default function SiteChrome({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
@@ -20,6 +21,7 @@ export default function SiteChrome({ children }: { children: React.ReactNode }) 
         Skip to main content
       </a>
       <Navbar />
+      <CouponDropDown />
       <main id="main-content" className="min-h-screen site-surface" tabIndex={-1}>
         {children}
       </main>
