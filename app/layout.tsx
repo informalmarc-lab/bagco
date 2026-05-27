@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { DM_Sans, DM_Serif_Display } from 'next/font/google'
 import './globals.css'
+import VisitorBeacon from '@/app/components/VisitorBeacon'
 import SiteChrome from '@/components/SiteChrome'
 import { buildPageTitle } from '@/lib/seo/pageMetadata'
 import { getSiteUrl } from '@/lib/seo/site'
@@ -75,6 +76,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${dmSans.variable} ${dmSerif.variable}`}>
+        <VisitorBeacon />
         <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
