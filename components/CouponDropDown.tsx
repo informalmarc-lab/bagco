@@ -87,7 +87,7 @@ export default function CouponDropDown() {
 
         {sent ? (
           <div className="mt-5 rounded-md border border-[#D8C5A7] bg-[#FAF6F0] p-4 text-center text-sm font-bold text-[#1E4D2B]">
-            Employee pricing request sent. We have your info.
+            Employee pricing request sent. Our team will follow up shortly.
           </div>
         ) : (
           <form onSubmit={submit} className="mt-5 grid gap-3">
