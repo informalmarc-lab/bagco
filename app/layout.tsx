@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { DM_Sans, DM_Serif_Display } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 import VisitorBeacon from '@/app/components/VisitorBeacon'
 import SiteChrome from '@/components/SiteChrome'
@@ -75,6 +76,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <Script id="microsoft-clarity" strategy="beforeInteractive">
+          {`
+            (function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "wzh6y6cdyt");
+          `}
+        </Script>
+      </head>
       <body className={`${dmSans.variable} ${dmSerif.variable}`}>
         <VisitorBeacon />
         <SiteChrome>{children}</SiteChrome>
