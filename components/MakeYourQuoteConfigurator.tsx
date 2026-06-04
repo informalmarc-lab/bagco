@@ -20,6 +20,14 @@ import { type PrintSides, type QuoteCategory, type QuoteProduct } from '@/lib/ma
 type Step = 0 | 1 | 2 | 3 | 4 | 5 | 6
 
 const stepLabels = ['Category', 'Product', 'Quantity', 'Print', 'Contact', 'Review']
+const stepDescriptions = [
+  'Choose the bag family that matches the order.',
+  'Pick the exact item and size.',
+  'Select the run size and case count.',
+  'Confirm print colors and sides.',
+  'Add contact and delivery details.',
+  'Review the estimate before sending.',
+]
 const categoryDescriptions: Record<QuoteCategory, string> = {
   'Prescription Bags': 'Compact paper bags for pharmacy counters and medication handoff.',
   'Flat & Gusset Bags': 'Reliable everyday paper formats for retail, pharmacy, and service counters.',
@@ -28,9 +36,9 @@ const categoryDescriptions: Record<QuoteCategory, string> = {
 }
 
 const screenVariants = {
-  initial: { opacity: 0, y: 18 },
-  animate: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -16 },
+  initial: (direction: number) => ({ opacity: 0, x: direction > 0 ? 22 : -22 }),
+  animate: { opacity: 1, x: 0 },
+  exit: (direction: number) => ({ opacity: 0, x: direction > 0 ? -18 : 18 }),
 }
 
 const itemVariants = {
@@ -277,8 +285,10 @@ export default function MakeYourQuoteConfigurator() {
   const [customer, setCustomer] = useState({ name: '', company: '', email: '', phone: '', zip: '' })
   const [error, setError] = useState('')
   const [isTransitioning, setIsTransitioning] = useState(false)
+  const [stepDirection, setStepDirection] = useState(1)
   const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const flowPanelRef = useRef<HTMLDivElement | null>(null)
 
   const product = useMemo(() => quoteProducts.find((item) => item.item === productItem) || null, [productItem])
   const configuredProduct = useMemo(
@@ -298,6 +308,8 @@ export default function MakeYourQuoteConfigurator() {
   const totalIncludesShipping = Boolean(freight && freight.fsc !== null)
   const isPaperCustomUnderMinimum = Boolean(product?.customPrintable && quantity && caseCount < 4)
   const progress = step === 0 ? 0 : Math.round((step / 6) * 100)
+  const activeStepLabel = step > 0 ? stepLabels[step - 1] : 'Start'
+  const activeStepDescription = step > 0 ? stepDescriptions[step - 1] : 'Start your quote.'
 
   const canContinue = useMemo(() => {
     if (step === 1) return Boolean(category)
@@ -309,9 +321,14 @@ export default function MakeYourQuoteConfigurator() {
   }, [category, customer.email, customer.name, customer.zip, isPaperCustomUnderMinimum, printColors, printSides, product, quantity, step])
 
   const goToStep = (nextStep: Step) => {
+    if (isTransitioning || nextStep === step) return
     setError('')
+    setStepDirection(nextStep >= step ? 1 : -1)
     if (reduceMotion) {
       setStep(nextStep)
+      window.requestAnimationFrame(() => {
+        flowPanelRef.current?.scrollIntoView({ behavior: 'auto', block: 'start' })
+      })
       trackQuoteEvent('quote_step_view', { step: nextStep })
       return
     }
@@ -319,8 +336,16 @@ export default function MakeYourQuoteConfigurator() {
     window.setTimeout(() => {
       setStep(nextStep)
       setIsTransitioning(false)
+      window.requestAnimationFrame(() => {
+        flowPanelRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      })
     }, 120)
     trackQuoteEvent('quote_step_view', { step: nextStep })
+  }
+
+  const goBack = () => {
+    if (step <= 1 || isTransitioning) return
+    goToStep((step - 1) as Step)
   }
 
   const continueFromStep = () => {
@@ -347,6 +372,7 @@ export default function MakeYourQuoteConfigurator() {
   }
 
   const submit = async () => {
+    if (submitting) return
     if (!product || !quantity) return
     if (!canContinue) {
       setError('Name, email, and ZIP code are required.')
@@ -386,10 +412,11 @@ export default function MakeYourQuoteConfigurator() {
     ? {}
     : {
         variants: screenVariants,
+        custom: stepDirection,
         initial: 'initial',
         animate: 'animate',
         exit: 'exit',
-        transition: { duration: 0.24, ease: [0.16, 1, 0.3, 1] as const },
+        transition: { duration: 0.26, ease: [0.16, 1, 0.3, 1] as const },
       }
 
   return (
@@ -483,19 +510,70 @@ export default function MakeYourQuoteConfigurator() {
           </div>
         )}
         <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_420px]">
-          <div className="relative min-h-[600px] rounded-lg border border-[#E1D2BB] bg-white p-4 pb-28 md:p-8 md:pb-8 xl:p-10">
+          <div
+            ref={flowPanelRef}
+            className="relative min-h-[600px] scroll-mt-24 rounded-lg border border-[#E1D2BB] bg-white p-4 pb-28 md:p-8 md:pb-8 xl:p-10"
+          >
+            {!submitted && step > 0 && (
+              <div className="mb-8 border-b border-[#E1D2BB] pb-5">
+                <div className="flex flex-wrap items-start justify-between gap-4">
+                  <div>
+                    <p className="text-sm font-black text-[#B5813A]">Step {step} of 6</p>
+                    <h2 className="mt-1 text-2xl font-black tracking-[-0.03em] text-[#1E4D2B] md:text-3xl">
+                      {activeStepLabel}
+                    </h2>
+                    <p className="mt-2 text-sm leading-6 text-[#5F4D33]">{activeStepDescription}</p>
+                  </div>
+                  {step > 1 && (
+                    <button
+                      type="button"
+                      onClick={goBack}
+                      disabled={isTransitioning}
+                      className="btn-secondary min-h-[44px] disabled:pointer-events-none disabled:opacity-50"
+                    >
+                      Back
+                    </button>
+                  )}
+                </div>
+                <div className="mt-5 h-1.5 overflow-hidden rounded-full bg-[#E9DFD0]">
+                  <motion.div
+                    className="h-full bg-[#B5813A]"
+                    animate={{ width: `${progress}%` }}
+                    transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
+                  />
+                </div>
+                <div className="mt-3 grid grid-cols-6 gap-1 text-[11px] font-bold md:gap-2 md:text-xs">
+                  {stepLabels.map((label, index) => {
+                    const state = index + 1 === step ? 'active' : index + 1 < step ? 'done' : 'upcoming'
+                    return (
+                      <span
+                        key={label}
+                        className={classNames(
+                          'truncate',
+                          state === 'active' && 'text-[#1E4D2B]',
+                          state === 'done' && 'text-[#B5813A]',
+                          state === 'upcoming' && 'text-[#A08B6D]',
+                        )}
+                      >
+                        {label}
+                      </span>
+                    )
+                  })}
+                </div>
+              </div>
+            )}
             <AnimatePresence>
               {isTransitioning && (
                 <motion.div
-                  className="absolute inset-0 z-20 grid place-items-center rounded-lg bg-white/80"
+                  className="absolute inset-0 z-20 grid place-items-center rounded-lg bg-white/88"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.12 }}
                 >
-                  <div className="flex items-center gap-3 text-sm font-black text-[#B5813A]">
-                    <span className="h-4 w-4 animate-spin rounded-full border-2 border-[#B5813A] border-t-transparent" />
-                    Updating quote
+                  <div className="grid gap-3 text-center text-sm font-black text-[#B5813A]">
+                    <span className="mx-auto h-5 w-5 animate-spin rounded-full border-2 border-[#B5813A] border-t-transparent" />
+                    <span>Preparing step</span>
                   </div>
                 </motion.div>
               )}
@@ -845,15 +923,34 @@ export default function MakeYourQuoteConfigurator() {
 
             {!submitted && step > 0 && (
               <div className="mt-8 hidden flex-wrap items-center justify-between gap-3 md:flex">
-                <button type="button" onClick={() => goToStep((step - 1) as Step)} className={classNames('btn-secondary', step === 1 && 'invisible')}>
-                  Back
-                </button>
+                {step > 1 ? (
+                  <button
+                    type="button"
+                    onClick={goBack}
+                    disabled={isTransitioning}
+                    className="btn-secondary disabled:pointer-events-none disabled:opacity-50"
+                  >
+                    Back
+                  </button>
+                ) : (
+                  <span aria-hidden="true" />
+                )}
                 {step < 6 ? (
-                  <button type="button" onClick={continueFromStep} disabled={!canContinue} className="btn-primary disabled:pointer-events-none disabled:opacity-50">
+                  <button
+                    type="button"
+                    onClick={continueFromStep}
+                    disabled={!canContinue || isTransitioning}
+                    className="btn-primary disabled:pointer-events-none disabled:opacity-50"
+                  >
                     Continue
                   </button>
                 ) : (
-                  <button type="button" onClick={submit} disabled={submitting} className="btn-primary min-w-[210px] disabled:pointer-events-none disabled:opacity-70">
+                  <button
+                    type="button"
+                    onClick={submit}
+                    disabled={submitting || isTransitioning}
+                    className="btn-primary min-w-[210px] disabled:pointer-events-none disabled:opacity-70"
+                  >
                     {submitting ? (
                       <span className="inline-flex items-center gap-2">
                         <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
@@ -942,15 +1039,17 @@ export default function MakeYourQuoteConfigurator() {
 
       {!submitted && step > 0 && (
         <div className="fixed inset-x-0 bottom-0 z-[70] border-t border-[#D8C5A7] bg-white/96 p-3 md:hidden">
-          <div className="mx-auto grid max-w-xl grid-cols-[0.65fr_1fr] gap-2">
-            <button
-              type="button"
-              onClick={() => goToStep((step - 1) as Step)}
-              disabled={step === 1 || isTransitioning}
-              className="btn-secondary min-h-[52px] disabled:pointer-events-none disabled:opacity-35"
-            >
-              Back
-            </button>
+          <div className={classNames('mx-auto grid max-w-xl gap-2', step > 1 ? 'grid-cols-[0.65fr_1fr]' : 'grid-cols-1')}>
+            {step > 1 && (
+              <button
+                type="button"
+                onClick={goBack}
+                disabled={isTransitioning}
+                className="btn-secondary min-h-[52px] disabled:pointer-events-none disabled:opacity-50"
+              >
+                Back
+              </button>
+            )}
             {step < 6 ? (
               <button
                 type="button"
