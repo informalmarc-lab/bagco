@@ -1,10 +1,11 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { usePathname } from 'next/navigation'
 
 const CLAIMED_KEY = 'bagco_coupon_claimed'
 const COUPON_DELAY_MS = 2 * 60 * 1000
+const POPUP_OPEN_TIMEOUT_MS = 1200
 
 type FormState = {
   name: string
@@ -15,21 +16,104 @@ type FormState = {
 export default function CouponDropDown() {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
+  const [opening, setOpening] = useState(false)
   const [form, setForm] = useState<FormState>({ name: '', email: '', phone: '' })
   const [error, setError] = useState('')
+  const [openError, setOpenError] = useState('')
   const [submitting, setSubmitting] = useState(false)
   const [sent, setSent] = useState(false)
+  const dialogRef = useRef<HTMLDivElement | null>(null)
+  const autoOpenTimerRef = useRef<number | null>(null)
+  const openTimeoutRef = useRef<number | null>(null)
+
+  const isSuppressedPath = pathname.startsWith('/makeyourquote') || pathname.startsWith('/generic-bag-quote')
+  const isPricingPath =
+    pathname.startsWith('/catalog') ||
+    pathname.startsWith('/products') ||
+    pathname.startsWith('/custom-printing') ||
+    pathname.startsWith('/custom-pharmacy-paper-bags') ||
+    pathname.startsWith('/dispensaries') ||
+    pathname.startsWith('/dispensary-bags') ||
+    pathname.startsWith('/pharmacy-bags') ||
+    pathname.startsWith('/veterinary-bags') ||
+    pathname.startsWith('/smoke-shop-bags')
+
+  const hasClaimed = useCallback(() => {
+    try {
+      return window.localStorage.getItem(CLAIMED_KEY) === '1'
+    } catch {
+      return false
+    }
+  }, [])
+
+  const clearOpenTimeout = useCallback(() => {
+    if (openTimeoutRef.current) {
+      window.clearTimeout(openTimeoutRef.current)
+      openTimeoutRef.current = null
+    }
+  }, [])
+
+  const openCoupon = useCallback(() => {
+    if (open || opening || hasClaimed()) return
+
+    clearOpenTimeout()
+    setOpenError('')
+    setOpening(true)
+    setOpen(true)
+
+    openTimeoutRef.current = window.setTimeout(() => {
+      if (!dialogRef.current) {
+        setOpen(false)
+        setOpenError('Employee pricing did not open. Please try again.')
+      }
+      setOpening(false)
+      openTimeoutRef.current = null
+    }, POPUP_OPEN_TIMEOUT_MS)
+  }, [clearOpenTimeout, hasClaimed, open, opening])
 
   useEffect(() => {
-    if (pathname.startsWith('/makeyourquote') || pathname.startsWith('/generic-bag-quote')) {
+    if (isSuppressedPath) {
       setOpen(false)
+      setOpening(false)
       return
     }
-    if (window.localStorage.getItem(CLAIMED_KEY) === '1') return
+    if (hasClaimed()) return
 
-    const timer = window.setTimeout(() => setOpen(true), COUPON_DELAY_MS)
-    return () => window.clearTimeout(timer)
-  }, [pathname])
+    if (autoOpenTimerRef.current) {
+      window.clearTimeout(autoOpenTimerRef.current)
+      autoOpenTimerRef.current = null
+    }
+
+    autoOpenTimerRef.current = window.setTimeout(openCoupon, COUPON_DELAY_MS)
+
+    return () => {
+      if (autoOpenTimerRef.current) {
+        window.clearTimeout(autoOpenTimerRef.current)
+        autoOpenTimerRef.current = null
+      }
+    }
+  }, [hasClaimed, isSuppressedPath, openCoupon, pathname])
+
+  useEffect(() => {
+    if (!open) return
+
+    const frame = window.requestAnimationFrame(() => {
+      if (dialogRef.current) {
+        clearOpenTimeout()
+        setOpening(false)
+        setOpenError('')
+      }
+    })
+
+    return () => window.cancelAnimationFrame(frame)
+  }, [clearOpenTimeout, open])
+
+  useEffect(() => {
+    return () => {
+      if (autoOpenTimerRef.current) window.clearTimeout(autoOpenTimerRef.current)
+      clearOpenTimeout()
+    }
+  }, [clearOpenTimeout])
 
   const update = (key: keyof FormState, value: string) => {
     setForm((current) => ({ ...current, [key]: value }))
@@ -37,6 +121,7 @@ export default function CouponDropDown() {
 
   const submit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
+    if (submitting) return
     setSubmitting(true)
     setError('')
 
@@ -62,11 +147,38 @@ export default function CouponDropDown() {
     }
   }
 
-  if (!open) return null
+  if (!open) {
+    if (isSuppressedPath || !isPricingPath || sent || hasClaimed()) return null
+
+    return (
+      <div className="fixed bottom-20 right-4 z-[85] grid max-w-[calc(100vw-2rem)] gap-2 md:bottom-5">
+        {openError && (
+          <p className="rounded-md border border-[#C0392B66] bg-white px-3 py-2 text-sm font-bold text-[#C0392B] shadow-[0_8px_24px_rgba(30,77,43,0.14)]">
+            {openError}
+          </p>
+        )}
+        <button
+          type="button"
+          onClick={openCoupon}
+          disabled={opening}
+          aria-busy={opening}
+          className="btn-primary min-w-[190px] shadow-[0_8px_24px_rgba(30,77,43,0.18)] disabled:pointer-events-none disabled:opacity-75"
+        >
+          {opening ? 'Loading...' : 'Get Employee Pricing'}
+        </button>
+      </div>
+    )
+  }
 
   return (
-    <div className="fixed inset-0 z-[90] grid place-items-center bg-[#1A1A1A]/45 px-4 py-6">
-      <div className="w-full max-w-[520px] rounded-lg border border-[#D8C5A7] bg-white p-5 shadow-[0_8px_24px_rgba(30,77,43,0.2)]">
+    <div className="fixed inset-0 z-[1000] grid place-items-center overflow-y-auto bg-[#1A1A1A]/45 px-4 py-6">
+      <div
+        ref={dialogRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="employee-pricing-title"
+        className="w-full max-w-[520px] rounded-lg border border-[#D8C5A7] bg-white p-5 shadow-[0_8px_24px_rgba(30,77,43,0.2)]"
+      >
         <div className="grid gap-3">
           <div className="flex items-center justify-center gap-2" aria-hidden="true">
             {[0, 1, 2, 3, 4].map((item) => (
@@ -78,7 +190,9 @@ export default function CouponDropDown() {
             ))}
           </div>
           <div>
-            <p className="text-center text-2xl font-black leading-tight text-[#1E4D2B]">Get Employee Pricing</p>
+            <p id="employee-pricing-title" className="text-center text-2xl font-black leading-tight text-[#1E4D2B]">
+              Get Employee Pricing
+            </p>
             <p className="mt-2 text-center text-sm leading-6 text-[#5F4D33]">
               Enter your name, email, and phone number to unlock the employee price coupon.
             </p>
@@ -129,8 +243,13 @@ export default function CouponDropDown() {
               </p>
             )}
 
-            <button type="submit" disabled={submitting} className="btn-primary w-full animate-pulse disabled:pointer-events-none disabled:opacity-70">
-              {submitting ? 'Sending' : 'Get Employee Pricing'}
+            <button
+              type="submit"
+              disabled={submitting}
+              aria-busy={submitting}
+              className="btn-primary w-full disabled:pointer-events-none disabled:opacity-75"
+            >
+              {submitting ? 'Loading...' : 'Get Employee Pricing'}
             </button>
           </form>
         )}

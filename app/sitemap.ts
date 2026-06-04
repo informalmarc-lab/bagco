@@ -71,6 +71,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '/products', priority: 0.82, changeFrequency: 'weekly' },
     { route: '/gallery', priority: 0.7, changeFrequency: 'monthly' },
     { route: '/industries', priority: 0.9, changeFrequency: 'weekly' },
+    { route: '/dispensaries', priority: 0.86, changeFrequency: 'weekly' },
     { route: '/industries/dispensary', priority: 0.8, changeFrequency: 'monthly' },
     { route: '/industries/smoke-shops', priority: 0.8, changeFrequency: 'monthly' },
     { route: '/industries/cigar-shops', priority: 0.8, changeFrequency: 'monthly' },
