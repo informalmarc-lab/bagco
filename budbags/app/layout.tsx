@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import VisitorBeacon from '@/app/components/VisitorBeacon'
 import SiteFooter from '@/components/SiteFooter'
 import SiteHeader from '@/components/SiteHeader'
 
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
+        <VisitorBeacon />
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />
