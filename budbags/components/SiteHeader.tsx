@@ -3,6 +3,7 @@ import { contactInfo } from '@/lib/products'
 
 const navItems = [
   { href: '/products', label: 'Products' },
+  { href: '/compliance', label: 'Compliance' },
   { href: '/quote', label: 'Quote' },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },

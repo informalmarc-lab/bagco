@@ -15,6 +15,7 @@ export default function SiteFooter() {
           <h3 className="text-sm font-black">Pages</h3>
           <div className="mt-3 grid gap-2 text-sm text-[#F4E8D8]">
             <Link href="/products" className="hover:text-white">Products</Link>
+            <Link href="/compliance" className="hover:text-white">Compliance</Link>
             <Link href="/quote" className="hover:text-white">Quote configurator</Link>
             <Link href="/about" className="hover:text-white">About</Link>
             <Link href="/contact" className="hover:text-white">Contact</Link>

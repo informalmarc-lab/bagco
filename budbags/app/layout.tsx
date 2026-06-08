@@ -11,11 +11,11 @@ export const metadata: Metadata = {
     template: '%s | Bud Bags',
   },
   description:
-    'Factory-direct custom printed and stock paper exit bags for cannabis shops managing checkout branding, bag-law pressure, and fast reorders.',
+    'Custom printed paper bags for cannabis dispensaries. Factory direct, low minimums, ships fast. Get a quote today.',
   openGraph: {
     title: 'Bud Bags | Custom Paper Bags for Dispensaries',
     description:
-      'Factory-direct custom printed and stock paper exit bags for cannabis shops with real pricing, fast quote follow-up, and practical reorder support.',
+      'Custom printed paper bags for cannabis dispensaries. Factory direct, low minimums, ships fast. Get a quote today.',
     url: 'https://budbags.net',
     siteName: 'Bud Bags',
     images: [

@@ -2,13 +2,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import LeadCta from '@/components/LeadCta'
 import ProductProgramCard from '@/components/ProductProgramCard'
-import { contactInfo, printPrograms, productImages } from '@/lib/products'
+import StockBagCard from '@/components/StockBagCard'
+import { contactInfo, printPrograms, productImages, stockBagProducts } from '@/lib/products'
 
 const painPoints = [
-  'Exit-bag rules and plastic bans are pushing cannabis shops toward paper that still looks intentional.',
-  'Your logo should leave with every eighth, pre-roll pack, edible, and pickup order.',
-  'Factory-direct supply helps protect margin when packaging costs start eating into basket size.',
-  'Custom print for the house brand, stock bags for the weeks when the back room is running low.',
+  'Plastic bans are not waiting for your next reorder.',
+  'Your customer should not leave with a bag that feels like an afterthought.',
+  'Factory-direct pricing keeps packaging from chewing up margin.',
+  'Custom bags for the brand. Stock bags when the shelf is empty.',
 ]
 
 export default function HomePage() {
@@ -18,15 +19,19 @@ export default function HomePage() {
         <div className="container-page grid gap-10 py-12 md:py-16 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
           <div>
             <h1 className="text-4xl font-black leading-tight text-leaf md:text-6xl">
-              Paper exit bags for cannabis shops that need checkout to look legit.
+              Your dispensary brand deserves a better bag.
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-7 text-mute md:text-lg">
-              Bud Bags helps independent dispensaries, delivery operators, and smoke shops move from plastic carryout to paper without losing the shop vibe at the counter. Get branded bags for your logo, plain stock when inventory is tight, and follow-up from people who understand budtenders, pickup shelves, and last-minute reorders.
+              Custom printed paper bags for dispensaries that care about the checkout handoff. Factory direct, low minimums, and stock options when you need bags fast.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Link href="/quote" className="btn-primary">Build a Quote</Link>
               <Link href="/products" className="btn-secondary">View Pricing</Link>
+              <a href={contactInfo.textHref} className="btn-secondary">Text {contactInfo.phone}</a>
             </div>
+            <p className="mt-4 text-sm font-bold leading-6 text-ink">
+              Family-owned manufacturer since 1955. One of the last factory-direct paper bag makers in the US.
+            </p>
             <div className="mt-7 grid max-w-2xl gap-3 sm:grid-cols-3">
               <Stat value="4 cases" label="Standard minimum" />
               <Stat value="24 hrs" label="Quote follow-up" />
@@ -46,6 +51,18 @@ export default function HomePage() {
                 />
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-line bg-white">
+        <div className="container-page flex flex-wrap items-center justify-between gap-4 py-5">
+          <p className="text-sm font-bold leading-6 text-ink">
+            Need help now? Call or text <a href={contactInfo.phoneHref} className="text-leaf">{contactInfo.phone}</a> and we will point you to the fastest path.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <a href={contactInfo.phoneHref} className="btn-primary">Call Now</a>
+            <a href={contactInfo.textHref} className="btn-secondary">Text Us</a>
           </div>
         </div>
       </section>
@@ -76,19 +93,36 @@ export default function HomePage() {
       </section>
 
       <section className="container-page py-10">
+        <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <h2 className="text-3xl font-black text-leaf">Need bags before custom print lands?</h2>
+            <p className="mt-2 max-w-3xl text-sm leading-6 text-mute">
+              Keep checkout covered with stocked TY and DS exit bags while your branded run is being proofed, printed, or reordered.
+            </p>
+          </div>
+          <Link href="/products#stock-bags" className="btn-secondary">View Stock Bags</Link>
+        </div>
+        <div className="grid gap-4">
+          {stockBagProducts.map((product) => (
+            <StockBagCard key={product.id} product={product} />
+          ))}
+        </div>
+      </section>
+
+      <section className="container-page py-10">
         <div className="grid gap-6 rounded-lg border border-line bg-bone p-6 md:grid-cols-3 md:p-8">
           <div>
             <h2 className="text-2xl font-black text-leaf">Built around real cannabis retail.</h2>
           </div>
           <div className="md:col-span-2">
             <p className="text-sm leading-6 text-mute md:text-base">
-              The bag has to work for budtenders, pickup orders, exit-bag checks, and the customer walking out with product. Bud Bags keeps the quote focused on what owners and purchasing managers actually decide: size, color count, quantity, print placement, artwork, freight, and reorder timing.
+              You need bags that show up, look right, and do not make checkout feel cheap.
             </p>
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
-              <Rule text="30-50# machine-finished paper for daily dispensary and smoke shop checkout use" />
-              <Rule text="Pinch-bottom, gusset, and flat options for eighths, edibles, carts, and apparel add-ons" />
-              <Rule text="Front, back, and gusset printing for pickup shelves, walkout visibility, and house brands" />
-              <Rule text="3-case trial option for shops testing paper before a larger branded rollout" />
+              <Rule text="Low minimums when you are testing a branded run." />
+              <Rule text="Clear setup costs before artwork goes anywhere." />
+              <Rule text="Stock bags when the back room is almost out." />
+              <Rule text="Real follow-up from people who make the bags." />
             </div>
           </div>
         </div>

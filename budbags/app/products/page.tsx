@@ -42,7 +42,7 @@ export default function ProductsPage() {
         ))}
       </section>
 
-      <section className="container-page py-10">
+      <section id="stock-bags" className="container-page py-10">
         <div className="mb-5">
           <h2 className="text-3xl font-black text-leaf">Stock bags for when the floor is almost out</h2>
           <p className="mt-2 max-w-3xl text-sm leading-6 text-mute">
