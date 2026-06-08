@@ -16,7 +16,7 @@ export default function SiteHeader() {
           <span className="grid h-9 w-9 place-items-center rounded-md bg-leaf text-sm font-black text-white">BB</span>
           <span>
             <span className="block text-lg font-black leading-5 text-leaf">Bud Bags</span>
-            <span className="block text-xs font-semibold text-mute">Paper bags for dispensary counters</span>
+            <span className="block text-xs font-semibold text-mute">Paper exit bags for cannabis shops</span>
           </span>
         </Link>
         <nav className="hidden items-center gap-6 md:flex" aria-label="Primary navigation">

@@ -29,7 +29,7 @@ export default function ContactForm() {
     <form className="card p-5 md:p-6" onSubmit={submit}>
       <h1 className="text-2xl font-black text-leaf">Contact Bud Bags</h1>
       <p className="mt-2 text-sm leading-6 text-mute">
-        Tell us what your dispensary needs at the counter right now: stock bags, custom print, or both. We will follow up within 24 hours.
+        Tell us what your shop needs at the counter right now: stock exit bags, custom print, or both. We will follow up within 24 hours.
       </p>
       <div className="mt-5 grid gap-4 md:grid-cols-2">
         <Field label="Dispensary name" value={form.dispensaryName} onChange={(value) => setForm({ ...form, dispensaryName: value })} />
@@ -46,7 +46,7 @@ export default function ContactForm() {
         </label>
       </div>
       <label className="field-label mt-4">
-        What does your store need?
+        What does your shop need?
         <textarea
           className="field-input min-h-32"
           value={form.message}

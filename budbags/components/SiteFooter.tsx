@@ -8,7 +8,7 @@ export default function SiteFooter() {
         <div>
           <h2 className="text-xl font-black">Bud Bags</h2>
           <p className="mt-3 max-w-md text-sm leading-6 text-[#F4E8D8]">
-            Factory-direct custom printed and stock paper bags for dispensary owners managing checkout branding, bag-law pressure, and fast reorder needs.
+            Factory-direct custom printed and stock paper exit bags for cannabis shops managing checkout branding, bag-law pressure, and fast reorder needs.
           </p>
         </div>
         <div>

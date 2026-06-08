@@ -21,14 +21,14 @@ type ContactState = {
 }
 
 const printSides: { id: PrintSide; label: string; detail: string }[] = [
-  { id: 'front', label: 'Front only', detail: 'Best first run for putting your store logo on the customer-facing side.' },
-  { id: 'front-back', label: 'Front + back', detail: '$35 additional setup for store info, warnings, loyalty copy, or reorder branding.' },
-  { id: 'front-gussets', label: 'Front + gussets', detail: 'Good when the bag sits sideways at pickup or on the counter.' },
+  { id: 'front', label: 'Front only', detail: 'Best first run for putting your shop logo on the customer-facing side.' },
+  { id: 'front-back', label: 'Front + back', detail: '$35 additional setup for shop info, warning copy, loyalty copy, or reorder branding.' },
+  { id: 'front-gussets', label: 'Front + gussets', detail: 'Good when the bag sits sideways on pickup shelves or at the register.' },
 ]
 
 const artworkOptions: { id: ArtworkStatus; label: string; detail: string }[] = [
   { id: 'print-ready', label: 'Print-ready vector files', detail: 'AI, EPS, or production-ready PDF from your designer is available.' },
-  { id: 'needs-help', label: 'Need design help', detail: 'You have a logo or direction, but need help getting the bag layout ready.' },
+  { id: 'needs-help', label: 'Need design help', detail: 'You have a logo, strain-brand direction, or shop colors, but need help getting the bag layout ready.' },
 ]
 
 export default function QuoteConfigurator() {
@@ -99,7 +99,7 @@ export default function QuoteConfigurator() {
     <div className="grid gap-6 lg:grid-cols-[0.72fr_0.28fr]">
       <section className="card p-5 md:p-6">
         <div className="mb-5 flex items-center justify-between gap-4 border-b border-line pb-4">
-          <h1 className="text-2xl font-black text-leaf md:text-3xl">Dispensary Custom Bag Quote</h1>
+          <h1 className="text-2xl font-black text-leaf md:text-3xl">Cannabis Custom Bag Quote</h1>
           <p className="text-sm font-bold text-mute">Step {step} of 8</p>
         </div>
 
@@ -120,7 +120,7 @@ export default function QuoteConfigurator() {
         )}
 
         {step === 2 && (
-          <StepShell title="Pick the size your counter actually uses">
+          <StepShell title="Pick the size your shop actually uses">
             <div className="grid gap-3 md:grid-cols-3">
               {bagSizes.map((size) => (
                 <ChoiceButton
@@ -136,7 +136,7 @@ export default function QuoteConfigurator() {
         )}
 
         {step === 3 && (
-          <StepShell title="Set the case count for this store or rollout">
+          <StepShell title="Set the case count for this shop or rollout">
             <label className="field-label" htmlFor="cases">Number of cases</label>
             <input
               id="cases"
@@ -147,13 +147,13 @@ export default function QuoteConfigurator() {
               onChange={(event) => setCases(Math.max(1, Number(event.target.value)))}
             />
             <p className="mt-3 text-sm leading-6 text-mute">
-              Standard custom program minimum is 4 cases. A 3-case mini program is available for dispensary owners who want to test paper bags before committing to a full branded run.
+              Standard custom program minimum is 4 cases. A 3-case mini program is available for cannabis shops that want to test paper bags before committing to a full branded run.
             </p>
           </StepShell>
         )}
 
         {step === 4 && (
-          <StepShell title="Choose where shoppers should see your store name">
+          <StepShell title="Choose where shoppers should see your shop name">
             <div className="grid gap-3 md:grid-cols-3">
               {printSides.map((side) => (
                 <ChoiceButton
@@ -247,7 +247,7 @@ export default function QuoteConfigurator() {
       </section>
 
       <aside className="card h-fit p-5">
-        <h2 className="text-lg font-black text-leaf">Working Store Estimate</h2>
+        <h2 className="text-lg font-black text-leaf">Working Shop Estimate</h2>
         <Summary estimate={estimate} compact />
       </aside>
     </div>

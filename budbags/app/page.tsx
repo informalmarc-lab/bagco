@@ -5,10 +5,10 @@ import ProductProgramCard from '@/components/ProductProgramCard'
 import { contactInfo, printPrograms, productImages } from '@/lib/products'
 
 const painPoints = [
-  'Plastic bag bans like California\'s SB 1053 are pushing dispensary operators toward paper.',
-  'Your logo at the counter turns every checkout bag into a brand touchpoint.',
-  'Factory-direct supply helps protect margin when packaging costs keep creeping up.',
-  'Custom print for brand building, stock bags for the weeks when inventory gets tight.',
+  'Exit-bag rules and plastic bans are pushing cannabis shops toward paper that still looks intentional.',
+  'Your logo should leave with every eighth, pre-roll pack, edible, and pickup order.',
+  'Factory-direct supply helps protect margin when packaging costs start eating into basket size.',
+  'Custom print for the house brand, stock bags for the weeks when the back room is running low.',
 ]
 
 export default function HomePage() {
@@ -18,10 +18,10 @@ export default function HomePage() {
         <div className="container-page grid gap-10 py-12 md:py-16 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
           <div>
             <h1 className="text-4xl font-black leading-tight text-leaf md:text-6xl">
-              Paper bags for dispensary owners who need checkout to look compliant and branded.
+              Paper exit bags for cannabis shops that need checkout to look legit.
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-7 text-mute md:text-lg">
-              Bud Bags helps independent dispensaries move from plastic carryout to paper without losing brand presence at the counter. Get custom print for your store identity, stock bags for urgent coverage, and real follow-up from people who understand reorder pressure.
+              Bud Bags helps independent dispensaries, delivery operators, and smoke shops move from plastic carryout to paper without losing the shop vibe at the counter. Get branded bags for your logo, plain stock when inventory is tight, and follow-up from people who understand budtenders, pickup shelves, and last-minute reorders.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Link href="/quote" className="btn-primary">Build a Quote</Link>
@@ -29,7 +29,7 @@ export default function HomePage() {
             </div>
             <div className="mt-7 grid max-w-2xl gap-3 sm:grid-cols-3">
               <Stat value="4 cases" label="Standard minimum" />
-              <Stat value="24 hrs" label="Follow-up target" />
+              <Stat value="24 hrs" label="Quote follow-up" />
               <Stat value="4 weeks" label="After proof approval" />
             </div>
           </div>
@@ -61,9 +61,9 @@ export default function HomePage() {
       <section className="container-page py-10">
         <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
           <div>
-            <h2 className="text-3xl font-black text-leaf">Custom print when your bag needs to carry the store name.</h2>
+            <h2 className="text-3xl font-black text-leaf">Custom print when the bag needs to feel like your shop.</h2>
             <p className="mt-2 max-w-3xl text-sm leading-6 text-mute">
-              Pick the print colors, size, and case count that match your checkout volume. The quote shows setup fees and freight placeholders before you send anything in.
+              Pick print colors, bag size, and case count around how your shop actually moves flower, pre-rolls, gummies, carts, and pickup orders. The quote shows setup fees and freight placeholders before you send anything in.
             </p>
           </div>
           <Link href="/products" className="btn-secondary">See All Prices</Link>
@@ -78,17 +78,17 @@ export default function HomePage() {
       <section className="container-page py-10">
         <div className="grid gap-6 rounded-lg border border-line bg-bone p-6 md:grid-cols-3 md:p-8">
           <div>
-            <h2 className="text-2xl font-black text-leaf">Built around the dispensary counter.</h2>
+            <h2 className="text-2xl font-black text-leaf">Built around real cannabis retail.</h2>
           </div>
           <div className="md:col-span-2">
             <p className="text-sm leading-6 text-mute md:text-base">
-              The bag has to work for budtenders, pickup orders, compliance conversations, and the shopper walking out the door. Bud Bags keeps the quote focused on what owners and purchasing managers actually decide: size, color count, quantity, print placement, artwork, freight, and reorder timing.
+              The bag has to work for budtenders, pickup orders, exit-bag checks, and the customer walking out with product. Bud Bags keeps the quote focused on what owners and purchasing managers actually decide: size, color count, quantity, print placement, artwork, freight, and reorder timing.
             </p>
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
-              <Rule text="30-50# machine-finished paper for daily dispensary checkout use" />
-              <Rule text="Pinch-bottom with gusset and flat-bottom options for different order sizes" />
-              <Rule text="Front, back, and gusset printing for brand visibility at pickup" />
-              <Rule text="3-case trial option for owners testing paper before a larger rollout" />
+              <Rule text="30-50# machine-finished paper for daily dispensary and smoke shop checkout use" />
+              <Rule text="Pinch-bottom, gusset, and flat options for eighths, edibles, carts, and apparel add-ons" />
+              <Rule text="Front, back, and gusset printing for pickup shelves, walkout visibility, and house brands" />
+              <Rule text="3-case trial option for shops testing paper before a larger branded rollout" />
             </div>
           </div>
         </div>

@@ -5,9 +5,9 @@ export default function LeadCta() {
   return (
     <section className="container-page py-10">
       <div className="rounded-lg border border-leaf bg-leaf p-6 text-white md:p-8">
-        <h2 className="text-2xl font-black md:text-3xl">Price the bags your dispensary needs next.</h2>
+        <h2 className="text-2xl font-black md:text-3xl">Price the bags your shop needs next.</h2>
         <p className="mt-3 max-w-3xl text-sm leading-6 text-[#F4E8D8] md:text-base">
-          Build a custom print estimate for branded checkout bags, then send it over so freight, artwork, and reorder timing can be confirmed by a real person.
+          Build a custom print estimate for branded cannabis checkout bags, then send it over so freight, artwork, and reorder timing can be confirmed by a real person.
         </p>
         <div className="mt-5 flex flex-wrap gap-3">
           <Link href="/quote" className="inline-flex min-h-11 items-center justify-center rounded-md bg-white px-5 py-2.5 text-sm font-bold text-leaf hover:bg-[#F4E8D8]">

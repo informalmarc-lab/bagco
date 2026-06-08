@@ -8,7 +8,7 @@ import { printPrograms, stockBagProducts } from '@/lib/products'
 export const metadata: Metadata = {
   title: 'Bag Designs and Pricing',
   description:
-    'Compare custom printed paper bag programs and fast-ship stock bags for dispensary owners and purchasing managers.',
+    'Compare custom printed paper exit bag programs and fast-ship stock bags for dispensaries, smoke shops, and cannabis buyers.',
 }
 
 const rules = [
@@ -19,8 +19,8 @@ const rules = [
   'FSC rates: zones 2-3 = 5%, zones 4-6 = 7.5%, zones 7-8 = 10%.',
   'Under 8 cases: standard UPS Ground rates are added to invoice.',
   'Bag sizes cannot be combined for quantity pricing.',
-  'Printing available front, back, and gussets for dispensary counter branding.',
-  '30-50# machine-finished paper.',
+  'Printing available front, back, and gussets for dispensary, smoke shop, and delivery branding.',
+  '30-50# machine-finished paper for daily checkout use.',
   'About 4 weeks after proof approval.',
 ]
 
@@ -29,9 +29,9 @@ export default function ProductsPage() {
     <>
       <section className="border-b border-line bg-bone">
         <div className="container-page py-12">
-          <h1 className="text-4xl font-black text-leaf md:text-5xl">Dispensary Bag Designs and Pricing</h1>
+          <h1 className="text-4xl font-black text-leaf md:text-5xl">Cannabis Bag Designs and Pricing</h1>
           <p className="mt-4 max-w-3xl text-base leading-7 text-mute">
-            Use custom print when you want your logo at the counter. Use stock bags when the store needs inventory now. Either way, the pricing is built for dispensary owners who need fast decisions and clean reorders.
+            Use custom print when your shop wants a bag that feels like the brand. Use stock bags when the floor needs inventory now. Either way, the pricing is built for cannabis operators who need fast decisions, clean reorders, and packaging that works at the register.
           </p>
         </div>
       </section>
@@ -44,9 +44,9 @@ export default function ProductsPage() {
 
       <section className="container-page py-10">
         <div className="mb-5">
-          <h2 className="text-3xl font-black text-leaf">Stock bags for immediate coverage</h2>
+          <h2 className="text-3xl font-black text-leaf">Stock bags for when the floor is almost out</h2>
           <p className="mt-2 max-w-3xl text-sm leading-6 text-mute">
-            Keep checkout moving while custom bags are in proofing or production. These are ready-to-ship stock options for dispensary owners who cannot wait four weeks to replenish paper.
+            Keep checkout moving while custom bags are in proofing or production. These are ready-to-ship stock options for shops that cannot wait four weeks to cover flower, pre-roll, edible, cart, and pickup orders.
           </p>
         </div>
         <div className="grid gap-4">
@@ -60,7 +60,7 @@ export default function ProductsPage() {
         <div className="mb-5">
           <h2 className="text-3xl font-black text-leaf">Custom print per-size case pricing</h2>
           <p className="mt-2 text-sm leading-6 text-mute">
-            Primary dispensary sizes are #25 and #28 because they handle most checkout and pickup orders. Size mix matters operationally, but size quantities are priced separately.
+            Primary cannabis retail sizes are #25 and #28 because they handle most checkout and pickup orders without feeling oversized. Size mix matters operationally, but size quantities are priced separately.
           </p>
         </div>
         <PricingTable />
@@ -77,7 +77,7 @@ export default function ProductsPage() {
             ))}
           </div>
           <p className="mt-5 text-sm leading-6 text-mute">
-            A 3-case minimum option exists for dispensary owners who want to test a branded paper program before committing to a full run.
+            A 3-case minimum option exists for cannabis retailers who want to test a branded paper program before committing to a full run.
           </p>
         </div>
       </section>

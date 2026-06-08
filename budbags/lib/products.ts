@@ -41,7 +41,7 @@ export const contactInfo = {
   phoneHref: 'tel:+17048629256',
   textHref: 'sms:+17048629256',
   address: '912 Houston Drive, Monroe, NC 28110',
-  support: 'Monday-Friday support, follow-up within 24 hours',
+  support: 'Monday-Friday support, cannabis bag follow-up within 24 hours',
   email: 'marc@bagsupplyco.com',
   domain: 'budbags.net',
 }
@@ -77,7 +77,7 @@ export const printPrograms: PrintProgram[] = [
     colorCount: '1-color print',
     startingAt: 95.56,
     image: 'https://bagsupplyco.com/catalog/custom/1-color/CBC-25-FC1C.webp',
-    description: 'A clean logo bag for dispensary owners who want the checkout handoff branded without overbuilding the first run.',
+    description: 'A clean logo bag for shops that want every walkout order branded without overbuilding the first run.',
     prices: oneAndTwoColorPrices,
   },
   {
@@ -86,7 +86,7 @@ export const printPrograms: PrintProgram[] = [
     colorCount: '2-color print',
     startingAt: 95.56,
     image: 'https://bagsupplyco.com/catalog/custom/2-color/CBC-25-FC2C.webp',
-    description: 'The balanced program for dispensary brand marks that need contrast at the counter and still need practical case pricing.',
+    description: 'The balanced program for cannabis brand marks that need contrast at the counter and still need practical case pricing.',
     prices: { ...oneAndTwoColorPrices, '23': 117.39 },
   },
   {
@@ -95,7 +95,7 @@ export const printPrograms: PrintProgram[] = [
     colorCount: '3-color print',
     startingAt: 119.46,
     image: 'https://bagsupplyco.com/catalog/custom/3-color/CBC-25-FC3C.webp',
-    description: 'A stronger checkout bag for dispensaries with artwork, house brands, or multi-store programs that need more color depth.',
+    description: 'A stronger checkout bag for dispensaries, house brands, delivery menus, or multi-store groups that need more color depth.',
     prices: {
       '21': 119.46,
       '22': 149.76,
@@ -116,10 +116,10 @@ export const stockBagProducts: StockBagProduct[] = [
     name: '"Thank You" Design',
     label: 'Stock Bag 1 - TY',
     image: 'https://bagsupplyco.com/catalog/pharmacy/ty/TY-22-FRONT.webp',
-    positioning: 'Need bags fast? Ship today while your custom order is in production',
-    shipping: 'Stock bag - ships same day before 1 PM ET, no custom print',
+    positioning: 'Need bags fast? Cover the register while your custom order is in production',
+    shipping: 'Stock paper bag - ships same day before 1 PM ET, no custom print',
     description:
-      'A fast counter bag for dispensary owners who need clean, ready-to-ship paper bags while the branded run is being proofed or printed.',
+      'A fast counter bag for cannabis retailers who need clean, ready-to-ship paper while the branded run is being proofed or printed.',
     sizes: [
       { sku: '#25', dimensions: '6" x 4" x 11"', quantity: '1,000/case', price: 65.91 },
       { sku: '#26', dimensions: '7" x 4" x 14"', quantity: '1,000/case', price: 102.29 },
@@ -131,10 +131,10 @@ export const stockBagProducts: StockBagProduct[] = [
     name: 'Dispensary Exit Bag',
     label: 'Stock Bag 2 - DS',
     image: 'https://cardinalbag.store/cdn/shop/products/21-ds.jpg?v=1677602787',
-    positioning: 'Plain exit bags for dispensaries that need to stay compliant and move fast',
+    positioning: 'Plain exit bags for dispensaries that need compliant-feeling coverage fast',
     shipping: 'Plain stock exit bag - no print, ships fast',
     description:
-      'A no-print exit bag option for dispensary teams that need paper inventory on hand for checkout, pickup, and short-notice reorder coverage.',
+      'A no-print exit bag option for teams that need paper inventory on hand for checkout, pickup, delivery staging, and short-notice reorder coverage.',
     sizes: [
       { sku: '#21-DS', dimensions: '3.5" x 1.5" x 10"', quantity: '1,000 qty', price: 36 },
       { sku: '#12-DS', dimensions: '7" x 10"', quantity: '1,000 qty', price: 45 },
