@@ -8,8 +8,7 @@ module.exports = {
       env: {
         NODE_ENV: 'production',
         PORT: '3152',
-        QUOTE_TO_EMAIL: 'marc@bagsupplyco.com',
-        QUOTE_FROM_EMAIL: 'quotes@budbags.net',
+        QUOTE_WEBHOOK_URL: '',
       },
     },
   ],
