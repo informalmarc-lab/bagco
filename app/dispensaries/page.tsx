@@ -298,7 +298,7 @@ export default function DispensariesLandingPage() {
                   <div className="relative aspect-square overflow-hidden rounded-md bg-white">
                     <FallbackImage
                       src={product.image}
-                      fallbackSrc="/images/catalog/placeholder.svg"
+                      fallbackSrc="/images/catalog/pla2ceholder.svg"
                       alt={getCatalogProductAlt(product)}
                       fill
                       className="object-cover"

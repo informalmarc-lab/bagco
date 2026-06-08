@@ -10,10 +10,10 @@ export default function LeadCta() {
           Build a custom print estimate for branded cannabis checkout bags, then send it over so freight, artwork, and reorder timing can be confirmed by a real person.
         </p>
         <div className="mt-5 flex flex-wrap gap-3">
-          <Link href="/quote" className="inline-flex min-h-11 items-center justify-center rounded-md bg-white px-5 py-2.5 text-sm font-bold text-leaf hover:bg-[#F4E8D8]">
+          <Link href="/quote" className="inline-flex min-h-11 items-center justify-center rounded-md bg-white px-5 py-2.5 text-sm font-bold text-leaf hover:bg-[#F4E8D8] focus:outline-none focus:ring-2 focus:ring-kraft focus:ring-offset-2 focus:ring-offset-leaf">
             Build Custom Quote
           </Link>
-          <a href={contactInfo.textHref} className="inline-flex min-h-11 items-center justify-center rounded-md border border-white/30 px-5 py-2.5 text-sm font-bold text-white hover:bg-white/10">
+          <a href={contactInfo.textHref} className="inline-flex min-h-11 items-center justify-center rounded-md border border-white/40 px-5 py-2.5 text-sm font-bold text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-kraft focus:ring-offset-2 focus:ring-offset-leaf">
             Text {contactInfo.phone}
           </a>
         </div>
