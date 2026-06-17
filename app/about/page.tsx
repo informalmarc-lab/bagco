@@ -55,7 +55,7 @@ export default function AboutPage() {
         <div className="grid gap-4 md:grid-cols-3">
           {principles.map((item) => (
             <article key={item.title} className="tonal-panel">
-              <h2 className="text-2xl font-black text-[#1E4D2B]">{item.title}</h2>
+              <h2 className="font-serif text-2xl text-brand-600">{item.title}</h2>
               <p className="mt-3 muted-text">{item.copy}</p>
             </article>
           ))}
@@ -67,7 +67,7 @@ export default function AboutPage() {
           <h2 className="section-title">What We Deliver</h2>
           <div className="mt-6 grid gap-3 md:grid-cols-2">
             {capabilityList.map((item) => (
-              <p key={item} className="surface-card rounded-2xl p-4 text-sm font-semibold text-[#5F4D33]">
+              <p key={item} className="surface-card rounded-2xl p-4 text-sm font-semibold text-muted">
                 {item}
               </p>
             ))}
@@ -107,7 +107,7 @@ export default function AboutPage() {
                 'Dispensaries and smoke shops',
                 'Distributors needing blind ship or drop ship support',
               ].map((item) => (
-                <p key={item} className="surface-card rounded-2xl px-4 py-3 text-sm font-semibold text-[#1E4D2B]">
+                <p key={item} className="surface-card rounded-2xl px-4 py-3 text-sm font-semibold text-brand-600">
                   {item}
                 </p>
               ))}
@@ -136,8 +136,8 @@ export default function AboutPage() {
               },
             ].map((item) => (
               <article key={item.title} className="surface-card rounded-2xl p-4">
-                <h3 className="text-lg font-black text-[#1E4D2B]">{item.title}</h3>
-                <p className="mt-2 text-sm text-[#5F4D33]">{item.copy}</p>
+                <h3 className="font-serif text-lg text-brand-600">{item.title}</h3>
+                <p className="mt-2 text-sm text-muted">{item.copy}</p>
               </article>
             ))}
           </div>

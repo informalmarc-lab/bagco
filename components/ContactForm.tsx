@@ -77,8 +77,8 @@ export default function ContactForm() {
     return (
       <section className="tonal-panel text-center">
         <p className="text-5xl">{'\u2705'}</p>
-        <h2 className="mt-4 text-3xl font-black text-[#1E4D2B]">Message sent. We&apos;ll be in touch soon.</h2>
-        <p className="mt-3 text-sm text-[#5F4D33]">
+        <h2 className="mt-4 font-serif text-3xl text-brand-600">Message sent. We&apos;ll be in touch soon.</h2>
+        <p className="mt-3 text-sm text-muted">
           Thanks for reaching out. We&apos;ll review your details and follow up shortly. You can also text us directly at
           {' '}
           (704) 862-9256 for a faster response.
@@ -92,14 +92,14 @@ export default function ContactForm() {
 
   return (
     <section className="tonal-panel">
-      <h2 className="text-2xl font-black text-[#1E4D2B]">Contact Us</h2>
-      <p className="mt-2 text-sm text-[#5F4D33]">
+      <h2 className="font-serif text-2xl text-brand-600">Contact Us</h2>
+      <p className="mt-2 text-sm text-muted">
         Tell us your requirements and we&apos;ll respond with a structured recommendation.
       </p>
 
       <form onSubmit={submit} className="mt-5 grid gap-4">
         <div className="grid gap-4 md:grid-cols-2">
-          <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
+          <label className="grid gap-1 text-sm font-semibold text-muted">
             Full Name *
             <input
               required
@@ -107,10 +107,10 @@ export default function ContactForm() {
               autoComplete="name"
               value={form.name}
               onChange={(event) => setForm((prev) => ({ ...prev, name: event.target.value }))}
-              className="rounded-md border border-[#C4935A66] px-3 py-2"
+              className="rounded-xl border border-kraft-400/30 px-3.5 py-2.5"
             />
           </label>
-          <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
+          <label className="grid gap-1 text-sm font-semibold text-muted">
             Email Address *
             <input
               required
@@ -118,35 +118,35 @@ export default function ContactForm() {
               autoComplete="email"
               value={form.email}
               onChange={(event) => setForm((prev) => ({ ...prev, email: event.target.value }))}
-              className="rounded-md border border-[#C4935A66] px-3 py-2"
+              className="rounded-xl border border-kraft-400/30 px-3.5 py-2.5"
             />
           </label>
-          <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
+          <label className="grid gap-1 text-sm font-semibold text-muted">
             Phone Number
             <input
               type="tel"
               autoComplete="tel"
               value={form.phone}
               onChange={(event) => setForm((prev) => ({ ...prev, phone: event.target.value }))}
-              className="rounded-md border border-[#C4935A66] px-3 py-2"
+              className="rounded-xl border border-kraft-400/30 px-3.5 py-2.5"
             />
           </label>
-          <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
+          <label className="grid gap-1 text-sm font-semibold text-muted">
             Company Name
             <input
               type="text"
               autoComplete="organization"
               value={form.company}
               onChange={(event) => setForm((prev) => ({ ...prev, company: event.target.value }))}
-              className="rounded-md border border-[#C4935A66] px-3 py-2"
+              className="rounded-xl border border-kraft-400/30 px-3.5 py-2.5"
             />
           </label>
-          <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
+          <label className="grid gap-1 text-sm font-semibold text-muted">
             Industry
             <select
               value={form.industry}
               onChange={(event) => setForm((prev) => ({ ...prev, industry: event.target.value }))}
-              className="rounded-md border border-[#C4935A66] px-3 py-2"
+              className="rounded-xl border border-kraft-400/30 px-3.5 py-2.5"
             >
               {INDUSTRY_OPTIONS.map((option) => (
                 <option key={option} value={option}>
@@ -155,12 +155,12 @@ export default function ContactForm() {
               ))}
             </select>
           </label>
-          <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
+          <label className="grid gap-1 text-sm font-semibold text-muted">
             Shipping Preference
             <select
               value={form.shippingPreference}
               onChange={(event) => setForm((prev) => ({ ...prev, shippingPreference: event.target.value }))}
-              className="rounded-md border border-[#C4935A66] px-3 py-2"
+              className="rounded-xl border border-kraft-400/30 px-3.5 py-2.5"
             >
               {SHIPPING_OPTIONS.map((option) => (
                 <option key={option} value={option}>
@@ -169,29 +169,29 @@ export default function ContactForm() {
               ))}
             </select>
           </label>
-          <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
+          <label className="grid gap-1 text-sm font-semibold text-muted">
             Bag Type
             <input
               type="text"
               placeholder="Pharmacy, Veterinary, Custom, etc."
               value={form.bagType}
               onChange={(event) => setForm((prev) => ({ ...prev, bagType: event.target.value }))}
-              className="rounded-md border border-[#C4935A66] px-3 py-2"
+              className="rounded-xl border border-kraft-400/30 px-3.5 py-2.5"
             />
           </label>
-          <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
+          <label className="grid gap-1 text-sm font-semibold text-muted">
             Quantity
             <input
               type="text"
               value={form.quantity}
               onChange={(event) => setForm((prev) => ({ ...prev, quantity: event.target.value }))}
-              className="rounded-md border border-[#C4935A66] px-3 py-2"
+              className="rounded-xl border border-kraft-400/30 px-3.5 py-2.5"
             />
           </label>
         </div>
 
-        <fieldset className="grid gap-2 text-sm font-semibold text-[#5F4D33]">
-          <legend className="text-sm font-semibold text-[#5F4D33]">Existing customer?</legend>
+        <fieldset className="grid gap-2 text-sm font-semibold text-muted">
+          <legend className="text-sm font-semibold text-muted">Existing customer?</legend>
           <div className="flex flex-wrap gap-4">
             {['Yes', 'No'].map((option) => (
               <label key={option} className="inline-flex items-center gap-2">
@@ -210,14 +210,14 @@ export default function ContactForm() {
           </div>
         </fieldset>
 
-        <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
+        <label className="grid gap-1 text-sm font-semibold text-muted">
           Message *
           <textarea
             required
             rows={5}
             value={form.message}
             onChange={(event) => setForm((prev) => ({ ...prev, message: event.target.value }))}
-            className="rounded-md border border-[#C4935A66] px-3 py-2"
+            className="rounded-xl border border-kraft-400/30 px-3.5 py-2.5"
           />
         </label>
 
