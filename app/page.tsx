@@ -123,7 +123,7 @@ export default function Home() {
               </p>
               <ul className="mt-6 grid max-w-3xl gap-3 text-sm text-[#4B3E2E] md:grid-cols-3">
                 {operationalPoints.map((item) => (
-                  <li key={item} className="min-w-0 rounded-md border border-[#D8C5A7] bg-white px-4 py-3 leading-6">
+                  <li key={item} className="min-w-0 rounded-2xl border border-kraft-300/60 bg-white px-4 py-3 leading-6">
                     {item}
                   </li>
                 ))}
@@ -142,7 +142,7 @@ export default function Home() {
             </div>
 
             <aside className="hero-panel p-4">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-md border border-[#D8C5A7] bg-[#F6EFE5]">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-kraft-300/60 bg-[#F6EFE5]">
                 <FallbackImage
                   src={HERO_IMAGE}
                   fallbackSrc="/images/catalog/placeholder.svg"
@@ -155,19 +155,19 @@ export default function Home() {
               </div>
               <div className="mt-4 space-y-4 text-sm">
                 <div className="border-b border-[#E7D9C3] pb-4">
-                  <p className="font-black text-[#1E4D2B]">Custom-first buying path</p>
-                  <p className="mt-2 text-[#5F4D33]">
+                  <p className="font-black text-brand-600">Custom-first buying path</p>
+                  <p className="mt-2 text-muted">
                     Branded paper bags first, then stock replenishment and distributor support when the program needs it.
                   </p>
                 </div>
                 <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
                   <div>
-                    <p className="font-black text-[#1E4D2B]">Custom starting price</p>
-                    <p className="mt-1 text-[#5F4D33]">Featured custom bags start at {money(featuredProducts[0]?.startingPrice || 0)} per case.</p>
+                    <p className="font-black text-brand-600">Custom starting price</p>
+                    <p className="mt-1 text-muted">Featured custom bags start at {money(featuredProducts[0]?.startingPrice || 0)} per case.</p>
                   </div>
                   <div>
-                    <p className="font-black text-[#1E4D2B]">Quote support</p>
-                    <p className="mt-1 text-[#5F4D33]">Artwork, sizing, and production guidance are available before the order is locked in.</p>
+                    <p className="font-black text-brand-600">Quote support</p>
+                    <p className="mt-1 text-muted">Artwork, sizing, and production guidance are available before the order is locked in.</p>
                   </div>
                 </div>
               </div>
@@ -177,10 +177,10 @@ export default function Home() {
       </section>
 
       <section className="section-container py-10">
-        <div className="rounded-md border border-[#D8C5A7] bg-white p-4 md:p-5">
+        <div className="rounded-2xl border border-kraft-300/60 bg-white p-4 md:p-5">
           <div className="grid grid-cols-[repeat(auto-fit,minmax(210px,1fr))] gap-3">
             {trustProofItems.map((item) => (
-              <div key={item} className="min-w-0 rounded-md border border-[#E7D9C3] bg-[#FCF8F2] px-4 py-3 text-sm font-semibold leading-6 text-[#5F4D33]">
+              <div key={item} className="min-w-0 rounded-2xl border border-[#E7D9C3] bg-[#FCF8F2] px-4 py-3 text-sm font-semibold leading-6 text-muted">
                 {item}
               </div>
             ))}
@@ -189,11 +189,11 @@ export default function Home() {
       </section>
 
       <section className="section-container py-14">
-        <div className="rounded-[10px] border border-[#C4935A66] bg-[#1E4D2B] px-6 py-8 text-[#FAF6F0] md:px-8">
+        <div className="rounded-[24px] border border-kraft-400/40 bg-brand-600 px-6 py-8 text-[#FAF6F0] md:px-8">
           <div className="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_320px] lg:items-end">
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.11em] text-[#D8C5A7]">Custom Bags</p>
-              <h2 className="mt-3 text-3xl font-black tracking-[-0.04em] text-white md:text-4xl">
+              <p className="text-xs font-black uppercase tracking-[0.11em] text-accent-300">Custom Bags</p>
+              <h2 className="mt-3 font-serif text-3xl tracking-[-0.01em] text-white md:text-4xl">
                 Custom printed bags should be the homepage priority, not a side option.
               </h2>
               <p className="mt-4 max-w-3xl text-sm leading-7 text-[#E9DFD0] md:text-base">
@@ -201,7 +201,7 @@ export default function Home() {
               </p>
               <div className="mt-5 grid gap-3 md:grid-cols-3">
                 {customBagHighlights.map((item) => (
-                  <div key={item} className="rounded-md border border-[#4A6A51] bg-[#204D2C] p-4 text-sm leading-6 text-[#F4E8D8]">
+                  <div key={item} className="rounded-2xl border border-white/12 bg-brand-700/60 p-4 text-sm leading-6 text-[#F4E8D8]">
                     {item}
                   </div>
                 ))}
@@ -216,8 +216,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="rounded-md border border-[#4A6A51] bg-[#204D2C] p-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.09em] text-[#D8C5A7]">Why Push It</p>
+            <div className="rounded-2xl border border-white/12 bg-brand-700/60 p-5">
+              <p className="text-xs font-semibold uppercase tracking-[0.09em] text-accent-300">Why Push It</p>
               <div className="mt-4 space-y-4 text-sm">
                 <div>
                   <p className="font-black text-white">Higher-value buying path</p>
@@ -238,19 +238,19 @@ export default function Home() {
       </section>
 
       <section className="section-container py-14">
-        <div className="rounded-[10px] border border-[#D8C5A7] bg-white px-6 py-8 md:px-8">
+        <div className="rounded-[24px] border border-kraft-300/60 bg-white px-6 py-8 md:px-8">
           <div className="grid gap-6 lg:grid-cols-[minmax(0,1.15fr)_320px] lg:items-end">
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.11em] text-[#B5813A]">Dispensaries</p>
-              <h2 className="mt-3 text-3xl font-black tracking-[-0.04em] text-[#1E4D2B] md:text-4xl">
+              <p className="text-xs font-black uppercase tracking-[0.11em] text-accent-500">Dispensaries</p>
+              <h2 className="mt-3 font-serif text-3xl tracking-[-0.01em] text-brand-600 md:text-4xl">
                 Dispensary buyers need a cleaner path into bags, mylar, and compliance.
               </h2>
-              <p className="mt-4 max-w-3xl text-sm leading-7 text-[#5F4D33] md:text-base">
+              <p className="mt-4 max-w-3xl text-sm leading-7 text-muted md:text-base">
                 This path is for operators who are balancing compliance, checkout presentation, and reorder speed. Lead with the dispensary packaging route when the buyer needs more than a plain paper bag.
               </p>
               <div className="mt-5 grid gap-3 md:grid-cols-3">
                 {dispensaryHighlights.map((item) => (
-                  <div key={item} className="rounded-md border border-[#E2D4BF] bg-[#FFFCF7] p-4 text-sm leading-6 text-[#5F4D33]">
+                  <div key={item} className="rounded-2xl border border-[#E2D4BF] bg-[#FFFCF7] p-4 text-sm leading-6 text-muted">
                     {item}
                   </div>
                 ))}
@@ -268,20 +268,20 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="rounded-md border border-[#D8C5A7] bg-[#FAF6F0] p-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.09em] text-[#7A6548]">Best Use Case</p>
+            <div className="rounded-2xl border border-kraft-300/60 bg-[#FAF6F0] p-5">
+              <p className="text-xs font-semibold uppercase tracking-[0.09em] text-accent-600">Best Use Case</p>
               <div className="mt-4 space-y-4 text-sm">
                 <div>
-                  <p className="font-black text-[#1E4D2B]">Fast stock replenishment</p>
-                  <p className="mt-1 text-[#5F4D33]">Keep checkout moving with stocked exit bags and ready-to-order packaging basics.</p>
+                  <p className="font-black text-brand-600">Fast stock replenishment</p>
+                  <p className="mt-1 text-muted">Keep checkout moving with stocked exit bags and ready-to-order packaging basics.</p>
                 </div>
                 <div>
-                  <p className="font-black text-[#1E4D2B]">Compliance support</p>
-                  <p className="mt-1 text-[#5F4D33]">Layer in labels and opaque packaging when local workflow requirements demand it.</p>
+                  <p className="font-black text-brand-600">Compliance support</p>
+                  <p className="mt-1 text-muted">Layer in labels and opaque packaging when local workflow requirements demand it.</p>
                 </div>
                 <div>
-                  <p className="font-black text-[#1E4D2B]">Custom upgrade path</p>
-                  <p className="mt-1 text-[#5F4D33]">Start with stock if needed, then move into custom print once the reorder pattern is stable.</p>
+                  <p className="font-black text-brand-600">Custom upgrade path</p>
+                  <p className="mt-1 text-muted">Start with stock if needed, then move into custom print once the reorder pattern is stable.</p>
                 </div>
               </div>
             </div>
@@ -293,15 +293,15 @@ export default function Home() {
         <div className="grid gap-5 lg:grid-cols-[0.88fr_1.12fr]">
           <div>
             <h2 className="section-title">Choose the category that matches how your team buys.</h2>
-            <p className="mt-3 max-w-2xl text-sm leading-7 text-[#5F4D33]">
+            <p className="mt-3 max-w-2xl text-sm leading-7 text-muted">
               The site is organized around practical buying paths, but custom print should lead the conversation when the goal is higher-value, repeatable business.
             </p>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
             {categoryLinks.map((item) => (
-              <Link key={item.href} href={item.href} className="surface-card rounded-md p-4 transition hover:border-[#C4935A] hover:bg-[#FFFCF7]">
-                <p className="font-black text-[#1E4D2B]">{item.label}</p>
-                <p className="mt-2 text-sm text-[#5F4D33]">{item.note}</p>
+              <Link key={item.href} href={item.href} className="surface-card p-5 transition hover:border-accent-400/60 hover:bg-[#FFFCF7]">
+                <p className="font-black text-brand-600">{item.label}</p>
+                <p className="mt-2 text-sm text-muted">{item.note}</p>
               </Link>
             ))}
           </div>
@@ -311,10 +311,10 @@ export default function Home() {
       <section className="section-container py-14">
         <div className="grid gap-4 md:grid-cols-3">
           {processSteps.map((step, index) => (
-            <article key={step.title} className="tonal-panel border-l-4 border-l-[#B5813A]">
-              <p className="text-sm font-black text-[#B5813A]">0{index + 1}</p>
-              <h2 className="mt-3 text-xl font-black text-[#1E4D2B]">{step.title}</h2>
-              <p className="mt-3 text-sm leading-7 text-[#5F4D33]">{step.detail}</p>
+            <article key={step.title} className="tonal-panel border-l-4 border-l-accent-500">
+              <p className="text-sm font-black text-accent-500">0{index + 1}</p>
+              <h2 className="mt-3 font-serif text-xl text-brand-600">{step.title}</h2>
+              <p className="mt-3 text-sm leading-7 text-muted">{step.detail}</p>
             </article>
           ))}
         </div>
@@ -324,7 +324,7 @@ export default function Home() {
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <h2 className="section-title">Featured custom-first products</h2>
-            <p className="mt-3 text-sm text-[#5F4D33]">
+            <p className="mt-3 text-sm text-muted">
               These featured picks lean custom first so buyers see the higher-value path before they drift into plain stock ordering.
             </p>
           </div>
@@ -351,9 +351,9 @@ export default function Home() {
                 />
               </div>
               <div className="flex flex-1 flex-col p-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#7A6548]">SKU {product.sku}</p>
-                <h3 className="mt-2 text-lg font-black text-[#1E4D2B]">{product.name}</h3>
-                <p className="mt-2 text-sm text-[#5F4D33]">Starting at {money(product.startingPrice)} per case</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.08em] text-accent-600">SKU {product.sku}</p>
+                <h3 className="mt-2 font-serif text-lg text-brand-600">{product.name}</h3>
+                <p className="mt-2 text-sm text-muted">Starting at {money(product.startingPrice)} per case</p>
                 <Link href={getCatalogOverviewPath(product)} className="btn-secondary mt-5 w-full justify-center">
                   View Product
                 </Link>
@@ -369,7 +369,7 @@ export default function Home() {
         <div className="grid gap-6 lg:grid-cols-[360px_minmax(0,1fr)]">
           <div className="tonal-panel">
             <h2 className="section-title">Build your quote</h2>
-            <p className="mt-3 text-sm leading-7 text-[#5F4D33]">
+            <p className="mt-3 text-sm leading-7 text-muted">
               Send the basics and we will point you to the right stock category, custom route, or distributor program.
             </p>
           </div>
