@@ -24,9 +24,9 @@ export default function SeoLandingPage({ h1, intro, bullets, links }: SeoLanding
       </section>
 
       <section className="section-container py-20">
-        <div className="grid gap-3 md:grid-cols-2">
+        <div className="grid gap-4 md:grid-cols-2">
           {bullets.map((bullet) => (
-            <div key={bullet} className="surface-card rounded-2xl p-4 text-sm font-semibold text-[#5F4D33]">
+            <div key={bullet} className="surface-card p-5 text-sm font-semibold text-muted">
               {bullet}
             </div>
           ))}
@@ -48,9 +48,9 @@ export default function SeoLandingPage({ h1, intro, bullets, links }: SeoLanding
       </section>
 
       <section className="section-container pt-8">
-        <div className="flex flex-wrap gap-2 text-sm font-semibold text-[#5F4D33]">
+        <div className="flex flex-wrap gap-2 text-sm font-semibold text-muted">
           {links.map((link) => (
-            <Link key={link.href} href={link.href} className="rounded-xl border border-[#C4935A66] bg-white px-3 py-2 hover:bg-[#FAF6F0]">
+            <Link key={link.href} href={link.href} className="rounded-full border border-kraft-400/30 bg-white px-4 py-2 hover:bg-cream">
               {link.label}
             </Link>
           ))}

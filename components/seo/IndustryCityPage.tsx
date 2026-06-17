@@ -100,27 +100,27 @@ export default function IndustryCityPage({
       <section className="section-container py-20">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           <div className="tonal-panel">
-            <p className="text-xs font-black uppercase tracking-[0.12em] text-[#B5813A]">Local presence</p>
-            <p className="mt-3 text-3xl font-black text-[#1E4D2B]">{formatNumber(industryCount)}</p>
+            <p className="text-xs font-black uppercase tracking-[0.12em] text-accent-500">Local presence</p>
+            <p className="mt-3 font-serif text-3xl text-brand-600">{formatNumber(industryCount)}</p>
             <p className="mt-2 text-sm muted-text">
               County CBP establishments for NAICS {industry.naics} in {counts.countyName}.
             </p>
           </div>
           <div className="tonal-panel">
-            <p className="text-xs font-black uppercase tracking-[0.12em] text-[#B5813A]">Delivery timeline</p>
-            <p className="mt-3 text-xl font-black text-[#1E4D2B]">{delivery.timeline}</p>
+            <p className="text-xs font-black uppercase tracking-[0.12em] text-accent-500">Delivery timeline</p>
+            <p className="mt-3 font-serif text-xl text-brand-600">{delivery.timeline}</p>
             <p className="mt-2 text-sm muted-text">{delivery.distanceLabel}</p>
           </div>
           <div className="tonal-panel">
-            <p className="text-xs font-black uppercase tracking-[0.12em] text-[#B5813A]">Pickup option</p>
-            <p className="mt-3 text-xl font-black text-[#1E4D2B]">
+            <p className="text-xs font-black uppercase tracking-[0.12em] text-accent-500">Pickup option</p>
+            <p className="mt-3 font-serif text-xl text-brand-600">
               {city.pickupEligible ? 'Same-day pickup' : 'Pickup not available'}
             </p>
             <p className="mt-2 text-sm muted-text">{delivery.pickupLabel}</p>
           </div>
           <div className="tonal-panel">
-            <p className="text-xs font-black uppercase tracking-[0.12em] text-[#B5813A]">Wholesale alternatives</p>
-            <p className="mt-3 text-xl font-black text-[#1E4D2B]">{competitionLabel}</p>
+            <p className="text-xs font-black uppercase tracking-[0.12em] text-accent-500">Wholesale alternatives</p>
+            <p className="mt-3 font-serif text-xl text-brand-600">{competitionLabel}</p>
             <p className="mt-2 text-sm muted-text">
               {counts.competitionCount} paper/industrial supply wholesalers in {counts.countyName}.
             </p>
@@ -139,14 +139,14 @@ export default function IndustryCityPage({
 
       <section className="section-container pb-8">
         <h2 className="section-title">Recommended bag SKUs</h2>
-        <p className="mt-3 max-w-3xl text-sm leading-7 text-[#5F4D33]">
+        <p className="mt-3 max-w-3xl text-sm leading-7 text-muted">
           These are the most requested SKUs for {industry.marketLabel} orders, with pricing pulled directly
           from our live catalog.
         </p>
-        <div className="mt-6 overflow-x-auto">
+        <div className="mt-6 overflow-x-auto rounded-2xl border border-kraft-300/40 shadow-[var(--shadow-soft)]">
           <table className="min-w-[640px] w-full border-collapse text-sm">
             <thead>
-              <tr className="bg-[#1E4D2B] text-white">
+              <tr className="bg-brand-600 text-white">
                 <th className="px-4 py-3 text-left">SKU</th>
                 <th className="px-4 py-3 text-left">Bag</th>
                 <th className="px-4 py-3 text-left">Common sizes</th>
@@ -155,13 +155,13 @@ export default function IndustryCityPage({
             </thead>
             <tbody>
               {products.map((product) => (
-                <tr key={product.sku} className="border-b border-[#C4935A66] bg-white">
-                  <td className="px-4 py-3 font-semibold text-[#1E4D2B]">{product.sku}</td>
+                <tr key={product.sku} className="border-b border-kraft-400/30 bg-white">
+                  <td className="px-4 py-3 font-semibold text-brand-600">{product.sku}</td>
                   <td className="px-4 py-3 text-[#4B3E2E]">{product.name}</td>
                   <td className="px-4 py-3 text-[#4B3E2E]">
                     {product.sizeOptions.slice(0, 3).join(', ')}
                   </td>
-                  <td className="px-4 py-3 font-semibold text-[#1E4D2B]">{getPriceRange(product)}</td>
+                  <td className="px-4 py-3 font-semibold text-brand-600">{getPriceRange(product)}</td>
                 </tr>
               ))}
             </tbody>
@@ -174,7 +174,7 @@ export default function IndustryCityPage({
           <h2 className="section-title">Local {industry.marketLabel} FAQ</h2>
           <div className="mt-4 grid gap-4">
             <div>
-              <p className="font-semibold text-[#1E4D2B]">
+              <p className="font-semibold text-brand-600">
                 How fast can you deliver {industry.marketLabel} bags to {city.city}?
               </p>
               <p className="mt-2 text-sm leading-7 text-[#4B3E2E]">
@@ -182,7 +182,7 @@ export default function IndustryCityPage({
               </p>
             </div>
             <div>
-              <p className="font-semibold text-[#1E4D2B]">Is same-day pickup available?</p>
+              <p className="font-semibold text-brand-600">Is same-day pickup available?</p>
               <p className="mt-2 text-sm leading-7 text-[#4B3E2E]">
                 {city.pickupEligible
                   ? 'Yes. Orders picked before the daily cutoff can be staged for same-day pickup in Monroe, NC.'
@@ -190,7 +190,7 @@ export default function IndustryCityPage({
               </p>
             </div>
             <div>
-              <p className="font-semibold text-[#1E4D2B]">
+              <p className="font-semibold text-brand-600">
                 How many {industry.marketLabel} locations are nearby?
               </p>
               <p className="mt-2 text-sm leading-7 text-[#4B3E2E]">
@@ -199,7 +199,7 @@ export default function IndustryCityPage({
               </p>
             </div>
             <div>
-              <p className="font-semibold text-[#1E4D2B]">What sizes are most common?</p>
+              <p className="font-semibold text-brand-600">What sizes are most common?</p>
               <p className="mt-2 text-sm leading-7 text-[#4B3E2E]">
                 Most {industry.marketLabel} orders use {recommendedSizes.join(', ')} depending on item mix.
               </p>

@@ -150,18 +150,18 @@ export default function IndustrySolutionsSection() {
                   panelRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
                 }, 120)
               }}
-              className={`surface-card rounded-md p-5 text-left ${
+              className={`surface-card p-6 text-left transition-all hover:-translate-y-0.5 ${
                 isActive
-                  ? 'border-[#B5813A99]'
-                  : 'hover:border-[#C4935A66]'
+                  ? 'border-accent-500/60 shadow-[var(--shadow-pop)]'
+                  : 'hover:border-kraft-400/40'
               }`}
             >
-              <div className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-[#1E4D2B] text-[#F4E8D8]">
+              <div className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-brand-600 text-[#F4E8D8]">
                 <Icon id={industry.id} />
               </div>
-              <h3 className="mt-4 text-xl font-black text-[#1E4D2B]">{industry.title}</h3>
+              <h3 className="mt-4 font-serif text-xl text-brand-600">{industry.title}</h3>
               <p className="mt-2 text-sm muted-text">{industry.subtitle}</p>
-              <p className="mt-3 text-xs font-semibold text-[#7A6548]">{isActive ? 'Selected' : 'View details'}</p>
+              <p className="mt-3 text-xs font-semibold text-accent-600">{isActive ? 'Selected' : 'View details'}</p>
             </button>
           )
         })}
@@ -169,34 +169,34 @@ export default function IndustrySolutionsSection() {
 
       <div
         ref={panelRef}
-        className="mt-6 overflow-hidden rounded-md border border-[#D8C5A7] bg-white p-6 shadow-[0_2px_8px_rgba(30,77,43,0.05)] md:p-8"
+        className="mt-6 overflow-hidden rounded-2xl border border-kraft-300/40 bg-white p-6 shadow-[var(--shadow-soft)] md:p-9"
       >
         {active ? (
           <div key={active.id} className="industry-panel">
             <div>
-              <h3 className="text-2xl font-black text-[#1E4D2B]">{active.title}</h3>
+              <h3 className="font-serif text-2xl text-brand-600">{active.title}</h3>
               <p className="mt-2 text-sm font-semibold muted-text">{active.examples}</p>
             </div>
 
             <div className="mt-6 grid gap-4 lg:grid-cols-3">
-              <div className="rounded-md border border-[#D8C5A7] bg-[#FCFAF7] p-4">
-                <h4 className="text-sm font-black text-[#1E4D2B]">Why Bag Supply Co</h4>
+              <div className="rounded-2xl border border-kraft-300/40 bg-[#FCFAF7] p-5">
+                <h4 className="text-sm font-black text-brand-600">Why Bag Supply Co</h4>
                 <ul className="mt-3 space-y-2 text-sm muted-text">
                   {active.why.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
               </div>
-              <div className="rounded-md border border-[#D8C5A7] bg-[#FCFAF7] p-4">
-                <h4 className="text-sm font-black text-[#1E4D2B]">Problems We Solve</h4>
+              <div className="rounded-2xl border border-kraft-300/40 bg-[#FCFAF7] p-5">
+                <h4 className="text-sm font-black text-brand-600">Problems We Solve</h4>
                 <ul className="mt-3 space-y-2 text-sm muted-text">
                   {active.problems.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
               </div>
-              <div className="rounded-md border border-[#D8C5A7] bg-[#FCFAF7] p-4">
-                <h4 className="text-sm font-black text-[#1E4D2B]">Business Benefits</h4>
+              <div className="rounded-2xl border border-kraft-300/40 bg-[#FCFAF7] p-5">
+                <h4 className="text-sm font-black text-brand-600">Business Benefits</h4>
                 <ul className="mt-3 space-y-2 text-sm muted-text">
                   {active.benefits.map((item) => (
                     <li key={item}>{item}</li>
@@ -206,13 +206,13 @@ export default function IndustrySolutionsSection() {
             </div>
 
             <div className="mt-6">
-              <p className="text-sm font-black text-[#1E4D2B]">Related Catalogs</p>
+              <p className="text-sm font-black text-brand-600">Related Catalogs</p>
               <div className="mt-2 flex flex-wrap gap-2">
                 {active.catalogs.map((catalog) => (
                   <Link
                     key={catalog.href}
                     href={catalog.href}
-                    className="rounded-md border border-[#D8C5A7] bg-white px-3 py-2 text-xs font-bold text-[#5F4D33] hover:bg-[#FAF6F0]"
+                    className="rounded-full border border-kraft-300/50 bg-white px-4 py-2 text-xs font-bold text-muted hover:bg-cream"
                   >
                     {catalog.label}
                   </Link>
@@ -222,7 +222,7 @@ export default function IndustrySolutionsSection() {
           </div>
         ) : (
           <div className="industry-panel text-center">
-            <p className="text-sm font-semibold text-[#5F4D33]">Select an industry above to view details.</p>
+            <p className="text-sm font-semibold text-muted">Select an industry above to view details.</p>
           </div>
         )}
       </div>

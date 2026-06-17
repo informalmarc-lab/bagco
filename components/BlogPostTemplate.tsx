@@ -58,10 +58,10 @@ export default function BlogPostTemplate({
           <div className="grid gap-8">
             {sections.map((section) => (
               <section key={section.heading}>
-                <h2 className="text-2xl font-black text-[#1E4D2B] md:text-3xl">{section.heading}</h2>
+                <h2 className="font-serif text-2xl text-brand-600 md:text-3xl">{section.heading}</h2>
                 <div className="mt-4 grid gap-4">
                   {section.paragraphs.map((paragraph) => (
-                    <p key={paragraph} className="text-sm leading-7 text-[#5F4D33] md:text-base">
+                    <p key={paragraph} className="text-sm leading-7 text-muted md:text-base">
                       {paragraph}
                     </p>
                   ))}

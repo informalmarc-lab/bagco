@@ -31,25 +31,25 @@ export default function CityHubPage({ city, counts }: { city: CityData; counts: 
       <section className="section-container py-20">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           <div className="tonal-panel">
-            <p className="text-xs font-black uppercase tracking-[0.12em] text-[#B5813A]">Population</p>
-            <p className="mt-3 text-3xl font-black text-[#1E4D2B]">{formatNumber(city.population)}</p>
+            <p className="text-xs font-black uppercase tracking-[0.12em] text-accent-500">Population</p>
+            <p className="mt-3 font-serif text-3xl text-brand-600">{formatNumber(city.population)}</p>
             <p className="mt-2 text-sm muted-text">2020 Census population for {city.city}.</p>
           </div>
           <div className="tonal-panel">
-            <p className="text-xs font-black uppercase tracking-[0.12em] text-[#B5813A]">Delivery window</p>
-            <p className="mt-3 text-xl font-black text-[#1E4D2B]">{delivery.timeline}</p>
+            <p className="text-xs font-black uppercase tracking-[0.12em] text-accent-500">Delivery window</p>
+            <p className="mt-3 font-serif text-xl text-brand-600">{delivery.timeline}</p>
             <p className="mt-2 text-sm muted-text">{delivery.distanceLabel}</p>
           </div>
           <div className="tonal-panel">
-            <p className="text-xs font-black uppercase tracking-[0.12em] text-[#B5813A]">Pickup</p>
-            <p className="mt-3 text-xl font-black text-[#1E4D2B]">
+            <p className="text-xs font-black uppercase tracking-[0.12em] text-accent-500">Pickup</p>
+            <p className="mt-3 font-serif text-xl text-brand-600">
               {city.pickupEligible ? 'Same-day available' : 'Not available'}
             </p>
             <p className="mt-2 text-sm muted-text">{delivery.pickupLabel}</p>
           </div>
           <div className="tonal-panel">
-            <p className="text-xs font-black uppercase tracking-[0.12em] text-[#B5813A]">Business density</p>
-            <p className="mt-3 text-xl font-black text-[#1E4D2B]">
+            <p className="text-xs font-black uppercase tracking-[0.12em] text-accent-500">Business density</p>
+            <p className="mt-3 font-serif text-xl text-brand-600">
               {city.businessDensityScore} per 1k
             </p>
             <p className="mt-2 text-sm muted-text">
@@ -61,15 +61,15 @@ export default function CityHubPage({ city, counts }: { city: CityData; counts: 
 
       <section className="section-container pb-10">
         <h2 className="section-title">Industry programs for {city.city}</h2>
-        <p className="mt-3 max-w-3xl text-sm leading-7 text-[#5F4D33]">
+        <p className="mt-3 max-w-3xl text-sm leading-7 text-muted">
           Each industry page includes local business counts, delivery timelines from Monroe, NC, and SKU-level pricing.
         </p>
         <div className="mt-6 grid gap-4 md:grid-cols-2">
           {industryLinks.map(({ industry, href }) => (
-            <Link key={industry.slug} href={href} className="tonal-panel hover:translate-y-[-2px] transition-transform">
-              <h3 className="text-2xl font-black text-[#1E4D2B]">{industry.label}</h3>
-              <p className="mt-2 text-sm text-[#5F4D33]">{industry.focus}</p>
-              <p className="mt-4 text-sm font-black uppercase tracking-[0.1em] text-[#B5813A]">Open local page</p>
+            <Link key={industry.slug} href={href} className="tonal-panel transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-pop)]">
+              <h3 className="font-serif text-2xl text-brand-600">{industry.label}</h3>
+              <p className="mt-2 text-sm text-muted">{industry.focus}</p>
+              <p className="mt-4 text-sm font-black uppercase tracking-[0.1em] text-accent-500">Open local page</p>
             </Link>
           ))}
         </div>
