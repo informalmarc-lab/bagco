@@ -120,9 +120,11 @@ html.a11y-high-contrast .accessibility-panel {
 }
 
 html.a11y-high-contrast .muted-text,
+html.a11y-high-contrast .text-muted,
 html.a11y-high-contrast [class*='text-[#5F4D33]'],
 html.a11y-high-contrast [class*='text-[#7A6548]'],
-html.a11y-high-contrast [class*='text-[#B5813A]'] {
+html.a11y-high-contrast [class*='text-[#B5813A]'],
+html.a11y-high-contrast [class*='text-accent-'] {
   color: #111 !important;
 }
 
@@ -235,8 +237,9 @@ html.a11y-high-contrast [class*='text-[#B5813A]'] {
 
   .surface-card {
     background: rgb(var(--surface-rgb));
-    border: 1px solid rgba(var(--kraft-rgb), 0.35);
-    box-shadow: 0 2px 10px rgba(30, 77, 43, 0.05);
+    border-radius: 16px;
+    border: 1px solid rgba(var(--kraft-rgb), 0.18);
+    box-shadow: var(--shadow-soft);
   }
 
   .section-container {
@@ -248,7 +251,9 @@ html.a11y-high-contrast [class*='text-[#B5813A]'] {
   }
 
   .heading-display {
-    @apply text-4xl font-black tracking-[-0.045em] md:text-6xl;
+    @apply text-4xl font-normal tracking-[-0.01em] md:text-6xl;
+    font-family: var(--font-serif), serif;
+    line-height: 1.08;
     color: rgb(var(--brand-rgb));
   }
 
@@ -272,88 +277,91 @@ html.a11y-high-contrast [class*='text-[#B5813A]'] {
 
 @layer components {
   .btn-primary {
-    @apply inline-flex min-h-[44px] items-center justify-center px-5 py-2.5 text-sm font-bold;
-    border-radius: 8px;
-    border: 1px solid rgb(var(--brand-rgb));
-    background: rgb(var(--brand-rgb));
-    color: #faf6f0;
-    box-shadow: none;
+    @apply inline-flex min-h-[44px] items-center justify-center px-6 py-2.5 text-sm font-bold;
+    border-radius: 999px;
+    border: 1px solid rgb(var(--accent-rgb));
+    background: rgb(var(--accent-rgb));
+    color: #fff;
+    box-shadow: 0 8px 18px rgba(181, 129, 58, 0.22);
   }
 
   .btn-primary:hover {
-    border-color: rgb(var(--brand-rgb));
-    background: #173c22;
+    border-color: #9c6b2c;
+    background: #9c6b2c;
   }
 
   .btn-secondary {
-    @apply inline-flex min-h-[44px] items-center justify-center px-5 py-2.5 text-sm font-bold;
-    border-radius: 8px;
-    border: 1px solid rgba(var(--kraft-rgb), 0.75);
+    @apply inline-flex min-h-[44px] items-center justify-center px-6 py-2.5 text-sm font-bold;
+    border-radius: 999px;
+    border: 1px solid rgb(var(--brand-rgb));
     background: #fff;
     color: rgb(var(--brand-rgb));
   }
 
   .btn-secondary:hover {
-    border-color: rgba(var(--accent-rgb), 0.8);
-    background: rgba(var(--accent-rgb), 0.08);
+    background: rgba(var(--brand-rgb), 0.06);
     color: rgb(var(--brand-rgb));
   }
 
   .btn-secondary-inverse {
-    @apply inline-flex min-h-[44px] items-center justify-center px-5 py-2.5 text-sm font-bold;
-    border-radius: 8px;
-    border: 1px solid rgba(250, 246, 240, 0.3);
+    @apply inline-flex min-h-[44px] items-center justify-center px-6 py-2.5 text-sm font-bold;
+    border-radius: 999px;
+    border: 1px solid rgba(250, 246, 240, 0.45);
     background: transparent;
     color: #faf6f0;
   }
 
   .btn-secondary-inverse:hover {
     border-color: #f4e8d8;
-    background: rgba(250, 246, 240, 0.08);
+    background: rgba(250, 246, 240, 0.1);
     color: #faf6f0;
   }
 
   .btn-quiet {
-    @apply inline-flex min-h-[44px] items-center justify-center px-5 py-2.5 text-sm font-bold;
-    border-radius: 8px;
-    border: 1px solid rgba(var(--kraft-rgb), 0.75);
+    @apply inline-flex min-h-[44px] items-center justify-center px-6 py-2.5 text-sm font-bold;
+    border-radius: 999px;
+    border: 1px solid rgba(var(--kraft-rgb), 0.6);
     background: transparent;
     color: rgb(var(--brand-rgb));
   }
 
   .btn-quiet:hover {
-    background: rgba(var(--kraft-rgb), 0.16);
+    background: rgba(var(--kraft-rgb), 0.14);
   }
 
   .kicker {
-    @apply text-[11px] font-bold uppercase tracking-[0.12em];
+    @apply text-[11px] font-bold uppercase tracking-[0.14em];
     color: rgb(var(--accent-rgb));
   }
 
   .title-xl {
-    @apply text-balance text-4xl font-black tracking-[-0.03em] md:text-6xl;
+    @apply text-balance text-4xl font-normal tracking-[-0.01em] md:text-6xl;
+    font-family: var(--font-serif), serif;
+    line-height: 1.08;
     color: rgb(var(--brand-rgb));
   }
 
   .section-title {
-    @apply text-3xl font-black tracking-[-0.03em] md:text-4xl;
+    @apply text-3xl font-normal tracking-[-0.01em] md:text-4xl;
+    font-family: var(--font-serif), serif;
+    line-height: 1.12;
     color: rgb(var(--brand-rgb));
   }
 
   .tonal-panel {
-    @apply p-6 md:p-8;
-    border-radius: 10px;
-    border: 1px solid rgba(var(--kraft-rgb), 0.38);
+    @apply p-7 md:p-10;
+    border-radius: 18px;
+    border: 1px solid rgba(var(--kraft-rgb), 0.16);
     background: #fff;
-    box-shadow: 0 2px 10px rgba(30, 77, 43, 0.05);
+    box-shadow: var(--shadow-soft);
   }
 
   .hero-panel {
-    @apply p-6 md:p-8;
-    border-radius: 10px;
-    border: 1px solid rgba(var(--kraft-rgb), 0.38);
+    @apply p-7 md:p-10;
+    border-radius: 18px;
+    border: 1px solid rgba(var(--kraft-rgb), 0.16);
     background: #fff;
-    box-shadow: 0 2px 10px rgba(30, 77, 43, 0.05);
+    box-shadow: var(--shadow-soft);
   }
 
   .footer-link {
@@ -368,15 +376,16 @@ html.a11y-high-contrast [class*='text-[#B5813A]'] {
 
   .product-card {
     position: relative;
-    border-radius: 8px;
-    border: 1px solid rgba(var(--kraft-rgb), 0.35);
+    border-radius: 16px;
+    border: 1px solid rgba(var(--kraft-rgb), 0.2);
     overflow: hidden;
-    transition: border-color 160ms ease, box-shadow 160ms ease;
+    transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
   }
 
   .product-card:hover {
-    border-color: rgba(var(--accent-rgb), 0.55);
-    box-shadow: 0 12px 24px rgba(30, 77, 43, 0.07);
+    border-color: rgba(var(--accent-rgb), 0.5);
+    box-shadow: var(--shadow-pop);
+    transform: translateY(-2px);
   }
 
   .product-card-price {
@@ -386,7 +395,7 @@ html.a11y-high-contrast [class*='text-[#B5813A]'] {
   }
 
   .nav-chip {
-    @apply inline-flex min-h-[48px] items-center rounded-md px-4 text-sm font-semibold text-[#1E4D2B];
+    @apply inline-flex min-h-[48px] items-center rounded-full px-4 text-sm font-semibold text-[#1E4D2B];
   }
 
   .nav-chip:hover {
@@ -407,7 +416,7 @@ html.a11y-high-contrast [class*='text-[#B5813A]'] {
   }
 
   .page-hero-inner {
-    @apply section-container py-14 md:py-20;
+    @apply section-container py-16 md:py-28;
   }
 
   .page-hero .heading-display {

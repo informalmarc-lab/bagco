@@ -77,16 +77,16 @@ export default function Navbar() {
   }
 
   return (
-    <header className="print-hide sticky top-0 z-50 border-b border-[#D8C5A7] bg-[rgba(250,246,240,0.92)] backdrop-blur">
+    <header className="print-hide sticky top-0 z-50 border-b border-kraft-300/50 bg-cream/95 backdrop-blur">
       <div className="section-container">
-        <nav className="flex min-h-[76px] items-center justify-between gap-4">
+        <nav className="flex min-h-[80px] items-center justify-between gap-4">
           <Link href="/" className="inline-flex items-center gap-3 pr-2">
-            <span className="inline-flex h-11 w-11 items-center justify-center rounded-md bg-[#1E4D2B] text-sm font-black text-white shadow-[0_6px_14px_rgba(30,77,43,0.18)]">
+            <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-brand-600 font-serif text-base text-white shadow-[0_8px_16px_rgba(30,77,43,0.2)]">
               BS
             </span>
             <div>
-              <p className="text-[15px] font-black tracking-[-0.02em] text-[#1E4D2B]">Bag Supply Co</p>
-              <p className="text-xs font-medium text-[#5F4D33]">Wholesale bags</p>
+              <p className="font-serif text-[17px] leading-tight tracking-[-0.01em] text-brand-600">Bag Supply Co</p>
+              <p className="text-xs font-medium text-muted">Wholesale bags</p>
             </div>
           </Link>
 
@@ -117,7 +117,7 @@ export default function Navbar() {
                 Catalogs
               </Link>
               <div
-                className={`absolute left-0 top-[calc(100%-1px)] z-30 w-64 rounded-md border border-[#D8C5A7] bg-white p-2 pt-3 shadow-[0_8px_18px_rgba(30,77,43,0.08)] transition-all ${
+                className={`absolute left-0 top-[calc(100%-1px)] z-30 w-64 rounded-2xl border border-kraft-300/50 bg-white p-2 pt-3 shadow-[var(--shadow-pop)] transition-all ${
                   openDesktopMenu === 'catalog' ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
                 }`}
               >
@@ -125,7 +125,7 @@ export default function Navbar() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="block rounded-md px-4 py-2.5 text-sm font-semibold text-[#1E4D2B] hover:bg-[#FAF6F0] focus:bg-[#FAF6F0]"
+                    className="block rounded-xl px-4 py-2.5 text-sm font-semibold text-brand-600 hover:bg-cream focus:bg-cream"
                     onClick={closeDesktopMenu}
                     aria-current={isActive(link.href) ? 'page' : undefined}
                   >
@@ -152,7 +152,7 @@ export default function Navbar() {
                 Industries
               </Link>
               <div
-                className={`absolute left-0 top-[calc(100%-1px)] z-30 w-56 rounded-md border border-[#D8C5A7] bg-white p-2 pt-3 shadow-[0_8px_18px_rgba(30,77,43,0.08)] transition-all ${
+                className={`absolute left-0 top-[calc(100%-1px)] z-30 w-56 rounded-2xl border border-kraft-300/50 bg-white p-2 pt-3 shadow-[var(--shadow-pop)] transition-all ${
                   openDesktopMenu === 'industries'
                     ? 'pointer-events-auto opacity-100'
                     : 'pointer-events-none opacity-0'
@@ -162,7 +162,7 @@ export default function Navbar() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="block rounded-md px-4 py-2.5 text-sm font-semibold text-[#1E4D2B] hover:bg-[#FAF6F0] focus:bg-[#FAF6F0]"
+                    className="block rounded-xl px-4 py-2.5 text-sm font-semibold text-brand-600 hover:bg-cream focus:bg-cream"
                     onClick={closeDesktopMenu}
                     aria-current={isActive(link.href) ? 'page' : undefined}
                   >
@@ -193,7 +193,7 @@ export default function Navbar() {
                 if (event.key === 'Enter') submitSearch()
               }}
               placeholder="Search catalog..."
-              className="h-10 w-full rounded-md border border-[#D8C5A7] bg-white px-3 text-sm text-[#1E4D2B]"
+              className="h-10 w-full rounded-full border border-kraft-300/70 bg-white px-4 text-sm text-brand-600"
               aria-label="Search bags, sizes, industries"
             />
             <button type="button" onClick={submitSearch} className="btn-secondary h-10 min-w-10 px-3">
@@ -213,7 +213,7 @@ export default function Navbar() {
           </div>
 
           <button
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-[#D8C5A7] bg-white text-[#1E4D2B] xl:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-kraft-300/70 bg-white text-brand-600 xl:hidden"
             onClick={() => setIsOpen((prev) => !prev)}
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
@@ -233,7 +233,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setShowMobileSearch((prev) => !prev)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-[#D8C5A7] bg-white text-[#1E4D2B]"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-kraft-300/70 bg-white text-brand-600"
             aria-label="Toggle search"
           >
             {'\u{1F50E}'}
@@ -248,7 +248,7 @@ export default function Navbar() {
                   if (event.key === 'Enter') submitSearch()
                 }}
                 placeholder="Search bags, sizes, industries..."
-                className="h-10 w-full rounded-md border border-[#D8C5A7] bg-white px-3 text-sm text-[#1E4D2B]"
+                className="h-10 w-full rounded-full border border-kraft-300/70 bg-white px-4 text-sm text-brand-600"
                 aria-label="Search bags, sizes, industries"
               />
               <button type="button" onClick={submitSearch} className="btn-secondary h-10 min-w-10 px-3">
@@ -260,12 +260,12 @@ export default function Navbar() {
 
         {isOpen && (
           <div id="mobile-menu" className="pb-4 xl:hidden">
-            <div className="rounded-md border border-[#D8C5A7] bg-white p-3 shadow-[0_8px_18px_rgba(30,77,43,0.08)]">
+            <div className="rounded-2xl border border-kraft-300/50 bg-white p-3 shadow-[var(--shadow-pop)]">
               <div className="grid gap-1">
                 <Link
                   href="/"
-                  className={`rounded-lg px-4 py-2.5 text-sm font-semibold ${
-                    pathname === '/' ? 'bg-[#1E4D2B] text-white' : 'text-[#1E4D2B] hover:bg-[#FAF6F0]'
+                  className={`rounded-xl px-4 py-2.5 text-sm font-semibold ${
+                    pathname === '/' ? 'bg-brand-600 text-white' : 'text-brand-600 hover:bg-cream'
                   }`}
                   onClick={() => setIsOpen(false)}
                   aria-current={pathname === '/' ? 'page' : undefined}
@@ -276,8 +276,8 @@ export default function Navbar() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`rounded-lg px-4 py-2.5 text-sm font-semibold ${
-                      isActive(link.href) ? 'bg-[#1E4D2B] text-white' : 'text-[#1E4D2B] hover:bg-[#FAF6F0]'
+                    className={`rounded-xl px-4 py-2.5 text-sm font-semibold ${
+                      isActive(link.href) ? 'bg-brand-600 text-white' : 'text-brand-600 hover:bg-cream'
                     }`}
                     onClick={() => setIsOpen(false)}
                     aria-current={isActive(link.href) ? 'page' : undefined}
@@ -289,22 +289,22 @@ export default function Navbar() {
 
               <div className="mt-4">
                 <div className="flex items-center justify-between gap-3 px-1">
-                  <p className="text-sm font-semibold text-[#5F4D33]">Catalogs</p>
+                  <p className="text-sm font-semibold text-muted">Catalogs</p>
                   <Link
                     href="/catalog"
-                    className="text-xs font-bold text-[#1E4D2B] underline-offset-2 hover:text-[#B5813A] hover:underline"
+                    className="text-xs font-bold text-brand-600 underline-offset-2 hover:text-accent-500 hover:underline"
                     onClick={() => setIsOpen(false)}
                   >
                     Open All
                   </Link>
                 </div>
-                <div className="mt-2 grid gap-1 border-l border-[#C4935A66] pl-3">
+                <div className="mt-2 grid gap-1 border-l border-kraft-400/40 pl-3">
                   {catalogLinks.map((link) => (
                     <Link
                       key={link.href}
                       href={link.href}
-                      className={`rounded-lg px-4 py-2.5 text-sm font-semibold ${
-                        isActive(link.href) ? 'bg-[#1E4D2B] text-white' : 'text-[#1E4D2B] hover:bg-[#FAF6F0]'
+                      className={`rounded-xl px-4 py-2.5 text-sm font-semibold ${
+                        isActive(link.href) ? 'bg-brand-600 text-white' : 'text-brand-600 hover:bg-cream'
                       }`}
                       onClick={() => setIsOpen(false)}
                       aria-current={isActive(link.href) ? 'page' : undefined}
@@ -317,22 +317,22 @@ export default function Navbar() {
 
               <div className="mt-4">
                 <div className="flex items-center justify-between gap-3 px-1">
-                  <p className="text-sm font-semibold text-[#5F4D33]">Industries</p>
+                  <p className="text-sm font-semibold text-muted">Industries</p>
                   <Link
                     href="/industries"
-                    className="text-xs font-bold text-[#1E4D2B] underline-offset-2 hover:text-[#B5813A] hover:underline"
+                    className="text-xs font-bold text-brand-600 underline-offset-2 hover:text-accent-500 hover:underline"
                     onClick={() => setIsOpen(false)}
                   >
                     Open All
                   </Link>
                 </div>
-                <div className="mt-2 grid gap-1 border-l border-[#C4935A66] pl-3">
+                <div className="mt-2 grid gap-1 border-l border-kraft-400/40 pl-3">
                   {industryLinks.map((link) => (
                     <Link
                       key={link.href}
                       href={link.href}
-                      className={`rounded-lg px-4 py-2.5 text-sm font-semibold ${
-                        isActive(link.href) ? 'bg-[#1E4D2B] text-white' : 'text-[#1E4D2B] hover:bg-[#FAF6F0]'
+                      className={`rounded-xl px-4 py-2.5 text-sm font-semibold ${
+                        isActive(link.href) ? 'bg-brand-600 text-white' : 'text-brand-600 hover:bg-cream'
                       }`}
                       onClick={() => setIsOpen(false)}
                       aria-current={isActive(link.href) ? 'page' : undefined}
