@@ -5,6 +5,7 @@ import { CITIES, getCityBySlug, getCityCounts } from '@/lib/seo/cities'
 import { getIndustryByKey } from '@/lib/seo/industries'
 import { getIndustryStartingPrice } from '@/lib/seo/industries'
 import { buildIndustryCityMeta } from '@/lib/seo/meta'
+import { buildMetaWithCanonical } from '@/lib/seo/pageMetadata'
 
 export const dynamicParams = false
 
@@ -30,10 +31,11 @@ export function generateMetadata({ params }: { params: { city: string } }): Meta
     businessCount: counts.industryCounts[industry.key],
     countyName: counts.countyName,
   })
-  return {
+  return buildMetaWithCanonical({
     title: meta.title,
     description: meta.description,
-  }
+    path: `/dispensary-bags/${city.slug}`,
+  })
 }
 
 export default function IndustryCityPageRoute({ params }: { params: { city: string } }) {

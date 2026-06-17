@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { buildMetaWithCanonical } from '@/lib/seo/pageMetadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetaWithCanonical({
   title: 'Shipping Policy',
   description:
     'Shipping and fuel surcharge policy for Bag Supply Co orders by case volume and zone group.',
-}
+  path: '/shipping',
+})
 
 const rules = [
   'Orders under 8 cases ship UPS Ground and freight is added to invoice.',

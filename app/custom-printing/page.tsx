@@ -1,12 +1,14 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { contactTextHref } from '@/components/siteConfig'
+import { buildMetaWithCanonical } from '@/lib/seo/pageMetadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetaWithCanonical({
   title: 'Custom Printing',
   description:
     'Custom paper bag printing programs with 1-color, 2-color, and 3-color options for pharmacy and retail teams.',
-}
+  path: '/custom-printing',
+})
 
 const capabilities = [
   '1-color custom printing',

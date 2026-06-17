@@ -1,14 +1,13 @@
 import type { Metadata } from 'next'
 import BlogPostTemplate, { type BlogPostInternalLink, type BlogPostSection } from '@/components/BlogPostTemplate'
+import { buildMetaWithCanonical } from '@/lib/seo/pageMetadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetaWithCanonical({
   title: 'Custom Printed Bag Lead Times: What to Expect in 2025',
   description:
     'Understand stock and custom bag lead-time ranges, what affects production timing, and how to plan reorders to avoid running out.',
-  alternates: {
-    canonical: '/blog/custom-bag-lead-times',
-  },
-}
+  path: '/blog/custom-bag-lead-times',
+})
 
 const sections: BlogPostSection[] = [
   {

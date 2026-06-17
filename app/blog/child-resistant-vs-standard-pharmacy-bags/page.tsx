@@ -1,14 +1,13 @@
 import type { Metadata } from 'next'
 import BlogPostTemplate, { type BlogPostInternalLink, type BlogPostSection } from '@/components/BlogPostTemplate'
+import { buildMetaWithCanonical } from '@/lib/seo/pageMetadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetaWithCanonical({
   title: "Child-Resistant vs Standard Pharmacy Bags: What's the Difference?",
   description:
     'Compare child-resistant and standard pharmacy bags across compliance use cases, operational impact, and long-term purchasing strategy.',
-  alternates: {
-    canonical: '/blog/child-resistant-vs-standard-pharmacy-bags',
-  },
-}
+  path: '/blog/child-resistant-vs-standard-pharmacy-bags',
+})
 
 const sections: BlogPostSection[] = [
   {

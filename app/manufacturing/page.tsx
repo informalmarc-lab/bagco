@@ -1,12 +1,14 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import { buildMetaWithCanonical } from '@/lib/seo/pageMetadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetaWithCanonical({
   title: 'Manufacturing',
   description:
     'Factory-direct paper bag manufacturing in North Carolina with predictable production and recurring supply support.',
-}
+  path: '/manufacturing',
+})
 
 const strengths = [
   'Factory-direct communication and pricing',

@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
 import SeoLandingPage from '@/components/SeoLandingPage'
+import { buildMetaWithCanonical } from '@/lib/seo/pageMetadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetaWithCanonical({
   title: 'Custom Pharmacy Paper Bags',
   description:
     'Custom pharmacy paper bags with 1, 2, and 3 color printing. Factory direct manufacturing and low minimums for independent pharmacies.',
-}
+  path: '/custom-pharmacy-paper-bags',
+})
 
 export default function CustomPharmacyPaperBagsPage() {
   return (

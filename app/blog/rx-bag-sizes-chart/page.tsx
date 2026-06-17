@@ -1,14 +1,13 @@
 import type { Metadata } from 'next'
 import BlogPostTemplate, { type BlogPostInternalLink, type BlogPostSection } from '@/components/BlogPostTemplate'
+import { buildMetaWithCanonical } from '@/lib/seo/pageMetadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetaWithCanonical({
   title: 'Rx Bag Sizes Explained: Which Size Is Right for Your Pharmacy?',
   description:
     'Understand #6, #8, #10, #12, and #14 pharmacy bag sizes and how to match each format to prescription type and pickup workflow.',
-  alternates: {
-    canonical: '/blog/rx-bag-sizes-chart',
-  },
-}
+  path: '/blog/rx-bag-sizes-chart',
+})
 
 const sections: BlogPostSection[] = [
   {

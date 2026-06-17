@@ -1,12 +1,14 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import IndustrySolutionsSection from '@/components/IndustrySolutionsSection'
+import { buildMetaWithCanonical } from '@/lib/seo/pageMetadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetaWithCanonical({
   title: 'Industries',
   description:
     'Industry-specific packaging programs for pharmacies, veterinary clinics, dispensaries, smoke shops, custom bag programs, and distributors.',
-}
+  path: '/industries',
+})
 
 const segments = [
   {

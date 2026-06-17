@@ -1,12 +1,14 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { contactTextHref } from '@/components/siteConfig'
+import { buildMetaWithCanonical } from '@/lib/seo/pageMetadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetaWithCanonical({
   title: 'Pharmacy and Veterinary Packaging Programs',
   description:
     'Structured packaging programs for pharmacy and veterinary operations requiring reliable case supply and professional presentation.',
-}
+  path: '/weddings-events',
+})
 
 const offerings = [
   'Stock pharmacy programs (GS/TY/plastic)',

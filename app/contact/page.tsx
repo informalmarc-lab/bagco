@@ -9,12 +9,14 @@ import {
   contactPhoneHref,
   contactTextHref,
 } from '@/components/siteConfig'
+import { buildMetaWithCanonical } from '@/lib/seo/pageMetadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetaWithCanonical({
   title: 'Contact',
   description:
     'Contact Bag Supply Co for catalog guidance, quote requests, and production timeline support.',
-}
+  path: '/contact',
+})
 
 export default function ContactPage() {
   return (

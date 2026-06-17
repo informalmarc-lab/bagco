@@ -1,14 +1,13 @@
 import type { Metadata } from 'next'
 import BlogPostTemplate, { type BlogPostInternalLink, type BlogPostSection } from '@/components/BlogPostTemplate'
+import { buildMetaWithCanonical } from '@/lib/seo/pageMetadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetaWithCanonical({
   title: 'Dispensary Exit Bag Requirements by State (2025 Guide)',
   description:
     'A practical compliance framework for dispensary exit bags, including opacity, closure methods, child-resistant options, and bulk ordering strategy.',
-  alternates: {
-    canonical: '/blog/dispensary-exit-bag-requirements',
-  },
-}
+  path: '/blog/dispensary-exit-bag-requirements',
+})
 
 const sections: BlogPostSection[] = [
   {

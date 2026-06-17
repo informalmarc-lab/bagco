@@ -1,14 +1,13 @@
 import type { Metadata } from 'next'
 import BlogPostTemplate, { type BlogPostInternalLink, type BlogPostSection } from '@/components/BlogPostTemplate'
+import { buildMetaWithCanonical } from '@/lib/seo/pageMetadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetaWithCanonical({
   title: 'Veterinary Bag Sizes: What Most Vet Clinics Actually Need',
   description:
     'Learn common veterinary bag size strategies for medications, flea treatments, food samples, and stock-versus-custom planning.',
-  alternates: {
-    canonical: '/blog/veterinary-bag-sizes-guide',
-  },
-}
+  path: '/blog/veterinary-bag-sizes-guide',
+})
 
 const sections: BlogPostSection[] = [
   {

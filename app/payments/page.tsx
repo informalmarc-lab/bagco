@@ -1,12 +1,14 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { contactPhone, contactTextHref } from '@/components/siteConfig'
+import { buildMetaWithCanonical } from '@/lib/seo/pageMetadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetaWithCanonical({
   title: 'Payments',
   description:
     'Payment instructions, terms, and support for Bag Supply Co invoices.',
-}
+  path: '/payments',
+})
 
 const methods = [
   {

@@ -1,5 +1,9 @@
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /admin/
+Disallow: /cart
+Disallow: /checkout
+Disallow: /order-confirmation
 
 Sitemap: https://bagsupplyco.com/sitemap.xml

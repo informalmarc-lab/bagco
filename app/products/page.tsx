@@ -2,15 +2,14 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { getAllCatalogProducts, getCatalogOverviewPath, INDUSTRY_LABELS, money } from '@/lib/catalogProducts'
+import { buildMetaWithCanonical } from '@/lib/seo/pageMetadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetaWithCanonical({
   title: 'Paper Bag Product Catalog | Bag Supply Co',
   description:
     'Browse individual paper bag product pages with SKU-level details, sizes, case quantities, and quote-ready pricing.',
-  alternates: {
-    canonical: '/products',
-  },
-}
+  path: '/products',
+})
 
 export default function ProductsIndexPage() {
   const products = getAllCatalogProducts()

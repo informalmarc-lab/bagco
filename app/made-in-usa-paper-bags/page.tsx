@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
 import SeoLandingPage from '@/components/SeoLandingPage'
+import { buildMetaWithCanonical } from '@/lib/seo/pageMetadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetaWithCanonical({
   title: 'Made in USA Paper Bags',
   description:
     'Made in USA paper bags manufactured in Union County, North Carolina. Factory-direct production for pharmacies, dispensaries, and veterinary businesses.',
-}
+  path: '/made-in-usa-paper-bags',
+})
 
 export default function MadeInUsaPaperBagsPage() {
   return (

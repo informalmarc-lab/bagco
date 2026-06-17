@@ -1,12 +1,14 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { contactTextHref } from '@/components/siteConfig'
+import { buildMetaWithCanonical } from '@/lib/seo/pageMetadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetaWithCanonical({
   title: 'About',
   description:
     'Learn how Bag Supply Co supports pharmacies, retail stores, and veterinary teams with modern packaging programs and reliable replenishment.',
-}
+  path: '/about',
+})
 
 const principles = [
   {

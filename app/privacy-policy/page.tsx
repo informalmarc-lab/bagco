@@ -1,10 +1,12 @@
 import type { Metadata } from 'next'
+import { buildMetaWithCanonical } from '@/lib/seo/pageMetadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetaWithCanonical({
   title: 'Privacy Policy',
   description:
     'Privacy policy for Bag Supply Co quote requests, contact submissions, and communication handling.',
-}
+  path: '/privacy-policy',
+})
 
 const sections = [
   {

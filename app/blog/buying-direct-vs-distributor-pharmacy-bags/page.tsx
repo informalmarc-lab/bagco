@@ -1,14 +1,13 @@
 import type { Metadata } from 'next'
 import BlogPostTemplate, { type BlogPostInternalLink, type BlogPostSection } from '@/components/BlogPostTemplate'
+import { buildMetaWithCanonical } from '@/lib/seo/pageMetadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetaWithCanonical({
   title: "Buying Pharmacy Bags Direct vs. Through a Distributor: What's the Difference?",
   description:
     'Compare direct and distributor sourcing for pharmacy bags across cost, lead times, customization depth, and minimum order structure.',
-  alternates: {
-    canonical: '/blog/buying-direct-vs-distributor-pharmacy-bags',
-  },
-}
+  path: '/blog/buying-direct-vs-distributor-pharmacy-bags',
+})
 
 const sections: BlogPostSection[] = [
   {

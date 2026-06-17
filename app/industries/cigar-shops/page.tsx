@@ -10,17 +10,14 @@ import {
   getCigarProductBySlug,
 } from '@/lib/cigarCatalog'
 import { formatMylarQuantityLabel, getMylarProductBySlug, type MylarProduct } from '@/lib/mylarCatalog'
+import { buildMetaWithCanonical } from '@/lib/seo/pageMetadata'
 
-export const metadata: Metadata = {
-  title: {
-    absolute: 'Cigar Shop Packaging Programs | Printed Cigar Bags and Mylar | Bag Supply Co',
-  },
+export const metadata: Metadata = buildMetaWithCanonical({
+  title: 'Cigar Shop Packaging Programs | Printed Cigar Bags and Mylar | Bag Supply Co',
   description:
     'Printed cigar bags and mylar packaging for cigar shops and lounges that want a cleaner checkout presentation with stocked reorder-friendly options.',
-  alternates: {
-    canonical: '/industries/cigar-shops',
-  },
-}
+  path: '/industries/cigar-shops',
+})
 
 const featuredMylarSlugs = [
   '1-8-oz-gloss-gold-clear-plain',

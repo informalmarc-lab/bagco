@@ -1,14 +1,13 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { buildMetaWithCanonical } from '@/lib/seo/pageMetadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetaWithCanonical({
   title: 'Paper Bag Buying Guides & Insights | Bag Supply Co Blog',
   description:
     'Guides on pharmacy, dispensary, veterinary, and retail bag programs, including sizing, case planning, compliance, and custom print timelines.',
-  alternates: {
-    canonical: '/blog',
-  },
-}
+  path: '/blog',
+})
 
 const posts = [
   {

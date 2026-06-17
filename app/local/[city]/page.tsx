@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import CityHubPage from '@/components/seo/CityHubPage'
 import { CITIES, getCityBySlug, getCityCounts } from '@/lib/seo/cities'
 import { buildCityMeta } from '@/lib/seo/meta'
+import { buildMetaWithCanonical } from '@/lib/seo/pageMetadata'
 
 export const dynamicParams = false
 
@@ -23,10 +24,11 @@ export function generateMetadata({ params }: { params: { city: string } }): Meta
     totalEstablishments: counts.totalEstablishments,
     countyName: counts.countyName,
   })
-  return {
+  return buildMetaWithCanonical({
     title: meta.title,
     description: meta.description,
-  }
+    path: `/local/${city.slug}`,
+  })
 }
 
 export default function CityPage({ params }: { params: { city: string } }) {
