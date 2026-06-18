@@ -38,16 +38,16 @@ export default function OrderConfirmationPage() {
             <p className="kicker">What Happens Next</p>
             <h2 className="section-title mt-4">We review, confirm, and follow up directly.</h2>
             <div className="mt-5 grid gap-3">
-              <div className="surface-card rounded-2xl p-4 text-sm text-[#5F4D33]">
-                <p className="font-black text-[#1E4D2B]">1. Order review</p>
+              <div className="surface-card rounded-2xl p-4 text-sm text-muted">
+                <p className="font-black text-brand-600">1. Order review</p>
                 <p className="mt-2">We check quantities, sizes, and notes so the next conversation is specific and useful.</p>
               </div>
-              <div className="surface-card rounded-2xl p-4 text-sm text-[#5F4D33]">
-                <p className="font-black text-[#1E4D2B]">2. Payment follow-up</p>
+              <div className="surface-card rounded-2xl p-4 text-sm text-muted">
+                <p className="font-black text-brand-600">2. Payment follow-up</p>
                 <p className="mt-2">If you selected card, we will email a Stripe payment link after reviewing the order.</p>
               </div>
-              <div className="surface-card rounded-2xl p-4 text-sm text-[#5F4D33]">
-                <p className="font-black text-[#1E4D2B]">3. Shipping confirmation</p>
+              <div className="surface-card rounded-2xl p-4 text-sm text-muted">
+                <p className="font-black text-brand-600">3. Shipping confirmation</p>
                 <p className="mt-2">Our team will confirm delivery details and any next steps before fulfillment moves forward.</p>
               </div>
             </div>
