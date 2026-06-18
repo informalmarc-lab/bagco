@@ -250,13 +250,6 @@ html.a11y-high-contrast [class*='text-accent-'] {
     font-family: var(--font-serif), serif;
   }
 
-  .heading-display {
-    @apply text-4xl font-normal tracking-[-0.01em] md:text-6xl;
-    font-family: var(--font-serif), serif;
-    line-height: 1.08;
-    color: rgb(var(--brand-rgb));
-  }
-
   .text-balance {
     text-wrap: balance;
   }
@@ -332,6 +325,13 @@ html.a11y-high-contrast [class*='text-accent-'] {
   .kicker {
     @apply text-[11px] font-bold uppercase tracking-[0.14em];
     color: rgb(var(--accent-rgb));
+  }
+
+  .heading-display {
+    @apply text-4xl font-normal tracking-[-0.01em] md:text-6xl;
+    font-family: var(--font-serif), serif;
+    line-height: 1.08;
+    color: rgb(var(--brand-rgb));
   }
 
   .title-xl {

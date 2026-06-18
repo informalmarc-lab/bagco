@@ -101,6 +101,9 @@ export default function DispensaryIndustryPage() {
                 <Link href="/catalog/mylar-bags" className="btn-secondary">
                   Browse Mylar
                 </Link>
+                <Link href="/dispensaries" className="btn-secondary">
+                  Browse Custom Bags
+                </Link>
               </div>
             </div>
 
@@ -330,12 +333,15 @@ export default function DispensaryIndustryPage() {
             Ready to tighten up your dispensary packaging mix?
           </h2>
           <p className="mt-4 max-w-3xl text-base leading-7 text-[#F4E8D8]">
-            Build your quote first, then we can help you line up labels, mylar, and paper exit bags into one cleaner
-            packaging program.
+            Build your quote first, then we can help you line up labels, mylar, custom printed bags, and paper exit
+            bags into one cleaner packaging program.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Link href="/makeyourquote" className="btn-primary">
               Build a Quote
+            </Link>
+            <Link href="/dispensaries" className="btn-secondary-inverse">
+              Browse Custom Bags
             </Link>
             <a
               href={contactTextHref}
