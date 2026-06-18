@@ -45,7 +45,7 @@ export default function PaymentsPage() {
         <div className="grid gap-4 md:grid-cols-2">
           {methods.map((method) => (
             <article key={method.title} className="tonal-panel">
-              <h2 className="text-2xl font-black text-[#1E4D2B]">{method.title}</h2>
+              <h2 className="font-serif text-2xl text-brand-600">{method.title}</h2>
               <p className="mt-3 muted-text">{method.copy}</p>
             </article>
           ))}
@@ -56,8 +56,8 @@ export default function PaymentsPage() {
           <div className="mt-5 grid gap-3 md:grid-cols-3">
             {steps.map((step, idx) => (
               <div key={step} className="surface-card rounded-2xl p-4">
-                <p className="text-xs font-black uppercase tracking-[0.1em] text-[#B5813A]">Step {idx + 1}</p>
-                <p className="mt-2 text-sm font-semibold text-[#5F4D33]">{step}</p>
+                <p className="text-xs font-black uppercase tracking-[0.1em] text-accent-500">Step {idx + 1}</p>
+                <p className="mt-2 text-sm font-semibold text-muted">{step}</p>
               </div>
             ))}
           </div>

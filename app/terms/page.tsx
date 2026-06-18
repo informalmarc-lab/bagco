@@ -22,7 +22,7 @@ export default function TermsPage() {
         <div className="page-hero-inner">
           <p className="kicker">Legal</p>
           <h1 className="heading-display mt-5">Terms and Conditions</h1>
-          <p className="mt-4 text-base font-semibold text-[#B5813A] md:text-lg">Effective Date: March 2026</p>
+          <p className="mt-4 text-base font-semibold text-accent-500 md:text-lg">Effective Date: March 2026</p>
           <p className="mt-5 max-w-3xl text-lg muted-text">
             Please read these terms carefully before placing an order or using our website.
           </p>
@@ -32,7 +32,7 @@ export default function TermsPage() {
       <section className="section-container py-20">
         <div className="tonal-panel">
           <article>
-            <h2 className="text-2xl font-black text-[#1E4D2B] md:text-3xl">1. Acceptance of Terms</h2>
+            <h2 className="font-serif text-2xl text-brand-600 md:text-3xl">1. Acceptance of Terms</h2>
             <p className="mt-4 text-base leading-8 text-[#3E3427] md:text-lg">
               By placing an order with BagSupplyCo, accessing our website, or otherwise engaging with our services,
               you agree to be bound by these Terms and Conditions. If you do not agree to these terms, please refrain
@@ -44,34 +44,34 @@ export default function TermsPage() {
             </p>
           </article>
 
-          <hr className="my-8 border-[#C4935A66]" />
+          <hr className="my-8 border-kraft-400/40" />
 
           <article>
-            <h2 className="text-2xl font-black text-[#1E4D2B] md:text-3xl">2. Products and Orders</h2>
-            <h3 className="mt-5 text-xl font-bold text-[#B5813A]">2.1 Product Availability</h3>
+            <h2 className="font-serif text-2xl text-brand-600 md:text-3xl">2. Products and Orders</h2>
+            <h3 className="mt-5 font-serif text-xl text-accent-500">2.1 Product Availability</h3>
             <p className="mt-3 text-base leading-8 text-[#3E3427] md:text-lg">
               All orders are subject to product availability. BagSupplyCo reserves the right to limit order quantities
               and to discontinue products at any time without prior notice.
             </p>
 
-            <h3 className="mt-5 text-xl font-bold text-[#B5813A]">2.2 Order Confirmation</h3>
+            <h3 className="mt-5 font-serif text-xl text-accent-500">2.2 Order Confirmation</h3>
             <p className="mt-3 text-base leading-8 text-[#3E3427] md:text-lg">
               An order is not confirmed until you receive written confirmation from BagSupplyCo. We reserve the right
               to refuse or cancel any order for any reason, including but not limited to errors in pricing or product
               descriptions.
             </p>
 
-            <h3 className="mt-5 text-xl font-bold text-[#B5813A]">2.3 Minimum Orders</h3>
+            <h3 className="mt-5 font-serif text-xl text-accent-500">2.3 Minimum Orders</h3>
             <p className="mt-3 text-base leading-8 text-[#3E3427] md:text-lg">
               Minimum order quantities may apply to certain products. Please refer to the product listing or contact
               us for details.
             </p>
           </article>
 
-          <hr className="my-8 border-[#C4935A66]" />
+          <hr className="my-8 border-kraft-400/40" />
 
           <article>
-            <h2 className="text-2xl font-black text-[#1E4D2B] md:text-3xl">3. Pricing and Payment</h2>
+            <h2 className="font-serif text-2xl text-brand-600 md:text-3xl">3. Pricing and Payment</h2>
             <p className="mt-4 text-base leading-8 text-[#3E3427] md:text-lg">
               All prices are listed in U.S. dollars and are subject to change without notice. The following payment
               terms apply:
@@ -84,39 +84,39 @@ export default function TermsPage() {
             </ul>
           </article>
 
-          <hr className="my-8 border-[#C4935A66]" />
+          <hr className="my-8 border-kraft-400/40" />
 
           <article>
-            <h2 className="text-2xl font-black text-[#1E4D2B] md:text-3xl">4. Shipping and Delivery</h2>
-            <h3 className="mt-5 text-xl font-bold text-[#B5813A]">4.1 Processing Times</h3>
+            <h2 className="font-serif text-2xl text-brand-600 md:text-3xl">4. Shipping and Delivery</h2>
+            <h3 className="mt-5 font-serif text-xl text-accent-500">4.1 Processing Times</h3>
             <p className="mt-3 text-base leading-8 text-[#3E3427] md:text-lg">
               In-stock items ship the same business day when orders are placed before our daily cutoff time.
               Custom-printed orders ship within 3&ndash;4 weeks from artwork approval.
             </p>
 
-            <h3 className="mt-5 text-xl font-bold text-[#B5813A]">4.2 Free Shipping</h3>
+            <h3 className="mt-5 font-serif text-xl text-accent-500">4.2 Free Shipping</h3>
             <p className="mt-3 text-base leading-8 text-[#3E3427] md:text-lg">
               Free standard shipping is available on qualifying orders of 8 or more cases. Orders below this threshold
               are subject to standard shipping rates, which will be displayed at checkout or included in your quote.
             </p>
 
-            <h3 className="mt-5 text-xl font-bold text-[#B5813A]">4.3 Risk of Loss</h3>
+            <h3 className="mt-5 font-serif text-xl text-accent-500">4.3 Risk of Loss</h3>
             <p className="mt-3 text-base leading-8 text-[#3E3427] md:text-lg">
               Title and risk of loss for all products pass to the buyer upon delivery to the carrier. BagSupplyCo is
               not responsible for delays, damages, or losses that occur during transit.
             </p>
 
-            <h3 className="mt-5 text-xl font-bold text-[#B5813A]">4.4 Shipping Address</h3>
+            <h3 className="mt-5 font-serif text-xl text-accent-500">4.4 Shipping Address</h3>
             <p className="mt-3 text-base leading-8 text-[#3E3427] md:text-lg">
               Customers are responsible for providing accurate shipping information. BagSupplyCo is not liable for
               shipments delivered to incorrect addresses provided by the customer.
             </p>
           </article>
 
-          <hr className="my-8 border-[#C4935A66]" />
+          <hr className="my-8 border-kraft-400/40" />
 
           <article>
-            <h2 className="text-2xl font-black text-[#1E4D2B] md:text-3xl">5. Custom Orders and Artwork</h2>
+            <h2 className="font-serif text-2xl text-brand-600 md:text-3xl">5. Custom Orders and Artwork</h2>
             <ul className="mt-4 list-disc space-y-2 pl-5 text-base leading-8 text-[#3E3427] md:text-lg">
               <li>A one-time custom artwork setup fee of $75 applies to all new customer custom print orders.</li>
               <li>
@@ -138,16 +138,16 @@ export default function TermsPage() {
             </ul>
           </article>
 
-          <hr className="my-8 border-[#C4935A66]" />
+          <hr className="my-8 border-kraft-400/40" />
 
-          <article className="rounded-2xl border-2 border-[#B5813A66] bg-[#FAF6F0] p-5 md:p-6">
-            <h2 className="text-2xl font-black text-[#1E4D2B] md:text-3xl">6. Returns and Refunds</h2>
-            <p className="mt-4 text-base font-black leading-8 text-[#1E4D2B] md:text-lg">
+          <article className="rounded-2xl border-2 border-accent-400/40 bg-cream p-5 md:p-6">
+            <h2 className="font-serif text-2xl text-brand-600 md:text-3xl">6. Returns and Refunds</h2>
+            <p className="mt-4 text-base font-black leading-8 text-brand-600 md:text-lg">
               BagSupplyCo does not accept returns or exchanges under standard circumstances. All sales are considered
               final upon shipment.
             </p>
 
-            <h3 className="mt-6 text-xl font-bold text-[#B5813A]">6.1 Damaged Items</h3>
+            <h3 className="mt-6 font-serif text-xl text-accent-500">6.1 Damaged Items</h3>
             <p className="mt-3 text-base leading-8 text-[#3E3427] md:text-lg">
               The only exception to our no-return policy is for items that arrive damaged or defective. If you receive
               a damaged shipment, you must:
@@ -156,13 +156,13 @@ export default function TermsPage() {
               <li>
                 Notify BagSupplyCo within 5 business days of delivery by contacting us at
                 {' '}
-                <a className="font-semibold text-[#1E4D2B] underline" href="mailto:Marc.Castella@bagsupplyco.com">
+                <a className="font-semibold text-brand-600 underline" href="mailto:Marc.Castella@bagsupplyco.com">
                   Marc.Castella@bagsupplyco.com
                 </a>
                 {' '}
                 or
                 {' '}
-                <a className="font-semibold text-[#1E4D2B] underline" href="tel:+17048629256">
+                <a className="font-semibold text-brand-600 underline" href="tel:+17048629256">
                   (704) 862-9256
                 </a>
                 .
@@ -176,7 +176,7 @@ export default function TermsPage() {
               replacement is not possible.
             </p>
 
-            <h3 className="mt-6 text-xl font-bold text-[#B5813A]">
+            <h3 className="mt-6 font-serif text-xl text-accent-500">
               6.2 Exclusions &mdash; the following are never eligible for return or refund:
             </h3>
             <ul className="mt-3 list-disc space-y-2 pl-5 text-base leading-8 text-[#3E3427] md:text-lg">
@@ -187,10 +187,10 @@ export default function TermsPage() {
             </ul>
           </article>
 
-          <hr className="my-8 border-[#C4935A66]" />
+          <hr className="my-8 border-kraft-400/40" />
 
           <article>
-            <h2 className="text-2xl font-black text-[#1E4D2B] md:text-3xl">7. Intellectual Property</h2>
+            <h2 className="font-serif text-2xl text-brand-600 md:text-3xl">7. Intellectual Property</h2>
             <p className="mt-4 text-base leading-8 text-[#3E3427] md:text-lg">
               All content on the BagSupplyCo website, including text, graphics, logos, and product images, is the
               property of BagSupplyCo and is protected by applicable intellectual property laws. Unauthorized use,
@@ -198,10 +198,10 @@ export default function TermsPage() {
             </p>
           </article>
 
-          <hr className="my-8 border-[#C4935A66]" />
+          <hr className="my-8 border-kraft-400/40" />
 
           <article>
-            <h2 className="text-2xl font-black text-[#1E4D2B] md:text-3xl">8. Limitation of Liability</h2>
+            <h2 className="font-serif text-2xl text-brand-600 md:text-3xl">8. Limitation of Liability</h2>
             <p className="mt-4 text-base leading-8 text-[#3E3427] md:text-lg">
               To the fullest extent permitted by law, BagSupplyCo shall not be liable for any indirect, incidental,
               special, or consequential damages arising from the use of our products or services, including but not
@@ -213,10 +213,10 @@ export default function TermsPage() {
             </p>
           </article>
 
-          <hr className="my-8 border-[#C4935A66]" />
+          <hr className="my-8 border-kraft-400/40" />
 
           <article>
-            <h2 className="text-2xl font-black text-[#1E4D2B] md:text-3xl">9. Governing Law</h2>
+            <h2 className="font-serif text-2xl text-brand-600 md:text-3xl">9. Governing Law</h2>
             <p className="mt-4 text-base leading-8 text-[#3E3427] md:text-lg">
               These Terms and Conditions shall be governed by and construed in accordance with the laws of the State
               of North Carolina, without regard to its conflict of law provisions. Any disputes arising under these
@@ -224,10 +224,10 @@ export default function TermsPage() {
             </p>
           </article>
 
-          <hr className="my-8 border-[#C4935A66]" />
+          <hr className="my-8 border-kraft-400/40" />
 
           <article>
-            <h2 className="text-2xl font-black text-[#1E4D2B] md:text-3xl">10. Changes to These Terms</h2>
+            <h2 className="font-serif text-2xl text-brand-600 md:text-3xl">10. Changes to These Terms</h2>
             <p className="mt-4 text-base leading-8 text-[#3E3427] md:text-lg">
               BagSupplyCo reserves the right to update or modify these Terms and Conditions at any time. Changes will
               be posted on our website with an updated effective date. Continued use of our services following any
@@ -235,10 +235,10 @@ export default function TermsPage() {
             </p>
           </article>
 
-          <hr className="my-8 border-[#C4935A66]" />
+          <hr className="my-8 border-kraft-400/40" />
 
           <article>
-            <h2 className="text-2xl font-black text-[#1E4D2B] md:text-3xl">11. Contact Information</h2>
+            <h2 className="font-serif text-2xl text-brand-600 md:text-3xl">11. Contact Information</h2>
             <p className="mt-4 text-base leading-8 text-[#3E3427] md:text-lg">
               If you have any questions about these Terms and Conditions, please contact us:
             </p>
@@ -246,21 +246,21 @@ export default function TermsPage() {
               <li>
                 Email:
                 {' '}
-                <a className="font-semibold text-[#1E4D2B] underline" href="mailto:Marc.Castella@bagsupplyco.com">
+                <a className="font-semibold text-brand-600 underline" href="mailto:Marc.Castella@bagsupplyco.com">
                   Marc.Castella@bagsupplyco.com
                 </a>
               </li>
               <li>
                 Phone:
                 {' '}
-                <a className="font-semibold text-[#1E4D2B] underline" href="tel:+17048629256">
+                <a className="font-semibold text-brand-600 underline" href="tel:+17048629256">
                   (704) 862-9256
                 </a>
               </li>
               <li>
                 Website:
                 {' '}
-                <a className="font-semibold text-[#1E4D2B] underline" href="https://www.bagsupplyco.com">
+                <a className="font-semibold text-brand-600 underline" href="https://www.bagsupplyco.com">
                   www.bagsupplyco.com
                 </a>
               </li>

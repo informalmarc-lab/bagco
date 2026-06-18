@@ -40,7 +40,7 @@ export default function PrivacyPolicyPage() {
         <div className="grid gap-4">
           {sections.map((item) => (
             <article key={item.title} className="tonal-panel">
-              <h2 className="text-2xl font-black text-[#1E4D2B]">{item.title}</h2>
+              <h2 className="font-serif text-2xl text-brand-600">{item.title}</h2>
               <p className="mt-3 muted-text">{item.copy}</p>
             </article>
           ))}

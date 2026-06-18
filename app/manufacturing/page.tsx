@@ -42,7 +42,7 @@ export default function ManufacturingPage() {
       <section className="section-container py-20">
         <div className="grid gap-3 md:grid-cols-2">
           {strengths.map((item) => (
-            <p key={item} className="tonal-panel text-sm font-semibold text-[#5F4D33]">{item}</p>
+            <p key={item} className="tonal-panel text-sm font-semibold text-muted">{item}</p>
           ))}
         </div>
 

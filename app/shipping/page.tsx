@@ -28,7 +28,7 @@ export default function ShippingPage() {
         <div className="page-hero-inner">
           <p className="kicker">Shipping Policy</p>
           <h1 className="heading-display mt-5">Freight and FSC Rules</h1>
-          <p className="mt-3 max-w-3xl text-base font-semibold text-[#5F4D33]">
+          <p className="mt-3 max-w-3xl text-base font-semibold text-muted">
             FSC stands for Fuel Surcharge — a percentage added to orders based on shipping zone, replacing flat freight rates on qualifying case volumes.
           </p>
           <p className="mt-4 max-w-3xl text-lg muted-text">
@@ -45,7 +45,7 @@ export default function ShippingPage() {
         <div className="grid gap-4 md:grid-cols-3">
           {rules.map((rule) => (
             <article key={rule} className="tonal-panel">
-              <p className="text-sm font-semibold text-[#5F4D33]">{rule}</p>
+              <p className="text-sm font-semibold text-muted">{rule}</p>
             </article>
           ))}
         </div>
@@ -55,8 +55,8 @@ export default function ShippingPage() {
           <div className="mt-5 grid gap-3 md:grid-cols-3">
             {zones.map((zone) => (
               <div key={zone.label} className="surface-card rounded-2xl p-4">
-                <p className="text-xs font-black uppercase tracking-[0.1em] text-[#7A6548]">{zone.label}</p>
-                <p className="mt-2 text-lg font-black text-[#1E4D2B]">{zone.value}</p>
+                <p className="text-xs font-black uppercase tracking-[0.1em] text-accent-600">{zone.label}</p>
+                <p className="mt-2 font-serif text-lg text-brand-600">{zone.value}</p>
               </div>
             ))}
           </div>

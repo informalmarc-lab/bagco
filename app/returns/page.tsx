@@ -49,7 +49,7 @@ export default function ReturnsPage() {
         <div className="page-hero-inner">
           <p className="kicker">Legal</p>
           <h1 className="heading-display mt-5">Return Policy</h1>
-          <p className="mt-4 text-base font-semibold text-[#B5813A] md:text-lg">
+          <p className="mt-4 text-base font-semibold text-accent-500 md:text-lg">
             Defective product claims only
           </p>
           <p className="mt-5 max-w-3xl text-lg muted-text">
@@ -73,15 +73,15 @@ export default function ReturnsPage() {
               key={section.title}
               className={
                 index === 0
-                  ? 'rounded-[2rem] border border-[#C4935A99] bg-[linear-gradient(135deg,#1E4D2B,#225935_58%,#173A21)] p-6 text-[#FAF6F0] shadow-[0_20px_44px_rgba(30,77,43,0.18)] md:p-8'
+                  ? 'rounded-[2.5rem] border border-kraft-400/60 bg-[linear-gradient(135deg,#1E4D2B,#225935_58%,#173A21)] p-6 text-[#FAF6F0] shadow-[0_20px_44px_rgba(30,77,43,0.18)] md:p-8'
                   : 'tonal-panel'
               }
             >
               <h2
                 className={
                   index === 0
-                    ? 'font-serif text-3xl font-black text-[#FAF6F0] md:text-4xl'
-                    : 'text-2xl font-black text-[#1E4D2B] md:text-3xl'
+                    ? 'font-serif text-3xl text-[#FAF6F0] md:text-4xl'
+                    : 'font-serif text-2xl text-brand-600 md:text-3xl'
                 }
               >
                 {section.title}
@@ -98,12 +98,12 @@ export default function ReturnsPage() {
             </article>
           ))}
 
-          <article className="rounded-[2rem] border border-[#B5813A66] bg-[#FAF6F0] p-6 shadow-[0_14px_34px_rgba(30,77,43,0.08)] md:p-8">
-            <p className="text-xs font-black uppercase tracking-[0.12em] text-[#B5813A]">Need Help?</p>
-            <h2 className="mt-3 text-2xl font-black text-[#1E4D2B] md:text-3xl">Return questions or a defective shipment?</h2>
+          <article className="rounded-[2.5rem] border border-accent-400/40 bg-[#FAF6F0] p-6 shadow-[0_14px_34px_rgba(30,77,43,0.08)] md:p-8">
+            <p className="text-xs font-black uppercase tracking-[0.12em] text-accent-500">Need Help?</p>
+            <h2 className="mt-3 font-serif text-2xl text-brand-600 md:text-3xl">Return questions or a defective shipment?</h2>
             <p className="mt-4 max-w-3xl text-base leading-8 text-[#3E3427] md:text-lg">
               Send your order number, delivery details, and product photos to{' '}
-              <a href="mailto:support@bagsupplyco.com" className="font-semibold text-[#1E4D2B] underline">
+              <a href="mailto:support@bagsupplyco.com" className="font-semibold text-brand-600 underline">
                 support@bagsupplyco.com
               </a>
               . We will review the claim and reply within 2 business days.
