@@ -111,29 +111,29 @@ export default function DispensariesLandingPage() {
   const sizeHighlights = getSizeHighlights(customProducts)
 
   return (
-    <div className="bg-[#FAF6F0] pb-16">
-      <section className="border-b border-[#D8C5A7] bg-[#FFFDF8]">
+    <div className="bg-cream pb-16">
+      <section className="border-b border-kraft-300/50 bg-[#FFFDF8]">
         <div className="section-container grid gap-8 py-12 md:py-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
-            <h1 className="text-balance text-4xl font-black leading-tight text-[#1E4D2B] md:text-6xl">
+            <h1 className="text-balance font-serif text-4xl leading-tight tracking-[-0.01em] text-brand-600 md:text-6xl">
               Custom dispensary paper bags that make checkout feel branded.
             </h1>
-            <p className="mt-5 max-w-2xl text-base leading-7 text-[#5F4D33] md:text-lg">
+            <p className="mt-5 max-w-2xl text-base leading-7 text-muted md:text-lg">
               Logo bags, branded exit bags, and repeatable paper bag runs for dispensaries that want the carryout
               moment to look more polished without slowing the counter down.
             </p>
             <div className="mt-6 grid max-w-2xl gap-2 sm:grid-cols-3">
-              <div className="border-l-2 border-[#B5813A] bg-white px-3 py-2">
-                <p className="text-sm font-black text-[#1E4D2B]">1-3 colors</p>
-                <p className="text-xs text-[#5F4D33]">Print options</p>
+              <div className="border-l-2 border-accent-500 bg-white px-3 py-2">
+                <p className="text-sm font-black text-brand-600">1-3 colors</p>
+                <p className="text-xs text-muted">Print options</p>
               </div>
-              <div className="border-l-2 border-[#B5813A] bg-white px-3 py-2">
-                <p className="text-sm font-black text-[#1E4D2B]">4 cases</p>
-                <p className="text-xs text-[#5F4D33]">Minimum run</p>
+              <div className="border-l-2 border-accent-500 bg-white px-3 py-2">
+                <p className="text-sm font-black text-brand-600">4 cases</p>
+                <p className="text-xs text-muted">Minimum run</p>
               </div>
-              <div className="border-l-2 border-[#B5813A] bg-white px-3 py-2">
-                <p className="text-sm font-black text-[#1E4D2B]">Proof first</p>
-                <p className="text-xs text-[#5F4D33]">Before production</p>
+              <div className="border-l-2 border-accent-500 bg-white px-3 py-2">
+                <p className="text-sm font-black text-brand-600">Proof first</p>
+                <p className="text-xs text-muted">Before production</p>
               </div>
             </div>
             <div className="mt-7 flex flex-wrap gap-3">
@@ -150,8 +150,8 @@ export default function DispensariesLandingPage() {
           </div>
 
           {heroProduct && (
-            <div className="surface-card overflow-hidden rounded-lg bg-white">
-              <Link href={getCatalogOverviewPath(heroProduct)} className="relative block aspect-[16/10] bg-[#FAF6F0]">
+            <div className="surface-card overflow-hidden rounded-2xl bg-white">
+              <Link href={getCatalogOverviewPath(heroProduct)} className="relative block aspect-[16/10] bg-cream">
                 <FallbackImage
                   src={heroProduct.image}
                   fallbackSrc="/images/catalog/placeholder.svg"
@@ -162,19 +162,19 @@ export default function DispensariesLandingPage() {
                   sizes="(max-width: 1024px) 100vw, 52vw"
                 />
               </Link>
-              <div className="flex flex-wrap items-center justify-between gap-3 border-t border-[#E1D2BB] p-4">
+              <div className="flex flex-wrap items-center justify-between gap-3 border-t border-kraft-300/35 p-4">
                 <div>
-                  <p className="text-xs font-black uppercase text-[#7A6548]">Featured custom paper bag</p>
-                  <h2 className="mt-1 text-lg font-black text-[#1E4D2B]">{heroProduct.name}</h2>
+                  <p className="text-xs font-black uppercase text-accent-600">Featured custom paper bag</p>
+                  <h2 className="mt-1 font-serif text-lg text-brand-600">{heroProduct.name}</h2>
                 </div>
                 <p className="product-card-price">From {money(heroProduct.startingPrice)}</p>
               </div>
-              <div className="grid border-t border-[#E1D2BB] sm:grid-cols-3">
+              <div className="grid border-t border-kraft-300/35 sm:grid-cols-3">
                 {customProducts.map((product) => (
                   <Link
                     key={product.sku}
                     href={getCatalogOverviewPath(product)}
-                    className="border-t border-[#E1D2BB] px-4 py-3 text-sm font-bold text-[#1E4D2B] hover:bg-[#FAF6F0] sm:border-l sm:border-t-0 sm:first:border-l-0"
+                    className="border-t border-kraft-300/35 px-4 py-3 text-sm font-bold text-brand-600 hover:bg-cream sm:border-l sm:border-t-0 sm:first:border-l-0"
                   >
                     {product.colorOptions[0]}
                   </Link>
@@ -187,9 +187,9 @@ export default function DispensariesLandingPage() {
 
       <section className="section-container grid gap-3 py-8 md:grid-cols-4">
         {programRows.map(([title, copy]) => (
-          <div key={title} className="border-t border-[#D8C5A7] bg-[#FFFDF8] py-4">
-            <h2 className="text-base font-black text-[#1E4D2B]">{title}</h2>
-            <p className="mt-2 text-sm leading-6 text-[#5F4D33]">{copy}</p>
+          <div key={title} className="border-t border-kraft-300/50 bg-[#FFFDF8] py-4">
+            <h2 className="text-base font-black text-brand-600">{title}</h2>
+            <p className="mt-2 text-sm leading-6 text-muted">{copy}</p>
           </div>
         ))}
       </section>
@@ -197,20 +197,20 @@ export default function DispensariesLandingPage() {
       <DispensaryCustomScrollStory items={storyItems} />
 
       <section className="section-container py-8">
-        <div className="border-y border-[#D8C5A7] py-8">
+        <div className="border-y border-kraft-300/50 py-8">
           <div className="grid gap-6 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
             <div>
               <h2 className="section-title">Then build the size mix around checkout.</h2>
-              <p className="mt-4 text-base leading-7 text-[#5F4D33]">
+              <p className="mt-4 text-base leading-7 text-muted">
                 Custom print is the visual decision. Sizing is the operational one: small bags for single-item
                 handoff, larger formats for jars, accessories, receipts, and multi-item orders.
               </p>
             </div>
             <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
               {sizeHighlights.map((size) => (
-                <div key={size} className="border-l-2 border-[#B5813A] bg-[#FFFDF8] px-4 py-3">
-                  <p className="text-lg font-black text-[#1E4D2B]">{size}</p>
-                  <p className="mt-1 text-sm text-[#5F4D33]">Available custom paper bag size</p>
+                <div key={size} className="border-l-2 border-accent-500 bg-[#FFFDF8] px-4 py-3">
+                  <p className="text-lg font-black text-brand-600">{size}</p>
+                  <p className="mt-1 text-sm text-muted">Available custom paper bag size</p>
                 </div>
               ))}
             </div>
@@ -219,9 +219,9 @@ export default function DispensariesLandingPage() {
       </section>
 
       <section className="section-container grid gap-6 py-8 lg:grid-cols-[0.92fr_1.08fr]">
-        <div className="rounded-lg border border-[#D8C5A7] bg-white p-5 md:p-7">
+        <div className="rounded-2xl border border-kraft-300/50 bg-white p-5 md:p-7">
           <h2 className="section-title">Make the paper bag the brand touchpoint.</h2>
-          <p className="mt-4 text-base leading-7 text-[#5F4D33]">
+          <p className="mt-4 text-base leading-7 text-muted">
             The customer sees the bag at pickup, at the counter, and after they leave the store. A custom paper bag
             makes that handoff recognizable without adding friction for the team behind the counter.
           </p>
@@ -235,14 +235,14 @@ export default function DispensariesLandingPage() {
           </div>
         </div>
 
-        <div className="rounded-lg border border-[#D8C5A7] bg-white p-5 md:p-7">
-          <h2 className="text-2xl font-black text-[#1E4D2B]">What to send for pricing.</h2>
-          <p className="mt-3 text-sm leading-6 text-[#5F4D33]">
+        <div className="rounded-2xl border border-kraft-300/50 bg-white p-5 md:p-7">
+          <h2 className="font-serif text-2xl text-brand-600">What to send for pricing.</h2>
+          <p className="mt-3 text-sm leading-6 text-muted">
             The quote gets cleaner when the artwork, quantity, and timing are clear up front.
           </p>
           <div className="mt-5 grid gap-3 sm:grid-cols-2">
             {quoteDetails.map((detail) => (
-              <div key={detail} className="rounded-lg border border-[#E1D2BB] bg-[#FFFDF8] px-4 py-3 text-sm font-semibold text-[#5F4D33]">
+              <div key={detail} className="rounded-2xl border border-kraft-300/35 bg-[#FFFDF8] px-4 py-3 text-sm font-semibold text-muted">
                 {detail}
               </div>
             ))}
@@ -251,11 +251,11 @@ export default function DispensariesLandingPage() {
       </section>
 
       <section className="section-container py-8">
-        <div className="rounded-lg border border-[#D8C5A7] bg-white p-5 md:p-7">
+        <div className="rounded-2xl border border-kraft-300/50 bg-white p-5 md:p-7">
           <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
             <div>
               <h2 className="section-title">How the custom bag quote works.</h2>
-              <p className="mt-4 text-sm leading-6 text-[#5F4D33]">
+              <p className="mt-4 text-sm leading-6 text-muted">
                 Keep the intake focused on the paper bag: size, print colors, artwork, quantity, and reorder timing.
                 Compliance labels and mylar can stay separate from the first custom paper bag decision.
               </p>
@@ -265,9 +265,9 @@ export default function DispensariesLandingPage() {
             </div>
             <div className="grid gap-3 sm:grid-cols-2">
               {customSteps.map((step, index) => (
-                <div key={step} className="rounded-lg border border-[#E1D2BB] bg-[#FFFDF8] p-4">
-                  <p className="text-sm font-black text-[#B5813A]">0{index + 1}</p>
-                  <p className="mt-2 text-sm leading-6 text-[#5F4D33]">{step}</p>
+                <div key={step} className="rounded-2xl border border-kraft-300/35 bg-[#FFFDF8] p-4">
+                  <p className="text-sm font-black text-accent-500">0{index + 1}</p>
+                  <p className="mt-2 text-sm leading-6 text-muted">{step}</p>
                 </div>
               ))}
             </div>
@@ -276,11 +276,11 @@ export default function DispensariesLandingPage() {
       </section>
 
       <section className="section-container py-8">
-        <div className="rounded-lg border border-[#D8C5A7] bg-white p-5 md:p-7">
+        <div className="rounded-2xl border border-kraft-300/50 bg-white p-5 md:p-7">
           <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
             <div>
               <h2 className="section-title">Stock exit bags are still here when speed matters.</h2>
-              <p className="mt-4 text-sm leading-6 text-[#5F4D33]">
+              <p className="mt-4 text-sm leading-6 text-muted">
                 Use stock dispensary paper bags when the store needs inventory quickly, then move into custom print
                 once the size mix and reorder volume are clear.
               </p>
@@ -293,12 +293,12 @@ export default function DispensariesLandingPage() {
                 <Link
                   key={product.slug}
                   href={getCatalogOverviewPath(product)}
-                  className="grid grid-cols-[96px_1fr] gap-3 rounded-lg border border-[#E1D2BB] bg-[#FFFDF8] p-3"
+                  className="grid grid-cols-[96px_1fr] gap-3 rounded-2xl border border-kraft-300/35 bg-[#FFFDF8] p-3"
                 >
-                  <div className="relative aspect-square overflow-hidden rounded-md bg-white">
+                  <div className="relative aspect-square overflow-hidden rounded-xl bg-white">
                     <FallbackImage
                       src={product.image}
-                      fallbackSrc="/images/catalog/pla2ceholder.svg"
+                      fallbackSrc="/images/catalog/placeholder.svg"
                       alt={getCatalogProductAlt(product)}
                       fill
                       className="object-cover"
@@ -306,8 +306,8 @@ export default function DispensariesLandingPage() {
                     />
                   </div>
                   <div>
-                    <h3 className="text-sm font-black leading-5 text-[#1E4D2B]">{product.name}</h3>
-                    <p className="mt-1 text-sm text-[#5F4D33]">From {money(product.startingPrice)}</p>
+                    <h3 className="text-sm font-black leading-5 text-brand-600">{product.name}</h3>
+                    <p className="mt-1 text-sm text-muted">From {money(product.startingPrice)}</p>
                   </div>
                 </Link>
               ))}
@@ -317,8 +317,8 @@ export default function DispensariesLandingPage() {
       </section>
 
       <section className="section-container py-8">
-        <div className="rounded-lg border border-[#1E4D2B] bg-[#1E4D2B] p-6 text-white md:p-8">
-          <h2 className="text-3xl font-black text-white">Build a custom dispensary paper bag quote.</h2>
+        <div className="rounded-2xl border border-[#1E4D2B] bg-brand-600 p-6 text-white md:p-8">
+          <h2 className="font-serif text-3xl text-white">Build a custom dispensary paper bag quote.</h2>
           <p className="mt-3 max-w-3xl text-sm leading-6 text-[#F4E8D8] md:text-base">
             Send the bag sizes, print color count, artwork status, order volume, store count, and reorder timing. The
             team can price the custom paper bag run first, then add stock exit bags only if they help the program.
