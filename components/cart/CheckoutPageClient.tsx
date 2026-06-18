@@ -44,7 +44,7 @@ export default function CheckoutPageClient() {
     return (
       <section className="section-container py-20">
         <div className="tonal-panel">
-          <p className="text-sm font-semibold text-[#5F4D33]">Loading checkout...</p>
+          <p className="text-sm font-semibold text-muted">Loading checkout...</p>
         </div>
       </section>
     )
@@ -55,7 +55,7 @@ export default function CheckoutPageClient() {
       <section className="section-container py-20">
         <div className="tonal-panel text-center">
           <h2 className="section-title">Your cart is empty</h2>
-          <p className="mt-4 text-sm text-[#5F4D33]">
+          <p className="mt-4 text-sm text-muted">
             Add items to the cart before starting checkout.
           </p>
           <div className="mt-6 flex justify-center">
@@ -129,61 +129,61 @@ export default function CheckoutPageClient() {
       <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
         <div className="tonal-panel">
           <h2 className="section-title">Checkout Details</h2>
-          <p className="mt-3 text-sm text-[#5F4D33]">
+          <p className="mt-3 text-sm text-muted">
             Submit your order and our team will follow up within 24 hours with next steps.
           </p>
 
           <div className="mt-6 grid gap-4 md:grid-cols-2">
-            <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
+            <label className="grid gap-1 text-sm font-semibold text-muted">
               Full Name *
               <input
                 type="text"
                 value={customer.fullName}
                 onChange={(event) => updateField('fullName', event.target.value)}
-                className="rounded-md border border-[#C4935A66] px-3 py-2"
+                className="rounded-xl border border-kraft-400/40 px-3.5 py-2.5"
               />
             </label>
-            <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
+            <label className="grid gap-1 text-sm font-semibold text-muted">
               Company Name
               <input
                 type="text"
                 value={customer.companyName}
                 onChange={(event) => updateField('companyName', event.target.value)}
-                className="rounded-md border border-[#C4935A66] px-3 py-2"
+                className="rounded-xl border border-kraft-400/40 px-3.5 py-2.5"
               />
             </label>
-            <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
+            <label className="grid gap-1 text-sm font-semibold text-muted">
               Email *
               <input
                 type="email"
                 value={customer.email}
                 onChange={(event) => updateField('email', event.target.value)}
-                className="rounded-md border border-[#C4935A66] px-3 py-2"
+                className="rounded-xl border border-kraft-400/40 px-3.5 py-2.5"
               />
             </label>
-            <label className="grid gap-1 text-sm font-semibold text-[#5F4D33]">
+            <label className="grid gap-1 text-sm font-semibold text-muted">
               Phone *
               <input
                 type="tel"
                 value={customer.phone}
                 onChange={(event) => updateField('phone', event.target.value)}
-                className="rounded-md border border-[#C4935A66] px-3 py-2"
+                className="rounded-xl border border-kraft-400/40 px-3.5 py-2.5"
               />
             </label>
           </div>
 
-          <label className="mt-4 grid gap-1 text-sm font-semibold text-[#5F4D33]">
+          <label className="mt-4 grid gap-1 text-sm font-semibold text-muted">
             Shipping Address *
             <textarea
               rows={4}
               value={customer.shippingAddress}
               onChange={(event) => updateField('shippingAddress', event.target.value)}
-              className="rounded-md border border-[#C4935A66] px-3 py-2"
+              className="rounded-xl border border-kraft-400/40 px-3.5 py-2.5"
             />
           </label>
 
           <div className="mt-6">
-            <p className="text-sm font-black uppercase tracking-[0.08em] text-[#1E4D2B]">Payment Preference *</p>
+            <p className="text-sm font-black uppercase tracking-[0.08em] text-brand-600">Payment Preference *</p>
             <div className="mt-3 grid gap-3 md:grid-cols-3">
               {PAYMENT_OPTIONS.map((option) => {
                 const active = customer.paymentPreference === option.value
@@ -192,43 +192,43 @@ export default function CheckoutPageClient() {
                     key={option.value}
                     type="button"
                     onClick={() => updateField('paymentPreference', option.value)}
-                    className={`rounded-md border px-4 py-4 text-left ${
+                    className={`rounded-xl border px-4 py-4 text-left transition ${
                       active
-                        ? 'border-[#1E4D2B] bg-[#1E4D2B] text-white'
-                        : 'border-[#C4935A66] bg-white text-[#1E4D2B] hover:bg-[#FAF6F0]'
+                        ? 'border-brand-600 bg-brand-600 text-white'
+                        : 'border-kraft-400/40 bg-white text-brand-600 hover:bg-cream'
                     }`}
                   >
                     <p className="text-sm font-black">{option.label}</p>
-                    <p className={`mt-2 text-xs ${active ? 'text-[#F7E6D1]' : 'text-[#5F4D33]'}`}>
+                    <p className={`mt-2 text-xs ${active ? 'text-[#F7E6D1]' : 'text-muted'}`}>
                       {option.description}
                     </p>
                   </button>
                 )
               })}
             </div>
-            <p className="mt-3 text-sm text-[#5F4D33]">{paymentDescription}</p>
+            <p className="mt-3 text-sm text-muted">{paymentDescription}</p>
           </div>
 
           {customer.paymentPreference === 'Other' && (
-            <label className="mt-4 grid gap-1 text-sm font-semibold text-[#5F4D33]">
+            <label className="mt-4 grid gap-1 text-sm font-semibold text-muted">
               Preferred Payment Method *
               <input
                 type="text"
                 value={customer.otherPaymentMethod || ''}
                 onChange={(event) => updateField('otherPaymentMethod', event.target.value)}
-                className="rounded-md border border-[#C4935A66] px-3 py-2"
+                className="rounded-xl border border-kraft-400/40 px-3.5 py-2.5"
                 placeholder="Describe your preferred payment method"
               />
             </label>
           )}
 
-          <label className="mt-4 grid gap-1 text-sm font-semibold text-[#5F4D33]">
+          <label className="mt-4 grid gap-1 text-sm font-semibold text-muted">
             Order Notes
             <textarea
               rows={5}
               value={customer.orderNotes}
               onChange={(event) => updateField('orderNotes', event.target.value)}
-              className="rounded-md border border-[#C4935A66] px-3 py-2"
+              className="rounded-xl border border-kraft-400/40 px-3.5 py-2.5"
               placeholder="Anything else we should know about this order?"
             />
           </label>
@@ -254,23 +254,23 @@ export default function CheckoutPageClient() {
           <h2 className="section-title text-3xl">Order Summary</h2>
           <div className="mt-5 space-y-4">
             {items.map((item) => (
-              <div key={item.id} className="rounded-2xl border border-[#C4935A66] bg-white p-4">
-                <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">SKU {item.sku}</p>
-                <h3 className="mt-1 text-base font-black text-[#1E4D2B]">{item.name}</h3>
-                {item.sizeLabel && <p className="mt-1 text-sm text-[#5F4D33]">{item.sizeLabel}</p>}
-                <p className="mt-1 text-sm text-[#5F4D33]">{formatCartUnit(item.quantity, item.unit)}</p>
-                <p className="mt-2 text-sm font-semibold text-[#1E4D2B]">
+              <div key={item.id} className="rounded-2xl border border-kraft-400/40 bg-white p-4">
+                <p className="text-xs font-black uppercase tracking-[0.08em] text-accent-600">SKU {item.sku}</p>
+                <h3 className="mt-1 font-serif text-base text-brand-600">{item.name}</h3>
+                {item.sizeLabel && <p className="mt-1 text-sm text-muted">{item.sizeLabel}</p>}
+                <p className="mt-1 text-sm text-muted">{formatCartUnit(item.quantity, item.unit)}</p>
+                <p className="mt-2 text-sm font-semibold text-brand-600">
                   {money(item.unitPrice)} / {getCartPriceUnitLabel(item)}
                 </p>
-                <p className="mt-1 text-lg font-black text-[#B5813A]">{money(getCartLineTotal(item))}</p>
+                <p className="mt-1 text-lg font-black text-accent-500">{money(getCartLineTotal(item))}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-6 border-t border-[#C4935A66] pt-4">
+          <div className="mt-6 border-t border-kraft-400/40 pt-4">
             <div className="flex items-center justify-between">
-              <span className="text-base font-semibold text-[#1E4D2B]">Order Total</span>
-              <span className="text-2xl font-black text-[#1E4D2B]">{money(subtotal)}</span>
+              <span className="text-base font-semibold text-brand-600">Order Total</span>
+              <span className="text-2xl font-black text-brand-600">{money(subtotal)}</span>
             </div>
           </div>
         </aside>
