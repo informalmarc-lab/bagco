@@ -114,7 +114,7 @@ function HeroMockups({ reduceMotion }: { reduceMotion: boolean | null }) {
   return (
     <div className="relative hidden min-h-[300px] overflow-hidden lg:block">
       <motion.div
-        className="absolute right-6 top-8 w-48 rounded-lg border border-[#C4935A55] bg-white/90 p-3 shadow-[0_8px_24px_rgba(30,77,43,0.09)]"
+        className="absolute right-6 top-8 w-48 rounded-2xl border border-kraft-400/30 bg-white/90 p-3 shadow-[0_8px_24px_rgba(30,77,43,0.09)]"
         initial={reduceMotion ? undefined : { opacity: 0, y: 12 }}
         animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
         transition={{ duration: 0.28 }}
@@ -122,7 +122,7 @@ function HeroMockups({ reduceMotion }: { reduceMotion: boolean | null }) {
         <ProductVisual product={heroMockups[0]} priority reduceMotion={reduceMotion} compact />
       </motion.div>
       <motion.div
-        className="absolute right-44 top-24 w-40 rounded-lg border border-[#D8C5A7] bg-[#FFFDF8]/95 p-3 shadow-[0_6px_18px_rgba(30,77,43,0.08)]"
+        className="absolute right-44 top-24 w-40 rounded-2xl border border-kraft-300/60 bg-[#FFFDF8]/95 p-3 shadow-[0_6px_18px_rgba(30,77,43,0.08)]"
         initial={reduceMotion ? undefined : { opacity: 0, y: 14 }}
         animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
         transition={{ duration: 0.28, delay: 0.06 }}
@@ -130,7 +130,7 @@ function HeroMockups({ reduceMotion }: { reduceMotion: boolean | null }) {
         <ProductVisual product={heroMockups[1]} reduceMotion={reduceMotion} compact />
       </motion.div>
       <motion.div
-        className="absolute bottom-6 right-20 w-36 rounded-lg border border-[#D8C5A7] bg-white/90 p-3 shadow-[0_6px_18px_rgba(30,77,43,0.08)]"
+        className="absolute bottom-6 right-20 w-36 rounded-2xl border border-kraft-300/60 bg-white/90 p-3 shadow-[0_6px_18px_rgba(30,77,43,0.08)]"
         initial={reduceMotion ? undefined : { opacity: 0, y: 14 }}
         animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
         transition={{ duration: 0.28, delay: 0.12 }}
@@ -186,7 +186,7 @@ function ProductVisual({
         layout
         whileHover={reduceMotion ? undefined : { y: -2 }}
         whileTap={reduceMotion ? undefined : { scale: 0.99 }}
-        className={classNames('relative w-full overflow-hidden rounded-lg bg-[#F6EFE5]', compact ? 'h-36 md:h-40' : 'h-52 md:h-64')}
+        className={classNames('relative w-full overflow-hidden rounded-2xl bg-[#F6EFE5]', compact ? 'h-36 md:h-40' : 'h-52 md:h-64')}
       >
         <AnimatePresence mode="wait">
           <motion.div
@@ -207,10 +207,10 @@ function ProductVisual({
   return (
     <motion.div
       layout
-      className={classNames('grid place-items-center rounded-lg border border-dashed border-[#D8C5A7] bg-[#FFFDF8] p-5 text-center text-[#7A6548]', compact ? 'h-36 md:h-40' : 'h-52 md:h-64')}
+      className={classNames('grid place-items-center rounded-2xl border border-dashed border-kraft-300/60 bg-[#FFFDF8] p-5 text-center text-accent-600', compact ? 'h-36 md:h-40' : 'h-52 md:h-64')}
     >
       <div>
-        <p className="text-sm font-black text-[#B5813A]">Image needed</p>
+        <p className="text-sm font-black text-accent-500">Image needed</p>
         <p className="mt-2 text-sm leading-6">
           Add a product image for {product.item} to show this bag here.
         </p>
@@ -221,9 +221,9 @@ function ProductVisual({
 
 function SummaryRow({ label, value }: { label: string; value: string }) {
   return (
-    <div className="flex items-start justify-between gap-4 border-b border-[#D8C5A766] py-3 text-sm last:border-b-0">
-      <span className="text-[#7A6548]">{label}</span>
-      <span className="max-w-[180px] text-right font-semibold text-[#1E4D2B]">{value}</span>
+    <div className="flex items-start justify-between gap-4 border-b border-kraft-300/40 py-3 text-sm last:border-b-0">
+      <span className="text-accent-600">{label}</span>
+      <span className="max-w-[180px] text-right font-semibold text-brand-600">{value}</span>
     </div>
   )
 }
@@ -248,18 +248,18 @@ function MiniSummary({
 
   return (
     <motion.div
-      className="hidden rounded-lg border border-[#D8C5A7] bg-white p-3 lg:grid lg:grid-cols-4 lg:gap-2"
+      className="hidden rounded-2xl border border-kraft-300/60 bg-white p-3 lg:grid lg:grid-cols-4 lg:gap-2"
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.22 }}
     >
       {rows.map((row) => (
-        <div key={row.label} className="rounded-md border border-[#E4D4BA] bg-[#FFFDF8] px-3 py-2">
-          <p className="text-[11px] font-black uppercase text-[#7A6548]">{row.label}</p>
+        <div key={row.label} className="rounded-xl border border-kraft-300/30 bg-[#FFFDF8] px-3 py-2">
+          <p className="text-[11px] font-black uppercase text-accent-600">{row.label}</p>
           <AnimatePresence mode="wait">
             <motion.p
               key={row.value}
-              className={classNames('mt-1 truncate text-sm font-black', row.label === 'Total' ? 'text-[#B5813A]' : 'text-[#1E4D2B]')}
+              className={classNames('mt-1 truncate text-sm font-black', row.label === 'Total' ? 'text-accent-500' : 'text-brand-600')}
               initial={{ opacity: 0, y: 5 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -5 }}
@@ -427,7 +427,7 @@ export default function MakeYourQuoteConfigurator() {
       transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
     >
       <AmbientLayer />
-      <section className="relative overflow-hidden border-b border-[#D8C5A7]">
+      <section className="relative overflow-hidden border-b border-kraft-300/60">
         <div className="relative mx-auto w-full max-w-[1440px] px-4 py-10 md:px-8 md:py-14">
           <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_480px]">
             <div>
@@ -436,10 +436,10 @@ export default function MakeYourQuoteConfigurator() {
                 animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
                 transition={{ duration: 0.32, delay: 0.04 }}
               >
-                <h1 className="text-balance text-4xl font-black tracking-[-0.04em] text-[#1E4D2B] md:text-6xl">
+                <h1 className="text-balance font-serif text-4xl tracking-[-0.01em] text-brand-600 md:text-6xl">
                   Build Your Custom Bag Quote
                 </h1>
-                <p className="mt-4 max-w-2xl text-base leading-7 text-[#5F4D33] md:text-lg">
+                <p className="mt-4 max-w-2xl text-base leading-7 text-muted md:text-lg">
                   Instant estimates for custom paper bag orders.
                 </p>
               </motion.div>
@@ -470,11 +470,11 @@ export default function MakeYourQuoteConfigurator() {
                 animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.05, duration: 0.22 }}
                 className={classNames(
-                  'min-w-0 items-center gap-3 rounded-md border px-4 py-3 text-sm font-semibold sm:flex',
-                  'border-[#E1D2BB] bg-white text-[#1E4D2B]',
+                  'min-w-0 items-center gap-3 rounded-xl border px-4 py-3 text-sm font-semibold sm:flex',
+                  'border-kraft-300/40 bg-white text-brand-600',
                 )}
               >
-                <span className="mb-2 block shrink-0 text-[#B5813A] sm:mb-0">
+                <span className="mb-2 block shrink-0 text-accent-500 sm:mb-0">
                   <TrustIcon index={index} />
                 </span>
                 <span className="block min-w-0 leading-5">{item}</span>
@@ -485,15 +485,15 @@ export default function MakeYourQuoteConfigurator() {
           {step > 0 && (
             <div className="mt-10">
               <div className="flex items-center justify-between gap-4 text-sm font-bold">
-                <span className="text-[#5F4D33]">Step {step} of 6</span>
-                <span className="text-[#1E4D2B]">{progress}%</span>
+                <span className="text-muted">Step {step} of 6</span>
+                <span className="text-brand-600">{progress}%</span>
               </div>
               <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-[#E9DFD0]">
                 <motion.div className="h-full bg-[#B5813A]" animate={{ width: `${progress}%` }} transition={{ duration: 0.28 }} />
               </div>
               <div className="mt-3 hidden grid-cols-6 gap-2 text-xs font-bold lg:grid">
                 {stepLabels.map((label, index) => (
-                  <span key={label} className={index + 1 <= step ? 'text-[#B5813A]' : 'text-[#7A6548]'}>
+                  <span key={label} className={index + 1 <= step ? 'text-accent-500' : 'text-accent-600'}>
                     {label}
                   </span>
                 ))}
@@ -512,17 +512,17 @@ export default function MakeYourQuoteConfigurator() {
         <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_420px]">
           <div
             ref={flowPanelRef}
-            className="relative min-h-[600px] scroll-mt-24 rounded-lg border border-[#E1D2BB] bg-white p-4 pb-28 md:p-8 md:pb-8 xl:p-10"
+            className="relative min-h-[600px] scroll-mt-24 rounded-2xl border border-kraft-300/40 bg-white p-4 pb-28 md:p-8 md:pb-8 xl:p-10"
           >
             {!submitted && step > 0 && (
-              <div className="mb-8 border-b border-[#E1D2BB] pb-5">
+              <div className="mb-8 border-b border-kraft-300/40 pb-5">
                 <div className="flex flex-wrap items-start justify-between gap-4">
                   <div>
-                    <p className="text-sm font-black text-[#B5813A]">Step {step} of 6</p>
-                    <h2 className="mt-1 text-2xl font-black tracking-[-0.03em] text-[#1E4D2B] md:text-3xl">
+                    <p className="text-sm font-black text-accent-500">Step {step} of 6</p>
+                    <h2 className="mt-1 font-serif text-2xl tracking-[-0.01em] text-brand-600 md:text-3xl">
                       {activeStepLabel}
                     </h2>
-                    <p className="mt-2 text-sm leading-6 text-[#5F4D33]">{activeStepDescription}</p>
+                    <p className="mt-2 text-sm leading-6 text-muted">{activeStepDescription}</p>
                   </div>
                   {step > 1 && (
                     <button
@@ -550,8 +550,8 @@ export default function MakeYourQuoteConfigurator() {
                         key={label}
                         className={classNames(
                           'truncate',
-                          state === 'active' && 'text-[#1E4D2B]',
-                          state === 'done' && 'text-[#B5813A]',
+                          state === 'active' && 'text-brand-600',
+                          state === 'done' && 'text-accent-500',
                           state === 'upcoming' && 'text-[#A08B6D]',
                         )}
                       >
@@ -565,14 +565,14 @@ export default function MakeYourQuoteConfigurator() {
             <AnimatePresence>
               {isTransitioning && (
                 <motion.div
-                  className="absolute inset-0 z-20 grid place-items-center rounded-lg bg-white/88"
+                  className="absolute inset-0 z-20 grid place-items-center rounded-2xl bg-white/88"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.12 }}
                 >
-                  <div className="grid gap-3 text-center text-sm font-black text-[#B5813A]">
-                    <span className="mx-auto h-5 w-5 animate-spin rounded-full border-2 border-[#B5813A] border-t-transparent" />
+                  <div className="grid gap-3 text-center text-sm font-black text-accent-500">
+                    <span className="mx-auto h-5 w-5 animate-spin rounded-full border-2 border-accent-500 border-t-transparent" />
                     <span>Preparing step</span>
                   </div>
                 </motion.div>
@@ -597,7 +597,7 @@ export default function MakeYourQuoteConfigurator() {
                   )}
                   <div className="relative max-w-xl">
                     <motion.div
-                      className="mx-auto grid h-20 w-20 place-items-center rounded-full border border-[#1E4D2B] bg-[#1E4D2B] text-white shadow-[0_8px_24px_rgba(30,77,43,0.14)]"
+                      className="mx-auto grid h-20 w-20 place-items-center rounded-full border border-brand-600 bg-brand-600 text-white shadow-[0_8px_24px_rgba(30,77,43,0.14)]"
                       initial={reduceMotion ? undefined : { scale: 0.72, opacity: 0 }}
                       animate={reduceMotion ? undefined : { scale: 1, opacity: 1 }}
                       transition={{ type: 'spring', stiffness: 220, damping: 18 }}
@@ -613,8 +613,8 @@ export default function MakeYourQuoteConfigurator() {
                         />
                       </svg>
                     </motion.div>
-                    <h2 className="mt-7 text-4xl font-black tracking-[-0.04em] text-[#1E4D2B] md:text-5xl">Quote request received.</h2>
-                    <p className="mt-4 text-lg leading-8 text-[#5F4D33]">Thank you. We will contact you shortly with the next step.</p>
+                    <h2 className="mt-7 font-serif text-4xl tracking-[-0.01em] text-brand-600 md:text-5xl">Quote request received.</h2>
+                    <p className="mt-4 text-lg leading-8 text-muted">Thank you. We will contact you shortly with the next step.</p>
                     <button
                       type="button"
                       onClick={() => {
@@ -634,9 +634,9 @@ export default function MakeYourQuoteConfigurator() {
               ) : step === 0 ? (
                 <motion.div key="intro" {...motionProps} className="grid min-h-[500px] content-center gap-8 md:grid-cols-[0.9fr_1.1fr]">
                   <div>
-                    <p className={classNames('text-sm font-semibold text-[#9A6E34]')}>Built for fast wholesale decisions</p>
-                    <h2 className="mt-4 text-3xl font-black tracking-[-0.035em] text-[#1E4D2B] md:text-5xl">Choose a bag, set the run, see the estimate.</h2>
-                    <p className="mt-5 text-base leading-7 text-[#5F4D33]">
+                    <p className={classNames('text-sm font-semibold text-accent-600')}>Built for fast wholesale decisions</p>
+                    <h2 className="mt-4 font-serif text-3xl tracking-[-0.01em] text-brand-600 md:text-5xl">Choose a bag, set the run, see the estimate.</h2>
+                    <p className="mt-5 text-base leading-7 text-muted">
                       One focused question at a time, with product pricing, plate fees, case count, and freight policy handled in the background.
                     </p>
                     <button type="button" onClick={() => goToStep(1)} className="btn-primary mt-7">
@@ -644,14 +644,14 @@ export default function MakeYourQuoteConfigurator() {
                     </button>
                   </div>
                   <motion.div
-                    className="rounded-lg border border-[#D8C5A7] bg-[#FAF6F0] p-4"
+                    className="rounded-2xl border border-kraft-300/60 bg-cream p-4"
                     animate={reduceMotion ? undefined : { opacity: 1 }}
                     transition={{ duration: 0.2 }}
                   >
                     <ProductVisual product={quoteProducts[7]} priority reduceMotion={reduceMotion} />
                     <div className="mt-4 grid grid-cols-3 gap-3">
                       {['Case pricing', 'Plate fees', 'FSC rules'].map((item) => (
-                        <div key={item} className="rounded-md border border-[#D8C5A7] p-3 text-sm font-bold text-[#1E4D2B]">
+                        <div key={item} className="rounded-xl border border-kraft-300/60 p-3 text-sm font-bold text-brand-600">
                           {item}
                         </div>
                       ))}
@@ -660,7 +660,7 @@ export default function MakeYourQuoteConfigurator() {
                 </motion.div>
               ) : step === 1 ? (
                 <motion.div key="category" {...motionProps}>
-                  <h2 className="text-3xl font-black tracking-[-0.04em] text-[#1E4D2B] md:text-5xl">Select Bag Category</h2>
+                  <h2 className="font-serif text-3xl tracking-[-0.01em] text-brand-600 md:text-5xl">Select Bag Category</h2>
                   <div className="mt-8 grid gap-3 md:grid-cols-2">
                     {quoteCategories.map((item, index) => {
                       const active = category === item
@@ -676,12 +676,12 @@ export default function MakeYourQuoteConfigurator() {
                            whileHover={reduceMotion ? undefined : { y: -2 }}
                            whileTap={reduceMotion ? undefined : { scale: 0.985 }}
                            className={classNames(
-                             'min-h-[150px] rounded-lg border p-5 text-left transition-shadow duration-200 hover:shadow-[0_6px_18px_rgba(30,77,43,0.07)]',
-                             active ? 'border-[#B5813A] bg-[#1E4D2B] text-white' : 'border-[#E1D2BB] bg-[#FFFDF8] text-[#1E4D2B] hover:border-[#B5813A]',
+                             'min-h-[150px] rounded-2xl border p-5 text-left transition-shadow duration-200 hover:shadow-[0_6px_18px_rgba(30,77,43,0.07)]',
+                             active ? 'border-accent-500 bg-brand-600 text-white' : 'border-kraft-300/40 bg-[#FFFDF8] text-brand-600 hover:border-accent-500',
                           )}
                         >
                           <span className="text-2xl font-black">{item}</span>
-                          <span className={classNames('mt-3 block text-sm leading-6', active ? 'text-[#F4E8D8]' : 'text-[#5F4D33]')}>{categoryDescriptions[item]}</span>
+                          <span className={classNames('mt-3 block text-sm leading-6', active ? 'text-[#F4E8D8]' : 'text-muted')}>{categoryDescriptions[item]}</span>
                         </motion.button>
                       )
                     })}
@@ -689,7 +689,7 @@ export default function MakeYourQuoteConfigurator() {
                 </motion.div>
               ) : step === 2 ? (
                 <motion.div key="product" {...motionProps}>
-                  <h2 className="text-3xl font-black tracking-[-0.04em] text-[#1E4D2B] md:text-5xl">Select Product</h2>
+                  <h2 className="font-serif text-3xl tracking-[-0.01em] text-brand-600 md:text-5xl">Select Product</h2>
                   <div className="mt-8 grid gap-4 md:grid-cols-2 2xl:grid-cols-3">
                     {productsForCategory.map((item) => {
                       const active = productItem === item.item
@@ -700,17 +700,17 @@ export default function MakeYourQuoteConfigurator() {
                           onClick={() => selectProduct(item)}
                           whileHover={reduceMotion ? undefined : { y: -2 }}
                           whileTap={reduceMotion ? undefined : { scale: 0.985 }}
-                          className={classNames('rounded-lg border p-4 text-left transition-shadow duration-200 hover:shadow-[0_6px_18px_rgba(30,77,43,0.07)]', active ? 'border-[#B5813A] bg-[#1E4D2B] text-white shadow-[0_0_0_2px_rgba(181,129,58,0.18),0_8px_24px_rgba(30,77,43,0.12)]' : 'border-[#E1D2BB] bg-[#FFFDF8] text-[#1E4D2B] hover:border-[#B5813A]')}
+                          className={classNames('rounded-2xl border p-4 text-left transition-shadow duration-200 hover:shadow-[0_6px_18px_rgba(30,77,43,0.07)]', active ? 'border-accent-500 bg-brand-600 text-white shadow-[0_0_0_2px_rgba(181,129,58,0.18),0_8px_24px_rgba(30,77,43,0.12)]' : 'border-kraft-300/40 bg-[#FFFDF8] text-brand-600 hover:border-accent-500')}
                         >
                           <ProductVisual product={getConfiguredProduct(item, printColors)} reduceMotion={reduceMotion} />
                           <div className="mt-4 flex items-start justify-between gap-4">
                             <div>
                               <p className="text-2xl font-black">{item.item}</p>
-                              <p className={classNames('mt-1 text-sm', active ? 'text-[#F4E8D8]' : 'text-[#5F4D33]')}>{item.size}</p>
+                              <p className={classNames('mt-1 text-sm', active ? 'text-[#F4E8D8]' : 'text-muted')}>{item.size}</p>
                             </div>
-                            <p className={classNames('text-right text-sm font-bold', active ? 'text-[#F4E8D8]' : 'text-[#B5813A]')}>{item.pack.toLocaleString()} / case</p>
+                            <p className={classNames('text-right text-sm font-bold', active ? 'text-[#F4E8D8]' : 'text-accent-500')}>{item.pack.toLocaleString()} / case</p>
                           </div>
-                          <p className={classNames('mt-3 text-sm', active ? 'text-[#F4E8D8]' : 'text-[#5F4D33]')}>{item.material}</p>
+                          <p className={classNames('mt-3 text-sm', active ? 'text-[#F4E8D8]' : 'text-muted')}>{item.material}</p>
                         </motion.button>
                       )
                     })}
@@ -718,7 +718,7 @@ export default function MakeYourQuoteConfigurator() {
                 </motion.div>
               ) : step === 3 && product ? (
                 <motion.div key="quantity" {...motionProps}>
-                  <h2 className="text-3xl font-black tracking-[-0.04em] text-[#1E4D2B] md:text-5xl">Select Quantity</h2>
+                  <h2 className="font-serif text-3xl tracking-[-0.01em] text-brand-600 md:text-5xl">Select Quantity</h2>
                   <div className="mt-8 grid gap-3 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
                     {quantityTiers(product).map((tier) => {
                       const active = quantity === tier
@@ -734,16 +734,16 @@ export default function MakeYourQuoteConfigurator() {
                            whileHover={reduceMotion ? undefined : { y: -2 }}
                            whileTap={reduceMotion ? undefined : { scale: 0.985 }}
                            className={classNames(
-                             'relative rounded-lg border p-5 text-left transition-shadow duration-200 hover:shadow-[0_6px_18px_rgba(30,77,43,0.07)]',
+                             'relative rounded-2xl border p-5 text-left transition-shadow duration-200 hover:shadow-[0_6px_18px_rgba(30,77,43,0.07)]',
                              active
-                               ? 'border-[#B5813A] bg-[#1E4D2B] text-white shadow-[0_0_0_2px_rgba(181,129,58,0.18),0_8px_24px_rgba(30,77,43,0.12)]'
-                               : 'border-[#E1D2BB] bg-[#FFFDF8] text-[#1E4D2B] hover:border-[#B5813A]',
+                               ? 'border-accent-500 bg-brand-600 text-white shadow-[0_0_0_2px_rgba(181,129,58,0.18),0_8px_24px_rgba(30,77,43,0.12)]'
+                               : 'border-kraft-300/40 bg-[#FFFDF8] text-brand-600 hover:border-accent-500',
                           )}
                         >
                           {active && (
                             <motion.span
                               layoutId="selected-quantity"
-                              className="absolute right-4 top-4 rounded-md border border-[#F4E8D880] px-2 py-1 text-xs font-semibold text-[#F4E8D8]"
+                              className="absolute right-4 top-4 rounded-xl border border-[#F4E8D880] px-2 py-1 text-xs font-semibold text-[#F4E8D8]"
                               initial={reduceMotion ? undefined : { opacity: 0, scale: 0.9 }}
                               animate={reduceMotion ? undefined : { opacity: 1, scale: 1 }}
                             >
@@ -751,11 +751,11 @@ export default function MakeYourQuoteConfigurator() {
                             </motion.span>
                           )}
                           <p className="text-3xl font-black">{tier.toLocaleString()}</p>
-                          <p className={classNames('mt-2 text-sm', active ? 'text-[#F4E8D8]' : 'text-[#5F4D33]')}>{cases} case{cases === 1 ? '' : 's'} estimated</p>
+                          <p className={classNames('mt-2 text-sm', active ? 'text-[#F4E8D8]' : 'text-muted')}>{cases} case{cases === 1 ? '' : 's'} estimated</p>
                           <AnimatePresence mode="wait">
                             <motion.p
                               key={`${tier}-${active}`}
-                              className={classNames('mt-4 text-sm font-black', active ? 'text-[#F4E8D8]' : 'text-[#B5813A]')}
+                              className={classNames('mt-4 text-sm font-black', active ? 'text-[#F4E8D8]' : 'text-accent-500')}
                               initial={reduceMotion ? undefined : { opacity: 0, y: 5 }}
                               animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
                               exit={reduceMotion ? undefined : { opacity: 0, y: -5 }}
@@ -769,30 +769,30 @@ export default function MakeYourQuoteConfigurator() {
                     })}
                   </div>
                   {isPaperCustomUnderMinimum && (
-                    <p className="mt-5 rounded-md border border-[#C0392B66] bg-[#C0392B12] p-4 text-sm font-bold text-[#C0392B]">
+                    <p className="mt-5 rounded-xl border border-[#C0392B66] bg-[#C0392B12] p-4 text-sm font-bold text-[#C0392B]">
                       Custom printed bags require a minimum order of 4 cases.
                     </p>
                   )}
                 </motion.div>
               ) : step === 4 && product ? (
                 <motion.div key="print" {...motionProps}>
-                  <h2 className="text-3xl font-black tracking-[-0.04em] text-[#1E4D2B] md:text-5xl">Printing Options</h2>
+                  <h2 className="font-serif text-3xl tracking-[-0.01em] text-brand-600 md:text-5xl">Printing Options</h2>
                   {!product.customPrintable ? (
-                    <div className="mt-8 rounded-lg border border-[#D8C5A7] bg-[#FFFDF8] p-6">
-                      <p className="text-2xl font-black text-[#B5813A]">Stock only</p>
-                      <p className="mt-3 leading-7 text-[#5F4D33]">Plastic bags do not use custom print options, plate fees, or print configuration.</p>
+                    <div className="mt-8 rounded-2xl border border-kraft-300/60 bg-[#FFFDF8] p-6">
+                      <p className="text-2xl font-black text-accent-500">Stock only</p>
+                      <p className="mt-3 leading-7 text-muted">Plastic bags do not use custom print options, plate fees, or print configuration.</p>
                     </div>
                   ) : (
                     <div className="mt-8 grid gap-6 md:grid-cols-2">
                       <div>
-                        <p className="text-sm font-black text-[#1E4D2B]">How many print colors?</p>
+                        <p className="text-sm font-black text-brand-600">How many print colors?</p>
                         <div className="mt-3 grid grid-cols-3 gap-2">
                           {[1, 2, 3].map((colorCount) => (
                             <button
                               key={colorCount}
                               type="button"
                               onClick={() => setPrintColors(colorCount as 1 | 2 | 3)}
-                              className={classNames('min-h-[92px] rounded-lg border text-3xl font-black hover:border-[#B5813A]', printColors === colorCount ? 'border-[#B5813A] bg-[#1E4D2B] text-white' : 'border-[#E1D2BB] bg-[#FFFDF8] text-[#1E4D2B]')}
+                              className={classNames('min-h-[92px] rounded-2xl border text-3xl font-black hover:border-accent-500', printColors === colorCount ? 'border-accent-500 bg-brand-600 text-white' : 'border-kraft-300/40 bg-[#FFFDF8] text-brand-600')}
                             >
                               {colorCount}
                             </button>
@@ -800,14 +800,14 @@ export default function MakeYourQuoteConfigurator() {
                         </div>
                       </div>
                       <div>
-                        <p className="text-sm font-black text-[#1E4D2B]">Print sides?</p>
+                        <p className="text-sm font-black text-brand-600">Print sides?</p>
                         <div className="mt-3 grid gap-2">
                           {(['Front only', 'Front + back'] as PrintSides[]).map((side) => (
                             <button
                               key={side}
                               type="button"
                               onClick={() => setPrintSides(side)}
-                              className={classNames('min-h-[92px] rounded-lg border px-4 text-left text-xl font-black hover:border-[#B5813A]', printSides === side ? 'border-[#B5813A] bg-[#1E4D2B] text-white' : 'border-[#E1D2BB] bg-[#FFFDF8] text-[#1E4D2B]')}
+                              className={classNames('min-h-[92px] rounded-2xl border px-4 text-left text-xl font-black hover:border-accent-500', printSides === side ? 'border-accent-500 bg-brand-600 text-white' : 'border-kraft-300/40 bg-[#FFFDF8] text-brand-600')}
                             >
                               {side}
                             </button>
@@ -819,7 +819,7 @@ export default function MakeYourQuoteConfigurator() {
                 </motion.div>
               ) : step === 5 ? (
                 <motion.div key="contact" {...motionProps}>
-                  <h2 className="text-3xl font-black tracking-[-0.04em] text-[#1E4D2B] md:text-5xl">Customer Information</h2>
+                  <h2 className="font-serif text-3xl tracking-[-0.01em] text-brand-600 md:text-5xl">Customer Information</h2>
                   <div className="mt-8 grid gap-4 md:grid-cols-2">
                     {[
                       ['name', 'Name', true],
@@ -828,13 +828,13 @@ export default function MakeYourQuoteConfigurator() {
                       ['phone', 'Phone', false],
                       ['zip', 'ZIP Code', true],
                     ].map(([key, label, required]) => (
-                      <label key={String(key)} className="grid gap-2 text-sm font-bold text-[#5F4D33]">
+                      <label key={String(key)} className="grid gap-2 text-sm font-bold text-muted">
                         {label}{required ? ' *' : ''}
                         <input
                           type={key === 'email' ? 'email' : key === 'phone' ? 'tel' : 'text'}
                           value={customer[key as keyof typeof customer]}
                           onChange={(event) => setCustomer((current) => ({ ...current, [key as string]: event.target.value }))}
-                          className="min-h-[48px] rounded-md border border-[#D8C5A7] bg-white px-3 text-base text-[#1A1A1A] outline-none focus:border-[#1E4D2B]"
+                          className="min-h-[48px] rounded-xl border border-kraft-300/60 bg-white px-3 text-base text-[#1A1A1A] outline-none focus:border-brand-600"
                         />
                       </label>
                     ))}
@@ -844,28 +844,28 @@ export default function MakeYourQuoteConfigurator() {
                 <motion.div key="results" {...motionProps}>
                   <div className="flex flex-wrap items-end justify-between gap-4">
                     <div>
-                      <h2 className="text-3xl font-black tracking-[-0.04em] text-[#1E4D2B] md:text-5xl">Quote Results</h2>
-                      <p className="mt-3 text-base leading-7 text-[#5F4D33]">Review the estimate, then send it to our team.</p>
+                      <h2 className="font-serif text-3xl tracking-[-0.01em] text-brand-600 md:text-5xl">Quote Results</h2>
+                      <p className="mt-3 text-base leading-7 text-muted">Review the estimate, then send it to our team.</p>
                     </div>
-                    <p className="text-sm font-black text-[#B5813A]">{product.item} / {quantity.toLocaleString()} bags</p>
+                    <p className="text-sm font-black text-accent-500">{product.item} / {quantity.toLocaleString()} bags</p>
                   </div>
 
                   <div className="mt-8 grid gap-5 xl:grid-cols-[360px_minmax(0,1fr)]">
                     {configuredProduct && (
                       <motion.div
-                        className="rounded-lg border border-[#D8C5A7] bg-white p-4"
+                        className="rounded-2xl border border-kraft-300/60 bg-white p-4"
                         initial={reduceMotion ? undefined : { opacity: 0, y: 12 }}
                         animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
                         transition={{ duration: 0.26 }}
                       >
                         <ProductVisual product={configuredProduct} reduceMotion={reduceMotion} />
-                        <p className="mt-3 text-sm font-black text-[#1E4D2B]">
+                        <p className="mt-3 text-sm font-black text-brand-600">
                           {product.customPrintable ? `${printColors}-color custom render` : 'Stock render'}
                         </p>
                       </motion.div>
                     )}
                     <motion.div
-                    className="relative overflow-hidden rounded-lg border border-[#C4935A] bg-[#FFFDF8] p-6 shadow-[0_8px_24px_rgba(30,77,43,0.08)] md:p-8"
+                    className="relative overflow-hidden rounded-2xl border border-kraft-400 bg-[#FFFDF8] p-6 shadow-[0_8px_24px_rgba(30,77,43,0.08)] md:p-8"
                     initial={reduceMotion ? undefined : { opacity: 0, scale: 0.98, y: 12 }}
                     animate={reduceMotion ? undefined : { opacity: 1, scale: 1, y: 0 }}
                     transition={{ duration: 0.36, ease: [0.16, 1, 0.3, 1] }}
@@ -877,16 +877,16 @@ export default function MakeYourQuoteConfigurator() {
                       animate={reduceMotion ? undefined : { scaleX: 1, opacity: 0.8 }}
                       transition={{ duration: 0.7, delay: 0.12 }}
                     />
-                    <p className="text-sm font-black text-[#7A6548]">{totalIncludesShipping ? 'Estimated total' : 'Estimated before shipping'}</p>
+                    <p className="text-sm font-black text-accent-600">{totalIncludesShipping ? 'Estimated total' : 'Estimated before shipping'}</p>
                     <motion.p
-                      className="mt-3 text-4xl font-black tracking-[-0.045em] text-[#1E4D2B] md:text-6xl"
+                      className="mt-3 font-serif text-4xl tracking-[-0.01em] text-brand-600 md:text-6xl"
                       initial={reduceMotion ? undefined : { opacity: 0, y: 14 }}
                       animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
                       transition={{ delay: 0.08, duration: 0.32 }}
                     >
                       <CountUpMoney value={estimatedTotal} fallback="Select quantity" />
                     </motion.p>
-                    <p className="mt-4 max-w-2xl text-sm leading-6 text-[#5F4D33]">
+                    <p className="mt-4 max-w-2xl text-sm leading-6 text-muted">
                       {freight?.fsc === null ? `${freight.message}. Product subtotal and plate fees are shown above.` : 'Includes product subtotal, plate fees, and estimated fuel surcharge.'}
                     </p>
                     </motion.div>
@@ -905,21 +905,21 @@ export default function MakeYourQuoteConfigurator() {
                         initial={reduceMotion ? undefined : { opacity: 0, y: 10 }}
                         animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
                         transition={{ delay: 0.16 + index * 0.035 }}
-                        className="rounded-lg border border-[#E1D2BB] bg-white p-4"
+                        className="rounded-2xl border border-kraft-300/40 bg-white p-4"
                       >
-                        <p className="text-sm font-bold text-[#7A6548]">{label}</p>
-                        <p className="mt-2 text-lg font-black text-[#1E4D2B]">{value}</p>
+                        <p className="text-sm font-bold text-accent-600">{label}</p>
+                        <p className="mt-2 text-lg font-black text-brand-600">{value}</p>
                       </motion.div>
                     ))}
                   </div>
-                  <p className="mt-6 rounded-md border border-[#D8C5A7] bg-[#FAF6F0] p-4 text-sm leading-6 text-[#5F4D33]">
+                  <p className="mt-6 rounded-xl border border-kraft-300/60 bg-cream p-4 text-sm leading-6 text-muted">
                     {DISCLAIMER}
                   </p>
                 </motion.div>
               ) : null}
             </AnimatePresence>
 
-            {error && <p className="mt-6 rounded-md border border-[#C0392B66] bg-[#C0392B12] p-3 text-sm font-bold text-[#C0392B]">{error}</p>}
+            {error && <p className="mt-6 rounded-xl border border-[#C0392B66] bg-[#C0392B12] p-3 text-sm font-bold text-[#C0392B]">{error}</p>}
 
             {!submitted && step > 0 && (
               <div className="mt-8 hidden flex-wrap items-center justify-between gap-3 md:flex">
@@ -967,11 +967,11 @@ export default function MakeYourQuoteConfigurator() {
 
           <aside className="xl:sticky xl:top-24 xl:self-start">
             <div
-              className="rounded-lg border border-[#E1D2BB] bg-white p-5 shadow-[0_8px_24px_rgba(30,77,43,0.08)]"
+              className="rounded-2xl border border-kraft-300/40 bg-white p-5 shadow-[0_8px_24px_rgba(30,77,43,0.08)]"
             >
               <div className="flex items-center justify-between gap-3">
-                <h3 className="text-lg font-black text-[#1E4D2B]">Quote Summary</h3>
-                <span className="text-sm font-black text-[#B5813A]">{estimatedTotal === null ? 'Live' : money(estimatedTotal)}</span>
+                <h3 className="text-lg font-black text-brand-600">Quote Summary</h3>
+                <span className="text-sm font-black text-accent-500">{estimatedTotal === null ? 'Live' : money(estimatedTotal)}</span>
               </div>
               <AnimatePresence mode="wait">
                 {configuredProduct && (
@@ -988,7 +988,7 @@ export default function MakeYourQuoteConfigurator() {
                 )}
               </AnimatePresence>
               {!product && (
-                <div className="mt-4 rounded-lg border border-dashed border-[#D8C5A7] p-5 text-sm leading-6 text-[#7A6548]">
+                <div className="mt-4 rounded-2xl border border-dashed border-kraft-300/60 p-5 text-sm leading-6 text-accent-600">
                   Your selected product image and estimate will appear here as you build the quote.
                 </div>
               )}
@@ -1008,7 +1008,7 @@ export default function MakeYourQuoteConfigurator() {
 
       <section className="relative mx-auto w-full max-w-[1440px] px-4 pb-28 pt-2 md:px-8 md:pb-16">
         <motion.div
-          className="overflow-hidden rounded-lg border border-[#E1D2BB] bg-white p-5 md:p-6"
+          className="overflow-hidden rounded-2xl border border-kraft-300/40 bg-white p-5 md:p-6"
           initial={reduceMotion ? undefined : { opacity: 0, y: 12 }}
           whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
@@ -1016,8 +1016,8 @@ export default function MakeYourQuoteConfigurator() {
         >
           <div className="flex flex-wrap items-center justify-between gap-5">
             <div>
-              <h2 className="text-2xl font-black tracking-[-0.035em] text-[#1E4D2B] md:text-3xl">Ready to build your custom quote?</h2>
-              <p className="mt-2 max-w-2xl text-sm leading-6 text-[#5F4D33]">
+              <h2 className="font-serif text-2xl tracking-[-0.01em] text-brand-600 md:text-3xl">Ready to build your custom quote?</h2>
+              <p className="mt-2 max-w-2xl text-sm leading-6 text-muted">
                 Choose a bag style, confirm the run size, and send a structured estimate to the Bag Supply Co team.
               </p>
             </div>
@@ -1038,7 +1038,7 @@ export default function MakeYourQuoteConfigurator() {
       </section>
 
       {!submitted && step > 0 && (
-        <div className="fixed inset-x-0 bottom-0 z-[70] border-t border-[#D8C5A7] bg-white/96 p-3 md:hidden">
+        <div className="fixed inset-x-0 bottom-0 z-[70] border-t border-kraft-300/60 bg-white/96 p-3 md:hidden">
           <div className={classNames('mx-auto grid max-w-xl gap-2', step > 1 ? 'grid-cols-[0.65fr_1fr]' : 'grid-cols-1')}>
             {step > 1 && (
               <button
