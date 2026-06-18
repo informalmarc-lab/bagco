@@ -59,13 +59,13 @@ export default function CigarShopsIndustryPage() {
                 purchases, then layer in mylar formats for premium storage or specialty add-ons.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
-                <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-[#1E4D2B]">
+                <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-brand-600">
                   4 cigar bag SKUs
                 </span>
-                <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-[#1E4D2B]">
+                <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-brand-600">
                   From {money(115)} / case
                 </span>
-                <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-[#1E4D2B]">
+                <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-brand-600">
                   Free shipping on 2+ cases
                 </span>
               </div>
@@ -87,7 +87,7 @@ export default function CigarShopsIndustryPage() {
                 {heroProduct && (
                   <Link
                     href={`/catalog/cigar-bags/${heroProduct.slug}`}
-                    className="relative block aspect-[4/3] overflow-hidden rounded-2xl border border-[#C4935A66] bg-[#FAF6F0]"
+                    className="relative block aspect-[4/3] overflow-hidden rounded-2xl border border-kraft-400/40 bg-[#FAF6F0]"
                   >
                     <FallbackImage
                       src={heroProduct.image}
@@ -100,7 +100,7 @@ export default function CigarShopsIndustryPage() {
                     />
                   </Link>
                 )}
-                <div className="grid gap-2 text-sm font-semibold text-[#5F4D33] sm:grid-cols-2">
+                <div className="grid gap-2 text-sm font-semibold text-muted sm:grid-cols-2">
                   <p className="surface-card rounded-xl px-3 py-2">Printed bag sizes for singles, sampler bundles, and counter carryout.</p>
                   <p className="surface-card rounded-xl px-3 py-2">Mylar options help extend the program into premium storage and add-on packaging.</p>
                 </div>
@@ -115,12 +115,12 @@ export default function CigarShopsIndustryPage() {
           <div className="tonal-panel">
             <p className="kicker">About</p>
             <h2 className="section-title mt-4">Built for cigar retailers that want a cleaner bag program without overcomplicating the reorder.</h2>
-            <p className="mt-4 text-sm leading-7 text-[#5F4D33] md:text-base">
+            <p className="mt-4 text-sm leading-7 text-muted md:text-base">
               Cigar shops and lounges usually need packaging that feels a little more elevated than a generic checkout
               bag but still works at a stocked, reorder-friendly pace. This lineup keeps the choices focused: a few
               proven printed bag sizes for everyday counter use plus a premium slider format for higher-end presentation.
             </p>
-            <p className="mt-4 text-sm leading-7 text-[#5F4D33] md:text-base">
+            <p className="mt-4 text-sm leading-7 text-muted md:text-base">
               Pair that with a handful of mylar options and you can cover routine purchases, special releases, and
               premium take-home packaging without splitting the program across multiple suppliers or workflows.
             </p>
@@ -130,14 +130,14 @@ export default function CigarShopsIndustryPage() {
             <p className="kicker">Why It Works</p>
             <div className="mt-5 grid gap-3">
               {aboutPoints.map((point) => (
-                <div key={point} className="surface-card rounded-xl px-4 py-3 text-sm font-semibold text-[#1E4D2B]">
+                <div key={point} className="surface-card rounded-xl px-4 py-3 text-sm font-semibold text-brand-600">
                   {point}
                 </div>
               ))}
             </div>
-            <div className="mt-5 rounded-2xl border border-[#C4935A66] bg-white px-4 py-4 text-sm text-[#5F4D33]">
-              <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">Program Snapshot</p>
-              <p className="mt-2 font-semibold text-[#1E4D2B]">{cigarProducts.length} stocked cigar bag SKUs</p>
+            <div className="mt-5 rounded-2xl border border-kraft-400/40 bg-white px-4 py-4 text-sm text-muted">
+              <p className="text-xs font-black uppercase tracking-[0.08em] text-accent-600">Program Snapshot</p>
+              <p className="mt-2 font-semibold text-brand-600">{cigarProducts.length} stocked cigar bag SKUs</p>
               <p className="mt-1">Core lineup covers 3 x 10, 5 x 10, 8 x 10, and a premium 6.5 x 10 slider format.</p>
               <p className="mt-1">Use the mylar catalog for complementary premium storage and specialty packaging.</p>
             </div>
@@ -175,15 +175,15 @@ export default function CigarShopsIndustryPage() {
                   />
                 </Link>
                 <div className="flex flex-1 flex-col p-4">
-                  <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">SKU {product.sku}</p>
-                  <h3 className="mt-2 text-lg font-black text-[#1E4D2B]">
-                    <Link href={`/catalog/cigar-bags/${product.slug}`} className="transition hover:text-[#B5813A]">
+                  <p className="text-xs font-black uppercase tracking-[0.08em] text-accent-600">SKU {product.sku}</p>
+                  <h3 className="mt-2 font-serif text-lg text-brand-600">
+                    <Link href={`/catalog/cigar-bags/${product.slug}`} className="transition hover:text-accent-500">
                       {product.name}
                     </Link>
                   </h3>
-                  <p className="mt-1 text-sm font-semibold text-[#5F4D33]">{product.size}</p>
-                  <p className="mt-2 text-sm text-[#5F4D33]">{product.description}</p>
-                  <p className="mt-3 text-sm font-semibold text-[#5F4D33]">
+                  <p className="mt-1 text-sm font-semibold text-muted">{product.size}</p>
+                  <p className="mt-2 text-sm text-muted">{product.description}</p>
+                  <p className="mt-3 text-sm font-semibold text-muted">
                     {formatCigarQuantityLabel(product.quantity, product.unit)}
                   </p>
                   <p className="mt-2 product-card-price">{money(product.price)} / {formatCigarQuantityLabel(product.quantity, product.unit)}</p>
@@ -243,14 +243,14 @@ export default function CigarShopsIndustryPage() {
                   />
                 </Link>
                 <div className="flex flex-1 flex-col p-4">
-                  <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">SKU {product.sku}</p>
-                  <h3 className="mt-2 text-lg font-black text-[#1E4D2B]">
-                    <Link href={`/catalog/mylar-bags/${product.slug}`} className="transition hover:text-[#B5813A]">
+                  <p className="text-xs font-black uppercase tracking-[0.08em] text-accent-600">SKU {product.sku}</p>
+                  <h3 className="mt-2 font-serif text-lg text-brand-600">
+                    <Link href={`/catalog/mylar-bags/${product.slug}`} className="transition hover:text-accent-500">
                       {product.name}
                     </Link>
                   </h3>
-                  <p className="mt-1 text-sm text-[#5F4D33]">{product.size} / {product.finish}</p>
-                  <p className="mt-1 text-sm text-[#5F4D33]">{formatMylarQuantityLabel(product.quantity)}</p>
+                  <p className="mt-1 text-sm text-muted">{product.size} / {product.finish}</p>
+                  <p className="mt-1 text-sm text-muted">{formatMylarQuantityLabel(product.quantity)}</p>
                   <p className="mt-2 product-card-price">{money(product.price)} / {formatMylarQuantityLabel(product.quantity)}</p>
                   <div className="mt-auto pt-4">
                     <AddToCartControl

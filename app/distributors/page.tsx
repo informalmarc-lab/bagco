@@ -270,10 +270,10 @@ export default function DistributorsPage() {
 
         <article className="mt-8 rounded-[2.5rem] border border-kraft-400/60 bg-[linear-gradient(135deg,#FFF8EA,#FAF6F0)] p-6 shadow-[0_18px_40px_rgba(30,77,43,0.12)] md:p-8">
           <div className="flex flex-wrap items-center gap-3">
-            <span className="inline-flex rounded-full bg-[#B5813A] px-3 py-1 text-xs font-black uppercase tracking-[0.14em] text-white">
+            <span className="inline-flex rounded-full bg-accent-500 px-3 py-1 text-xs font-black uppercase tracking-[0.14em] text-white">
               Featured Product
             </span>
-            <span className="inline-flex rounded-full border border-[#1E4D2B] px-3 py-1 text-xs font-black uppercase tracking-[0.14em] text-brand-600">
+            <span className="inline-flex rounded-full border border-brand-600 px-3 py-1 text-xs font-black uppercase tracking-[0.14em] text-brand-600">
               Rx Bags
             </span>
           </div>

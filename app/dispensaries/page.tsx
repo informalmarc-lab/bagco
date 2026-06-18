@@ -317,7 +317,7 @@ export default function DispensariesLandingPage() {
       </section>
 
       <section className="section-container py-8">
-        <div className="rounded-2xl border border-[#1E4D2B] bg-brand-600 p-6 text-white md:p-8">
+        <div className="rounded-2xl border border-brand-600 bg-brand-600 p-6 text-white md:p-8">
           <h2 className="font-serif text-3xl text-white">Build a custom dispensary paper bag quote.</h2>
           <p className="mt-3 max-w-3xl text-sm leading-6 text-[#F4E8D8] md:text-base">
             Send the bag sizes, print color count, artwork status, order volume, store count, and reorder timing. The
