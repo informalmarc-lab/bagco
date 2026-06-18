@@ -62,19 +62,19 @@ export default function DispensaryCustomScrollStory({ items }: DispensaryCustomS
       <div className="grid gap-8 lg:grid-cols-[0.88fr_1.12fr]">
         <div className="lg:py-12">
           <h2 className="section-title">The custom bag changes as the program gets clearer.</h2>
-          <p className="mt-4 max-w-2xl text-base leading-7 text-[#5F4D33]">
+          <p className="mt-4 max-w-2xl text-base leading-7 text-muted">
             Start simple, add print impact when it matters, then lock the proof and reorder from the same paper bag
             setup.
           </p>
         </div>
 
         <div className="hidden items-end justify-end lg:flex">
-          <div className="w-full max-w-sm border-t border-[#D8C5A7] pt-4">
-            <p className="text-sm font-black text-[#1E4D2B]">
+          <div className="w-full max-w-sm border-t border-kraft-300/60 pt-4">
+            <p className="text-sm font-black text-brand-600">
               {String(activeIndex + 1).padStart(2, '0')} / {String(items.length).padStart(2, '0')}
             </p>
-            <div className="mt-3 h-1 bg-[#E1D2BB]">
-              <div className="h-full bg-[#B5813A] transition-[width] duration-300" style={{ width: activeProgress }} />
+            <div className="mt-3 h-1 bg-kraft-300/30">
+              <div className="h-full bg-accent-500 transition-[width] duration-300" style={{ width: activeProgress }} />
             </div>
           </div>
         </div>
@@ -96,25 +96,25 @@ export default function DispensaryCustomScrollStory({ items }: DispensaryCustomS
               >
                 <div
                   className={`w-full border-l-2 px-5 py-4 transition-colors duration-200 ${
-                    isActive ? 'border-[#B5813A] bg-white' : 'border-[#D8C5A7] bg-transparent'
+                    isActive ? 'border-accent-500 bg-white' : 'border-kraft-300/60 bg-transparent'
                   }`}
                 >
-                  <p className="text-sm font-black text-[#B5813A]">{item.eyebrow}</p>
-                  <h3 className="mt-3 text-3xl font-black leading-tight text-[#1E4D2B] md:text-4xl">
+                  <p className="text-sm font-black text-accent-500">{item.eyebrow}</p>
+                  <h3 className="mt-3 font-serif text-3xl leading-tight tracking-[-0.01em] text-brand-600 md:text-4xl">
                     {item.title}
                   </h3>
-                  <p className="mt-4 text-base leading-7 text-[#5F4D33]">{item.copy}</p>
+                  <p className="mt-4 text-base leading-7 text-muted">{item.copy}</p>
                   <div className="mt-5 flex flex-wrap gap-2">
                     {item.meta.map((meta) => (
                       <span
                         key={meta}
-                        className="rounded-md border border-[#E1D2BB] bg-[#FFFDF8] px-3 py-2 text-sm font-semibold text-[#5F4D33]"
+                        className="rounded-xl border border-kraft-300/40 bg-[#FFFDF8] px-3 py-2 text-sm font-semibold text-muted"
                       >
                         {meta}
                       </span>
                     ))}
                   </div>
-                  <div className="relative mt-5 aspect-[4/3] overflow-hidden rounded-lg border border-[#E1D2BB] bg-[#FAF6F0] lg:hidden">
+                  <div className="relative mt-5 aspect-[4/3] overflow-hidden rounded-2xl border border-kraft-300/40 bg-cream lg:hidden">
                     <FallbackImage
                       src={item.image}
                       fallbackSrc="/images/catalog/placeholder.svg"
@@ -134,11 +134,11 @@ export default function DispensaryCustomScrollStory({ items }: DispensaryCustomS
         </div>
 
         <aside className="hidden lg:sticky lg:top-24 lg:block lg:h-[calc(100vh-7rem)] lg:self-start">
-          <div className="surface-card overflow-hidden rounded-lg bg-white">
-            <div className="h-1 bg-[#E1D2BB]">
-              <div className="h-full bg-[#B5813A] transition-[width] duration-300" style={{ width: activeProgress }} />
+          <div className="surface-card overflow-hidden rounded-2xl bg-white">
+            <div className="h-1 bg-kraft-300/30">
+              <div className="h-full bg-accent-500 transition-[width] duration-300" style={{ width: activeProgress }} />
             </div>
-            <div className="relative h-[min(58vh,560px)] bg-[#FAF6F0]">
+            <div className="relative h-[min(58vh,560px)] bg-cream">
               <FallbackImage
                 key={activeItem.id}
                 src={activeItem.image}
@@ -149,17 +149,17 @@ export default function DispensaryCustomScrollStory({ items }: DispensaryCustomS
                 sizes="(max-width: 1024px) 100vw, 54vw"
               />
             </div>
-            <div className="border-t border-[#E1D2BB] p-5">
+            <div className="border-t border-kraft-300/40 p-5">
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div>
-                  <p className="text-xs font-black uppercase text-[#7A6548]">{activeItem.eyebrow}</p>
-                  <p className="mt-1 text-xl font-black leading-6 text-[#1E4D2B]">{activeItem.title}</p>
+                  <p className="text-xs font-black uppercase text-accent-600">{activeItem.eyebrow}</p>
+                  <p className="mt-1 font-serif text-xl leading-6 text-brand-600">{activeItem.title}</p>
                 </div>
                 {activeItem.price && <p className="product-card-price">{activeItem.price}</p>}
               </div>
-              <p className="mt-3 text-sm leading-6 text-[#5F4D33]">{activeItem.copy}</p>
+              <p className="mt-3 text-sm leading-6 text-muted">{activeItem.copy}</p>
             </div>
-            <div className="grid border-t border-[#E1D2BB] sm:grid-cols-4">
+            <div className="grid border-t border-kraft-300/40 sm:grid-cols-4">
               {items.map((item, index) => (
                 <button
                   key={item.id}
@@ -168,8 +168,8 @@ export default function DispensaryCustomScrollStory({ items }: DispensaryCustomS
                     setActiveIndex(index)
                     stepRefs.current[index]?.scrollIntoView({ behavior: 'smooth', block: 'center' })
                   }}
-                  className={`border-t border-[#E1D2BB] px-3 py-3 text-left text-xs font-black text-[#1E4D2B] sm:border-l sm:border-t-0 sm:first:border-l-0 ${
-                    index === activeIndex ? 'bg-[#FAF6F0]' : 'bg-white hover:bg-[#FFFDF8]'
+                  className={`border-t border-kraft-300/40 px-3 py-3 text-left text-xs font-black text-brand-600 sm:border-l sm:border-t-0 sm:first:border-l-0 ${
+                    index === activeIndex ? 'bg-cream' : 'bg-white hover:bg-[#FFFDF8]'
                   }`}
                 >
                   {String(index + 1).padStart(2, '0')}
