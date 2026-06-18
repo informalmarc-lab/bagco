@@ -22,10 +22,10 @@ export default function RequestSamplePage() {
         <div className="tonal-panel">
           <h2 className="section-title text-2xl md:text-3xl">Include These Details</h2>
           <div className="mt-5 grid gap-3 md:grid-cols-2">
-            <p className="surface-card rounded-2xl p-4 text-sm font-semibold text-[#5F4D33]">Bag type and preferred size</p>
-            <p className="surface-card rounded-2xl p-4 text-sm font-semibold text-[#5F4D33]">Expected quantity and timeline</p>
-            <p className="surface-card rounded-2xl p-4 text-sm font-semibold text-[#5F4D33]">Shipping city and state</p>
-            <p className="surface-card rounded-2xl p-4 text-sm font-semibold text-[#5F4D33]">Any print or branding requirements</p>
+            <p className="surface-card rounded-2xl p-4 text-sm font-semibold text-muted">Bag type and preferred size</p>
+            <p className="surface-card rounded-2xl p-4 text-sm font-semibold text-muted">Expected quantity and timeline</p>
+            <p className="surface-card rounded-2xl p-4 text-sm font-semibold text-muted">Shipping city and state</p>
+            <p className="surface-card rounded-2xl p-4 text-sm font-semibold text-muted">Any print or branding requirements</p>
           </div>
           <Link href="/contact" className="btn-secondary mt-6">Go to Contact Form</Link>
         </div>

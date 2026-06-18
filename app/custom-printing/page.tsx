@@ -37,7 +37,7 @@ export default function CustomPrintingPage() {
       <section className="section-container py-20">
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {capabilities.map((item) => (
-            <p key={item} className="tonal-panel text-sm font-semibold text-[#5F4D33]">{item}</p>
+            <p key={item} className="tonal-panel text-sm font-semibold text-muted">{item}</p>
           ))}
         </div>
 
@@ -87,7 +87,7 @@ export default function CustomPrintingPage() {
                 'Desired print colors',
                 'Any launch or reorder timeline requirements',
               ].map((item) => (
-                <p key={item} className="surface-card rounded-2xl px-4 py-3 text-sm font-semibold text-[#1E4D2B]">
+                <p key={item} className="surface-card rounded-2xl px-4 py-3 text-sm font-semibold text-brand-600">
                   {item}
                 </p>
               ))}

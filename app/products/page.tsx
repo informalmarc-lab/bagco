@@ -43,10 +43,10 @@ export default function ProductsIndexPage() {
                 />
               </Link>
               <div className="p-4">
-                <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">
+                <p className="text-xs font-black uppercase tracking-[0.08em] text-accent-600">
                   {INDUSTRY_LABELS[product.industry]} | SKU {product.sku}
                 </p>
-                <h2 className="mt-2 text-lg font-black text-[#1E4D2B]">{product.name}</h2>
+                <h2 className="mt-2 font-serif text-lg text-brand-600">{product.name}</h2>
                 <p className="mt-1 product-card-price">From {money(product.startingPrice)}/case</p>
                 <Link href={getCatalogOverviewPath(product)} className="btn-secondary mt-4">
                   View Product
@@ -60,15 +60,15 @@ export default function ProductsIndexPage() {
       <section className="section-container py-20">
         <div className="tonal-panel">
           <h2 className="section-title text-2xl md:text-3xl">All Bags (Plain Text)</h2>
-          <p className="mt-2 text-sm text-[#5F4D33]">
+          <p className="mt-2 text-sm text-muted">
             Copy or download the full list in plain text for quick sharing.
           </p>
           <div className="mt-5 grid gap-4 md:grid-cols-[1.2fr_0.8fr]">
-            <pre className="max-h-[420px] overflow-auto whitespace-pre-wrap rounded-2xl border border-[#C4935A66] bg-white p-4 text-sm font-mono text-[#1E4D2B]">
+            <pre className="max-h-[420px] overflow-auto whitespace-pre-wrap rounded-2xl border border-kraft-400/40 bg-white p-4 text-sm font-mono text-brand-600">
               {bagLines.join('\n')}
             </pre>
             <div className="grid content-start gap-3">
-              <p className="text-sm text-[#5F4D33]">
+              <p className="text-sm text-muted">
                 Direct text file link:
               </p>
               <a href="/bags.txt" className="btn-secondary w-fit">
