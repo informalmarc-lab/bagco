@@ -68,14 +68,14 @@ function ProductCard({
       </Link>
 
       <div className="flex flex-1 flex-col p-4">
-        <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">SKU {sku}</p>
-        <h3 className="mt-2 text-lg font-black text-[#1E4D2B]">
-          <Link href={`/catalog/mylar-bags/${slug}`} className="hover:text-[#B5813A]">
+        <p className="text-xs font-black uppercase tracking-[0.08em] text-accent-600">SKU {sku}</p>
+        <h3 className="mt-2 font-serif text-lg text-brand-600">
+          <Link href={`/catalog/mylar-bags/${slug}`} className="hover:text-accent-500">
             {name}
           </Link>
         </h3>
-        <p className="mt-1 text-sm text-[#5F4D33]">{size} / {finish}</p>
-        <p className="mt-1 text-sm text-[#5F4D33]">{quantity.toLocaleString('en-US')} qty</p>
+        <p className="mt-1 text-sm text-muted">{size} / {finish}</p>
+        <p className="mt-1 text-sm text-muted">{quantity.toLocaleString('en-US')} qty</p>
         <p className="mt-2 product-card-price">{money(price)} / {formatMylarQuantityLabel(quantity)}</p>
         <div className="mt-auto pt-4">
           <AddToCartControl item={cartItem} showQuantity={false} />
@@ -103,10 +103,10 @@ export default function MylarCatalogPage() {
             {all.length} SKU-level mylar options with local product images, fixed pricing, and direct add-to-cart ordering.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-[#1E4D2B]">
+            <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-brand-600">
               Starting at {money(starting)}
             </span>
-            <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-[#1E4D2B]">
+            <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-brand-600">
               {all.length} SKU pages
             </span>
           </div>

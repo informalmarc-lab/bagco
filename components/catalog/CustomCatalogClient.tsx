@@ -68,51 +68,51 @@ export default function CustomCatalogClient({ images, products }: CustomCatalogC
               <div className="grid gap-6 xl:grid-cols-[minmax(0,1.1fr)_360px] xl:items-start">
                 <div>
                   <p className="kicker">{product.colorOptions[0]}</p>
-                  <h2 className="mt-4 text-3xl font-black tracking-[-0.03em] text-[#1E4D2B]">
+                  <h2 className="mt-4 font-serif text-3xl tracking-[-0.01em] text-brand-600">
                     {product.name}
                   </h2>
-                  <p className="mt-4 max-w-3xl text-base leading-7 text-[#5F4D33]">{content.headline}</p>
-                  <p className="mt-3 max-w-3xl text-sm leading-7 text-[#7A6548]">{content.shortPitch}</p>
+                  <p className="mt-4 max-w-3xl text-base leading-7 text-muted">{content.headline}</p>
+                  <p className="mt-3 max-w-3xl text-sm leading-7 text-accent-600">{content.shortPitch}</p>
 
                   <div className="mt-5 grid gap-3 md:grid-cols-2">
-                    <div className="rounded-md border border-[#E7D9C3] bg-white p-4">
-                      <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#7A6548]">Best For</p>
-                      <p className="mt-2 text-sm leading-6 text-[#1E4D2B]">{content.bestFor}</p>
+                    <div className="rounded-2xl border border-kraft-300/40 bg-white p-4">
+                      <p className="text-xs font-semibold uppercase tracking-[0.08em] text-accent-600">Best For</p>
+                      <p className="mt-2 text-sm leading-6 text-brand-600">{content.bestFor}</p>
                     </div>
-                    <div className="rounded-md border border-[#E7D9C3] bg-white p-4">
-                      <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#7A6548]">Program Snapshot</p>
-                      <p className="mt-2 text-sm leading-6 text-[#1E4D2B]">{content.printLabel}</p>
+                    <div className="rounded-2xl border border-kraft-300/40 bg-white p-4">
+                      <p className="text-xs font-semibold uppercase tracking-[0.08em] text-accent-600">Program Snapshot</p>
+                      <p className="mt-2 text-sm leading-6 text-brand-600">{content.printLabel}</p>
                     </div>
                   </div>
 
                   <div className="mt-5 grid gap-3 md:grid-cols-2">
                     {content.features.map((feature) => (
-                      <div key={feature} className="rounded-md bg-[#FCF8F2] p-4 text-sm leading-6 text-[#5F4D33]">
+                      <div key={feature} className="rounded-2xl bg-[#FCF8F2] p-4 text-sm leading-6 text-muted">
                         {feature}
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="rounded-md border border-[#D8C5A7] bg-white p-5">
-                  <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#7A6548]">At a Glance</p>
+                <div className="rounded-2xl border border-kraft-300/60 bg-white p-5">
+                  <p className="text-xs font-semibold uppercase tracking-[0.08em] text-accent-600">At a Glance</p>
                   <div className="mt-4 grid gap-4">
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#7A6548]">Starting Price</p>
-                      <p className="mt-1 text-3xl font-black tracking-[-0.04em] text-[#1E4D2B]">
+                      <p className="text-xs font-semibold uppercase tracking-[0.08em] text-accent-600">Starting Price</p>
+                      <p className="mt-1 text-3xl font-black tracking-[-0.04em] text-brand-600">
                         {money(product.startingPrice)}
                       </p>
-                      <p className="text-sm text-[#5F4D33]">per case</p>
+                      <p className="text-sm text-muted">per case</p>
                     </div>
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#7A6548]">Available Sizes</p>
-                      <p className="mt-1 text-lg font-black text-[#1E4D2B]">{sizeRows.length}</p>
-                      <p className="text-sm text-[#5F4D33]">size options</p>
+                      <p className="text-xs font-semibold uppercase tracking-[0.08em] text-accent-600">Available Sizes</p>
+                      <p className="mt-1 text-lg font-black text-brand-600">{sizeRows.length}</p>
+                      <p className="text-sm text-muted">size options</p>
                     </div>
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#7A6548]">Lead Time</p>
-                      <p className="mt-1 text-lg font-black text-[#1E4D2B]">About 4 weeks</p>
-                      <p className="text-sm text-[#5F4D33]">after proof approval</p>
+                      <p className="text-xs font-semibold uppercase tracking-[0.08em] text-accent-600">Lead Time</p>
+                      <p className="mt-1 text-lg font-black text-brand-600">About 4 weeks</p>
+                      <p className="text-sm text-muted">after proof approval</p>
                     </div>
                   </div>
                   <div className="mt-5 flex flex-wrap gap-3">
@@ -128,14 +128,14 @@ export default function CustomCatalogClient({ images, products }: CustomCatalogC
 
               {gallery.length > 0 && (
                 <div className="mt-8">
-                  <p className="text-sm font-black text-[#1E4D2B]">Sample Artwork</p>
+                  <p className="text-sm font-black text-brand-600">Sample Artwork</p>
                   <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                     {gallery.slice(0, 8).map((img) => (
                       <button
                         key={img.src}
                         type="button"
                         onClick={() => setSelected(img)}
-                        className="surface-card overflow-hidden rounded-md"
+                        className="surface-card overflow-hidden rounded-2xl"
                       >
                         <div className="relative aspect-square bg-[#FAF6F0]">
                           <FallbackImage
@@ -156,8 +156,8 @@ export default function CustomCatalogClient({ images, products }: CustomCatalogC
               <div className="mt-8">
                 <div className="flex flex-wrap items-end justify-between gap-4">
                   <div>
-                    <p className="text-sm font-black text-[#1E4D2B]">Size Pricing</p>
-                    <p className="mt-1 text-sm text-[#5F4D33]">
+                    <p className="text-sm font-black text-brand-600">Size Pricing</p>
+                    <p className="mt-1 text-sm text-muted">
                       Compare the available bag sizes before moving into proofing and setup.
                     </p>
                   </div>
@@ -172,16 +172,16 @@ export default function CustomCatalogClient({ images, products }: CustomCatalogC
                       <Link
                         key={size.slug}
                         href={`${getCatalogOverviewPath(product)}/${size.slug}`}
-                        className="surface-card rounded-md p-4 transition hover:border-[#C4935A] hover:bg-[#FFFCF7]"
+                        className="surface-card rounded-2xl p-4 transition hover:border-accent-400/60 hover:bg-[#FFFCF7]"
                       >
-                        <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#7A6548]">Size Option</p>
-                        <p className="mt-2 text-lg font-black text-[#1E4D2B]">{size.label}</p>
-                        <div className="mt-3 flex items-end justify-between gap-3 rounded-md border border-[#E7D9C3] bg-white p-3">
+                        <p className="text-xs font-semibold uppercase tracking-[0.08em] text-accent-600">Size Option</p>
+                        <p className="mt-2 text-lg font-black text-brand-600">{size.label}</p>
+                        <div className="mt-3 flex items-end justify-between gap-3 rounded-2xl border border-kraft-300/40 bg-white p-3">
                           <div>
-                            <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#7A6548]">From</p>
-                            <p className="mt-1 font-black text-[#B5813A]">{money(lowest)}/case</p>
+                            <p className="text-xs font-semibold uppercase tracking-[0.08em] text-accent-600">From</p>
+                            <p className="mt-1 font-black text-accent-500">{money(lowest)}/case</p>
                           </div>
-                          <p className="text-sm font-semibold text-[#5F4D33]">{size.pricing.length} row{size.pricing.length === 1 ? '' : 's'}</p>
+                          <p className="text-sm font-semibold text-muted">{size.pricing.length} row{size.pricing.length === 1 ? '' : 's'}</p>
                         </div>
                       </Link>
                     )
@@ -191,7 +191,7 @@ export default function CustomCatalogClient({ images, products }: CustomCatalogC
 
               <div className="mt-8 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
                 {content.rules.map((rule) => (
-                  <div key={rule} className="rounded-md border border-[#E7D9C3] bg-white p-4 text-sm leading-6 text-[#5F4D33]">
+                  <div key={rule} className="rounded-2xl border border-kraft-300/40 bg-white p-4 text-sm leading-6 text-muted">
                     {rule}
                   </div>
                 ))}
@@ -203,7 +203,7 @@ export default function CustomCatalogClient({ images, products }: CustomCatalogC
 
       {selected && (
         <div
-          className="fixed inset-0 z-[70] flex items-center justify-center bg-[#1E4D2B]/85 p-4"
+          className="fixed inset-0 z-[70] flex items-center justify-center bg-brand-600/85 p-4"
           onClick={(event) => {
             if (event.target === event.currentTarget) setSelected(null)
           }}

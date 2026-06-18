@@ -29,8 +29,8 @@ export default function RelatedIndustryLinks({
               href={link.href}
               className="surface-card rounded-2xl p-5 transition hover:bg-[#FFF8EA]"
             >
-              <h3 className="text-lg font-black text-[#1E4D2B]">{link.label}</h3>
-              <p className="mt-2 text-sm text-[#5F4D33]">{link.description}</p>
+              <h3 className="font-serif text-lg text-brand-600">{link.label}</h3>
+              <p className="mt-2 text-sm text-muted">{link.description}</p>
             </Link>
           ))}
         </div>

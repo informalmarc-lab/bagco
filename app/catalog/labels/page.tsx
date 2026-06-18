@@ -32,13 +32,13 @@ export default function LabelsCatalogPage() {
             Six label formats for dispensary packaging programs, each priced at {money(12)}/case with free shipping.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-[#1E4D2B]">
+            <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-brand-600">
               {labels.length} label options
             </span>
-            <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-[#1E4D2B]">
+            <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-brand-600">
               1,000 qty per case
             </span>
-            <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-[#1E4D2B]">Free Shipping</span>
+            <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-brand-600">Free Shipping</span>
           </div>
         </div>
       </section>
@@ -65,14 +65,14 @@ export default function LabelsCatalogPage() {
 
                 <div className="p-4">
                   <div className="flex flex-wrap items-center gap-2">
-                    <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">SKU {label.sku}</p>
-                    <span className="rounded-full bg-[#E8F4EC] px-2.5 py-1 text-[0.65rem] font-black uppercase tracking-[0.08em] text-[#1E4D2B]">
+                    <p className="text-xs font-black uppercase tracking-[0.08em] text-accent-600">SKU {label.sku}</p>
+                    <span className="rounded-full bg-[#E8F4EC] px-2.5 py-1 text-[0.65rem] font-black uppercase tracking-[0.08em] text-brand-600">
                       {label.shippingBadge}
                     </span>
                   </div>
-                  <h3 className="mt-2 text-lg font-black text-[#1E4D2B]">{label.name}</h3>
-                  <p className="mt-2 text-sm text-[#5F4D33]">{label.description}</p>
-                  <p className="mt-3 text-sm font-semibold text-[#5F4D33]">
+                  <h3 className="mt-2 font-serif text-lg text-brand-600">{label.name}</h3>
+                  <p className="mt-2 text-sm text-muted">{label.description}</p>
+                  <p className="mt-3 text-sm font-semibold text-muted">
                     {label.quantity.toLocaleString('en-US')} qty per case
                   </p>
                   <p className="mt-1 product-card-price">{money(label.price)} / case</p>

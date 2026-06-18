@@ -82,7 +82,7 @@ export default function VeterinaryCatalogClient({ images }: VeterinaryCatalogCli
     return (
       <section key={design} className="section-container py-20 md:py-24">
         <div className="tonal-panel">
-          <h2 className="text-3xl font-black tracking-[-0.03em] text-[#1E4D2B]">Veterinary {info.title} for clinic bag reorders</h2>
+          <h2 className="font-serif text-3xl tracking-[-0.01em] text-brand-600">Veterinary {info.title} for clinic bag reorders</h2>
           <p className="mt-2 muted-text">{info.description}</p>
 
           {stockImages.length > 0 && (
@@ -109,10 +109,10 @@ export default function VeterinaryCatalogClient({ images }: VeterinaryCatalogCli
           <div className="mt-8 grid gap-3 md:grid-cols-3">
             {info.sizes.map((size) => (
               <div key={size.name} className="surface-card rounded-2xl p-4 text-sm">
-                <p className="font-black text-[#1E4D2B]">{size.name}</p>
-                <p className="mt-1 text-[#5F4D33]">{size.dims}</p>
-                <p className="text-[#5F4D33]">{size.qty}</p>
-                <p className="mt-2 font-black text-[#1E4D2B]">{size.price} / case</p>
+                <p className="font-black text-brand-600">{size.name}</p>
+                <p className="mt-1 text-muted">{size.dims}</p>
+                <p className="text-muted">{size.qty}</p>
+                <p className="mt-2 font-black text-brand-600">{size.price} / case</p>
               </div>
             ))}
           </div>
@@ -130,7 +130,7 @@ export default function VeterinaryCatalogClient({ images }: VeterinaryCatalogCli
       {combinedCustomExamples.length > 0 && (
         <section className="section-container pb-3">
           <div className="tonal-panel">
-            <h2 className="text-3xl font-black tracking-[-0.03em] text-[#1E4D2B]">Custom veterinary paper bag examples for vet clinics</h2>
+            <h2 className="font-serif text-3xl tracking-[-0.01em] text-brand-600">Custom veterinary paper bag examples for vet clinics</h2>
             <p className="mt-2 muted-text">Real custom production samples for veterinary clients.</p>
             <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {combinedCustomExamples.map((img) => (
@@ -156,7 +156,7 @@ export default function VeterinaryCatalogClient({ images }: VeterinaryCatalogCli
 
       {selected && (
         <div
-          className="fixed inset-0 z-[70] flex items-center justify-center bg-[#1E4D2B]/85 p-4"
+          className="fixed inset-0 z-[70] flex items-center justify-center bg-brand-600/85 p-4"
           onClick={(event) => {
             if (event.target === event.currentTarget) setSelected(null)
           }}

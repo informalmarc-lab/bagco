@@ -68,14 +68,14 @@ function ProductCard({
       </Link>
 
       <div className="flex flex-1 flex-col p-4">
-        <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">SKU {sku}</p>
-        <h3 className="mt-2 text-lg font-black text-[#1E4D2B]">
-          <Link href={`/catalog/cigar-bags/${slug}`} className="hover:text-[#B5813A]">
+        <p className="text-xs font-black uppercase tracking-[0.08em] text-accent-600">SKU {sku}</p>
+        <h3 className="mt-2 font-serif text-lg text-brand-600">
+          <Link href={`/catalog/cigar-bags/${slug}`} className="hover:text-accent-500">
             {name}
           </Link>
         </h3>
-        <p className="mt-1 text-sm text-[#5F4D33]">{size}</p>
-        <p className="mt-1 text-sm text-[#5F4D33]">{formatCigarQuantityLabel(quantity, unit)}</p>
+        <p className="mt-1 text-sm text-muted">{size}</p>
+        <p className="mt-1 text-sm text-muted">{formatCigarQuantityLabel(quantity, unit)}</p>
         <p className="mt-2 product-card-price">{money(price)} / {formatCigarQuantityLabel(quantity, unit)}</p>
         <div className="mt-auto pt-4">
           <AddToCartControl item={cartItem} showQuantity={false} />
@@ -100,10 +100,10 @@ export default function CigarBagsCatalogPage() {
             Printed cigar bag sizes and premium slider bag formats for cigar shops, lounges, and specialty tobacconists.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-[#1E4D2B]">
+            <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-brand-600">
               Starting at {money(startingPrice)}
             </span>
-            <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-[#1E4D2B]">
+            <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-brand-600">
               Free shipping on 2+ cases
             </span>
           </div>

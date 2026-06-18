@@ -83,7 +83,7 @@ export default function PharmacyCatalogClient({ images }: PharmacyCatalogClientP
     return (
       <section key={type} className="section-container py-20 md:py-24">
         <div className="tonal-panel">
-          <h2 className="text-3xl font-black tracking-[-0.03em] text-[#1E4D2B]">{info.title} for wholesale pharmacy ordering</h2>
+          <h2 className="font-serif text-3xl tracking-[-0.01em] text-brand-600">{info.title} for wholesale pharmacy ordering</h2>
           <p className="mt-2 muted-text">{info.description}</p>
 
           {list.length > 0 && (
@@ -115,10 +115,10 @@ export default function PharmacyCatalogClient({ images }: PharmacyCatalogClientP
           <div className="mt-8 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
             {info.sizes.map((size) => (
               <div key={size.id} className="surface-card rounded-2xl p-4 text-sm">
-                <p className="font-black text-[#1E4D2B]">#{size.id}</p>
-                <p className="mt-1 text-[#5F4D33]">{size.dims}</p>
-                <p className="text-[#5F4D33]">{size.qty}</p>
-                <p className="mt-2 font-black text-[#1E4D2B]">{size.price} / case</p>
+                <p className="font-black text-brand-600">#{size.id}</p>
+                <p className="mt-1 text-muted">{size.dims}</p>
+                <p className="text-muted">{size.qty}</p>
+                <p className="mt-2 font-black text-brand-600">{size.price} / case</p>
               </div>
             ))}
           </div>
@@ -135,7 +135,7 @@ export default function PharmacyCatalogClient({ images }: PharmacyCatalogClientP
 
       {selected && (
         <div
-          className="fixed inset-0 z-[70] flex items-center justify-center bg-[#1E4D2B]/85 p-4"
+          className="fixed inset-0 z-[70] flex items-center justify-center bg-brand-600/85 p-4"
           onClick={(event) => {
             if (event.target === event.currentTarget) setSelected(null)
           }}

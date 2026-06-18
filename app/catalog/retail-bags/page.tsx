@@ -31,10 +31,10 @@ export default function RetailBagsPage() {
             case pricing and shipping breakpoints.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-[#1E4D2B]">
+            <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-brand-600">
               Starting at {money(startingPrice)} / case
             </span>
-            <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-[#1E4D2B]">
+            <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-brand-600">
               Free shipping on 2+ cases
             </span>
           </div>
@@ -57,17 +57,17 @@ export default function RetailBagsPage() {
               </Link>
 
               <div className="flex flex-1 flex-col p-4">
-                <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">SKU {product.sku}</p>
-                <h2 className="mt-2 text-xl font-black text-[#1E4D2B]">
-                  <Link href={`/catalog/retail-bags/${product.slug}`} className="hover:text-[#B5813A]">
+                <p className="text-xs font-black uppercase tracking-[0.08em] text-accent-600">SKU {product.sku}</p>
+                <h2 className="mt-2 font-serif text-xl text-brand-600">
+                  <Link href={`/catalog/retail-bags/${product.slug}`} className="hover:text-accent-500">
                     {product.name}
                   </Link>
                 </h2>
-                <p className="mt-2 text-sm text-[#5F4D33]">{product.description}</p>
-                <div className="mt-3 space-y-1 text-sm text-[#5F4D33]">
+                <p className="mt-2 text-sm text-muted">{product.description}</p>
+                <div className="mt-3 space-y-1 text-sm text-muted">
                   {product.variants.map((variant) => (
                     <p key={variant.slug}>
-                      <span className="font-semibold text-[#1E4D2B]">{variant.label}:</span>{' '}
+                      <span className="font-semibold text-brand-600">{variant.label}:</span>{' '}
                       {variant.caseCount.toLocaleString('en-US')}/case at {money(variant.price)}
                     </p>
                   ))}
