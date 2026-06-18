@@ -191,7 +191,7 @@ const domesticReasons = [
 
 function CheckIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5 text-[#B5813A]" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5 text-accent-500" aria-hidden="true">
       <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.6" />
       <path
         d="M8.7 12.2 10.9 14.4 15.6 9.7"
@@ -208,14 +208,14 @@ export default function DistributorsPage() {
   return (
     <div className="pb-16">
       <StructuredData data={buildDistributorServiceJsonLd()} />
-      <section className="overflow-hidden border-b border-[#C4935A66] bg-[#1E4D2B] text-[#FAF6F0]">
+      <section className="overflow-hidden border-b border-kraft-400/40 bg-brand-600 text-[#FAF6F0]">
         <div className="section-container py-20 md:py-28">
           <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
             <div>
               <p className="inline-flex rounded-full border border-[#F4E8D899] bg-[#F4E8D81A] px-3 py-1 text-[11px] font-black uppercase tracking-[0.14em] text-[#F4E8D8]">
                 Distributor Program
               </p>
-              <h1 className="heading-serif mt-5 max-w-4xl text-4xl font-black tracking-[-0.05em] text-[#FAF6F0] md:text-6xl">
+              <h1 className="heading-serif mt-5 max-w-4xl text-4xl tracking-[-0.01em] text-[#FAF6F0] md:text-6xl">
                 Wholesale bag pricing for distributors and drop-ship programs.
               </h1>
               <p className="mt-5 max-w-3xl text-lg leading-8 text-[#F4E8D8] md:text-xl">
@@ -229,27 +229,27 @@ export default function DistributorsPage() {
               </div>
             </div>
 
-            <aside className="rounded-[2rem] border border-[#C4935A99] bg-[#FAF6F0] p-6 text-[#1E4D2B] shadow-[0_20px_44px_rgba(0,0,0,0.2)] md:p-7">
-              <p className="text-xs font-black uppercase tracking-[0.14em] text-[#B5813A]">Featured Category</p>
+            <aside className="rounded-[2.5rem] border border-kraft-400/60 bg-[#FAF6F0] p-6 text-brand-600 shadow-[0_20px_44px_rgba(0,0,0,0.2)] md:p-7">
+              <p className="text-xs font-black uppercase tracking-[0.14em] text-accent-500">Featured Category</p>
               <div className="mt-4 flex items-center gap-3">
-                <span className="inline-flex rounded-full bg-[#1E4D2B] px-3 py-1 text-xs font-black uppercase tracking-[0.12em] text-[#FAF6F0]">
+                <span className="inline-flex rounded-full bg-brand-600 px-3 py-1 text-xs font-black uppercase tracking-[0.12em] text-[#FAF6F0]">
                   Rx Bags
                 </span>
-                <span className="text-sm font-semibold text-[#5F4D33]">Top distributor mover</span>
+                <span className="text-sm font-semibold text-muted">Top distributor mover</span>
               </div>
-              <h2 className="mt-4 text-3xl font-black text-[#1E4D2B]">Fast-moving pharmacy essentials.</h2>
-              <p className="mt-3 text-sm leading-7 text-[#5F4D33]">
+              <h2 className="mt-4 font-serif text-3xl text-brand-600">Fast-moving pharmacy essentials.</h2>
+              <p className="mt-3 text-sm leading-7 text-muted">
                 Stock white and kraft Rx bag programs are ideal for pharmacy supply distributors that need
                 dependable turns, low minimums, and a clean path into private label.
               </p>
               <div className="mt-5 grid gap-2">
-                <p className="surface-card rounded-2xl px-4 py-3 text-sm font-semibold text-[#5F4D33]">
+                <p className="surface-card rounded-2xl px-4 py-3 text-sm font-semibold text-muted">
                   Stock sizes with no minimums
                 </p>
-                <p className="surface-card rounded-2xl px-4 py-3 text-sm font-semibold text-[#5F4D33]">
+                <p className="surface-card rounded-2xl px-4 py-3 text-sm font-semibold text-muted">
                   Custom print available with one-time $75 setup fee
                 </p>
-                <p className="surface-card rounded-2xl px-4 py-3 text-sm font-semibold text-[#5F4D33]">
+                <p className="surface-card rounded-2xl px-4 py-3 text-sm font-semibold text-muted">
                   Same-day shipping on in-stock orders before 1PM ET
                 </p>
               </div>
@@ -262,25 +262,25 @@ export default function DistributorsPage() {
         <div className="max-w-3xl">
           <p className="kicker">What We Carry</p>
           <h2 className="section-title mt-4">Wholesale stock and private label bag programs for distributors.</h2>
-          <p className="mt-4 text-base leading-8 text-[#5F4D33] md:text-lg">
+          <p className="mt-4 text-base leading-8 text-muted md:text-lg">
             Built for pharmacy supply, vet supply, dispensary supply, and broader wholesale accounts that
             need reliable fill rates and cleaner vendor consolidation.
           </p>
         </div>
 
-        <article className="mt-8 rounded-[2rem] border border-[#C4935A99] bg-[linear-gradient(135deg,#FFF8EA,#FAF6F0)] p-6 shadow-[0_18px_40px_rgba(30,77,43,0.12)] md:p-8">
+        <article className="mt-8 rounded-[2.5rem] border border-kraft-400/60 bg-[linear-gradient(135deg,#FFF8EA,#FAF6F0)] p-6 shadow-[0_18px_40px_rgba(30,77,43,0.12)] md:p-8">
           <div className="flex flex-wrap items-center gap-3">
             <span className="inline-flex rounded-full bg-[#B5813A] px-3 py-1 text-xs font-black uppercase tracking-[0.14em] text-white">
               Featured Product
             </span>
-            <span className="inline-flex rounded-full border border-[#1E4D2B] px-3 py-1 text-xs font-black uppercase tracking-[0.14em] text-[#1E4D2B]">
+            <span className="inline-flex rounded-full border border-[#1E4D2B] px-3 py-1 text-xs font-black uppercase tracking-[0.14em] text-brand-600">
               Rx Bags
             </span>
           </div>
           <div className="mt-5 grid gap-5 lg:grid-cols-[1.05fr_0.95fr]">
             <div>
-              <h3 className="text-3xl font-black text-[#1E4D2B] md:text-4xl">Rx bags that make reordering simple.</h3>
-              <p className="mt-4 text-base leading-8 text-[#5F4D33]">
+              <h3 className="font-serif text-3xl text-brand-600 md:text-4xl">Rx bags that make reordering simple.</h3>
+              <p className="mt-4 text-base leading-8 text-muted">
                 Rx bags are the anchor item for many wholesale programs because they move consistently,
                 support independent and regional pharmacy accounts, and give distributors an easy path into
                 stock plus custom private label supply.
@@ -288,14 +288,14 @@ export default function DistributorsPage() {
             </div>
             <div className="grid gap-3">
               <div className="surface-card rounded-2xl p-4">
-                <p className="text-xs font-black uppercase tracking-[0.1em] text-[#7A6548]">Stock Options</p>
-                <p className="mt-2 text-sm font-semibold text-[#5F4D33]">
+                <p className="text-xs font-black uppercase tracking-[0.1em] text-accent-600">Stock Options</p>
+                <p className="mt-2 text-sm font-semibold text-muted">
                   White and kraft pharmacy sizes with no minimums.
                 </p>
               </div>
               <div className="surface-card rounded-2xl p-4">
-                <p className="text-xs font-black uppercase tracking-[0.1em] text-[#7A6548]">Custom Options</p>
-                <p className="mt-2 text-sm font-semibold text-[#5F4D33]">
+                <p className="text-xs font-black uppercase tracking-[0.1em] text-accent-600">Custom Options</p>
+                <p className="mt-2 text-sm font-semibold text-muted">
                   Logo, address, and compliance messaging for private label pharmacy programs.
                 </p>
               </div>
@@ -306,9 +306,9 @@ export default function DistributorsPage() {
         <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {products.map((product) => (
             <article key={product.title} className="tonal-panel h-full">
-              <p className="text-xs font-black uppercase tracking-[0.1em] text-[#B5813A]">{product.note}</p>
-              <h3 className="mt-3 text-2xl font-black text-[#1E4D2B]">{product.title}</h3>
-              <p className="mt-3 text-sm leading-7 text-[#5F4D33]">{product.copy}</p>
+              <p className="text-xs font-black uppercase tracking-[0.1em] text-accent-500">{product.note}</p>
+              <h3 className="mt-3 font-serif text-2xl text-brand-600">{product.title}</h3>
+              <p className="mt-3 text-sm leading-7 text-muted">{product.copy}</p>
             </article>
           ))}
         </div>
@@ -323,7 +323,7 @@ export default function DistributorsPage() {
           <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
             {volumeOptions.map((item) => (
               <article key={item} className="surface-card rounded-2xl p-5">
-                <p className="text-base font-semibold leading-7 text-[#5F4D33]">{item}</p>
+                <p className="text-base font-semibold leading-7 text-muted">{item}</p>
               </article>
             ))}
           </div>
@@ -331,32 +331,32 @@ export default function DistributorsPage() {
       </section>
 
       <section className="section-container py-20">
-        <div className="rounded-[2rem] border border-[#C4935A66] bg-[#FAF6F0] p-6 shadow-[0_14px_34px_rgba(30,77,43,0.12)] md:p-8">
+        <div className="rounded-[2.5rem] border border-kraft-400/40 bg-[#FAF6F0] p-6 shadow-[0_14px_34px_rgba(30,77,43,0.12)] md:p-8">
           <div className="max-w-3xl">
             <p className="kicker">Wholesale Pricing</p>
             <h2 className="section-title mt-4">Wholesale pallet pricing for distributor bag programs.</h2>
-            <p className="mt-4 text-base leading-8 text-[#5F4D33] md:text-lg">
+            <p className="mt-4 text-base leading-8 text-muted md:text-lg">
               The more you order, the more you save - up to 20% off on high-volume orders.
             </p>
           </div>
 
-          <details className="group mt-8 overflow-hidden rounded-[1.6rem] border border-[#C4935A66] bg-white">
+          <details className="group mt-8 overflow-hidden rounded-[1.6rem] border border-kraft-400/40 bg-white">
             <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-left">
-              <span className="inline-flex items-center gap-3 text-base font-black text-[#1E4D2B] md:text-lg">
-                <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#1E4D2B] text-sm text-[#FAF6F0]">
+              <span className="inline-flex items-center gap-3 text-base font-black text-brand-600 md:text-lg">
+                <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-brand-600 text-sm text-[#FAF6F0]">
                   $
                 </span>
                 View Pallet Pricing
               </span>
-              <span className="text-xs font-black uppercase tracking-[0.14em] text-[#B5813A]">
+              <span className="text-xs font-black uppercase tracking-[0.14em] text-accent-500">
                 Expand table
               </span>
             </summary>
 
-            <div className="border-t border-[#C4935A66] px-4 py-5 md:px-5 md:py-6">
-              <div className="overflow-x-auto rounded-2xl border border-[#C4935A66]">
+            <div className="border-t border-kraft-400/40 px-4 py-5 md:px-5 md:py-6">
+              <div className="overflow-x-auto rounded-2xl border border-kraft-400/40">
                 <table className="min-w-[980px] bg-[#FAF6F0] text-left text-sm text-[#3E3427]">
-                  <thead className="bg-[#1E4D2B] text-[#FAF6F0]">
+                  <thead className="bg-brand-600 text-[#FAF6F0]">
                     <tr>
                       <th className="px-4 py-3 font-black">Product</th>
                       <th className="px-4 py-3 font-black">Size</th>
@@ -376,27 +376,27 @@ export default function DistributorsPage() {
                         key={row.product}
                         className={index % 2 === 0 ? 'bg-[#FAF6F0]' : 'bg-[#FFFDF9]'}
                       >
-                        <td className="border-t border-[#C4935A55] px-4 py-3 font-bold text-[#1E4D2B]">
+                        <td className="border-t border-kraft-400/30 px-4 py-3 font-bold text-brand-600">
                           {row.product}
                         </td>
-                        <td className="border-t border-[#C4935A55] px-4 py-3">{row.size}</td>
-                        <td className="border-t border-[#C4935A55] px-4 py-3 font-bold text-[#B5813A]">
+                        <td className="border-t border-kraft-400/30 px-4 py-3">{row.size}</td>
+                        <td className="border-t border-kraft-400/30 px-4 py-3 font-bold text-accent-500">
                           {row.listPrice}
                         </td>
-                        <td className="border-t border-[#C4935A55] px-4 py-3">{row.minQty}</td>
-                        <td className="border-t border-[#C4935A55] px-4 py-3">{row.discount15}</td>
-                        <td className="border-t border-[#C4935A55] px-4 py-3">{row.discount16}</td>
-                        <td className="border-t border-[#C4935A55] px-4 py-3">{row.discount17}</td>
-                        <td className="border-t border-[#C4935A55] px-4 py-3">{row.discount18}</td>
-                        <td className="border-t border-[#C4935A55] px-4 py-3">{row.discount19}</td>
-                        <td className="border-t border-[#C4935A55] px-4 py-3">{row.discount20}</td>
+                        <td className="border-t border-kraft-400/30 px-4 py-3">{row.minQty}</td>
+                        <td className="border-t border-kraft-400/30 px-4 py-3">{row.discount15}</td>
+                        <td className="border-t border-kraft-400/30 px-4 py-3">{row.discount16}</td>
+                        <td className="border-t border-kraft-400/30 px-4 py-3">{row.discount17}</td>
+                        <td className="border-t border-kraft-400/30 px-4 py-3">{row.discount18}</td>
+                        <td className="border-t border-kraft-400/30 px-4 py-3">{row.discount19}</td>
+                        <td className="border-t border-kraft-400/30 px-4 py-3">{row.discount20}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
 
-              <p className="mt-4 text-sm font-semibold text-[#5F4D33]">
+              <p className="mt-4 text-sm font-semibold text-muted">
                 Prices shown per case. Contact us for custom volume quotes or mixed pallet pricing.
               </p>
               <a href="#request-form" className="btn-primary mt-5">
@@ -419,7 +419,7 @@ export default function DistributorsPage() {
                 <span className="mt-1 inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#FFF8EA]">
                   <CheckIcon />
                 </span>
-                <p className="text-sm font-semibold leading-7 text-[#5F4D33]">{reason}</p>
+                <p className="text-sm font-semibold leading-7 text-muted">{reason}</p>
               </article>
             ))}
           </div>
@@ -434,23 +434,23 @@ export default function DistributorsPage() {
         <div className="mt-8 grid gap-4 lg:grid-cols-3">
           {steps.map((step) => (
             <article key={step.number} className="tonal-panel h-full">
-              <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#1E4D2B] text-lg font-black text-[#FAF6F0]">
+              <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-brand-600 text-lg font-black text-[#FAF6F0]">
                 {step.number}
               </div>
-              <h3 className="mt-5 text-2xl font-black text-[#1E4D2B]">{step.title}</h3>
-              <p className="mt-3 text-sm leading-7 text-[#5F4D33]">{step.copy}</p>
+              <h3 className="mt-5 font-serif text-2xl text-brand-600">{step.title}</h3>
+              <p className="mt-3 text-sm leading-7 text-muted">{step.copy}</p>
             </article>
           ))}
         </div>
       </section>
 
       <section className="section-container pb-20">
-        <div className="overflow-hidden rounded-[2rem] border border-[#C4935A99] bg-[linear-gradient(135deg,#1E4D2B,#225935_58%,#3A2A19)] p-6 text-[#FAF6F0] shadow-[0_22px_46px_rgba(30,77,43,0.22)] md:p-8">
+        <div className="overflow-hidden rounded-[2.5rem] border border-kraft-400/60 bg-[linear-gradient(135deg,#1E4D2B,#225935_58%,#3A2A19)] p-6 text-[#FAF6F0] shadow-[0_22px_46px_rgba(30,77,43,0.22)] md:p-8">
           <div className="max-w-3xl">
             <p className="inline-flex rounded-full border border-[#F4E8D899] bg-[#F4E8D81A] px-3 py-1 text-[11px] font-black uppercase tracking-[0.14em] text-[#F4E8D8]">
               Domestic Advantage
             </p>
-            <h2 className="heading-serif mt-4 text-3xl font-black text-[#FAF6F0] md:text-5xl">
+            <h2 className="heading-serif mt-4 text-3xl text-[#FAF6F0] md:text-5xl">
               Why Source Domestic?
             </h2>
             <p className="mt-4 text-base leading-8 text-[#F4E8D8] md:text-lg">
@@ -463,10 +463,10 @@ export default function DistributorsPage() {
             {domesticReasons.map((reason) => (
               <article
                 key={reason.title}
-                className="rounded-2xl border border-[#C4935A80] bg-[#FAF6F0] p-5 text-[#1E4D2B] shadow-[0_14px_30px_rgba(0,0,0,0.16)]"
+                className="rounded-2xl border border-kraft-400/50 bg-[#FAF6F0] p-5 text-brand-600 shadow-[0_14px_30px_rgba(0,0,0,0.16)]"
               >
-                <p className="text-xs font-black uppercase tracking-[0.1em] text-[#B5813A]">{reason.title}</p>
-                <p className="mt-3 text-sm font-semibold leading-7 text-[#5F4D33]">{reason.copy}</p>
+                <p className="text-xs font-black uppercase tracking-[0.1em] text-accent-500">{reason.title}</p>
+                <p className="mt-3 text-sm font-semibold leading-7 text-muted">{reason.copy}</p>
               </article>
             ))}
           </div>
@@ -478,20 +478,20 @@ export default function DistributorsPage() {
           <div className="tonal-panel">
             <p className="kicker">Request Pricing</p>
             <h2 className="section-title mt-4">Tell us what your wholesale distributor program needs.</h2>
-            <p className="mt-4 text-base leading-8 text-[#5F4D33]">
+            <p className="mt-4 text-base leading-8 text-muted">
               Share your volume, product mix, and private label goals. We will respond with the right mix of
               case pricing, pallet pricing, and custom print guidance for your team.
             </p>
             <div className="mt-6 grid gap-3">
               <div className="surface-card rounded-2xl p-4">
-                <p className="text-xs font-black uppercase tracking-[0.1em] text-[#7A6548]">Best Fit</p>
-                <p className="mt-2 text-sm font-semibold text-[#5F4D33]">
+                <p className="text-xs font-black uppercase tracking-[0.1em] text-accent-600">Best Fit</p>
+                <p className="mt-2 text-sm font-semibold text-muted">
                   Pharmacy supply, veterinary supply, dispensary supply, and general retail wholesale teams.
                 </p>
               </div>
               <div className="surface-card rounded-2xl p-4">
-                <p className="text-xs font-black uppercase tracking-[0.1em] text-[#7A6548]">Response Focus</p>
-                <p className="mt-2 text-sm font-semibold text-[#5F4D33]">
+                <p className="text-xs font-black uppercase tracking-[0.1em] text-accent-600">Response Focus</p>
+                <p className="mt-2 text-sm font-semibold text-muted">
                   Stock assortment guidance, pallet breakpoints, and private label opportunities.
                 </p>
               </div>
@@ -503,9 +503,9 @@ export default function DistributorsPage() {
       </section>
 
       <section className="section-container pt-2">
-        <div className="rounded-[2rem] border border-[#C4935A99] bg-[#1E4D2B] p-6 text-center text-[#FAF6F0] shadow-[0_20px_44px_rgba(30,77,43,0.22)] md:p-8">
+        <div className="rounded-[2.5rem] border border-kraft-400/60 bg-brand-600 p-6 text-center text-[#FAF6F0] shadow-[0_20px_44px_rgba(30,77,43,0.22)] md:p-8">
           <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[#F4E8D8]">Footer CTA</p>
-          <h2 className="heading-serif mt-3 text-3xl font-black text-[#FAF6F0] md:text-4xl">
+          <h2 className="heading-serif mt-3 text-3xl text-[#FAF6F0] md:text-4xl">
             Already a customer?
           </h2>
           <p className="mt-3 text-sm leading-7 text-[#F4E8D8]">
