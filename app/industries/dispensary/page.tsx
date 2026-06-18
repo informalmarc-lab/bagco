@@ -81,13 +81,13 @@ export default function DispensaryIndustryPage() {
                 stay organized, and keep packaging standards consistent across locations.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
-                <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-[#1E4D2B]">
+                <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-brand-600">
                   6 compliance labels
                 </span>
-                <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-[#1E4D2B]">
+                <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-brand-600">
                   6 featured mylar SKUs
                 </span>
-                <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-[#1E4D2B]">
+                <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-brand-600">
                   1 stocked paper exit bag
                 </span>
               </div>
@@ -106,7 +106,7 @@ export default function DispensaryIndustryPage() {
 
             <div className="hero-panel overflow-hidden">
               <div className="grid gap-4">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-[#C4935A66] bg-[#FAF6F0]">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-kraft-400/40 bg-[#FAF6F0]">
                   <FallbackImage
                     src="/images/labels/california-v2-universal-symbol-rx-compliant-labels.webp"
                     fallbackSrc="/images/catalog/placeholder.svg"
@@ -117,7 +117,7 @@ export default function DispensaryIndustryPage() {
                     priority
                   />
                 </div>
-                <div className="grid gap-2 text-sm font-semibold text-[#5F4D33] sm:grid-cols-2">
+                <div className="grid gap-2 text-sm font-semibold text-muted sm:grid-cols-2">
                   <p className="surface-card rounded-xl px-3 py-2">Fixed label pricing at {money(12)}/case</p>
                   <p className="surface-card rounded-xl px-3 py-2">Quote routing for stocked and branded programs</p>
                 </div>
@@ -132,12 +132,12 @@ export default function DispensaryIndustryPage() {
           <div className="tonal-panel">
             <p className="kicker">About</p>
             <h2 className="section-title mt-4">Wholesale dispensary packaging for compliant checkout and repeat ordering.</h2>
-            <p className="mt-4 text-sm leading-7 text-[#5F4D33] md:text-base">
+            <p className="mt-4 text-sm leading-7 text-muted md:text-base">
               Dispensary teams usually need three things from packaging: fast replenishment, clear compliance handling,
               and a clean handoff at checkout. This page is built around that exact workflow. Start with stocked label
               and bag options, then layer in custom print once your core packaging lane is working smoothly.
             </p>
-            <p className="mt-4 text-sm leading-7 text-[#5F4D33] md:text-base">
+            <p className="mt-4 text-sm leading-7 text-muted md:text-base">
               Instead of bouncing between unrelated vendors, you can keep labels, mylar, and paper exit bags moving
               through one quote path. That makes it easier to standardize approved formats by location and reduce
               reorder friction for your team.
@@ -148,7 +148,7 @@ export default function DispensaryIndustryPage() {
             <p className="kicker">Why It Works</p>
             <div className="mt-5 grid gap-3">
               {aboutPoints.map((point) => (
-                <div key={point} className="surface-card rounded-xl px-4 py-3 text-sm font-semibold text-[#1E4D2B]">
+                <div key={point} className="surface-card rounded-xl px-4 py-3 text-sm font-semibold text-brand-600">
                   {point}
                 </div>
               ))}
@@ -187,14 +187,14 @@ export default function DispensaryIndustryPage() {
                 </div>
                 <div className="flex flex-1 flex-col p-4">
                   <div className="flex flex-wrap items-center gap-2">
-                    <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">SKU {label.sku}</p>
-                    <span className="rounded-full bg-[#E8F4EC] px-2.5 py-1 text-[0.65rem] font-black uppercase tracking-[0.08em] text-[#1E4D2B]">
+                    <p className="text-xs font-black uppercase tracking-[0.08em] text-accent-600">SKU {label.sku}</p>
+                    <span className="rounded-full bg-[#E8F4EC] px-2.5 py-1 text-[0.65rem] font-black uppercase tracking-[0.08em] text-brand-600">
                       {label.shippingBadge}
                     </span>
                   </div>
-                  <h3 className="mt-2 text-lg font-black text-[#1E4D2B]">{label.name}</h3>
-                  <p className="mt-2 text-sm text-[#5F4D33]">{label.description}</p>
-                  <p className="mt-3 text-sm font-semibold text-[#5F4D33]">
+                  <h3 className="mt-2 font-serif text-lg text-brand-600">{label.name}</h3>
+                  <p className="mt-2 text-sm text-muted">{label.description}</p>
+                  <p className="mt-3 text-sm font-semibold text-muted">
                     {label.quantity.toLocaleString('en-US')} qty per case
                   </p>
                   <p className="mt-1 product-card-price">{money(label.price)} / case</p>
@@ -238,14 +238,14 @@ export default function DispensaryIndustryPage() {
                   />
                 </Link>
                 <div className="flex flex-1 flex-col p-4">
-                  <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">SKU {product.sku}</p>
-                  <h3 className="mt-2 text-lg font-black text-[#1E4D2B]">
-                    <Link href={`/catalog/mylar-bags/${product.slug}`} className="transition hover:text-[#B5813A]">
+                  <p className="text-xs font-black uppercase tracking-[0.08em] text-accent-600">SKU {product.sku}</p>
+                  <h3 className="mt-2 font-serif text-lg text-brand-600">
+                    <Link href={`/catalog/mylar-bags/${product.slug}`} className="transition hover:text-accent-500">
                       {product.name}
                     </Link>
                   </h3>
-                  <p className="mt-1 text-sm text-[#5F4D33]">{product.size} / {product.finish}</p>
-                  <p className="mt-1 text-sm text-[#5F4D33]">{formatMylarQuantityLabel(product.quantity)}</p>
+                  <p className="mt-1 text-sm text-muted">{product.size} / {product.finish}</p>
+                  <p className="mt-1 text-sm text-muted">{formatMylarQuantityLabel(product.quantity)}</p>
                   <p className="mt-2 product-card-price">{money(product.price)} / {formatMylarQuantityLabel(product.quantity)}</p>
                   <AddToCartControl
                     item={{
@@ -277,12 +277,12 @@ export default function DispensaryIndustryPage() {
               <div>
                 <p className="kicker">Paper Bags</p>
                 <h2 className="section-title mt-4">Keep a stocked paper exit bag in the core mix.</h2>
-                <p className="mt-4 text-sm leading-7 text-[#5F4D33] md:text-base">
+                <p className="mt-4 text-sm leading-7 text-muted md:text-base">
                   For dispensaries that want a straightforward paper carryout option, this stocked format gives your
                   team a reliable fallback alongside mylar-heavy programs. It works well for fast counter service,
                   multi-bag orders, and operators who need a cleaner branded handoff.
                 </p>
-                <p className="mt-4 text-sm leading-7 text-[#5F4D33] md:text-base">
+                <p className="mt-4 text-sm leading-7 text-muted md:text-base">
                   If you are standardizing by store or region, this is also the easiest lane to pair with recurring
                   replenishment and a quote-built reorder plan.
                 </p>
@@ -311,10 +311,10 @@ export default function DispensaryIndustryPage() {
                   />
                 </div>
                 <div className="p-4">
-                  <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">SKU {paperBag.sku}</p>
-                  <h3 className="mt-2 text-lg font-black text-[#1E4D2B]">{paperBag.name}</h3>
-                  <p className="mt-1 text-sm text-[#5F4D33]">{paperBag.caseCount}</p>
-                  <p className="mt-1 text-sm text-[#5F4D33]">{paperBag.sizeOptions.join(', ')}</p>
+                  <p className="text-xs font-black uppercase tracking-[0.08em] text-accent-600">SKU {paperBag.sku}</p>
+                  <h3 className="mt-2 font-serif text-lg text-brand-600">{paperBag.name}</h3>
+                  <p className="mt-1 text-sm text-muted">{paperBag.caseCount}</p>
+                  <p className="mt-1 text-sm text-muted">{paperBag.sizeOptions.join(', ')}</p>
                   <p className="mt-2 product-card-price">From {money(paperBag.startingPrice)} / case</p>
                 </div>
               </article>

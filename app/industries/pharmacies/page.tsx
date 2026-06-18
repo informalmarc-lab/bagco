@@ -87,13 +87,13 @@ export default function PharmaciesIndustryPage() {
                 are ready to tighten up patient-facing branding across your locations.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
-                <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-[#1E4D2B]">
+                <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-brand-600">
                   3 stocked families
                 </span>
-                <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-[#1E4D2B]">
+                <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-brand-600">
                   3 custom print options
                 </span>
-                <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-[#1E4D2B]">
+                <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-brand-600">
                   Stock + custom planning
                 </span>
               </div>
@@ -115,7 +115,7 @@ export default function PharmaciesIndustryPage() {
                 {heroProduct && (
                   <Link
                     href={getCatalogOverviewPath(heroProduct)}
-                    className="relative block aspect-[4/3] overflow-hidden rounded-2xl border border-[#C4935A66] bg-[#FAF6F0]"
+                    className="relative block aspect-[4/3] overflow-hidden rounded-2xl border border-kraft-400/40 bg-[#FAF6F0]"
                   >
                     <FallbackImage
                       src={heroProduct.image}
@@ -128,7 +128,7 @@ export default function PharmaciesIndustryPage() {
                     />
                   </Link>
                 )}
-                <div className="grid gap-2 text-sm font-semibold text-[#5F4D33] sm:grid-cols-2">
+                <div className="grid gap-2 text-sm font-semibold text-muted sm:grid-cols-2">
                   <p className="surface-card rounded-xl px-3 py-2">Stock sizes cover the most common prescription pickup formats.</p>
                   <p className="surface-card rounded-xl px-3 py-2">Custom print adds branded carry-out without changing suppliers.</p>
                 </div>
@@ -143,12 +143,12 @@ export default function PharmaciesIndustryPage() {
           <div className="tonal-panel">
             <p className="kicker">About</p>
             <h2 className="section-title mt-4">Wholesale paper bags for independent pharmacies that need cleaner prescription handoff.</h2>
-            <p className="mt-4 text-sm leading-7 text-[#5F4D33] md:text-base">
+            <p className="mt-4 text-sm leading-7 text-muted md:text-base">
               Independent pharmacies usually need a packaging mix that does two jobs at once: support daily script
               volume with ready-to-ship stock bags and give the front counter a more polished branded handoff when
               custom print makes sense. This page is structured around that exact workflow.
             </p>
-            <p className="mt-4 text-sm leading-7 text-[#5F4D33] md:text-base">
+            <p className="mt-4 text-sm leading-7 text-muted md:text-base">
               Start with the most-used prescription sizes, then move into custom 1-color, 2-color, or 3-color options
               when you want stronger carry-out recognition. Keeping both lanes under one supplier makes replenishment
               easier and reduces friction for repeat quote requests.
@@ -159,7 +159,7 @@ export default function PharmaciesIndustryPage() {
             <p className="kicker">Why It Works</p>
             <div className="mt-5 grid gap-3">
               {aboutPoints.map((point) => (
-                <div key={point} className="surface-card rounded-xl px-4 py-3 text-sm font-semibold text-[#1E4D2B]">
+                <div key={point} className="surface-card rounded-xl px-4 py-3 text-sm font-semibold text-brand-600">
                   {point}
                 </div>
               ))}
@@ -198,15 +198,15 @@ export default function PharmaciesIndustryPage() {
                   />
                 </Link>
                 <div className="flex flex-1 flex-col p-4">
-                  <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">SKU {product.sku}</p>
-                  <h3 className="mt-2 text-lg font-black text-[#1E4D2B]">
-                    <Link href={getCatalogOverviewPath(product)} className="transition hover:text-[#B5813A]">
+                  <p className="text-xs font-black uppercase tracking-[0.08em] text-accent-600">SKU {product.sku}</p>
+                  <h3 className="mt-2 font-serif text-lg text-brand-600">
+                    <Link href={getCatalogOverviewPath(product)} className="transition hover:text-accent-500">
                       {product.name}
                     </Link>
                   </h3>
-                  <p className="mt-2 text-sm text-[#5F4D33]">{product.description}</p>
-                  <p className="mt-3 text-sm font-semibold text-[#5F4D33]">{product.caseCount}</p>
-                  <p className="mt-1 text-sm text-[#5F4D33]">{product.sizeOptions.slice(0, 2).join(' / ')}</p>
+                  <p className="mt-2 text-sm text-muted">{product.description}</p>
+                  <p className="mt-3 text-sm font-semibold text-muted">{product.caseCount}</p>
+                  <p className="mt-1 text-sm text-muted">{product.sizeOptions.slice(0, 2).join(' / ')}</p>
                   <p className="mt-2 product-card-price">From {money(product.startingPrice)} / case</p>
                   <div className="mt-auto pt-4">
                     <Link href="/makeyourquote" className="btn-primary">
@@ -250,10 +250,10 @@ export default function PharmaciesIndustryPage() {
                   />
                 </div>
                 <div className="flex flex-1 flex-col p-4">
-                  <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">SKU {product.sku}</p>
-                  <h3 className="mt-2 text-lg font-black text-[#1E4D2B]">{product.name}</h3>
-                  <p className="mt-2 text-sm text-[#5F4D33]">{product.caseCount}</p>
-                  <p className="mt-1 text-sm text-[#5F4D33]">Standard Rx sizes plus flat and gusset-bottom formats.</p>
+                  <p className="text-xs font-black uppercase tracking-[0.08em] text-accent-600">SKU {product.sku}</p>
+                  <h3 className="mt-2 font-serif text-lg text-brand-600">{product.name}</h3>
+                  <p className="mt-2 text-sm text-muted">{product.caseCount}</p>
+                  <p className="mt-1 text-sm text-muted">Standard Rx sizes plus flat and gusset-bottom formats.</p>
                   <p className="mt-2 product-card-price">From {money(product.startingPrice)} / case</p>
                   <div className="mt-auto pt-4">
                     <Link href="/makeyourquote" className="btn-primary">

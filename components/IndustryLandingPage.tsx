@@ -80,10 +80,10 @@ export default function IndustryLandingPage({
           <p className="kicker">{heroLabel}</p>
           <h1 className="heading-display mt-5">{title}</h1>
           <p className="mt-5 max-w-3xl text-lg muted-text">{description}</p>
-          <p className="mt-4 text-sm font-semibold text-[#5F4D33]">
+          <p className="mt-4 text-sm font-semibold text-muted">
             Starting stock pricing from {money(startingPrice)}/case.
           </p>
-          <div className="mt-5 flex flex-wrap gap-2 text-xs font-black uppercase tracking-[0.08em] text-[#5F4D33]">
+          <div className="mt-5 flex flex-wrap gap-2 text-xs font-black uppercase tracking-[0.08em] text-muted">
             {badges.map((badge) => (
               <span key={badge} className="rounded-full bg-white px-3 py-1.5">
                 {badge}
@@ -122,8 +122,8 @@ export default function IndustryLandingPage({
                     />
                   </div>
                   <div className="flex flex-1 flex-col p-3">
-                    <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">SKU {product.sku}</p>
-                    <p className="mt-1 text-sm font-semibold text-[#1E4D2B]">{product.name}</p>
+                    <p className="text-xs font-black uppercase tracking-[0.08em] text-accent-600">SKU {product.sku}</p>
+                    <p className="mt-1 font-serif text-sm text-brand-600">{product.name}</p>
                     <p className="mt-1 product-card-price">From {money(product.startingPrice)}/case</p>
                     <Link href={getCatalogOverviewPath(product)} className="btn-secondary mt-auto pt-3">
                       View Product
@@ -138,12 +138,12 @@ export default function IndustryLandingPage({
             <h2 className="section-title">Most Ordered Sizes</h2>
             <div className="mt-5 grid gap-2">
               {sizes.map((size) => (
-                <p key={size} className="surface-card rounded-xl px-3 py-2 text-sm font-semibold text-[#5F4D33]">
+                <p key={size} className="surface-card rounded-xl px-3 py-2 text-sm font-semibold text-muted">
                   {size}
                 </p>
               ))}
             </div>
-            <p className="mt-4 text-sm text-[#5F4D33]">
+            <p className="mt-4 text-sm text-muted">
               Need a different format? Filter by size and bag type in the main catalog.
             </p>
             <Link href={`/catalog?industry=${industry}`} className="btn-primary mt-5">
@@ -159,7 +159,7 @@ export default function IndustryLandingPage({
             <h2 className="section-title">{deepDiveSection.title}</h2>
             <div className="mt-5 grid gap-4">
               {deepDiveSection.paragraphs.map((paragraph) => (
-                <p key={paragraph} className="text-sm leading-7 text-[#5F4D33] md:text-base">
+                <p key={paragraph} className="text-sm leading-7 text-muted md:text-base">
                   {paragraph}
                 </p>
               ))}

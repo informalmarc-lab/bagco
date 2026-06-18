@@ -55,10 +55,10 @@ export default function RetailIndustryPage() {
                 Keep checkout simple with stocked retail bags that give store buyers clear case pricing, repeat-order visibility, and fast BagSupplyCo support.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
-                <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-[#1E4D2B]">
+                <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-brand-600">
                   Starting at {money(startingPrice)} / case
                 </span>
-                <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-[#1E4D2B]">
+                <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-brand-600">
                   Free shipping on 2+ cases
                 </span>
               </div>
@@ -74,7 +74,7 @@ export default function RetailIndustryPage() {
 
             {featuredProduct && (
               <div className="hero-panel overflow-hidden">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-[#C4935A66] bg-[#FAF6F0]">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-kraft-400/40 bg-[#FAF6F0]">
                   <FallbackImage
                     src={featuredProduct.image}
                     fallbackSrc="/images/catalog/placeholder.svg"
@@ -85,7 +85,7 @@ export default function RetailIndustryPage() {
                     priority
                   />
                 </div>
-                <div className="mt-4 grid gap-2 text-sm font-semibold text-[#5F4D33]">
+                <div className="mt-4 grid gap-2 text-sm font-semibold text-muted">
                   <p className="surface-card rounded-xl px-3 py-2">Retail checkout bags for convenience stores and gift shops</p>
                   <p className="surface-card rounded-xl px-3 py-2">Most buyers start with stocked thank-you t-shirt bags</p>
                 </div>
@@ -100,10 +100,10 @@ export default function RetailIndustryPage() {
           <div className="tonal-panel">
             <p className="kicker">About</p>
             <h2 className="section-title mt-4">Wholesale retail checkout bags built for fast-moving store counters.</h2>
-            <p className="mt-4 text-sm leading-7 text-[#5F4D33] md:text-base">
+            <p className="mt-4 text-sm leading-7 text-muted md:text-base">
               Retail buyers usually want a bag program that is simple to stock, easy to reorder, and priced clearly enough that store managers can make decisions quickly. This page is built for that kind of checkout workflow.
             </p>
-            <p className="mt-4 text-sm leading-7 text-[#5F4D33] md:text-base">
+            <p className="mt-4 text-sm leading-7 text-muted md:text-base">
               Start with the stocked retail bag catalog, compare the case options that match your counter volume, and use BagSupplyCo when you need a broader quote or another category tied into the same buying plan.
             </p>
           </div>
@@ -111,13 +111,13 @@ export default function RetailIndustryPage() {
           <div className="tonal-panel">
             <p className="kicker">Why It Works</p>
             <div className="mt-5 grid gap-3">
-              <div className="surface-card rounded-xl px-4 py-3 text-sm font-semibold text-[#1E4D2B]">
+              <div className="surface-card rounded-xl px-4 py-3 text-sm font-semibold text-brand-600">
                 Fixed case pricing makes checkout bag planning easier for multi-store and independent buyers.
               </div>
-              <div className="surface-card rounded-xl px-4 py-3 text-sm font-semibold text-[#1E4D2B]">
+              <div className="surface-card rounded-xl px-4 py-3 text-sm font-semibold text-brand-600">
                 Stocked retail bags reduce lead-time stress when stores need a quick reorder.
               </div>
-              <div className="surface-card rounded-xl px-4 py-3 text-sm font-semibold text-[#1E4D2B]">
+              <div className="surface-card rounded-xl px-4 py-3 text-sm font-semibold text-brand-600">
                 The retail category links directly back to the catalog for fast SKU comparison and quote follow-up.
               </div>
             </div>
@@ -154,9 +154,9 @@ export default function RetailIndustryPage() {
                   />
                 </Link>
                 <div className="flex flex-1 flex-col p-4">
-                  <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">SKU {product.sku}</p>
-                  <h3 className="mt-2 text-lg font-black text-[#1E4D2B]">{product.name}</h3>
-                  <p className="mt-2 text-sm text-[#5F4D33]">{product.description}</p>
+                  <p className="text-xs font-black uppercase tracking-[0.08em] text-accent-600">SKU {product.sku}</p>
+                  <h3 className="mt-2 font-serif text-lg text-brand-600">{product.name}</h3>
+                  <p className="mt-2 text-sm text-muted">{product.description}</p>
                   <p className="mt-2 product-card-price">From {money(Math.min(...product.variants.map((variant) => variant.price)))} / case</p>
                   <div className="mt-auto pt-4">
                     <Link href="/catalog/retail-bags" className="btn-primary">

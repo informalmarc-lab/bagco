@@ -105,13 +105,13 @@ export default function SmokeShopsIndustryPage() {
                 and predictable case pricing.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
-                <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-[#1E4D2B]">
+                <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-brand-600">
                   15 stocked designs
                 </span>
-                <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-[#1E4D2B]">
+                <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-brand-600">
                   Classic RX and #12-DS
                 </span>
-                <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-[#1E4D2B]">
+                <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-brand-600">
                   From {money(43.4)} / case
                 </span>
               </div>
@@ -133,7 +133,7 @@ export default function SmokeShopsIndustryPage() {
                 {firstProduct && (
                   <Link
                     href={getCatalogOverviewPath(firstProduct)}
-                    className="relative block aspect-[4/3] overflow-hidden rounded-2xl border border-[#C4935A66] bg-[#FAF6F0]"
+                    className="relative block aspect-[4/3] overflow-hidden rounded-2xl border border-kraft-400/40 bg-[#FAF6F0]"
                   >
                     <FallbackImage
                       src={firstProduct.image}
@@ -146,7 +146,7 @@ export default function SmokeShopsIndustryPage() {
                     />
                   </Link>
                 )}
-                <div className="grid gap-2 text-sm font-semibold text-[#5F4D33] sm:grid-cols-2">
+                <div className="grid gap-2 text-sm font-semibold text-muted sm:grid-cols-2">
                   <p className="surface-card rounded-xl px-3 py-2">Stock paper program with two consistent bag sizes</p>
                   <p className="surface-card rounded-xl px-3 py-2">Ideal for discreet checkout and repeat replenishment</p>
                 </div>
@@ -161,12 +161,12 @@ export default function SmokeShopsIndustryPage() {
           <div className="tonal-panel">
             <p className="kicker">About</p>
             <h2 className="section-title mt-4">Wholesale smoke shop paper bags for discreet retail carryout.</h2>
-            <p className="mt-4 text-sm leading-7 text-[#5F4D33] md:text-base">
+            <p className="mt-4 text-sm leading-7 text-muted md:text-base">
               Smoke shops often need packaging that feels more polished than a blank kraft bag but does not require the
               lead time, proofs, and minimums of a full custom run. This stocked design lineup gives teams a faster path:
               choose the look you want, keep the size program consistent, and reorder the same format as traffic changes.
             </p>
-            <p className="mt-4 text-sm leading-7 text-[#5F4D33] md:text-base">
+            <p className="mt-4 text-sm leading-7 text-muted md:text-base">
               Because every design shares the same core bag sizes and case model, stores can standardize checkout flow,
               storage, and reorder timing while still rotating graphics across locations or seasons. It is a simpler way
               to keep the counter looking intentional without rebuilding the entire bag program.
@@ -177,14 +177,14 @@ export default function SmokeShopsIndustryPage() {
             <p className="kicker">Why It Works</p>
             <div className="mt-5 grid gap-3">
               {aboutPoints.map((point) => (
-                <div key={point} className="surface-card rounded-xl px-4 py-3 text-sm font-semibold text-[#1E4D2B]">
+                <div key={point} className="surface-card rounded-xl px-4 py-3 text-sm font-semibold text-brand-600">
                   {point}
                 </div>
               ))}
             </div>
-            <div className="mt-5 rounded-2xl border border-[#C4935A66] bg-white px-4 py-4 text-sm text-[#5F4D33]">
-              <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">Program Snapshot</p>
-              <p className="mt-2 font-semibold text-[#1E4D2B]">{smokeShopProducts.length} stocked SKUs</p>
+            <div className="mt-5 rounded-2xl border border-kraft-400/40 bg-white px-4 py-4 text-sm text-muted">
+              <p className="text-xs font-black uppercase tracking-[0.08em] text-accent-600">Program Snapshot</p>
+              <p className="mt-2 font-semibold text-brand-600">{smokeShopProducts.length} stocked SKUs</p>
               <p className="mt-1">1,000/case model across the smoke shop paper program.</p>
               <p className="mt-1">Most-used sizes: Classic RX (10&quot; x 5&quot; x 1&quot;) and #12-DS (7&quot; x 10&quot;).</p>
             </div>
@@ -222,15 +222,15 @@ export default function SmokeShopsIndustryPage() {
                   />
                 </Link>
                 <div className="flex flex-1 flex-col p-4">
-                  <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">SKU {product.sku}</p>
-                  <h3 className="mt-2 text-lg font-black text-[#1E4D2B]">
-                    <Link href={getCatalogOverviewPath(product)} className="transition hover:text-[#B5813A]">
+                  <p className="text-xs font-black uppercase tracking-[0.08em] text-accent-600">SKU {product.sku}</p>
+                  <h3 className="mt-2 font-serif text-lg text-brand-600">
+                    <Link href={getCatalogOverviewPath(product)} className="transition hover:text-accent-500">
                       {product.name}
                     </Link>
                   </h3>
-                  <p className="mt-2 text-sm text-[#5F4D33]">{product.description}</p>
-                  <p className="mt-3 text-sm font-semibold text-[#5F4D33]">{product.caseCount}</p>
-                  <p className="mt-1 text-sm text-[#5F4D33]">{product.sizeOptions.join(' / ')}</p>
+                  <p className="mt-2 text-sm text-muted">{product.description}</p>
+                  <p className="mt-3 text-sm font-semibold text-muted">{product.caseCount}</p>
+                  <p className="mt-1 text-sm text-muted">{product.sizeOptions.join(' / ')}</p>
                   <p className="mt-2 product-card-price">From {money(product.startingPrice)} / case</p>
                   <Link href={getCatalogOverviewPath(product)} className="btn-secondary mt-auto pt-4">
                     View Product
@@ -272,10 +272,10 @@ export default function SmokeShopsIndustryPage() {
                   />
                 </div>
                 <div className="flex flex-1 flex-col p-4">
-                  <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">SKU {label.sku}</p>
-                  <h3 className="mt-2 text-lg font-black text-[#1E4D2B]">{label.name}</h3>
-                  <p className="mt-2 text-sm text-[#5F4D33]">{label.description}</p>
-                  <p className="mt-3 text-sm font-semibold text-[#5F4D33]">
+                  <p className="text-xs font-black uppercase tracking-[0.08em] text-accent-600">SKU {label.sku}</p>
+                  <h3 className="mt-2 font-serif text-lg text-brand-600">{label.name}</h3>
+                  <p className="mt-2 text-sm text-muted">{label.description}</p>
+                  <p className="mt-3 text-sm font-semibold text-muted">
                     {label.quantity.toLocaleString('en-US')} qty per case
                   </p>
                   <p className="mt-1 product-card-price">{money(label.price)} / case</p>
@@ -319,14 +319,14 @@ export default function SmokeShopsIndustryPage() {
                   />
                 </Link>
                 <div className="flex flex-1 flex-col p-4">
-                  <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">SKU {product.sku}</p>
-                  <h3 className="mt-2 text-lg font-black text-[#1E4D2B]">
-                    <Link href={`/catalog/mylar-bags/${product.slug}`} className="transition hover:text-[#B5813A]">
+                  <p className="text-xs font-black uppercase tracking-[0.08em] text-accent-600">SKU {product.sku}</p>
+                  <h3 className="mt-2 font-serif text-lg text-brand-600">
+                    <Link href={`/catalog/mylar-bags/${product.slug}`} className="transition hover:text-accent-500">
                       {product.name}
                     </Link>
                   </h3>
-                  <p className="mt-1 text-sm text-[#5F4D33]">{product.size} / {product.finish}</p>
-                  <p className="mt-1 text-sm text-[#5F4D33]">{formatMylarQuantityLabel(product.quantity)}</p>
+                  <p className="mt-1 text-sm text-muted">{product.size} / {product.finish}</p>
+                  <p className="mt-1 text-sm text-muted">{formatMylarQuantityLabel(product.quantity)}</p>
                   <p className="mt-2 product-card-price">{money(product.price)} / {formatMylarQuantityLabel(product.quantity)}</p>
                   <AddToCartControl
                     item={{
