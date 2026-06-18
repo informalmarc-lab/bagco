@@ -78,18 +78,18 @@ export default async function MylarProductPage({
       <StructuredData data={jsonLd} />
       <section className="page-hero">
         <div className="page-hero-inner">
-          <nav className="text-sm font-semibold text-[#5F4D33]">
-            <Link href="/" className="hover:text-[#1E4D2B]">Home</Link>
+          <nav className="text-sm font-semibold text-muted">
+            <Link href="/" className="hover:text-brand-600">Home</Link>
             {' / '}
-            <Link href="/catalog" className="hover:text-[#1E4D2B]">Catalog</Link>
+            <Link href="/catalog" className="hover:text-brand-600">Catalog</Link>
             {' / '}
-            <Link href="/catalog/mylar-bags" className="hover:text-[#1E4D2B]">Mylar Bags</Link>
+            <Link href="/catalog/mylar-bags" className="hover:text-brand-600">Mylar Bags</Link>
             {' / '}
-            <span className="text-[#1E4D2B]">{product.sku}</span>
+            <span className="text-brand-600">{product.sku}</span>
           </nav>
           <p className="kicker mt-6">Mylar SKU</p>
           <h1 className="heading-display mt-5">{product.name}</h1>
-          <p className="mt-3 text-sm font-semibold uppercase tracking-[0.09em] text-[#7A6548]">
+          <p className="mt-3 text-sm font-semibold uppercase tracking-[0.09em] text-accent-600">
             {productIsLargeStorage ? 'Large Storage' : product.type === 'designer-printed' ? 'Designer Printed' : 'Plain Stock'}
           </p>
           <p className="mt-4 max-w-3xl text-lg muted-text">{product.description}</p>
@@ -119,16 +119,16 @@ export default async function MylarProductPage({
 
           <div className="tonal-panel">
             <h2 className="section-title">Product Specs</h2>
-            <div className="mt-5 space-y-2 text-sm text-[#5F4D33]">
-              <p><span className="font-semibold text-[#1E4D2B]">SKU:</span> {product.sku}</p>
-              <p><span className="font-semibold text-[#1E4D2B]">Size:</span> {product.size}</p>
-              <p><span className="font-semibold text-[#1E4D2B]">Finish:</span> {product.finish}</p>
+            <div className="mt-5 space-y-2 text-sm text-muted">
+              <p><span className="font-semibold text-brand-600">SKU:</span> {product.sku}</p>
+              <p><span className="font-semibold text-brand-600">Size:</span> {product.size}</p>
+              <p><span className="font-semibold text-brand-600">Finish:</span> {product.finish}</p>
               <p>
-                <span className="font-semibold text-[#1E4D2B]">Pack Quantity:</span>{' '}
+                <span className="font-semibold text-brand-600">Pack Quantity:</span>{' '}
                 {formatMylarQuantityLabel(product.quantity)}
               </p>
               <p>
-                <span className="font-semibold text-[#1E4D2B]">Price:</span> {money(product.price)} / {formatMylarQuantityLabel(product.quantity)}
+                <span className="font-semibold text-brand-600">Price:</span> {money(product.price)} / {formatMylarQuantityLabel(product.quantity)}
               </p>
             </div>
 
@@ -159,9 +159,9 @@ export default async function MylarProductPage({
                   />
                 </Link>
                 <div className="flex flex-1 flex-col p-4">
-                  <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">SKU {item.sku}</p>
-                  <h3 className="mt-2 text-base font-black text-[#1E4D2B]">
-                    <Link href={`/catalog/mylar-bags/${item.slug}`} className="hover:text-[#B5813A]">
+                  <p className="text-xs font-black uppercase tracking-[0.08em] text-accent-600">SKU {item.sku}</p>
+                  <h3 className="mt-2 font-serif text-base text-brand-600">
+                    <Link href={`/catalog/mylar-bags/${item.slug}`} className="hover:text-accent-500">
                       {item.name}
                     </Link>
                   </h3>

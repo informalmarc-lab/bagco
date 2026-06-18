@@ -75,18 +75,18 @@ export default async function CigarBagProductPage({
       <StructuredData data={jsonLd} />
       <section className="page-hero">
         <div className="page-hero-inner">
-          <nav className="text-sm font-semibold text-[#5F4D33]">
-            <Link href="/" className="hover:text-[#1E4D2B]">Home</Link>
+          <nav className="text-sm font-semibold text-muted">
+            <Link href="/" className="hover:text-brand-600">Home</Link>
             {' / '}
-            <Link href="/catalog" className="hover:text-[#1E4D2B]">Catalog</Link>
+            <Link href="/catalog" className="hover:text-brand-600">Catalog</Link>
             {' / '}
-            <Link href="/catalog/cigar-bags" className="hover:text-[#1E4D2B]">Cigar Bags</Link>
+            <Link href="/catalog/cigar-bags" className="hover:text-brand-600">Cigar Bags</Link>
             {' / '}
-            <span className="text-[#1E4D2B]">{product.sku}</span>
+            <span className="text-brand-600">{product.sku}</span>
           </nav>
           <p className="kicker mt-6">Cigar Bag SKU</p>
           <h1 className="heading-display mt-5">{product.name} {product.size}</h1>
-          <p className="mt-3 text-sm font-semibold uppercase tracking-[0.09em] text-[#7A6548]">
+          <p className="mt-3 text-sm font-semibold uppercase tracking-[0.09em] text-accent-600">
             {product.size} / {formatCigarQuantityLabel(product.quantity, product.unit)}
           </p>
           <p className="mt-4 max-w-3xl text-lg muted-text">{product.description}</p>
@@ -116,22 +116,22 @@ export default async function CigarBagProductPage({
 
           <div className="tonal-panel">
             <h2 className="section-title">Product Specs</h2>
-            <div className="mt-5 space-y-2 text-sm text-[#5F4D33]">
-              <p><span className="font-semibold text-[#1E4D2B]">SKU:</span> {product.sku}</p>
-              <p><span className="font-semibold text-[#1E4D2B]">Size:</span> {product.size}</p>
+            <div className="mt-5 space-y-2 text-sm text-muted">
+              <p><span className="font-semibold text-brand-600">SKU:</span> {product.sku}</p>
+              <p><span className="font-semibold text-brand-600">Size:</span> {product.size}</p>
               <p>
-                <span className="font-semibold text-[#1E4D2B]">Pack Count:</span>{' '}
+                <span className="font-semibold text-brand-600">Pack Count:</span>{' '}
                 {formatCigarQuantityLabel(product.quantity, product.unit)}
               </p>
               <p>
-                <span className="font-semibold text-[#1E4D2B]">Base Price:</span>{' '}
+                <span className="font-semibold text-brand-600">Base Price:</span>{' '}
                 {money(product.price)} / {formatCigarQuantityLabel(product.quantity, product.unit)}
               </p>
             </div>
 
-            <div className="mt-5 rounded-2xl border border-[#B5813A66] bg-[#FAF6F0] px-4 py-4">
-              <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">Shipping Note</p>
-              <p className="mt-2 text-sm font-semibold text-[#1E4D2B]">
+            <div className="mt-5 rounded-2xl border border-accent-400/40 bg-[#FAF6F0] px-4 py-4">
+              <p className="text-xs font-black uppercase tracking-[0.08em] text-accent-600">Shipping Note</p>
+              <p className="mt-2 text-sm font-semibold text-brand-600">
                 Order 2+ cases and get free shipping. Single case orders ship at calculated rate.
               </p>
             </div>
@@ -153,9 +153,9 @@ export default async function CigarBagProductPage({
           <p className="mt-3 max-w-3xl muted-text">
             Every cigar bag SKU follows the same case discount ladder, so you can keep pricing predictable across the full program.
           </p>
-          <div className="mt-6 overflow-x-auto rounded-xl border border-[#C4935A66] bg-white">
+          <div className="mt-6 overflow-x-auto rounded-xl border border-kraft-400/40 bg-white">
             <table className="min-w-full text-left text-sm">
-              <thead className="bg-[#1E4D2B] text-white">
+              <thead className="bg-brand-600 text-white">
                 <tr>
                   <th className="px-3 py-2">Order Size</th>
                   <th className="px-3 py-2">Shipping</th>
@@ -166,15 +166,15 @@ export default async function CigarBagProductPage({
                 {CIGAR_DISCOUNT_TIERS.map((tier, index) => (
                   <tr key={tier.label} className={index % 2 === 0 ? 'bg-white' : 'bg-[#FAF6F0]'}>
                     <td className="px-3 py-2">
-                      <p className="font-semibold text-[#1E4D2B]">{tier.quantityLabel}</p>
-                      <p className="text-xs text-[#5F4D33]">
+                      <p className="font-semibold text-brand-600">{tier.quantityLabel}</p>
+                      <p className="text-xs text-muted">
                         {tier.discountPercent > 0 ? `${tier.discountPercent}% off` : 'Full price'}
                       </p>
                     </td>
-                    <td className="px-3 py-2 text-[#5F4D33]">
+                    <td className="px-3 py-2 text-muted">
                       {tier.freeShipping ? 'Free shipping' : 'Calculated shipping'}
                     </td>
-                    <td className="px-3 py-2 text-right font-bold text-[#B5813A]">
+                    <td className="px-3 py-2 text-right font-bold text-accent-500">
                       {money(getDiscountedCigarPrice(product.price, tier.discountPercent))}
                     </td>
                   </tr>
@@ -203,13 +203,13 @@ export default async function CigarBagProductPage({
                     />
                   </Link>
                   <div className="flex flex-1 flex-col p-4">
-                    <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">SKU {item.sku}</p>
-                    <h3 className="mt-2 text-base font-black text-[#1E4D2B]">
-                      <Link href={`/catalog/cigar-bags/${item.slug}`} className="hover:text-[#B5813A]">
+                    <p className="text-xs font-black uppercase tracking-[0.08em] text-accent-600">SKU {item.sku}</p>
+                    <h3 className="mt-2 font-serif text-base text-brand-600">
+                      <Link href={`/catalog/cigar-bags/${item.slug}`} className="hover:text-accent-500">
                         {item.name}
                       </Link>
                     </h3>
-                    <p className="mt-1 text-sm text-[#5F4D33]">{item.size}</p>
+                    <p className="mt-1 text-sm text-muted">{item.size}</p>
                     <p className="mt-1 product-card-price">{money(item.price)} / {formatCigarQuantityLabel(item.quantity, item.unit)}</p>
                     <div className="mt-auto pt-4">
                       <AddToCartControl

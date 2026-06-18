@@ -123,20 +123,20 @@ export default async function CatalogSkuSizePage({
       <StructuredData data={jsonLd} />
       <section className="page-hero">
         <div className="page-hero-inner">
-          <nav className="text-sm font-semibold text-[#5F4D33]">
-            <Link href="/" className="hover:text-[#1E4D2B]">Home</Link>
+          <nav className="text-sm font-semibold text-muted">
+            <Link href="/" className="hover:text-brand-600">Home</Link>
             {' / '}
-            <Link href="/catalog" className="hover:text-[#1E4D2B]">Catalog</Link>
+            <Link href="/catalog" className="hover:text-brand-600">Catalog</Link>
             {' / '}
-            <Link href={industryHref} className="hover:text-[#1E4D2B]">{INDUSTRY_LABELS[product.industry]}</Link>
+            <Link href={industryHref} className="hover:text-brand-600">{INDUSTRY_LABELS[product.industry]}</Link>
             {' / '}
-            <Link href={getCatalogOverviewPath(product)} className="hover:text-[#1E4D2B]">{product.sku}</Link>
+            <Link href={getCatalogOverviewPath(product)} className="hover:text-brand-600">{product.sku}</Link>
             {' / '}
-            <span className="text-[#1E4D2B]">{selectedSize.label}</span>
+            <span className="text-brand-600">{selectedSize.label}</span>
           </nav>
           <p className="kicker mt-6">Size Detail</p>
           <h1 className="heading-display mt-5">{product.name}</h1>
-          <p className="mt-3 text-sm font-semibold uppercase tracking-[0.09em] text-[#7A6548]">
+          <p className="mt-3 text-sm font-semibold uppercase tracking-[0.09em] text-accent-600">
             {product.sku} - {selectedSize.label}
           </p>
           <p className="mt-4 max-w-3xl text-lg muted-text">
@@ -155,18 +155,18 @@ export default async function CatalogSkuSizePage({
             </Link>
           </div>
           <div className="mt-8 grid gap-3 md:grid-cols-3">
-            <div className="rounded-md bg-[rgba(255,255,255,0.62)] p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#7A6548]">Selected Size</p>
-              <p className="mt-1 text-lg font-black text-[#1E4D2B]">{selectedSize.label}</p>
+            <div className="rounded-2xl bg-[rgba(255,255,255,0.62)] p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.08em] text-accent-600">Selected Size</p>
+              <p className="mt-1 text-lg font-black text-brand-600">{selectedSize.label}</p>
             </div>
-            <div className="rounded-md bg-[rgba(255,255,255,0.62)] p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#7A6548]">Starting Price</p>
-              <p className="mt-1 text-2xl font-black tracking-[-0.03em] text-[#1E4D2B]">{money(pricingRows[0].price)}</p>
-              <p className="text-sm text-[#5F4D33]">per case</p>
+            <div className="rounded-2xl bg-[rgba(255,255,255,0.62)] p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.08em] text-accent-600">Starting Price</p>
+              <p className="mt-1 text-2xl font-black tracking-[-0.03em] text-brand-600">{money(pricingRows[0].price)}</p>
+              <p className="text-sm text-muted">per case</p>
             </div>
-            <div className="rounded-md bg-[rgba(255,255,255,0.62)] p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#7A6548]">Per Bag</p>
-              <p className="mt-1 text-lg font-black text-[#1E4D2B]">{formatPerBag(pricingRows[0].price, pricingRows[0].label)}</p>
+            <div className="rounded-2xl bg-[rgba(255,255,255,0.62)] p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.08em] text-accent-600">Per Bag</p>
+              <p className="mt-1 text-lg font-black text-brand-600">{formatPerBag(pricingRows[0].price, pricingRows[0].label)}</p>
             </div>
           </div>
         </div>
@@ -192,32 +192,32 @@ export default async function CatalogSkuSizePage({
             <h2 className="section-title">Pricing for {selectedSize.label}</h2>
             <div className="mt-4 grid gap-3 md:grid-cols-2">
               {customContent && (
-                <div className="rounded-md border border-[#E7D9C3] bg-white p-4 md:col-span-2">
-                  <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#7A6548]">Best For</p>
-                  <p className="mt-2 text-sm leading-6 text-[#1E4D2B]">{customContent.bestFor}</p>
+                <div className="rounded-2xl border border-kraft-300/40 bg-white p-4 md:col-span-2">
+                  <p className="text-xs font-semibold uppercase tracking-[0.08em] text-accent-600">Best For</p>
+                  <p className="mt-2 text-sm leading-6 text-brand-600">{customContent.bestFor}</p>
                 </div>
               )}
-              <div className="rounded-md border border-[#E7D9C3] bg-white p-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#7A6548]">Color Options</p>
-                <p className="mt-1 leading-6 text-[#1E4D2B]">{product.colorOptions.join(', ')}</p>
+              <div className="rounded-2xl border border-kraft-300/40 bg-white p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.08em] text-accent-600">Color Options</p>
+                <p className="mt-1 leading-6 text-brand-600">{product.colorOptions.join(', ')}</p>
               </div>
-              <div className="rounded-md border border-[#E7D9C3] bg-white p-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#7A6548]">Default Case Count</p>
-                <p className="mt-1 font-semibold text-[#1E4D2B]">{product.caseCount}</p>
+              <div className="rounded-2xl border border-kraft-300/40 bg-white p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.08em] text-accent-600">Default Case Count</p>
+                <p className="mt-1 font-semibold text-brand-600">{product.caseCount}</p>
               </div>
             </div>
             {customContent && (
               <div className="mt-4 grid gap-3 md:grid-cols-2">
                 {customContent.rules.slice(0, 4).map((rule) => (
-                  <div key={rule} className="rounded-md border border-[#E7D9C3] bg-[#FCF8F2] p-4 text-sm leading-6 text-[#5F4D33]">
+                  <div key={rule} className="rounded-2xl border border-kraft-300/40 bg-[#FCF8F2] p-4 text-sm leading-6 text-muted">
                     {rule}
                   </div>
                 ))}
               </div>
             )}
-            <div className="mt-4 overflow-x-auto rounded-md border border-[#C4935A66] bg-white">
+            <div className="mt-4 overflow-x-auto rounded-2xl border border-kraft-400/40 bg-white">
               <table className="min-w-full text-left text-sm">
-                <thead className="bg-[#1E4D2B] text-white">
+                <thead className="bg-brand-600 text-white">
                   <tr>
                     <th className="px-3 py-2">Variant</th>
                     <th className="px-3 py-2 text-right">Per Case</th>
@@ -227,9 +227,9 @@ export default async function CatalogSkuSizePage({
                 <tbody>
                   {pricingRows.map((row, idx) => (
                     <tr key={`${row.label}-${idx}`} className={idx % 2 === 0 ? 'bg-white' : 'bg-[#FAF6F0]'}>
-                      <td className="px-3 py-2 text-[#5F4D33]">{row.label}</td>
-                      <td className="px-3 py-2 text-right font-bold text-[#1E4D2B]">{money(row.price)}</td>
-                      <td className="px-3 py-2 text-right font-bold text-[#B5813A]">
+                      <td className="px-3 py-2 text-muted">{row.label}</td>
+                      <td className="px-3 py-2 text-right font-bold text-brand-600">{money(row.price)}</td>
+                      <td className="px-3 py-2 text-right font-bold text-accent-500">
                         {formatPerBag(row.price, row.label)}
                       </td>
                     </tr>
@@ -262,9 +262,9 @@ export default async function CatalogSkuSizePage({
               {sizes
                 .filter((item) => item.slug !== selectedSize.slug)
                 .map((item) => (
-                  <Link key={item.slug} href={getCatalogSizePath(product, item.slug)} className="surface-card rounded-md px-4 py-4 text-sm font-semibold text-[#1E4D2B] hover:border-[#C4935A] hover:bg-[#FFFCF7]">
+                  <Link key={item.slug} href={getCatalogSizePath(product, item.slug)} className="surface-card rounded-2xl px-4 py-4 text-sm font-semibold text-brand-600 hover:border-accent-400/60 hover:bg-[#FFFCF7]">
                     <p className="font-black">{item.label}</p>
-                    <p className="mt-1 text-xs uppercase tracking-[0.08em] text-[#7A6548]">View pricing</p>
+                    <p className="mt-1 text-xs uppercase tracking-[0.08em] text-accent-600">View pricing</p>
                   </Link>
                 ))}
             </div>
