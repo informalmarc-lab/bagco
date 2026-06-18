@@ -67,8 +67,8 @@ export default function GalleryPage() {
                 <div className="relative aspect-square">
                   <Image src={img.src} alt={img.name} fill className="object-cover" sizes="(max-width: 768px) 100vw, 25vw" />
                 </div>
-                <div className="border-t border-[#C4935A66] px-3 py-2">
-                  <p className="truncate text-xs font-black uppercase tracking-[0.09em] text-[#7A6548]">{img.folder}</p>
+                <div className="border-t border-kraft-400/40 px-3 py-2">
+                  <p className="truncate text-xs font-black uppercase tracking-[0.09em] text-accent-600">{img.folder}</p>
                 </div>
               </button>
             ))}
@@ -88,7 +88,7 @@ export default function GalleryPage() {
 
       {selected && (
         <div
-          className="fixed inset-0 z-[70] flex items-center justify-center bg-[#1E4D2B]/85 p-4"
+          className="fixed inset-0 z-[70] flex items-center justify-center bg-brand-600/85 p-4"
           onClick={(event) => {
             if (event.target === event.currentTarget) setSelected(null)
           }}

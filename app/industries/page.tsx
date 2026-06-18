@@ -71,7 +71,7 @@ export default function IndustriesPage() {
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {segments.map((item) => (
             <article key={item.title} className="tonal-panel">
-              <h2 className="text-2xl font-black text-[#1E4D2B]">{item.title}</h2>
+              <h2 className="font-serif text-2xl text-brand-600">{item.title}</h2>
               <p className="mt-3 muted-text">{item.copy}</p>
               <Link href={item.href} className="btn-secondary mt-5">
                 Open Industry Page

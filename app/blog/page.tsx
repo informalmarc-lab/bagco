@@ -93,11 +93,11 @@ export default function BlogIndexPage() {
         <div className="grid gap-4">
           {posts.map((post) => (
             <article key={post.slug} className="surface-card rounded-2xl p-5 md:p-6">
-              <p className="text-xs font-black uppercase tracking-[0.08em] text-[#7A6548]">
+              <p className="text-xs font-black uppercase tracking-[0.08em] text-accent-600">
                 {formatDate(post.date)}
               </p>
-              <h2 className="mt-3 text-2xl font-black text-[#1E4D2B]">{post.title}</h2>
-              <p className="mt-3 text-sm leading-7 text-[#5F4D33] md:text-base">{post.excerpt}</p>
+              <h2 className="mt-3 font-serif text-2xl text-brand-600">{post.title}</h2>
+              <p className="mt-3 text-sm leading-7 text-muted md:text-base">{post.excerpt}</p>
               <Link href={`/blog/${post.slug}`} className="btn-primary mt-5">
                 Read Article
               </Link>
