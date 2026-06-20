@@ -1,0 +1,1159 @@
+{
+  "meta": {
+    "cbpYear": 2022,
+    "populationYear": 2020,
+    "source": "Census County Business Patterns (CBP) and 2020 Decennial Census PL",
+    "naics": {
+      "total": "00",
+      "competition": "424130",
+      "industries": {
+        "pharmacy": "446110",
+        "veterinary": "541940",
+        "dispensary": "453998",
+        "smoke-shop": "453991",
+        "retail": "44-45",
+        "food-beverage": "722",
+        "wineries-breweries": "3121",
+        "event-company": "56192"
+      }
+    }
+  },
+  "counts": {
+    "roswell-ga": {
+      "countyName": "Fulton County",
+      "countyFips": "121",
+      "totalEstablishments": 40717,
+      "competitionCount": 29,
+      "industryCounts": {
+        "pharmacy": 136,
+        "veterinary": 123,
+        "dispensary": 74,
+        "smoke-shop": 49,
+        "retail": 3777,
+        "food-beverage": 3534,
+        "wineries-breweries": 39,
+        "event-company": 94
+      }
+    },
+    "sandy-springs-ga": {
+      "countyName": "Fulton County",
+      "countyFips": "121",
+      "totalEstablishments": 40717,
+      "competitionCount": 29,
+      "industryCounts": {
+        "pharmacy": 136,
+        "veterinary": 123,
+        "dispensary": 74,
+        "smoke-shop": 49,
+        "retail": 3777,
+        "food-beverage": 3534,
+        "wineries-breweries": 39,
+        "event-company": 94
+      }
+    },
+    "south-fulton-ga": {
+      "countyName": "Fulton County",
+      "countyFips": "121",
+      "totalEstablishments": 40717,
+      "competitionCount": 29,
+      "industryCounts": {
+        "pharmacy": 136,
+        "veterinary": 123,
+        "dispensary": 74,
+        "smoke-shop": 49,
+        "retail": 3777,
+        "food-beverage": 3534,
+        "wineries-breweries": 39,
+        "event-company": 94
+      }
+    },
+    "alpharetta-ga": {
+      "countyName": "Fulton County",
+      "countyFips": "121",
+      "totalEstablishments": 40717,
+      "competitionCount": 29,
+      "industryCounts": {
+        "pharmacy": 136,
+        "veterinary": 123,
+        "dispensary": 74,
+        "smoke-shop": 49,
+        "retail": 3777,
+        "food-beverage": 3534,
+        "wineries-breweries": 39,
+        "event-company": 94
+      }
+    },
+    "atlanta-ga": {
+      "countyName": "Fulton County",
+      "countyFips": "121",
+      "totalEstablishments": 40717,
+      "competitionCount": 29,
+      "industryCounts": {
+        "pharmacy": 136,
+        "veterinary": 123,
+        "dispensary": 74,
+        "smoke-shop": 49,
+        "retail": 3777,
+        "food-beverage": 3534,
+        "wineries-breweries": 39,
+        "event-company": 94
+      }
+    },
+    "johns-creek-ga": {
+      "countyName": "Fulton County",
+      "countyFips": "121",
+      "totalEstablishments": 40717,
+      "competitionCount": 29,
+      "industryCounts": {
+        "pharmacy": 136,
+        "veterinary": 123,
+        "dispensary": 74,
+        "smoke-shop": 49,
+        "retail": 3777,
+        "food-beverage": 3534,
+        "wineries-breweries": 39,
+        "event-company": 94
+      }
+    },
+    "charleston-sc": {
+      "countyName": "Charleston County",
+      "countyFips": "019",
+      "totalEstablishments": 15484,
+      "competitionCount": 4,
+      "industryCounts": {
+        "pharmacy": 55,
+        "veterinary": 73,
+        "dispensary": 51,
+        "smoke-shop": 24,
+        "retail": 2099,
+        "food-beverage": 1381,
+        "wineries-breweries": 39,
+        "event-company": 14
+      }
+    },
+    "mount-pleasant-sc": {
+      "countyName": "Charleston County",
+      "countyFips": "019",
+      "totalEstablishments": 15484,
+      "competitionCount": 4,
+      "industryCounts": {
+        "pharmacy": 55,
+        "veterinary": 73,
+        "dispensary": 51,
+        "smoke-shop": 24,
+        "retail": 2099,
+        "food-beverage": 1381,
+        "wineries-breweries": 39,
+        "event-company": 14
+      }
+    },
+    "north-charleston-sc": {
+      "countyName": "Charleston County",
+      "countyFips": "019",
+      "totalEstablishments": 15484,
+      "competitionCount": 4,
+      "industryCounts": {
+        "pharmacy": 55,
+        "veterinary": 73,
+        "dispensary": 51,
+        "smoke-shop": 24,
+        "retail": 2099,
+        "food-beverage": 1381,
+        "wineries-breweries": 39,
+        "event-company": 14
+      }
+    },
+    "summerville-sc": {
+      "countyName": "Charleston County",
+      "countyFips": "019",
+      "totalEstablishments": 15484,
+      "competitionCount": 4,
+      "industryCounts": {
+        "pharmacy": 55,
+        "veterinary": 73,
+        "dispensary": 51,
+        "smoke-shop": 24,
+        "retail": 2099,
+        "food-beverage": 1381,
+        "wineries-breweries": 39,
+        "event-company": 14
+      }
+    },
+    "wilmington-nc": {
+      "countyName": "New Hanover County",
+      "countyFips": "129",
+      "totalEstablishments": 8516,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 31,
+        "veterinary": 39,
+        "dispensary": 29,
+        "smoke-shop": 27,
+        "retail": 1119,
+        "food-beverage": 749,
+        "wineries-breweries": 20,
+        "event-company": 5
+      }
+    },
+    "asheville-nc": {
+      "countyName": "Buncombe County",
+      "countyFips": "021",
+      "totalEstablishments": 9720,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 41,
+        "veterinary": 57,
+        "dispensary": 29,
+        "smoke-shop": 25,
+        "retail": 1329,
+        "food-beverage": 834,
+        "wineries-breweries": 52,
+        "event-company": 6
+      }
+    },
+    "franklin-tn": {
+      "countyName": "Williamson County",
+      "countyFips": "187",
+      "totalEstablishments": 8449,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 23,
+        "veterinary": 37,
+        "dispensary": 13,
+        "smoke-shop": 11,
+        "retail": 870,
+        "food-beverage": 559,
+        "wineries-breweries": 9,
+        "event-company": 14
+      }
+    },
+    "spring-hill-tn": {
+      "countyName": "Williamson County",
+      "countyFips": "187",
+      "totalEstablishments": 8449,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 23,
+        "veterinary": 37,
+        "dispensary": 13,
+        "smoke-shop": 11,
+        "retail": 870,
+        "food-beverage": 559,
+        "wineries-breweries": 9,
+        "event-company": 14
+      }
+    },
+    "charlotte-nc": {
+      "countyName": "Mecklenburg County",
+      "countyFips": "119",
+      "totalEstablishments": 36081,
+      "competitionCount": 30,
+      "industryCounts": {
+        "pharmacy": 167,
+        "veterinary": 118,
+        "dispensary": 68,
+        "smoke-shop": 68,
+        "retail": 3614,
+        "food-beverage": 2885,
+        "wineries-breweries": 48,
+        "event-company": 32
+      }
+    },
+    "huntersville-nc": {
+      "countyName": "Mecklenburg County",
+      "countyFips": "119",
+      "totalEstablishments": 36081,
+      "competitionCount": 30,
+      "industryCounts": {
+        "pharmacy": 167,
+        "veterinary": 118,
+        "dispensary": 68,
+        "smoke-shop": 68,
+        "retail": 3614,
+        "food-beverage": 2885,
+        "wineries-breweries": 48,
+        "event-company": 32
+      }
+    },
+    "harrisonburg-va": {
+      "countyName": "Harrisonburg city",
+      "countyFips": "660",
+      "totalEstablishments": 1666,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 10,
+        "veterinary": 4,
+        "dispensary": 7,
+        "smoke-shop": 8,
+        "retail": 317,
+        "food-beverage": 182,
+        "wineries-breweries": 6,
+        "event-company": 0
+      }
+    },
+    "roanoke-va": {
+      "countyName": "Roanoke city",
+      "countyFips": "770",
+      "totalEstablishments": 3143,
+      "competitionCount": 3,
+      "industryCounts": {
+        "pharmacy": 12,
+        "veterinary": 11,
+        "dispensary": 9,
+        "smoke-shop": 7,
+        "retail": 536,
+        "food-beverage": 278,
+        "wineries-breweries": 6,
+        "event-company": 0
+      }
+    },
+    "savannah-ga": {
+      "countyName": "Chatham County",
+      "countyFips": "051",
+      "totalEstablishments": 8829,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 43,
+        "veterinary": 43,
+        "dispensary": 26,
+        "smoke-shop": 15,
+        "retail": 1395,
+        "food-beverage": 943,
+        "wineries-breweries": 6,
+        "event-company": 7
+      }
+    },
+    "apex-nc": {
+      "countyName": "Wake County",
+      "countyFips": "183",
+      "totalEstablishments": 33076,
+      "competitionCount": 11,
+      "industryCounts": {
+        "pharmacy": 161,
+        "veterinary": 157,
+        "dispensary": 87,
+        "smoke-shop": 67,
+        "retail": 3595,
+        "food-beverage": 2563,
+        "wineries-breweries": 42,
+        "event-company": 29
+      }
+    },
+    "durham-nc": {
+      "countyName": "Wake County",
+      "countyFips": "183",
+      "totalEstablishments": 33076,
+      "competitionCount": 11,
+      "industryCounts": {
+        "pharmacy": 161,
+        "veterinary": 157,
+        "dispensary": 87,
+        "smoke-shop": 67,
+        "retail": 3595,
+        "food-beverage": 2563,
+        "wineries-breweries": 42,
+        "event-company": 29
+      }
+    },
+    "cary-nc": {
+      "countyName": "Wake County",
+      "countyFips": "183",
+      "totalEstablishments": 33076,
+      "competitionCount": 11,
+      "industryCounts": {
+        "pharmacy": 161,
+        "veterinary": 157,
+        "dispensary": 87,
+        "smoke-shop": 67,
+        "retail": 3595,
+        "food-beverage": 2563,
+        "wineries-breweries": 42,
+        "event-company": 29
+      }
+    },
+    "raleigh-nc": {
+      "countyName": "Wake County",
+      "countyFips": "183",
+      "totalEstablishments": 33076,
+      "competitionCount": 11,
+      "industryCounts": {
+        "pharmacy": 161,
+        "veterinary": 157,
+        "dispensary": 87,
+        "smoke-shop": 67,
+        "retail": 3595,
+        "food-beverage": 2563,
+        "wineries-breweries": 42,
+        "event-company": 29
+      }
+    },
+    "smyrna-ga": {
+      "countyName": "Cobb County",
+      "countyFips": "067",
+      "totalEstablishments": 22147,
+      "competitionCount": 11,
+      "industryCounts": {
+        "pharmacy": 70,
+        "veterinary": 86,
+        "dispensary": 56,
+        "smoke-shop": 32,
+        "retail": 2326,
+        "food-beverage": 1638,
+        "wineries-breweries": 15,
+        "event-company": 40
+      }
+    },
+    "marietta-ga": {
+      "countyName": "Cobb County",
+      "countyFips": "067",
+      "totalEstablishments": 22147,
+      "competitionCount": 11,
+      "industryCounts": {
+        "pharmacy": 70,
+        "veterinary": 86,
+        "dispensary": 56,
+        "smoke-shop": 32,
+        "retail": 2326,
+        "food-beverage": 1638,
+        "wineries-breweries": 15,
+        "event-company": 40
+      }
+    },
+    "greenville-sc": {
+      "countyName": "Greenville County",
+      "countyFips": "045",
+      "totalEstablishments": 15174,
+      "competitionCount": 9,
+      "industryCounts": {
+        "pharmacy": 76,
+        "veterinary": 56,
+        "dispensary": 44,
+        "smoke-shop": 25,
+        "retail": 1857,
+        "food-beverage": 1297,
+        "wineries-breweries": 11,
+        "event-company": 11
+      }
+    },
+    "mooresville-nc": {
+      "countyName": "Iredell County",
+      "countyFips": "097",
+      "totalEstablishments": 5339,
+      "competitionCount": 4,
+      "industryCounts": {
+        "pharmacy": 25,
+        "veterinary": 29,
+        "dispensary": 26,
+        "smoke-shop": 15,
+        "retail": 676,
+        "food-beverage": 374,
+        "wineries-breweries": 8,
+        "event-company": 4
+      }
+    },
+    "richmond-va": {
+      "countyName": "Richmond city",
+      "countyFips": "760",
+      "totalEstablishments": 6441,
+      "competitionCount": 4,
+      "industryCounts": {
+        "pharmacy": 24,
+        "veterinary": 16,
+        "dispensary": 6,
+        "smoke-shop": 18,
+        "retail": 780,
+        "food-beverage": 677,
+        "wineries-breweries": 18,
+        "event-company": 6
+      }
+    },
+    "lynchburg-va": {
+      "countyName": "Lynchburg city",
+      "countyFips": "680",
+      "totalEstablishments": 2245,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 7,
+        "veterinary": 7,
+        "dispensary": 5,
+        "smoke-shop": 8,
+        "retail": 337,
+        "food-beverage": 252,
+        "wineries-breweries": 0,
+        "event-company": 0
+      }
+    },
+    "alexandria-va": {
+      "countyName": "Alexandria city",
+      "countyFips": "510",
+      "totalEstablishments": 4527,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 16,
+        "veterinary": 6,
+        "dispensary": 7,
+        "smoke-shop": 6,
+        "retail": 413,
+        "food-beverage": 375,
+        "wineries-breweries": 4,
+        "event-company": 13
+      }
+    },
+    "macon-bibb-county-ga": {
+      "countyName": "Bibb County",
+      "countyFips": "021",
+      "totalEstablishments": 4248,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 26,
+        "veterinary": 10,
+        "dispensary": 12,
+        "smoke-shop": 10,
+        "retail": 785,
+        "food-beverage": 406,
+        "wineries-breweries": 0,
+        "event-company": 0
+      }
+    },
+    "chattanooga-tn": {
+      "countyName": "Hamilton County",
+      "countyFips": "065",
+      "totalEstablishments": 9726,
+      "competitionCount": 5,
+      "industryCounts": {
+        "pharmacy": 56,
+        "veterinary": 45,
+        "dispensary": 34,
+        "smoke-shop": 40,
+        "retail": 1397,
+        "food-beverage": 844,
+        "wineries-breweries": 14,
+        "event-company": 4
+      }
+    },
+    "greensboro-nc": {
+      "countyName": "Guilford County",
+      "countyFips": "081",
+      "totalEstablishments": 14342,
+      "competitionCount": 15,
+      "industryCounts": {
+        "pharmacy": 62,
+        "veterinary": 70,
+        "dispensary": 25,
+        "smoke-shop": 47,
+        "retail": 1879,
+        "food-beverage": 1185,
+        "wineries-breweries": 11,
+        "event-company": 14
+      }
+    },
+    "burlington-nc": {
+      "countyName": "Guilford County",
+      "countyFips": "081",
+      "totalEstablishments": 14342,
+      "competitionCount": 15,
+      "industryCounts": {
+        "pharmacy": 62,
+        "veterinary": 70,
+        "dispensary": 25,
+        "smoke-shop": 47,
+        "retail": 1879,
+        "food-beverage": 1185,
+        "wineries-breweries": 11,
+        "event-company": 14
+      }
+    },
+    "high-point-nc": {
+      "countyName": "Guilford County",
+      "countyFips": "081",
+      "totalEstablishments": 14342,
+      "competitionCount": 15,
+      "industryCounts": {
+        "pharmacy": 62,
+        "veterinary": 70,
+        "dispensary": 25,
+        "smoke-shop": 47,
+        "retail": 1879,
+        "food-beverage": 1185,
+        "wineries-breweries": 11,
+        "event-company": 14
+      }
+    },
+    "albany-ga": {
+      "countyName": "Dougherty County",
+      "countyFips": "095",
+      "totalEstablishments": 2270,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 15,
+        "veterinary": 9,
+        "dispensary": 6,
+        "smoke-shop": 5,
+        "retail": 419,
+        "food-beverage": 204,
+        "wineries-breweries": 3,
+        "event-company": 0
+      }
+    },
+    "jackson-tn": {
+      "countyName": "Madison County",
+      "countyFips": "113",
+      "totalEstablishments": 2597,
+      "competitionCount": 3,
+      "industryCounts": {
+        "pharmacy": 10,
+        "veterinary": 12,
+        "dispensary": 9,
+        "smoke-shop": 13,
+        "retail": 470,
+        "food-beverage": 225,
+        "wineries-breweries": 3,
+        "event-company": 0
+      }
+    },
+    "knoxville-tn": {
+      "countyName": "Knox County",
+      "countyFips": "093",
+      "totalEstablishments": 12350,
+      "competitionCount": 7,
+      "industryCounts": {
+        "pharmacy": 67,
+        "veterinary": 68,
+        "dispensary": 55,
+        "smoke-shop": 31,
+        "retail": 1772,
+        "food-beverage": 1081,
+        "wineries-breweries": 19,
+        "event-company": 5
+      }
+    },
+    "virginia-beach-va": {
+      "countyName": "Virginia Beach city",
+      "countyFips": "810",
+      "totalEstablishments": 11777,
+      "competitionCount": 4,
+      "industryCounts": {
+        "pharmacy": 50,
+        "veterinary": 55,
+        "dispensary": 40,
+        "smoke-shop": 38,
+        "retail": 1422,
+        "food-beverage": 1201,
+        "wineries-breweries": 13,
+        "event-company": 8
+      }
+    },
+    "chapel-hill-nc": {
+      "countyName": "Durham County",
+      "countyFips": "063",
+      "totalEstablishments": 8121,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 44,
+        "veterinary": 46,
+        "dispensary": 23,
+        "smoke-shop": 19,
+        "retail": 922,
+        "food-beverage": 748,
+        "wineries-breweries": 10,
+        "event-company": 7
+      }
+    },
+    "valdosta-ga": {
+      "countyName": "Lowndes County",
+      "countyFips": "185",
+      "totalEstablishments": 2889,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 10,
+        "veterinary": 10,
+        "dispensary": 15,
+        "smoke-shop": 5,
+        "retail": 520,
+        "food-beverage": 248,
+        "wineries-breweries": 0,
+        "event-company": 3
+      }
+    },
+    "stonecrest-ga": {
+      "countyName": "DeKalb County",
+      "countyFips": "089",
+      "totalEstablishments": 18329,
+      "competitionCount": 5,
+      "industryCounts": {
+        "pharmacy": 70,
+        "veterinary": 64,
+        "dispensary": 23,
+        "smoke-shop": 30,
+        "retail": 2222,
+        "food-beverage": 1618,
+        "wineries-breweries": 13,
+        "event-company": 37
+      }
+    },
+    "brookhaven-ga": {
+      "countyName": "DeKalb County",
+      "countyFips": "089",
+      "totalEstablishments": 18329,
+      "competitionCount": 5,
+      "industryCounts": {
+        "pharmacy": 70,
+        "veterinary": 64,
+        "dispensary": 23,
+        "smoke-shop": 30,
+        "retail": 2222,
+        "food-beverage": 1618,
+        "wineries-breweries": 13,
+        "event-company": 37
+      }
+    },
+    "dunwoody-ga": {
+      "countyName": "DeKalb County",
+      "countyFips": "089",
+      "totalEstablishments": 18329,
+      "competitionCount": 5,
+      "industryCounts": {
+        "pharmacy": 70,
+        "veterinary": 64,
+        "dispensary": 23,
+        "smoke-shop": 30,
+        "retail": 2222,
+        "food-beverage": 1618,
+        "wineries-breweries": 13,
+        "event-company": 37
+      }
+    },
+    "winston-salem-nc": {
+      "countyName": "Forsyth County",
+      "countyFips": "067",
+      "totalEstablishments": 9026,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 56,
+        "veterinary": 42,
+        "dispensary": 30,
+        "smoke-shop": 45,
+        "retail": 1353,
+        "food-beverage": 818,
+        "wineries-breweries": 14,
+        "event-company": 5
+      }
+    },
+    "chesapeake-va": {
+      "countyName": "Chesapeake city",
+      "countyFips": "550",
+      "totalEstablishments": 5840,
+      "competitionCount": 4,
+      "industryCounts": {
+        "pharmacy": 29,
+        "veterinary": 30,
+        "dispensary": 22,
+        "smoke-shop": 23,
+        "retail": 745,
+        "food-beverage": 499,
+        "wineries-breweries": 0,
+        "event-company": 0
+      }
+    },
+    "concord-nc": {
+      "countyName": "Cabarrus County",
+      "countyFips": "025",
+      "totalEstablishments": 5131,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 24,
+        "veterinary": 28,
+        "dispensary": 11,
+        "smoke-shop": 16,
+        "retail": 754,
+        "food-beverage": 456,
+        "wineries-breweries": 11,
+        "event-company": 5
+      }
+    },
+    "kannapolis-nc": {
+      "countyName": "Cabarrus County",
+      "countyFips": "025",
+      "totalEstablishments": 5131,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 24,
+        "veterinary": 28,
+        "dispensary": 11,
+        "smoke-shop": 16,
+        "retail": 754,
+        "food-beverage": 456,
+        "wineries-breweries": 11,
+        "event-company": 5
+      }
+    },
+    "norfolk-va": {
+      "countyName": "Norfolk city",
+      "countyFips": "710",
+      "totalEstablishments": 5400,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 27,
+        "veterinary": 12,
+        "dispensary": 17,
+        "smoke-shop": 19,
+        "retail": 764,
+        "food-beverage": 601,
+        "wineries-breweries": 8,
+        "event-company": 0
+      }
+    },
+    "columbia-sc": {
+      "countyName": "Richland County",
+      "countyFips": "079",
+      "totalEstablishments": 9402,
+      "competitionCount": 3,
+      "industryCounts": {
+        "pharmacy": 45,
+        "veterinary": 30,
+        "dispensary": 28,
+        "smoke-shop": 19,
+        "retail": 1228,
+        "food-beverage": 829,
+        "wineries-breweries": 3,
+        "event-company": 9
+      }
+    },
+    "greenville-nc": {
+      "countyName": "Pitt County",
+      "countyFips": "147",
+      "totalEstablishments": 3785,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 26,
+        "veterinary": 21,
+        "dispensary": 16,
+        "smoke-shop": 13,
+        "retail": 605,
+        "food-beverage": 374,
+        "wineries-breweries": 5,
+        "event-company": 0
+      }
+    },
+    "rocky-mount-nc": {
+      "countyName": "Nash County",
+      "countyFips": "127",
+      "totalEstablishments": 2097,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 19,
+        "veterinary": 8,
+        "dispensary": 8,
+        "smoke-shop": 11,
+        "retail": 391,
+        "food-beverage": 172,
+        "wineries-breweries": 3,
+        "event-company": 0
+      }
+    },
+    "columbus-ga": {
+      "countyName": "Muscogee County",
+      "countyFips": "215",
+      "totalEstablishments": 4506,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 27,
+        "veterinary": 21,
+        "dispensary": 12,
+        "smoke-shop": 15,
+        "retail": 826,
+        "food-beverage": 462,
+        "wineries-breweries": 0,
+        "event-company": 0
+      }
+    },
+    "rock-hill-sc": {
+      "countyName": "York County",
+      "countyFips": "091",
+      "totalEstablishments": 6081,
+      "competitionCount": 4,
+      "industryCounts": {
+        "pharmacy": 29,
+        "veterinary": 27,
+        "dispensary": 23,
+        "smoke-shop": 7,
+        "retail": 757,
+        "food-beverage": 506,
+        "wineries-breweries": 8,
+        "event-company": 6
+      }
+    },
+    "bartlett-tn": {
+      "countyName": "Shelby County",
+      "countyFips": "157",
+      "totalEstablishments": 19659,
+      "competitionCount": 16,
+      "industryCounts": {
+        "pharmacy": 82,
+        "veterinary": 81,
+        "dispensary": 53,
+        "smoke-shop": 54,
+        "retail": 2931,
+        "food-beverage": 1816,
+        "wineries-breweries": 15,
+        "event-company": 14
+      }
+    },
+    "collierville-tn": {
+      "countyName": "Shelby County",
+      "countyFips": "157",
+      "totalEstablishments": 19659,
+      "competitionCount": 16,
+      "industryCounts": {
+        "pharmacy": 82,
+        "veterinary": 81,
+        "dispensary": 53,
+        "smoke-shop": 54,
+        "retail": 2931,
+        "food-beverage": 1816,
+        "wineries-breweries": 15,
+        "event-company": 14
+      }
+    },
+    "johnson-tn": {
+      "countyName": "Sullivan County",
+      "countyFips": "163",
+      "totalEstablishments": 3343,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 33,
+        "veterinary": 17,
+        "dispensary": 17,
+        "smoke-shop": 12,
+        "retail": 558,
+        "food-beverage": 326,
+        "wineries-breweries": 6,
+        "event-company": 0
+      }
+    },
+    "kingsport-tn": {
+      "countyName": "Sullivan County",
+      "countyFips": "163",
+      "totalEstablishments": 3343,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 33,
+        "veterinary": 17,
+        "dispensary": 17,
+        "smoke-shop": 12,
+        "retail": 558,
+        "food-beverage": 326,
+        "wineries-breweries": 6,
+        "event-company": 0
+      }
+    },
+    "memphis-tn": {
+      "countyName": "Shelby County",
+      "countyFips": "157",
+      "totalEstablishments": 19659,
+      "competitionCount": 16,
+      "industryCounts": {
+        "pharmacy": 82,
+        "veterinary": 81,
+        "dispensary": 53,
+        "smoke-shop": 54,
+        "retail": 2931,
+        "food-beverage": 1816,
+        "wineries-breweries": 15,
+        "event-company": 14
+      }
+    },
+    "newport-news-va": {
+      "countyName": "Newport News city",
+      "countyFips": "700",
+      "totalEstablishments": 3803,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 17,
+        "veterinary": 13,
+        "dispensary": 9,
+        "smoke-shop": 20,
+        "retail": 611,
+        "food-beverage": 383,
+        "wineries-breweries": 4,
+        "event-company": 0
+      }
+    },
+    "gastonia-nc": {
+      "countyName": "Gaston County",
+      "countyFips": "071",
+      "totalEstablishments": 4580,
+      "competitionCount": 3,
+      "industryCounts": {
+        "pharmacy": 41,
+        "veterinary": 18,
+        "dispensary": 15,
+        "smoke-shop": 13,
+        "retail": 631,
+        "food-beverage": 385,
+        "wineries-breweries": 4,
+        "event-company": 0
+      }
+    },
+    "suffolk-va": {
+      "countyName": "Suffolk city",
+      "countyFips": "800",
+      "totalEstablishments": 1799,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 10,
+        "veterinary": 8,
+        "dispensary": 6,
+        "smoke-shop": 5,
+        "retail": 246,
+        "food-beverage": 157,
+        "wineries-breweries": 0,
+        "event-company": 0
+      }
+    },
+    "hendersonville-tn": {
+      "countyName": "Sumner County",
+      "countyFips": "165",
+      "totalEstablishments": 3735,
+      "competitionCount": 3,
+      "industryCounts": {
+        "pharmacy": 22,
+        "veterinary": 17,
+        "dispensary": 12,
+        "smoke-shop": 10,
+        "retail": 511,
+        "food-beverage": 306,
+        "wineries-breweries": 3,
+        "event-company": 0
+      }
+    },
+    "murfreesboro-tn": {
+      "countyName": "Rutherford County",
+      "countyFips": "149",
+      "totalEstablishments": 6071,
+      "competitionCount": 6,
+      "industryCounts": {
+        "pharmacy": 29,
+        "veterinary": 34,
+        "dispensary": 21,
+        "smoke-shop": 22,
+        "retail": 953,
+        "food-beverage": 628,
+        "wineries-breweries": 0,
+        "event-company": 0
+      }
+    },
+    "smyrna-tn": {
+      "countyName": "Rutherford County",
+      "countyFips": "149",
+      "totalEstablishments": 6071,
+      "competitionCount": 6,
+      "industryCounts": {
+        "pharmacy": 29,
+        "veterinary": 34,
+        "dispensary": 21,
+        "smoke-shop": 22,
+        "retail": 953,
+        "food-beverage": 628,
+        "wineries-breweries": 0,
+        "event-company": 0
+      }
+    },
+    "fayetteville-nc": {
+      "countyName": "Cumberland County",
+      "countyFips": "051",
+      "totalEstablishments": 5921,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 43,
+        "veterinary": 24,
+        "dispensary": 33,
+        "smoke-shop": 23,
+        "retail": 1077,
+        "food-beverage": 686,
+        "wineries-breweries": 0,
+        "event-company": 0
+      }
+    },
+    "hampton-va": {
+      "countyName": "Hampton city",
+      "countyFips": "650",
+      "totalEstablishments": 2383,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 13,
+        "veterinary": 7,
+        "dispensary": 10,
+        "smoke-shop": 10,
+        "retail": 373,
+        "food-beverage": 259,
+        "wineries-breweries": 6,
+        "event-company": 0
+      }
+    },
+    "warner-robins-ga": {
+      "countyName": "Houston County",
+      "countyFips": "153",
+      "totalEstablishments": 2807,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 17,
+        "veterinary": 12,
+        "dispensary": 9,
+        "smoke-shop": 19,
+        "retail": 545,
+        "food-beverage": 342,
+        "wineries-breweries": 0,
+        "event-company": 0
+      }
+    },
+    "portsmouth-va": {
+      "countyName": "Portsmouth city",
+      "countyFips": "740",
+      "totalEstablishments": 1605,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 13,
+        "veterinary": 3,
+        "dispensary": 8,
+        "smoke-shop": 9,
+        "retail": 262,
+        "food-beverage": 163,
+        "wineries-breweries": 0,
+        "event-company": 0
+      }
+    },
+    "clarksville-tn": {
+      "countyName": "Montgomery County",
+      "countyFips": "125",
+      "totalEstablishments": 3342,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 19,
+        "veterinary": 20,
+        "dispensary": 15,
+        "smoke-shop": 22,
+        "retail": 580,
+        "food-beverage": 410,
+        "wineries-breweries": 5,
+        "event-company": 0
+      }
+    },
+    "jacksonville-nc": {
+      "countyName": "Onslow County",
+      "countyFips": "133",
+      "totalEstablishments": 3070,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 19,
+        "veterinary": 18,
+        "dispensary": 18,
+        "smoke-shop": 31,
+        "retail": 570,
+        "food-beverage": 379,
+        "wineries-breweries": 0,
+        "event-company": 0
+      }
+    }
+  }
+}

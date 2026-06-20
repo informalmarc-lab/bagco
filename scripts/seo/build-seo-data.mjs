@@ -233,7 +233,13 @@ async function loadCbpCounts(stateFips, naics) {
   const url = `${CBP_BASE_URL}${stateFips}&NAICS2017=${encodeURIComponent(naics)}&LFO=001&EMPSZES=001${
     API_KEY ? `&key=${API_KEY}` : ''
   }`
-  const data = await fetchJson(url)
+  let data
+  try {
+    data = await fetchJson(url)
+  } catch (error) {
+    console.warn(`CBP request failed for state ${stateFips} NAICS ${naics}, treating as no data: ${error.message}`)
+    data = []
+  }
   await fsp.writeFile(filePath, JSON.stringify(data), 'utf8')
   return data
 }
