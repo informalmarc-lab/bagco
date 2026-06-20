@@ -3,5 +3,11 @@
   { "fips": "45", "name": "South Carolina", "abbr": "SC" },
   { "fips": "51", "name": "Virginia", "abbr": "VA" },
   { "fips": "47", "name": "Tennessee", "abbr": "TN" },
-  { "fips": "13", "name": "Georgia", "abbr": "GA" }
+  { "fips": "13", "name": "Georgia", "abbr": "GA" },
+  { "fips": "06", "name": "California", "abbr": "CA" },
+  { "fips": "53", "name": "Washington", "abbr": "WA" },
+  { "fips": "41", "name": "Oregon", "abbr": "OR" },
+  { "fips": "36", "name": "New York", "abbr": "NY" },
+  { "fips": "34", "name": "New Jersey", "abbr": "NJ" },
+  { "fips": "08", "name": "Colorado", "abbr": "CO" }
 ]

@@ -19,6 +19,118 @@
     }
   },
   "counts": {
+    "bend-or": {
+      "countyName": "Deschutes County",
+      "countyFips": "017",
+      "totalEstablishments": 8456,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 16,
+        "veterinary": 49,
+        "dispensary": 36,
+        "smoke-shop": 9,
+        "retail": 869,
+        "food-beverage": 604,
+        "wineries-breweries": 36,
+        "event-company": 8
+      }
+    },
+    "boulder-co": {
+      "countyName": "Boulder County",
+      "countyFips": "013",
+      "totalEstablishments": 12985,
+      "competitionCount": 3,
+      "industryCounts": {
+        "pharmacy": 29,
+        "veterinary": 76,
+        "dispensary": 37,
+        "smoke-shop": 25,
+        "retail": 1143,
+        "food-beverage": 871,
+        "wineries-breweries": 42,
+        "event-company": 21
+      }
+    },
+    "longmont-co": {
+      "countyName": "Boulder County",
+      "countyFips": "013",
+      "totalEstablishments": 12985,
+      "competitionCount": 3,
+      "industryCounts": {
+        "pharmacy": 29,
+        "veterinary": 76,
+        "dispensary": 37,
+        "smoke-shop": 25,
+        "retail": 1143,
+        "food-beverage": 871,
+        "wineries-breweries": 42,
+        "event-company": 21
+      }
+    },
+    "novato-ca": {
+      "countyName": "Marin County",
+      "countyFips": "041",
+      "totalEstablishments": 10071,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 33,
+        "veterinary": 39,
+        "dispensary": 19,
+        "smoke-shop": 4,
+        "retail": 938,
+        "food-beverage": 644,
+        "wineries-breweries": 9,
+        "event-company": 23
+      }
+    },
+    "san-rafael-ca": {
+      "countyName": "Marin County",
+      "countyFips": "041",
+      "totalEstablishments": 10071,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 33,
+        "veterinary": 39,
+        "dispensary": 19,
+        "smoke-shop": 4,
+        "retail": 938,
+        "food-beverage": 644,
+        "wineries-breweries": 9,
+        "event-company": 23
+      }
+    },
+    "san-francisco-ca": {
+      "countyName": "San Francisco County",
+      "countyFips": "075",
+      "totalEstablishments": 33513,
+      "competitionCount": 6,
+      "industryCounts": {
+        "pharmacy": 96,
+        "veterinary": 43,
+        "dispensary": 53,
+        "smoke-shop": 36,
+        "retail": 2907,
+        "food-beverage": 3900,
+        "wineries-breweries": 42,
+        "event-company": 70
+      }
+    },
+    "denver-co": {
+      "countyName": "Denver County",
+      "countyFips": "031",
+      "totalEstablishments": 27347,
+      "competitionCount": 16,
+      "industryCounts": {
+        "pharmacy": 40,
+        "veterinary": 74,
+        "dispensary": 130,
+        "smoke-shop": 37,
+        "retail": 2348,
+        "food-beverage": 2325,
+        "wineries-breweries": 70,
+        "event-company": 53
+      }
+    },
     "roswell-ga": {
       "countyName": "Fulton County",
       "countyFips": "121",
@@ -211,6 +323,22 @@
         "event-company": 6
       }
     },
+    "hempstead-ny": {
+      "countyName": "Nassau County",
+      "countyFips": "059",
+      "totalEstablishments": 48731,
+      "competitionCount": 40,
+      "industryCounts": {
+        "pharmacy": 265,
+        "veterinary": 113,
+        "dispensary": 78,
+        "smoke-shop": 77,
+        "retail": 5602,
+        "food-beverage": 3730,
+        "wineries-breweries": 22,
+        "event-company": 50
+      }
+    },
     "franklin-tn": {
       "countyName": "Williamson County",
       "countyFips": "187",
@@ -241,6 +369,422 @@
         "food-beverage": 559,
         "wineries-breweries": 9,
         "event-company": 14
+      }
+    },
+    "gresham-or": {
+      "countyName": "Multnomah County",
+      "countyFips": "051",
+      "totalEstablishments": 27434,
+      "competitionCount": 14,
+      "industryCounts": {
+        "pharmacy": 53,
+        "veterinary": 87,
+        "dispensary": 124,
+        "smoke-shop": 72,
+        "retail": 2868,
+        "food-beverage": 3001,
+        "wineries-breweries": 68,
+        "event-company": 36
+      }
+    },
+    "portland-or": {
+      "countyName": "Multnomah County",
+      "countyFips": "051",
+      "totalEstablishments": 27434,
+      "competitionCount": 14,
+      "industryCounts": {
+        "pharmacy": 53,
+        "veterinary": 87,
+        "dispensary": 124,
+        "smoke-shop": 72,
+        "retail": 2868,
+        "food-beverage": 3001,
+        "wineries-breweries": 68,
+        "event-company": 36
+      }
+    },
+    "huntington-beach-ca": {
+      "countyName": "Orange County",
+      "countyFips": "059",
+      "totalEstablishments": 106249,
+      "competitionCount": 106,
+      "industryCounts": {
+        "pharmacy": 467,
+        "veterinary": 372,
+        "dispensary": 175,
+        "smoke-shop": 171,
+        "retail": 9811,
+        "food-beverage": 8300,
+        "wineries-breweries": 88,
+        "event-company": 118
+      }
+    },
+    "irvine-ca": {
+      "countyName": "Orange County",
+      "countyFips": "059",
+      "totalEstablishments": 106249,
+      "competitionCount": 106,
+      "industryCounts": {
+        "pharmacy": 467,
+        "veterinary": 372,
+        "dispensary": 175,
+        "smoke-shop": 171,
+        "retail": 9811,
+        "food-beverage": 8300,
+        "wineries-breweries": 88,
+        "event-company": 118
+      }
+    },
+    "westminster-ca": {
+      "countyName": "Orange County",
+      "countyFips": "059",
+      "totalEstablishments": 106249,
+      "competitionCount": 106,
+      "industryCounts": {
+        "pharmacy": 467,
+        "veterinary": 372,
+        "dispensary": 175,
+        "smoke-shop": 171,
+        "retail": 9811,
+        "food-beverage": 8300,
+        "wineries-breweries": 88,
+        "event-company": 118
+      }
+    },
+    "laguna-niguel-ca": {
+      "countyName": "Orange County",
+      "countyFips": "059",
+      "totalEstablishments": 106249,
+      "competitionCount": 106,
+      "industryCounts": {
+        "pharmacy": 467,
+        "veterinary": 372,
+        "dispensary": 175,
+        "smoke-shop": 171,
+        "retail": 9811,
+        "food-beverage": 8300,
+        "wineries-breweries": 88,
+        "event-company": 118
+      }
+    },
+    "la-habra-ca": {
+      "countyName": "Orange County",
+      "countyFips": "059",
+      "totalEstablishments": 106249,
+      "competitionCount": 106,
+      "industryCounts": {
+        "pharmacy": 467,
+        "veterinary": 372,
+        "dispensary": 175,
+        "smoke-shop": 171,
+        "retail": 9811,
+        "food-beverage": 8300,
+        "wineries-breweries": 88,
+        "event-company": 118
+      }
+    },
+    "lake-forest-ca": {
+      "countyName": "Orange County",
+      "countyFips": "059",
+      "totalEstablishments": 106249,
+      "competitionCount": 106,
+      "industryCounts": {
+        "pharmacy": 467,
+        "veterinary": 372,
+        "dispensary": 175,
+        "smoke-shop": 171,
+        "retail": 9811,
+        "food-beverage": 8300,
+        "wineries-breweries": 88,
+        "event-company": 118
+      }
+    },
+    "yorba-linda-ca": {
+      "countyName": "Orange County",
+      "countyFips": "059",
+      "totalEstablishments": 106249,
+      "competitionCount": 106,
+      "industryCounts": {
+        "pharmacy": 467,
+        "veterinary": 372,
+        "dispensary": 175,
+        "smoke-shop": 171,
+        "retail": 9811,
+        "food-beverage": 8300,
+        "wineries-breweries": 88,
+        "event-company": 118
+      }
+    },
+    "aliso-viejo-ca": {
+      "countyName": "Orange County",
+      "countyFips": "059",
+      "totalEstablishments": 106249,
+      "competitionCount": 106,
+      "industryCounts": {
+        "pharmacy": 467,
+        "veterinary": 372,
+        "dispensary": 175,
+        "smoke-shop": 171,
+        "retail": 9811,
+        "food-beverage": 8300,
+        "wineries-breweries": 88,
+        "event-company": 118
+      }
+    },
+    "anaheim-ca": {
+      "countyName": "Orange County",
+      "countyFips": "059",
+      "totalEstablishments": 106249,
+      "competitionCount": 106,
+      "industryCounts": {
+        "pharmacy": 467,
+        "veterinary": 372,
+        "dispensary": 175,
+        "smoke-shop": 171,
+        "retail": 9811,
+        "food-beverage": 8300,
+        "wineries-breweries": 88,
+        "event-company": 118
+      }
+    },
+    "mission-viejo-ca": {
+      "countyName": "Orange County",
+      "countyFips": "059",
+      "totalEstablishments": 106249,
+      "competitionCount": 106,
+      "industryCounts": {
+        "pharmacy": 467,
+        "veterinary": 372,
+        "dispensary": 175,
+        "smoke-shop": 171,
+        "retail": 9811,
+        "food-beverage": 8300,
+        "wineries-breweries": 88,
+        "event-company": 118
+      }
+    },
+    "newport-beach-ca": {
+      "countyName": "Orange County",
+      "countyFips": "059",
+      "totalEstablishments": 106249,
+      "competitionCount": 106,
+      "industryCounts": {
+        "pharmacy": 467,
+        "veterinary": 372,
+        "dispensary": 175,
+        "smoke-shop": 171,
+        "retail": 9811,
+        "food-beverage": 8300,
+        "wineries-breweries": 88,
+        "event-company": 118
+      }
+    },
+    "buena-park-ca": {
+      "countyName": "Orange County",
+      "countyFips": "059",
+      "totalEstablishments": 106249,
+      "competitionCount": 106,
+      "industryCounts": {
+        "pharmacy": 467,
+        "veterinary": 372,
+        "dispensary": 175,
+        "smoke-shop": 171,
+        "retail": 9811,
+        "food-beverage": 8300,
+        "wineries-breweries": 88,
+        "event-company": 118
+      }
+    },
+    "orange-ca": {
+      "countyName": "Orange County",
+      "countyFips": "059",
+      "totalEstablishments": 106249,
+      "competitionCount": 106,
+      "industryCounts": {
+        "pharmacy": 467,
+        "veterinary": 372,
+        "dispensary": 175,
+        "smoke-shop": 171,
+        "retail": 9811,
+        "food-beverage": 8300,
+        "wineries-breweries": 88,
+        "event-company": 118
+      }
+    },
+    "placentia-ca": {
+      "countyName": "Orange County",
+      "countyFips": "059",
+      "totalEstablishments": 106249,
+      "competitionCount": 106,
+      "industryCounts": {
+        "pharmacy": 467,
+        "veterinary": 372,
+        "dispensary": 175,
+        "smoke-shop": 171,
+        "retail": 9811,
+        "food-beverage": 8300,
+        "wineries-breweries": 88,
+        "event-company": 118
+      }
+    },
+    "costa-mesa-ca": {
+      "countyName": "Orange County",
+      "countyFips": "059",
+      "totalEstablishments": 106249,
+      "competitionCount": 106,
+      "industryCounts": {
+        "pharmacy": 467,
+        "veterinary": 372,
+        "dispensary": 175,
+        "smoke-shop": 171,
+        "retail": 9811,
+        "food-beverage": 8300,
+        "wineries-breweries": 88,
+        "event-company": 118
+      }
+    },
+    "cypress-ca": {
+      "countyName": "Orange County",
+      "countyFips": "059",
+      "totalEstablishments": 106249,
+      "competitionCount": 106,
+      "industryCounts": {
+        "pharmacy": 467,
+        "veterinary": 372,
+        "dispensary": 175,
+        "smoke-shop": 171,
+        "retail": 9811,
+        "food-beverage": 8300,
+        "wineries-breweries": 88,
+        "event-company": 118
+      }
+    },
+    "san-clemente-ca": {
+      "countyName": "Orange County",
+      "countyFips": "059",
+      "totalEstablishments": 106249,
+      "competitionCount": 106,
+      "industryCounts": {
+        "pharmacy": 467,
+        "veterinary": 372,
+        "dispensary": 175,
+        "smoke-shop": 171,
+        "retail": 9811,
+        "food-beverage": 8300,
+        "wineries-breweries": 88,
+        "event-company": 118
+      }
+    },
+    "santa-ana-ca": {
+      "countyName": "Orange County",
+      "countyFips": "059",
+      "totalEstablishments": 106249,
+      "competitionCount": 106,
+      "industryCounts": {
+        "pharmacy": 467,
+        "veterinary": 372,
+        "dispensary": 175,
+        "smoke-shop": 171,
+        "retail": 9811,
+        "food-beverage": 8300,
+        "wineries-breweries": 88,
+        "event-company": 118
+      }
+    },
+    "fountain-valley-ca": {
+      "countyName": "Orange County",
+      "countyFips": "059",
+      "totalEstablishments": 106249,
+      "competitionCount": 106,
+      "industryCounts": {
+        "pharmacy": 467,
+        "veterinary": 372,
+        "dispensary": 175,
+        "smoke-shop": 171,
+        "retail": 9811,
+        "food-beverage": 8300,
+        "wineries-breweries": 88,
+        "event-company": 118
+      }
+    },
+    "fullerton-ca": {
+      "countyName": "Orange County",
+      "countyFips": "059",
+      "totalEstablishments": 106249,
+      "competitionCount": 106,
+      "industryCounts": {
+        "pharmacy": 467,
+        "veterinary": 372,
+        "dispensary": 175,
+        "smoke-shop": 171,
+        "retail": 9811,
+        "food-beverage": 8300,
+        "wineries-breweries": 88,
+        "event-company": 118
+      }
+    },
+    "garden-grove-ca": {
+      "countyName": "Orange County",
+      "countyFips": "059",
+      "totalEstablishments": 106249,
+      "competitionCount": 106,
+      "industryCounts": {
+        "pharmacy": 467,
+        "veterinary": 372,
+        "dispensary": 175,
+        "smoke-shop": 171,
+        "retail": 9811,
+        "food-beverage": 8300,
+        "wineries-breweries": 88,
+        "event-company": 118
+      }
+    },
+    "tustin-ca": {
+      "countyName": "Orange County",
+      "countyFips": "059",
+      "totalEstablishments": 106249,
+      "competitionCount": 106,
+      "industryCounts": {
+        "pharmacy": 467,
+        "veterinary": 372,
+        "dispensary": 175,
+        "smoke-shop": 171,
+        "retail": 9811,
+        "food-beverage": 8300,
+        "wineries-breweries": 88,
+        "event-company": 118
+      }
+    },
+    "fort-collins-co": {
+      "countyName": "Larimer County",
+      "countyFips": "069",
+      "totalEstablishments": 11742,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 26,
+        "veterinary": 104,
+        "dispensary": 35,
+        "smoke-shop": 17,
+        "retail": 1260,
+        "food-beverage": 869,
+        "wineries-breweries": 55,
+        "event-company": 10
+      }
+    },
+    "loveland-co": {
+      "countyName": "Larimer County",
+      "countyFips": "069",
+      "totalEstablishments": 11742,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 26,
+        "veterinary": 104,
+        "dispensary": 35,
+        "smoke-shop": 17,
+        "retail": 1260,
+        "food-beverage": 869,
+        "wineries-breweries": 55,
+        "event-company": 10
       }
     },
     "charlotte-nc": {
@@ -275,6 +819,22 @@
         "event-company": 32
       }
     },
+    "napa-ca": {
+      "countyName": "Napa County",
+      "countyFips": "055",
+      "totalEstablishments": 4455,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 9,
+        "veterinary": 17,
+        "dispensary": 9,
+        "smoke-shop": 4,
+        "retail": 492,
+        "food-beverage": 337,
+        "wineries-breweries": 425,
+        "event-company": 8
+      }
+    },
     "harrisonburg-va": {
       "countyName": "Harrisonburg city",
       "countyFips": "660",
@@ -288,6 +848,22 @@
         "retail": 317,
         "food-beverage": 182,
         "wineries-breweries": 6,
+        "event-company": 0
+      }
+    },
+    "broomfield-co": {
+      "countyName": "Broomfield County",
+      "countyFips": "014",
+      "totalEstablishments": 2344,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 5,
+        "veterinary": 13,
+        "dispensary": 6,
+        "smoke-shop": 3,
+        "retail": 271,
+        "food-beverage": 173,
+        "wineries-breweries": 4,
         "event-company": 0
       }
     },
@@ -307,6 +883,582 @@
         "event-company": 0
       }
     },
+    "bellingham-wa": {
+      "countyName": "Whatcom County",
+      "countyFips": "073",
+      "totalEstablishments": 7115,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 22,
+        "veterinary": 33,
+        "dispensary": 25,
+        "smoke-shop": 8,
+        "retail": 795,
+        "food-beverage": 556,
+        "wineries-breweries": 23,
+        "event-company": 5
+      }
+    },
+    "auburn-wa": {
+      "countyName": "King County",
+      "countyFips": "033",
+      "totalEstablishments": 70530,
+      "competitionCount": 34,
+      "industryCounts": {
+        "pharmacy": 216,
+        "veterinary": 278,
+        "dispensary": 153,
+        "smoke-shop": 123,
+        "retail": 6042,
+        "food-beverage": 6332,
+        "wineries-breweries": 191,
+        "event-company": 99
+      }
+    },
+    "bellevue-wa": {
+      "countyName": "King County",
+      "countyFips": "033",
+      "totalEstablishments": 70530,
+      "competitionCount": 34,
+      "industryCounts": {
+        "pharmacy": 216,
+        "veterinary": 278,
+        "dispensary": 153,
+        "smoke-shop": 123,
+        "retail": 6042,
+        "food-beverage": 6332,
+        "wineries-breweries": 191,
+        "event-company": 99
+      }
+    },
+    "burien-wa": {
+      "countyName": "King County",
+      "countyFips": "033",
+      "totalEstablishments": 70530,
+      "competitionCount": 34,
+      "industryCounts": {
+        "pharmacy": 216,
+        "veterinary": 278,
+        "dispensary": 153,
+        "smoke-shop": 123,
+        "retail": 6042,
+        "food-beverage": 6332,
+        "wineries-breweries": 191,
+        "event-company": 99
+      }
+    },
+    "federal-way-wa": {
+      "countyName": "King County",
+      "countyFips": "033",
+      "totalEstablishments": 70530,
+      "competitionCount": 34,
+      "industryCounts": {
+        "pharmacy": 216,
+        "veterinary": 278,
+        "dispensary": 153,
+        "smoke-shop": 123,
+        "retail": 6042,
+        "food-beverage": 6332,
+        "wineries-breweries": 191,
+        "event-company": 99
+      }
+    },
+    "kent-wa": {
+      "countyName": "King County",
+      "countyFips": "033",
+      "totalEstablishments": 70530,
+      "competitionCount": 34,
+      "industryCounts": {
+        "pharmacy": 216,
+        "veterinary": 278,
+        "dispensary": 153,
+        "smoke-shop": 123,
+        "retail": 6042,
+        "food-beverage": 6332,
+        "wineries-breweries": 191,
+        "event-company": 99
+      }
+    },
+    "kirkland-wa": {
+      "countyName": "King County",
+      "countyFips": "033",
+      "totalEstablishments": 70530,
+      "competitionCount": 34,
+      "industryCounts": {
+        "pharmacy": 216,
+        "veterinary": 278,
+        "dispensary": 153,
+        "smoke-shop": 123,
+        "retail": 6042,
+        "food-beverage": 6332,
+        "wineries-breweries": 191,
+        "event-company": 99
+      }
+    },
+    "redmond-wa": {
+      "countyName": "King County",
+      "countyFips": "033",
+      "totalEstablishments": 70530,
+      "competitionCount": 34,
+      "industryCounts": {
+        "pharmacy": 216,
+        "veterinary": 278,
+        "dispensary": 153,
+        "smoke-shop": 123,
+        "retail": 6042,
+        "food-beverage": 6332,
+        "wineries-breweries": 191,
+        "event-company": 99
+      }
+    },
+    "renton-wa": {
+      "countyName": "King County",
+      "countyFips": "033",
+      "totalEstablishments": 70530,
+      "competitionCount": 34,
+      "industryCounts": {
+        "pharmacy": 216,
+        "veterinary": 278,
+        "dispensary": 153,
+        "smoke-shop": 123,
+        "retail": 6042,
+        "food-beverage": 6332,
+        "wineries-breweries": 191,
+        "event-company": 99
+      }
+    },
+    "sammamish-wa": {
+      "countyName": "King County",
+      "countyFips": "033",
+      "totalEstablishments": 70530,
+      "competitionCount": 34,
+      "industryCounts": {
+        "pharmacy": 216,
+        "veterinary": 278,
+        "dispensary": 153,
+        "smoke-shop": 123,
+        "retail": 6042,
+        "food-beverage": 6332,
+        "wineries-breweries": 191,
+        "event-company": 99
+      }
+    },
+    "seattle-wa": {
+      "countyName": "King County",
+      "countyFips": "033",
+      "totalEstablishments": 70530,
+      "competitionCount": 34,
+      "industryCounts": {
+        "pharmacy": 216,
+        "veterinary": 278,
+        "dispensary": 153,
+        "smoke-shop": 123,
+        "retail": 6042,
+        "food-beverage": 6332,
+        "wineries-breweries": 191,
+        "event-company": 99
+      }
+    },
+    "shoreline-wa": {
+      "countyName": "King County",
+      "countyFips": "033",
+      "totalEstablishments": 70530,
+      "competitionCount": 34,
+      "industryCounts": {
+        "pharmacy": 216,
+        "veterinary": 278,
+        "dispensary": 153,
+        "smoke-shop": 123,
+        "retail": 6042,
+        "food-beverage": 6332,
+        "wineries-breweries": 191,
+        "event-company": 99
+      }
+    },
+    "arvada-co": {
+      "countyName": "Jefferson County",
+      "countyFips": "059",
+      "totalEstablishments": 18082,
+      "competitionCount": 4,
+      "industryCounts": {
+        "pharmacy": 32,
+        "veterinary": 113,
+        "dispensary": 59,
+        "smoke-shop": 23,
+        "retail": 1801,
+        "food-beverage": 1235,
+        "wineries-breweries": 40,
+        "event-company": 23
+      }
+    },
+    "lakewood-co": {
+      "countyName": "Jefferson County",
+      "countyFips": "059",
+      "totalEstablishments": 18082,
+      "competitionCount": 4,
+      "industryCounts": {
+        "pharmacy": 32,
+        "veterinary": 113,
+        "dispensary": 59,
+        "smoke-shop": 23,
+        "retail": 1801,
+        "food-beverage": 1235,
+        "wineries-breweries": 40,
+        "event-company": 23
+      }
+    },
+    "westminster-co": {
+      "countyName": "Jefferson County",
+      "countyFips": "059",
+      "totalEstablishments": 18082,
+      "competitionCount": 4,
+      "industryCounts": {
+        "pharmacy": 32,
+        "veterinary": 113,
+        "dispensary": 59,
+        "smoke-shop": 23,
+        "retail": 1801,
+        "food-beverage": 1235,
+        "wineries-breweries": 40,
+        "event-company": 23
+      }
+    },
+    "mount-vernon-ny": {
+      "countyName": "Westchester County",
+      "countyFips": "119",
+      "totalEstablishments": 31152,
+      "competitionCount": 8,
+      "industryCounts": {
+        "pharmacy": 172,
+        "veterinary": 94,
+        "dispensary": 49,
+        "smoke-shop": 31,
+        "retail": 3365,
+        "food-beverage": 2574,
+        "wineries-breweries": 14,
+        "event-company": 19
+      }
+    },
+    "new-rochelle-ny": {
+      "countyName": "Westchester County",
+      "countyFips": "119",
+      "totalEstablishments": 31152,
+      "competitionCount": 8,
+      "industryCounts": {
+        "pharmacy": 172,
+        "veterinary": 94,
+        "dispensary": 49,
+        "smoke-shop": 31,
+        "retail": 3365,
+        "food-beverage": 2574,
+        "wineries-breweries": 14,
+        "event-company": 19
+      }
+    },
+    "white-plains-ny": {
+      "countyName": "Westchester County",
+      "countyFips": "119",
+      "totalEstablishments": 31152,
+      "competitionCount": 8,
+      "industryCounts": {
+        "pharmacy": 172,
+        "veterinary": 94,
+        "dispensary": 49,
+        "smoke-shop": 31,
+        "retail": 3365,
+        "food-beverage": 2574,
+        "wineries-breweries": 14,
+        "event-company": 19
+      }
+    },
+    "yonkers-ny": {
+      "countyName": "Westchester County",
+      "countyFips": "119",
+      "totalEstablishments": 31152,
+      "competitionCount": 8,
+      "industryCounts": {
+        "pharmacy": 172,
+        "veterinary": 94,
+        "dispensary": 49,
+        "smoke-shop": 31,
+        "retail": 3365,
+        "food-beverage": 2574,
+        "wineries-breweries": 14,
+        "event-company": 19
+      }
+    },
+    "aurora-co": {
+      "countyName": "Arapahoe County",
+      "countyFips": "005",
+      "totalEstablishments": 20149,
+      "competitionCount": 10,
+      "industryCounts": {
+        "pharmacy": 50,
+        "veterinary": 59,
+        "dispensary": 62,
+        "smoke-shop": 29,
+        "retail": 1839,
+        "food-beverage": 1378,
+        "wineries-breweries": 25,
+        "event-company": 20
+      }
+    },
+    "centennial-co": {
+      "countyName": "Arapahoe County",
+      "countyFips": "005",
+      "totalEstablishments": 20149,
+      "competitionCount": 10,
+      "industryCounts": {
+        "pharmacy": 50,
+        "veterinary": 59,
+        "dispensary": 62,
+        "smoke-shop": 29,
+        "retail": 1839,
+        "food-beverage": 1378,
+        "wineries-breweries": 25,
+        "event-company": 20
+      }
+    },
+    "grand-junction-co": {
+      "countyName": "Mesa County",
+      "countyFips": "077",
+      "totalEstablishments": 4754,
+      "competitionCount": 3,
+      "industryCounts": {
+        "pharmacy": 10,
+        "veterinary": 30,
+        "dispensary": 16,
+        "smoke-shop": 11,
+        "retail": 574,
+        "food-beverage": 319,
+        "wineries-breweries": 24,
+        "event-company": 0
+      }
+    },
+    "huntington-park-ca": {
+      "countyName": "Los Angeles County",
+      "countyFips": "037",
+      "totalEstablishments": 304305,
+      "competitionCount": 247,
+      "industryCounts": {
+        "pharmacy": 1443,
+        "veterinary": 679,
+        "dispensary": 470,
+        "smoke-shop": 497,
+        "retail": 29130,
+        "food-beverage": 23463,
+        "wineries-breweries": 186,
+        "event-company": 367
+      }
+    },
+    "inglewood-ca": {
+      "countyName": "Los Angeles County",
+      "countyFips": "037",
+      "totalEstablishments": 304305,
+      "competitionCount": 247,
+      "industryCounts": {
+        "pharmacy": 1443,
+        "veterinary": 679,
+        "dispensary": 470,
+        "smoke-shop": 497,
+        "retail": 29130,
+        "food-beverage": 23463,
+        "wineries-breweries": 186,
+        "event-company": 367
+      }
+    },
+    "west-covina-ca": {
+      "countyName": "Los Angeles County",
+      "countyFips": "037",
+      "totalEstablishments": 304305,
+      "competitionCount": 247,
+      "industryCounts": {
+        "pharmacy": 1443,
+        "veterinary": 679,
+        "dispensary": 470,
+        "smoke-shop": 497,
+        "retail": 29130,
+        "food-beverage": 23463,
+        "wineries-breweries": 186,
+        "event-company": 367
+      }
+    },
+    "whittier-ca": {
+      "countyName": "Los Angeles County",
+      "countyFips": "037",
+      "totalEstablishments": 304305,
+      "competitionCount": 247,
+      "industryCounts": {
+        "pharmacy": 1443,
+        "veterinary": 679,
+        "dispensary": 470,
+        "smoke-shop": 497,
+        "retail": 29130,
+        "food-beverage": 23463,
+        "wineries-breweries": 186,
+        "event-company": 367
+      }
+    },
+    "lakewood-ca": {
+      "countyName": "Los Angeles County",
+      "countyFips": "037",
+      "totalEstablishments": 304305,
+      "competitionCount": 247,
+      "industryCounts": {
+        "pharmacy": 1443,
+        "veterinary": 679,
+        "dispensary": 470,
+        "smoke-shop": 497,
+        "retail": 29130,
+        "food-beverage": 23463,
+        "wineries-breweries": 186,
+        "event-company": 367
+      }
+    },
+    "lancaster-ca": {
+      "countyName": "Los Angeles County",
+      "countyFips": "037",
+      "totalEstablishments": 304305,
+      "competitionCount": 247,
+      "industryCounts": {
+        "pharmacy": 1443,
+        "veterinary": 679,
+        "dispensary": 470,
+        "smoke-shop": 497,
+        "retail": 29130,
+        "food-beverage": 23463,
+        "wineries-breweries": 186,
+        "event-company": 367
+      }
+    },
+    "long-beach-ca": {
+      "countyName": "Los Angeles County",
+      "countyFips": "037",
+      "totalEstablishments": 304305,
+      "competitionCount": 247,
+      "industryCounts": {
+        "pharmacy": 1443,
+        "veterinary": 679,
+        "dispensary": 470,
+        "smoke-shop": 497,
+        "retail": 29130,
+        "food-beverage": 23463,
+        "wineries-breweries": 186,
+        "event-company": 367
+      }
+    },
+    "los-angeles-ca": {
+      "countyName": "Los Angeles County",
+      "countyFips": "037",
+      "totalEstablishments": 304305,
+      "competitionCount": 247,
+      "industryCounts": {
+        "pharmacy": 1443,
+        "veterinary": 679,
+        "dispensary": 470,
+        "smoke-shop": 497,
+        "retail": 29130,
+        "food-beverage": 23463,
+        "wineries-breweries": 186,
+        "event-company": 367
+      }
+    },
+    "lynwood-ca": {
+      "countyName": "Los Angeles County",
+      "countyFips": "037",
+      "totalEstablishments": 304305,
+      "competitionCount": 247,
+      "industryCounts": {
+        "pharmacy": 1443,
+        "veterinary": 679,
+        "dispensary": 470,
+        "smoke-shop": 497,
+        "retail": 29130,
+        "food-beverage": 23463,
+        "wineries-breweries": 186,
+        "event-company": 367
+      }
+    },
+    "alhambra-ca": {
+      "countyName": "Los Angeles County",
+      "countyFips": "037",
+      "totalEstablishments": 304305,
+      "competitionCount": 247,
+      "industryCounts": {
+        "pharmacy": 1443,
+        "veterinary": 679,
+        "dispensary": 470,
+        "smoke-shop": 497,
+        "retail": 29130,
+        "food-beverage": 23463,
+        "wineries-breweries": 186,
+        "event-company": 367
+      }
+    },
+    "arcadia-ca": {
+      "countyName": "Los Angeles County",
+      "countyFips": "037",
+      "totalEstablishments": 304305,
+      "competitionCount": 247,
+      "industryCounts": {
+        "pharmacy": 1443,
+        "veterinary": 679,
+        "dispensary": 470,
+        "smoke-shop": 497,
+        "retail": 29130,
+        "food-beverage": 23463,
+        "wineries-breweries": 186,
+        "event-company": 367
+      }
+    },
+    "azusa-ca": {
+      "countyName": "Los Angeles County",
+      "countyFips": "037",
+      "totalEstablishments": 304305,
+      "competitionCount": 247,
+      "industryCounts": {
+        "pharmacy": 1443,
+        "veterinary": 679,
+        "dispensary": 470,
+        "smoke-shop": 497,
+        "retail": 29130,
+        "food-beverage": 23463,
+        "wineries-breweries": 186,
+        "event-company": 367
+      }
+    },
+    "montebello-ca": {
+      "countyName": "Los Angeles County",
+      "countyFips": "037",
+      "totalEstablishments": 304305,
+      "competitionCount": 247,
+      "industryCounts": {
+        "pharmacy": 1443,
+        "veterinary": 679,
+        "dispensary": 470,
+        "smoke-shop": 497,
+        "retail": 29130,
+        "food-beverage": 23463,
+        "wineries-breweries": 186,
+        "event-company": 367
+      }
+    },
+    "monterey-park-ca": {
+      "countyName": "Los Angeles County",
+      "countyFips": "037",
+      "totalEstablishments": 304305,
+      "competitionCount": 247,
+      "industryCounts": {
+        "pharmacy": 1443,
+        "veterinary": 679,
+        "dispensary": 470,
+        "smoke-shop": 497,
+        "retail": 29130,
+        "food-beverage": 23463,
+        "wineries-breweries": 186,
+        "event-company": 367
+      }
+    },
     "savannah-ga": {
       "countyName": "Chatham County",
       "countyFips": "051",
@@ -321,6 +1473,38 @@
         "food-beverage": 943,
         "wineries-breweries": 6,
         "event-company": 7
+      }
+    },
+    "albany-ny": {
+      "countyName": "Albany County",
+      "countyFips": "001",
+      "totalEstablishments": 9394,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 42,
+        "veterinary": 26,
+        "dispensary": 28,
+        "smoke-shop": 14,
+        "retail": 1229,
+        "food-beverage": 918,
+        "wineries-breweries": 13,
+        "event-company": 0
+      }
+    },
+    "medford-or": {
+      "countyName": "Jackson County",
+      "countyFips": "029",
+      "totalEstablishments": 6554,
+      "competitionCount": 6,
+      "industryCounts": {
+        "pharmacy": 17,
+        "veterinary": 33,
+        "dispensary": 37,
+        "smoke-shop": 34,
+        "retail": 855,
+        "food-beverage": 546,
+        "wineries-breweries": 39,
+        "event-company": 4
       }
     },
     "apex-nc": {
@@ -385,6 +1569,38 @@
         "food-beverage": 2563,
         "wineries-breweries": 42,
         "event-company": 29
+      }
+    },
+    "castle-rock-co": {
+      "countyName": "Douglas County",
+      "countyFips": "035",
+      "totalEstablishments": 10395,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 19,
+        "veterinary": 61,
+        "dispensary": 19,
+        "smoke-shop": 7,
+        "retail": 955,
+        "food-beverage": 614,
+        "wineries-breweries": 12,
+        "event-company": 13
+      }
+    },
+    "parker-co": {
+      "countyName": "Douglas County",
+      "countyFips": "035",
+      "totalEstablishments": 10395,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 19,
+        "veterinary": 61,
+        "dispensary": 19,
+        "smoke-shop": 7,
+        "retail": 955,
+        "food-beverage": 614,
+        "wineries-breweries": 12,
+        "event-company": 13
       }
     },
     "smyrna-ga": {
@@ -499,6 +1715,54 @@
         "event-company": 13
       }
     },
+    "tigard-or": {
+      "countyName": "Washington County",
+      "countyFips": "067",
+      "totalEstablishments": 16302,
+      "competitionCount": 4,
+      "industryCounts": {
+        "pharmacy": 30,
+        "veterinary": 72,
+        "dispensary": 47,
+        "smoke-shop": 18,
+        "retail": 1589,
+        "food-beverage": 1287,
+        "wineries-breweries": 44,
+        "event-company": 21
+      }
+    },
+    "beaverton-or": {
+      "countyName": "Washington County",
+      "countyFips": "067",
+      "totalEstablishments": 16302,
+      "competitionCount": 4,
+      "industryCounts": {
+        "pharmacy": 30,
+        "veterinary": 72,
+        "dispensary": 47,
+        "smoke-shop": 18,
+        "retail": 1589,
+        "food-beverage": 1287,
+        "wineries-breweries": 44,
+        "event-company": 21
+      }
+    },
+    "hillsboro-or": {
+      "countyName": "Washington County",
+      "countyFips": "067",
+      "totalEstablishments": 16302,
+      "competitionCount": 4,
+      "industryCounts": {
+        "pharmacy": 30,
+        "veterinary": 72,
+        "dispensary": 47,
+        "smoke-shop": 18,
+        "retail": 1589,
+        "food-beverage": 1287,
+        "wineries-breweries": 44,
+        "event-company": 21
+      }
+    },
     "macon-bibb-county-ga": {
       "countyName": "Bibb County",
       "countyFips": "021",
@@ -579,6 +1843,70 @@
         "event-company": 14
       }
     },
+    "springfield-or": {
+      "countyName": "Lane County",
+      "countyFips": "039",
+      "totalEstablishments": 10143,
+      "competitionCount": 3,
+      "industryCounts": {
+        "pharmacy": 29,
+        "veterinary": 43,
+        "dispensary": 55,
+        "smoke-shop": 38,
+        "retail": 1260,
+        "food-beverage": 907,
+        "wineries-breweries": 36,
+        "event-company": 5
+      }
+    },
+    "eugene-or": {
+      "countyName": "Lane County",
+      "countyFips": "039",
+      "totalEstablishments": 10143,
+      "competitionCount": 3,
+      "industryCounts": {
+        "pharmacy": 29,
+        "veterinary": 43,
+        "dispensary": 55,
+        "smoke-shop": 38,
+        "retail": 1260,
+        "food-beverage": 907,
+        "wineries-breweries": 36,
+        "event-company": 5
+      }
+    },
+    "spokane-wa": {
+      "countyName": "Spokane County",
+      "countyFips": "063",
+      "totalEstablishments": 14280,
+      "competitionCount": 8,
+      "industryCounts": {
+        "pharmacy": 37,
+        "veterinary": 72,
+        "dispensary": 66,
+        "smoke-shop": 19,
+        "retail": 1585,
+        "food-beverage": 1150,
+        "wineries-breweries": 42,
+        "event-company": 10
+      }
+    },
+    "spokane-valley-wa": {
+      "countyName": "Spokane County",
+      "countyFips": "063",
+      "totalEstablishments": 14280,
+      "competitionCount": 8,
+      "industryCounts": {
+        "pharmacy": 37,
+        "veterinary": 72,
+        "dispensary": 66,
+        "smoke-shop": 19,
+        "retail": 1585,
+        "food-beverage": 1150,
+        "wineries-breweries": 42,
+        "event-company": 10
+      }
+    },
     "albany-ga": {
       "countyName": "Dougherty County",
       "countyFips": "095",
@@ -611,6 +1939,22 @@
         "event-company": 0
       }
     },
+    "salem-or": {
+      "countyName": "Marion County",
+      "countyFips": "047",
+      "totalEstablishments": 9073,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 25,
+        "veterinary": 38,
+        "dispensary": 55,
+        "smoke-shop": 23,
+        "retail": 1124,
+        "food-beverage": 783,
+        "wineries-breweries": 26,
+        "event-company": 3
+      }
+    },
     "knoxville-tn": {
       "countyName": "Knox County",
       "countyFips": "093",
@@ -625,6 +1969,54 @@
         "food-beverage": 1081,
         "wineries-breweries": 19,
         "event-company": 5
+      }
+    },
+    "new-brunswick-nj": {
+      "countyName": "Middlesex County",
+      "countyFips": "023",
+      "totalEstablishments": 22248,
+      "competitionCount": 35,
+      "industryCounts": {
+        "pharmacy": 146,
+        "veterinary": 43,
+        "dispensary": 41,
+        "smoke-shop": 27,
+        "retail": 2447,
+        "food-beverage": 1746,
+        "wineries-breweries": 8,
+        "event-company": 8
+      }
+    },
+    "perth-amboy-nj": {
+      "countyName": "Middlesex County",
+      "countyFips": "023",
+      "totalEstablishments": 22248,
+      "competitionCount": 35,
+      "industryCounts": {
+        "pharmacy": 146,
+        "veterinary": 43,
+        "dispensary": 41,
+        "smoke-shop": 27,
+        "retail": 2447,
+        "food-beverage": 1746,
+        "wineries-breweries": 8,
+        "event-company": 8
+      }
+    },
+    "colorado-springs-co": {
+      "countyName": "El Paso County",
+      "countyFips": "041",
+      "totalEstablishments": 18769,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 42,
+        "veterinary": 107,
+        "dispensary": 100,
+        "smoke-shop": 27,
+        "retail": 2022,
+        "food-beverage": 1422,
+        "wineries-breweries": 31,
+        "event-company": 8
       }
     },
     "virginia-beach-va": {
@@ -643,6 +2035,22 @@
         "event-company": 8
       }
     },
+    "trenton-nj": {
+      "countyName": "Mercer County",
+      "countyFips": "021",
+      "totalEstablishments": 9738,
+      "competitionCount": 5,
+      "industryCounts": {
+        "pharmacy": 63,
+        "veterinary": 27,
+        "dispensary": 28,
+        "smoke-shop": 9,
+        "retail": 1189,
+        "food-beverage": 845,
+        "wineries-breweries": 7,
+        "event-company": 7
+      }
+    },
     "chapel-hill-nc": {
       "countyName": "Durham County",
       "countyFips": "063",
@@ -659,6 +2067,54 @@
         "event-company": 7
       }
     },
+    "elizabeth-nj": {
+      "countyName": "Union County",
+      "countyFips": "039",
+      "totalEstablishments": 14260,
+      "competitionCount": 16,
+      "industryCounts": {
+        "pharmacy": 104,
+        "veterinary": 28,
+        "dispensary": 17,
+        "smoke-shop": 12,
+        "retail": 1861,
+        "food-beverage": 1268,
+        "wineries-breweries": 8,
+        "event-company": 8
+      }
+    },
+    "plainfield-nj": {
+      "countyName": "Union County",
+      "countyFips": "039",
+      "totalEstablishments": 14260,
+      "competitionCount": 16,
+      "industryCounts": {
+        "pharmacy": 104,
+        "veterinary": 28,
+        "dispensary": 17,
+        "smoke-shop": 12,
+        "retail": 1861,
+        "food-beverage": 1268,
+        "wineries-breweries": 8,
+        "event-company": 8
+      }
+    },
+    "vancouver-wa": {
+      "countyName": "Clark County",
+      "countyFips": "011",
+      "totalEstablishments": 12416,
+      "competitionCount": 10,
+      "industryCounts": {
+        "pharmacy": 28,
+        "veterinary": 49,
+        "dispensary": 46,
+        "smoke-shop": 20,
+        "retail": 1062,
+        "food-beverage": 847,
+        "wineries-breweries": 27,
+        "event-company": 15
+      }
+    },
     "valdosta-ga": {
       "countyName": "Lowndes County",
       "countyFips": "185",
@@ -672,6 +2128,70 @@
         "retail": 520,
         "food-beverage": 248,
         "wineries-breweries": 0,
+        "event-company": 3
+      }
+    },
+    "everett-wa": {
+      "countyName": "Snohomish County",
+      "countyFips": "061",
+      "totalEstablishments": 20218,
+      "competitionCount": 5,
+      "industryCounts": {
+        "pharmacy": 74,
+        "veterinary": 101,
+        "dispensary": 78,
+        "smoke-shop": 55,
+        "retail": 2137,
+        "food-beverage": 1654,
+        "wineries-breweries": 43,
+        "event-company": 5
+      }
+    },
+    "marysville-wa": {
+      "countyName": "Snohomish County",
+      "countyFips": "061",
+      "totalEstablishments": 20218,
+      "competitionCount": 5,
+      "industryCounts": {
+        "pharmacy": 74,
+        "veterinary": 101,
+        "dispensary": 78,
+        "smoke-shop": 55,
+        "retail": 2137,
+        "food-beverage": 1654,
+        "wineries-breweries": 43,
+        "event-company": 5
+      }
+    },
+    "kennewick-wa": {
+      "countyName": "Benton County",
+      "countyFips": "005",
+      "totalEstablishments": 5016,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 16,
+        "veterinary": 17,
+        "dispensary": 7,
+        "smoke-shop": 7,
+        "retail": 596,
+        "food-beverage": 439,
+        "wineries-breweries": 56,
+        "event-company": 3
+      }
+    },
+    "richland-wa": {
+      "countyName": "Benton County",
+      "countyFips": "005",
+      "totalEstablishments": 5016,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 16,
+        "veterinary": 17,
+        "dispensary": 7,
+        "smoke-shop": 7,
+        "retail": 596,
+        "food-beverage": 439,
+        "wineries-breweries": 56,
         "event-company": 3
       }
     },
@@ -723,6 +2243,38 @@
         "event-company": 37
       }
     },
+    "buffalo-ny": {
+      "countyName": "Erie County",
+      "countyFips": "029",
+      "totalEstablishments": 22574,
+      "competitionCount": 12,
+      "industryCounts": {
+        "pharmacy": 138,
+        "veterinary": 95,
+        "dispensary": 71,
+        "smoke-shop": 63,
+        "retail": 3140,
+        "food-beverage": 2212,
+        "wineries-breweries": 30,
+        "event-company": 13
+      }
+    },
+    "syracuse-ny": {
+      "countyName": "Onondaga County",
+      "countyFips": "067",
+      "totalEstablishments": 11263,
+      "competitionCount": 5,
+      "industryCounts": {
+        "pharmacy": 56,
+        "veterinary": 48,
+        "dispensary": 32,
+        "smoke-shop": 31,
+        "retail": 1553,
+        "food-beverage": 1073,
+        "wineries-breweries": 21,
+        "event-company": 7
+      }
+    },
     "winston-salem-nc": {
       "countyName": "Forsyth County",
       "countyFips": "067",
@@ -739,6 +2291,54 @@
         "event-company": 5
       }
     },
+    "clifton-nj": {
+      "countyName": "Passaic County",
+      "countyFips": "031",
+      "totalEstablishments": 12356,
+      "competitionCount": 17,
+      "industryCounts": {
+        "pharmacy": 128,
+        "veterinary": 29,
+        "dispensary": 31,
+        "smoke-shop": 22,
+        "retail": 1866,
+        "food-beverage": 1068,
+        "wineries-breweries": 6,
+        "event-company": 11
+      }
+    },
+    "passaic-nj": {
+      "countyName": "Passaic County",
+      "countyFips": "031",
+      "totalEstablishments": 12356,
+      "competitionCount": 17,
+      "industryCounts": {
+        "pharmacy": 128,
+        "veterinary": 29,
+        "dispensary": 31,
+        "smoke-shop": 22,
+        "retail": 1866,
+        "food-beverage": 1068,
+        "wineries-breweries": 6,
+        "event-company": 11
+      }
+    },
+    "paterson-nj": {
+      "countyName": "Passaic County",
+      "countyFips": "031",
+      "totalEstablishments": 12356,
+      "competitionCount": 17,
+      "industryCounts": {
+        "pharmacy": 128,
+        "veterinary": 29,
+        "dispensary": 31,
+        "smoke-shop": 22,
+        "retail": 1866,
+        "food-beverage": 1068,
+        "wineries-breweries": 6,
+        "event-company": 11
+      }
+    },
     "chesapeake-va": {
       "countyName": "Chesapeake city",
       "countyFips": "550",
@@ -753,6 +2353,38 @@
         "food-beverage": 499,
         "wineries-breweries": 0,
         "event-company": 0
+      }
+    },
+    "corvallis-or": {
+      "countyName": "Benton County",
+      "countyFips": "003",
+      "totalEstablishments": 2202,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 7,
+        "veterinary": 17,
+        "dispensary": 10,
+        "smoke-shop": 3,
+        "retail": 261,
+        "food-beverage": 222,
+        "wineries-breweries": 13,
+        "event-company": 3
+      }
+    },
+    "rochester-ny": {
+      "countyName": "Monroe County",
+      "countyFips": "055",
+      "totalEstablishments": 17449,
+      "competitionCount": 11,
+      "industryCounts": {
+        "pharmacy": 76,
+        "veterinary": 62,
+        "dispensary": 49,
+        "smoke-shop": 34,
+        "retail": 2216,
+        "food-beverage": 1628,
+        "wineries-breweries": 35,
+        "event-company": 12
       }
     },
     "concord-nc": {
@@ -803,6 +2435,38 @@
         "event-company": 0
       }
     },
+    "lacey-wa": {
+      "countyName": "Thurston County",
+      "countyFips": "067",
+      "totalEstablishments": 6686,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 26,
+        "veterinary": 49,
+        "dispensary": 24,
+        "smoke-shop": 17,
+        "retail": 761,
+        "food-beverage": 573,
+        "wineries-breweries": 16,
+        "event-company": 0
+      }
+    },
+    "olympia-wa": {
+      "countyName": "Thurston County",
+      "countyFips": "067",
+      "totalEstablishments": 6686,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 26,
+        "veterinary": 49,
+        "dispensary": 24,
+        "smoke-shop": 17,
+        "retail": 761,
+        "food-beverage": 573,
+        "wineries-breweries": 16,
+        "event-company": 0
+      }
+    },
     "columbia-sc": {
       "countyName": "Richland County",
       "countyFips": "079",
@@ -817,6 +2481,54 @@
         "food-beverage": 829,
         "wineries-breweries": 3,
         "event-company": 9
+      }
+    },
+    "new-york-ny": {
+      "countyName": "Kings County",
+      "countyFips": "047",
+      "totalEstablishments": 61287,
+      "competitionCount": 77,
+      "industryCounts": {
+        "pharmacy": 810,
+        "veterinary": 84,
+        "dispensary": 133,
+        "smoke-shop": 71,
+        "retail": 10184,
+        "food-beverage": 6265,
+        "wineries-breweries": 41,
+        "event-company": 50
+      }
+    },
+    "east-orange-nj": {
+      "countyName": "Essex County",
+      "countyFips": "013",
+      "totalEstablishments": 19330,
+      "competitionCount": 13,
+      "industryCounts": {
+        "pharmacy": 179,
+        "veterinary": 40,
+        "dispensary": 35,
+        "smoke-shop": 22,
+        "retail": 2565,
+        "food-beverage": 1720,
+        "wineries-breweries": 13,
+        "event-company": 19
+      }
+    },
+    "newark-nj": {
+      "countyName": "Essex County",
+      "countyFips": "013",
+      "totalEstablishments": 19330,
+      "competitionCount": 13,
+      "industryCounts": {
+        "pharmacy": 179,
+        "veterinary": 40,
+        "dispensary": 35,
+        "smoke-shop": 22,
+        "retail": 2565,
+        "food-beverage": 1720,
+        "wineries-breweries": 13,
+        "event-company": 19
       }
     },
     "greenville-nc": {
@@ -835,6 +2547,38 @@
         "event-company": 0
       }
     },
+    "greeley-co": {
+      "countyName": "Weld County",
+      "countyFips": "123",
+      "totalEstablishments": 7306,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 16,
+        "veterinary": 53,
+        "dispensary": 20,
+        "smoke-shop": 9,
+        "retail": 698,
+        "food-beverage": 502,
+        "wineries-breweries": 20,
+        "event-company": 0
+      }
+    },
+    "camden-nj": {
+      "countyName": "Camden County",
+      "countyFips": "007",
+      "totalEstablishments": 11572,
+      "competitionCount": 6,
+      "industryCounts": {
+        "pharmacy": 95,
+        "veterinary": 33,
+        "dispensary": 27,
+        "smoke-shop": 25,
+        "retail": 1618,
+        "food-beverage": 1026,
+        "wineries-breweries": 16,
+        "event-company": 3
+      }
+    },
     "rocky-mount-nc": {
       "countyName": "Nash County",
       "countyFips": "127",
@@ -848,6 +2592,54 @@
         "retail": 391,
         "food-beverage": 172,
         "wineries-breweries": 3,
+        "event-company": 0
+      }
+    },
+    "lakewood-wa": {
+      "countyName": "Pierce County",
+      "countyFips": "053",
+      "totalEstablishments": 20096,
+      "competitionCount": 6,
+      "industryCounts": {
+        "pharmacy": 74,
+        "veterinary": 97,
+        "dispensary": 70,
+        "smoke-shop": 68,
+        "retail": 2124,
+        "food-beverage": 1667,
+        "wineries-breweries": 21,
+        "event-company": 16
+      }
+    },
+    "tacoma-wa": {
+      "countyName": "Pierce County",
+      "countyFips": "053",
+      "totalEstablishments": 20096,
+      "competitionCount": 6,
+      "industryCounts": {
+        "pharmacy": 74,
+        "veterinary": 97,
+        "dispensary": 70,
+        "smoke-shop": 68,
+        "retail": 2124,
+        "food-beverage": 1667,
+        "wineries-breweries": 21,
+        "event-company": 16
+      }
+    },
+    "albany-or": {
+      "countyName": "Linn County",
+      "countyFips": "043",
+      "totalEstablishments": 2805,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 9,
+        "veterinary": 11,
+        "dispensary": 11,
+        "smoke-shop": 8,
+        "retail": 371,
+        "food-beverage": 239,
+        "wineries-breweries": 5,
         "event-company": 0
       }
     },
@@ -881,6 +2673,38 @@
         "food-beverage": 506,
         "wineries-breweries": 8,
         "event-company": 6
+      }
+    },
+    "commerce-co": {
+      "countyName": "Adams County",
+      "countyFips": "001",
+      "totalEstablishments": 11156,
+      "competitionCount": 15,
+      "industryCounts": {
+        "pharmacy": 19,
+        "veterinary": 39,
+        "dispensary": 40,
+        "smoke-shop": 25,
+        "retail": 1234,
+        "food-beverage": 826,
+        "wineries-breweries": 13,
+        "event-company": 5
+      }
+    },
+    "thornton-co": {
+      "countyName": "Adams County",
+      "countyFips": "001",
+      "totalEstablishments": 11156,
+      "competitionCount": 15,
+      "industryCounts": {
+        "pharmacy": 19,
+        "veterinary": 39,
+        "dispensary": 40,
+        "smoke-shop": 25,
+        "retail": 1234,
+        "food-beverage": 826,
+        "wineries-breweries": 13,
+        "event-company": 5
       }
     },
     "bartlett-tn": {
@@ -963,6 +2787,22 @@
         "event-company": 14
       }
     },
+    "utica-ny": {
+      "countyName": "Oneida County",
+      "countyFips": "065",
+      "totalEstablishments": 4766,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 33,
+        "veterinary": 25,
+        "dispensary": 12,
+        "smoke-shop": 9,
+        "retail": 761,
+        "food-beverage": 551,
+        "wineries-breweries": 10,
+        "event-company": 4
+      }
+    },
     "newport-news-va": {
       "countyName": "Newport News city",
       "countyFips": "700",
@@ -995,6 +2835,134 @@
         "event-company": 0
       }
     },
+    "pasco-wa": {
+      "countyName": "Franklin County",
+      "countyFips": "021",
+      "totalEstablishments": 1913,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 7,
+        "veterinary": 4,
+        "dispensary": 0,
+        "smoke-shop": 0,
+        "retail": 221,
+        "food-beverage": 157,
+        "wineries-breweries": 4,
+        "event-company": 0
+      }
+    },
+    "union-nj": {
+      "countyName": "Hudson County",
+      "countyFips": "017",
+      "totalEstablishments": 14194,
+      "competitionCount": 6,
+      "industryCounts": {
+        "pharmacy": 193,
+        "veterinary": 22,
+        "dispensary": 21,
+        "smoke-shop": 20,
+        "retail": 2080,
+        "food-beverage": 1663,
+        "wineries-breweries": 7,
+        "event-company": 16
+      }
+    },
+    "west-new-york-nj": {
+      "countyName": "Hudson County",
+      "countyFips": "017",
+      "totalEstablishments": 14194,
+      "competitionCount": 6,
+      "industryCounts": {
+        "pharmacy": 193,
+        "veterinary": 22,
+        "dispensary": 21,
+        "smoke-shop": 20,
+        "retail": 2080,
+        "food-beverage": 1663,
+        "wineries-breweries": 7,
+        "event-company": 16
+      }
+    },
+    "bayonne-nj": {
+      "countyName": "Hudson County",
+      "countyFips": "017",
+      "totalEstablishments": 14194,
+      "competitionCount": 6,
+      "industryCounts": {
+        "pharmacy": 193,
+        "veterinary": 22,
+        "dispensary": 21,
+        "smoke-shop": 20,
+        "retail": 2080,
+        "food-beverage": 1663,
+        "wineries-breweries": 7,
+        "event-company": 16
+      }
+    },
+    "hoboken-nj": {
+      "countyName": "Hudson County",
+      "countyFips": "017",
+      "totalEstablishments": 14194,
+      "competitionCount": 6,
+      "industryCounts": {
+        "pharmacy": 193,
+        "veterinary": 22,
+        "dispensary": 21,
+        "smoke-shop": 20,
+        "retail": 2080,
+        "food-beverage": 1663,
+        "wineries-breweries": 7,
+        "event-company": 16
+      }
+    },
+    "jersey-nj": {
+      "countyName": "Hudson County",
+      "countyFips": "017",
+      "totalEstablishments": 14194,
+      "competitionCount": 6,
+      "industryCounts": {
+        "pharmacy": 193,
+        "veterinary": 22,
+        "dispensary": 21,
+        "smoke-shop": 20,
+        "retail": 2080,
+        "food-beverage": 1663,
+        "wineries-breweries": 7,
+        "event-company": 16
+      }
+    },
+    "pueblo-co": {
+      "countyName": "Pueblo County",
+      "countyFips": "101",
+      "totalEstablishments": 3284,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 12,
+        "veterinary": 10,
+        "dispensary": 29,
+        "smoke-shop": 10,
+        "retail": 492,
+        "food-beverage": 313,
+        "wineries-breweries": 0,
+        "event-company": 0
+      }
+    },
+    "yakima-wa": {
+      "countyName": "Yakima County",
+      "countyFips": "077",
+      "totalEstablishments": 4978,
+      "competitionCount": 4,
+      "industryCounts": {
+        "pharmacy": 15,
+        "veterinary": 25,
+        "dispensary": 20,
+        "smoke-shop": 8,
+        "retail": 708,
+        "food-beverage": 470,
+        "wineries-breweries": 39,
+        "event-company": 0
+      }
+    },
     "suffolk-va": {
       "countyName": "Suffolk city",
       "countyFips": "800",
@@ -1024,6 +2992,54 @@
         "retail": 511,
         "food-beverage": 306,
         "wineries-breweries": 3,
+        "event-company": 0
+      }
+    },
+    "schenectady-ny": {
+      "countyName": "Schenectady County",
+      "countyFips": "093",
+      "totalEstablishments": 2954,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 16,
+        "veterinary": 11,
+        "dispensary": 5,
+        "smoke-shop": 13,
+        "retail": 428,
+        "food-beverage": 329,
+        "wineries-breweries": 7,
+        "event-company": 0
+      }
+    },
+    "troy-ny": {
+      "countyName": "Rensselaer County",
+      "countyFips": "083",
+      "totalEstablishments": 2995,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 23,
+        "veterinary": 7,
+        "dispensary": 10,
+        "smoke-shop": 6,
+        "retail": 437,
+        "food-beverage": 356,
+        "wineries-breweries": 5,
+        "event-company": 0
+      }
+    },
+    "vineland-nj": {
+      "countyName": "Cumberland County",
+      "countyFips": "011",
+      "totalEstablishments": 2829,
+      "competitionCount": 0,
+      "industryCounts": {
+        "pharmacy": 22,
+        "veterinary": 9,
+        "dispensary": 10,
+        "smoke-shop": 4,
+        "retail": 478,
+        "food-beverage": 228,
+        "wineries-breweries": 0,
         "event-company": 0
       }
     },

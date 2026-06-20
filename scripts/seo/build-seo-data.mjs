@@ -33,7 +33,7 @@ const INDUSTRIES = [
 
 const TOTAL_NAICS = '00'
 const COMPETITION_NAICS = '424130'
-const PRIORITY_SLUGS = ['charlotte-nc', 'raleigh-nc', 'greensboro-nc']
+const PRIORITY_SLUGS = ['charlotte-nc', 'raleigh-nc', 'greensboro-nc', 'portland-or']
 
 const API_KEY = process.env.CENSUS_API_KEY
 
@@ -385,10 +385,23 @@ async function buildData() {
     }
   })
 
-  let topCities = cityRecords
-    .filter((city) => city.totalEstablishments > 0)
-    .sort((a, b) => b.businessDensityScore - a.businessDensityScore)
-    .slice(0, 200)
+  // Cap per state (not globally) so a state with many small, dense cities
+  // (e.g. California) can't crowd out every other requested state's coverage.
+  const CITIES_PER_STATE = 40
+  const eligibleCities = cityRecords.filter((city) => city.totalEstablishments > 0)
+  const byState = new Map()
+  for (const city of eligibleCities) {
+    const list = byState.get(city.stateAbbr) || []
+    list.push(city)
+    byState.set(city.stateAbbr, list)
+  }
+
+  let topCities = []
+  for (const [, list] of byState) {
+    topCities.push(
+      ...list.sort((a, b) => b.businessDensityScore - a.businessDensityScore).slice(0, CITIES_PER_STATE),
+    )
+  }
 
   const topSlugSet = new Set(topCities.map((city) => city.slug))
   const priorityCities = cityRecords.filter((city) => PRIORITY_SLUGS.includes(city.slug))
@@ -399,19 +412,7 @@ async function buildData() {
     }
   }
 
-  if (topCities.length > 200) {
-    const prioritySet = new Set(PRIORITY_SLUGS)
-    const priorityCitiesFinal = topCities.filter((city) => prioritySet.has(city.slug))
-    const remainingSlots = Math.max(0, 200 - priorityCitiesFinal.length)
-    const nonPriorityCities = topCities
-      .filter((city) => !prioritySet.has(city.slug))
-      .sort((a, b) => b.businessDensityScore - a.businessDensityScore)
-      .slice(0, remainingSlots)
-
-    topCities = [...priorityCitiesFinal, ...nonPriorityCities].sort(
-      (a, b) => b.businessDensityScore - a.businessDensityScore,
-    )
-  }
+  topCities.sort((a, b) => b.businessDensityScore - a.businessDensityScore)
 
   const citiesOutput = topCities.map((city) => ({
     slug: city.slug,
