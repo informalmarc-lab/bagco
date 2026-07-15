@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import FallbackImage from '@/components/FallbackImage'
 import IndustrySolutionsSection from '@/components/IndustrySolutionsSection'
-import NewsletterSignup from '@/components/NewsletterSignup'
 import QuickQuoteForm from '@/components/QuickQuoteForm'
 import FaqSection from '@/components/seo/FaqSection'
 import StructuredData from '@/components/seo/StructuredData'
@@ -40,29 +39,29 @@ const operationalPoints = [
 
 const processSteps = [
   {
-    title: 'Choose your category',
-    detail: 'Start with pharmacy, veterinary, retail, mylar, labels, or custom print depending on the order type.',
+    title: 'Pick your program',
+    detail: 'Stock if you need bags this week. Custom print if you\'re building a branded program. We\'ll tell you which makes sense for your volume.',
   },
   {
-    title: 'Review pricing',
-    detail: 'Catalog pages show starting price anchors so buyers can compare options before sending a quote request.',
+    title: 'We handle the details',
+    detail: 'For custom orders: artwork coordination, sizing, proof review, and production timeline — we walk through it, you don\'t figure it out alone.',
   },
   {
-    title: 'Set your reorder plan',
-    detail: 'Once the right bag is in place, we help keep repeat orders predictable instead of reactive.',
+    title: 'Reorders without the restart',
+    detail: 'Once specs are set, repeat orders run faster. Same proof, same sizes, no re-explaining your requirements from scratch.',
   },
 ]
 
 const customBagHighlights = [
   '1-color, 2-color, and 3-color custom paper bag programs',
-  'Better fit for repeat buyers who want brand consistency across locations',
-  'Structured quote support for artwork, sizing, and reorder planning',
+  'Brand consistency across all your locations',
+  'Guided artwork, sizing, and reorder planning from start to finish',
 ]
 
 const dispensaryHighlights = [
   'Exit bags, mylar bags, and compliance labels in one buying path',
   'Opaque carryout options for dispensary checkout workflows',
-  'Better fit for operators who need stock now and custom later',
+  'Start with stock, move to custom when your reorder pattern is stable',
 ]
 
 const trustProofItems = [
@@ -114,6 +113,7 @@ export default function Home() {
         <div className="page-hero-inner">
           <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_380px] xl:grid-cols-[minmax(0,1fr)_420px]">
             <div>
+              <p className="kicker mb-4">Pharmacies · Dispensaries · Vet Clinics · Smoke Shops</p>
               <h1 className="heading-display max-w-3xl">
                 Custom printed bags for serious wholesale buyers.
               </h1>
@@ -128,20 +128,17 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <Link href="/catalog/custom" className="btn-primary">
-                  Shop Custom Bags
+              <div className="mt-6 flex flex-wrap items-center gap-3">
+                <Link href="/request-sample" className="btn-primary">
+                  Request a Sample
                 </Link>
-                <Link href="/makeyourquote" className="btn-secondary">
-                  Start a Custom Quote
-                </Link>
-                <Link href="/catalog" className="btn-quiet">
-                  Browse All Catalogs
+                <Link href="/catalog/custom" className="btn-secondary">
+                  Browse Custom Bags
                 </Link>
               </div>
             </div>
 
-            <aside className="hero-panel p-4">
+            <aside className="rounded-[18px] border border-[rgba(196,147,90,0.16)] bg-white p-4 shadow-[0_10px_24px_rgba(30,77,43,0.08)]">
               <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-kraft-300/60 bg-[#F6EFE5]">
                 <FallbackImage
                   src={HERO_IMAGE}
@@ -163,7 +160,7 @@ export default function Home() {
                 <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
                   <div>
                     <p className="font-black text-brand-600">Custom starting price</p>
-                    <p className="mt-1 text-muted">Featured custom bags start at {money(featuredProducts[0]?.startingPrice || 0)} per case.</p>
+                    <p className="mt-1 text-muted">{featuredProducts[0]?.startingPrice ? <>Custom bags start at {money(featuredProducts[0].startingPrice)} per case.</> : 'Starting prices shown on each product page.'}</p>
                   </div>
                   <div>
                     <p className="font-black text-brand-600">Quote support</p>
@@ -188,16 +185,16 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-container py-14">
+      <section className="section-container py-16 md:py-20">
         <div className="rounded-[24px] border border-kraft-400/40 bg-brand-600 px-6 py-8 text-[#FAF6F0] md:px-8">
           <div className="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_320px] lg:items-end">
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.11em] text-accent-300">Custom Bags</p>
+              <p className="text-xs font-black uppercase tracking-[0.11em] text-accent-300">Custom Print Programs</p>
               <h2 className="mt-3 font-serif text-3xl tracking-[-0.01em] text-white md:text-4xl">
-                Custom printed bags should be the homepage priority, not a side option.
+                Your branded bags should do more than carry the purchase out the door.
               </h2>
               <p className="mt-4 max-w-3xl text-sm leading-7 text-[#E9DFD0] md:text-base">
-                If branded paper bags are the real growth lane, this is the fastest path into it. Push buyers toward custom print early, then use stock programs as the fallback when speed matters more than brand presentation.
+                Every carry-out is a brand impression. Custom print programs give you 1, 2, or 3-color bags built to your spec — with guided artwork, proofing, and a reorder plan that keeps you stocked without the scramble.
               </p>
               <div className="mt-5 grid gap-3 md:grid-cols-3">
                 {customBagHighlights.map((item) => (
@@ -217,19 +214,19 @@ export default function Home() {
             </div>
 
             <div className="rounded-2xl border border-white/12 bg-brand-700/60 p-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.09em] text-accent-300">Why Push It</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.09em] text-accent-300">Why Custom Print</p>
               <div className="mt-4 space-y-4 text-sm">
                 <div>
-                  <p className="font-black text-white">Higher-value buying path</p>
-                  <p className="mt-1 text-[#E9DFD0]">Custom programs create bigger, stickier reorder relationships than one-off stock purchases.</p>
+                  <p className="font-black text-white">Stronger brand on every carry-out</p>
+                  <p className="mt-1 text-[#E9DFD0]">Your bags leave the store with your customers. Custom print turns every transaction into a brand touchpoint.</p>
                 </div>
                 <div>
-                  <p className="font-black text-white">Clear production expectation</p>
-                  <p className="mt-1 text-[#E9DFD0]">Typical custom lead time is 3-4 weeks after proof approval, so buyers know the tradeoff up front.</p>
+                  <p className="font-black text-white">Clear production timeline</p>
+                  <p className="mt-1 text-[#E9DFD0]">Custom programs run 3–4 weeks from proof approval. Plan ahead and we&apos;ll keep you stocked on schedule.</p>
                 </div>
                 <div>
-                  <p className="font-black text-white">Best next step</p>
-                  <p className="mt-1 text-[#E9DFD0]">Send them straight into the custom catalog or the quote builder while intent is high.</p>
+                  <p className="font-black text-white">Ready when you are</p>
+                  <p className="mt-1 text-[#E9DFD0]">Browse the custom catalog or start a quote — we&apos;ll walk you through sizing, artwork, and pricing.</p>
                 </div>
               </div>
             </div>
@@ -243,10 +240,10 @@ export default function Home() {
             <div>
               <p className="text-xs font-black uppercase tracking-[0.11em] text-accent-500">Dispensaries</p>
               <h2 className="mt-3 font-serif text-3xl tracking-[-0.01em] text-brand-600 md:text-4xl">
-                Dispensary buyers need a cleaner path into bags, mylar, and compliance.
+                Need a cleaner path into bags, mylar, and compliance labels?
               </h2>
               <p className="mt-4 max-w-3xl text-sm leading-7 text-muted md:text-base">
-                This path is for operators who are balancing compliance, checkout presentation, and reorder speed. Lead with the dispensary packaging route when the buyer needs more than a plain paper bag.
+                If you&apos;re balancing compliance requirements, checkout presentation, and reorder speed, this is the right starting point. Exit bags, mylar, and compliance labels — available in one buying path.
               </p>
               <div className="mt-5 grid gap-3 md:grid-cols-3">
                 {dispensaryHighlights.map((item) => (
@@ -277,7 +274,7 @@ export default function Home() {
                 </div>
                 <div>
                   <p className="font-black text-brand-600">Compliance support</p>
-                  <p className="mt-1 text-muted">Layer in labels and opaque packaging when local workflow requirements demand it.</p>
+                  <p className="mt-1 text-muted">Opaque exit bags, compliance labels, and mylar all available — match your state&apos;s specific checkout requirements.</p>
                 </div>
                 <div>
                   <p className="font-black text-brand-600">Custom upgrade path</p>
@@ -289,12 +286,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-container py-14">
+      <section className="section-container py-12">
         <div className="grid gap-5 lg:grid-cols-[0.88fr_1.12fr]">
           <div>
             <h2 className="section-title">Choose the category that matches how your team buys.</h2>
             <p className="mt-3 max-w-2xl text-sm leading-7 text-muted">
-              The site is organized around practical buying paths, but custom print should lead the conversation when the goal is higher-value, repeatable business.
+              Organized around practical buying paths — custom print, stock replenishment, and industry-specific programs.
             </p>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
@@ -308,24 +305,24 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-container py-14">
-        <div className="grid gap-4 md:grid-cols-3">
-          {processSteps.map((step, index) => (
-            <article key={step.title} className="tonal-panel border-l-4 border-l-accent-500">
-              <p className="text-sm font-black text-accent-500">0{index + 1}</p>
-              <h2 className="mt-3 font-serif text-xl text-brand-600">{step.title}</h2>
+      <section className="section-container py-12">
+        <h2 className="section-title">How the buying process works</h2>
+        <div className="mt-6 grid gap-px bg-kraft-300/40 overflow-hidden rounded-2xl md:grid-cols-3">
+          {processSteps.map((step) => (
+            <article key={step.title} className="bg-white p-6">
+              <h3 className="font-serif text-xl text-brand-600">{step.title}</h3>
               <p className="mt-3 text-sm leading-7 text-muted">{step.detail}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="section-container py-14">
+      <section className="section-container py-16">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <h2 className="section-title">Featured custom-first products</h2>
+            <h2 className="section-title">Browse products by industry</h2>
             <p className="mt-3 text-sm text-muted">
-              These featured picks lean custom first so buyers see the higher-value path before they drift into plain stock ordering.
+              Stock bags ship same day before 1 PM ET. Custom print programs take 3–4 weeks after proof approval.
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
@@ -351,7 +348,12 @@ export default function Home() {
                 />
               </div>
               <div className="flex flex-1 flex-col p-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.08em] text-accent-600">SKU {product.sku}</p>
+                <div className="flex items-center gap-2">
+                  <p className="text-xs font-semibold uppercase tracking-[0.08em] text-accent-600">SKU {product.sku}</p>
+                  <span className={`rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide ${product.availability === 'stock' ? 'bg-emerald-50 text-emerald-700' : 'bg-accent-50 text-accent-700'}`}>
+                    {product.availability === 'stock' ? 'Stock' : 'Custom'}
+                  </span>
+                </div>
                 <h3 className="mt-2 font-serif text-lg text-brand-600">{product.name}</h3>
                 <p className="mt-2 text-sm text-muted">Starting at {money(product.startingPrice)} per case</p>
                 <Link href={getCatalogOverviewPath(product)} className="btn-secondary mt-5 w-full justify-center">
@@ -365,12 +367,12 @@ export default function Home() {
 
       <IndustrySolutionsSection />
 
-      <section className="section-container py-14">
+      <section className="section-container py-16 md:py-20">
         <div className="grid gap-6 lg:grid-cols-[360px_minmax(0,1fr)]">
           <div className="tonal-panel">
             <h2 className="section-title">Build your quote</h2>
             <p className="mt-3 text-sm leading-7 text-muted">
-              Send the basics and we will point you to the right stock category, custom route, or distributor program.
+              Send the basics and we&apos;ll point you to the right stock category, custom route, or distributor program. Response within 24 hours.
             </p>
           </div>
           <QuickQuoteForm />
@@ -379,18 +381,26 @@ export default function Home() {
 
       <FaqSection
         title="Common buyer questions"
-        intro="These answers cover the questions teams usually ask before they lock in pricing or move a category under one supplier."
+        intro="Questions most buyers have before locking in pricing or switching to a new supplier."
         items={faqItems}
       />
 
-      <section className="section-container pt-6">
-        <NewsletterSignup
-          source="homepage"
-          heading="Stay ahead of reorder season"
-          subheading="Get product updates, new category additions, and useful reminders without a lot of filler."
-          microcopy={`No spam. Unsubscribe anytime. Questions? Text ${contactPhone}.`}
-          compact={false}
-        />
+      <section className="section-container py-12">
+        <div className="rounded-[24px] border border-kraft-300/60 bg-white px-6 py-8 text-center md:px-8">
+          <p className="kicker">Still have questions?</p>
+          <h2 className="mt-3 section-title">Talk to someone who knows your industry.</h2>
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-muted">
+            We respond to quote requests within 24 hours. Prefer to talk through your needs first? Call or text us directly.
+          </p>
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            <a href={`tel:${contactPhone}`} className="btn-primary">
+              Call {contactPhone}
+            </a>
+            <Link href="/contact" className="btn-secondary">
+              Send a Message
+            </Link>
+          </div>
+        </div>
       </section>
     </div>
   )

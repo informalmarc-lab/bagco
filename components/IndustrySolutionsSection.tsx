@@ -8,94 +8,94 @@ type IndustryPanel = {
   title: string
   subtitle: string
   examples: string
-  why: string[]
-  problems: string[]
-  benefits: string[]
-  catalogs: { label: string; href: string }[]
+  facts: string[]
+  catalogs: { label: string; href: string; note: string }[]
+  leadTime: string
 }
 
 const INDUSTRIES: IndustryPanel[] = [
   {
-    id: 'pharmacies',
-    title: 'Pharmacies',
-    subtitle: 'Reliable packaging programs for regulated daily-volume operations',
-    examples: 'Independent pharmacies, multi-location groups, clinic-adjacent retail',
-    why: [
-      'Pharmacies need consistent bag quality for trust-first customer presentation.',
-      'Reliable case supply prevents front-counter interruptions and reorder stress.',
-      'Professional branded paper bags reinforce store credibility in regulated settings.',
-    ],
-    problems: [
-      'Inconsistent packaging disrupts daily script handoff workflows.',
-      'Poor-quality bags weaken customer confidence at checkout.',
-      'Unclear replenishment cycles create avoidable stock pressure.',
-    ],
-    benefits: [
-      'Cleaner customer experience and stronger trust signals.',
-      'Operational stability through predictable reorder planning.',
-      'Professional pharmacy branding beyond the counter.',
+    id: 'dispensaries',
+    title: 'Dispensaries',
+    subtitle: 'Compliance-ready packaging for cannabis retail checkout',
+    examples: 'Single-location dispensaries · Multi-location operators · Delivery services',
+    facts: [
+      'Opaque exit bags, mylar bags, and compliance labels — all sourced from one place so you\'re not coordinating three vendors.',
+      'Stock programs ship same day before 1 PM ET. When you run low mid-shift, you\'re not waiting a week.',
+      'State compliance requirements vary. We carry options that satisfy opaque-bag mandates across major legal markets.',
+      'Start with stock while your volume stabilizes, then move to custom print when the reorder pattern is predictable.',
     ],
     catalogs: [
-      { label: 'Pharmacy Catalog', href: '/catalog/pharmacy' },
-      { label: 'Custom 1/2/3 Color', href: '/catalog/custom' },
-      { label: 'Veterinary Catalog', href: '/catalog/veterinary' },
+      { label: 'Dispensary Bags', href: '/industries/dispensary', note: 'Exit bags + carryout' },
+      { label: 'Mylar Bags', href: '/catalog/mylar-bags', note: 'Resealable, labeled options' },
+      { label: 'Compliance Labels', href: '/catalog/labels', note: 'State-specific formats' },
     ],
+    leadTime: 'Stock: same day before 1 PM ET · Custom print: 3–4 weeks after proof',
+  },
+  {
+    id: 'pharmacies',
+    title: 'Pharmacies',
+    subtitle: 'Stock and custom paper bags for independent and group pharmacy operations',
+    examples: 'Independent pharmacies · Multi-location groups · Clinic-adjacent retail',
+    facts: [
+      'GS and TY stock designs have been the standard pharmacy bag for years — eight size options, consistent quality, case pricing.',
+      'Custom 1-, 2-, and 3-color print programs let your bags carry the pharmacy name instead of a generic design.',
+      'We help you set a reorder cadence so you\'re not scrambling when a case runs out mid-week.',
+      'Plastic GS options available for larger prescription handoffs where paper isn\'t the right fit.',
+    ],
+    catalogs: [
+      { label: 'Pharmacy Catalog', href: '/catalog/pharmacy', note: 'GS, TY, Plastic GS' },
+      { label: 'Custom Print', href: '/catalog/custom', note: '1/2/3 color programs' },
+      { label: 'Veterinary Bags', href: '/catalog/veterinary', note: 'If you carry pet meds' },
+    ],
+    leadTime: 'Stock: same day before 1 PM ET · Custom print: 3–4 weeks after proof',
   },
   {
     id: 'veterinary',
     title: 'Veterinary',
-    subtitle: 'Structured bag programs for veterinary and pet-care operations',
-    examples: 'Veterinary clinics, pet hospitals, animal care groups',
-    why: [
-      'Veterinary operations need durable, consistent packaging for meds and take-home items.',
-      'Branded bags strengthen clinic professionalism and client trust.',
-      'Reliable reorder cadence prevents stock interruptions in busy practices.',
-    ],
-    problems: [
-      'Low-quality bags fail in day-to-day clinic workflows.',
-      'Irregular supply creates front-desk friction and order delays.',
-      'Unbranded packaging weakens brand recognition across repeat clients.',
-    ],
-    benefits: [
-      'More professional client handoff experience.',
-      'Operational ease with repeatable replenishment.',
-      'Consistent brand visibility for recurring pet-owner traffic.',
+    subtitle: 'Consistent bag programs for veterinary clinics and animal care practices',
+    examples: 'Veterinary clinics · Pet hospitals · Animal care groups',
+    facts: [
+      'VB1, VB2, and VB6 stock designs cover the size range from small-med dispensing bags to larger take-home carryout.',
+      'Same-day stock shipping before 1 PM ET means a busy practice isn\'t waiting on packaging between patient visits.',
+      'Custom print adds clinic branding to every bag that leaves the exam room — useful for multi-location groups.',
+      'Order minimums and case pricing are the same structure as the pharmacy program — no different process to learn.',
     ],
     catalogs: [
-      { label: 'Veterinary Catalog', href: '/catalog/veterinary' },
-      { label: 'Custom 1/2/3 Color', href: '/catalog/custom' },
-      { label: 'Pharmacy Catalog', href: '/catalog/pharmacy' },
+      { label: 'Veterinary Catalog', href: '/catalog/veterinary', note: 'VB1, VB2, VB6 stock' },
+      { label: 'Custom Print', href: '/catalog/custom', note: '1/2/3 color programs' },
+      { label: 'Pharmacy Bags', href: '/catalog/pharmacy', note: 'Similar size range' },
     ],
+    leadTime: 'Stock: same day before 1 PM ET · Custom print: 3–4 weeks after proof',
   },
   {
     id: 'custom-bags',
     title: 'Custom Bags',
-    subtitle: 'Brand-forward print programs with clear production and reorder rules',
-    examples: 'Single-location brands, multi-location operators, distributor private-label programs',
-    why: [
-      'Custom print programs improve brand recall on every carry-out transaction.',
-      'Standardized color options and proofs reduce ordering uncertainty.',
-      'Case-level pricing and lead-time planning support predictable reorders.',
-    ],
-    problems: [
-      'Plain stock bags do not reinforce brand identity after checkout.',
-      'Inconsistent artwork handoff creates delays and proof revisions.',
-      'No custom reorder cadence leads to rush-order pressure.',
-    ],
-    benefits: [
-      'Stronger street-level visibility from every bag leaving the store.',
-      'Cleaner purchasing process with repeatable proof and reorder flow.',
-      'Reliable production planning with 1/2/3 color program options.',
+    subtitle: 'Branded paper bag programs with guided artwork, sizing, and reorder planning',
+    examples: 'Single-location brands · Multi-location operators · Distributor private-label programs',
+    facts: [
+      '1-color, 2-color, and 3-color print options — choose based on how much of the bag surface you want to brand.',
+      'We handle artwork coordination: send us your logo and we walk through sizing, ink placement, and proof review.',
+      'Lead time is 3–4 weeks after proof approval. We state this up front so production planning isn\'t a surprise.',
+      'Reorder programs mean your second order is faster than your first — same proof, same specs, no restart.',
     ],
     catalogs: [
-      { label: 'Custom Bags Catalog', href: '/catalog/custom' },
-      { label: 'Pharmacy Catalog', href: '/catalog/pharmacy' },
-      { label: 'Veterinary Catalog', href: '/catalog/veterinary' },
+      { label: 'Custom Bags Catalog', href: '/catalog/custom', note: '1/2/3 color programs' },
+      { label: 'Pharmacy Custom', href: '/custom-pharmacy-paper-bags', note: 'Pharmacy-specific sizing' },
+      { label: 'Request a Sample', href: '/request-sample', note: 'See print quality first' },
     ],
+    leadTime: 'Custom print: 3–4 weeks after proof approval · Reorders faster with same specs',
   },
 ]
 
 function Icon({ id }: { id: string }) {
+  if (id === 'dispensaries') {
+    return (
+      <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8">
+        <path d="M12 3L4 7v5c0 4.4 3.4 8.5 8 9.5 4.6-1 8-5.1 8-9.5V7l-8-4z" />
+      </svg>
+    )
+  }
   if (id === 'pharmacies') {
     return (
       <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8">
@@ -123,10 +123,10 @@ function Icon({ id }: { id: string }) {
 }
 
 export default function IndustrySolutionsSection() {
-  const [activeId, setActiveId] = useState<string | null>(null)
+  const [activeId, setActiveId] = useState<string>('dispensaries')
   const panelRef = useRef<HTMLDivElement | null>(null)
   const active = useMemo(
-    () => INDUSTRIES.find((industry) => industry.id === activeId) || null,
+    () => INDUSTRIES.find((industry) => industry.id === activeId) ?? INDUSTRIES[0],
     [activeId],
   )
 
@@ -134,10 +134,10 @@ export default function IndustrySolutionsSection() {
     <section id="industry-solutions" className="section-container py-20 md:py-24">
       <h2 className="section-title">Packaging programs by business type</h2>
       <p className="mt-4 max-w-3xl text-lg muted-text">
-        Select an industry to see why teams choose Bag Supply Co, what problems we solve, and how packaging improves business outcomes.
+        Select your industry to see what problems we solve and how packaging improves your business outcomes.
       </p>
 
-      <div className="mt-7 grid gap-4 md:grid-cols-3">
+      <div className="mt-7 grid gap-4 grid-cols-2 md:grid-cols-4">
         {INDUSTRIES.map((industry) => {
           const isActive = industry.id === activeId
           return (
@@ -171,62 +171,41 @@ export default function IndustrySolutionsSection() {
         ref={panelRef}
         className="mt-6 overflow-hidden rounded-2xl border border-kraft-300/40 bg-white p-6 shadow-[var(--shadow-soft)] md:p-9"
       >
-        {active ? (
-          <div key={active.id} className="industry-panel">
+        <div key={active.id} className="industry-panel">
+          <div className="flex flex-wrap items-start justify-between gap-4">
             <div>
               <h3 className="font-serif text-2xl text-brand-600">{active.title}</h3>
-              <p className="mt-2 text-sm font-semibold muted-text">{active.examples}</p>
+              <p className="mt-1 text-xs text-muted">{active.examples}</p>
             </div>
+            <p className="rounded-full bg-[#F0EBE2] px-3 py-1 text-xs font-semibold text-brand-600">{active.leadTime}</p>
+          </div>
 
-            <div className="mt-6 grid gap-4 lg:grid-cols-3">
-              <div className="rounded-2xl border border-kraft-300/40 bg-[#FCFAF7] p-5">
-                <h4 className="text-sm font-black text-brand-600">Why Bag Supply Co</h4>
-                <ul className="mt-3 space-y-2 text-sm muted-text">
-                  {active.why.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className="rounded-2xl border border-kraft-300/40 bg-[#FCFAF7] p-5">
-                <h4 className="text-sm font-black text-brand-600">Problems We Solve</h4>
-                <ul className="mt-3 space-y-2 text-sm muted-text">
-                  {active.problems.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className="rounded-2xl border border-kraft-300/40 bg-[#FCFAF7] p-5">
-                <h4 className="text-sm font-black text-brand-600">Business Benefits</h4>
-                <ul className="mt-3 space-y-2 text-sm muted-text">
-                  {active.benefits.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+          <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_280px]">
+            <ul className="space-y-4">
+              {active.facts.map((fact) => (
+                <li key={fact} className="flex gap-3 text-sm leading-6 text-muted">
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent-500" aria-hidden="true" />
+                  {fact}
+                </li>
+              ))}
+            </ul>
 
-            <div className="mt-6">
-              <p className="text-sm font-black text-brand-600">Related Catalogs</p>
-              <div className="mt-2 flex flex-wrap gap-2">
-                {active.catalogs.map((catalog) => (
-                  <Link
-                    key={catalog.href}
-                    href={catalog.href}
-                    className="rounded-full border border-kraft-300/50 bg-white px-4 py-2 text-xs font-bold text-muted hover:bg-cream"
-                  >
-                    {catalog.label}
-                  </Link>
-                ))}
-              </div>
+            <div className="space-y-2">
+              <p className="text-xs font-black uppercase tracking-wider text-brand-600">Catalogs</p>
+              {active.catalogs.map((catalog) => (
+                <Link
+                  key={catalog.href}
+                  href={catalog.href}
+                  className="flex items-center justify-between rounded-xl border border-kraft-300/50 bg-[#FCFAF7] px-4 py-3 hover:border-accent-400/60 hover:bg-white"
+                >
+                  <span className="text-sm font-bold text-brand-600">{catalog.label}</span>
+                  <span className="ml-3 text-xs text-muted">{catalog.note}</span>
+                </Link>
+              ))}
             </div>
           </div>
-        ) : (
-          <div className="industry-panel text-center">
-            <p className="text-sm font-semibold text-muted">Select an industry above to view details.</p>
-          </div>
-        )}
+        </div>
       </div>
     </section>
   )
 }
-

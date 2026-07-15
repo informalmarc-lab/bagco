@@ -11,7 +11,7 @@ export default function QuickQuoteForm() {
     name: '',
     email: '',
     company: '',
-    industry: 'Dispensary',
+    industry: '',
     quantity: '',
     message: '',
     website: '',
@@ -56,7 +56,7 @@ export default function QuickQuoteForm() {
         name: '',
         email: '',
         company: '',
-        industry: 'Dispensary',
+        industry: '',
         quantity: '',
         message: '',
         website: '',
@@ -69,9 +69,9 @@ export default function QuickQuoteForm() {
 
   return (
     <form onSubmit={onSubmit} className="surface-card rounded-md p-6 md:p-8">
-      <h3 className="text-2xl font-black text-[#1E4D2B]">Build a Quote</h3>
+      <h3 className="text-xl font-bold text-[#1E4D2B]">Build a Quote</h3>
       <p className="mt-2 text-sm text-[#5F4D33]">
-        Frictionless intake for pharmacy, dispensary, smoke shop, veterinary, and distributor teams. We respond with a structured program recommendation.
+        Tell us what you need. We&apos;ll respond within 24 hours with the right program — stock, custom, or distributor path.
       </p>
 
       <div className="mt-5 grid gap-3 md:grid-cols-2">
@@ -121,6 +121,7 @@ export default function QuickQuoteForm() {
             onChange={(e) => setForm((prev) => ({ ...prev, industry: e.target.value }))}
             className="rounded-md border border-[#D8C5A7] bg-white px-3 py-2 text-sm"
           >
+            <option value="" disabled>Select your industry</option>
             <option>Dispensary</option>
             <option>Smoke Shop</option>
             <option>Pharmacy</option>
@@ -129,11 +130,12 @@ export default function QuickQuoteForm() {
           </select>
         </label>
         <label className="grid gap-1 text-sm font-semibold text-[#5F4D33] md:col-span-2">
-          Packaging goals or requirements
+          What do you need?
           <textarea
             value={form.message}
             onChange={(e) => setForm((prev) => ({ ...prev, message: e.target.value }))}
             rows={4}
+            placeholder="e.g. Custom pharmacy bags, ~50 cases/month, starting Q3"
             className="rounded-md border border-[#D8C5A7] bg-white px-3 py-2 text-sm"
           />
         </label>
@@ -152,8 +154,8 @@ export default function QuickQuoteForm() {
         <button type="submit" className="btn-primary w-full justify-center sm:w-auto" disabled={state === 'submitting'}>
           {state === 'submitting' ? 'Submitting...' : 'Build a Quote'}
         </button>
-        {state === 'success' && <p className="text-sm font-semibold text-emerald-700" role="status" aria-live="polite">Quote request sent.</p>}
-        {state === 'error' && <p className="text-sm font-semibold text-red-700" role="alert">{error}</p>}
+        {state === 'success' && <p className="text-sm font-semibold text-emerald-700" role="status" aria-live="polite">Sent — we&apos;ll follow up within 24 hours.</p>}
+        {state === 'error' && <p className="text-sm font-semibold text-red-700" role="alert">{error} Try calling (704) 862-9256 instead.</p>}
       </div>
     </form>
   )

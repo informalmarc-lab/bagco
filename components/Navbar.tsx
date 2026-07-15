@@ -80,10 +80,12 @@ export default function Navbar() {
     <header className="print-hide sticky top-0 z-50 border-b border-kraft-300/50 bg-cream/95 backdrop-blur">
       <div className="section-container">
         <nav className="flex min-h-[80px] items-center justify-between gap-4">
-          <Link href="/" className="inline-flex items-center gap-3 pr-2">
-            <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-brand-600 font-serif text-base text-white shadow-[0_8px_16px_rgba(30,77,43,0.2)]">
-              BS
-            </span>
+          <Link href="/" className="inline-flex items-center gap-2 pr-2">
+            <svg viewBox="0 0 22 26" className="h-8 w-7 flex-shrink-0 text-brand-600" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M7 9V7a4 4 0 018 0v2" />
+              <rect x="2" y="9" width="18" height="15" rx="2" />
+              <line x1="7" y1="14" x2="15" y2="14" strokeWidth="1.2" strokeOpacity="0.45" />
+            </svg>
             <div>
               <p className="font-serif text-[17px] leading-tight tracking-[-0.01em] text-brand-600">Bag Supply Co</p>
               <p className="text-xs font-medium text-muted">Wholesale bags</p>
@@ -236,7 +238,10 @@ export default function Navbar() {
             className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-kraft-300/70 bg-white text-brand-600"
             aria-label="Toggle search"
           >
-            {'\u{1F50E}'}
+            <svg viewBox="0 0 20 20" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <circle cx="8.5" cy="8.5" r="5.5" />
+              <line x1="13" y1="13" x2="18" y2="18" />
+            </svg>
           </button>
           {showMobileSearch && (
             <div className="mt-2 flex items-center gap-2">
