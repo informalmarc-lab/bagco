@@ -3,12 +3,8 @@ import products from '@/data/makeYourQuoteProducts.json'
 
 type QuoteProduct = { item: string; size: string; pack: number; prices: Record<string, number> }
 
-// Dispensary lineup, drawn to scale. Width and height are the bag face in inches; depth is the gusset.
-const LINEUP = [
-  { item: '#23', label: 'Pinch bottom', w: 5, d: 2, h: 10, minimum: 12000, note: 'Pre-rolls, carts, edibles' },
-  { item: '#25', label: 'Square bottom', w: 6, d: 3.5, h: 11, minimum: 6000, note: 'Most popular exit bag' },
-  { item: '#26', label: 'Square bottom', w: 6.5, d: 4, h: 13.5, minimum: 4000, note: 'Bigger baskets and jars' },
-]
+// Width and height are the bag face in inches; depth is the gusset (0 for flat bags).
+export type LineupBag = { item: string; label: string; w: number; d: number; h: number; minimum: number; note: string }
 
 const PX_PER_INCH = 20
 
@@ -47,7 +43,7 @@ function BagFace({ w, h }: { w: number; h: number }) {
   )
 }
 
-export default function SizeLineup() {
+export default function SizeLineup({ lineup }: { lineup: LineupBag[] }) {
   return (
     <div>
       {/* Bags drawn to the same scale, standing on one shelf line */}
@@ -55,7 +51,7 @@ export default function SizeLineup() {
         className="grid grid-cols-3 items-end gap-3 border-b-2 border-[#1A1A1A] [--ppi:8.5px] sm:gap-10 sm:[--ppi:20px]"
         aria-hidden="true"
       >
-        {LINEUP.map((bag) => (
+        {lineup.map((bag) => (
           <div key={bag.item} className="flex items-end gap-2">
             <div className="flex flex-col items-center" style={{ height: `calc(var(--ppi) * ${bag.h})` }}>
               <span className="w-px flex-1 bg-[#8C8C86]" />
@@ -69,7 +65,7 @@ export default function SizeLineup() {
       <p className="mt-3 text-xs text-[#5F5F5A]">Front view, drawn to scale.</p>
 
       <div className="mt-10 grid gap-10 sm:grid-cols-3">
-        {LINEUP.map((bag) => {
+        {lineup.map((bag) => {
           const price = priceAtMinimum(bag.item, bag.minimum)
           return (
             <div key={bag.item}>
@@ -79,7 +75,9 @@ export default function SizeLineup() {
                 <div className="flex justify-between gap-4 border-b border-[#E3E3DE] pb-1.5">
                   <dt>Size</dt>
                   <dd className="font-semibold text-[#1A1A1A]">
-                    {inches(bag.w)}&quot; × {inches(bag.d)}&quot; × {inches(bag.h)}&quot;
+                    {bag.d
+                      ? `${inches(bag.w)}" × ${inches(bag.d)}" × ${inches(bag.h)}"`
+                      : `${inches(bag.w)}" × ${inches(bag.h)}"`}
                   </dd>
                 </div>
                 <div className="flex justify-between gap-4 border-b border-[#E3E3DE] pb-1.5">

@@ -1,11 +1,8 @@
 import type { Metadata } from 'next'
 import { Archivo } from 'next/font/google'
-import Image from 'next/image'
 import Link from 'next/link'
-import InkBag from '@/components/home/InkBag'
-import SizeLineup from '@/components/home/SizeLineup'
+import AudienceHome from '@/components/home/AudienceHome'
 import StructuredData from '@/components/seo/StructuredData'
-import { contactPhone, contactTextHref } from '@/components/siteConfig'
 import { buildPageMetadata } from '@/lib/seo/pageMetadata'
 import { buildFaqJsonLd, buildOrganizationJsonLd } from '@/lib/seo/structuredData'
 
@@ -17,9 +14,9 @@ const display = Archivo({
 })
 
 export const metadata: Metadata = buildPageMetadata({
-  title: 'Custom Printed Dispensary Bags | Bag Supply Co',
+  title: 'Custom Printed Paper Bags for Dispensaries, Pharmacies, and Vet Clinics | Bag Supply Co',
   description:
-    'Custom printed white paper exit bags for dispensaries, plus prescription bags for pharmacies and vet clinics. Family-made in Monroe, NC since 1955. Get a price online.',
+    'Custom printed white paper bags for dispensaries, pharmacies, and vet clinics. Family-made in Monroe, NC since 1955. Get a price online.',
   path: '/',
   imagePath: '/catalog/custom/3-color/CBC-25-FC3C.webp',
 })
@@ -44,27 +41,6 @@ const facts = [
   { value: 'USA', label: 'Printed in Monroe, NC' },
   { value: '8+ cases', label: 'No freight charge, fuel surcharge only' },
   { value: '45%', label: 'Post-consumer recycled paper' },
-]
-
-const clinicPrograms = [
-  {
-    title: 'Pharmacies',
-    detail:
-      'Prescription bags in 3 sizes, #21, #22, and #23. Order stock Rx designs with no minimum, or print your pharmacy name and logo.',
-    image: '/catalog/pharmacy/gs/GS-23-FRONT.webp',
-    alt: 'White #23 prescription bag with a stock Rx design',
-    catalogHref: '/catalog/pharmacy',
-    linkLabel: 'See pharmacy bags',
-  },
-  {
-    title: 'Vet clinics',
-    detail:
-      'Medication and carryout bags with your clinic name, phone, and logo. The same sizes and pricing as our pharmacy bags.',
-    image: '/catalog/veterinary/vb2/7680660ace_IMG_9167_cc10f884.JPG',
-    alt: 'White paper bag custom printed in blue for a cat clinic',
-    catalogHref: '/catalog/veterinary',
-    linkLabel: 'See vet clinic bags',
-  },
 ]
 
 const otherIndustries = [
@@ -107,101 +83,7 @@ export default function Home() {
       <StructuredData data={buildOrganizationJsonLd()} />
       <StructuredData data={buildFaqJsonLd(faqItems)} />
 
-      {/* Hero */}
-      <section className="bg-[#1E4D2B] text-white">
-        <div className="mx-auto grid max-w-6xl items-center gap-14 px-5 py-16 sm:px-8 md:py-24 lg:grid-cols-[1.15fr_1fr]">
-          <div>
-            <h1
-              className="font-display text-[2.75rem] font-extrabold leading-[0.95] tracking-[-0.02em] sm:text-6xl lg:text-[4.5rem]"
-              style={{ fontStretch: '78%', color: '#FFFFFF' }}
-            >
-              Your logo on every bag that leaves the counter.
-            </h1>
-            <p className="mt-6 max-w-[34rem] text-lg leading-relaxed text-white/85">
-              Custom printed white paper exit bags for dispensaries. Made in Monroe, North Carolina by a family
-              that has been making bags since 1955.
-            </p>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <Link
-                href="/makeyourquote"
-                className="inline-flex min-h-[52px] items-center rounded-md bg-white px-7 text-base font-bold text-[#1E4D2B] hover:bg-[#F1F1EC] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-              >
-                Get a price
-              </Link>
-              <a
-                href={contactTextHref}
-                className="inline-flex min-h-[52px] items-center rounded-md border-2 border-white/60 px-7 text-base font-bold text-white hover:border-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-              >
-                Text {contactPhone}
-              </a>
-            </div>
-            <p className="mt-5 text-sm text-white/70">Prices online, no sales call needed. Most quotes take 2 minutes.</p>
-            <p className="mt-8 border-t border-white/20 pt-5 text-white/85">
-              Pharmacy or vet clinic?{' '}
-              <a href="#pharmacy-vet" className="font-semibold text-white underline decoration-1 underline-offset-4 hover:decoration-2">
-                See prescription and clinic bags
-              </a>
-            </p>
-          </div>
-          <InkBag />
-        </div>
-      </section>
-
-      {/* Sizes */}
-      <section className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
-        <h2
-          className="font-display text-4xl font-extrabold tracking-[-0.01em] text-[#1A1A1A] sm:text-5xl"
-          style={{ fontStretch: '78%' }}
-        >
-          Three sizes cover most dispensaries.
-        </h2>
-        <p className="mt-4 max-w-2xl text-lg text-[#3D3D39]">Drawn to scale, so you can see what fits your counter.</p>
-        <div className="mt-12">
-          <SizeLineup />
-        </div>
-      </section>
-
-      {/* Pharmacies and vet clinics */}
-      <section id="pharmacy-vet" className="scroll-mt-24 border-t border-[#E3E3DE]">
-        <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
-          <h2
-            className="font-display text-4xl font-extrabold tracking-[-0.01em] text-[#1A1A1A] sm:text-5xl"
-            style={{ fontStretch: '78%' }}
-          >
-            Pharmacy and vet clinic bags, too.
-          </h2>
-          <p className="mt-4 max-w-2xl text-lg text-[#3D3D39]">
-            Prescription bags are where we started. Same paper, same press, same family.
-          </p>
-          <div className="mt-12 grid gap-12 md:grid-cols-2">
-            {clinicPrograms.map((program) => (
-              <article key={program.title} className="grid grid-cols-[120px_1fr] gap-6 sm:grid-cols-[160px_1fr]">
-                <div className="relative aspect-[3/4] overflow-hidden rounded-md bg-white">
-                  <Image src={program.image} alt={program.alt} fill sizes="160px" className={program.title === 'Pharmacies' ? 'scale-[1.45] object-contain' : 'object-cover'} />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-[#1A1A1A]">{program.title}</h3>
-                  <p className="mt-2 text-[#3D3D39]">{program.detail}</p>
-                  <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
-                    <Link
-                      href={program.catalogHref}
-                      className="font-semibold text-[#1E4D2B] underline decoration-2 underline-offset-4 hover:text-[#1A1A1A]"
-                    >
-                      {program.linkLabel}
-                    </Link>
-                    <Link
-                      href="/makeyourquote"
-                      className="font-semibold text-[#1E4D2B] underline decoration-2 underline-offset-4 hover:text-[#1A1A1A]"
-                    >
-                      Get a price
-                    </Link>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+      <AudienceHome />
 
       {/* How it works */}
       <section className="border-y border-[#E3E3DE] bg-[#F6F6F3]">

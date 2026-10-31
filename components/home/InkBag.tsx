@@ -14,7 +14,9 @@ export const STOCK_INKS = [
   { name: 'Process Blue U', hex: '#1689C9' },
 ] as const
 
-export default function InkBag() {
+type InkBagProps = { name: string; lines: [string, string]; mark: 'leaf' | 'cross' | 'paw' }
+
+export default function InkBag({ name, lines, mark }: InkBagProps) {
   const [ink, setInk] = useState<(typeof STOCK_INKS)[number]>(STOCK_INKS[0])
 
   return (
@@ -39,11 +41,21 @@ export default function InkBag() {
         {/* sample logo: printed in the chosen ink */}
         <g style={{ transition: 'fill 220ms ease, stroke 220ms ease' }} fill={ink.hex} stroke={ink.hex}>
           <circle cx="150" cy="178" r="62" fill="none" strokeWidth="7" style={{ transition: 'stroke 220ms ease' }} />
-          <path
-            d="M150 136 C176 152 182 186 150 220 C118 186 124 152 150 136 Z"
-            stroke="none"
-            style={{ transition: 'fill 220ms ease' }}
-          />
+          {mark === 'leaf' && (
+            <path d="M150 136 C176 152 182 186 150 220 C118 186 124 152 150 136 Z" stroke="none" style={{ transition: 'fill 220ms ease' }} />
+          )}
+          {mark === 'cross' && (
+            <path d="M138 142 H162 V166 H186 V190 H162 V214 H138 V190 H114 V166 H138 Z" stroke="none" style={{ transition: 'fill 220ms ease' }} />
+          )}
+          {mark === 'paw' && (
+            <g stroke="none" style={{ transition: 'fill 220ms ease' }}>
+              <ellipse cx="150" cy="196" rx="22" ry="18" />
+              <ellipse cx="124" cy="170" rx="8" ry="11" />
+              <ellipse cx="140" cy="156" rx="8" ry="11" />
+              <ellipse cx="160" cy="156" rx="8" ry="11" />
+              <ellipse cx="176" cy="170" rx="8" ry="11" />
+            </g>
+          )}
           <text
             x="150"
             y="276"
@@ -54,12 +66,12 @@ export default function InkBag() {
             letterSpacing="1"
             style={{ fontFamily: 'var(--font-display), sans-serif', transition: 'fill 220ms ease' }}
           >
-            Your Dispensary
+            {name}
           </text>
         </g>
         <g fill="#1A1A1A" fontSize="11" textAnchor="middle" style={{ fontFamily: 'var(--font-sans), sans-serif' }}>
-          <text x="150" y="306">123 Main Street, Your Town</text>
-          <text x="150" y="324">License #000000</text>
+          <text x="150" y="306">{lines[0]}</text>
+          <text x="150" y="324">{lines[1]}</text>
         </g>
       </svg>
 
