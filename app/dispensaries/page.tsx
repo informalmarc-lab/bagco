@@ -257,7 +257,6 @@ export default function DispensariesLandingPage() {
               <h2 className="section-title">How the custom bag quote works.</h2>
               <p className="mt-4 text-sm leading-6 text-muted">
                 Keep the intake focused on the paper bag: size, print colors, artwork, quantity, and reorder timing.
-                Compliance labels and mylar can stay separate from the first custom paper bag decision.
               </p>
               <Link href="/makeyourquote" className="btn-primary mt-5">
                 Start Custom Quote
@@ -327,8 +326,8 @@ export default function DispensariesLandingPage() {
             <Link href="/makeyourquote" className="btn-primary">
               Start Quote
             </Link>
-            <Link href="/industries/dispensary" className="btn-secondary-inverse">
-              Read Full Dispensary Guide
+            <Link href="/blog/dispensary-exit-bag-requirements" className="btn-secondary-inverse">
+              Read the Exit Bag Guide
             </Link>
           </div>
         </div>

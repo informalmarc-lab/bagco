@@ -5,9 +5,7 @@ import {
   getCatalogProductSizes,
   getCatalogSizePath,
 } from '@/lib/catalogProducts'
-import { getAllCigarProducts } from '@/lib/cigarCatalog'
 import { getAllRetailProducts } from '@/lib/retailCatalog'
-import { getAllMylarProducts } from '@/lib/mylarCatalog'
 import { CITIES } from '@/lib/seo/cities'
 import { INDUSTRY_PAGES } from '@/lib/seo/industries'
 import { getSiteUrl } from '@/lib/seo/site'
@@ -33,20 +31,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   )
 
-  const mylarRoutes = getAllMylarProducts().map((product) => ({
-    route: `/catalog/mylar-bags/${product.slug}`,
-    priority: 0.76,
-    changeFrequency: 'weekly' as const,
-  }))
-
   const retailRoutes = getAllRetailProducts().map((product) => ({
     route: `/catalog/retail-bags/${product.slug}`,
-    priority: 0.72,
-    changeFrequency: 'weekly' as const,
-  }))
-
-  const cigarRoutes = getAllCigarProducts().map((product) => ({
-    route: `/catalog/cigar-bags/${product.slug}`,
     priority: 0.72,
     changeFrequency: 'weekly' as const,
   }))
@@ -65,16 +51,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '/catalog/veterinary', priority: 0.85, changeFrequency: 'weekly' },
     { route: '/catalog/custom', priority: 0.9, changeFrequency: 'weekly' },
     { route: '/catalog/retail-bags', priority: 0.85, changeFrequency: 'weekly' },
-    { route: '/catalog/cigar-bags', priority: 0.85, changeFrequency: 'weekly' },
-    { route: '/catalog/mylar-bags', priority: 0.86, changeFrequency: 'weekly' },
-    { route: '/catalog/labels', priority: 0.84, changeFrequency: 'weekly' },
     { route: '/products', priority: 0.82, changeFrequency: 'weekly' },
     { route: '/gallery', priority: 0.7, changeFrequency: 'monthly' },
     { route: '/industries', priority: 0.9, changeFrequency: 'weekly' },
     { route: '/dispensaries', priority: 0.86, changeFrequency: 'weekly' },
-    { route: '/industries/dispensary', priority: 0.8, changeFrequency: 'monthly' },
     { route: '/industries/smoke-shops', priority: 0.8, changeFrequency: 'monthly' },
-    { route: '/industries/cigar-shops', priority: 0.8, changeFrequency: 'monthly' },
     { route: '/industries/pharmacies', priority: 0.82, changeFrequency: 'monthly' },
     { route: '/industries/veterinary', priority: 0.82, changeFrequency: 'monthly' },
     { route: '/industries/retail', priority: 0.8, changeFrequency: 'monthly' },
@@ -132,9 +113,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...industryCityRoutes,
     ...productOverviewRoutes,
     ...productSizeRoutes,
-    ...mylarRoutes,
     ...retailRoutes,
-    ...cigarRoutes,
     ...legacyCatalogProductRoutes,
   ]
     .filter(({ route }) => !excludedRoutes.has(route))

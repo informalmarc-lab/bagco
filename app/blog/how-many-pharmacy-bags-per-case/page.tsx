@@ -20,14 +20,14 @@ const sections: BlogPostSection[] = [
   {
     heading: 'Common Case Quantities Across Standard Rx Sizes',
     paragraphs: [
-      'A typical pharmacy mix includes sizes such as 5x2x10, 6x4x11, 7x4x13, and 10x5x15. Smaller profiles often come in larger case quantities, while large formats are commonly packed in lower counts per case. Many programs follow a practical pattern: high count cases for compact sizes, mid count cases for workhorse sizes, and lower count cases for oversized formats that turn more slowly.',
+      'A typical pharmacy mix includes sizes such as 5x2x10, 6x3.5x11, 7x4x13, and 10x5x15. Smaller profiles often come in larger case quantities, while large formats are commonly packed in lower counts per case. Many programs follow a practical pattern: high count cases for compact sizes, mid count cases for workhorse sizes, and lower count cases for oversized formats that turn more slowly.',
       'The exact case pack varies by style, but operationally the pattern stays consistent. Fast-moving daily sizes need predictable replenishment, while larger bags usually require less frequent restock. If you map your real demand to these case pack realities, your ordering becomes much more accurate and storage becomes easier to manage.'
     ]
   },
   {
     heading: 'How to Calculate Monthly Case Needs',
     paragraphs: [
-      'Start with average monthly prescriptions and estimate size mix by percentage. Example: if a store dispenses 6,000 scripts monthly and 45 percent fit a 6x4x11 bag, expected usage for that size is about 2,700 bags. Divide 2,700 by the case quantity for that size to estimate base case demand, then round up to whole cases for ordering.',
+      'Start with average monthly prescriptions and estimate size mix by percentage. Example: if a store dispenses 6,000 scripts monthly and 45 percent fit a 6x3.5x11 bag, expected usage for that size is about 2,700 bags. Divide 2,700 by the case quantity for that size to estimate base case demand, then round up to whole cases for ordering.',
       'After baseline demand, add a safety buffer. For stable locations, 10 percent may be enough. For stores with seasonal spikes or frequent volume shifts, 15 to 20 percent is often safer. This protects you from stockouts without forcing oversized inventory levels. The key is using the same formula monthly so adjustments are based on data, not guesswork.'
     ]
   },

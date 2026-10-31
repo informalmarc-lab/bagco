@@ -79,7 +79,7 @@ const BUYER_PATHS = [
     detail: 'Clinic-ready paper bags for meds, discharge kits, and retail.',
   },
   {
-    href: '/industries/dispensary',
+    href: '/dispensaries',
     title: 'Dispensary Packaging',
     detail: 'Exit bags, labels, and compliant packaging paths.',
   },

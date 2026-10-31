@@ -98,7 +98,7 @@ const pricingRows = [
   },
   {
     product: '6lb Bag',
-    size: '6 x 4 x 11',
+    size: '6 x 3.5 x 11',
     listPrice: '$53',
     minQty: '1,000',
     discount15: '6,000',
@@ -110,7 +110,7 @@ const pricingRows = [
   },
   {
     product: '12lb Bag',
-    size: '7 x 4 x 14',
+    size: '6.5 x 4 x 13.5',
     listPrice: '$85',
     minQty: '1,000',
     discount15: '4,000',

@@ -10,7 +10,6 @@ export type IndustryKey =
   | 'veterinary'
   | 'dispensary'
   | 'smoke-shop'
-  | 'event-company'
 
 export type IndustryMeta = {
   key: IndustryKey
@@ -58,15 +57,6 @@ export const INDUSTRY_PAGES: IndustryMeta[] = [
     focus: 'Stocked dispensary-style paper bag designs with discreet carryout sizing for smoke shops and specialty retailers.',
     naics: '453991',
     catalogIndustry: 'smoke-shop',
-  },
-  {
-    key: 'event-company',
-    slug: 'event-company-bags',
-    label: 'Event Company Bags',
-    marketLabel: 'event companies',
-    focus: 'Kitting, gifting, and event swag distribution programs.',
-    naics: '56192',
-    catalogIndustry: 'custom',
   },
 ]
 

@@ -1,7 +1,6 @@
 'use client'
 
 import { usePathname } from 'next/navigation'
-import { CartProvider } from '@/components/cart/CartProvider'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import AccessibilityControls from '@/components/AccessibilityControls'
@@ -16,7 +15,7 @@ export default function SiteChrome({ children }: { children: React.ReactNode }) 
   }
 
   return (
-    <CartProvider>
+    <>
       <a href="#main-content" className="skip-link">
         Skip to main content
       </a>
@@ -27,6 +26,6 @@ export default function SiteChrome({ children }: { children: React.ReactNode }) 
       </main>
       <AccessibilityControls />
       <Footer />
-    </CartProvider>
+    </>
   )
 }

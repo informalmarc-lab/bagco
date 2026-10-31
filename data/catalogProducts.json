@@ -9,8 +9,8 @@
       "#21 (3.5\" x 1.5\" x 10\")",
       "#22 (4.5\" x 2.25\" x 11\")",
       "#23 (5\" x 2\" x 10\")",
-      "#25 (6\" x 4\" x 11\")",
-      "#26 (7\" x 4\" x 14\")",
+      "#25 (6\" x 3.5\" x 11\")",
+      "#26 (6.5\" x 4\" x 13.5\")",
       "#28 (8\" x 5\" x 17\")",
       "#12 (7\" x 10\")",
       "#14 (9\" x 11\")",
@@ -39,11 +39,11 @@
         "price": 117.42
       },
       {
-        "label": "#25 (6\" x 4\" x 11\") 1,000 per case",
+        "label": "#25 (6\" x 3.5\" x 11\") 1,000 per case",
         "price": 65.91
       },
       {
-        "label": "#26 (7\" x 4\" x 14\") 1,000 per case",
+        "label": "#26 (6.5\" x 4\" x 13.5\") 1,000 per case",
         "price": 102.29
       },
       {
@@ -109,8 +109,8 @@
       "#21 (3.5\" x 1.5\" x 10\")",
       "#22 (4.5\" x 2.25\" x 11\")",
       "#23 (5\" x 2\" x 10\")",
-      "#25 (6\" x 4\" x 11\")",
-      "#26 (7\" x 4\" x 14\")",
+      "#25 (6\" x 3.5\" x 11\")",
+      "#26 (6.5\" x 4\" x 13.5\")",
       "#28 (8\" x 5\" x 17\")",
       "#12 (7\" x 10\")",
       "#14 (9\" x 11\")",
@@ -139,11 +139,11 @@
         "price": 117.41
       },
       {
-        "label": "#25 (6\" x 4\" x 11\") 1,000 per case",
+        "label": "#25 (6\" x 3.5\" x 11\") 1,000 per case",
         "price": 65.91
       },
       {
-        "label": "#26 (7\" x 4\" x 14\") 1,000 per case",
+        "label": "#26 (6.5\" x 4\" x 13.5\") 1,000 per case",
         "price": 102.29
       },
       {
@@ -173,7 +173,7 @@
     "sizeOptions": [
       "Pinch bottom #22 (4.5\" x 2.25\" x 11\")",
       "Flat bag #12 (7\" x 10\")",
-      "Square bottom #25 (6\" x 4\" x 11\")"
+      "Square bottom #25 (6\" x 3.5\" x 11\")"
     ],
     "caseCount": "1,000-3,000/case",
     "startingPrice": 65.91,
@@ -182,7 +182,7 @@
     ],
     "availability": "stock",
     "image": "/catalog/veterinary/vb1/VB1-22-FRONT.webp",
-    "description": "VB1 is a stock veterinary bag program available in three sizes, designed for medication handoff and repeat prescription workflows at veterinary and pet-care clinics. Pinch bottom #22 (4.5\" x 2.25\" x 11\") - 3,000 qty. Flat bag #12 (7\" x 10\") - 3,000 qty. Square bottom #25 (6\" x 4\" x 11\") - 1,000 qty.",
+    "description": "VB1 is a stock veterinary bag program available in three sizes, designed for medication handoff and repeat prescription workflows at veterinary and pet-care clinics. Pinch bottom #22 (4.5\" x 2.25\" x 11\") - 3,000 qty. Flat bag #12 (7\" x 10\") - 3,000 qty. Square bottom #25 (6\" x 3.5\" x 11\") - 1,000 qty.",
     "collections": [],
     "sizePricing": [
       {
@@ -194,7 +194,7 @@
         "price": 115.35
       },
       {
-        "label": "Square bottom #25 (6\" x 4\" x 11\") 1,000 per case",
+        "label": "Square bottom #25 (6\" x 3.5\" x 11\") 1,000 per case",
         "price": 65.91
       }
     ]
@@ -208,7 +208,7 @@
     "sizeOptions": [
       "Pinch bottom #22 (4.5\" x 2.25\" x 11\")",
       "Flat bag #12 (7\" x 10\")",
-      "Square bottom #25 (6\" x 4\" x 11\")"
+      "Square bottom #25 (6\" x 3.5\" x 11\")"
     ],
     "caseCount": "1,000-3,000/case",
     "startingPrice": 65.91,
@@ -217,7 +217,7 @@
     ],
     "availability": "stock",
     "image": "/catalog/veterinary/vb2/VB2-22-FRONT.webp",
-    "description": "Full Case of Veterinary Bags design #VB2 in three Quantity/Size options. Perfect for every Vet or Pet Store, these adorable bags will leave paw prints all over the hearts of your customers. Pinch bottom #22 - 4.5 x 2.25 x 11” - 3,000 qty Flat Pinch bottom #12 - 7 x 10” - 3,000 qty Square bottom #25 - 6 x 4 x 11” - 1,000 qty",
+    "description": "Full Case of Veterinary Bags design #VB2 in three Quantity/Size options. Perfect for every Vet or Pet Store, these adorable bags will leave paw prints all over the hearts of your customers. Pinch bottom #22 - 4.5 x 2.25 x 11” - 3,000 qty Flat Pinch bottom #12 - 7 x 10” - 3,000 qty Square bottom #25 - 6 x 3.5 x 11” - 1,000 qty",
     "collections": [],
     "sizePricing": [
       {
@@ -229,7 +229,7 @@
         "price": 115.35
       },
       {
-        "label": "Square bottom #25 (6\" x 4\" x 11\") 1,000 per case",
+        "label": "Square bottom #25 (6\" x 3.5\" x 11\") 1,000 per case",
         "price": 65.91
       }
     ]
@@ -243,7 +243,7 @@
     "sizeOptions": [
       "Pinch bottom #22 (4.5\" x 2.25\" x 11\")",
       "Flat bag #12 (7\" x 10\")",
-      "Square bottom #25 (6\" x 4\" x 11\")"
+      "Square bottom #25 (6\" x 3.5\" x 11\")"
     ],
     "caseCount": "1,000-3,000/case",
     "startingPrice": 65.91,
@@ -252,7 +252,7 @@
     ],
     "availability": "stock",
     "image": "/catalog/veterinary/vb6/VB6-22-FRONT.webp",
-    "description": "Full Case of Veterinary Bags design #VB6 in three Quantity/Size options. Perfect for every Vet or Pet Store, these adorable bags will leave paw prints all over the hearts of your customers. Pinch bottom #22 - 4.5 x 2.25 x 11” - 3,000 qty Flat Pinch bottom #12 - 7 x 10” - 3,000 qty Square bottom #25 - 6 x 4 x 11” - 1,000 qty",
+    "description": "Full Case of Veterinary Bags design #VB6 in three Quantity/Size options. Perfect for every Vet or Pet Store, these adorable bags will leave paw prints all over the hearts of your customers. Pinch bottom #22 - 4.5 x 2.25 x 11” - 3,000 qty Flat Pinch bottom #12 - 7 x 10” - 3,000 qty Square bottom #25 - 6 x 3.5 x 11” - 1,000 qty",
     "collections": [],
     "sizePricing": [
       {
@@ -264,7 +264,7 @@
         "price": 115.35
       },
       {
-        "label": "Square bottom #25 (6\" x 4\" x 11\") 1,000 per case",
+        "label": "Square bottom #25 (6\" x 3.5\" x 11\") 1,000 per case",
         "price": 65.91
       }
     ]
@@ -609,8 +609,8 @@
       "#21 (3.5\" x 1.5\" x 10\")",
       "#22 (4.5\" x 2.25\" x 11\")",
       "#23 (5\" x 2\" x 10\")",
-      "#25 (6\" x 4\" x 11\")",
-      "#26 (7\" x 4\" x 14\")",
+      "#25 (6\" x 3.5\" x 11\")",
+      "#26 (6.5\" x 4\" x 13.5\")",
       "#28 (8\" x 5\" x 17\")",
       "#12 (7\" x 10\")",
       "#14 (9\" x 11\")",
@@ -639,11 +639,11 @@
         "price": 117.4
       },
       {
-        "label": "#25 (6\" x 4\" x 11\") 2,000 per case",
+        "label": "#25 (6\" x 3.5\" x 11\") 2,000 per case",
         "price": 133.08
       },
       {
-        "label": "#26 (7\" x 4\" x 14\") 1,000 per case",
+        "label": "#26 (6.5\" x 4\" x 13.5\") 1,000 per case",
         "price": 102.29
       },
       {
@@ -674,8 +674,8 @@
       "#21 (3.5\" x 1.5\" x 10\")",
       "#22 (4.5\" x 2.25\" x 11\")",
       "#23 (5\" x 2\" x 10\")",
-      "#25 (6\" x 4\" x 11\")",
-      "#26 (7\" x 4\" x 14\")",
+      "#25 (6\" x 3.5\" x 11\")",
+      "#26 (6.5\" x 4\" x 13.5\")",
       "#28 (8\" x 5\" x 17\")",
       "#12 (7\" x 10\")",
       "#14 (9\" x 11\")",
@@ -704,11 +704,11 @@
         "price": 117.39
       },
       {
-        "label": "#25 (6\" x 4\" x 11\") 2,000 per case",
+        "label": "#25 (6\" x 3.5\" x 11\") 2,000 per case",
         "price": 133.08
       },
       {
-        "label": "#26 (7\" x 4\" x 14\") 1,000 per case",
+        "label": "#26 (6.5\" x 4\" x 13.5\") 1,000 per case",
         "price": 102.29
       },
       {
@@ -739,8 +739,8 @@
       "#21 (3.5\" x 1.5\" x 10\")",
       "#22 (4.5\" x 2.25\" x 11\")",
       "#23 (5\" x 2\" x 10\")",
-      "#25 (6\" x 4\" x 11\")",
-      "#26 (7\" x 4\" x 14\")",
+      "#25 (6\" x 3.5\" x 11\")",
+      "#26 (6.5\" x 4\" x 13.5\")",
       "#28 (8\" x 5\" x 17\")",
       "#12 (7\" x 10\")",
       "#14 (9\" x 11\")",
@@ -769,11 +769,11 @@
         "price": 146.76
       },
       {
-        "label": "#25 (6\" x 4\" x 11\") 2,000 per case",
+        "label": "#25 (6\" x 3.5\" x 11\") 2,000 per case",
         "price": 166.36
       },
       {
-        "label": "#26 (7\" x 4\" x 14\") 1,000 per case",
+        "label": "#26 (6.5\" x 4\" x 13.5\") 1,000 per case",
         "price": 127.86
       },
       {

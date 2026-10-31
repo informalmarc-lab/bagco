@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import FallbackImage from '@/components/FallbackImage'
-import AddToCartControl from '@/components/cart/AddToCartControl'
 import FaqSection from '@/components/seo/FaqSection'
 import StructuredData from '@/components/seo/StructuredData'
 import { contactPhone, contactPhoneHref, contactTextHref } from '@/components/siteConfig'
@@ -12,16 +11,14 @@ import {
   money,
   type CatalogProduct,
 } from '@/lib/catalogProducts'
-import { getAllLabelProducts } from '@/lib/labelCatalog'
-import { formatMylarQuantityLabel, getMylarProductBySlug, type MylarProduct } from '@/lib/mylarCatalog'
-import { getCatalogProductAlt, getLabelProductAlt, getMylarProductAlt } from '@/lib/seo/imageAlt'
+import { getCatalogProductAlt } from '@/lib/seo/imageAlt'
 import { buildPageMetadata } from '@/lib/seo/pageMetadata'
 import { buildFaqJsonLd } from '@/lib/seo/structuredData'
 
 export const metadata: Metadata = buildPageMetadata({
   title: 'Wholesale Smoke Shop Bags and Packaging',
   description:
-    'Wholesale smoke shop bags for buyers who need discreet paper carryout, add-on mylar and labels, and BagSupplyCo reorder support.',
+    'Wholesale smoke shop bags for buyers who need discreet paper carryout, stocked designs, and custom printed bags with simple case pricing.',
   path: '/industries/smoke-shops',
   imagePath: '/images/catalog/smoke-shop/dispensary-bag-design-10.webp',
 })
@@ -41,15 +38,6 @@ const aboutPoints = [
   'Design variety lets teams refresh the look of the bag wall without changing the core case-count program.',
 ]
 
-const featuredMylarSlugs = [
-  '1-8-oz-gloss-gold-clear-plain',
-  '1-8-oz-gloss-holographic-clear-plain',
-  '1-8-oz-kraft-opaque-plain',
-  'pre-roll-gloss-holographic-clear-plain',
-  'pre-roll-matte-black-opaque-plain',
-  'pre-roll-kraft-opaque-plain',
-]
-
 const faqItems = [
   {
     question: 'What bag sizes work best for smoke shop carryout?',
@@ -57,14 +45,14 @@ const faqItems = [
       'Most smoke shop buyers stay with Classic RX and #12-DS paper bag formats because they simplify checkout, storage, and repeat ordering.',
   },
   {
-    question: 'Can smoke shops buy paper bags, labels, and mylar from the same supplier?',
+    question: 'Can smoke shops get bags custom printed with their logo?',
     answer:
-      'Yes. BagSupplyCo supports stocked paper bag designs plus label and mylar add-ons so smoke shop buyers can consolidate more packaging under one source.',
+      'Yes. Any of our paper bag sizes can be custom printed in 1 to 3 colors. Build a quote online to see pricing for your size and quantity.',
   },
   {
     question: 'Which catalog page should a smoke shop buyer use first?',
     answer:
-      'Start with the smoke shop paper bag selection on this page, then move into the mylar bag or label catalogs if your counter mix includes packaged add-on products.',
+      'Start with the smoke shop paper bag selection on this page. If you want your logo on the bag, use the custom quote builder.',
   },
 ]
 
@@ -74,17 +62,9 @@ function getFeaturedProducts(): CatalogProduct[] {
     .filter((product): product is CatalogProduct => Boolean(product))
 }
 
-function getFeaturedMylarProducts(): MylarProduct[] {
-  return featuredMylarSlugs
-    .map((slug) => getMylarProductBySlug(slug))
-    .filter((product): product is MylarProduct => Boolean(product))
-}
-
 export default function SmokeShopsIndustryPage() {
   const smokeShopProducts = getCatalogProductsByIndustry('smoke-shop')
   const featuredProducts = getFeaturedProducts()
-  const labels = getAllLabelProducts()
-  const mylarProducts = getFeaturedMylarProducts()
   const firstProduct = featuredProducts[0]
 
   return (
@@ -235,115 +215,6 @@ export default function SmokeShopsIndustryPage() {
                   <Link href={getCatalogOverviewPath(product)} className="btn-secondary mt-auto pt-4">
                     View Product
                   </Link>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-container pt-2">
-        <div className="tonal-panel">
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <p className="kicker">Labels</p>
-              <h2 className="section-title mt-4">Add compliance-ready labels to round out the counter program.</h2>
-              <p className="mt-3 max-w-3xl muted-text">
-                Smoke shops that carry pre-rolls, mylar, or mixed packaging can keep labeling simple with the same
-                fixed-case label options already used across dispensary-style programs.
-              </p>
-            </div>
-            <Link href="/catalog/labels" className="btn-secondary">
-              Browse Labels
-            </Link>
-          </div>
-
-          <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {labels.map((label) => (
-              <article key={label.sku} className="surface-card product-card flex h-full flex-col">
-                <div className="relative aspect-[4/3] bg-[#FAF6F0]">
-                  <FallbackImage
-                    src={label.image}
-                    fallbackSrc="/images/catalog/placeholder.svg"
-                    alt={getLabelProductAlt(label)}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                  />
-                </div>
-                <div className="flex flex-1 flex-col p-4">
-                  <p className="text-xs font-black uppercase tracking-[0.08em] text-accent-600">SKU {label.sku}</p>
-                  <h3 className="mt-2 font-serif text-lg text-brand-600">{label.name}</h3>
-                  <p className="mt-2 text-sm text-muted">{label.description}</p>
-                  <p className="mt-3 text-sm font-semibold text-muted">
-                    {label.quantity.toLocaleString('en-US')} qty per case
-                  </p>
-                  <p className="mt-1 product-card-price">{money(label.price)} / case</p>
-                  <Link href="/makeyourquote" className="btn-primary mt-auto pt-4">
-                    Build a Quote
-                  </Link>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-container pt-2">
-        <div className="tonal-panel">
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <p className="kicker">Mylar Bags</p>
-              <h2 className="section-title mt-4">Add mylar and pre-roll formats for smoke shop add-on packaging.</h2>
-              <p className="mt-3 max-w-3xl muted-text">
-                These featured mylar SKUs keep the mix focused on holographic, gold, kraft, and pre-roll-friendly
-                formats that fit smoke shop counters and specialty retail packaging displays.
-              </p>
-            </div>
-            <Link href="/catalog/mylar-bags" className="btn-secondary">
-              Browse Mylar Bags
-            </Link>
-          </div>
-
-          <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {mylarProducts.map((product) => (
-              <article key={product.sku} className="surface-card product-card flex h-full flex-col">
-                <Link href={`/catalog/mylar-bags/${product.slug}`} className="relative block aspect-[4/3] bg-[#FAF6F0]">
-                  <FallbackImage
-                    src={product.image}
-                    fallbackSrc="/images/mylar/placeholder.webp"
-                    alt={getMylarProductAlt(product)}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                  />
-                </Link>
-                <div className="flex flex-1 flex-col p-4">
-                  <p className="text-xs font-black uppercase tracking-[0.08em] text-accent-600">SKU {product.sku}</p>
-                  <h3 className="mt-2 font-serif text-lg text-brand-600">
-                    <Link href={`/catalog/mylar-bags/${product.slug}`} className="transition hover:text-accent-500">
-                      {product.name}
-                    </Link>
-                  </h3>
-                  <p className="mt-1 text-sm text-muted">{product.size} / {product.finish}</p>
-                  <p className="mt-1 text-sm text-muted">{formatMylarQuantityLabel(product.quantity)}</p>
-                  <p className="mt-2 product-card-price">{money(product.price)} / {formatMylarQuantityLabel(product.quantity)}</p>
-                  <AddToCartControl
-                    item={{
-                      id: `mylar:${product.slug}`,
-                      kind: 'mylar',
-                      sku: product.sku,
-                      slug: product.slug,
-                      name: product.name,
-                      image: product.image,
-                      productHref: `/catalog/mylar-bags/${product.slug}`,
-                      unit: 'pack',
-                      unitLabel: formatMylarQuantityLabel(product.quantity),
-                      unitPrice: product.price,
-                      quantity: 1,
-                    }}
-                    className="mt-auto pt-4"
-                  />
                 </div>
               </article>
             ))}

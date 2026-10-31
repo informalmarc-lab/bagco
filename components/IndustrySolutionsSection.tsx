@@ -20,15 +20,14 @@ const INDUSTRIES: IndustryPanel[] = [
     subtitle: 'Compliance-ready packaging for cannabis retail checkout',
     examples: 'Single-location dispensaries · Multi-location operators · Delivery services',
     facts: [
-      'Opaque exit bags, mylar bags, and compliance labels — all sourced from one place so you\'re not coordinating three vendors.',
+      'Opaque white paper exit bags, stock or custom printed with your logo, license number, and required warnings.',
       'Stock programs ship same day before 1 PM ET. When you run low mid-shift, you\'re not waiting a week.',
       'State compliance requirements vary. We carry options that satisfy opaque-bag mandates across major legal markets.',
       'Start with stock while your volume stabilizes, then move to custom print when the reorder pattern is predictable.',
     ],
     catalogs: [
-      { label: 'Dispensary Bags', href: '/industries/dispensary', note: 'Exit bags + carryout' },
-      { label: 'Mylar Bags', href: '/catalog/mylar-bags', note: 'Resealable, labeled options' },
-      { label: 'Compliance Labels', href: '/catalog/labels', note: 'State-specific formats' },
+      { label: 'Dispensary Bags', href: '/dispensaries', note: 'Exit bags + carryout' },
+      { label: 'Custom Printed', href: '/catalog/custom', note: '1 to 3 colors, your logo' },
     ],
     leadTime: 'Stock: same day before 1 PM ET · Custom print: 3–4 weeks after proof',
   },

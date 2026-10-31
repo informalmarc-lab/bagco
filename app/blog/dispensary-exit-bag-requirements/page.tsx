@@ -55,7 +55,7 @@ const sections: BlogPostSection[] = [
 ]
 
 const internalLinks: BlogPostInternalLink[] = [
-  { href: '/industries/dispensary', label: 'Dispensary Industry Program' },
+  { href: '/dispensaries', label: 'Dispensary Bags' },
   { href: '/catalog?industry=dispensary', label: 'Filtered Dispensary Catalog' },
   { href: '/makeyourquote', label: 'Build a Quote' }
 ]

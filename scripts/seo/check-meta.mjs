@@ -24,7 +24,6 @@ const INDUSTRIES = [
   { key: 'retail', slug: 'retail-bags', label: 'Retail Bags', marketLabel: 'retail', catalogIndustry: 'retail' },
   { key: 'food-beverage', slug: 'food-beverage-bags', label: 'Food & Beverage Bags', marketLabel: 'food & beverage', catalogIndustry: 'food-beverage' },
   { key: 'wineries-breweries', slug: 'wineries-breweries-bags', label: 'Wineries & Breweries Bags', marketLabel: 'wineries and breweries', catalogIndustry: 'food-beverage' },
-  { key: 'event-company', slug: 'event-company-bags', label: 'Event Company Bags', marketLabel: 'event companies', catalogIndustry: 'retail' },
 ]
 
 function getStartingPrice(catalogIndustry) {

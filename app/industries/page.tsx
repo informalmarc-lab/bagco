@@ -24,17 +24,12 @@ const segments = [
   {
     title: 'Dispensaries',
     copy: 'Child-resistant, smell-proof, and custom print bag lines for compliant retail.',
-    href: '/industries/dispensary',
+    href: '/dispensaries',
   },
   {
     title: 'Smoke Shops',
     copy: 'Generic and branded carry-out bags to improve recognition and repeat traffic.',
     href: '/industries/smoke-shops',
-  },
-  {
-    title: 'Cigar Shops',
-    copy: 'Printed cigar bags and mylar packaging for shops and lounges that want a cleaner premium handoff.',
-    href: '/industries/cigar-shops',
   },
   {
     title: 'Custom Bags',

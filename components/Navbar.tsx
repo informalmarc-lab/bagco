@@ -3,16 +3,13 @@
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { type FocusEvent, useEffect, useState } from 'react'
-import CartLink from '@/components/cart/CartLink'
 import { contactTextHref } from '@/components/siteConfig'
 
 const industryLinks = [
   { href: '/industries/pharmacies', label: 'Pharmacies' },
   { href: '/industries/veterinary', label: 'Veterinary' },
-  { href: '/industries/dispensary', label: 'Dispensaries' },
+  { href: '/dispensaries', label: 'Dispensaries' },
   { href: '/industries/smoke-shops', label: 'Smoke Shops' },
-  { href: '/industries/cigar-shops', label: 'Cigar Shops' },
-  { href: '/catalog/custom', label: 'Custom Bags' },
   { href: '/distributors', label: 'Distributors' },
 ]
 
@@ -21,14 +18,11 @@ const catalogLinks = [
   { href: '/catalog/pharmacy', label: 'Pharmacy' },
   { href: '/catalog/veterinary', label: 'Veterinary' },
   { href: '/catalog/retail-bags', label: 'Retail Bags' },
-  { href: '/catalog/cigar-bags', label: 'Cigar Bags' },
-  { href: '/catalog/custom', label: 'Custom 1/2/3 Color' },
-  { href: '/catalog/mylar-bags', label: 'Mylar Bags' },
-  { href: '/catalog/labels', label: 'Labels' },
+  { href: '/catalog/custom', label: 'Custom Printed' },
 ]
 
 const navLinks = [
-  { href: '/blog', label: 'Blog' },
+  { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
 ]
 
@@ -204,9 +198,8 @@ export default function Navbar() {
           </div>
 
           <div className="hidden items-center gap-2 xl:flex">
-            <CartLink />
             <Link href="/makeyourquote" className="btn-secondary min-h-[44px] px-4">
-              Quote
+              Get a Quote
             </Link>
             <a href={contactTextHref} className="btn-primary min-h-[44px] px-4">
               <span className="2xl:hidden">Text Us</span>
@@ -346,10 +339,6 @@ export default function Navbar() {
                     </Link>
                   ))}
                 </div>
-              </div>
-
-              <div className="mt-4">
-                <CartLink mobile onClick={() => setIsOpen(false)} />
               </div>
               <div className="mt-3 grid gap-2 sm:grid-cols-3">
                 <Link href="/makeyourquote" className="btn-primary min-h-[44px] justify-center" onClick={() => setIsOpen(false)}>

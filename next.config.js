@@ -7,6 +7,22 @@ for (const name of ['BAGCO_ADMIN_PASSWORD', 'BAGCO_ADMIN_SECRET']) {
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  async redirects() {
+    // Removed sections (Oct 2026 simplification). Permanent redirects keep old links and Google results working.
+    return [
+      { source: '/cart', destination: '/makeyourquote', permanent: true },
+      { source: '/checkout', destination: '/makeyourquote', permanent: true },
+      { source: '/order-confirmation', destination: '/makeyourquote', permanent: true },
+      { source: '/catalog/mylar-bags/:path*', destination: '/catalog', permanent: true },
+      { source: '/catalog/labels', destination: '/catalog', permanent: true },
+      { source: '/catalog/cigar-bags/:path*', destination: '/catalog', permanent: true },
+      { source: '/industries/cigar-shops', destination: '/industries/smoke-shops', permanent: true },
+      { source: '/industries/dispensary', destination: '/dispensaries', permanent: true },
+      { source: '/industries/dispensaries', destination: '/dispensaries', permanent: true },
+      { source: '/weddings-events', destination: '/catalog/custom', permanent: true },
+      { source: '/event-company-bags/:path*', destination: '/catalog/custom', permanent: true },
+    ]
+  },
   images: {
     // Stopgap: keep the Next 14 image optimizer (several unpatched advisories) out of the request path.
     unoptimized: true,

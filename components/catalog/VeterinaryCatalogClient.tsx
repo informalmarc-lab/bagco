@@ -22,7 +22,7 @@ const VET_DESIGNS = {
     sizes: [
       { name: 'Pinch bottom #22', dims: '4.5" x 2.25" x 11"', qty: '3,000 per case', price: '$119.81' },
       { name: 'Flat bag #12', dims: '7" x 10"', qty: '3,000 per case', price: '$115.35' },
-      { name: 'Square bottom #25', dims: '6" x 4" x 11"', qty: '1,000 per case', price: '$65.91' },
+      { name: 'Square bottom #25', dims: '6" x 3.5" x 11"', qty: '1,000 per case', price: '$65.91' },
     ],
   },
   vb2: {
@@ -31,7 +31,7 @@ const VET_DESIGNS = {
     sizes: [
       { name: 'Pinch bottom #22', dims: '4.5" x 2.25" x 11"', qty: '3,000 per case', price: '$119.81' },
       { name: 'Flat bag #12', dims: '7" x 10"', qty: '3,000 per case', price: '$115.35' },
-      { name: 'Square bottom #25', dims: '6" x 4" x 11"', qty: '1,000 per case', price: '$65.91' },
+      { name: 'Square bottom #25', dims: '6" x 3.5" x 11"', qty: '1,000 per case', price: '$65.91' },
     ],
   },
   vb6: {
@@ -40,7 +40,7 @@ const VET_DESIGNS = {
     sizes: [
       { name: 'Pinch bottom #22', dims: '4.5" x 2.25" x 11"', qty: '3,000 per case', price: '$119.81' },
       { name: 'Flat bag #12', dims: '7" x 10"', qty: '3,000 per case', price: '$115.35' },
-      { name: 'Square bottom #25', dims: '6" x 4" x 11"', qty: '1,000 per case', price: '$65.91' },
+      { name: 'Square bottom #25', dims: '6" x 3.5" x 11"', qty: '1,000 per case', price: '$65.91' },
     ],
   },
 }

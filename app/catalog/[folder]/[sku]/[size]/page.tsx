@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import AddToCartControl from '@/components/cart/AddToCartControl'
 import StructuredData from '@/components/seo/StructuredData'
 import {
   INDUSTRY_LABELS,
@@ -14,7 +13,6 @@ import {
   getCatalogSkuSlug,
   getCatalogSizePath,
   getIndustryCatalogHref,
-  isCatalogProductQuoteOnly,
   money,
 } from '@/lib/catalogProducts'
 import { getCustomProgramContent } from '@/lib/customCatalogContent'
@@ -96,20 +94,6 @@ export default async function CatalogSkuSizePage({
     ? selectedSize.pricing
     : [{ label: `${selectedSize.label} ${product.caseCount}`, price: product.startingPrice }]
   const industryHref = getIndustryCatalogHref(product.industry)
-  const isQuoteOnly = isCatalogProductQuoteOnly(product)
-  const cartItem = {
-    id: `catalog:${product.sku}:${selectedSize.slug}`,
-    kind: 'catalog' as const,
-    sku: product.sku,
-    slug: product.slug,
-    name: product.name,
-    image: selectedImage,
-    productHref: getCatalogSizePath(product, selectedSize.slug),
-    quantity: 1,
-    unitPrice: pricingRows[0].price,
-    unit: 'case' as const,
-    sizeLabel: selectedSize.label,
-  }
   const jsonLd = buildProductJsonLd({
     name: `${product.name} - ${selectedSize.label}`,
     imagePath: selectedImage,
@@ -143,13 +127,9 @@ export default async function CatalogSkuSizePage({
             {customContent ? customContent.shortPitch : product.description}
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            {isQuoteOnly ? (
-              <Link href={`/makeyourquote?sku=${encodeURIComponent(product.sku)}`} className="btn-primary">
+            <Link href={`/makeyourquote?sku=${encodeURIComponent(product.sku)}`} className="btn-primary">
                 Get a Quote
               </Link>
-            ) : (
-              <AddToCartControl item={cartItem} />
-            )}
             <Link href={getCatalogOverviewPath(product)} className="btn-secondary">
               Back to {product.sku} Sizes
             </Link>
@@ -239,13 +219,9 @@ export default async function CatalogSkuSizePage({
             </div>
 
             <div className="mt-6 flex flex-wrap gap-3">
-              {isQuoteOnly ? (
-                <Link href={`/makeyourquote?sku=${encodeURIComponent(product.sku)}`} className="btn-primary">
+              <Link href={`/makeyourquote?sku=${encodeURIComponent(product.sku)}`} className="btn-primary">
                   Get a Quote
                 </Link>
-              ) : (
-                <AddToCartControl item={cartItem} />
-              )}
               <Link href={industryHref} className="btn-secondary">
                 View {INDUSTRY_LABELS[product.industry]} Catalog
               </Link>
