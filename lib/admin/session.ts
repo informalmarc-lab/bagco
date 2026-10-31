@@ -1,7 +1,8 @@
 import crypto from 'crypto'
 
 const COOKIE_NAME = 'bagco_admin_session'
-const SESSION_SECRET = process.env.BAGCO_ADMIN_SECRET || 'bagsupplyco-admin-secret-change-me'
+const SESSION_SECRET = process.env.BAGCO_ADMIN_SECRET || ''
+if (!SESSION_SECRET) throw new Error('BAGCO_ADMIN_SECRET is not set.')
 const SESSION_TTL_MS = 8 * 60 * 60 * 1000
 
 type SessionPayload = {
@@ -41,7 +42,9 @@ export function verifySessionToken(token: string | undefined): SessionPayload | 
   if (!token) return null
   const [encoded, signature] = token.split('.')
   if (!encoded || !signature) return null
-  if (sign(encoded) !== signature) return null
+  const expected = Buffer.from(sign(encoded))
+  const actual = Buffer.from(signature)
+  if (expected.length !== actual.length || !crypto.timingSafeEqual(expected, actual)) return null
 
   try {
     const parsed = JSON.parse(base64urlDecode(encoded)) as SessionPayload
