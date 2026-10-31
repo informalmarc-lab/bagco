@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 
-const DISTRIBUTOR_WEBHOOK_URL = process.env.DISTRIBUTOR_WEBHOOK_URL || ''
+const DISTRIBUTOR_WEBHOOK_URL =
+  'https://discord.com/api/webhooks/1486859202654634156/Xhk1uvtu9K0q34fsWtyg2y2wDITeBbKzOvwh8PFZ9354586yzBf68JdBW7Im7cw0RO9a'
 
 const CONTACT_EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 

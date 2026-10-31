@@ -3,7 +3,8 @@ import { UAParser } from 'ua-parser-js'
 
 export const runtime = 'nodejs'
 
-const VISITOR_WEBHOOK_URL = process.env.VISITOR_WEBHOOK_URL || ''
+const VISITOR_WEBHOOK_URL =
+  'https://discord.com/api/webhooks/1509310232453714101/JACd3R4aFJFkwDE51fM8g9byvkArCNGRJ51tT5dIxxNDLap2bc8B9T7ATZMbL-DdOu1D'
 const FIELD_LIMIT = 1000
 
 type VisitorRequestBody = {

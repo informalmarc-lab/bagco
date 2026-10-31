@@ -10,7 +10,8 @@ export type CouponSubmissionPayload = {
   sourcePath: string
 }
 
-export const QUOTE_DISCORD_WEBHOOK_URL = process.env.QUOTE_WEBHOOK_URL || ''
+export const QUOTE_DISCORD_WEBHOOK_URL =
+  'https://discord.com/api/webhooks/1507883597862801418/7wWBhLoHiH1qE2tvesCH_XP1xioMgOmT40XFhJSuq8KdkXs5FTo0vwegpENhXJ6I4Isk'
 
 function field(name: string, value: string, inline = false) {
   return {

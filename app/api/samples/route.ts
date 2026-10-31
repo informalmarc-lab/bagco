@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server'
 
 // Server-only: never import this into client code.
-const SAMPLES_DISCORD_WEBHOOK_URL = process.env.SAMPLES_WEBHOOK_URL || ''
+const SAMPLES_DISCORD_WEBHOOK_URL =
+  'https://discord.com/api/webhooks/1563327711017963532/tjR3lIwTI6i_Guez0dsIl5IQhKBIKiTD67rqhv3WMgpbI_xvLZTO6B2TqS77PTFUdKGm'
 
 const SAMPLE_SIZES = [
   '#21 (3½×1½×10")',
