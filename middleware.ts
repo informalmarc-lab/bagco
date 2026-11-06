@@ -1,7 +1,7 @@
 import { NextFetchEvent, NextRequest, NextResponse } from 'next/server'
-import { QUOTE_DISCORD_WEBHOOK_URL } from '@/lib/makeYourQuote/quoteWebhook'
-
-const REQUEST_LOG_WEBHOOK_URL = QUOTE_DISCORD_WEBHOOK_URL
+// Page-view logging goes to its own channel so it never crowds out quote leads.
+// Leave REQUEST_LOG_WEBHOOK_URL unset to turn page-view logging off.
+const REQUEST_LOG_WEBHOOK_URL = process.env.REQUEST_LOG_WEBHOOK_URL || ''
 
 function firstHeader(request: NextRequest, names: string[]): string {
   for (const name of names) {
