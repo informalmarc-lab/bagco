@@ -37,6 +37,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: 'weekly' as const,
   }))
 
+  const legacyCatalogProductRoutes = getAllCatalogProducts().map((product) => ({
+    route: `/catalog/products/${product.slug}`,
+    priority: 0.55,
+    changeFrequency: 'monthly' as const,
+  }))
+
   const staticRoutes: Array<{ route: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'] }> = [
     { route: '', priority: 1, changeFrequency: 'weekly' },
     { route: '/about', priority: 0.75, changeFrequency: 'monthly' },
@@ -108,6 +114,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...productOverviewRoutes,
     ...productSizeRoutes,
     ...retailRoutes,
+    ...legacyCatalogProductRoutes,
   ]
     .filter(({ route }) => !excludedRoutes.has(route))
 

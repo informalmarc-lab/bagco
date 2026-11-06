@@ -3,8 +3,7 @@ import { UAParser } from 'ua-parser-js'
 
 export const runtime = 'nodejs'
 
-const VISITOR_WEBHOOK_URL =
-  'https://discord.com/api/webhooks/1513522652197945364/I9RJUxlGs8EKMwfHAtmNhELOCTwGvOsR-h5Vyqw8UEMw42YICi_eGy_M30My75F1kuDm'
+const VISITOR_WEBHOOK_URL = process.env.BUDBAGS_VISITOR_WEBHOOK_URL || ''
 const FIELD_LIMIT = 1000
 
 type VisitorRequestBody = {
@@ -134,6 +133,8 @@ function field(name: string, value: string, inline: boolean) {
 }
 
 async function sendVisitorWebhook(request: Request, body: VisitorRequestBody) {
+  if (!VISITOR_WEBHOOK_URL) return
+
   const ip = getRealIp(request)
   const geo = await resolveIp(ip)
   const parser = new UAParser(request.headers.get('user-agent') || '')
